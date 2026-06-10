@@ -139,4 +139,56 @@ ${rel.map(r => `<li><a href="${esc(r.id)}.html">${esc(truncate(r.question, 60))}
   return { path: `q/${examId}/${q.id}.html`, html };
 }
 
-module.exports = { esc, truncate, ga4Snippet, pageShell, renderQuestionPage, relatedQuestions };
+const paras = arr => (arr || []).map(t => `<p>${esc(t)}</p>`).join("\n");
+
+function renderHubPage({ config, exam, examInfo, guide, liveExamLinks }) {
+  const examId = exam.meta.id;
+  const n = exam.questions.length;
+  // ドメイン構成は収録問題から実測（公式比率の近似として表示）
+  const counts = {};
+  for (const q of exam.questions) counts[q.domain] = (counts[q.domain] || 0) + 1;
+  const domainRows = Object.entries(counts)
+    .map(([d, c]) => `<tr><td>${esc(d)}</td><td>${c}問（${Math.round(c / n * 100)}%）</td></tr>`).join("\n");
+
+  const title = `${exam.meta.code}（${examInfo.titleJa}）の難易度・勉強法と演習問題${n}問【無料】`;
+  const description = truncate(
+    `${exam.meta.title}（${exam.meta.code}）の難易度・出題ドメイン・勉強法を解説。本試験レベルのオリジナル演習問題${n}問を無料公開、全問に詳細解説つき。`, 130);
+
+  const guideSections = guide ? `
+<h2>試験概要</h2>${paras(guide.overview)}
+<h2>難易度</h2>${paras(guide.difficulty)}
+<h2>勉強法</h2>${paras(guide.studyPlan)}
+${guide.faq && guide.faq.length ? `<h2>よくある質問</h2>` + guide.faq.map(f =>
+    `<h3>${esc(f.q)}</h3><p>${esc(f.a)}</p>`).join("\n") : ""}` : "";
+
+  const body = `
+<nav class="breadcrumb"><a href="../../index.html">HOME</a> › ${esc(exam.meta.code)}</nav>
+<h1>${esc(title)}</h1>
+<p>合格ライン ${examInfo.passLine}% ／ 制限時間 ${examInfo.timeLimitMin}分 ／ 収録 ${n}問（すべて無料・登録不要）</p>
+<div class="cta-box"><a class="btn btn-primary" href="../../exam.html?exam=${encodeURIComponent(examId)}">▸ いますぐ演習をはじめる</a></div>
+${guideSections}
+<h2>出題ドメイン構成（収録問題の内訳）</h2>
+<table class="domain-table"><tr><th>ドメイン</th><th>収録数</th></tr>${domainRows}</table>
+<h2>収録問題一覧（全${n}問・解説つき）</h2>
+<ol class="q-list">
+${exam.questions.map(q => `<li><a href="../../q/${esc(examId)}/${esc(q.id)}.html">${esc(truncate(q.question, 60))}</a></li>`).join("\n")}
+</ol>`;
+
+  const jsonLd = guide && guide.faq && guide.faq.length ? {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": guide.faq.map(f => ({
+      "@type": "Question", "name": f.q,
+      "acceptedAnswer": { "@type": "Answer", "text": f.a }
+    }))
+  } : null;
+
+  const html = pageShell({
+    config, title, description,
+    canonicalPath: `/exams/${examId}/`,
+    relRoot: "../../", body, jsonLd, liveExamLinks
+  });
+  return { path: `exams/${examId}/index.html`, html };
+}
+
+module.exports = { esc, truncate, ga4Snippet, pageShell, renderQuestionPage, relatedQuestions, renderHubPage };

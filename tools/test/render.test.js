@@ -105,3 +105,23 @@ test("renderQuestionPage: no related section when domain is unique", () => {
   const { html } = renderQuestionPage({ config: CONFIG, exam, index: 0, liveExamLinks: [] });
   assert.ok(!html.includes("同じ分野の関連問題"));
 });
+
+// ─── Task 5: renderHubPage ────────────────────────────────────────────────────
+
+const { renderHubPage } = require("../lib/render");
+
+test("renderHubPage: domain table, question list, guide sections, fallback", () => {
+  const guide = { overview: ["概要です。"], difficulty: ["難しめ。"], studyPlan: ["順番に。"], faq: [{ q: "Q1", a: "A1" }] };
+  const examInfo = { passLine: 72, timeLimitMin: 130, titleJa: "ソリューションアーキテクト アソシエイト" };
+  const { path: p, html } = renderHubPage({ config: CONFIG, exam: EXAM, examInfo, guide, liveExamLinks: [] });
+  assert.strictEqual(p, "exams/aws-saa-c03/index.html");
+  assert.ok(html.includes("セキュアなアーキテクチャの設計"));   // ドメイン表（問題から集計）
+  assert.ok(html.includes("q001.html"));                        // 問題一覧リンク
+  assert.ok(html.includes("概要です。"));
+  assert.ok(html.includes("Q1"));
+  assert.ok(html.includes('"@type":"FAQPage"'));               // FAQ JSON-LD
+  // ガイドなしでもビルドが落ちない＆FAQ構造化データなし
+  const fb = renderHubPage({ config: CONFIG, exam: EXAM, examInfo, guide: null, liveExamLinks: [] });
+  assert.ok(fb.html.includes("q001.html"));
+  assert.ok(!fb.html.includes("FAQPage"));
+});
