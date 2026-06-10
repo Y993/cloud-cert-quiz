@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>演習 | CLOUDCERT_</title>
+  <meta name="description" content="クラウド資格の本試験レベル演習。">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+JP:wght@400;500;700&family=JetBrains+Mono:wght@400;600;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='80' font-size='80' fill='%233fe0a4' font-family='monospace'>▸</text></svg>">
+</head>
+<body>
+
+  <header class="site-header">
+    <div class="container">
+      <a class="brand" href="index.html">
+        <span class="prompt">&gt;</span>CLOUDCERT<span class="cursor"></span>
+      </a>
+      <nav class="nav">
+        <a href="index.html#exams">exams</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- 広告スロット: 中身が空の間はCSS(:empty)で非表示。
+       導入手順は docs/ADS.md を参照。タグを入れるだけで表示される。 -->
+  <aside class="ad-rail left" id="adRailLeft" aria-hidden="true"></aside>
+  <aside class="ad-rail right" id="adRailRight" aria-hidden="true"></aside>
+
+  <main class="quiz-shell" id="quizRoot">
+    <!-- js/quiz.js が描画 -->
+  </main>
+
+  <!-- 問題カード下のインライン広告スロット（空なら非表示） -->
+  <div class="ad-inline" id="adInline" aria-hidden="true"></div>
+
+  <script src="js/data/manifest.js"></script>
+  <script src="js/quiz.js"></script>
+</body>
+</html>
