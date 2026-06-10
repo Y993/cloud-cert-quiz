@@ -6,9 +6,14 @@ const ROOT = path.resolve(__dirname, "..", "..");
 function freshRequire(rel) {
   const abs = path.join(ROOT, rel);
   delete require.cache[abs];
+  const prev = global.window;
   global.window = {};
-  require(abs);
-  return global.window;
+  try {
+    require(abs);
+    return global.window;
+  } finally {
+    global.window = prev;
+  }
 }
 
 function loadCatalog() {
@@ -26,7 +31,9 @@ function liveExams() {
 }
 
 function loadExam(examId) {
-  return freshRequire(`js/data/exams/${examId}.js`).CERT_EXAMS[examId];
+  const exam = freshRequire(`js/data/exams/${examId}.js`).CERT_EXAMS?.[examId];
+  if (!exam) throw new Error(`loadExam: no data for "${examId}"`);
+  return exam;
 }
 
 function loadGuide(examId) {
