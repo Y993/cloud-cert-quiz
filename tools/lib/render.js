@@ -56,4 +56,84 @@ ${body}
 </html>`;
 }
 
-module.exports = { esc, truncate, ga4Snippet, pageShell };
+const LETTERS = "ABCDEF";
+
+// 同一ドメインの近傍から最大4問の関連リンクを選ぶ
+function relatedQuestions(exam, index, max = 4) {
+  const me = exam.questions[index];
+  const out = [];
+  for (let d = 1; d < exam.questions.length && out.length < max; d++) {
+    for (const i of [index - d, index + d]) {
+      if (out.length >= max) break;
+      const q = exam.questions[i];
+      if (q && q.domain === me.domain) out.push(q);
+    }
+  }
+  return out;
+}
+
+function questionJsonLd(exam, q) {
+  return {
+    "@context": "https://schema.org/",
+    "@type": "Quiz",
+    "about": { "@type": "Thing", "name": exam.meta.title },
+    "hasPart": [{
+      "@type": "Question",
+      "eduQuestionType": q.type === "multiple" ? "Checkbox" : "Multiple choice",
+      "learningResourceType": "Practice problem",
+      "text": q.question,
+      "suggestedAnswer": q.choices.map((c, i) => ({ "@type": "Answer", "position": i, "text": c }))
+        .filter((_, i) => !q.answer.includes(i)),
+      "acceptedAnswer": q.answer.map(i => ({
+        "@type": "Answer", "position": i, "text": q.choices[i],
+        "comment": { "@type": "Comment", "text": q.explanation }
+      }))[0]
+    }]
+  };
+}
+
+function renderQuestionPage({ config, exam, index, liveExamLinks }) {
+  const q = exam.questions[index];
+  const prev = exam.questions[index - 1];
+  const next = exam.questions[index + 1];
+  const examId = exam.meta.id;
+  const title = `【${exam.meta.code} 演習問題】${truncate(q.question, 45)}`;
+  const description = truncate(`${exam.meta.code}の本試験レベル演習問題。${q.question}`, 110) + " 全選択肢の解説つき。";
+  const answerLabel = q.answer.map(i => LETTERS[i]).join(", ");
+  const rel = relatedQuestions(exam, index);
+  const diffLabel = { easy: "EASY", medium: "MEDIUM", hard: "HARD" }[q.difficulty] || q.difficulty;
+
+  const body = `
+<nav class="breadcrumb"><a href="../../index.html">HOME</a> › <a href="../../exams/${examId}/">${esc(exam.meta.code)} 試験ガイド</a> › ${esc(q.id)}</nav>
+<div class="q-meta"><span>${esc(exam.meta.code)}</span><span>${esc(q.domain)}</span><span>${esc(diffLabel)}</span><span>${q.type === "multiple" ? "複数選択" : "単一選択"}</span></div>
+<h1>${esc(q.question)}</h1>
+<ol class="q-choices">
+${q.choices.map((c, i) => `<li><b>${LETTERS[i]}.</b> ${esc(c)}</li>`).join("\n")}
+</ol>
+<details class="q-answer">
+<summary>解答と解説を見る</summary>
+<div class="inner">
+<p><b>正解: ${answerLabel}</b></p>
+<p>${esc(q.explanation)}</p>
+</div>
+</details>
+<div class="cta-box"><a class="btn btn-primary" href="../../exam.html?exam=${encodeURIComponent(examId)}">▸ この試験を本気で演習する（全${exam.questions.length}問・無料）</a></div>
+<nav class="q-nav">
+<span>${prev ? `<a href="${prev.id}.html">← 前の問題</a>` : ""}</span>
+<span>${next ? `<a href="${next.id}.html">次の問題 →</a>` : ""}</span>
+</nav>
+${rel.length ? `<section class="related"><h2>同じ分野の関連問題</h2><ul class="q-list">
+${rel.map(r => `<li><a href="${r.id}.html">${esc(truncate(r.question, 60))}</a></li>`).join("\n")}
+</ul></section>` : ""}`;
+
+  const html = pageShell({
+    config, title, description,
+    canonicalPath: `/q/${examId}/${q.id}.html`,
+    relRoot: "../../", body,
+    jsonLd: questionJsonLd(exam, q),
+    liveExamLinks
+  });
+  return { path: `q/${examId}/${q.id}.html`, html };
+}
+
+module.exports = { esc, truncate, ga4Snippet, pageShell, renderQuestionPage, relatedQuestions };

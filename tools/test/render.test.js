@@ -1,6 +1,6 @@
 const test = require("node:test");
 const assert = require("node:assert");
-const { esc, truncate, pageShell } = require("../lib/render");
+const { esc, truncate, pageShell, renderQuestionPage } = require("../lib/render");
 
 test("esc escapes html", () => {
   assert.strictEqual(esc('<a b="c">&'), "&lt;a b=&quot;c&quot;&gt;&amp;");
@@ -51,4 +51,38 @@ test("pageShell escapes quotes in hub link href", () => {
   });
   assert.ok(!html.includes('href="x" onmouseover='));
   assert.ok(html.includes('x&quot; onmouseover'));
+});
+
+// ─── Task 4: renderQuestionPage ────────────────────────────────────────────────
+
+const CONFIG = { origin: "https://example.com", siteName: "CLOUDCERT_", ga4MeasurementId: "", searchConsoleVerification: "" };
+const EXAM = {
+  meta: { id: "aws-saa-c03", title: "AWS Certified Solutions Architect – Associate", code: "SAA-C03", provider: "aws" },
+  questions: [
+    { id: "q001", type: "single", domain: "セキュアなアーキテクチャの設計", difficulty: "medium",
+      question: "ある企業がS3への安全なアクセスを必要としている。最適な方法はどれか。",
+      choices: ["IAMユーザーのキーを使う", "IAMロールを使う", "IPで制限する", "公開する"],
+      answer: [1], explanation: "ロールが最適。Aは鍵管理の負担、Cは脆弱、Dは論外。" },
+    { id: "q002", type: "multiple", domain: "セキュアなアーキテクチャの設計", difficulty: "hard",
+      question: "適切なものを2つ選べ。", choices: ["a", "b", "c", "d"], answer: [0, 2], explanation: "AとCが正しい。" }
+  ]
+};
+
+test("renderQuestionPage: title, choices, details, jsonld, nav", () => {
+  const { path: p, html } = renderQuestionPage({ config: CONFIG, exam: EXAM, index: 0, liveExamLinks: [] });
+  assert.strictEqual(p, "q/aws-saa-c03/q001.html");
+  assert.ok(html.includes("【SAA-C03 演習問題】"));
+  assert.ok(html.includes("IAMロールを使う"));
+  assert.ok(html.includes("<details"));                          // 解答は折りたたみ
+  assert.ok(html.includes("正解: B"));                           // 0始まり→B
+  assert.ok(html.includes('"@type":"Quiz"'));                    // 練習問題リッチリザルト
+  assert.ok(html.includes("q002.html"));                         // 次の問題リンク
+  assert.ok(!html.includes("q000"));                             // 前の問題は無い
+  assert.ok(html.includes("exam.html?exam=aws-saa-c03"));        // 演習CTA
+});
+
+test("renderQuestionPage: multiple answers render as letters", () => {
+  const { html } = renderQuestionPage({ config: CONFIG, exam: EXAM, index: 1, liveExamLinks: [] });
+  assert.ok(html.includes("正解: A, C"));
+  assert.ok(html.includes("q001.html"));                         // 前の問題リンク
 });
