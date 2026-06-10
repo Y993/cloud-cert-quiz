@@ -24,7 +24,8 @@
       ? `<span>問題数 <b>${ex.questionCount}</b></span><span>合格ライン <b>${ex.passLine}%</b></span>`
       : `<span>準備中</span>`;
     const cta = live
-      ? `<a class="btn btn-primary card-cta" href="exam.html?exam=${encodeURIComponent(ex.id)}">▸ 演習を開始</a>`
+      ? `<a class="btn btn-primary card-cta" href="exam.html?exam=${encodeURIComponent(ex.id)}">▸ 演習を開始</a>
+     <a class="guide-link" href="exams/${encodeURIComponent(ex.id)}/">試験ガイド・全問題一覧 →</a>`
       : `<button class="btn card-cta" disabled>準備中…</button>`;
     return `
       <article class="exam-card ${live ? "available" : "coming"} sr" style="--pcolor: var(--${p.id})">

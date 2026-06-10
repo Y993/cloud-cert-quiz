@@ -963,3 +963,6 @@ html.sr-armed .sr.in { opacity: 1; transform: none; }
 @media (prefers-reduced-motion: reduce) {
   *, *::before, *::after { animation-duration: 0.01ms !important; transition-duration: 0.01ms !important; }
 }
+
+/* LPカード内の試験ガイドリンク（静的生成されるハブページへの導線） */
+.guide-link { display: block; margin-top: 8px; font-size: .78rem; opacity: .8; color: inherit; text-align: center; }
