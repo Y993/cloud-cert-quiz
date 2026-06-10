@@ -84,10 +84,13 @@ function questionJsonLd(exam, q) {
       "text": q.question,
       "suggestedAnswer": q.choices.map((c, i) => ({ "@type": "Answer", "position": i, "text": c }))
         .filter((_, i) => !q.answer.includes(i)),
-      "acceptedAnswer": q.answer.map(i => ({
-        "@type": "Answer", "position": i, "text": q.choices[i],
-        "comment": { "@type": "Comment", "text": q.explanation }
-      }))[0]
+      "acceptedAnswer": (() => {
+        const accepted = q.answer.map(i => ({
+          "@type": "Answer", "position": i, "text": q.choices[i],
+          "comment": { "@type": "Comment", "text": q.explanation }
+        }));
+        return accepted.length === 1 ? accepted[0] : accepted;
+      })()
     }]
   };
 }
@@ -104,7 +107,7 @@ function renderQuestionPage({ config, exam, index, liveExamLinks }) {
   const diffLabel = { easy: "EASY", medium: "MEDIUM", hard: "HARD" }[q.difficulty] || q.difficulty;
 
   const body = `
-<nav class="breadcrumb"><a href="../../index.html">HOME</a> › <a href="../../exams/${examId}/">${esc(exam.meta.code)} 試験ガイド</a> › ${esc(q.id)}</nav>
+<nav class="breadcrumb"><a href="../../index.html">HOME</a> › <a href="../../exams/${esc(examId)}/">${esc(exam.meta.code)} 試験ガイド</a> › ${esc(q.id)}</nav>
 <div class="q-meta"><span>${esc(exam.meta.code)}</span><span>${esc(q.domain)}</span><span>${esc(diffLabel)}</span><span>${q.type === "multiple" ? "複数選択" : "単一選択"}</span></div>
 <h1>${esc(q.question)}</h1>
 <ol class="q-choices">
@@ -119,11 +122,11 @@ ${q.choices.map((c, i) => `<li><b>${LETTERS[i]}.</b> ${esc(c)}</li>`).join("\n")
 </details>
 <div class="cta-box"><a class="btn btn-primary" href="../../exam.html?exam=${encodeURIComponent(examId)}">▸ この試験を本気で演習する（全${exam.questions.length}問・無料）</a></div>
 <nav class="q-nav">
-<span>${prev ? `<a href="${prev.id}.html">← 前の問題</a>` : ""}</span>
-<span>${next ? `<a href="${next.id}.html">次の問題 →</a>` : ""}</span>
+<span>${prev ? `<a href="${esc(prev.id)}.html">← 前の問題</a>` : ""}</span>
+<span>${next ? `<a href="${esc(next.id)}.html">次の問題 →</a>` : ""}</span>
 </nav>
 ${rel.length ? `<section class="related"><h2>同じ分野の関連問題</h2><ul class="q-list">
-${rel.map(r => `<li><a href="${r.id}.html">${esc(truncate(r.question, 60))}</a></li>`).join("\n")}
+${rel.map(r => `<li><a href="${esc(r.id)}.html">${esc(truncate(r.question, 60))}</a></li>`).join("\n")}
 </ul></section>` : ""}`;
 
   const html = pageShell({

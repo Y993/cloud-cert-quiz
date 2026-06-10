@@ -86,3 +86,22 @@ test("renderQuestionPage: multiple answers render as letters", () => {
   assert.ok(html.includes("正解: A, C"));
   assert.ok(html.includes("q001.html"));                         // 前の問題リンク
 });
+
+test("questionJsonLd via page: multiple answers all present in json-ld", () => {
+  const { html } = renderQuestionPage({ config: CONFIG, exam: EXAM, index: 1, liveExamLinks: [] });
+  const m = html.match(/<script type="application\/ld\+json">([\s\S]*?)<\/script>/);
+  const ld = JSON.parse(m[1].replace(/<\\\//g, "</"));
+  const accepted = ld.hasPart[0].acceptedAnswer;
+  assert.ok(Array.isArray(accepted));
+  assert.strictEqual(accepted.length, 2);
+  assert.deepStrictEqual(accepted.map(a => a.position), [0, 2]);
+});
+
+test("renderQuestionPage: no related section when domain is unique", () => {
+  const exam = { meta: EXAM.meta, questions: [
+    { ...EXAM.questions[0], domain: "独自ドメインA" },
+    { ...EXAM.questions[1], domain: "独自ドメインB" }
+  ]};
+  const { html } = renderQuestionPage({ config: CONFIG, exam, index: 0, liveExamLinks: [] });
+  assert.ok(!html.includes("同じ分野の関連問題"));
+});
