@@ -32,3 +32,23 @@ test("pageShell injects ga4 and verification when set", () => {
   assert.ok(html.includes("G-TEST1"));
   assert.ok(html.includes('name="google-site-verification" content="tok"'));
 });
+
+test("pageShell escapes </script> inside jsonLd", () => {
+  const html = pageShell({
+    config: { origin: "https://example.com", siteName: "S", ga4MeasurementId: "", searchConsoleVerification: "" },
+    title: "T", description: "D", canonicalPath: "/", relRoot: "", body: "",
+    jsonLd: { name: 'bad </script> value' }, liveExamLinks: []
+  });
+  assert.ok(!html.includes('</script> value'));
+  assert.ok(html.includes('<\\/script> value'));
+});
+
+test("pageShell escapes quotes in hub link href", () => {
+  const html = pageShell({
+    config: { origin: "https://example.com", siteName: "S", ga4MeasurementId: "", searchConsoleVerification: "" },
+    title: "T", description: "D", canonicalPath: "/", relRoot: "", body: "",
+    liveExamLinks: [{ href: 'x" onmouseover="alert(1)', label: "L" }]
+  });
+  assert.ok(!html.includes('href="x" onmouseover='));
+  assert.ok(html.includes('x&quot; onmouseover'));
+});

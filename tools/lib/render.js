@@ -19,8 +19,10 @@ function pageShell({ config, title, description, canonicalPath, relRoot, body, j
   const canonical = config.origin.replace(/\/$/, "") + canonicalPath;
   const verify = config.searchConsoleVerification
     ? `<meta name="google-site-verification" content="${esc(config.searchConsoleVerification)}">` : "";
-  const ld = jsonLd ? `<script type="application/ld+json">${JSON.stringify(jsonLd)}</script>` : "";
-  const hubNav = (liveExamLinks || []).map(l => `<a href="${l.href}">${esc(l.label)}</a>`).join("");
+  const ld = jsonLd
+    ? `<script type="application/ld+json">${JSON.stringify(jsonLd).replace(/<\//g, "<\\/")}</script>`
+    : "";
+  const hubNav = (liveExamLinks || []).map(l => `<a href="${esc(l.href)}">${esc(l.label)}</a>`).join("");
   return `<!DOCTYPE html>
 <html lang="ja">
 <head>
@@ -28,26 +30,26 @@ function pageShell({ config, title, description, canonicalPath, relRoot, body, j
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>${esc(title)}</title>
 <meta name="description" content="${esc(description)}">
-<link rel="canonical" href="${canonical}">
+<link rel="canonical" href="${esc(canonical)}">
 <meta property="og:title" content="${esc(title)}">
 <meta property="og:description" content="${esc(description)}">
-<meta property="og:url" content="${canonical}">
+<meta property="og:url" content="${esc(canonical)}">
 <meta property="og:type" content="article">
 <meta property="og:site_name" content="${esc(config.siteName)}">
 ${verify}
-<link rel="stylesheet" href="${relRoot}css/style.css">
-<link rel="stylesheet" href="${relRoot}css/page.css">
+<link rel="stylesheet" href="${esc(relRoot)}css/style.css">
+<link rel="stylesheet" href="${esc(relRoot)}css/page.css">
 ${ga4Snippet(config.ga4MeasurementId)}
 ${ld}
 </head>
 <body class="page-body">
-<header class="page-header"><a class="page-logo" href="${relRoot}index.html">&gt; CLOUDCERT_</a></header>
+<header class="page-header"><a class="page-logo" href="${esc(relRoot)}index.html">&gt; CLOUDCERT_</a></header>
 <main class="page-main">
 ${body}
 </main>
 <footer class="page-footer">
 <nav class="hub-nav">${hubNav}</nav>
-<nav class="site-nav"><a href="${relRoot}about.html">運営者情報</a><a href="${relRoot}privacy.html">プライバシーポリシー</a><a href="${relRoot}contact.html">お問い合わせ</a></nav>
+<nav class="site-nav"><a href="${esc(relRoot)}about.html">運営者情報</a><a href="${esc(relRoot)}privacy.html">プライバシーポリシー</a><a href="${esc(relRoot)}contact.html">お問い合わせ</a></nav>
 <p class="copy">© CLOUDCERT_ — 本サイトは各認定試験の公式試験ではなく、収録問題はすべてオリジナルの演習問題です。</p>
 </footer>
 </body>
