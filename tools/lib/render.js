@@ -36,6 +36,7 @@ function pageShell({ config, title, description, canonicalPath, relRoot, body, j
 <meta property="og:url" content="${esc(canonical)}">
 <meta property="og:type" content="article">
 <meta property="og:site_name" content="${esc(config.siteName)}">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='80' font-size='80' fill='%233fe0a4' font-family='monospace'>▸</text></svg>">
 ${verify}
 <link rel="stylesheet" href="${esc(relRoot)}css/style.css">
 <link rel="stylesheet" href="${esc(relRoot)}css/page.css">
