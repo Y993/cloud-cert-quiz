@@ -966,3 +966,7 @@ html.sr-armed .sr.in { opacity: 1; transform: none; }
 
 /* LPカード内の試験ガイドリンク（静的生成されるハブページへの導線） */
 .guide-link { display: block; margin-top: 8px; font-size: .78rem; opacity: .8; color: inherit; text-align: center; }
+
+/* 演習プレイヤー: 解説下の関連サービスリンク */
+.svc-links { margin-top: 14px; padding-top: 10px; border-top: 1px dashed var(--line, #1d2733); font-size: .85rem; }
+.svc-links a { color: var(--accent, #34d399); }

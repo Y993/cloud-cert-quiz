@@ -58,6 +58,22 @@
   }
   const KEYS = "ABCDEF";
 
+  // ---- 関連サービスリンク ----
+  // 正解選択肢に登場するサービスの解説ページへのリンク（最大2件）
+  function svcLinksHtml(q, provider) {
+    if (!window.CERT_SERVICES || !window.CERT_SERVICES_MATCH) return "";
+    var byProv = {};
+    Object.keys(window.CERT_SERVICES).forEach(function (k) {
+      if (window.CERT_SERVICES[k].provider === provider) byProv[k] = window.CERT_SERVICES[k];
+    });
+    var text = q.answer.map(function (i) { return q.choices[i]; }).join(" ");
+    var hits = window.CERT_SERVICES_MATCH(text, byProv, 2);
+    if (!hits.length) return "";
+    return '<div class="svc-links">📚 関連サービスの解説: ' + hits.map(function (s) {
+      return '<a href="learn/' + s.slug + '.html" target="_blank" rel="noopener">' + s.name + "</a>";
+    }).join(" ・ ") + "</div>";
+  }
+
   // ---- 永続化 ----
   const HIST_KEY = id => `cloudcert:history:${id}`;
   const WRONG_KEY = id => `cloudcert:wrong:${id}`;
@@ -390,6 +406,7 @@
         <div class="explain-box ${correct ? "" : "ng"}">
           <div class="verdict mono">${correct ? "✔ CORRECT — 正解" : "✕ INCORRECT — 不正解"}</div>
           <p>${esc(q.explanation)}</p>
+          ${svcLinksHtml(q, providerId)}
         </div>`;
       const actions = root.querySelector(".q-actions");
       // ★ 実ページ遷移（aタグ）。広告のインプレッションが問題ごとに発生する
@@ -556,6 +573,7 @@
                     return `<div class="${cls}"><span class="mono">${KEYS[j]}.</span> ${esc(c)}<b>${tag}</b></div>`;
                   }).join("")}
                   <div class="rb-exp">${esc(q.explanation)}</div>
+                  ${svcLinksHtml(q, providerId)}
                 </div>
               </details>`;
           }).join("")}
