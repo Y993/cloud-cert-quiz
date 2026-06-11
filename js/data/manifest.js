@@ -35,11 +35,11 @@ window.CERT_CATALOG = {
           title: "AI Practitioner",
           titleJa: "AIプラクティショナー",
           level: "Foundational",
-          status: "coming-soon",
-          questionCount: 0,
+          status: "available",
+          questionCount: 150,
           passLine: 70,
           timeLimitMin: 90,
-          dataFile: "",
+          dataFile: "js/data/exams/aws-aif-c01.js",
           description: "生成AI・ML・Bedrockなど、AWSのAIサービス基礎を問う注目資格。"
         },
         // ---- Associate ----
