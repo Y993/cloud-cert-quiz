@@ -62,11 +62,11 @@ window.CERT_CATALOG = {
           title: "Developer – Associate",
           titleJa: "デベロッパー アソシエイト",
           level: "Associate",
-          status: "coming-soon",
-          questionCount: 0,
+          status: "available",
+          questionCount: 150,
           passLine: 72,
           timeLimitMin: 130,
-          dataFile: "",
+          dataFile: "js/data/exams/aws-dva-c02.js",
           description: "Lambda・DynamoDB・CI/CDなど開発者視点の設計と実装。"
         },
         {
@@ -423,11 +423,11 @@ window.CERT_CATALOG = {
           title: "Azure Administrator Associate",
           titleJa: "Azure 管理者 アソシエイト",
           level: "Associate",
-          status: "coming-soon",
-          questionCount: 0,
+          status: "available",
+          questionCount: 150,
           passLine: 70,
           timeLimitMin: 100,
-          dataFile: "",
+          dataFile: "js/data/exams/azure-az104.js",
           description: "VNet・ストレージ・Entra IDなどAzure運用管理の中核資格。"
         },
         {
