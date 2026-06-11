@@ -31,3 +31,8 @@ test("freshRequire restores global.window after load", () => {
 test("loadExam throws clear error for unknown exam id key", () => {
   assert.throws(() => loadExam("no-such-exam"), /no data|Cannot find module/);
 });
+
+test("loadServices returns object (empty ok when dir incomplete)", () => {
+  const s = require("../lib/load-data").loadServices();
+  assert.strictEqual(typeof s, "object");
+});

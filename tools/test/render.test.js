@@ -1,6 +1,6 @@
 const test = require("node:test");
 const assert = require("node:assert");
-const { esc, truncate, pageShell, renderQuestionPage } = require("../lib/render");
+const { esc, truncate, pageShell, renderQuestionPage, renderLearnPage, renderLearnIndex } = require("../lib/render");
 
 test("esc escapes html", () => {
   assert.strictEqual(esc('<a b="c">&'), "&lt;a b=&quot;c&quot;&gt;&amp;");
@@ -124,4 +124,42 @@ test("renderHubPage: domain table, question list, guide sections, fallback", () 
   const fb = renderHubPage({ config: CONFIG, exam: EXAM, examInfo, guide: null, liveExamLinks: [] });
   assert.ok(fb.html.includes("q001.html"));
   assert.ok(!fb.html.includes("FAQPage"));
+});
+
+// ─── Learn-3: renderLearnPage / renderLearnIndex ───────────────────────────────
+
+const SVC = { slug: "aws-lambda", name: "AWS Lambda", provider: "aws", category: "コンピューティング",
+  aliases: ["AWS Lambda", "Lambda"], officialUrl: "https://docs.aws.amazon.com/ja_jp/lambda/",
+  summary: ["概要段落。"], examPoints: ["問われ方段落。"] };
+
+test("renderLearnPage: 公式リンク・問題一覧・パス・関連サービス", () => {
+  const refs = [{ examId: "aws-saa-c03", examCode: "SAA-C03", qid: "q001", excerpt: "ある企業が…" }];
+  const rel = [{ slug: "amazon-ec2", name: "Amazon EC2" }];
+  const { path: p, html } = renderLearnPage({ config: CONFIG, service: SVC, questionRefs: refs, totalRefs: 12, related: rel, liveExamLinks: [] });
+  assert.strictEqual(p, "learn/aws-lambda.html");
+  assert.ok(html.includes('href="https://docs.aws.amazon.com/ja_jp/lambda/"'));
+  assert.ok(html.includes('target="_blank"'));
+  assert.ok(html.includes("../q/aws-saa-c03/q001.html"));
+  assert.ok(html.includes("12問"));
+  assert.ok(html.includes('href="amazon-ec2.html"'));
+  assert.ok(html.includes("概要段落。"));
+});
+
+test("renderLearnPage: 問題ゼロ・関連ゼロでもセクションが消えるだけ", () => {
+  const { html } = renderLearnPage({ config: CONFIG, service: SVC, questionRefs: [], totalRefs: 0, related: [], liveExamLinks: [] });
+  assert.ok(!html.includes("登場する演習問題"));
+  assert.ok(!html.includes("関連サービス"));
+});
+
+test("renderLearnIndex: プロバイダ・カテゴリ見出しとリンク", () => {
+  const { path: p, html } = renderLearnIndex({ config: CONFIG, services: { "aws-lambda": SVC }, refCounts: { "aws-lambda": 12 }, liveExamLinks: [] });
+  assert.strictEqual(p, "learn/index.html");
+  assert.ok(html.includes('href="aws-lambda.html"'));
+  assert.ok(html.includes("コンピューティング"));
+  assert.ok(html.includes("演習12問"));
+});
+
+test("pageShell: site-nav にサービス解説リンク", () => {
+  const html = pageShell({ config: CONFIG, title: "T", description: "D", canonicalPath: "/", relRoot: "", body: "", liveExamLinks: [] });
+  assert.ok(html.includes('href="learn/">サービス解説</a>'));
 });

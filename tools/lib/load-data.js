@@ -42,4 +42,14 @@ function loadGuide(examId) {
   return freshRequire(rel).CERT_GUIDES[examId] || null;
 }
 
-module.exports = { ROOT, loadCatalog, liveExams, loadExam, loadGuide };
+function loadServices() {
+  const dir = path.join(ROOT, "js", "data", "services");
+  if (!fs.existsSync(dir)) return {};
+  const out = {};
+  for (const f of fs.readdirSync(dir).filter(f => f.endsWith(".js"))) {
+    Object.assign(out, freshRequire(`js/data/services/${f}`).CERT_SERVICES || {});
+  }
+  return out;
+}
+
+module.exports = { ROOT, loadCatalog, liveExams, loadExam, loadGuide, loadServices };

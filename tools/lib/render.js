@@ -50,7 +50,7 @@ ${body}
 </main>
 <footer class="page-footer">
 <nav class="hub-nav">${hubNav}</nav>
-<nav class="site-nav"><a href="${esc(relRoot)}about.html">運営者情報</a><a href="${esc(relRoot)}privacy.html">プライバシーポリシー</a><a href="${esc(relRoot)}contact.html">お問い合わせ</a></nav>
+<nav class="site-nav"><a href="${esc(relRoot)}learn/">サービス解説</a><a href="${esc(relRoot)}about.html">運営者情報</a><a href="${esc(relRoot)}privacy.html">プライバシーポリシー</a><a href="${esc(relRoot)}contact.html">お問い合わせ</a></nav>
 <p class="copy">© CLOUDCERT_ — 本サイトは各認定試験の公式試験ではなく、収録問題はすべてオリジナルの演習問題です。</p>
 </footer>
 </body>
@@ -192,4 +192,51 @@ ${exam.questions.map(q => `<li><a href="../../q/${esc(examId)}/${esc(q.id)}.html
   return { path: `exams/${examId}/index.html`, html };
 }
 
-module.exports = { esc, truncate, ga4Snippet, pageShell, renderQuestionPage, relatedQuestions, renderHubPage };
+const PROVIDER_LABEL = { aws: "AWS", gcp: "Google Cloud", azure: "Microsoft Azure" };
+
+function renderLearnPage({ config, service, questionRefs, totalRefs, related, liveExamLinks }) {
+  const s = service;
+  const title = `${s.name}とは？試験に出るポイントと演習問題`;
+  const descSuffix = totalRefs > 0 ? `登場する演習問題${totalRefs}問と公式ドキュメントへのリンクつき。` : `公式ドキュメントへのリンクつき。`;
+  const description = truncate(`${s.name}（${PROVIDER_LABEL[s.provider] || s.provider}）の要点と資格試験での問われ方を解説。${descSuffix}`, 130);
+  const body = `
+<nav class="breadcrumb"><a href="../index.html">HOME</a> › <a href="./">サービス解説</a> › ${esc(s.name)}</nav>
+<div class="q-meta"><span>${esc(PROVIDER_LABEL[s.provider] || s.provider)}</span><span>${esc(s.category)}</span></div>
+<h1>${esc(s.name)}とは</h1>
+${paras(s.summary)}
+<h2>試験での問われ方</h2>
+${paras(s.examPoints)}
+<p class="official-link"><a href="${esc(s.officialUrl)}" target="_blank" rel="noopener">公式ドキュメントを読む →</a></p>
+${questionRefs && questionRefs.length ? `<h2>このサービスが登場する演習問題（${totalRefs}問）</h2>
+<ul class="q-list">
+${questionRefs.map(r => `<li><a href="../q/${esc(r.examId)}/${esc(r.qid)}.html">【${esc(r.examCode)}】${esc(truncate(r.excerpt, 60))}</a></li>`).join("\n")}
+</ul>` : ""}
+${related && related.length ? `<h2>関連サービス</h2><ul class="q-list">
+${related.map(r => `<li><a href="${esc(r.slug)}.html">${esc(r.name)}</a></li>`).join("\n")}</ul>` : ""}`;
+  const html = pageShell({ config, title, description, canonicalPath: `/learn/${s.slug}.html`, relRoot: "../", body, liveExamLinks });
+  return { path: `learn/${s.slug}.html`, html };
+}
+
+function renderLearnIndex({ config, services, refCounts, liveExamLinks }) {
+  const list = Object.values(services);
+  const title = `クラウドサービス解説一覧（${list.length}サービス）`;
+  const description = truncate(`AWS・Google Cloud・Azure の頻出${list.length}サービスを試験対策視点で解説。各サービスの要点・公式ドキュメント・登場する演習問題への導線つき。`, 130);
+  const byProvider = {};
+  for (const s of list) {
+    (byProvider[s.provider] = byProvider[s.provider] || {});
+    (byProvider[s.provider][s.category] = byProvider[s.provider][s.category] || []).push(s);
+  }
+  let body = `<nav class="breadcrumb"><a href="../index.html">HOME</a> › サービス解説</nav>\n<h1>クラウドサービス解説</h1>\n<p>資格試験に頻出するサービスを、試験での問われ方つきで解説。各ページから公式ドキュメントと演習問題に飛べる。</p>`;
+  for (const prov of Object.keys(byProvider)) {
+    body += `\n<h2>${esc(PROVIDER_LABEL[prov] || prov)}</h2>`;
+    for (const cat of Object.keys(byProvider[prov])) {
+      body += `\n<h3>${esc(cat)}</h3>\n<ul class="q-list">\n` +
+        byProvider[prov][cat].map(s =>
+          `<li><a href="${esc(s.slug)}.html">${esc(s.name)}</a>（演習${(refCounts && refCounts[s.slug]) || 0}問）</li>`).join("\n") + "\n</ul>";
+    }
+  }
+  const html = pageShell({ config, title, description, canonicalPath: "/learn/", relRoot: "../", body, liveExamLinks });
+  return { path: "learn/index.html", html };
+}
+
+module.exports = { esc, truncate, ga4Snippet, pageShell, renderQuestionPage, relatedQuestions, renderHubPage, renderLearnPage, renderLearnIndex };
