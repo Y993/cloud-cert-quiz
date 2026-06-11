@@ -396,11 +396,11 @@ window.CERT_CATALOG = {
           title: "Azure Data Fundamentals",
           titleJa: "Azure データ基礎",
           level: "Foundational",
-          status: "coming-soon",
-          questionCount: 0,
+          status: "available",
+          questionCount: 150,
           passLine: 70,
           timeLimitMin: 45,
-          dataFile: "",
+          dataFile: "js/data/exams/azure-dp900.js",
           description: "リレーショナル/非リレーショナルデータと分析の基礎資格。"
         },
         {
@@ -409,11 +409,11 @@ window.CERT_CATALOG = {
           title: "Security, Compliance, and Identity Fundamentals",
           titleJa: "セキュリティ・コンプライアンス・ID 基礎",
           level: "Foundational",
-          status: "coming-soon",
-          questionCount: 0,
+          status: "available",
+          questionCount: 150,
           passLine: 70,
           timeLimitMin: 45,
-          dataFile: "",
+          dataFile: "js/data/exams/azure-sc900.js",
           description: "Microsoftのセキュリティ・ID管理ソリューションの入門資格。"
         },
         // ---- Associate ----
