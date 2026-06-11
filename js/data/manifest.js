@@ -383,11 +383,11 @@ window.CERT_CATALOG = {
           title: "Azure AI Fundamentals",
           titleJa: "Azure AI 基礎",
           level: "Foundational",
-          status: "coming-soon",
-          questionCount: 0,
+          status: "available",
+          questionCount: 150,
           passLine: 70,
           timeLimitMin: 45,
-          dataFile: "",
+          dataFile: "js/data/exams/azure-ai900.js",
           description: "AI・MLの基本概念とAzure AIサービスの入門資格。"
         },
         {
