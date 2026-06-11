@@ -23,3 +23,7 @@
 .domain-table th, .domain-table td { border: 1px solid var(--line, #1d2733); padding: 8px 10px; text-align: left; }
 .q-list { padding-left: 1.2em; }
 .q-list li { margin: 6px 0; }
+
+/* 関連サービスリンク（問題ページの解説最下段） */
+.svc-links { margin-top: 14px; padding-top: 10px; border-top: 1px dashed var(--line, #1d2733); font-size: .85rem; }
+.official-link a { font-weight: 700; }

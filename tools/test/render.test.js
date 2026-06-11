@@ -163,3 +163,15 @@ test("pageShell: site-nav にサービス解説リンク", () => {
   const html = pageShell({ config: CONFIG, title: "T", description: "D", canonicalPath: "/", relRoot: "", body: "", liveExamLinks: [] });
   assert.ok(html.includes('href="learn/">サービス解説</a>'));
 });
+
+// ─── Learn-4: svcLinks in renderQuestionPage ──────────────────────────────────
+
+test("renderQuestionPage: svcLinks renders at bottom of details", () => {
+  const links = [{ slug: "aws-lambda", name: "AWS Lambda" }, { slug: "amazon-s3", name: "Amazon S3" }];
+  const { html } = renderQuestionPage({ config: CONFIG, exam: EXAM, index: 0, liveExamLinks: [], svcLinks: links });
+  assert.ok(html.includes('class="svc-links"'));
+  assert.ok(html.includes('href="../../learn/aws-lambda.html"'));
+  assert.ok(html.includes('href="../../learn/amazon-s3.html"'));
+  const noLinks = renderQuestionPage({ config: CONFIG, exam: EXAM, index: 0, liveExamLinks: [] });
+  assert.ok(!noLinks.html.includes("svc-links"));
+});

@@ -96,7 +96,7 @@ function questionJsonLd(exam, q) {
   };
 }
 
-function renderQuestionPage({ config, exam, index, liveExamLinks }) {
+function renderQuestionPage({ config, exam, index, liveExamLinks, svcLinks }) {
   const q = exam.questions[index];
   const prev = exam.questions[index - 1];
   const next = exam.questions[index + 1];
@@ -119,6 +119,8 @@ ${q.choices.map((c, i) => `<li><b>${LETTERS[i]}.</b> ${esc(c)}</li>`).join("\n")
 <div class="inner">
 <p><b>正解: ${answerLabel}</b></p>
 <p>${esc(q.explanation)}</p>
+${svcLinks && svcLinks.length ? `<div class="svc-links">📚 関連サービスの解説: ${svcLinks.map(s =>
+  `<a href="../../learn/${esc(s.slug)}.html">${esc(s.name)}</a>`).join(" ・ ")}</div>` : ""}
 </div>
 </details>
 <div class="cta-box"><a class="btn btn-primary" href="../../exam.html?exam=${encodeURIComponent(examId)}">▸ この試験を本気で演習する（全${exam.questions.length}問・無料）</a></div>

@@ -1,8 +1,39 @@
 // tools/build-site.js — dist/ に公開サイト一式を生成する
 const fs = require("fs");
 const path = require("path");
-const { ROOT, liveExams, loadExam, loadGuide } = require("./lib/load-data");
-const { esc, ga4Snippet, pageShell, renderQuestionPage, renderHubPage } = require("./lib/render");
+const { ROOT, liveExams, loadExam, loadGuide, loadServices } = require("./lib/load-data");
+const { esc, ga4Snippet, pageShell, renderQuestionPage, renderHubPage, renderLearnPage, renderLearnIndex } = require("./lib/render");
+
+// マッチャを Node で読み込む
+{
+  const prev = global.window; global.window = {};
+  require(path.join(ROOT, "js", "services-match.js"));
+  var svcMatch = global.window.CERT_SERVICES_MATCH;
+  global.window = prev;
+}
+const services = loadServices();
+
+// ---- サービス台帳バリデーション（fail-fast）----
+// エイリアス一意性は「同一プロバイダ内」で検証する（IAM/VPC等はプロバイダ間で同名のため、
+// マッチングもプロバイダでフィルタして行う）
+const seenAliases = new Map(); // key: provider + " " + alias
+for (const [slug, s] of Object.entries(services)) {
+  if (s.slug !== slug) throw new Error(`services: slug mismatch ${slug}`);
+  if (!s.provider || !s.category || !s.name) throw new Error(`services: missing fields ${slug}`);
+  if (!s.officialUrl || !/^https:\/\//.test(s.officialUrl)) throw new Error(`services: bad officialUrl ${slug}`);
+  for (const a of s.aliases || []) {
+    if (a.length < 3) throw new Error(`services: alias too short "${a}" (${slug})`);
+    const key = s.provider + " " + a;
+    if (seenAliases.has(key)) throw new Error(`services: duplicate alias "${a}" in ${s.provider} (${slug} / ${seenAliases.get(key)})`);
+    seenAliases.set(key, slug);
+  }
+}
+// プロバイダ別の辞書（マッチング用）
+const servicesByProvider = {};
+for (const s of Object.values(services)) {
+  (servicesByProvider[s.provider] = servicesByProvider[s.provider] || {})[s.slug] = s;
+}
+const svcRefs = {};  // slug -> [{examId, examCode, qid, excerpt}]
 
 const config = JSON.parse(fs.readFileSync(path.join(__dirname, "site.config.json"), "utf8"));
 const DIST = path.join(ROOT, "dist");
@@ -55,11 +86,34 @@ for (const info of exams) {
   urls.push(`/exams/${info.id}/`);
 
   exam.questions.forEach((_, i) => {
-    const qp = renderQuestionPage({ config, exam, index: i, liveExamLinks: links });
+    const q = exam.questions[i];
+    const correctText = q.answer.map(ci => q.choices[ci]).join(" ");
+    const svcLinks = svcMatch(correctText, servicesByProvider[info.provider] || {}, 2);
+    const qp = renderQuestionPage({ config, exam, index: i, liveExamLinks: links, svcLinks });
     write(qp.path, qp.html);
     urls.push("/" + qp.path);
     qCount++;
+    svcLinks.forEach(s => (svcRefs[s.slug] = svcRefs[s.slug] || []).push({
+      examId: info.id, examCode: info.code, qid: q.id, excerpt: q.question
+    }));
   });
+}
+
+// ---- 勉強用ページ（learn）----
+if (Object.keys(services).length) {
+  const learnLinks = exams.map(e => ({ href: `../exams/${e.id}/`, label: `${e.code} 試験ガイド` }));
+  for (const s of Object.values(services)) {
+    const refs = svcRefs[s.slug] || [];
+    const related = Object.values(services)
+      .filter(o => o.slug !== s.slug && o.provider === s.provider && o.category === s.category).slice(0, 5);
+    const page = renderLearnPage({ config, service: s, questionRefs: refs.slice(0, 20), totalRefs: refs.length, related, liveExamLinks: learnLinks });
+    write(page.path, page.html);
+    urls.push("/" + page.path);
+  }
+  const refCounts = Object.fromEntries(Object.entries(svcRefs).map(([k, v]) => [k, v.length]));
+  const idx = renderLearnIndex({ config, services, refCounts, liveExamLinks: learnLinks });
+  write(idx.path, idx.html);
+  urls.push("/learn/");
 }
 
 // ---- 必須ページ（privacy / about / contact）----
@@ -109,4 +163,4 @@ ${urls.map(u => `<url><loc>${origin}${u}</loc><lastmod>${today}</lastmod></url>`
 fs.writeFileSync(path.join(DIST, "sitemap.xml"), sitemap);
 fs.writeFileSync(path.join(DIST, "robots.txt"), `User-agent: *\nAllow: /\n\nSitemap: ${origin}/sitemap.xml\n`);
 
-console.log(`build OK: ${exams.length} exams, ${qCount} question pages, ${urls.length} urls`);
+console.log(`build OK: ${exams.length} exams, ${qCount} question pages, ${Object.keys(services).length} services, ${urls.length} urls`);
