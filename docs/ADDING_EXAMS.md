@@ -80,6 +80,29 @@ window.CERT_EXAMS["<exam-id>"] = {
 
 ---
 
+## 手順1.5: 試験ガイドファイルを作成する（推奨）
+
+`js/data/guides/<exam-id>.js` を作成すると、静的生成される試験ハブページ（`exams/<exam-id>/`）に
+試験概要・難易度・勉強法・FAQ が載る。**なくてもビルドは通る**（WARN が出てガイド節が空になるだけ）。
+
+```js
+window.CERT_GUIDES = window.CERT_GUIDES || {};
+window.CERT_GUIDES["<exam-id>"] = {
+  // 各フィールドはプレーンテキストの段落配列（HTML不可。ビルド時にエスケープされて<p>化される）
+  overview: ["試験概要の段落1", "段落2"],
+  difficulty: ["難易度の段落1", "段落2"],
+  studyPlan: ["勉強法の段落1", "段落2", "段落3"],
+  faq: [{ q: "質問", a: "回答" }]   // 4〜6問。FAQPage構造化データになる
+};
+```
+
+試験仕様（出題数・受験料・再受験ポリシー等）は必ず公式情報で確認してから書くこと。
+誤った仕様の記載はサイトの信頼を毀損する。
+
+> 補足: 問題ページ・ハブページ・sitemap は `node tools/build-site.js` が `dist/` に自動生成し、
+> main への push で GitHub Actions がビルド＆デプロイする。手動のページ作成は不要。
+> テストは `node --test "tools/test/*.test.js"`。
+
 ## 手順2: manifest.js にエントリを追加する
 
 `js/data/manifest.js` を開き、該当プロバイダ（aws / gcp / azure）の `exams` 配列にエントリを追加、または既存の `coming-soon` エントリを更新します。
