@@ -22,7 +22,8 @@ for (const [slug, s] of Object.entries(services)) {
   if (!s.provider || !s.category || !s.name) throw new Error(`services: missing fields ${slug}`);
   if (!s.officialUrl || !/^https:\/\//.test(s.officialUrl)) throw new Error(`services: bad officialUrl ${slug}`);
   for (const a of s.aliases || []) {
-    if (a.length < 3) throw new Error(`services: alias too short "${a}" (${slug})`);
+    // 2文字は「英大文字+数字」(S3等) のみ許可。汎用略語(AI/ID等)の誤マッチを防ぐ
+    if (a.length < 3 && !/^[A-Z][0-9]$/.test(a)) throw new Error(`services: alias too short "${a}" (${slug})`);
     const key = s.provider + " " + a;
     if (seenAliases.has(key)) throw new Error(`services: duplicate alias "${a}" in ${s.provider} (${slug} / ${seenAliases.get(key)})`);
     seenAliases.set(key, slug);
