@@ -14,8 +14,21 @@ function ga4Snippet(id) {
 <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag('js',new Date());gtag('config','${esc(id)}');</script>`;
 }
 
+// パンくずリッチリザルト用 BreadcrumbList（items: [{name, path?}]、最終要素はpath省略可）
+function breadcrumbLd(config, items) {
+  const origin = config.origin.replace(/\/$/, "");
+  return {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": items.map((it, i) => ({
+      "@type": "ListItem", "position": i + 1, "name": it.name,
+      ...(it.path ? { "item": origin + it.path } : {})
+    }))
+  };
+}
+
 // liveExamLinks: [{href, label}] — フッターの静的内部リンク（全ハブ）
-function pageShell({ config, title, description, canonicalPath, relRoot, body, jsonLd, liveExamLinks }) {
+function pageShell({ config, title, description, canonicalPath, relRoot, body, jsonLd, liveExamLinks, noindex }) {
   const canonical = config.origin.replace(/\/$/, "") + canonicalPath;
   const verify = config.searchConsoleVerification
     ? `<meta name="google-site-verification" content="${esc(config.searchConsoleVerification)}">` : "";
@@ -36,8 +49,13 @@ function pageShell({ config, title, description, canonicalPath, relRoot, body, j
 <meta property="og:url" content="${esc(canonical)}">
 <meta property="og:type" content="article">
 <meta property="og:site_name" content="${esc(config.siteName)}">
+<meta property="og:image" content="${esc(config.origin.replace(/\/$/, ""))}/assets/og.png">
+<meta name="twitter:card" content="summary_large_image">
 <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='80' font-size='80' fill='%233fe0a4' font-family='monospace'>▸</text></svg>">
-${verify}
+${noindex ? `<meta name="robots" content="noindex">` : ""}${verify}${config.adsenseAccount ? `\n<meta name="google-adsense-account" content="${esc(config.adsenseAccount)}">` : ""}
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+JP:wght@400;500;700&family=JetBrains+Mono:wght@400;600;800&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="${esc(relRoot)}css/style.css">
 <link rel="stylesheet" href="${esc(relRoot)}css/page.css">
 ${ga4Snippet(config.ga4MeasurementId)}
@@ -101,7 +119,8 @@ function renderQuestionPage({ config, exam, index, liveExamLinks, svcLinks }) {
   const prev = exam.questions[index - 1];
   const next = exam.questions[index + 1];
   const examId = exam.meta.id;
-  const title = `【${exam.meta.code} 演習問題】${truncate(q.question, 45)}`;
+  // #番号 を含めて全問題ページの title を一意にする（問題文冒頭の截断による重複防止）
+  const title = `【${exam.meta.code} 演習問題 #${q.id.replace(/^q0*/, "")}】${truncate(q.question, 45)}`;
   const description = truncate(`${exam.meta.code}の本試験レベル演習問題。${q.question}`, 110) + " 全選択肢の解説つき。";
   const answerLabel = q.answer.map(i => LETTERS[i]).join(", ");
   const rel = relatedQuestions(exam, index);
@@ -136,7 +155,11 @@ ${rel.map(r => `<li><a href="${esc(r.id)}.html">${esc(truncate(r.question, 60))}
     config, title, description,
     canonicalPath: `/q/${examId}/${q.id}.html`,
     relRoot: "../../", body,
-    jsonLd: questionJsonLd(exam, q),
+    jsonLd: [questionJsonLd(exam, q), breadcrumbLd(config, [
+      { name: "HOME", path: "/" },
+      { name: `${exam.meta.code} 試験ガイド`, path: `/exams/${examId}/` },
+      { name: q.id }
+    ])],
     liveExamLinks
   });
   return { path: `q/${examId}/${q.id}.html`, html };
@@ -177,14 +200,20 @@ ${guideSections}
 ${exam.questions.map(q => `<li><a href="../../q/${esc(examId)}/${esc(q.id)}.html">${esc(truncate(q.question, 60))}</a></li>`).join("\n")}
 </ol>`;
 
-  const jsonLd = guide && guide.faq && guide.faq.length ? {
+  const lds = [];
+  if (guide && guide.faq && guide.faq.length) lds.push({
     "@context": "https://schema.org",
     "@type": "FAQPage",
     "mainEntity": guide.faq.map(f => ({
       "@type": "Question", "name": f.q,
       "acceptedAnswer": { "@type": "Answer", "text": f.a }
     }))
-  } : null;
+  });
+  lds.push(breadcrumbLd(config, [
+    { name: "HOME", path: "/" },
+    { name: `${exam.meta.code} 試験ガイド` }
+  ]));
+  const jsonLd = lds;
 
   const html = pageShell({
     config, title, description,
@@ -215,7 +244,22 @@ ${questionRefs.map(r => `<li><a href="../q/${esc(r.examId)}/${esc(r.qid)}.html">
 </ul>` : ""}
 ${related && related.length ? `<h2>関連サービス</h2><ul class="q-list">
 ${related.map(r => `<li><a href="${esc(r.slug)}.html">${esc(r.name)}</a></li>`).join("\n")}</ul>` : ""}`;
-  const html = pageShell({ config, title, description, canonicalPath: `/learn/${s.slug}.html`, relRoot: "../", body, liveExamLinks });
+  const jsonLd = [{
+    "@context": "https://schema.org",
+    "@type": "TechArticle",
+    "headline": title,
+    "description": description,
+    "inLanguage": "ja",
+    "about": { "@type": "Thing", "name": s.name },
+    "author": { "@type": "Organization", "name": config.siteName },
+    "publisher": { "@type": "Organization", "name": config.siteName },
+    "mainEntityOfPage": config.origin.replace(/\/$/, "") + `/learn/${s.slug}.html`
+  }, breadcrumbLd(config, [
+    { name: "HOME", path: "/" },
+    { name: "サービス解説", path: "/learn/" },
+    { name: s.name }
+  ])];
+  const html = pageShell({ config, title, description, canonicalPath: `/learn/${s.slug}.html`, relRoot: "../", body, jsonLd, liveExamLinks });
   return { path: `learn/${s.slug}.html`, html };
 }
 

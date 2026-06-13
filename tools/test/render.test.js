@@ -71,7 +71,7 @@ const EXAM = {
 test("renderQuestionPage: title, choices, details, jsonld, nav", () => {
   const { path: p, html } = renderQuestionPage({ config: CONFIG, exam: EXAM, index: 0, liveExamLinks: [] });
   assert.strictEqual(p, "q/aws-saa-c03/q001.html");
-  assert.ok(html.includes("【SAA-C03 演習問題】"));
+  assert.ok(html.includes("【SAA-C03 演習問題 #1】"));      // #番号入りで全ページtitle一意
   assert.ok(html.includes("IAMロールを使う"));
   assert.ok(html.includes("<details"));                          // 解答は折りたたみ
   assert.ok(html.includes("正解: B"));                           // 0始まり→B
@@ -90,7 +90,9 @@ test("renderQuestionPage: multiple answers render as letters", () => {
 test("questionJsonLd via page: multiple answers all present in json-ld", () => {
   const { html } = renderQuestionPage({ config: CONFIG, exam: EXAM, index: 1, liveExamLinks: [] });
   const m = html.match(/<script type="application\/ld\+json">([\s\S]*?)<\/script>/);
-  const ld = JSON.parse(m[1].replace(/<\\\//g, "</"));
+  const parsed = JSON.parse(m[1].replace(/<\\\//g, "</"));
+  // jsonLd は [Quiz, BreadcrumbList] の配列
+  const ld = Array.isArray(parsed) ? parsed.find(x => x["@type"] === "Quiz") : parsed;
   const accepted = ld.hasPart[0].acceptedAnswer;
   assert.ok(Array.isArray(accepted));
   assert.strictEqual(accepted.length, 2);

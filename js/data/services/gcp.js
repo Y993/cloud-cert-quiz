@@ -458,7 +458,7 @@ window.CERT_SERVICES["vertex-ai"] = {
   aliases: ["Vertex AI", "Gemini"],
   officialUrl: "https://cloud.google.com/vertex-ai?hl=ja",
   summary: [
-    "Google Cloud の統合 ML・生成 AI プラットフォーム（現在は Gemini Enterprise Agent Platform とも呼ばれる）。データ準備・モデル学習・評価・デプロイ・モニタリングまでの ML ライフサイクル全体を一つのプラットフォームで管理できる。",
+    "Google Cloud の統合 ML・生成 AI プラットフォーム。データ準備・モデル学習・評価・デプロイ・モニタリングまでの ML ライフサイクル全体を一つのプラットフォームで管理できる。Vertex AI 上で Gemini などの基盤モデルを利用でき、Agent Builder を使えば検索や会話に応答するエージェントの開発までカバーできる。",
     "Gemini をはじめとする Google の基盤モデルを API 経由で呼び出せる Model Garden と、AutoML（ノーコードで分類・回帰・物体検出モデルを作成）を統合。カスタムモデルは Vertex AI Training で学習し Vertex AI Prediction でホスティングする。",
     "Vertex AI Pipelines（Kubeflow ベース）で ML ワークフローをオーケストレーション、Feature Store で特徴量を管理、Vertex Explainability でモデルの予測根拠を説明できる。"
   ],

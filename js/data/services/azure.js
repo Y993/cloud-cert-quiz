@@ -8,7 +8,7 @@ window.CERT_SERVICES["microsoft-entra-id"] = {
   aliases: ["Microsoft Entra ID", "Entra ID", "Privileged Identity Management", "PIM"],
   officialUrl: "https://learn.microsoft.com/ja-jp/entra/identity/",
   summary: [
-    "Microsoft Entra ID（旧称 Azure Active Directory）は、Azureのクラウドベースのアイデンティティおよびアクセス管理サービスだ。ユーザーやグループの管理、アプリケーションへのシングルサインオン（SSO）、多要素認証（MFA）、条件付きアクセスポリシーの適用など、IDに関わる機能を一元的に提供する。",
+    "Microsoft Entra ID（旧称 Azure Active Directory）は、Azureのクラウドベースのアイデンティティおよびアクセス管理サービスだ。ユーザーやグループの管理、アプリケーションへのシングルサインオン（SSO）、多要素認証（MFA）、条件付きアクセスポリシーの適用など、IDに関わる機能を一元的に提供する。改称はすでに浸透しており、試験問題でも現在は旧称（Azure AD）ではなくEntra IDの名称で出題される点に留意したい。",
     "Entra IDはマルチテナント構造を持ち、Microsoft 365やAzureをはじめとするクラウドサービスのほか、SaaSアプリとも統合できる。ディレクトリとして機能するだけでなく、Managed Identityによってアプリやサービスが認証情報をコードに埋め込まずにAzureリソースへアクセスできる仕組みも提供する。",
     "Privileged Identity Management（PIM）はEntra IDの機能の一つで、特権ロール（グローバル管理者など）へのアクセスをジャストインタイムで付与・管理するための機能だ。常時特権を付与せず必要なときだけ昇格させることで、過剰な権限付与によるリスクを低減する。"
   ],
@@ -254,7 +254,7 @@ window.CERT_SERVICES["azure-synapse"] = {
     "Synapse LinkによってCosmos DBやSQL DatabaseなどのトランザクションDBのデータをETLなしでほぼリアルタイムに分析できる。Azure Data Lake Storage Gen2との親和性が高く、ペタバイト規模のデータを処理するHTPAシナリオに適している。"
   ],
   examPoints: [
-    "DP-900ではSynapseが『大規模分析とOLAPワークロードのためのサービス』として位置づけられる。OLTPはAzure SQL DatabaseやCosmos DB、OLAPはSynapseという棲み分けを理解しておく。AZ-900では「データウェアハウスが必要なとき」という設問でSynapseが正解になる。Microsoft FabricとSynapseの関係（FabricはSynapseを統合・進化させた次世代プラットフォーム）も新しい出題ポイントになりつつある。"
+    "DP-900ではSynapseが『大規模分析とOLAPワークロードのためのサービス』として位置づけられる。OLTPはAzure SQL DatabaseやCosmos DB、OLAPはSynapseという棲み分けを理解しておく。AZ-900では「データウェアハウスが必要なとき」という設問でSynapseが正解になる。Microsoft FabricはすでにDP-900の正式な出題範囲で、FabricはSynapseを統合・進化させたSaaS型プラットフォームと位置づけられている。新規のデータ分析基盤はSynapse WorkspaceからFabricへ移行が進んでおり、両者の関係（OneLake・各ワークロードの対応）も問われる。"
   ]
 };
 
@@ -682,11 +682,12 @@ window.CERT_SERVICES["azure-ai-vision"] = {
   aliases: ["Azure AI Vision", "Custom Vision", "Azure AI Face"],
   officialUrl: "https://learn.microsoft.com/ja-jp/azure/ai-services/computer-vision/overview",
   summary: [
-    "Azure AI Visionは、画像・動画の分析に特化したAIサービスだ。物体検出・画像分類・OCR（光学的文字認識）・画像キャプション生成などの機能を提供する。Custom Visionを使うと独自の画像分類・物体検出モデルを、ノーコードで作成・デプロイできる。",
-    "Azure AI Faceは顔検出・顔認識・感情推定などの顔関連のAI機能を提供するサービスで、Azure AI Visionとは別のサービスとして提供される。責任あるAIの観点から、顔認識の本人確認機能は限定的なシナリオのみにアクセス制限がある。"
+    "Azure AI Visionは、画像・動画の分析に特化したAIサービスだ。物体検出・画像分類・OCR（光学的文字認識）・画像キャプション生成などの機能を提供する。現在の中核はImage Analysis 4.0で、キャプション生成・タグ付け・物体検出・OCRといった機能が単一のAPIに統合されている。Custom Visionを使うと独自の画像分類・物体検出モデルを、ノーコードで作成・デプロイできる。",
+    "Azure AI Faceは顔検出・顔認識・感情推定などの顔関連のAI機能を提供するサービスで、Azure AI Visionとは別のサービスとして提供される。責任あるAIの観点から、なりすまし防止のための本人確認（identity verification）など一部の機能は限定的なシナリオのみにアクセス制限（申請制）がかかっている。"
   ],
   examPoints: [
-    "AI-900ではコンピュータービジョンのユースケースを問われる。画像の中に何が写っているか（物体検出・画像分類）、画像内のテキストを読み取る（OCR）、顔を検出・識別する（Face）という3つの用途と対応するサービスを整理しておく。Custom Visionで独自データセットを使ってモデルを訓練できるという点も出題される。"
+    "AI-900ではコンピュータービジョンのユースケースを問われる。画像の中に何が写っているか（物体検出・画像分類）、画像内のテキストを読み取る（OCR）、顔を検出・識別する（Face）という3つの用途と対応するサービスを整理しておく。Custom Visionで独自データセットを使ってモデルを訓練できるという点も出題される。",
+    "Azure AI VisionとDocument Intelligence（旧Form Recognizer）の守備範囲の違いも問われる。Vision/OCRは画像中の文字を「読み取る」までが守備範囲なのに対し、Document Intelligenceは請求書・領収書・身分証・フォームなど構造のある文書から、項目名と値のペアや表をキー・バリューとして「構造化して抽出」することに特化している。『書類から金額や日付を項目として取り出したい』ならDocument Intelligenceが正解になる。"
   ]
 };
 

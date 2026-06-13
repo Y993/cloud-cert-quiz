@@ -43,24 +43,42 @@ const today = new Date().toISOString().slice(0, 10);
 // ---- clean & copy static ----
 fs.rmSync(DIST, { recursive: true, force: true });
 fs.mkdirSync(DIST, { recursive: true });
-for (const rel of ["index.html", "exam.html", "css", "js"]) {
+for (const rel of ["index.html", "exam.html", "builder.html", "css", "js", "assets"]) {
   fs.cpSync(path.join(ROOT, rel), path.join(DIST, rel), { recursive: true });
 }
 fs.writeFileSync(path.join(DIST, ".nojekyll"), "");
+// 独自ドメイン用 CNAME（gh-pages へ force-push してもドメインが外れないよう毎回出力する）。
+// origin が github.io サブパスのときは出さない（プロジェクトページのまま）
+{
+  const host = new URL(config.origin).hostname;
+  if (!host.endsWith("github.io")) fs.writeFileSync(path.join(DIST, "CNAME"), host + "\n");
+}
 
 // 既存LP/プレイヤーにGA4・検証タグ・canonicalを注入
 function injectHead(file, canonicalPath) {
   const p = path.join(DIST, file);
   let html = fs.readFileSync(p, "utf8");
-  const canonical = config.origin.replace(/\/$/, "") + canonicalPath;
+  const origin = config.origin.replace(/\/$/, "");
+  const canonical = origin + canonicalPath;
   const verify = config.searchConsoleVerification
     ? `<meta name="google-site-verification" content="${esc(config.searchConsoleVerification)}">` : "";
+  // 既存の <title>/<meta description> から OGP を組み立てる（値はHTML上ですでにエスケープ済み）
+  const ogTitle = (html.match(/<title>([^<]*)<\/title>/) || [])[1] || esc(config.siteName);
+  const ogDesc = (html.match(/<meta name="description" content="([^"]*)"/) || [])[1] || "";
+  const og = `<meta property="og:title" content="${ogTitle}">
+<meta property="og:description" content="${ogDesc}">
+<meta property="og:url" content="${esc(canonical)}">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="${esc(config.siteName)}">
+<meta property="og:image" content="${esc(origin)}/assets/og.png">
+<meta name="twitter:card" content="summary_large_image">`;
   html = html.replace("</head>",
-    `<link rel="canonical" href="${esc(canonical)}">${verify}${ga4Snippet(config.ga4MeasurementId)}</head>`);
+    `<link rel="canonical" href="${esc(canonical)}">${og}${verify}${ga4Snippet(config.ga4MeasurementId)}</head>`);
   fs.writeFileSync(p, html);
 }
 injectHead("index.html", "/");
 injectHead("exam.html", "/exam.html");
+injectHead("builder.html", "/builder.html");
 
 // ---- generate pages ----
 function write(relPath, html) {
@@ -70,7 +88,7 @@ function write(relPath, html) {
 }
 
 const exams = liveExams();
-const urls = ["/", "/exam.html"];
+const urls = ["/", "/exam.html", "/builder.html"];
 let qCount = 0;
 
 for (const info of exams) {
@@ -121,15 +139,15 @@ if (Object.keys(services).length) {
 const topLinks = exams.map(e => ({ href: `exams/${e.id}/`, label: `${e.code} 試験ガイド` }));
 const staticPages = [
   {
-    file: "about.html", title: "運営者情報 | CLOUDCERT_",
-    desc: "CLOUDCERT_ の運営者情報。",
+    file: "about.html", title: "運営者情報 | CLOUDCERT_ — クラウド資格の無料演習サイト",
+    desc: "CLOUDCERT_（クラウドサート）の運営者情報。AWS・Google Cloud・Azure のクラウド認定資格を本試験レベルのオリジナル問題で学習できる無料サイトの目的とポリシーを掲載しています。",
     body: `<h1>運営者情報</h1>
 <p>CLOUDCERT_（クラウドサート）は、AWS・Google Cloud・Azure のクラウド認定資格を本試験レベルのオリジナル演習問題で学習できる無料サイトです。</p>
 <p>収録している問題はすべて当サイトが独自に作成したオリジナル問題であり、実際の試験問題の転載・複製ではありません。各認定試験の名称は各社の商標です。当サイトは各ベンダーの公式サイトではありません。</p>`
   },
   {
-    file: "privacy.html", title: "プライバシーポリシー | CLOUDCERT_",
-    desc: "CLOUDCERT_ のプライバシーポリシー。",
+    file: "privacy.html", title: "プライバシーポリシー | CLOUDCERT_ — クラウド資格の無料演習サイト",
+    desc: "CLOUDCERT_ のプライバシーポリシー。アクセス解析・広告配信での Cookie の利用方針と、演習履歴がブラウザ内（localStorage）にのみ保存されサーバーに送信されないことを説明しています。",
     body: `<h1>プライバシーポリシー</h1>
 <h2>アクセス解析について</h2>
 <p>当サイトは Google アナリティクスを利用しています。トラフィックデータは匿名で収集されており、個人を特定するものではありません。詳細は Google のポリシーをご確認ください。</p>
@@ -140,8 +158,8 @@ const staticPages = [
 <p>制定日: ${today}</p>`
   },
   {
-    file: "contact.html", title: "お問い合わせ | CLOUDCERT_",
-    desc: "CLOUDCERT_ へのお問い合わせ方法。",
+    file: "contact.html", title: "お問い合わせ | CLOUDCERT_ — クラウド資格の無料演習サイト",
+    desc: "CLOUDCERT_ へのお問い合わせ方法。収録問題の誤りのご指摘・機能のご要望・掲載に関するご連絡は GitHub Issues からお寄せください。",
     body: `<h1>お問い合わせ</h1>
 <p>問題の誤りのご指摘・ご要望は、GitHub リポジトリの Issue までお寄せください。</p>
 <p><a href="https://github.com/Y993/cloud-cert-quiz/issues" rel="noopener">GitHub Issues を開く</a></p>`
@@ -153,6 +171,21 @@ for (const sp of staticPages) {
     canonicalPath: "/" + sp.file, relRoot: "", body: sp.body, liveExamLinks: topLinks
   }));
   urls.push("/" + sp.file);
+}
+
+// ---- 404 ページ（GitHub Pages は任意の深さのURLで 404.html を返すため、リンクは絶対URLにする）----
+{
+  const o = config.origin.replace(/\/$/, "");
+  const links404 = exams.map(e => ({ href: `${o}/exams/${e.id}/`, label: `${e.code} 試験ガイド` }));
+  write("404.html", pageShell({
+    config, title: "404 Not Found | CLOUDCERT_",
+    description: "お探しのページは見つかりませんでした。",
+    canonicalPath: "/404.html", relRoot: o + "/", liveExamLinks: links404, noindex: true,
+    body: `<h1><span style="color:var(--accent,#3fe0a4)">404</span> — NOT FOUND</h1>
+<p>お探しのページは見つかりませんでした。URLが変更されたか、削除された可能性があります。</p>
+<p><a href="${o}/">トップページ</a> から演習したい試験を選ぶか、<a href="${o}/learn/">サービス解説一覧</a> をご覧ください。</p>`
+  }));
+  // 404.html は sitemap に載せない
 }
 
 // ---- sitemap & robots ----

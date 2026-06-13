@@ -1,7 +1,8 @@
 {
-  "origin": "https://y993.github.io/cloud-cert-quiz",
+  "origin": "https://cloudcert.app",
   "siteName": "CLOUDCERT_",
   "siteTagline": "クラウド資格 演習ターミナル",
-  "ga4MeasurementId": "",
+  "ga4MeasurementId": "G-SZR5CB5Q3X",
+  "adsenseAccount": "ca-pub-5647574947191958",
   "searchConsoleVerification": ""
 }

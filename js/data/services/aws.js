@@ -26,7 +26,8 @@ window.CERT_SERVICES["amazon-ec2"] = {
     "購入オプションはオンデマンド・リザーブドインスタンス・スポットインスタンス・Savings Plansの4種。Auto ScalingとELBを組み合わせて可用性とコスト効率を両立させる構成が基本。"
   ],
   examPoints: [
-    "SAAではオンデマンド／リザーブド／スポットの使い分けが必ず出題される。定常負荷はリザーブド、中断可能なバッチ処理はスポット、突発増加にはAuto Scalingという組み合わせを覚える。",
+    "SAAではオンデマンド／リザーブド／スポットの使い分けが必ず出題される。定常負荷はリザーブド（またはSavings Plans）、中断可能なバッチ処理はスポット、突発増加にはAuto Scalingという組み合わせを覚える。スポットを大量・多様なインスタンスタイプで束ねて目標キャパシティを維持するSpot Fleet（およびEC2 Fleet）も、中断耐性のあるワークロードのコスト最適化として問われる。",
+    "Dedicated HostsとDedicated Instancesの違いも頻出。どちらも物理ハードウェアを占有する（マルチテナントを避ける）が、Dedicated Hostsは物理ソケット・コア単位まで可視化・指定でき、ソケット/コア課金のソフトウェア（WindowsやSQL Serverなど）を持ち込むBYOLライセンス対応に使う。Dedicated Instancesは占有はするが物理サーバーの可視性まではない、という差で選ぶ。",
     "EC2 vs Lambda の使い分けでは「15分超の処理」「ステートフルな常駐処理」「OS操作が必要」ならEC2、という判断軸が引っかけの核心。",
     "インスタンスメタデータのIMDSv2必須化、セキュリティグループ（ステートフル）とNACL（ステートレス）の違いも頻出。"
   ]
@@ -41,8 +42,9 @@ window.CERT_SERVICES["aws-elastic-beanstalk"] = {
     "サポート言語はJava・.NET・PHP・Node.js・Python・Ruby・Go・Docker。内部リソースへのアクセス権は保持しており、必要に応じてカスタム設定（.ebextensions）で制御可能。"
   ],
   examPoints: [
-    "SAAでは「インフラ管理を最小限にしたい」「コードだけ渡せば動かしたい」というシナリオで選ぶ。ECSやEC2直接構成より運用負荷が低いが、Lambdaとは「常時稼働が必要かどうか」で使い分ける。",
-    "Blue/GreenデプロイはElastic Beanstalk環境のURLスワップで実現する点、ローリングアップデート中の稼働インスタンス数に関する設問が頻出。"
+    "SAAでは「インフラ管理を最小限にしたい」「コードだけ渡せば動かしたい」というシナリオで選ぶ。ECSやEC2直接構成より運用負荷が低いが、Lambdaとは「常時稼働が必要かどうか」で使い分ける。カスタム設定は.ebextensions（YAML/JSONの設定ファイル）で行う。",
+    "Blue/GreenデプロイはElastic Beanstalk環境のURLスワップで実現する点、ローリングアップデート中の稼働インスタンス数に関する設問が頻出。",
+    "デプロイポリシーの違いはDVAで頻出。All at once（全インスタンス同時更新で最速だが一時的に全断）、Rolling（バッチ単位で順次更新しキャパシティが一時的に低下）、Rolling with additional batch（追加バッチを先に立ててから更新するためキャパシティを維持）、Immutable（新しいインスタンス群を別途立ててから入れ替えるためロールバックが安全）という、速度・キャパシティ維持・ロールバック容易性のトレードオフで選ぶ。"
   ]
 };
 
@@ -56,8 +58,9 @@ window.CERT_SERVICES["amazon-ecs"] = {
   ],
   examPoints: [
     "ECS vs EKS の使い分けが頻出。「Kubernetes互換が必要・既存K8sワークロードの移行」ならEKS、「AWSネイティブで簡単にコンテナを動かしたい」ならECS。",
-    "Fargateを使うと「EC2インスタンスのパッチ管理が不要」になる点が試験で問われる。EC2起動タイプとFargateの料金モデル・管理責任の違いも確認しておく。",
-    "SAPではタスクロール（コンテナがAWSリソースにアクセスする権限）とタスク実行ロール（ECSエージェントがECRからイメージを取得する権限）の区別が問われる。"
+    "Fargateを使うと「EC2インスタンスのパッチ管理が不要」になる点が試験で問われる。EC2起動タイプとFargateの料金モデル・管理責任の違いも確認しておく。FargateはECS専用ではなくEKSでも使える点、そしてネットワークモードがawsvpc固定でタスクごとにENIが付与され、セキュリティグループをタスク単位で設定できる点が引っかけになりやすい。",
+    "SAPではタスクロール（コンテナがAWSリソースにアクセスする権限）とタスク実行ロール（ECSエージェントがECRからイメージを取得する権限）の区別が問われる。",
+    "DVAではECS Exec（SSHを使わず稼働中コンテナにシェルで入りデバッグする機能）と、Service Connect（ECSサービス間をサービス検出付きで接続し、メッシュ的な通信とメトリクス取得を簡素化する機能）も新しめの出題ポイントとして押さえておきたい。"
   ]
 };
 
@@ -67,11 +70,11 @@ window.CERT_SERVICES["amazon-eks"] = {
   officialUrl: "https://docs.aws.amazon.com/ja_jp/eks/latest/userguide/what-is-eks.html",
   summary: [
     "AWS上でKubernetesを実行するためのマネージドサービス。コントロールプレーン（マスターノード）の管理をAWSが担い、ユーザーはワーカーノードのみを管理する。",
-    "ノードグループはEC2（セルフマネージド・マネージド）またはFargate（サーバーレス）で構成できる。EKS Anywhereでオンプレミスやエッジでも同じKubernetes環境を動かせる。"
+    "ノードグループはEC2（セルフマネージド・マネージド）またはFargate（サーバーレス）で構成できる。Fargateを使う場合はFargateプロファイルで「どの名前空間・ラベルのPodをFargateで動かすか」を定義する。データプレーンやアドオン・スケーリングまでAWS側に任せるEKS Auto Modeも選べ、EKS Anywhereならオンプレミスやエッジでも同じKubernetes環境を動かせる。"
   ],
   examPoints: [
     "「既存のKubernetesワークロードをAWSに移行したい」「Kubernetesの標準APIが必要」というシナリオではEKSを選ぶ。ECSとの最大の違いはKubernetes互換性の有無。",
-    "SAPではマルチクラスター管理・EKS Distroとの関係・IAM Roles for Service Accounts（IRSA）によるPodへのIAM権限付与が問われる。"
+    "SAPではマルチクラスター管理・EKS Distroとの関係・IAM Roles for Service Accounts（IRSA）によるPodへのIAM権限付与が問われる。IRSAはKubernetesのサービスアカウントとIAMロールをOIDCで紐づけ、ノード単位ではなくPod単位で最小権限のIAMを与える仕組みで、最小特権を実現する手段としてよく出る。"
   ]
 };
 
@@ -85,7 +88,8 @@ window.CERT_SERVICES["amazon-ecr"] = {
   ],
   examPoints: [
     "ECSやEKSと組み合わせるコンテナ構成の問題で「どこにイメージを保存するか」という問いにはECRを選ぶ。DockerHubとの比較ではIAM統合・VPC内通信（PrivateLink）のメリットが引っかけになる。",
-    "クロスアカウントでのイメージ共有にはリポジトリポリシーを使う点、パブリックギャラリー（ECR Public）の存在も確認しておく。"
+    "クロスアカウントでのイメージ共有にはリポジトリポリシーを使う点、誰でも無償で公開イメージを取得できるECR Public Gallery（パブリックレジストリ）の存在も確認しておく。",
+    "DVAではイミュータブルタグ（同じタグへの上書きpushを禁止し、latestのようなタグが指すイメージが変わらないようにする設定）と、クロスリージョンレプリケーション（リージョン障害対策や各リージョンでのpull高速化のためにイメージを自動複製するレプリケーション設定）が頻出。前者は再現性、後者は可用性とレイテンシ最適化のためという目的の違いで問われる。"
   ]
 };
 
@@ -114,7 +118,8 @@ window.CERT_SERVICES["amazon-ebs"] = {
   ],
   examPoints: [
     "EBS vs EFS vs S3 の使い分けが最頻出。「EC2から単独マウント・ブロックI/O・高IOPS」ならEBS、「複数EC2から同時マウント・NFS」ならEFS、「オブジェクト保存・HTTPアクセス」ならS3。",
-    "EBSは同一AZ内でしか使えない（マルチアタッチはio1/io2の一部で同一AZ内のみ）という制約が引っかけになる。スナップショットはAZ非依存でS3に保管される。"
+    "汎用SSDのgp2とgp3の比較も頻出。gp3はgp2より約2割安いうえ、IOPSとスループットをボリュームサイズと切り離して独立に設定できる（gp2は容量に比例してIOPSが増える仕組み）ため、容量は不要だが高IOPSが欲しいケースでコスト効率が良い。",
+    "EBSは同一AZ内でしか使えないという制約が引っかけになる。複数のEC2から同時にアタッチするMulti-Attachはio1/io2に限られ、しかも同一AZ内に限定される。スナップショットはAZ非依存でS3に保管され、誤って削除したスナップショットはRecycle Bin（保持ルールを設定しておけば一定期間内は復元可能）で救済できる。"
   ]
 };
 
@@ -128,7 +133,8 @@ window.CERT_SERVICES["amazon-efs"] = {
   ],
   examPoints: [
     "「複数EC2が同じファイルシステムを共有したい」「コンテンツ管理システム・ホームディレクトリ」のシナリオではEFSを選ぶ。EBSとの最大の違いは「マルチインスタンス同時接続」の有無。",
-    "EFS vs FSx for Windows File ServerはSMBプロトコルが必要かどうかで判断する。Linux/NFSならEFS、WindowsファイルサーバーならFSx for Windowsという使い分けが頻出。"
+    "EFS vs FSx for Windows File ServerはSMBプロトコルが必要かどうかで判断する。Linux/NFSならEFS、WindowsファイルサーバーならFSx for Windowsという使い分けが頻出。",
+    "運用機能として、アクセスポイント（アプリごとに固定のPOSIXユーザーやルートディレクトリを強制し、コンテナやサーバーレスから安全に共有する仕組み）、別リージョンへ自動コピーするリージョン間レプリケーション（DR用途）も押さえる。スループットモードでは、ワークロードに応じて自動で性能が伸縮するElasticモードが標準的な推奨で、容量に比例するBurstingや手動指定のProvisionedとの違いが問われる。"
   ]
 };
 
@@ -201,7 +207,8 @@ window.CERT_SERVICES["amazon-redshift"] = {
   ],
   examPoints: [
     "「大量の構造化データを分析したい」「ETL後のデータを集計・レポーティングしたい」シナリオではRedshiftを選ぶ。OLTPはRDS、OLAPはRedshiftという使い分けが基本軸。",
-    "AthenはS3への即時アドホッククエリ、RedshiftはDWH的な定常的な大規模分析という違いが問われる。Redshift Spectrumを使う場合でも結果はRedshiftクラスター経由となる点に注意。"
+    "AthenaはS3への即時アドホッククエリ、RedshiftはDWH的な定常的な大規模分析という違いが問われる。Redshift Spectrum（S3上のデータをロードせず直接クエリ）を使う場合でも結果はRedshiftクラスター経由となる点に注意。",
+    "ノードタイプではRA3が定番で、コンピュートとストレージを分離（マネージドストレージにデータを置き、必要な分だけクラスターにキャッシュ）するため、容量とノード数を独立に増やせる。読み取りの同時実行が増えたときだけ一時的にクラスターを自動増設するConcurrency Scaling、クラスター管理自体が不要なRedshift Serverlessも、ワークロードの変動とコストのトレードオフで選ぶ対象として問われる。"
   ]
 };
 
@@ -214,8 +221,8 @@ window.CERT_SERVICES["amazon-athena"] = {
     "CSV・JSON・Parquet・ORC・Avroなど多様なフォーマットをサポート。GlueデータカタログをメタデータストアとしてGlue ETLパイプラインと組み合わせるパターンが一般的。"
   ],
   examPoints: [
-    "「S3上のログやCSVを即席でSQL分析したい」「サーバーレス・スキーマオンリード」のシナリオではAthenaを選ぶ。事前のデータロードが不要な点がRedshiftとの大きな違い。",
-    "コスト削減にはParquet/ORC形式へのデータ変換（スキャン量削減）とパーティション設定が有効。この最適化はSAA・SAPで頻出のベストプラクティス問題として問われる。"
+    "「S3上のログやCSVを即席でSQL分析したい」「サーバーレス・スキーマオンリード」のシナリオではAthenaを選ぶ。事前のデータロードが不要な点がRedshiftとの大きな違い。Federated Query（Lambdaコネクタ経由でRDS・DynamoDB・オンプレDBなどS3以外のデータソースも同じSQLで横断的にクエリできる）の存在も押さえる。",
+    "Athenaの課金はスキャンしたデータ量に対してなので、コスト削減策がそのまま試験のベストプラクティス問題になる。具体的には、行指向のCSV/JSONよりParquet/ORCなど列指向フォーマットに変換すると必要な列だけ読むためスキャン量が激減し、日付などでパーティションを切ればWHERE句で対象パーティションだけを読むようになる。同じクエリを再実行する場合はクエリ結果の再利用（一定時間内はキャッシュ結果を返しスキャンしない）も効く。"
   ]
 };
 
@@ -225,11 +232,11 @@ window.CERT_SERVICES["aws-glue"] = {
   officialUrl: "https://docs.aws.amazon.com/ja_jp/glue/latest/dg/what-is-glue.html",
   summary: [
     "フルマネージドのETL（Extract, Transform, Load）サービス。データカタログによるメタデータ管理と、Apache Sparkベースのサーバーレスジョブ実行環境を提供する。",
-    "Glueクローラーがデータソース（S3・RDS等）を自動スキャンしてスキーマを推定しカタログに登録する。Glue Data Qualityでデータ品質ルールを定義して検証できる。"
+    "Glueクローラーがデータソース（S3・RDS等）を自動スキャンしてスキーマを推定しカタログに登録する。スキーマ・テーブル定義を保持するData CatalogはGlue単体のものではなく、AthenaやEMR・Redshift Spectrumとも共有される横断的なメタデータストアという位置づけが重要だ。ジョブに組み込めるGlue Data Qualityで品質ルールを定義・検証でき、ノーコードでデータをクレンジング・正規化するDataBrew、複数ジョブとクローラーを依存関係つきで束ねるWorkflowも備える。"
   ],
   examPoints: [
     "「S3のデータをETLしてRedshiftやAthenaで分析」という定番パターンではGlueが登場する。Glueカタログ＋Athenaの組み合わせはAWS分析スタックの基本として問われる。",
-    "Glue vs DMS の使い分けはETL（データ変換・集計）かデータ移行（DB間のレプリケーション）かで判断する。Glue StudioはノーコードのビジュアルETL設計ツール。"
+    "Glue vs DMS の使い分けはETL（データ変換・集計）かデータ移行（DB間のレプリケーション）かで判断する。コンソールに統合されたビジュアルETLエディタ（旧Glue Studio相当の機能）を使えば、変換処理をドラッグ&ドロップで組み立ててSparkコードを自動生成できる。"
   ]
 };
 
@@ -243,6 +250,7 @@ window.CERT_SERVICES["amazon-kinesis"] = {
   ],
   examPoints: [
     "Data Streams（カスタムリアルタイム処理・複数コンシューマー）とFirehose（バッファリングして配信・変換はLambdaのみ）の違いが最頻出。SQSとの比較では「順序保証・時間遡及・複数コンシューマー」のキーワードでKinesisを選ぶ。",
+    "ストリームに対してSQLや時間ウィンドウ集計を行うマネージドな処理基盤は、現在はAmazon Managed Service for Apache Flink（旧Kinesis Data Analytics。旧名のサービスは新規作成できない）が現行解となる。「ストリームをリアルタイムに集計・分析する」要件ではFlinkを思い出したい。",
     "SAPでは「IoT/ログのリアルタイム集計」シナリオでKinesis Data Streams＋Lambda＋DynamoDBの構成が問われる。Hot Shard（特定シャードへの偏り）対策としてパーティションキーの分散が重要。"
   ]
 };
@@ -389,7 +397,8 @@ window.CERT_SERVICES["amazon-sns"] = {
     "SNSフィルタリングポリシーで、サブスクライバーごとに受信するメッセージを属性でフィルタリングできる。FIFO SNSトピックでFIFO SQSへの順序保証ファンアウトも可能。"
   ],
   examPoints: [
-    "「1つのイベントを複数の処理系に同時配信したい」シナリオではSNSを選ぶ。SNS→SQS→Lambdaというファンアウトパターン（SNS FanoutアーキテクチャとSQSバッファの組み合わせ）はSAAの定番問題。",
+    "「1つのイベントを複数の処理系に同時配信したい」シナリオではSNSを選ぶ。代表的なファンアウト構成は、1つのSNSトピックに複数のSQSキューをサブスクライブさせ、各キューの先にそれぞれ別のLambdaやワーカーをぶら下げる形だ。キュー側でバッファリング・再試行・DLQができるため、処理系ごとに独立してスケール・リトライできるのが利点になる。",
+    "サブスクリプションごとにメッセージ属性で受信対象を絞るフィルタリングポリシーを使えば、1トピックから条件に合うサブスクライバーにだけ配信できる。順序保証・重複排除が必要ならSNS FIFOトピックを使い、配信先もFIFO SQSにする（FIFO同士でしか組めない）点を押さえる。",
     "SNSは配信先がオフラインの場合メッセージを失う（永続化しない）という引っかけに注意。永続化が必要な場合はSQSをサブスクライバーにする設計で対応する。"
   ]
 };
@@ -404,7 +413,8 @@ window.CERT_SERVICES["amazon-eventbridge"] = {
   ],
   examPoints: [
     "「AWSサービスのイベント（EC2状態変化・S3バケットイベント・CodePipelineの完了）に反応して処理を起動したい」シナリオではEventBridgeを選ぶ。CloudWatch Eventsの後継であることも確認しておく。",
-    "SaaSアプリ（Zendesk・Datadog等）のイベントを受け取れるパートナーイベントバス機能はSAPで問われる。SNSとの使い分けは「イベントフィルタリング・複雑なルーティング・スケジューリング」が必要かどうか。"
+    "SaaSアプリ（Zendesk・Datadog等）のイベントを受け取れるパートナーイベントバス機能はSAPで問われる。SNS/SQSとの使い分けが頻出で、内容（イベントパターン）に応じた高度なフィルタリングや複数ターゲットへのルーティング・SaaS連携が要るならEventBridge、単純な高スループットのファンアウト通知ならSNS、バッファして1コンシューマーで確実に処理するならSQS、という軸で選ぶ。",
+    "周辺機能も押さえる。cron/rate式での定期実行に特化したEventBridge Scheduler（数百万スケジュール・1回限り実行にも対応）、イベントをいったん保存しておき後から再投入できるArchive and Replay（障害後の再処理やバグ修正後のリプレイに使う）、ソースとターゲットを直接つなぎ途中で変換・フィルタもできるEventBridge Pipesといった機能の役割を整理しておく。"
   ]
 };
 
@@ -418,7 +428,8 @@ window.CERT_SERVICES["aws-step-functions"] = {
   ],
   examPoints: [
     "「複数のLambdaを順次または並列に実行して複雑なビジネスプロセスを管理したい」シナリオではStep Functionsを選ぶ。Lambdaのオーケストレーションをコード（Lambdaチェーン）で書くのは依存関係管理が煩雑になるため、Step Functionsが推奨される。",
-    "SAP・DVAでは実行履歴の保持（Standard）・Expressの非同期実行・SDKインテグレーションによるLambda以外のサービス直接呼び出しが問われる。"
+    "ステートの使い分けがDVAで問われる。条件分岐はChoice、配列の各要素に同じ処理を繰り返すのはMap、複数ブランチを同時実行するのはParallel。エラー処理は、各ステートにRetry（指定回数・バックオフで再試行）とCatch（特定エラー時に別ステートへ遷移）を宣言的に書ける点が、Lambda内に自前で書くより堅牢という文脈で出る。",
+    "SAP・DVAでは実行履歴の保持（Standard）・Expressの非同期実行・SDKインテグレーションによるLambda以外のサービス直接呼び出しが問われる。Standard（長時間・厳密に1回・履歴保存・低スループット）とExpress（短時間・大量・低コスト・至少1回）の使い分けは頻出で、注文処理のような長いワークフローはStandard、IoTやストリーム取り込みのような大量・短命なイベントはExpressが目安。"
   ]
 };
 
@@ -504,7 +515,8 @@ window.CERT_SERVICES["amazon-guardduty"] = {
   ],
   examPoints: [
     "「不正なAPIコール検出」「マルウェア感染したEC2の検知」「外部の悪意あるIPとの通信検出」シナリオではGuardDutyを選ぶ。Security Hubと組み合わせてFindings集約、Macieと組み合わせてデータ保護が定番構成。",
-    "GuardDutyはあくまで「検出」サービスであり、自動ブロックはしない。自動対応にはEventBridge+Lambdaによる実装が必要という点が引っかけ。"
+    "分析対象のデータソースが問われる。基盤となるのはCloudTrailの管理イベント（不審なAPIコール）・VPCフローログ（怪しい通信先）・DNSログ（マルウェアが使うドメインへの名前解決）で、いずれもエージェント不要でログから検出する点がポイント。さらにEKS監査ログやS3データイベント、RDSログイン異常など保護プランを追加で有効化できる。",
+    "Malware Protection機能を使うと、Findingの起点になったEC2のEBSボリュームをスキャンしてマルウェアの有無を確認したり、S3にアップロードされたオブジェクトをスキャンしたりできる。ただしGuardDutyはあくまで「検出」サービスであり、自動ブロックはしない。自動対応にはEventBridge+Lambdaによる実装が必要という点が引っかけになる。"
   ]
 };
 
@@ -518,7 +530,8 @@ window.CERT_SERVICES["amazon-macie"] = {
   ],
   examPoints: [
     "「S3に格納された個人情報（PII）や機密データを検出したい」「GDPRやPCI DSSのコンプライアンス対応」シナリオではMacieを選ぶ。GuardDutyは脅威検出、MacieはS3データ分類という役割の違いを明確にしておく。",
-    "Macieの検出対象はS3のみである点が引っかけ。他のストレージサービスへの対応はない。"
+    "Macieの検出対象はS3のみである点が引っかけ。MacieはS3のオブジェクト内容をスキャンして機密データを分類することに特化しており、EBSやRDSなど他のストレージは対象外という割り切りがそのまま「S3専用」という出題になる。",
+    "検出結果（Finding）はEventBridgeに発行されるため、Security Hubに集約して他のセキュリティFindingとまとめたうえでEventBridge→SNS/Lambdaで通知・自動修復につなぐ構成が定番だ。複数アカウントではOrganizations経由で委任管理者を立て、組織全体のS3を一元的に評価する。"
   ]
 };
 
@@ -531,8 +544,8 @@ window.CERT_SERVICES["aws-security-hub"] = {
     "CIS AWS Foundations Benchmark・AWS基礎的セキュリティベストプラクティス・PCI DSS等の標準コンプライアンスチェックを自動実行してスコアを算出する。"
   ],
   examPoints: [
-    "「複数のセキュリティサービスの検出結果を1ヵ所で管理したい」「コンプライアンス状況を一元チェックしたい」シナリオではSecurity Hubを選ぶ。GuardDutyやMacieとはインプット（それらの結果を集約する）という位置づけ。",
-    "SAPでは複数アカウント・複数リージョンのFindingsをOrganizations統合で集約する構成が問われる。"
+    "「複数のセキュリティサービスの検出結果を1ヵ所で管理したい」「コンプライアンス状況を一元チェックしたい」シナリオではSecurity Hubを選ぶ。GuardDutyやMacieとはインプット（それらの結果を集約する）という位置づけ。各サービスやサードパーティがバラバラの形式で出すFindingを、ASFF（AWS Security Finding Format）という統一フォーマットに正規化して集約するため、横断的に優先度付けや検索ができる。",
+    "SAPでは複数アカウント・複数リージョンのFindingsをOrganizations統合で集約する構成が問われる。Organizationsで委任管理者アカウントを指定すると、管理アカウントに依存せず専用のセキュリティアカウントで組織全体のFindingを管理できる。さらに自動化ルール（Automation Rules）を使えば、条件に合致したFindingの重大度を自動で更新したり抑制したりして、ノイズを減らしつつ運用を回せる。"
   ]
 };
 
@@ -545,8 +558,9 @@ window.CERT_SERVICES["aws-waf"] = {
     "CloudFront・ALB・API Gateway・AppSync・Cognito User Poolsにアタッチできる。AWS Managed Rules（マネージドルールグループ）を使うとすぐに主要な攻撃パターンに対応できる。"
   ],
   examPoints: [
-    "「DDoS・SQLインジェクション・レート制限・IP許可/拒否リスト」シナリオではWAFを選ぶ。AWS Shieldとの使い分けはWAFがL7アプリケーション攻撃対策、ShieldがL3/L4のDDoS軽減という役割分担が頻出。",
-    "WAFはネットワークACLやセキュリティグループと異なりHTTPコンテンツを検査できる点が試験問題の鍵になる。"
+    "「DDoS・SQLインジェクション・レート制限・IP許可/拒否リスト」シナリオではWAFを選ぶ。AWS Shieldとの使い分けはWAFがL7アプリケーション攻撃対策、ShieldがL3/L4のDDoS軽減という役割分担が頻出。Shield Advancedに加入するとDDoS時のコスト補償や専用チーム支援が付く点も問われる。",
+    "WAFはネットワークACLやセキュリティグループと異なりHTTPコンテンツを検査できる点が試験問題の鍵になる。",
+    "自前でルールを書かなくても、AWS Managed Rules（OWASP相当のCommon Rule Set、既知の不正IPリスト、SQLインジェクション対策などのルールグループ）を有効化すれば主要な攻撃にすぐ対応できる。自動化ボットの判定にはBot Controlを使う。許可/拒否（Allow/Block）に加えて、人間かどうかを確かめるCAPTCHAアクションや、裏でブラウザに課題を解かせて自動化を弾くChallengeアクションも選べる点が新しめの出題ポイントだ。"
   ]
 };
 
@@ -603,8 +617,9 @@ window.CERT_SERVICES["aws-organizations"] = {
   ],
   examPoints: [
     "SAPでは「マルチアカウント管理・SCPによるガードレール・一括請求」が頻出テーマ。SCPとIAMの評価順序（SCPが上位で最大権限を制限する）は引っかけの核心。",
-    "SCPはルートアカウントを含む全アカウントに適用できるが、マスターアカウント（管理アカウント）自身にはSCPが効かないという重要な制約を覚えておく。",
-    "AWS Control Tower・AWS Config・Security Hubとの統合でマルチアカウントのガバナンス基盤を構築する構成がSAPで問われる。"
+    "SCPはルートアカウントを含む全アカウントに適用できるが、マスターアカウント（管理アカウント）自身にはSCPが効かないという重要な制約を覚えておく。ポリシーはSCPだけではなく、リソースのタグ付けを標準化するタグポリシーや、AIサービスのデータ利用をオプトアウトするAIサービスオプトアウトポリシー、バックアップポリシーなど複数の種類がある点も押さえる。",
+    "一括請求（Consolidated Billing）では組織内全アカウントの使用量が合算されるため、S3やデータ転送のように使うほど単価が下がるボリュームディスカウントや、RI/Savings Plansの割引を組織横断で共有できるメリットがある。",
+    "Control Towerは、Organizationsを土台にランディングゾーン（複数アカウントの初期構成）を自動構築し、ガードレール（裏でSCPやConfigルールとして実装される予防的・発見的統制）を一括適用するマネージドな上位サービス、という関係を理解しておく。Control Tower・Config・Security Hubとの統合でマルチアカウントのガバナンス基盤を構築する構成がSAPで問われる。"
   ]
 };
 
@@ -646,7 +661,8 @@ window.CERT_SERVICES["aws-x-ray"] = {
   ],
   examPoints: [
     "DVAでは「マイクロサービスのボトルネックを特定したい」「どのサービスでレイテンシが発生しているか可視化したい」シナリオでX-Rayを選ぶ。CloudWatchはメトリクス監視、X-Rayは分散トレーシングという役割分担を明確にする。",
-    "サンプリングルールで収集するトレースの割合を制御してコストを管理する方法・セグメントとサブセグメントの概念がDVAで問われる。"
+    "用語の使い分けが頻出。セグメントは1サービスが処理したリクエスト全体の記録、サブセグメントはその中の個別の下流呼び出し（DB問い合わせや外部API）を細かく刻んだもの。アノテーションはキー・バリューでインデックスされフィルター式での検索に使えるのに対し、メタデータはインデックスされず検索対象にならない補足情報という違いを押さえる。",
+    "全リクエストを記録するとコストとオーバーヘッドが増えるため、サンプリングルール（例: 毎秒最初の1件＋残りの何%、のように固定レート＋割合で指定）で収集対象を絞る。デフォルトのサンプリングと独自ルールの優先順位もDVAで問われる。"
   ]
 };
 
@@ -659,8 +675,8 @@ window.CERT_SERVICES["aws-trusted-advisor"] = {
     "無料のBASICチェック（セキュリティ7項目・サービス制限など）と、ビジネス/エンタープライズサポートプランで利用できるフルチェックがある。"
   ],
   examPoints: [
-    "CLFでは「AWSのベストプラクティスへの準拠を確認する」サービスとして登場。コスト削減（使われていないEBSボリューム・RIの利用率）・セキュリティ（MFAなし・公開S3バケット）の自動チェックが主な用途。",
-    "フルチェックにはBusinessサポート以上が必要という制約と、Configとの使い分け（Trusted Advisorはベストプラクティス推奨、Configはカスタムコンプライアンスルール）がSAAで問われる。"
+    "CLFでは「AWSのベストプラクティスへの準拠を確認する」サービスとして登場。具体的なチェック項目としては、アタッチされていない未使用のElastic IP、誰でもアクセスできる公開S3バケット、ルートアカウントにMFAが設定されていない、SSH/RDPを全開放したセキュリティグループ、サービスクォータへの接近などが定番例だ。",
+    "フルチェックにはBusiness/Enterpriseサポートプラン以上が必要で、無料のBasicでは限られた項目しか見えないという制約を押さえる。EC2/EBS/Lambdaなどを実利用メトリクスから分析して最適なサイズ・タイプを推奨するのはCompute Optimizer、横断的なベストプラクティス点検はTrusted Advisor、カスタムなコンプライアンスルールはConfig、という三者の使い分けがSAA・CLFで問われる。"
   ]
 };
 
@@ -673,8 +689,9 @@ window.CERT_SERVICES["aws-cost-explorer"] = {
     "コスト予測（最大12ヵ月）とRI/Savings Plansの購入推奨機能により、コスト最適化の意思決定を支援する。Anomaly Detectionで異常なコスト増加を自動検知できる。"
   ],
   examPoints: [
-    "CLFでは「AWSの課金を分析・可視化したい」シナリオでCost Explorerを選ぶ。AWS Budgets（予算アラート設定）・Cost and Usage Report（詳細な生データ）との使い分けが問われる。",
-    "コスト配分タグを使ってプロジェクト・部門別にコストを分類する仕組みと、タグを有効化しないと集計できないという制約も確認しておく。"
+    "CLFでは「AWSの課金を分析・可視化したい」シナリオでCost Explorerを選ぶ。AWS Budgets（予算アラート設定）・Cost and Usage Report（詳細な生データ）との使い分けが問われる。Cost Explorerは過去傾向の可視化と将来予測、Savings PlansやRIの購入推奨（どれだけ買えばどれだけ削減できるか）を担う分析寄りのサービス、Budgetsは予算しきい値の超過監視という役割分担で整理する。",
+    "コスト配分タグを使ってプロジェクト・部門別にコストを分類する仕組みと、タグを有効化しないと集計できないという制約も確認しておく。",
+    "想定外のコスト急増を機械学習で自動検知するのはCost Anomaly Detection、しきい値超過時にIAMポリシーのアタッチやEC2/RDSの停止といった対処まで自動実行するのはBudgets Actionsという、検知系と能動的アクション系の使い分けも押さえておきたい。"
   ]
 };
 
@@ -716,8 +733,9 @@ window.CERT_SERVICES["amazon-comprehend"] = {
     "カスタム分類器とカスタムエンティティ認識器を独自のトレーニングデータで作成し、業界固有の分類に対応できる。バッチ処理（S3入力）とリアルタイム処理の両方をサポート。"
   ],
   examPoints: [
-    "AIFでは「テキスト分析・センチメント分析・PII検出」のユースケースでComprehendを選ぶ。Rekognition（画像・動画）・Textract（ドキュメントOCR）・Transcribe（音声→テキスト）・Translate（翻訳）との役割分担を整理しておく。",
-    "PII検出と削除機能はGDPRコンプライアンス対応で問われる。Comprehend Medicalは医療テキスト特化の別サービスである点も確認しておく。"
+    "AIFでは「テキスト分析・センチメント分析・PII検出」のユースケースでComprehendを選ぶ。Rekognition（画像・動画）・Textract（ドキュメントOCR）・Transcribe（音声→テキスト）・Translate（翻訳）との役割分担を整理しておく。抽出できるエンティティタイプ（人名・場所・組織・日付・数量など）の例や、独自ラベルで文書を仕分けるカスタム分類、業界固有の用語を拾うカスタムエンティティ認識といった機能も押さえる。",
+    "PII検出と削除機能はGDPRコンプライアンス対応で問われる。診療記録など医療テキストに特化したComprehend Medicalは別サービスとして用意されている点も確認しておく。",
+    "近年はBedrock Guardrailsでも有害コンテンツのフィルタリングやPII検出・マスキングができるようになっており、AIFでは『生成AIの入出力を守るならGuardrails、汎用のテキスト分析・分類ならComprehend』という使い分けが問われる。"
   ]
 };
 
@@ -726,7 +744,7 @@ window.CERT_SERVICES["aws-codepipeline"] = {
   aliases: ["CodePipeline"],
   officialUrl: "https://docs.aws.amazon.com/ja_jp/codepipeline/latest/userguide/welcome.html",
   summary: [
-    "ソースコードの変更からビルド・テスト・デプロイまでのCI/CDパイプラインをフルマネージドで自動化するサービス。CodeCommit・GitHub・S3をソース、CodeBuildをビルド、CodeDeployをデプロイステージとして連携する。",
+    "ソースコードの変更からビルド・テスト・デプロイまでのCI/CDパイプラインをフルマネージドで自動化するサービス。GitHub・Bitbucket・S3などをソース、CodeBuildをビルド、CodeDeployをデプロイステージとして連携する（AWS CodeCommitは新規利用ができなくなったため、現在はGitHub等の外部リポジトリ連携が主流）。",
     "パイプラインの各ステージに承認アクション（手動承認）を追加し、プロダクションへのデプロイを制御できる。EventBridgeと統合してパイプライン状態の通知が可能。"
   ],
   examPoints: [
@@ -744,7 +762,8 @@ window.CERT_SERVICES["aws-codebuild"] = {
     "ビルド環境はAWS提供のマネージドイメージ（Ubuntu・Amazon Linux等）またはカスタムDockerイメージを指定できる。VPC内での実行もサポートし、プライベートリポジトリやデータベースへのアクセスが可能。"
   ],
   examPoints: [
-    "DVAではbuildspec.ymlの構造（phases: install/pre_build/build/post_build）・環境変数のSecrets Managerからの注入・キャッシュ設定（S3キャッシュ・ローカルキャッシュ）によるビルド高速化が頻出。",
+    "DVAではbuildspec.ymlの構造（phases: install/pre_build/build/post_build、出力を残すartifacts、再利用するcache）・環境変数のSecrets Manager/Parameter Storeからの注入・キャッシュ設定（S3キャッシュ・ローカルキャッシュ）によるビルド高速化が頻出。",
+    "buildspecのreportsセクションでユニットテスト結果やカバレッジを出力すると、テストレポート機能でコンソール上にレポートグループとして集計・可視化できる。さらにCodeBuildローカルエージェント（Docker上でCodeBuild環境を再現）を使えば、push前に手元でbuildspecを検証できる点も押さえておく。",
     "CodeBuildはビルドの実行時間に対して課金（ビルドが走っていないときはコストゼロ）であり、Jenkins等のセルフホストCI環境とのコスト比較で問われることがある。"
   ]
 };
@@ -758,8 +777,8 @@ window.CERT_SERVICES["aws-codedeploy"] = {
     "デプロイ設定はIn-Place（既存インスタンスを順次更新）・Blue/Green（新環境に切り替え）の2戦略をサポート。ロールバックはデプロイ失敗時またはCloudWatchアラームで自動トリガーできる。"
   ],
   examPoints: [
-    "DVAではIn-PlaceとBlue/Greenのトレードオフ（停止時間・コスト・ロールバック速度）が頻出。Lambda向けのデプロイ設定ではLinear（段階的）・Canary（カナリア）・AllAtOnce（一括）の3種類の使い分けを覚える。",
-    "「EC2にCodeDeployエージェントをインストールする必要がある」「ECSのBlue/GreenデプロイはCodeDeployとALBを組み合わせる」という仕組みがDVAで問われる。"
+    "DVAではIn-PlaceとBlue/Greenのトレードオフ（停止時間・コスト・ロールバック速度）が頻出。デプロイ設定の具体名も問われ、Canary（最初に一部へ流し問題なければ残りを一括、例: Canary10Percent5Minutes）、Linear（一定間隔で少しずつ比率を上げる、例: Linear10PercentEvery1Minute）、AllAtOnce（一括）という挙動の違いを覚える。",
+    "対象プラットフォームによって使える戦略が異なる点が引っかけ。EC2/オンプレはIn-PlaceまたはBlue/Greenでエージェント（CodeDeployエージェント）の導入が必要、LambdaとECSはトラフィックの重み付け切り替えによるBlue/Green（Canary/Linear/AllAtOnce）が中心で、ECSのBlue/GreenはCodeDeployとALB（リスナーの切り替え）を組み合わせる、という仕組みがDVAで問われる。"
   ]
 };
 
