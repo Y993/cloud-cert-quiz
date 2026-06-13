@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>クラウド構成図ビルダー（AWS / GCP / Azure） | CLOUDCERT_ — サービスを繋いで構成を理解する</title>
+  <meta name="description" content="AWS・Google Cloud・Azure の主要サービスをドラッグ＆ドロップで配置し、線で繋いで構成図を作成。どこ と どこ を繋いで何を設定するのかが一目でわかる学習用ビルダー。無料・登録不要。">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+JP:wght@400;500;700&family=JetBrains+Mono:wght@400;600;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/builder.css">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='80' font-size='80' fill='%233fe0a4' font-family='monospace'>▸</text></svg>">
+  <meta name="google-adsense-account" content="ca-pub-5647574947191958">
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-SZR5CB5Q3X"></script>
+  <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag('js',new Date());gtag('config','G-SZR5CB5Q3X');</script>
+</head>
+<body class="builder-page">
+
+  <!-- ===== ヘッダー ===== -->
+  <header class="site-header">
+    <div class="container">
+      <a class="brand" href="index.html">
+        <span class="prompt">&gt;</span>CLOUDCERT<span class="cursor"></span>
+      </a>
+      <nav class="nav">
+        <a href="index.html#exams">exams</a>
+        <a href="learn/">learn</a>
+      </nav>
+    </div>
+  </header>
+
+  <div class="mobile-note">⚠ 作図（ドラッグ操作）はPC向けです。スマホでは下のタブで AWS / GCP / Azure を切り替えて、テンプレートや共有リンクの閲覧ができます。</div>
+
+  <!-- ===== ツールバー ===== -->
+  <div class="builder-toolbar">
+    <h1 class="tb-title">ARCH BUILDER</h1>
+    <span class="tb-beta">BETA</span>
+    <nav class="provider-tabs">
+      <a class="ptab" data-p="aws" href="builder.html">AWS</a>
+      <a class="ptab" data-p="gcp" href="builder.html?p=gcp">GCP</a>
+      <a class="ptab" data-p="azure" href="builder.html?p=azure">Azure</a>
+    </nav>
+    <span class="spacer"></span>
+    <select class="tb-select" id="tplSelect">
+      <option value="">テンプレートを読み込む…</option>
+    </select>
+    <span class="tb-group">
+      <button class="tb-btn icon" id="btnUndo" title="元に戻す (Ctrl+Z)" disabled>↶</button>
+      <button class="tb-btn icon" id="btnRedo" title="やり直す (Ctrl+Y)" disabled>↷</button>
+    </span>
+    <span class="tb-group">
+      <button class="tb-btn icon" id="btnZoomOut" title="縮小 (Ctrl+ホイール)">−</button>
+      <button class="tb-btn icon" id="btnZoomReset" title="100% に戻す">100%</button>
+      <button class="tb-btn icon" id="btnZoomIn" title="拡大 (Ctrl+ホイール)">＋</button>
+      <button class="tb-btn icon" id="btnZoomFit" title="構成図全体が見えるように調整">FIT</button>
+    </span>
+    <button class="tb-btn" id="btnTidy" title="接続の流れに沿ってレイアウトを自動整列（Ctrl+Z で戻せる）">⠿ 整列</button>
+    <button class="tb-btn" id="btnShare" title="この構成図を開ける共有リンクをコピー">共有リンク</button>
+    <button class="tb-btn" id="btnX" title="X (Twitter) で共有">𝕏</button>
+    <button class="tb-btn" id="btnPng" title="現在の構成図をPNG画像で保存">PNG保存</button>
+    <button class="tb-btn danger" id="btnClear" title="すべてのノードと接続を削除">全消去</button>
+    <button class="tb-btn icon" id="btnHelp" title="ショートカット一覧 (?)">?</button>
+    <span class="tb-save" id="saveState"></span>
+  </div>
+
+  <!-- ===== 本体 ===== -->
+  <div class="builder-main">
+
+    <!-- パレット -->
+    <aside class="palette" id="palette">
+      <input class="pal-search" id="palSearch" type="search" placeholder="サービスを検索…" autocomplete="off">
+      <div id="palRoot"><!-- JSで描画 --></div>
+      <p class="pal-hint">サービスをキャンバスへドラッグ（クリックでも追加）。ノードの端の ● を別のノードへドラッグすると接続できます。</p>
+    </aside>
+
+    <!-- キャンバス -->
+    <div class="canvas-cell">
+      <div class="canvas-wrap" id="canvasWrap">
+        <div class="canvas-sizer" id="canvasSizer">
+          <div class="canvas" id="canvas">
+            <div class="canvas-layer" id="groupLayer"></div>
+            <svg id="edgeLayer" width="2000" height="1400" xmlns="http://www.w3.org/2000/svg"></svg>
+            <div class="canvas-layer" id="nodeLayer"></div>
+          </div>
+        </div>
+      </div>
+      <div class="canvas-legend" id="canvasLegend"><!-- JSで描画（線種ラベルはプロバイダごと） --></div>
+    </div>
+
+    <!-- インスペクタ -->
+    <aside class="inspector" id="inspector"></aside>
+
+  </div>
+
+  <!-- ショートカットヘルプ -->
+  <div class="kbd-help" id="kbdHelp" hidden>
+    <div class="kbd-card">
+      <h3>// SHORTCUTS</h3>
+      <table>
+        <tr><td><kbd>Delete</kbd></td><td>選択中のノード / 線 / 枠を削除</td></tr>
+        <tr><td><kbd>Ctrl</kbd>+<kbd>Z</kbd> / <kbd>Ctrl</kbd>+<kbd>Y</kbd></td><td>元に戻す / やり直す</td></tr>
+        <tr><td><kbd>Ctrl</kbd>+<kbd>D</kbd></td><td>選択中のノード / 枠を複製</td></tr>
+        <tr><td><kbd>↑↓←→</kbd></td><td>選択中の要素を微移動（<kbd>Shift</kbd> で 1px）</td></tr>
+        <tr><td><kbd>Ctrl</kbd>+ホイール</td><td>カーソル位置を中心にズーム</td></tr>
+        <tr><td><kbd>Space</kbd>+ドラッグ</td><td>キャンバスを掴んで移動（中ボタンでも可）</td></tr>
+        <tr><td>ダブルクリック</td><td>ノードに表示名を付ける（Webサーバー 等）</td></tr>
+        <tr><td><kbd>Esc</kbd></td><td>選択解除 / このヘルプを閉じる</td></tr>
+      </table>
+      <button class="tb-btn" id="kbdClose">閉じる (Esc)</button>
+    </div>
+  </div>
+
+  <script>
+    // ?p=gcp / ?p=azure で台帳とサービス解説を切り替えて読み込む（無指定は aws）。
+    // 3プロバイダ分を常時読むとデータが重いので、選択中のものだけ同期ロードする。
+    (function () {
+      var p = (location.search.match(/[?&]p=(gcp|azure)/) || [])[1] || "aws";
+      document.write('<script src="js/data/services/' + p + '.js"><\/script>');
+      document.write('<script src="js/data/arch/' + p + '.js"><\/script>');
+    })();
+  </script>
+  <script src="js/builder-core.js"></script>
+  <script src="js/builder.js"></script>
+</body>
+</html>
