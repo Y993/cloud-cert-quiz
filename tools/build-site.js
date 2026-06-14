@@ -1,8 +1,8 @@
 // tools/build-site.js — dist/ に公開サイト一式を生成する
 const fs = require("fs");
 const path = require("path");
-const { ROOT, liveExams, loadExam, loadGuide, loadServices } = require("./lib/load-data");
-const { esc, ga4Snippet, pageShell, renderQuestionPage, renderHubPage, renderLearnPage, renderLearnIndex } = require("./lib/render");
+const { ROOT, liveExams, loadExam, loadGuide, loadServices, loadCatalog } = require("./lib/load-data");
+const { esc, ga4Snippet, pageShell, renderQuestionPage, renderHubPage, renderLearnPage, renderLearnIndex, renderGuideIndex } = require("./lib/render");
 
 // マッチャを Node で読み込む
 {
@@ -163,6 +163,15 @@ ${list}`;
     canonicalPath: "/career/", relRoot: "../", body: idxBody, liveExamLinks: careerLinks
   }));
   urls.push("/career/");
+}
+
+// ---- 資格ガイド（guide）= 上位流入ピラー（全試験ハブへ内部リンク）----
+{
+  const catalog = loadCatalog();
+  const guideLinks = exams.map(e => ({ href: `../exams/${e.id}/`, label: `${e.code} 試験ガイド` }));
+  const g = renderGuideIndex({ config, catalog, liveExamLinks: guideLinks });
+  write(g.path, g.html);
+  urls.push("/guide/");
 }
 
 // ---- 必須ページ（privacy / about / contact）----

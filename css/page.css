@@ -68,3 +68,4 @@
 /* 詳細：公式ドキュメントボタン */
 .official-btn { display: inline-block; font-family: var(--font-mono, monospace); font-size: .85rem; padding: 9px 16px; border-radius: var(--radius-sm, 9px); border: 1px solid var(--accent, #3fe0a4); color: var(--accent, #3fe0a4); transition: background .2s, color .2s; }
 .official-btn:hover { background: var(--accent, #3fe0a4); color: #04130c; }
+.muted-note { color: var(--muted, #8c96ad); font-size: .85rem; }

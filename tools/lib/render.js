@@ -68,7 +68,7 @@ ${body}
 </main>
 <footer class="page-footer">
 <nav class="hub-nav">${hubNav}</nav>
-<nav class="site-nav"><a href="${esc(relRoot)}learn/">サービス解説</a><a href="${esc(relRoot)}career/">キャリア</a><a href="${esc(relRoot)}about.html">運営者情報</a><a href="${esc(relRoot)}privacy.html">プライバシーポリシー</a><a href="${esc(relRoot)}contact.html">お問い合わせ</a></nav>
+<nav class="site-nav"><a href="${esc(relRoot)}guide/">資格ガイド</a><a href="${esc(relRoot)}learn/">サービス解説</a><a href="${esc(relRoot)}career/">キャリア</a><a href="${esc(relRoot)}about.html">運営者情報</a><a href="${esc(relRoot)}privacy.html">プライバシーポリシー</a><a href="${esc(relRoot)}contact.html">お問い合わせ</a></nav>
 <p class="copy">© CLOUDCERT_ — 本サイトは各認定試験の公式試験ではなく、収録問題はすべてオリジナルの演習問題です。</p>
 </footer>
 </body>
@@ -297,4 +297,65 @@ function renderLearnIndex({ config, services, refCounts, liveExamLinks }) {
   return { path: "learn/index.html", html };
 }
 
-module.exports = { esc, truncate, ga4Snippet, pageShell, renderQuestionPage, relatedQuestions, renderHubPage, renderLearnPage, renderLearnIndex };
+// ----- 資格ガイド（上位流入ピラー）-----
+const LEVEL_LABEL = {
+  Foundational: "入門（Foundational）",
+  Associate: "アソシエイト（Associate）",
+  Professional: "プロフェッショナル（Professional）",
+  Specialty: "専門（Specialty）"
+};
+const LEVEL_ORDER = ["Foundational", "Associate", "Professional", "Specialty"];
+
+function renderGuideIndex({ config, catalog, liveExamLinks }) {
+  const title = "クラウド資格の一覧と難易度・選び方 ― AWS / Azure / GCP";
+  const description = truncate("AWS・Azure・GCPのクラウド資格を難易度別に一覧。未経験はどれから取るべきか、各資格の概要と勉強の順番を、本試験レベルの無料演習へのリンクつきで整理。", 130);
+
+  let providerSections = "";
+  for (const p of (catalog.providers || [])) {
+    const live = (p.exams || []).filter(e => e.status === "available");
+    if (!live.length) continue;
+    const byLevel = {};
+    for (const e of live) (byLevel[e.level] = byLevel[e.level] || []).push(e);
+    let inner = `<h2 class="provider-head"><span class="provider-name">${esc(p.name)}</span><span class="provider-count">${live.length}資格</span></h2>`;
+    if (p.tagline) inner += `\n<p class="muted-note">${esc(p.tagline)}</p>`;
+    for (const lvl of LEVEL_ORDER) {
+      const list = byLevel[lvl];
+      if (!list || !list.length) continue;
+      inner += `\n<h3 class="cat-head">${esc(LEVEL_LABEL[lvl] || lvl)}</h3>
+<table class="domain-table">
+<tr><th>資格</th><th>概要</th><th>演習</th></tr>
+${list.map(e => `<tr><td><a href="../exams/${esc(e.id)}/">${esc(e.code)}</a><br><span class="muted-note">${esc(e.titleJa)}</span></td><td>${esc(e.description || "")}</td><td><a href="../exams/${esc(e.id)}/">${e.questionCount}問 →</a></td></tr>`).join("\n")}
+</table>`;
+    }
+    providerSections += `\n<section class="svc-provider" data-provider="${esc(p.id)}">${inner}\n</section>`;
+  }
+
+  const faq = [
+    { q: "クラウド資格、未経験はどれから取るべき？", a: "まず入門級を1つ。AWS中心ならCLF-C02、Azure中心ならAZ-900、GCPならCDL（Cloud Digital Leader）。基礎で全体像をつかんでから、アソシエイト級（SAA-C03など）へ進むほうが結局は速い。" },
+    { q: "AWS・Azure・GCP、どれを選べばいい？", a: "求人数とシェアが最大のAWSが無難。勤務先がMicrosoft系ならAzure、データ/AI志向ならGCPやAI系資格も選択肢。1つ取れば考え方は他クラウドにも応用が利く。" },
+    { q: "資格だけで転職できる？", a: "資格は書類通過を助けるが、決め手は「手を動かした証拠」。資格に加えて小さな構築物と演習で実力を示すのが近道。" }
+  ];
+
+  const body = `
+<nav class="breadcrumb"><a href="../index.html">HOME</a> › 資格ガイド</nav>
+<h1>${esc(title)}</h1>
+<p class="lead">AWS・Azure・GCPのクラウド資格を、難易度別に整理しました。「未経験はどれから？」の答えと、各資格の概要・勉強の順番を、本試験レベルの無料演習へのリンクつきでまとめています。</p>
+<h2>難易度は3〜4層で考える</h2>
+<p>クラウド資格は大きく、入門（Foundational）→ アソシエイト（Associate）→ プロフェッショナル／専門（Professional / Specialty）の順に難しくなります。まずは入門で「全体像と用語」を、アソシエイトで「設計・運用の判断」を身につけるのが王道です。</p>
+<h2>未経験はどれから？</h2>
+<p>結論、<strong>入門級を1つ取ってから、アソシエイトへ</strong>。AWSで始めるなら CLF-C02 → SAA-C03 が定番。Azure中心なら AZ-900 → AZ-104、GCPなら CDL → ACE。いきなりアソシエイトを狙うより、入門で土台を作るほうが遠回りに見えて速い。転職で評価されやすいのはアソシエイト以上、とくに SAA-C03。</p>
+${providerSections}
+<div class="cta-box"><a class="btn btn-primary" href="../index.html">▸ 演習する試験を選ぶ</a></div>
+<h2>よくある質問</h2>
+${faq.map(f => `<h3>${esc(f.q)}</h3><p>${esc(f.a)}</p>`).join("\n")}`;
+
+  const jsonLd = [
+    { "@context": "https://schema.org", "@type": "FAQPage", "mainEntity": faq.map(f => ({ "@type": "Question", "name": f.q, "acceptedAnswer": { "@type": "Answer", "text": f.a } })) },
+    breadcrumbLd(config, [{ name: "HOME", path: "/" }, { name: "資格ガイド" }])
+  ];
+
+  const html = pageShell({ config, title, description, canonicalPath: "/guide/", relRoot: "../", body, jsonLd, liveExamLinks });
+  return { path: "guide/index.html", html };
+}
+
+module.exports = { esc, truncate, ga4Snippet, pageShell, renderQuestionPage, relatedQuestions, renderHubPage, renderLearnPage, renderLearnIndex, renderGuideIndex };
