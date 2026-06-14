@@ -68,7 +68,7 @@ ${body}
 </main>
 <footer class="page-footer">
 <nav class="hub-nav">${hubNav}</nav>
-<nav class="site-nav"><a href="${esc(relRoot)}learn/">サービス解説</a><a href="${esc(relRoot)}about.html">運営者情報</a><a href="${esc(relRoot)}privacy.html">プライバシーポリシー</a><a href="${esc(relRoot)}contact.html">お問い合わせ</a></nav>
+<nav class="site-nav"><a href="${esc(relRoot)}learn/">サービス解説</a><a href="${esc(relRoot)}career/">キャリア</a><a href="${esc(relRoot)}about.html">運営者情報</a><a href="${esc(relRoot)}privacy.html">プライバシーポリシー</a><a href="${esc(relRoot)}contact.html">お問い合わせ</a></nav>
 <p class="copy">© CLOUDCERT_ — 本サイトは各認定試験の公式試験ではなく、収録問題はすべてオリジナルの演習問題です。</p>
 </footer>
 </body>
@@ -225,19 +225,29 @@ ${exam.questions.map(q => `<li><a href="../../q/${esc(examId)}/${esc(q.id)}.html
 
 const PROVIDER_LABEL = { aws: "AWS", gcp: "Google Cloud", azure: "Microsoft Azure" };
 
+// 一覧カード用の一行説明（summaryの最初の文）
+function svcLead(s, n = 72) {
+  const first = (Array.isArray(s.summary) ? s.summary[0] : s.summary) || "";
+  const head = String(first).split("。")[0];
+  return head && head.length <= n ? head + "。" : truncate(first, n);
+}
+
 function renderLearnPage({ config, service, questionRefs, totalRefs, related, liveExamLinks }) {
   const s = service;
   const title = `${s.name}とは？試験に出るポイントと演習問題`;
   const descSuffix = totalRefs > 0 ? `登場する演習問題${totalRefs}問と公式ドキュメントへのリンクつき。` : `公式ドキュメントへのリンクつき。`;
   const description = truncate(`${s.name}（${PROVIDER_LABEL[s.provider] || s.provider}）の要点と資格試験での問われ方を解説。${descSuffix}`, 130);
+  const summary = Array.isArray(s.summary) ? s.summary : (s.summary ? [s.summary] : []);
   const body = `
 <nav class="breadcrumb"><a href="../index.html">HOME</a> › <a href="./">サービス解説</a> › ${esc(s.name)}</nav>
-<div class="q-meta"><span>${esc(PROVIDER_LABEL[s.provider] || s.provider)}</span><span>${esc(s.category)}</span></div>
+<div class="learn-head">
+<div class="badges"><span class="badge" data-provider="${esc(s.provider)}">${esc(PROVIDER_LABEL[s.provider] || s.provider)}</span><span class="badge">${esc(s.category)}</span>${totalRefs > 0 ? `<span class="badge badge-q">演習${totalRefs}問</span>` : ""}</div>
 <h1>${esc(s.name)}とは</h1>
-${paras(s.summary)}
+</div>
+${summary.length ? `<p class="lead">${esc(summary[0])}</p>` : ""}${summary.length > 1 ? "\n" + paras(summary.slice(1)) : ""}
+<p><a class="official-btn" href="${esc(s.officialUrl)}" target="_blank" rel="noopener">公式ドキュメント →</a></p>
 <h2>試験での問われ方</h2>
 ${paras(s.examPoints)}
-<p class="official-link"><a href="${esc(s.officialUrl)}" target="_blank" rel="noopener">公式ドキュメントを読む →</a></p>
 ${questionRefs && questionRefs.length ? `<h2>このサービスが登場する演習問題（${totalRefs}問）</h2>
 <ul class="q-list">
 ${questionRefs.map(r => `<li><a href="../q/${esc(r.examId)}/${esc(r.qid)}.html">【${esc(r.examCode)}】${esc(truncate(r.excerpt, 60))}</a></li>`).join("\n")}
@@ -272,14 +282,16 @@ function renderLearnIndex({ config, services, refCounts, liveExamLinks }) {
     (byProvider[s.provider] = byProvider[s.provider] || {});
     (byProvider[s.provider][s.category] = byProvider[s.provider][s.category] || []).push(s);
   }
-  let body = `<nav class="breadcrumb"><a href="../index.html">HOME</a> › サービス解説</nav>\n<h1>クラウドサービス解説</h1>\n<p>資格試験に頻出するサービスを、試験での問われ方つきで解説。各ページから公式ドキュメントと演習問題に飛べる。</p>`;
+  let body = `<nav class="breadcrumb"><a href="../index.html">HOME</a> › サービス解説</nav>\n<h1>クラウドサービス解説</h1>\n<p class="lead">AWS・Google Cloud・Azure の頻出サービスを、ひとことの説明・試験での問われ方・演習問題への導線つきで。知らないサービスもここで当たりがつく。</p>`;
   for (const prov of Object.keys(byProvider)) {
-    body += `\n<h2>${esc(PROVIDER_LABEL[prov] || prov)}</h2>`;
+    const provCount = Object.values(byProvider[prov]).reduce((a, c) => a + c.length, 0);
+    body += `\n<section class="svc-provider" data-provider="${esc(prov)}">\n<h2 class="provider-head"><span class="provider-name">${esc(PROVIDER_LABEL[prov] || prov)}</span><span class="provider-count">${provCount}サービス</span></h2>`;
     for (const cat of Object.keys(byProvider[prov])) {
-      body += `\n<h3>${esc(cat)}</h3>\n<ul class="q-list">\n` +
+      body += `\n<h3 class="cat-head">${esc(cat)}</h3>\n<div class="svc-grid">\n` +
         byProvider[prov][cat].map(s =>
-          `<li><a href="${esc(s.slug)}.html">${esc(s.name)}</a>（演習${(refCounts && refCounts[s.slug]) || 0}問）</li>`).join("\n") + "\n</ul>";
+          `<a class="svc-card" data-provider="${esc(s.provider)}" href="${esc(s.slug)}.html"><span class="svc-card-name">${esc(s.name)}</span><span class="svc-card-desc">${esc(svcLead(s))}</span><span class="svc-card-foot"><span>演習${(refCounts && refCounts[s.slug]) || 0}問</span><span class="arrow">→</span></span></a>`).join("\n") + "\n</div>";
     }
+    body += `\n</section>`;
   }
   const html = pageShell({ config, title, description, canonicalPath: "/learn/", relRoot: "../", body, liveExamLinks });
   return { path: "learn/index.html", html };

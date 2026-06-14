@@ -135,15 +135,56 @@ if (Object.keys(services).length) {
   urls.push("/learn/");
 }
 
+// ---- キャリア記事（career）= 高単価（転職/スクール）の受け皿 ----
+{
+  const careerArticles = require("./content/career");
+  const careerLinks = exams.map(e => ({ href: `../exams/${e.id}/`, label: `${e.code} 試験ガイド` }));
+  const DISCLOSURE = `<p class="aff-disclosure">本ページには広告（アフィリエイトプログラムによる紹介）を含みます。掲載内容は運営者の調査と方針に基づくもので、紹介報酬の有無で評価を変えていません。</p>`;
+  for (const a of careerArticles) {
+    const body = `<nav class="breadcrumb"><a href="../index.html">HOME</a> › <a href="./">キャリア</a> › ${esc(a.title)}</nav>
+${DISCLOSURE}
+${a.body}
+${DISCLOSURE}`;
+    write(`career/${a.slug}.html`, pageShell({
+      config, title: a.title, description: a.description,
+      canonicalPath: `/career/${a.slug}.html`, relRoot: "../", body, liveExamLinks: careerLinks
+    }));
+    urls.push(`/career/${a.slug}.html`);
+  }
+  const items = careerArticles.map(a => `<li><a href="${esc(a.slug)}.html">${esc(a.title)}</a></li>`).join("\n");
+  const list = careerArticles.length ? `<ul class="career-index">\n${items}\n</ul>` : `<p>記事は準備中です。</p>`;
+  const idxBody = `<nav class="breadcrumb"><a href="../index.html">HOME</a> › キャリア</nav>
+<h1>キャリア</h1>
+<p>クラウド/AI資格を取った"後"の話。未経験からの転職や、学習の進め方を、運営者の調査と実体験をもとにまとめています。</p>
+${list}`;
+  write("career/index.html", pageShell({
+    config, title: "キャリア｜クラウド資格を取った後の転職・学習 | CLOUDCERT_",
+    description: "クラウド/AI資格取得後のキャリア。未経験からの転職や学習の進め方を、運営者の調査と実体験をもとにまとめます。",
+    canonicalPath: "/career/", relRoot: "../", body: idxBody, liveExamLinks: careerLinks
+  }));
+  urls.push("/career/");
+}
+
 // ---- 必須ページ（privacy / about / contact）----
 const topLinks = exams.map(e => ({ href: `exams/${e.id}/`, label: `${e.code} 試験ガイド` }));
 const staticPages = [
   {
     file: "about.html", title: "運営者情報 | CLOUDCERT_ — クラウド資格の無料演習サイト",
-    desc: "CLOUDCERT_（クラウドサート）の運営者情報。AWS・Google Cloud・Azure のクラウド認定資格を本試験レベルのオリジナル問題で学習できる無料サイトの目的とポリシーを掲載しています。",
+    desc: "クラウド資格を独学で取得しながら学習ツールを作る個人「黒眼鏡」が運営する CLOUDCERT_ の運営者情報。本試験レベルの無料演習サイトを作った理由と、問題作成・プライバシーの方針を掲載しています。",
     body: `<h1>運営者情報</h1>
-<p>CLOUDCERT_（クラウドサート）は、AWS・Google Cloud・Azure のクラウド認定資格を本試験レベルのオリジナル演習問題で学習できる無料サイトです。</p>
-<p>収録している問題はすべて当サイトが独自に作成したオリジナル問題であり、実際の試験問題の転載・複製ではありません。各認定試験の名称は各社の商標です。当サイトは各ベンダーの公式サイトではありません。</p>`
+<p>CLOUDCERT_（クラウドサート）は、AWS・Google Cloud・Azure のクラウド認定資格を、本試験レベルのオリジナル演習問題で学習できる無料サイトです。運営しているのは <strong>黒眼鏡（くろめがね）</strong> という個人で、クラウドの資格を独学で取得しながら、自分のための学習ツールを作っています。</p>
+<h2>このサイトを作った理由</h2>
+<p>資格の勉強をしていて、ずっと不満だったことがあります。「本番と同じレベルで、何度でも演習できる無料の場所」がどこにも見つからなかったことです。市販の問題集は本番より易しかったり、無料のものは選択肢ごとの解説が薄かったりで、肝心の「なぜ間違えたのか」が分からない。だったら自分が欲しかったものを作ろうと、本試験のシナリオに寄せたオリジナル問題を作って、このサイトにしました。</p>
+<h2>大切にしていること</h2>
+<ul>
+<li><strong>本試験レベル</strong>：用語の暗記ではなく、実際の試験で問われる「状況に対する判断」を問う問題にしています。全選択肢に解説をつけています。</li>
+<li><strong>全問無料・登録不要</strong>：メールアドレスもログインも要りません。学習履歴はお使いのブラウザ内（localStorage）にのみ保存され、当サイトのサーバーには送信されません。</li>
+<li><strong>間違いから復習できる</strong>：不正解になった問題は自動で苦手プールに記録され、そこだけを選んで復習できます。</li>
+</ul>
+<h2>問題の作成について</h2>
+<p>収録している問題は、すべて運営者が独自に作成したオリジナル問題です。実際の試験問題の転載・複製ではありません。各認定試験の名称は各社の商標であり、当サイトは各ベンダーの公式サイトではありません。内容には正確を期していますが、試験範囲は随時更新されるため、最終的なご確認は各公式ドキュメントをお願いします。</p>
+<h2>お問い合わせ</h2>
+<p>問題の誤りのご指摘・ご要望は <a href="contact.html">お問い合わせ</a> からお寄せください。</p>`
   },
   {
     file: "privacy.html", title: "プライバシーポリシー | CLOUDCERT_ — クラウド資格の無料演習サイト",

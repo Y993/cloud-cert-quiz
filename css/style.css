@@ -948,7 +948,9 @@ html.sr-armed .sr.in { opacity: 1; transform: none; }
   .stat { border-left: none; border-top: 1px solid var(--line); }
   .stat:nth-child(-n+2) { border-top: none; }
   .stat:nth-child(even) { border-left: 1px solid var(--line); }
-  .nav { display: none; }
+  /* モバイルでもナビは出す（learn/builder への導線）。ページ内アンカーだけ隠す */
+  .nav { gap: 14px; font-size: 0.78rem; }
+  .nav a.nav-anchor { display: none; }
   .section { padding: 60px 0; }
 }
 @media (max-width: 540px) {
