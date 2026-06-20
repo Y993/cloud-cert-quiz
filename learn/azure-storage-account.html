@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Azure ストレージ アカウントとは？試験に出るポイントと演習問題</title>
+<meta name="description" content="Azure ストレージ アカウント（Microsoft Azure）の要点と資格試験での問われ方を解説。登場する演習問題12問と公式ドキュメントへのリンクつき。">
+<link rel="canonical" href="https://cloudcert.app/learn/azure-storage-account.html">
+<meta property="og:title" content="Azure ストレージ アカウントとは？試験に出るポイントと演習問題">
+<meta property="og:description" content="Azure ストレージ アカウント（Microsoft Azure）の要点と資格試験での問われ方を解説。登場する演習問題12問と公式ドキュメントへのリンクつき。">
+<meta property="og:url" content="https://cloudcert.app/learn/azure-storage-account.html">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="CLOUDCERT_">
+<meta property="og:image" content="https://cloudcert.app/assets/og.png">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='80' font-size='80' fill='%233fe0a4' font-family='monospace'>▸</text></svg>">
+
+<meta name="google-adsense-account" content="ca-pub-5647574947191958">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+JP:wght@400;500;700&family=JetBrains+Mono:wght@400;600;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../css/style.css">
+<link rel="stylesheet" href="../css/page.css">
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-SZR5CB5Q3X"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag('js',new Date());gtag('config','G-SZR5CB5Q3X');</script>
+<script type="application/ld+json">[{"@context":"https://schema.org","@type":"TechArticle","headline":"Azure ストレージ アカウントとは？試験に出るポイントと演習問題","description":"Azure ストレージ アカウント（Microsoft Azure）の要点と資格試験での問われ方を解説。登場する演習問題12問と公式ドキュメントへのリンクつき。","inLanguage":"ja","about":{"@type":"Thing","name":"Azure ストレージ アカウント"},"author":{"@type":"Organization","name":"CLOUDCERT_"},"publisher":{"@type":"Organization","name":"CLOUDCERT_"},"mainEntityOfPage":"https://cloudcert.app/learn/azure-storage-account.html"},{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"HOME","item":"https://cloudcert.app/"},{"@type":"ListItem","position":2,"name":"サービス解説","item":"https://cloudcert.app/learn/"},{"@type":"ListItem","position":3,"name":"Azure ストレージ アカウント"}]}]</script>
+</head>
+<body class="page-body">
+<header class="page-header"><a class="page-logo" href="../index.html">&gt; CLOUDCERT_</a></header>
+<main class="page-main">
+
+<nav class="breadcrumb"><a href="../index.html">HOME</a> › <a href="./">サービス解説</a> › Azure ストレージ アカウント</nav>
+<div class="learn-head">
+<div class="badges"><span class="badge" data-provider="azure">Microsoft Azure</span><span class="badge">ストレージ</span><span class="badge badge-q">演習12問</span></div>
+<h1>Azure ストレージ アカウントとは</h1>
+</div>
+<p class="lead">Azureストレージアカウントは、Blob・Files・Queue・Tableなどのストレージサービスをホストする論理コンテナだ。ストレージアカウント名はAzure全体でグローバルに一意でなければならず、データへのエンドポイントURLの一部になる。種類は汎用v2が標準的で、ほとんどのシナリオで推奨される。</p>
+<p>冗長性オプションはLRS（ローカル冗長：同一データセンター内3コピー）・ZRS（ゾーン冗長：同一リージョン内の3つのゾーンに分散）・GRS（地理冗長：別リージョンにも3コピー）・GZRS（地理ゾーン冗長）の4種類がある。障害への耐性とコストはLRS＜ZRS＜GRS＜GZRSの順で高くなる。RA-GRS・RA-GZRSは読み取りアクセスをセカンダリリージョンで許可するオプションだ。</p>
+<p><a class="official-btn" href="https://learn.microsoft.com/ja-jp/azure/storage/common/storage-account-overview" target="_blank" rel="noopener">公式ドキュメント →</a></p>
+<h2>試験での問われ方</h2>
+<p>冗長性の略称と保護範囲の対応は確実に覚えておく。LRSは単一データセンター障害でデータ損失のリスク、GRSはリージョン全体の障害にも耐えられるがセカンダリへのフェールオーバーは手動かMicrosoftによる。RA-GRSはセカンダリを読み取り専用で利用できるため、読み取り負荷分散にも使える。AZ-900では『どの冗長レベルがリージョン障害に対応するか』が問われる。</p>
+<h2>このサービスが登場する演習問題（12問）</h2>
+<ul class="q-list">
+<li><a href="../q/azure-az900/q043.html">【AZ-900】ある企業がAzureのストレージ冗長性オプションを選択しようとしている。プライマリリージョンで障害が発生した場合でもデー…</a></li>
+<li><a href="../q/azure-az104/q035.html">【AZ-104】ある企業が大量の非構造化データ（画像・動画・ログファイル）をコスト効率よく保存するために Azure ストレージアカウン…</a></li>
+<li><a href="../q/azure-az104/q037.html">【AZ-104】あるスタートアップが Azure ストレージアカウントのデータ冗長性を設定しようとしている。コストを最小限に抑えることを…</a></li>
+<li><a href="../q/azure-az104/q039.html">【AZ-104】ある金融機関が Azure ストレージアカウントを複数リージョンで運用しており、プライマリリージョンで大規模障害が発生し…</a></li>
+<li><a href="../q/azure-az104/q044.html">【AZ-104】ある企業が Azure ストレージアカウントへのネットワークアクセスを強化したい。特定の Azure 仮想ネットワーク（…</a></li>
+<li><a href="../q/azure-az104/q050.html">【AZ-104】ある金融機関が Azure ストレージアカウントに GRS（geo 冗長ストレージ）を設定して運用している。プライマリリ…</a></li>
+<li><a href="../q/azure-az104/q051.html">【AZ-104】ある企業が Azure BLOB ストレージのライフサイクル管理ポリシーで、最終アクセス日から 90 日後に BLOB …</a></li>
+<li><a href="../q/azure-az104/q053.html">【AZ-104】ある企業が Azure Files の NFS 共有を Linux VM にマウントして利用しようとしている。NFS 4…</a></li>
+<li><a href="../q/azure-az104/q061.html">【AZ-104】ある企業が Azure ストレージアカウントの冗長性とフェールオーバーについて計画を立てている。ストレージアカウントのフ…</a></li>
+<li><a href="../q/azure-az104/q062.html">【AZ-104】ある企業が Azure ストレージアカウントの RBAC データプレーンロールを設計している。Azure のストレージに…</a></li>
+<li><a href="../q/azure-az104/q076.html">【AZ-104】ある企業がAzure上でデータベースサーバー用のVMを新規作成する予定で、ディスクI/O性能が重要な要件となっている。O…</a></li>
+<li><a href="../q/azure-az104/q148.html">【AZ-104】ある企業が Azure アクティビティログを長期間保持するために診断設定を構成しようとしている。アクティビティログの診断…</a></li>
+</ul>
+<h2>関連サービス</h2><ul class="q-list">
+<li><a href="azure-blob-storage.html">Azure Blob Storage</a></li>
+<li><a href="azure-files.html">Azure Files</a></li></ul>
+</main>
+<footer class="page-footer">
+<nav class="hub-nav"><a href="../exams/aws-clf-c02/">CLF-C02 試験ガイド</a><a href="../exams/aws-aif-c01/">AIF-C01 試験ガイド</a><a href="../exams/aws-saa-c03/">SAA-C03 試験ガイド</a><a href="../exams/aws-dva-c02/">DVA-C02 試験ガイド</a><a href="../exams/aws-sap-c02/">SAP-C02 試験ガイド</a><a href="../exams/gcp-cdl/">CDL 試験ガイド</a><a href="../exams/gcp-ace/">ACE 試験ガイド</a><a href="../exams/azure-az900/">AZ-900 試験ガイド</a><a href="../exams/azure-ai900/">AI-900 試験ガイド</a><a href="../exams/azure-dp900/">DP-900 試験ガイド</a><a href="../exams/azure-sc900/">SC-900 試験ガイド</a><a href="../exams/azure-az104/">AZ-104 試験ガイド</a></nav>
+<nav class="site-nav"><a href="../guide/">資格ガイド</a><a href="../learn/">サービス解説</a><a href="../career/">キャリア</a><a href="../about.html">運営者情報</a><a href="../privacy.html">プライバシーポリシー</a><a href="../contact.html">お問い合わせ</a></nav>
+<p class="copy">© CLOUDCERT_ — 本サイトは各認定試験の公式試験ではなく、収録問題はすべてオリジナルの演習問題です。</p>
+</footer>
+</body>
+</html>

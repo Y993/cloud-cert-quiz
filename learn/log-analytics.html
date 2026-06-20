@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Log Analyticsとは？試験に出るポイントと演習問題</title>
+<meta name="description" content="Log Analytics（Microsoft Azure）の要点と資格試験での問われ方を解説。登場する演習問題5問と公式ドキュメントへのリンクつき。">
+<link rel="canonical" href="https://cloudcert.app/learn/log-analytics.html">
+<meta property="og:title" content="Log Analyticsとは？試験に出るポイントと演習問題">
+<meta property="og:description" content="Log Analytics（Microsoft Azure）の要点と資格試験での問われ方を解説。登場する演習問題5問と公式ドキュメントへのリンクつき。">
+<meta property="og:url" content="https://cloudcert.app/learn/log-analytics.html">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="CLOUDCERT_">
+<meta property="og:image" content="https://cloudcert.app/assets/og.png">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='80' font-size='80' fill='%233fe0a4' font-family='monospace'>▸</text></svg>">
+
+<meta name="google-adsense-account" content="ca-pub-5647574947191958">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+JP:wght@400;500;700&family=JetBrains+Mono:wght@400;600;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../css/style.css">
+<link rel="stylesheet" href="../css/page.css">
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-SZR5CB5Q3X"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag('js',new Date());gtag('config','G-SZR5CB5Q3X');</script>
+<script type="application/ld+json">[{"@context":"https://schema.org","@type":"TechArticle","headline":"Log Analyticsとは？試験に出るポイントと演習問題","description":"Log Analytics（Microsoft Azure）の要点と資格試験での問われ方を解説。登場する演習問題5問と公式ドキュメントへのリンクつき。","inLanguage":"ja","about":{"@type":"Thing","name":"Log Analytics"},"author":{"@type":"Organization","name":"CLOUDCERT_"},"publisher":{"@type":"Organization","name":"CLOUDCERT_"},"mainEntityOfPage":"https://cloudcert.app/learn/log-analytics.html"},{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"HOME","item":"https://cloudcert.app/"},{"@type":"ListItem","position":2,"name":"サービス解説","item":"https://cloudcert.app/learn/"},{"@type":"ListItem","position":3,"name":"Log Analytics"}]}]</script>
+</head>
+<body class="page-body">
+<header class="page-header"><a class="page-logo" href="../index.html">&gt; CLOUDCERT_</a></header>
+<main class="page-main">
+
+<nav class="breadcrumb"><a href="../index.html">HOME</a> › <a href="./">サービス解説</a> › Log Analytics</nav>
+<div class="learn-head">
+<div class="badges"><span class="badge" data-provider="azure">Microsoft Azure</span><span class="badge">管理・ガバナンス</span><span class="badge badge-q">演習5問</span></div>
+<h1>Log Analyticsとは</h1>
+</div>
+<p class="lead">Log Analyticsは、Azure MonitorのログデータをKQL（Kusto Query Language）で検索・分析するためのワークスペースとクエリツールだ。VM・アプリ・Azure Firewallなど各リソースの診断ログをLog Analyticsワークスペースに集約し、統合的に分析できる。</p>
+<p>KQLはSQL的な直感的な構文で、テーブルのフィルタリング・集計・結合・時系列グラフ化が可能だ。Microsoft Sentinelのデータ検索や、Defender for Cloudのセキュリティイベント分析にもLog AnalyticsとKQLが使われる。</p>
+<p><a class="official-btn" href="https://learn.microsoft.com/ja-jp/azure/azure-monitor/logs/log-analytics-overview" target="_blank" rel="noopener">公式ドキュメント →</a></p>
+<h2>試験での問われ方</h2>
+<p>AZ-104ではLog Analyticsワークスペースへのログ送信設定（診断設定）とKQLの基本的なクエリ構文が出題される。AZ-900では『ログを一元管理して分析するサービス』として問われる。Microsoft SentinelはLog Analyticsワークスペースを基盤にしており、SIEM機能を提供するという関係性も確認しておく。</p>
+<h2>このサービスが登場する演習問題（5問）</h2>
+<ul class="q-list">
+<li><a href="../q/azure-sc900/q111.html">【SC-900】ある企業が Microsoft Sentinel のコストを削減しつつ、セキュリティ監視の品質を維持したいと考えています…</a></li>
+<li><a href="../q/azure-az104/q094.html">【AZ-104】ある企業のインフラチームが複数のAzure VMにAzure Monitor Agentをインストールし、パフォーマンス…</a></li>
+<li><a href="../q/azure-az104/q134.html">【AZ-104】ある企業が複数の Azure リージョンにサービスを展開しており、それぞれの仮想マシンからのログをひとつの場所で集中管理…</a></li>
+<li><a href="../q/azure-az104/q145.html">【AZ-104】ある大企業が 5 つの事業部門を持ち、各部門が独自の Azure サブスクリプションで操業している。セキュリティチームは…</a></li>
+<li><a href="../q/azure-az104/q148.html">【AZ-104】ある企業が Azure アクティビティログを長期間保持するために診断設定を構成しようとしている。アクティビティログの診断…</a></li>
+</ul>
+<h2>関連サービス</h2><ul class="q-list">
+<li><a href="azure-policy.html">Azure Policy</a></li>
+<li><a href="azure-monitor.html">Azure Monitor</a></li>
+<li><a href="azure-backup.html">Azure Backup</a></li>
+<li><a href="azure-site-recovery.html">Azure Site Recovery</a></li></ul>
+</main>
+<footer class="page-footer">
+<nav class="hub-nav"><a href="../exams/aws-clf-c02/">CLF-C02 試験ガイド</a><a href="../exams/aws-aif-c01/">AIF-C01 試験ガイド</a><a href="../exams/aws-saa-c03/">SAA-C03 試験ガイド</a><a href="../exams/aws-dva-c02/">DVA-C02 試験ガイド</a><a href="../exams/aws-sap-c02/">SAP-C02 試験ガイド</a><a href="../exams/gcp-cdl/">CDL 試験ガイド</a><a href="../exams/gcp-ace/">ACE 試験ガイド</a><a href="../exams/azure-az900/">AZ-900 試験ガイド</a><a href="../exams/azure-ai900/">AI-900 試験ガイド</a><a href="../exams/azure-dp900/">DP-900 試験ガイド</a><a href="../exams/azure-sc900/">SC-900 試験ガイド</a><a href="../exams/azure-az104/">AZ-104 試験ガイド</a></nav>
+<nav class="site-nav"><a href="../guide/">資格ガイド</a><a href="../learn/">サービス解説</a><a href="../career/">キャリア</a><a href="../about.html">運営者情報</a><a href="../privacy.html">プライバシーポリシー</a><a href="../contact.html">お問い合わせ</a></nav>
+<p class="copy">© CLOUDCERT_ — 本サイトは各認定試験の公式試験ではなく、収録問題はすべてオリジナルの演習問題です。</p>
+</footer>
+</body>
+</html>

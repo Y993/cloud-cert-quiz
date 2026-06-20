@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>クラウドサービス解説一覧（125サービス）</title>
+<meta name="description" content="AWS・Google Cloud・Azure の頻出125サービスを試験対策視点で解説。各サービスの要点・公式ドキュメント・登場する演習問題への導線つき。">
+<link rel="canonical" href="https://cloudcert.app/learn/">
+<meta property="og:title" content="クラウドサービス解説一覧（125サービス）">
+<meta property="og:description" content="AWS・Google Cloud・Azure の頻出125サービスを試験対策視点で解説。各サービスの要点・公式ドキュメント・登場する演習問題への導線つき。">
+<meta property="og:url" content="https://cloudcert.app/learn/">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="CLOUDCERT_">
+<meta property="og:image" content="https://cloudcert.app/assets/og.png">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='80' font-size='80' fill='%233fe0a4' font-family='monospace'>▸</text></svg>">
+
+<meta name="google-adsense-account" content="ca-pub-5647574947191958">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+JP:wght@400;500;700&family=JetBrains+Mono:wght@400;600;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../css/style.css">
+<link rel="stylesheet" href="../css/page.css">
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-SZR5CB5Q3X"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag('js',new Date());gtag('config','G-SZR5CB5Q3X');</script>
+
+</head>
+<body class="page-body">
+<header class="page-header"><a class="page-logo" href="../index.html">&gt; CLOUDCERT_</a></header>
+<main class="page-main">
+<nav class="breadcrumb"><a href="../index.html">HOME</a> › サービス解説</nav>
+<h1>クラウドサービス解説</h1>
+<p class="lead">AWS・Google Cloud・Azure の頻出サービスを、ひとことの説明・試験での問われ方・演習問題への導線つきで。知らないサービスもここで当たりがつく。</p>
+<section class="svc-provider" data-provider="aws">
+<h2 class="provider-head"><span class="provider-name">AWS</span><span class="provider-count">54サービス</span></h2>
+<h3 class="cat-head">コンピューティング</h3>
+<div class="svc-grid">
+<a class="svc-card" data-provider="aws" href="aws-lambda.html"><span class="svc-card-name">AWS Lambda</span><span class="svc-card-desc">サーバーのプロビジョニングや管理なしにコードを実行できるサーバーレスコンピューティングサービス。</span><span class="svc-card-foot"><span>演習72問</span><span class="arrow">→</span></span></a>
+<a class="svc-card" data-provider="aws" href="amazon-ec2.html"><span class="svc-card-name">Amazon EC2</span><span class="svc-card-desc">クラウド上で仮想サーバー（インスタンス）をオンデマンドで起動・停止できるIaaSサービス。</span><span class="svc-card-foot"><span>演習44問</span><span class="arrow">→</span></span></a>
+<a class="svc-card" data-provider="aws" href="aws-elastic-beanstalk.html"><span class="svc-card-name">AWS Elastic Beanstalk</span><span class="svc-card-desc">アプリケーションのコードをアップロードするだけで、EC2・ELB・Auto Scaling・RDSのプロビジョニングとデプロイを自動化するPaa…</span><span class="svc-card-foot"><span>演習1問</span><span class="arrow">→</span></span></a>
+</div>
+<h3 class="cat-head">コンテナ</h3>
+<div class="svc-grid">
+<a class="svc-card" data-provider="aws" href="amazon-ecs.html"><span class="svc-card-name">Amazon ECS</span><span class="svc-card-desc">DockerコンテナをAWS上でオーケストレーションするフルマネージドサービス。</span><span class="svc-card-foot"><span>演習12問</span><span class="arrow">→</span></span></a>
+<a class="svc-card" data-provider="aws" href="amazon-eks.html"><span class="svc-card-name">Amazon EKS</span><span class="svc-card-desc">AWS上でKubernetesを実行するためのマネージドサービス。</span><span class="svc-card-foot"><span>演習6問</span><span class="arrow">→</span></span></a>
+<a class="svc-card" data-provider="aws" href="amazon-ecr.html"><span class="svc-card-name">Amazon ECR</span><span class="svc-card-desc">DockerコンテナイメージをAWS上でホスティングするフルマネージドのプライベートレジストリサービス。</span><span class="svc-card-foot"><span>演習7問</span><span class="arrow">→</span></span></a>
+</div>
+<h3 class="cat-head">ストレージ</h3>
+<div class="svc-grid">
+<a class="svc-card" data-provider="aws" href="amazon-s3.html"><span class="svc-card-name">Amazon S3</span><span class="svc-card-desc">オブジェクトストレージサービス。</span><span class="svc-card-foot"><span>演習71問</span><span class="arrow">→</span></span></a>
+<a class="svc-card" data-provider="aws" href="amazon-ebs.html"><span class="svc-card-name">Amazon EBS</span><span class="svc-card-desc">EC2インスタンスにアタッチするブロックストレージサービス。</span><span class="svc-card-foot"><span>演習2問</span><span class="arrow">→</span></span></a>
+<a class="svc-card" data-provider="aws" href="amazon-efs.html"><span class="svc-card-name">Amazon EFS</span><span class="svc-card-desc">NFS v4.1プロトコルで複数のEC2インスタンスから同時にマウントできるフルマネージドのネットワークファイルシステム。</span><span class="svc-card-foot"><span>演習2問</span><span class="arrow">→</span></span></a>
+</div>
+<h3 class="cat-head">データベース</h3>
+<div class="svc-grid">
+<a class="svc-card" data-provider="aws" href="amazon-rds.html"><span class="svc-card-name">Amazon RDS</span><span class="svc-card-desc">MySQL・PostgreSQL・MariaDB・Oracle・SQL Serverなど主要なリレーショナルデータベースをフルマネージドで提供す…</span><span class="svc-card-foot"><span>演習21問</span><span class="arrow">→</span></span></a>
+<a class="svc-card" data-provider="aws" href="amazon-aurora.html"><span class="svc-card-name">Amazon Aurora</span><span class="svc-card-desc">MySQLおよびPostgreSQL互換のAWS独自設計のリレーショナルデータベース。</span><span class="svc-card-foot"><span>演習17問</span><span class="arrow">→</span></span></a>
+<a class="svc-card" data-provider="aws" href="amazon-dynamodb.html"><span class="svc-card-name">Amazon DynamoDB</span><span class="svc-card-desc">フルマネージドのNoSQLキー・バリュー型およびドキュメント型データベース。</span><span class="svc-card-foot"><span>演習23問</span><span class="arrow">→</span></span></a>
+<a class="svc-card" data-provider="aws" href="amazon-elasticache.html"><span class="svc-card-name">Amazon ElastiCache</span><span class="svc-card-desc">RedisまたはMemcachedのインメモリキャッシュをフルマネージドで提供するサービス。</span><span class="svc-card-foot"><span>演習12問</span><span class="arrow">→</span></span></a>
+</div>
+<h3 class="cat-head">分析</h3>
+<div class="svc-grid">
+<a class="svc-card" data-provider="aws" href="amazon-redshift.html"><span class="svc-card-name">Amazon Redshift</span><span class="svc-card-desc">ペタバイト規模のデータウェアハウスサービス。</span><span class="svc-card-foot"><span>演習6問</span><span class="arrow">→</span></span></a>
+<a class="svc-card" data-provider="aws" href="amazon-athena.html"><span class="svc-card-name">Amazon Athena</span><span class="svc-card-desc">S3上のデータを標準SQLで直接クエリできるサーバーレスのインタラクティブクエリサービス。</span><span class="svc-card-foot"><span>演習6問</span><span class="arrow">→</span></span></a>
+<a class="svc-card" data-provider="aws" href="aws-glue.html"><span class="svc-card-name">AWS Glue</span><span class="svc-card-desc">フルマネージドのETL（Extract, Transform, Load）サービス。</span><span class="svc-card-foot"><span>演習9問</span><span class="arrow">→</span></span></a>
+<a class="svc-card" data-provider="aws" href="amazon-kinesis.html"><span class="svc-card-name">Amazon Kinesis</span><span class="svc-card-desc">ストリーミングデータをリアルタイムに収集・処理するサービス群。</span><span class="svc-card-foot"><span>演習11問</span><span class="arrow">→</span></span></a>
+</div>
+<h3 class="cat-head">ネットワーキング</h3>
+<div class="svc-grid">
+<a class="svc-card" data-provider="aws" href="amazon-vpc.html"><span class="svc-card-name">Amazon VPC</span><span class="svc-card-desc">AWSクラウド内に論理的に隔離されたプライベートネットワークを作成するサービス。</span><span class="svc-card-foot"><span>演習11問</span><span class="arrow">→</span></span></a>
+<a class="svc-card" data-provider="aws" href="elastic-load-balancing.html"><span class="svc-card-name">Elastic Load Balancing（ELB）</span><span class="svc-card-desc">EC2インスタンス・コンテナ・IPアドレスへのトラフィックを分散するフルマネージドのロードバランサー。</span><span class="svc-card-foot"><span>演習15問</span><span class="arrow">→</span></span></a>
+<a class="svc-card" data-provider="aws" href="amazon-cloudfront.html"><span class="svc-card-name">Amazon CloudFront</span><span class="svc-card-desc">世界600以上のエッジロケーションを活用してコンテンツをキャッシュ配信するCDN（Content Delivery Network）サービス。</span><span class="svc-card-foot"><span>演習11問</span><span class="arrow">→</span></span></a>
+<a class="svc-card" data-provider="aws" href="amazon-route-53.html"><span class="svc-card-name">Amazon Route 53</span><span class="svc-card-desc">フルマネージドのDNSサービス。</span><span class="svc-card-foot"><span>演習4問</span><span class="arrow">→</span></span></a>
+<a class="svc-card" data-provider="aws" href="aws-direct-connect.html"><span class="svc-card-name">AWS Direct Connect</span><span class="svc-card-desc">オンプレミスデータセンターからAWSへ専用線（物理回線）で接続するネットワークサービス。</span><span class="svc-card-foot"><span>演習4問</span><span class="arrow">→</span></span></a>
+<a class="svc-card" data-provider="aws" href="aws-transit-gateway.html"><span class="svc-card-name">AWS Transit Gateway</span><span class="svc-card-desc">複数のVPCおよびオンプレミスネットワークを単一のハブで相互接続するネットワーク集約サービス。</span><span class="svc-card-foot"><span>演習4問</span><span class="arrow">→</span></span></a>
+<a class="svc-card" data-provider="aws" href="aws-privatelink.html"><span class="svc-card-name">AWS PrivateLink／VPCエンドポイント</span><span class="svc-card-desc">VPCからAWSサービスや他のVPC上のサービスへ、インターネットを経由せずにプライベートに接続する仕組み。</span><span class="svc-card-foot"><span>演習6問</span><span class="arrow">→</span></span></a>
+</div>
+<h3 class="cat-head">アプリケーション統合</h3>
+<div class="svc-grid">
+<a class="svc-card" data-provider="aws" href="amazon-api-gateway.html"><span class="svc-card-name">Amazon API Gateway</span><span class="svc-card-desc">REST API・HTTP API・WebSocket APIをフルマネージドで作成・管理・保護できるサービス。</span><span class="svc-card-foot"><span>演習29問</span><span class="arrow">→</span></span></a>
+<a class="svc-card" data-provider="aws" href="amazon-sqs.html"><span class="svc-card-name">Amazon SQS</span><span class="svc-card-desc">フルマネージドのメッセージキューサービス。</span><span class="svc-card-foot"><span>演習20問</span><span class="arrow">→</span></span></a>
+<a class="svc-card" data-provider="aws" href="amazon-sns.html"><span class="svc-card-name">Amazon SNS</span><span class="svc-card-desc">フルマネージドのPub/Sub（発行・購読）メッセージングサービス。</span><span class="svc-card-foot"><span>演習12問</span><span class="arrow">→</span></span></a>
+<a class="svc-card" data-provider="aws" href="amazon-eventbridge.html"><span class="svc-card-name">Amazon EventBridge</span><span class="svc-card-desc">AWS サービス・独自アプリ・SaaSアプリから発生するイベントをルールに基づいてターゲット（Lambda・SQS・SNS・Step Funct…</span><span class="svc-card-foot"><span>演習15問</span><span class="arrow">→</span></span></a>
+<a class="svc-card" data-provider="aws" href="aws-step-functions.html"><span class="svc-card-name">AWS Step Functions</span><span class="svc-card-desc">複数のLambda関数やAWSサービスのステップを視覚的なワークフロー（ステートマシン）として定義・実行するオーケストレーションサービス。</span><span class="svc-card-foot"><span>演習9問</span><span class="arrow">→</span></span></a>
+</div>
+<h3 class="cat-head">セキュリティ</h3>
+<div class="svc-grid">
+<a class="svc-card" data-provider="aws" href="aws-iam.html"><span class="svc-card-name">AWS IAM</span><span class="svc-card-desc">AWSリソースへのアクセスを安全に制御するサービス。</span><span class="svc-card-foot"><span>演習38問</span><span class="arrow">→</span></span></a>
+<a class="svc-card" data-provider="aws" href="aws-iam-identity-center.html"><span class="svc-card-name">AWS IAM Identity Center</span><span class="svc-card-desc">複数のAWSアカウントおよびビジネスアプリケーションへのシングルサインオン（SSO）アクセスを一元管理するサービス（旧AWS SSO）。</span><span class="svc-card-foot"><span>演習7問</span><span class="arrow">→</span></span></a>
+<a class="svc-card" data-provider="aws" href="amazon-cognito.html"><span class="svc-card-name">Amazon Cognito</span><span class="svc-card-desc">モバイル・Webアプリケーションのユーザー認証・認可・ユーザー管理を提供するサービス。</span><span class="svc-card-foot"><span>演習14問</span><span class="arrow">→</span></span></a>
+<a class="svc-card" data-provider="aws" href="aws-kms.html"><span class="svc-card-name">AWS KMS</span><span class="svc-card-desc">暗号化キーの作成・管理・利用を制御するフルマネージドのキー管理サービス。</span><span class="svc-card-foot"><span>演習14問</span><span class="arrow">→</span></span></a>
+<a class="svc-card" data-provider="aws" href="aws-secrets-manager.html"><span class="svc-card-name">AWS Secrets Manager</span><span class="svc-card-desc">データベースパスワード・APIキー・OAuth トークンなどのシークレットを安全に保存・管理・ローテーションするサービス。</span><span class="svc-card-foot"><span>演習13問</span><span class="arrow">→</span></span></a>
+<a class="svc-card" data-provider="aws" href="amazon-guardduty.html"><span class="svc-card-name">Amazon GuardDuty</span><span class="svc-card-desc">機械学習・異常検知・脅威インテリジェンスを組み合わせてAWSアカウントとワークロードを継続的に監視するマネージドな脅威検出サービス。</span><span class="svc-card-foot"><span>演習9問</span><span class="arrow">→</span></span></a>
+<a class="svc-card" data-provider="aws" href="amazon-macie.html"><span class="svc-card-name">Amazon Macie</span><span class="svc-card-desc">機械学習を使ってS3バケット内の機密データ（個人情報・クレジットカード番号・AWSシークレットキー等）を自動検出・分類・保護するデータセキュリテ…</span><span class="svc-card-foot"><span>演習2問</span><span class="arrow">→</span></span></a>
+<a class="svc-card" data-provider="aws" href="aws-security-hub.html"><span class="svc-card-name">AWS Security Hub</span><span class="svc-card-desc">GuardDuty・Macie・Inspector・Firewall Manager等の複数のAWSセキュリティサービスと外部パートナーツールの…</span><span class="svc-card-foot"><span>演習2問</span><span class="arrow">→</span></span></a>
+<a class="svc-card" data-provider="aws" href="aws-waf.html"><span class="svc-card-name">AWS WAF</span><span class="svc-card-desc">HTTPリクエストをレイヤー7（アプリケーション層）でフィルタリングするWebアプリケーションファイアウォール。</span><span class="svc-card-foot"><span>演習3問</span><span class="arrow">→</span></span></a>
+</div>
+<h3 class="cat-head">管理・ガバナンス</h3>
+<div class="svc-grid">
+<a class="svc-card" data-provider="aws" href="aws-cloudtrail.html"><span class="svc-card-name">AWS CloudTrail</span><span class="svc-card-desc">AWSアカウント内のすべてのAPIコール（管理イベント・データイベント）を記録して監査証跡を提供するサービス。</span><span class="svc-card-foot"><span>演習12問</span><span class="arrow">→</span></span></a>
+<a class="svc-card" data-provider="aws" href="amazon-cloudwatch.html"><span class="svc-card-name">Amazon CloudWatch</span><span class="svc-card-desc">AWSリソースとアプリケーションの監視サービス。</span><span class="svc-card-foot"><span>演習21問</span><span class="arrow">→</span></span></a>
+<a class="svc-card" data-provider="aws" href="aws-config.html"><span class="svc-card-name">AWS Config</span><span class="svc-card-desc">AWSリソースの設定変更を継続的に記録・評価するサービス。</span><span class="svc-card-foot"><span>演習8問</span><span class="arrow">→</span></span></a>
+<a class="svc-card" data-provider="aws" href="aws-organizations.html"><span class="svc-card-name">AWS Organizations</span><span class="svc-card-desc">複数のAWSアカウントを組織単位（OU）のツリー構造で一元管理するサービス。</span><span class="svc-card-foot"><span>演習33問</span><span class="arrow">→</span></span></a>
+<a class="svc-card" data-provider="aws" href="aws-cloudformation.html"><span class="svc-card-name">AWS CloudFormation</span><span class="svc-card-desc">AWSインフラをJSON/YAMLテンプレートで記述し、スタックとして一括プロビジョニング・管理するIaC（Infrastructure as …</span><span class="svc-card-foot"><span>演習7問</span><span class="arrow">→</span></span></a>
+<a class="svc-card" data-provider="aws" href="aws-systems-manager.html"><span class="svc-card-name">AWS Systems Manager</span><span class="svc-card-desc">EC2インスタンスやオンプレミスサーバーの運用管理を自動化するサービス群の総称。</span><span class="svc-card-foot"><span>演習15問</span><span class="arrow">→</span></span></a>
+<a class="svc-card" data-provider="aws" href="aws-x-ray.html"><span class="svc-card-name">AWS X-Ray</span><span class="svc-card-desc">分散アプリケーション（マイクロサービス・サーバーレス）のリクエストをトレースして可視化するサービス。</span><span class="svc-card-foot"><span>演習8問</span><span class="arrow">→</span></span></a>
+<a class="svc-card" data-provider="aws" href="aws-trusted-advisor.html"><span class="svc-card-name">AWS Trusted Advisor</span><span class="svc-card-desc">コスト最適化・パフォーマンス・セキュリティ・耐障害性・サービス制限の5カテゴリでAWSのベストプラクティスに照らしてアカウントの設定を自動チェッ…</span><span class="svc-card-foot"><span>演習4問</span><span class="arrow">→</span></span></a>
+</div>
+<h3 class="cat-head">コスト管理</h3>
+<div class="svc-grid">
+<a class="svc-card" data-provider="aws" href="aws-cost-explorer.html"><span class="svc-card-name">AWS Cost Explorer</span><span class="svc-card-desc">AWSの使用コストとリソース利用状況を可視化・分析するサービス。</span><span class="svc-card-foot"><span>演習5問</span><span class="arrow">→</span></span></a>
+</div>
+<h3 class="cat-head">AI・機械学習</h3>
+<div class="svc-grid">
+<a class="svc-card" data-provider="aws" href="amazon-bedrock.html"><span class="svc-card-name">Amazon Bedrock</span><span class="svc-card-desc">Anthropic（Claude）・Meta（Llama）・Mistral・Stability AI等のサードパーティ基盤モデルとAmazon …</span><span class="svc-card-foot"><span>演習15問</span><span class="arrow">→</span></span></a>
+<a class="svc-card" data-provider="aws" href="amazon-sagemaker.html"><span class="svc-card-name">Amazon SageMaker</span><span class="svc-card-desc">機械学習モデルのデータ準備・学習・評価・デプロイ・監視をエンドツーエンドで行うフルマネージドのMLプラットフォーム。</span><span class="svc-card-foot"><span>演習18問</span><span class="arrow">→</span></span></a>
+<a class="svc-card" data-provider="aws" href="amazon-comprehend.html"><span class="svc-card-name">Amazon Comprehend</span><span class="svc-card-desc">自然言語処理（NLP）を使ってテキストからエンティティ（人名・場所・組織）・キーフレーズ・感情・言語・個人情報（PII）などを抽出するマネージド…</span><span class="svc-card-foot"><span>演習3問</span><span class="arrow">→</span></span></a>
+</div>
+<h3 class="cat-head">開発者ツール</h3>
+<div class="svc-grid">
+<a class="svc-card" data-provider="aws" href="aws-codepipeline.html"><span class="svc-card-name">AWS CodePipeline</span><span class="svc-card-desc">ソースコードの変更からビルド・テスト・デプロイまでのCI/CDパイプラインをフルマネージドで自動化するサービス。</span><span class="svc-card-foot"><span>演習4問</span><span class="arrow">→</span></span></a>
+<a class="svc-card" data-provider="aws" href="aws-codebuild.html"><span class="svc-card-name">AWS CodeBuild</span><span class="svc-card-desc">サーバー管理なしにソースコードのコンパイル・テスト・ビルドアーティファクト生成を実行するフルマネージドのビルドサービス。</span><span class="svc-card-foot"><span>演習3問</span><span class="arrow">→</span></span></a>
+<a class="svc-card" data-provider="aws" href="aws-codedeploy.html"><span class="svc-card-name">AWS CodeDeploy</span><span class="svc-card-desc">EC2・オンプレミスサーバー・Lambda・ECSへのアプリケーションデプロイを自動化するサービス。</span><span class="svc-card-foot"><span>演習3問</span><span class="arrow">→</span></span></a>
+</div>
+<h3 class="cat-head">移行</h3>
+<div class="svc-grid">
+<a class="svc-card" data-provider="aws" href="aws-dms.html"><span class="svc-card-name">AWS DMS</span><span class="svc-card-desc">オンプレミスやクラウド上のデータベースをAWSのデータベースサービスへ移行するマネージドサービス。</span><span class="svc-card-foot"><span>演習6問</span><span class="arrow">→</span></span></a>
+</div>
+</section>
+<section class="svc-provider" data-provider="azure">
+<h2 class="provider-head"><span class="provider-name">Microsoft Azure</span><span class="provider-count">45サービス</span></h2>
+<h3 class="cat-head">ID・アクセス管理</h3>
+<div class="svc-grid">
+<a class="svc-card" data-provider="azure" href="microsoft-entra-id.html"><span class="svc-card-name">Microsoft Entra ID</span><span class="svc-card-desc">Microsoft Entra ID（旧称 Azure Active Directory）は、Azureのクラウドベースのアイデンティティおよび…</span><span class="svc-card-foot"><span>演習19問</span><span class="arrow">→</span></span></a>
+<a class="svc-card" data-provider="azure" href="azure-rbac.html"><span class="svc-card-name">Azure RBAC</span><span class="svc-card-desc">Azure RBAC（ロールベースのアクセス制御）は、Azureリソースへのアクセス権をきめ細かく管理するための仕組みだ。</span><span class="svc-card-foot"><span>演習12問</span><span class="arrow">→</span></span></a>
+</div>
+<h3 class="cat-head">管理・ガバナンス</h3>
+<div class="svc-grid">
+<a class="svc-card" data-provider="azure" href="azure-policy.html"><span class="svc-card-name">Azure Policy</span><span class="svc-card-desc">Azure Policyは、組織の標準をAzureリソースに大規模に適用し、コンプライアンス状態を評価・追跡するサービスだ。</span><span class="svc-card-foot"><span>演習7問</span><span class="arrow">→</span></span></a>
+<a class="svc-card" data-provider="azure" href="azure-monitor.html"><span class="svc-card-name">Azure Monitor</span><span class="svc-card-desc">Azure Monitorは、Azureリソースとオンプレミスリソースのメトリクスとログを収集・分析・可視化するモニタリングプラットフォームだ。</span><span class="svc-card-foot"><span>演習13問</span><span class="arrow">→</span></span></a>
+<a class="svc-card" data-provider="azure" href="log-analytics.html"><span class="svc-card-name">Log Analytics</span><span class="svc-card-desc">Log Analyticsは、Azure MonitorのログデータをKQL（Kusto Query Language）で検索・分析するためのワ…</span><span class="svc-card-foot"><span>演習5問</span><span class="arrow">→</span></span></a>
+<a class="svc-card" data-provider="azure" href="azure-backup.html"><span class="svc-card-name">Azure Backup</span><span class="svc-card-desc">Azure Backupは、VM・ファイル・データベース・オンプレミスサーバーなどのデータをクラウドにバックアップするマネージドサービスだ。</span><span class="svc-card-foot"><span>演習4問</span><span class="arrow">→</span></span></a>
+<a class="svc-card" data-provider="azure" href="azure-site-recovery.html"><span class="svc-card-name">Azure Site Recovery</span><span class="svc-card-desc">Azure Site Recovery（ASR）は、ビジネス継続性とディザスターリカバリー（BCDR）を実現するためのサービスだ。</span><span class="svc-card-foot"><span>演習1問</span><span class="arrow">→</span></span></a>
+</div>
+<h3 class="cat-head">コンピューティング</h3>
+<div class="svc-grid">
+<a class="svc-card" data-provider="azure" href="azure-virtual-machines.html"><span class="svc-card-name">Azure Virtual Machines</span><span class="svc-card-desc">Azure Virtual Machines（VM）は、Azureが提供するIaaSコンピューティングリソースだ。</span><span class="svc-card-foot"><span>演習8問</span><span class="arrow">→</span></span></a>
+<a class="svc-card" data-provider="azure" href="azure-vmss.html"><span class="svc-card-name">仮想マシン スケール セット（VMSS）</span><span class="svc-card-desc">仮想マシン スケール セット（VMSS）は、同一構成のVMを大量に作成・管理し、負荷に応じて自動でスケールアウト／スケールインできるサービスだ。</span><span class="svc-card-foot"><span>演習2問</span><span class="arrow">→</span></span></a>
+<a class="svc-card" data-provider="azure" href="azure-app-service.html"><span class="svc-card-name">Azure App Service</span><span class="svc-card-desc">Azure App Serviceは、Webアプリ・モバイルバックエンド・RESTful APIをインフラ管理不要でホスティングできるPaaSサ…</span><span class="svc-card-foot"><span>演習9問</span><span class="arrow">→</span></span></a>
+<a class="svc-card" data-provider="azure" href="azure-functions.html"><span class="svc-card-name">Azure Functions</span><span class="svc-card-desc">Azure Functionsはサーバーレスのコンピューティングサービスで、イベントに応じてコードを実行するFaaS（Function as a…</span><span class="svc-card-foot"><span>演習2問</span><span class="arrow">→</span></span></a>
+</div>
+<h3 class="cat-head">コンテナ</h3>
+<div class="svc-grid">
+<a class="svc-card" data-provider="azure" href="aks.html"><span class="svc-card-name">Azure Kubernetes Service（AKS）</span><span class="svc-card-desc">Azure Kubernetes Service（AKS）は、Kubernetesクラスターのデプロイ・管理・スケーリングをAzureがマネージ…</span><span class="svc-card-foot"><span>演習4問</span><span class="arrow">→</span></span></a>
+<a class="svc-card" data-provider="azure" href="azure-container-apps.html"><span class="svc-card-name">Azure Container Apps</span><span class="svc-card-desc">Azure Container Appsは、Kubernetesを意識せずコンテナ化アプリを実行できるサーバーレスプラットフォームだ。</span><span class="svc-card-foot"><span>演習1問</span><span class="arrow">→</span></span></a>
+</div>
+<h3 class="cat-head">ストレージ</h3>
+<div class="svc-grid">
+<a class="svc-card" data-provider="azure" href="azure-blob-storage.html"><span class="svc-card-name">Azure Blob Storage</span><span class="svc-card-desc">Azure Blob Storageは、テキスト・画像・動画・ログなどの非構造化データを大規模に格納するためのオブジェクトストレージサービスだ。</span><span class="svc-card-foot"><span>演習13問</span><span class="arrow">→</span></span></a>
+<a class="svc-card" data-provider="azure" href="azure-files.html"><span class="svc-card-name">Azure Files</span><span class="svc-card-desc">Azure Filesは、SMB・NFS・REST APIプロトコルでアクセスできるフルマネージドのクラウドファイル共有サービスだ。</span><span class="svc-card-foot"><span>演習7問</span><span class="arrow">→</span></span></a>
+<a class="svc-card" data-provider="azure" href="azure-storage-account.html"><span class="svc-card-name">Azure ストレージ アカウント</span><span class="svc-card-desc">Azureストレージアカウントは、Blob・Files・Queue・Tableなどのストレージサービスをホストする論理コンテナだ。</span><span class="svc-card-foot"><span>演習12問</span><span class="arrow">→</span></span></a>
+</div>
+<h3 class="cat-head">データベース</h3>
+<div class="svc-grid">
+<a class="svc-card" data-provider="azure" href="azure-cosmos-db.html"><span class="svc-card-name">Azure Cosmos DB</span><span class="svc-card-desc">Azure Cosmos DBは、グローバル分散・マルチモデルに対応したフルマネージドのNoSQLデータベースサービスだ。</span><span class="svc-card-foot"><span>演習9問</span><span class="arrow">→</span></span></a>
+<a class="svc-card" data-provider="azure" href="azure-sql-database.html"><span class="svc-card-name">Azure SQL Database</span><span class="svc-card-desc">Azure SQL Databaseは、SQL Serverエンジンをベースにしたフルマネージドのリレーショナルデータベースサービス（PaaS）…</span><span class="svc-card-foot"><span>演習6問</span><span class="arrow">→</span></span></a>
+<a class="svc-card" data-provider="azure" href="azure-sql-managed-instance.html"><span class="svc-card-name">Azure SQL Managed Instance</span><span class="svc-card-desc">Azure SQL Managed Instanceは、SQL Serverとほぼ100%互換のマネージドデータベースサービスだ。</span><span class="svc-card-foot"><span>演習4問</span><span class="arrow">→</span></span></a>
+</div>
+<h3 class="cat-head">分析</h3>
+<div class="svc-grid">
+<a class="svc-card" data-provider="azure" href="azure-synapse.html"><span class="svc-card-name">Azure Synapse Analytics</span><span class="svc-card-desc">Azure Synapse Analyticsは、データウェアハウス・ビッグデータ処理・データ統合・分析ダッシュボードを一体化したエンタープライ…</span><span class="svc-card-foot"><span>演習6問</span><span class="arrow">→</span></span></a>
+<a class="svc-card" data-provider="azure" href="azure-databricks.html"><span class="svc-card-name">Azure Databricks</span><span class="svc-card-desc">Azure Databricksは、Apache Sparkをベースにしたフルマネージドのビッグデータ分析・機械学習プラットフォームだ。</span><span class="svc-card-foot"><span>演習4問</span><span class="arrow">→</span></span></a>
+<a class="svc-card" data-provider="azure" href="microsoft-fabric.html"><span class="svc-card-name">Microsoft Fabric</span><span class="svc-card-desc">Microsoft Fabricは、データエンジニアリング・データ統合・データウェアハウス・リアルタイム分析・機械学習・Power BIを一つの…</span><span class="svc-card-foot"><span>演習3問</span><span class="arrow">→</span></span></a>
+<a class="svc-card" data-provider="azure" href="azure-data-factory.html"><span class="svc-card-name">Azure Data Factory</span><span class="svc-card-desc">Azure Data Factory（ADF）は、クラウドネイティブのETL/ELTおよびデータ統合サービスだ。</span><span class="svc-card-foot"><span>演習3問</span><span class="arrow">→</span></span></a>
+<a class="svc-card" data-provider="azure" href="azure-stream-analytics.html"><span class="svc-card-name">Azure Stream Analytics</span><span class="svc-card-desc">Azure Stream Analyticsは、IoTデバイス・アプリケーションログ・ソーシャルメディアなどのリアルタイムデータストリームをSQ…</span><span class="svc-card-foot"><span>演習3問</span><span class="arrow">→</span></span></a>
+<a class="svc-card" data-provider="azure" href="power-bi.html"><span class="svc-card-name">Power BI</span><span class="svc-card-desc">Power BIは、データを可視化・分析するためのビジネスインテリジェンス（BI）ツールだ。</span><span class="svc-card-foot"><span>演習4問</span><span class="arrow">→</span></span></a>
+</div>
+<h3 class="cat-head">ネットワーキング</h3>
+<div class="svc-grid">
+<a class="svc-card" data-provider="azure" href="azure-vnet.html"><span class="svc-card-name">Azure Virtual Network（VNet）</span><span class="svc-card-desc">Azure Virtual Network（VNet）は、Azureにおけるプライベートネットワークの基本単位だ。</span><span class="svc-card-foot"><span>演習19問</span><span class="arrow">→</span></span></a>
+<a class="svc-card" data-provider="azure" href="azure-nsg.html"><span class="svc-card-name">ネットワーク セキュリティ グループ（NSG）</span><span class="svc-card-desc">ネットワークセキュリティグループ（NSG）は、Azureリソースへのインバウンドおよびアウトバウンドのネットワークトラフィックをフィルタリングす…</span><span class="svc-card-foot"><span>演習11問</span><span class="arrow">→</span></span></a>
+<a class="svc-card" data-provider="azure" href="azure-load-balancer.html"><span class="svc-card-name">Azure Load Balancer</span><span class="svc-card-desc">Azure Load BalancerはL4（トランスポート層）の負荷分散サービスで、TCPおよびUDPトラフィックを複数のバックエンドリソース…</span><span class="svc-card-foot"><span>演習1問</span><span class="arrow">→</span></span></a>
+<a class="svc-card" data-provider="azure" href="azure-application-gateway.html"><span class="svc-card-name">Azure Application Gateway</span><span class="svc-card-desc">Azure Application GatewayはL7（アプリケーション層）の負荷分散サービスで、HTTPおよびHTTPSトラフィックをURL…</span><span class="svc-card-foot"><span>演習2問</span><span class="arrow">→</span></span></a>
+<a class="svc-card" data-provider="azure" href="azure-firewall.html"><span class="svc-card-name">Azure Firewall</span><span class="svc-card-desc">Azure Firewallは、クラウドネイティブのステートフルなマネージドファイアウォールサービスだ。</span><span class="svc-card-foot"><span>演習8問</span><span class="arrow">→</span></span></a>
+<a class="svc-card" data-provider="azure" href="azure-bastion.html"><span class="svc-card-name">Azure Bastion</span><span class="svc-card-desc">Azure BastionはブラウザベースのマネージドSSH/RDPサービスで、VMのパブリックIPアドレスを持たずにAzure Portalか…</span><span class="svc-card-foot"><span>演習3問</span><span class="arrow">→</span></span></a>
+<a class="svc-card" data-provider="azure" href="azure-private-endpoint.html"><span class="svc-card-name">プライベート エンドポイント</span><span class="svc-card-desc">プライベートエンドポイントは、Azure PaaSサービス（Blob Storage・SQL Database・Key Vaultなど）への接続…</span><span class="svc-card-foot"><span>演習5問</span><span class="arrow">→</span></span></a>
+<a class="svc-card" data-provider="azure" href="azure-vpn-gateway.html"><span class="svc-card-name">Azure VPN Gateway</span><span class="svc-card-desc">Azure VPN Gatewayは、オンプレミスネットワークとAzure VNetをIPsecトンネルで暗号化接続するためのゲートウェイサービ…</span><span class="svc-card-foot"><span>演習1問</span><span class="arrow">→</span></span></a>
+<a class="svc-card" data-provider="azure" href="azure-expressroute.html"><span class="svc-card-name">Azure ExpressRoute</span><span class="svc-card-desc">Azure ExpressRouteは、オンプレミスネットワークとAzureをインターネットを経由せずに専用回線で接続するサービスだ。</span><span class="svc-card-foot"><span>演習2問</span><span class="arrow">→</span></span></a>
+<a class="svc-card" data-provider="azure" href="azure-dns.html"><span class="svc-card-name">Azure DNS</span><span class="svc-card-desc">Azure DNSは、Microsoftのグローバルなネットワーク上でDNSドメインをホスティングするサービスだ。</span><span class="svc-card-foot"><span>演習2問</span><span class="arrow">→</span></span></a>
+</div>
+<h3 class="cat-head">セキュリティ</h3>
+<div class="svc-grid">
+<a class="svc-card" data-provider="azure" href="azure-key-vault.html"><span class="svc-card-name">Azure Key Vault</span><span class="svc-card-desc">Azure Key Vaultは、暗号化キー・シークレット（APIキー・パスワード・接続文字列）・証明書を安全に保管・管理するサービスだ。</span><span class="svc-card-foot"><span>演習8問</span><span class="arrow">→</span></span></a>
+<a class="svc-card" data-provider="azure" href="microsoft-defender-for-cloud.html"><span class="svc-card-name">Microsoft Defender for Cloud</span><span class="svc-card-desc">Microsoft Defender for Cloudは、Azureおよびハイブリッドクラウドとマルチクラウド環境（AWS・GCPも含む）のセ…</span><span class="svc-card-foot"><span>演習6問</span><span class="arrow">→</span></span></a>
+<a class="svc-card" data-provider="azure" href="microsoft-defender-xdr.html"><span class="svc-card-name">Microsoft Defender XDR</span><span class="svc-card-desc">Microsoft Defender XDR（Extended Detection and Response）は、エンドポイント・メール・ID・…</span><span class="svc-card-foot"><span>演習7問</span><span class="arrow">→</span></span></a>
+<a class="svc-card" data-provider="azure" href="microsoft-sentinel.html"><span class="svc-card-name">Microsoft Sentinel</span><span class="svc-card-desc">Microsoft Sentinelは、クラウドネイティブのSIEM（Security Information and Event Manage…</span><span class="svc-card-foot"><span>演習4問</span><span class="arrow">→</span></span></a>
+</div>
+<h3 class="cat-head">コンプライアンス</h3>
+<div class="svc-grid">
+<a class="svc-card" data-provider="azure" href="microsoft-purview.html"><span class="svc-card-name">Microsoft Purview</span><span class="svc-card-desc">Microsoft Purviewは、データガバナンス・情報保護・コンプライアンス管理を統合したプラットフォームだ。</span><span class="svc-card-foot"><span>演習7問</span><span class="arrow">→</span></span></a>
+</div>
+<h3 class="cat-head">AI・機械学習</h3>
+<div class="svc-grid">
+<a class="svc-card" data-provider="azure" href="azure-openai.html"><span class="svc-card-name">Azure OpenAI Service</span><span class="svc-card-desc">Azure OpenAI Serviceは、OpenAIが開発したGPT-4o・GPT-4・DALL-E・Whisperなどのモデルをエンタープ…</span><span class="svc-card-foot"><span>演習3問</span><span class="arrow">→</span></span></a>
+<a class="svc-card" data-provider="azure" href="azure-ai-language.html"><span class="svc-card-name">Azure AI Language</span><span class="svc-card-desc">Azure AI Languageは、テキスト分析・感情分析・キーフレーズ抽出・固有表現認識（NER）・質問応答・テキスト分類などのNLP（自然…</span><span class="svc-card-foot"><span>演習8問</span><span class="arrow">→</span></span></a>
+<a class="svc-card" data-provider="azure" href="azure-ai-vision.html"><span class="svc-card-name">Azure AI Vision</span><span class="svc-card-desc">Azure AI Visionは、画像・動画の分析に特化したAIサービスだ。</span><span class="svc-card-foot"><span>演習13問</span><span class="arrow">→</span></span></a>
+<a class="svc-card" data-provider="azure" href="azure-machine-learning.html"><span class="svc-card-name">Azure Machine Learning</span><span class="svc-card-desc">Azure Machine Learning（Azure ML）は、機械学習モデルのデータ準備・学習・評価・デプロイ・監視のライフサイクル全体を…</span><span class="svc-card-foot"><span>演習5問</span><span class="arrow">→</span></span></a>
+</div>
+<h3 class="cat-head">コスト管理</h3>
+<div class="svc-grid">
+<a class="svc-card" data-provider="azure" href="azure-cost-management.html"><span class="svc-card-name">Microsoft Cost Management</span><span class="svc-card-desc">Microsoft Cost Management（旧Azure Cost Management）は、Azureリソースのコストを可視化・分析・…</span><span class="svc-card-foot"><span>演習7問</span><span class="arrow">→</span></span></a>
+</div>
+</section>
+<section class="svc-provider" data-provider="gcp">
+<h2 class="provider-head"><span class="provider-name">Google Cloud</span><span class="provider-count">26サービス</span></h2>
+<h3 class="cat-head">コンピューティング</h3>
+<div class="svc-grid">
+<a class="svc-card" data-provider="gcp" href="compute-engine.html"><span class="svc-card-name">Compute Engine</span><span class="svc-card-desc">Google Cloud の IaaS 型 VM サービス。</span><span class="svc-card-foot"><span>演習6問</span><span class="arrow">→</span></span></a>
+<a class="svc-card" data-provider="gcp" href="cloud-run.html"><span class="svc-card-name">Cloud Run</span><span class="svc-card-desc">コンテナイメージをデプロイするだけで HTTP リクエスト・イベントを処理できるフルマネージドのサービス実行基盤。</span><span class="svc-card-foot"><span>演習14問</span><span class="arrow">→</span></span></a>
+<a class="svc-card" data-provider="gcp" href="cloud-functions.html"><span class="svc-card-name">Cloud Functions</span><span class="svc-card-desc">関数単位でコードをデプロイするサーバーレス実行環境。</span><span class="svc-card-foot"><span>演習7問</span><span class="arrow">→</span></span></a>
+<a class="svc-card" data-provider="gcp" href="app-engine.html"><span class="svc-card-name">App Engine</span><span class="svc-card-desc">Google 最初の PaaS。</span><span class="svc-card-foot"><span>演習2問</span><span class="arrow">→</span></span></a>
+</div>
+<h3 class="cat-head">コンテナ</h3>
+<div class="svc-grid">
+<a class="svc-card" data-provider="gcp" href="gke.html"><span class="svc-card-name">Google Kubernetes Engine（GKE）</span><span class="svc-card-desc">Kubernetes クラスタをマネージドで提供するサービス。</span><span class="svc-card-foot"><span>演習12問</span><span class="arrow">→</span></span></a>
+</div>
+<h3 class="cat-head">開発者ツール</h3>
+<div class="svc-grid">
+<a class="svc-card" data-provider="gcp" href="artifact-registry.html"><span class="svc-card-name">Artifact Registry</span><span class="svc-card-desc">Docker コンテナイメージだけでなく Maven・npm・PyPI・Helm チャートなど多様なアーティファクト形式を一元管理するリポジトリ…</span><span class="svc-card-foot"><span>演習6問</span><span class="arrow">→</span></span></a>
+<a class="svc-card" data-provider="gcp" href="cloud-build.html"><span class="svc-card-name">Cloud Build</span><span class="svc-card-desc">Google Cloud 上でコードのビルド・テスト・デプロイを自動化するマネージド CI/CD サービス。</span><span class="svc-card-foot"><span>演習4問</span><span class="arrow">→</span></span></a>
+</div>
+<h3 class="cat-head">ストレージ</h3>
+<div class="svc-grid">
+<a class="svc-card" data-provider="gcp" href="cloud-storage.html"><span class="svc-card-name">Cloud Storage</span><span class="svc-card-desc">無制限スケールのオブジェクトストレージ。</span><span class="svc-card-foot"><span>演習14問</span><span class="arrow">→</span></span></a>
+<a class="svc-card" data-provider="gcp" href="persistent-disk.html"><span class="svc-card-name">Persistent Disk</span><span class="svc-card-desc">Compute Engine VM にアタッチするネットワーク型ブロックストレージ。</span><span class="svc-card-foot"><span>演習0問</span><span class="arrow">→</span></span></a>
+</div>
+<h3 class="cat-head">データベース</h3>
+<div class="svc-grid">
+<a class="svc-card" data-provider="gcp" href="cloud-sql.html"><span class="svc-card-name">Cloud SQL</span><span class="svc-card-desc">MySQL・PostgreSQL・SQL Server のマネージドリレーショナルデータベースサービス。</span><span class="svc-card-foot"><span>演習8問</span><span class="arrow">→</span></span></a>
+<a class="svc-card" data-provider="gcp" href="cloud-spanner.html"><span class="svc-card-name">Cloud Spanner</span><span class="svc-card-desc">グローバル分散型のフルマネージドリレーショナルデータベース。</span><span class="svc-card-foot"><span>演習7問</span><span class="arrow">→</span></span></a>
+<a class="svc-card" data-provider="gcp" href="firestore.html"><span class="svc-card-name">Firestore</span><span class="svc-card-desc">ドキュメント指向のフルマネージド NoSQL データベース。</span><span class="svc-card-foot"><span>演習3問</span><span class="arrow">→</span></span></a>
+<a class="svc-card" data-provider="gcp" href="bigtable.html"><span class="svc-card-name">Bigtable</span><span class="svc-card-desc">Google 内部で検索インデックスや Gmail などに使われてきた大規模ワイドカラム NoSQL データベース。</span><span class="svc-card-foot"><span>演習0問</span><span class="arrow">→</span></span></a>
+</div>
+<h3 class="cat-head">分析</h3>
+<div class="svc-grid">
+<a class="svc-card" data-provider="gcp" href="bigquery.html"><span class="svc-card-name">BigQuery</span><span class="svc-card-desc">サーバーレスのフルマネージドデータウェアハウス。</span><span class="svc-card-foot"><span>演習12問</span><span class="arrow">→</span></span></a>
+<a class="svc-card" data-provider="gcp" href="dataflow.html"><span class="svc-card-name">Dataflow</span><span class="svc-card-desc">Apache Beam を実行エンジンとするフルマネージドのストリーミング・バッチデータ処理サービス。</span><span class="svc-card-foot"><span>演習3問</span><span class="arrow">→</span></span></a>
+<a class="svc-card" data-provider="gcp" href="dataproc.html"><span class="svc-card-name">Dataproc</span><span class="svc-card-desc">Apache Spark・Hadoop・Hive・Flink などを動かすマネージドクラスタサービス。</span><span class="svc-card-foot"><span>演習1問</span><span class="arrow">→</span></span></a>
+</div>
+<h3 class="cat-head">アプリケーション統合</h3>
+<div class="svc-grid">
+<a class="svc-card" data-provider="gcp" href="pubsub.html"><span class="svc-card-name">Pub/Sub</span><span class="svc-card-desc">グローバルスケールの非同期メッセージングサービス。</span><span class="svc-card-foot"><span>演習7問</span><span class="arrow">→</span></span></a>
+</div>
+<h3 class="cat-head">セキュリティ</h3>
+<div class="svc-grid">
+<a class="svc-card" data-provider="gcp" href="gcp-iam.html"><span class="svc-card-name">Cloud IAM</span><span class="svc-card-desc">Google Cloud リソースへのアクセス制御を管理するサービス。</span><span class="svc-card-foot"><span>演習17問</span><span class="arrow">→</span></span></a>
+<a class="svc-card" data-provider="gcp" href="cloud-kms.html"><span class="svc-card-name">Cloud KMS</span><span class="svc-card-desc">暗号鍵の生成・保管・ローテーション・廃棄を一元管理するクラウド鍵管理サービス。</span><span class="svc-card-foot"><span>演習2問</span><span class="arrow">→</span></span></a>
+<a class="svc-card" data-provider="gcp" href="secret-manager.html"><span class="svc-card-name">Secret Manager</span><span class="svc-card-desc">API キー・パスワード・証明書などの機密情報をバージョン管理しながら安全に保管するサービス。</span><span class="svc-card-foot"><span>演習2問</span><span class="arrow">→</span></span></a>
+</div>
+<h3 class="cat-head">ネットワーキング</h3>
+<div class="svc-grid">
+<a class="svc-card" data-provider="gcp" href="gcp-vpc.html"><span class="svc-card-name">VPC ネットワーク</span><span class="svc-card-desc">Google Cloud 上の論理的な仮想プライベートネットワーク。</span><span class="svc-card-foot"><span>演習11問</span><span class="arrow">→</span></span></a>
+<a class="svc-card" data-provider="gcp" href="cloud-load-balancing.html"><span class="svc-card-name">Cloud Load Balancing</span><span class="svc-card-desc">グローバル・リージョン・内部など多様な構成をサポートするソフトウェア定義ロードバランサー。</span><span class="svc-card-foot"><span>演習4問</span><span class="arrow">→</span></span></a>
+<a class="svc-card" data-provider="gcp" href="cloud-cdn.html"><span class="svc-card-name">Cloud CDN</span><span class="svc-card-desc">Google のグローバルエッジネットワーク（100 以上の PoP）を使って静的・動的コンテンツをエッジキャッシュするコンテンツ配信サービス。</span><span class="svc-card-foot"><span>演習2問</span><span class="arrow">→</span></span></a>
+</div>
+<h3 class="cat-head">運用</h3>
+<div class="svc-grid">
+<a class="svc-card" data-provider="gcp" href="cloud-monitoring.html"><span class="svc-card-name">Cloud Monitoring</span><span class="svc-card-desc">Google Cloud リソースとアプリケーションのメトリクスを収集・可視化・アラート通知するフルマネージドの監視サービス。</span><span class="svc-card-foot"><span>演習7問</span><span class="arrow">→</span></span></a>
+<a class="svc-card" data-provider="gcp" href="cloud-logging.html"><span class="svc-card-name">Cloud Logging</span><span class="svc-card-desc">Google Cloud サービスとアプリケーションからのログを一元収集・保管・検索するマネージドロギングサービス。</span><span class="svc-card-foot"><span>演習4問</span><span class="arrow">→</span></span></a>
+</div>
+<h3 class="cat-head">AI・機械学習</h3>
+<div class="svc-grid">
+<a class="svc-card" data-provider="gcp" href="vertex-ai.html"><span class="svc-card-name">Vertex AI</span><span class="svc-card-desc">Google Cloud の統合 ML・生成 AI プラットフォーム。</span><span class="svc-card-foot"><span>演習14問</span><span class="arrow">→</span></span></a>
+</div>
+</section>
+</main>
+<footer class="page-footer">
+<nav class="hub-nav"><a href="../exams/aws-clf-c02/">CLF-C02 試験ガイド</a><a href="../exams/aws-aif-c01/">AIF-C01 試験ガイド</a><a href="../exams/aws-saa-c03/">SAA-C03 試験ガイド</a><a href="../exams/aws-dva-c02/">DVA-C02 試験ガイド</a><a href="../exams/aws-sap-c02/">SAP-C02 試験ガイド</a><a href="../exams/gcp-cdl/">CDL 試験ガイド</a><a href="../exams/gcp-ace/">ACE 試験ガイド</a><a href="../exams/azure-az900/">AZ-900 試験ガイド</a><a href="../exams/azure-ai900/">AI-900 試験ガイド</a><a href="../exams/azure-dp900/">DP-900 試験ガイド</a><a href="../exams/azure-sc900/">SC-900 試験ガイド</a><a href="../exams/azure-az104/">AZ-104 試験ガイド</a></nav>
+<nav class="site-nav"><a href="../guide/">資格ガイド</a><a href="../learn/">サービス解説</a><a href="../career/">キャリア</a><a href="../about.html">運営者情報</a><a href="../privacy.html">プライバシーポリシー</a><a href="../contact.html">お問い合わせ</a></nav>
+<p class="copy">© CLOUDCERT_ — 本サイトは各認定試験の公式試験ではなく、収録問題はすべてオリジナルの演習問題です。</p>
+</footer>
+</body>
+</html>

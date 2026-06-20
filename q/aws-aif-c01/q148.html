@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>【AIF-C01 演習問題 #148】ある企業がマルチモーダルな生成 AI アプリケーションを Amazon Bedrock で…</title>
+<meta name="description" content="AIF-C01の本試験レベル演習問題。ある企業がマルチモーダルな生成 AI アプリケーションを Amazon Bedrock で構築している。セキュリティ要件として「ユーザー入力に有害コンテンツが含まれないこと」「モデル… 全選択肢の解説つき。">
+<link rel="canonical" href="https://cloudcert.app/q/aws-aif-c01/q148.html">
+<meta property="og:title" content="【AIF-C01 演習問題 #148】ある企業がマルチモーダルな生成 AI アプリケーションを Amazon Bedrock で…">
+<meta property="og:description" content="AIF-C01の本試験レベル演習問題。ある企業がマルチモーダルな生成 AI アプリケーションを Amazon Bedrock で構築している。セキュリティ要件として「ユーザー入力に有害コンテンツが含まれないこと」「モデル… 全選択肢の解説つき。">
+<meta property="og:url" content="https://cloudcert.app/q/aws-aif-c01/q148.html">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="CLOUDCERT_">
+<meta property="og:image" content="https://cloudcert.app/assets/og.png">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='80' font-size='80' fill='%233fe0a4' font-family='monospace'>▸</text></svg>">
+
+<meta name="google-adsense-account" content="ca-pub-5647574947191958">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+JP:wght@400;500;700&family=JetBrains+Mono:wght@400;600;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../../css/style.css">
+<link rel="stylesheet" href="../../css/page.css">
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-SZR5CB5Q3X"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag('js',new Date());gtag('config','G-SZR5CB5Q3X');</script>
+<script type="application/ld+json">[{"@context":"https://schema.org/","@type":"Quiz","about":{"@type":"Thing","name":"AWS Certified AI Practitioner"},"hasPart":[{"@type":"Question","eduQuestionType":"Checkbox","learningResourceType":"Practice problem","text":"ある企業がマルチモーダルな生成 AI アプリケーションを Amazon Bedrock で構築している。セキュリティ要件として「ユーザー入力に有害コンテンツが含まれないこと」「モデル出力が著作権侵害リスクのないこと」「実際のコスト管理のため各チームの使用量を制限すること」が挙げられた。これらの要件をすべて満たすために組み合わせるべき Bedrock の機能を2つ選択してください。","suggestedAnswer":[{"@type":"Answer","position":0,"text":"Amazon CloudFront のキャッシュを使ってモデル呼び出しの総数を削減する"},{"@type":"Answer","position":1,"text":"Amazon Macie を使って Bedrock への入力テキストをリアルタイムでスキャンする"},{"@type":"Answer","position":3,"text":"AWS WAF をアプリケーションロードバランサーに設定して HTTP リクエストレートを制限する"}],"acceptedAnswer":[{"@type":"Answer","position":2,"text":"Bedrock の使用量クォータ（モデル呼び出し数）をチームのプロジェクトタグ単位で設定し、AWS Budgets でコスト上限アラートを設定する","comment":{"@type":"Comment","text":"有害コンテンツフィルタリングと著作権ガードは Bedrock Guardrails の機能（コンテンツフィルター・著作権保護フィルター）で対応できる（E）。使用量制限とコスト管理は Bedrock のスロットリングクォータとAWS Budgets のアラートの組み合わせで実現できる（C）。BのAmazon MacieはS3内のPII検出用サービスであり、Bedrock への入力テキストをリアルタイムにスキャンする機能はない。DのAWS WAFはHTTPリクエストのレート制限は行えるが、AIコンテンツの品質管理や著作権チェックはできない。AのCloudFrontキャッシュはコンテンツ配信を高速化するが、生成AIの応答は動的でありキャッシュ利用は限定的で使用量制限の制御手段にはならない。"}},{"@type":"Answer","position":4,"text":"Bedrock Guardrails でコンテンツフィルター（有害コンテンツ）・グラウンデッドネスチェック・機密情報マスクを設定し、アウトプットの著作権ガードを有効化する","comment":{"@type":"Comment","text":"有害コンテンツフィルタリングと著作権ガードは Bedrock Guardrails の機能（コンテンツフィルター・著作権保護フィルター）で対応できる（E）。使用量制限とコスト管理は Bedrock のスロットリングクォータとAWS Budgets のアラートの組み合わせで実現できる（C）。BのAmazon MacieはS3内のPII検出用サービスであり、Bedrock への入力テキストをリアルタイムにスキャンする機能はない。DのAWS WAFはHTTPリクエストのレート制限は行えるが、AIコンテンツの品質管理や著作権チェックはできない。AのCloudFrontキャッシュはコンテンツ配信を高速化するが、生成AIの応答は動的でありキャッシュ利用は限定的で使用量制限の制御手段にはならない。"}}]}]},{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"HOME","item":"https://cloudcert.app/"},{"@type":"ListItem","position":2,"name":"AIF-C01 試験ガイド","item":"https://cloudcert.app/exams/aws-aif-c01/"},{"@type":"ListItem","position":3,"name":"q148"}]}]</script>
+</head>
+<body class="page-body">
+<header class="page-header"><a class="page-logo" href="../../index.html">&gt; CLOUDCERT_</a></header>
+<main class="page-main">
+
+<nav class="breadcrumb"><a href="../../index.html">HOME</a> › <a href="../../exams/aws-aif-c01/">AIF-C01 試験ガイド</a> › q148</nav>
+<div class="q-meta"><span>AIF-C01</span><span>AI ソリューションのセキュリティ、コンプライアンス、ガバナンス</span><span>MEDIUM</span><span>複数選択</span></div>
+<h1>ある企業がマルチモーダルな生成 AI アプリケーションを Amazon Bedrock で構築している。セキュリティ要件として「ユーザー入力に有害コンテンツが含まれないこと」「モデル出力が著作権侵害リスクのないこと」「実際のコスト管理のため各チームの使用量を制限すること」が挙げられた。これらの要件をすべて満たすために組み合わせるべき Bedrock の機能を2つ選択してください。</h1>
+<ol class="q-choices">
+<li><b>A.</b> Amazon CloudFront のキャッシュを使ってモデル呼び出しの総数を削減する</li>
+<li><b>B.</b> Amazon Macie を使って Bedrock への入力テキストをリアルタイムでスキャンする</li>
+<li><b>C.</b> Bedrock の使用量クォータ（モデル呼び出し数）をチームのプロジェクトタグ単位で設定し、AWS Budgets でコスト上限アラートを設定する</li>
+<li><b>D.</b> AWS WAF をアプリケーションロードバランサーに設定して HTTP リクエストレートを制限する</li>
+<li><b>E.</b> Bedrock Guardrails でコンテンツフィルター（有害コンテンツ）・グラウンデッドネスチェック・機密情報マスクを設定し、アウトプットの著作権ガードを有効化する</li>
+</ol>
+<details class="q-answer">
+<summary>解答と解説を見る</summary>
+<div class="inner">
+<p><b>正解: C, E</b></p>
+<p>有害コンテンツフィルタリングと著作権ガードは Bedrock Guardrails の機能（コンテンツフィルター・著作権保護フィルター）で対応できる（E）。使用量制限とコスト管理は Bedrock のスロットリングクォータとAWS Budgets のアラートの組み合わせで実現できる（C）。BのAmazon MacieはS3内のPII検出用サービスであり、Bedrock への入力テキストをリアルタイムにスキャンする機能はない。DのAWS WAFはHTTPリクエストのレート制限は行えるが、AIコンテンツの品質管理や著作権チェックはできない。AのCloudFrontキャッシュはコンテンツ配信を高速化するが、生成AIの応答は動的でありキャッシュ利用は限定的で使用量制限の制御手段にはならない。</p>
+<div class="svc-links">📚 関連サービスの解説: <a href="../../learn/amazon-bedrock.html">Amazon Bedrock</a></div>
+</div>
+</details>
+<div class="cta-box"><a class="btn btn-primary" href="../../exam.html?exam=aws-aif-c01">▸ この試験を本気で演習する（全150問・無料）</a></div>
+<nav class="q-nav">
+<span><a href="q147.html">← 前の問題</a></span>
+<span><a href="q149.html">次の問題 →</a></span>
+</nav>
+<section class="related"><h2>同じ分野の関連問題</h2><ul class="q-list">
+<li><a href="q147.html">ある企業が Amazon SageMaker パイプラインを使って機械学習ワークフローを自動化している。セキュリティ審査…</a></li>
+<li><a href="q149.html">ある金融機関が GDPR と社内のデータ保持ポリシーに準拠するために、機械学習パイプラインで使用されるデータのライフサイ…</a></li>
+<li><a href="q146.html">ある企業が Amazon Bedrock を使った顧客向けの生成 AI チャットボットを本番運用している。システムプロン…</a></li>
+<li><a href="q150.html">ある企業が AWS 上で大規模な機械学習プラットフォームを構築・運用している。監査部門から「AI モデルのデプロイ履歴と…</a></li>
+</ul></section>
+</main>
+<footer class="page-footer">
+<nav class="hub-nav"><a href="../../exams/aws-clf-c02/">CLF-C02 試験ガイド</a><a href="../../exams/aws-aif-c01/">AIF-C01 試験ガイド</a><a href="../../exams/aws-saa-c03/">SAA-C03 試験ガイド</a><a href="../../exams/aws-dva-c02/">DVA-C02 試験ガイド</a><a href="../../exams/aws-sap-c02/">SAP-C02 試験ガイド</a><a href="../../exams/gcp-cdl/">CDL 試験ガイド</a><a href="../../exams/gcp-ace/">ACE 試験ガイド</a><a href="../../exams/azure-az900/">AZ-900 試験ガイド</a><a href="../../exams/azure-ai900/">AI-900 試験ガイド</a><a href="../../exams/azure-dp900/">DP-900 試験ガイド</a><a href="../../exams/azure-sc900/">SC-900 試験ガイド</a><a href="../../exams/azure-az104/">AZ-104 試験ガイド</a></nav>
+<nav class="site-nav"><a href="../../guide/">資格ガイド</a><a href="../../learn/">サービス解説</a><a href="../../career/">キャリア</a><a href="../../about.html">運営者情報</a><a href="../../privacy.html">プライバシーポリシー</a><a href="../../contact.html">お問い合わせ</a></nav>
+<p class="copy">© CLOUDCERT_ — 本サイトは各認定試験の公式試験ではなく、収録問題はすべてオリジナルの演習問題です。</p>
+</footer>
+</body>
+</html>

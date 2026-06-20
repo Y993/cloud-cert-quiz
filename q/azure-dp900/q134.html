@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>【DP-900 演習問題 #134】ある企業が Azure Data Factory のパイプラインで ETL 処理を実装して…</title>
+<meta name="description" content="DP-900の本試験レベル演習問題。ある企業が Azure Data Factory のパイプラインで ETL 処理を実装している。ADF パイプラインの主要コンポーネントについて正しい説明を2つ選択してください。 全選択肢の解説つき。">
+<link rel="canonical" href="https://cloudcert.app/q/azure-dp900/q134.html">
+<meta property="og:title" content="【DP-900 演習問題 #134】ある企業が Azure Data Factory のパイプラインで ETL 処理を実装して…">
+<meta property="og:description" content="DP-900の本試験レベル演習問題。ある企業が Azure Data Factory のパイプラインで ETL 処理を実装している。ADF パイプラインの主要コンポーネントについて正しい説明を2つ選択してください。 全選択肢の解説つき。">
+<meta property="og:url" content="https://cloudcert.app/q/azure-dp900/q134.html">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="CLOUDCERT_">
+<meta property="og:image" content="https://cloudcert.app/assets/og.png">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='80' font-size='80' fill='%233fe0a4' font-family='monospace'>▸</text></svg>">
+
+<meta name="google-adsense-account" content="ca-pub-5647574947191958">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+JP:wght@400;500;700&family=JetBrains+Mono:wght@400;600;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../../css/style.css">
+<link rel="stylesheet" href="../../css/page.css">
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-SZR5CB5Q3X"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag('js',new Date());gtag('config','G-SZR5CB5Q3X');</script>
+<script type="application/ld+json">[{"@context":"https://schema.org/","@type":"Quiz","about":{"@type":"Thing","name":"Microsoft Azure Data Fundamentals"},"hasPart":[{"@type":"Question","eduQuestionType":"Checkbox","learningResourceType":"Practice problem","text":"ある企業が Azure Data Factory のパイプラインで ETL 処理を実装している。ADF パイプラインの主要コンポーネントについて正しい説明を2つ選択してください。","suggestedAnswer":[{"@type":"Answer","position":0,"text":"トリガー（Trigger）はデータの変換ロジックを定義するコンポーネントである"},{"@type":"Answer","position":1,"text":"Integration Runtime は ADF パイプラインの UI デザイン機能を提供するコンポーネントである"},{"@type":"Answer","position":4,"text":"アクティビティ（Activity）は ADF のスケジュール設定のみに使用し、実際のデータ処理は行わない"}],"acceptedAnswer":[{"@type":"Answer","position":2,"text":"データセット（Dataset）は、パイプラインが読み書きするデータの構造と場所を参照する定義である","comment":{"@type":"Comment","text":"リンクサービスはデータソース（SQL Database・Blob Storage・Oracle など）やコンピューティング（Databricks・HDInsight など）への接続情報（接続文字列・認証・エンドポイント）を定義する（選択肢 D が正解）。データセットはパイプラインが参照するデータの場所（テーブル名・ファイルパスなど）とスキーマ情報を定義する（選択肢 C が正解）。選択肢 E は誤りで、アクティビティはパイプライン内の実際の処理単位（データコピー・Spark ジョブ実行・ストアドプロシージャ呼び出しなど）を定義するものであり、スケジュール設定はトリガーの役割である。選択肢 B は誤りで、Integration Runtime はデータ移動と変換処理を実行する計算基盤（Azure IR・セルフホスト IR・Azure-SSIS IR）であり、UI デザイン機能ではない。選択肢 A は誤りで、トリガーはパイプラインの実行タイミング（スケジュール・イベント）を定義するものであり、変換ロジックはデータフローアクティビティが担う。"}},{"@type":"Answer","position":3,"text":"リンクサービス（Linked Service）は、外部データソースやコンピューティングサービスへの接続情報を定義する","comment":{"@type":"Comment","text":"リンクサービスはデータソース（SQL Database・Blob Storage・Oracle など）やコンピューティング（Databricks・HDInsight など）への接続情報（接続文字列・認証・エンドポイント）を定義する（選択肢 D が正解）。データセットはパイプラインが参照するデータの場所（テーブル名・ファイルパスなど）とスキーマ情報を定義する（選択肢 C が正解）。選択肢 E は誤りで、アクティビティはパイプライン内の実際の処理単位（データコピー・Spark ジョブ実行・ストアドプロシージャ呼び出しなど）を定義するものであり、スケジュール設定はトリガーの役割である。選択肢 B は誤りで、Integration Runtime はデータ移動と変換処理を実行する計算基盤（Azure IR・セルフホスト IR・Azure-SSIS IR）であり、UI デザイン機能ではない。選択肢 A は誤りで、トリガーはパイプラインの実行タイミング（スケジュール・イベント）を定義するものであり、変換ロジックはデータフローアクティビティが担う。"}}]}]},{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"HOME","item":"https://cloudcert.app/"},{"@type":"ListItem","position":2,"name":"DP-900 試験ガイド","item":"https://cloudcert.app/exams/azure-dp900/"},{"@type":"ListItem","position":3,"name":"q134"}]}]</script>
+</head>
+<body class="page-body">
+<header class="page-header"><a class="page-logo" href="../../index.html">&gt; CLOUDCERT_</a></header>
+<main class="page-main">
+
+<nav class="breadcrumb"><a href="../../index.html">HOME</a> › <a href="../../exams/azure-dp900/">DP-900 試験ガイド</a> › q134</nav>
+<div class="q-meta"><span>DP-900</span><span>Azure の分析ワークロード</span><span>MEDIUM</span><span>複数選択</span></div>
+<h1>ある企業が Azure Data Factory のパイプラインで ETL 処理を実装している。ADF パイプラインの主要コンポーネントについて正しい説明を2つ選択してください。</h1>
+<ol class="q-choices">
+<li><b>A.</b> トリガー（Trigger）はデータの変換ロジックを定義するコンポーネントである</li>
+<li><b>B.</b> Integration Runtime は ADF パイプラインの UI デザイン機能を提供するコンポーネントである</li>
+<li><b>C.</b> データセット（Dataset）は、パイプラインが読み書きするデータの構造と場所を参照する定義である</li>
+<li><b>D.</b> リンクサービス（Linked Service）は、外部データソースやコンピューティングサービスへの接続情報を定義する</li>
+<li><b>E.</b> アクティビティ（Activity）は ADF のスケジュール設定のみに使用し、実際のデータ処理は行わない</li>
+</ol>
+<details class="q-answer">
+<summary>解答と解説を見る</summary>
+<div class="inner">
+<p><b>正解: C, D</b></p>
+<p>リンクサービスはデータソース（SQL Database・Blob Storage・Oracle など）やコンピューティング（Databricks・HDInsight など）への接続情報（接続文字列・認証・エンドポイント）を定義する（選択肢 D が正解）。データセットはパイプラインが参照するデータの場所（テーブル名・ファイルパスなど）とスキーマ情報を定義する（選択肢 C が正解）。選択肢 E は誤りで、アクティビティはパイプライン内の実際の処理単位（データコピー・Spark ジョブ実行・ストアドプロシージャ呼び出しなど）を定義するものであり、スケジュール設定はトリガーの役割である。選択肢 B は誤りで、Integration Runtime はデータ移動と変換処理を実行する計算基盤（Azure IR・セルフホスト IR・Azure-SSIS IR）であり、UI デザイン機能ではない。選択肢 A は誤りで、トリガーはパイプラインの実行タイミング（スケジュール・イベント）を定義するものであり、変換ロジックはデータフローアクティビティが担う。</p>
+
+</div>
+</details>
+<div class="cta-box"><a class="btn btn-primary" href="../../exam.html?exam=azure-dp900">▸ この試験を本気で演習する（全150問・無料）</a></div>
+<nav class="q-nav">
+<span><a href="q133.html">← 前の問題</a></span>
+<span><a href="q135.html">次の問題 →</a></span>
+</nav>
+<section class="related"><h2>同じ分野の関連問題</h2><ul class="q-list">
+<li><a href="q133.html">Power BI レポートにおいて、スライサーで選択した期間に応じて動的に計算されるメジャー（例:「前月比成長率」）を定…</a></li>
+<li><a href="q135.html">ある企業が、Azure Databricks の Spark Structured Streaming を使って、Azu…</a></li>
+<li><a href="q132.html">ある企業が Microsoft Fabric のレイクハウスアーキテクチャを採用し、Bronze（生データ）→ Silv…</a></li>
+<li><a href="q136.html">ある企業が、ETL と ELT の2つのアプローチを比較検討している。クラウドデータウェアハウス（Azure Synap…</a></li>
+</ul></section>
+</main>
+<footer class="page-footer">
+<nav class="hub-nav"><a href="../../exams/aws-clf-c02/">CLF-C02 試験ガイド</a><a href="../../exams/aws-aif-c01/">AIF-C01 試験ガイド</a><a href="../../exams/aws-saa-c03/">SAA-C03 試験ガイド</a><a href="../../exams/aws-dva-c02/">DVA-C02 試験ガイド</a><a href="../../exams/aws-sap-c02/">SAP-C02 試験ガイド</a><a href="../../exams/gcp-cdl/">CDL 試験ガイド</a><a href="../../exams/gcp-ace/">ACE 試験ガイド</a><a href="../../exams/azure-az900/">AZ-900 試験ガイド</a><a href="../../exams/azure-ai900/">AI-900 試験ガイド</a><a href="../../exams/azure-dp900/">DP-900 試験ガイド</a><a href="../../exams/azure-sc900/">SC-900 試験ガイド</a><a href="../../exams/azure-az104/">AZ-104 試験ガイド</a></nav>
+<nav class="site-nav"><a href="../../guide/">資格ガイド</a><a href="../../learn/">サービス解説</a><a href="../../career/">キャリア</a><a href="../../about.html">運営者情報</a><a href="../../privacy.html">プライバシーポリシー</a><a href="../../contact.html">お問い合わせ</a></nav>
+<p class="copy">© CLOUDCERT_ — 本サイトは各認定試験の公式試験ではなく、収録問題はすべてオリジナルの演習問題です。</p>
+</footer>
+</body>
+</html>

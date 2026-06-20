@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>【DP-900 演習問題 #15】ある人事部門が、従業員の勤怠レコードをCSV形式でシステムから出力しているが、データサイエ…</title>
+<meta name="description" content="DP-900の本試験レベル演習問題。ある人事部門が、従業員の勤怠レコードをCSV形式でシステムから出力しているが、データサイエンスチームが大規模な分析で使う際に毎回ほぼすべての列を読み込んでいる。CSVからParquet… 全選択肢の解説つき。">
+<link rel="canonical" href="https://cloudcert.app/q/azure-dp900/q015.html">
+<meta property="og:title" content="【DP-900 演習問題 #15】ある人事部門が、従業員の勤怠レコードをCSV形式でシステムから出力しているが、データサイエ…">
+<meta property="og:description" content="DP-900の本試験レベル演習問題。ある人事部門が、従業員の勤怠レコードをCSV形式でシステムから出力しているが、データサイエンスチームが大規模な分析で使う際に毎回ほぼすべての列を読み込んでいる。CSVからParquet… 全選択肢の解説つき。">
+<meta property="og:url" content="https://cloudcert.app/q/azure-dp900/q015.html">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="CLOUDCERT_">
+<meta property="og:image" content="https://cloudcert.app/assets/og.png">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='80' font-size='80' fill='%233fe0a4' font-family='monospace'>▸</text></svg>">
+
+<meta name="google-adsense-account" content="ca-pub-5647574947191958">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+JP:wght@400;500;700&family=JetBrains+Mono:wght@400;600;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../../css/style.css">
+<link rel="stylesheet" href="../../css/page.css">
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-SZR5CB5Q3X"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag('js',new Date());gtag('config','G-SZR5CB5Q3X');</script>
+<script type="application/ld+json">[{"@context":"https://schema.org/","@type":"Quiz","about":{"@type":"Thing","name":"Microsoft Azure Data Fundamentals"},"hasPart":[{"@type":"Question","eduQuestionType":"Multiple choice","learningResourceType":"Practice problem","text":"ある人事部門が、従業員の勤怠レコードをCSV形式でシステムから出力しているが、データサイエンスチームが大規模な分析で使う際に毎回ほぼすべての列を読み込んでいる。CSVからParquetへの移行を検討する場合、Parquet形式が特に優れている点として最も正確なものはどれか。","suggestedAnswer":[{"@type":"Answer","position":0,"text":"Parquetは行指向形式でトランザクション処理のレスポンスを最適化するために設計されている"},{"@type":"Answer","position":1,"text":"Parquetはテキスト形式のためあらゆるテキストエディタで直接編集できる"},{"@type":"Answer","position":2,"text":"ParquetはSQLを使わずにデータを分析できる独自クエリ言語を内蔵している"}],"acceptedAnswer":{"@type":"Answer","position":3,"text":"Parquetは列指向のバイナリ形式で、特定の列だけ読む場合の I/O 削減と高い圧縮率が強みだが、行単位の追記書き込みにはCSVが向いている","comment":{"@type":"Comment","text":"Parquetの最大の強みは「列指向のバイナリ形式」にある。列指向により特定の列だけをディスクから読み込む（列プルーニング）ことができ、不要な列を読まずに済む分I/O が大幅に削減できる。また同じデータ型が連続する列は辞書符号化・RLE圧縮が効き、CSVに比べ圧縮率が格段に高い。一方でParquetは行単位の追記書き込みには向かず、CSVのように1行ずつ手軽に書き足すことは難しい。選択肢Bは誤りで、Parquetはバイナリ形式（非テキスト）のためテキストエディタでの直接編集はできない。選択肢Cは存在しない機能で、クエリはApache Spark・DuckDB・Azure Synapse などのクエリエンジンが担い、Parquetファイル自体にクエリ言語は内蔵されていない。選択肢Aは正反対で、Parquetは列指向形式であり行指向ではない。行指向はOLTPデータベースの特性である。"}}}]},{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"HOME","item":"https://cloudcert.app/"},{"@type":"ListItem","position":2,"name":"DP-900 試験ガイド","item":"https://cloudcert.app/exams/azure-dp900/"},{"@type":"ListItem","position":3,"name":"q015"}]}]</script>
+</head>
+<body class="page-body">
+<header class="page-header"><a class="page-logo" href="../../index.html">&gt; CLOUDCERT_</a></header>
+<main class="page-main">
+
+<nav class="breadcrumb"><a href="../../index.html">HOME</a> › <a href="../../exams/azure-dp900/">DP-900 試験ガイド</a> › q015</nav>
+<div class="q-meta"><span>DP-900</span><span>コア データ概念</span><span>MEDIUM</span><span>単一選択</span></div>
+<h1>ある人事部門が、従業員の勤怠レコードをCSV形式でシステムから出力しているが、データサイエンスチームが大規模な分析で使う際に毎回ほぼすべての列を読み込んでいる。CSVからParquetへの移行を検討する場合、Parquet形式が特に優れている点として最も正確なものはどれか。</h1>
+<ol class="q-choices">
+<li><b>A.</b> Parquetは行指向形式でトランザクション処理のレスポンスを最適化するために設計されている</li>
+<li><b>B.</b> Parquetはテキスト形式のためあらゆるテキストエディタで直接編集できる</li>
+<li><b>C.</b> ParquetはSQLを使わずにデータを分析できる独自クエリ言語を内蔵している</li>
+<li><b>D.</b> Parquetは列指向のバイナリ形式で、特定の列だけ読む場合の I/O 削減と高い圧縮率が強みだが、行単位の追記書き込みにはCSVが向いている</li>
+</ol>
+<details class="q-answer">
+<summary>解答と解説を見る</summary>
+<div class="inner">
+<p><b>正解: D</b></p>
+<p>Parquetの最大の強みは「列指向のバイナリ形式」にある。列指向により特定の列だけをディスクから読み込む（列プルーニング）ことができ、不要な列を読まずに済む分I/O が大幅に削減できる。また同じデータ型が連続する列は辞書符号化・RLE圧縮が効き、CSVに比べ圧縮率が格段に高い。一方でParquetは行単位の追記書き込みには向かず、CSVのように1行ずつ手軽に書き足すことは難しい。選択肢Bは誤りで、Parquetはバイナリ形式（非テキスト）のためテキストエディタでの直接編集はできない。選択肢Cは存在しない機能で、クエリはApache Spark・DuckDB・Azure Synapse などのクエリエンジンが担い、Parquetファイル自体にクエリ言語は内蔵されていない。選択肢Aは正反対で、Parquetは列指向形式であり行指向ではない。行指向はOLTPデータベースの特性である。</p>
+
+</div>
+</details>
+<div class="cta-box"><a class="btn btn-primary" href="../../exam.html?exam=azure-dp900">▸ この試験を本気で演習する（全150問・無料）</a></div>
+<nav class="q-nav">
+<span><a href="q014.html">← 前の問題</a></span>
+<span><a href="q016.html">次の問題 →</a></span>
+</nav>
+<section class="related"><h2>同じ分野の関連問題</h2><ul class="q-list">
+<li><a href="q014.html">あるスタートアップが、ユーザーのプロフィール情報（ユーザーID、名前、メールアドレス、登録日）を管理するシステムを構築し…</a></li>
+<li><a href="q016.html">あるスマートフォンアプリが、ユーザーのタップ・スワイプ・スクロールのインタラクションイベントをリアルタイムで収集し、UX…</a></li>
+<li><a href="q013.html">ある企業が、データ管理チームの役割分担を明確にしようとしている。「データベース管理者（DBA）」の責務として正しいものを…</a></li>
+<li><a href="q017.html">ある企業がソーシャルメディアの投稿データを収集している。各投稿にはテキスト本文に加え、投稿者がつけたハッシュタグ（0個か…</a></li>
+</ul></section>
+</main>
+<footer class="page-footer">
+<nav class="hub-nav"><a href="../../exams/aws-clf-c02/">CLF-C02 試験ガイド</a><a href="../../exams/aws-aif-c01/">AIF-C01 試験ガイド</a><a href="../../exams/aws-saa-c03/">SAA-C03 試験ガイド</a><a href="../../exams/aws-dva-c02/">DVA-C02 試験ガイド</a><a href="../../exams/aws-sap-c02/">SAP-C02 試験ガイド</a><a href="../../exams/gcp-cdl/">CDL 試験ガイド</a><a href="../../exams/gcp-ace/">ACE 試験ガイド</a><a href="../../exams/azure-az900/">AZ-900 試験ガイド</a><a href="../../exams/azure-ai900/">AI-900 試験ガイド</a><a href="../../exams/azure-dp900/">DP-900 試験ガイド</a><a href="../../exams/azure-sc900/">SC-900 試験ガイド</a><a href="../../exams/azure-az104/">AZ-104 試験ガイド</a></nav>
+<nav class="site-nav"><a href="../../guide/">資格ガイド</a><a href="../../learn/">サービス解説</a><a href="../../career/">キャリア</a><a href="../../about.html">運営者情報</a><a href="../../privacy.html">プライバシーポリシー</a><a href="../../contact.html">お問い合わせ</a></nav>
+<p class="copy">© CLOUDCERT_ — 本サイトは各認定試験の公式試験ではなく、収録問題はすべてオリジナルの演習問題です。</p>
+</footer>
+</body>
+</html>

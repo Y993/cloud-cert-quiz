@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>【AZ-104 演習問題 #73】あるスタートアップがAzure App ServiceでAPIバックエンドを運用している。…</title>
+<meta name="description" content="AZ-104の本試験レベル演習問題。あるスタートアップがAzure App ServiceでAPIバックエンドを運用している。独自ドメイン（api.example.com）をApp Serviceにバインドし、HTTPS… 全選択肢の解説つき。">
+<link rel="canonical" href="https://cloudcert.app/q/azure-az104/q073.html">
+<meta property="og:title" content="【AZ-104 演習問題 #73】あるスタートアップがAzure App ServiceでAPIバックエンドを運用している。…">
+<meta property="og:description" content="AZ-104の本試験レベル演習問題。あるスタートアップがAzure App ServiceでAPIバックエンドを運用している。独自ドメイン（api.example.com）をApp Serviceにバインドし、HTTPS… 全選択肢の解説つき。">
+<meta property="og:url" content="https://cloudcert.app/q/azure-az104/q073.html">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="CLOUDCERT_">
+<meta property="og:image" content="https://cloudcert.app/assets/og.png">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='80' font-size='80' fill='%233fe0a4' font-family='monospace'>▸</text></svg>">
+
+<meta name="google-adsense-account" content="ca-pub-5647574947191958">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+JP:wght@400;500;700&family=JetBrains+Mono:wght@400;600;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../../css/style.css">
+<link rel="stylesheet" href="../../css/page.css">
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-SZR5CB5Q3X"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag('js',new Date());gtag('config','G-SZR5CB5Q3X');</script>
+<script type="application/ld+json">[{"@context":"https://schema.org/","@type":"Quiz","about":{"@type":"Thing","name":"Microsoft Azure Administrator"},"hasPart":[{"@type":"Question","eduQuestionType":"Multiple choice","learningResourceType":"Practice problem","text":"あるスタートアップがAzure App ServiceでAPIバックエンドを運用している。独自ドメイン（api.example.com）をApp Serviceにバインドし、HTTPSでのみアクセスを受け付けたい。証明書はコスト効率を優先し、Azure提供の無料マネージド証明書を使いたい。必要な操作の正しい順序はどれか。","suggestedAnswer":[{"@type":"Answer","position":0,"text":"1)App ServiceのIPアドレスをDNSのAレコードに設定 → 2)Azure App Service マネージド証明書を作成 → 3)カスタムドメインをApp Serviceにバインド → 4)HTTPSのみを強制するオプションを有効化"},{"@type":"Answer","position":2,"text":"1)Azure Key VaultにSSL証明書をアップロード → 2)App ServiceとKey Vaultを接続 → 3)カスタムドメインをバインド → 4)HTTPS専用を有効化"},{"@type":"Answer","position":3,"text":"1)App Serviceマネージド証明書を作成 → 2)証明書をカスタムドメインにバインド → 3)DNSのCNAMEレコードを設定 → 4)HTTPS専用を有効化"}],"acceptedAnswer":{"@type":"Answer","position":1,"text":"1)DNSプロバイダーでCNAMEレコード（api.example.com → <appname>.azurewebsites.net）またはAレコードを設定 → 2)App Serviceでカスタムドメインの追加・検証 → 3)App Service マネージド証明書を作成してバインド → 4)HTTPS専用の強制を有効化","comment":{"@type":"Comment","text":"Azure App Serviceへのカスタムドメイン設定の正しい順序は、まずDNSプロバイダー側でCNAMEまたはAレコードを設定してドメインをApp ServiceのURLまたはIPに向けること（DNSの変更が先でないとApp Service側でドメイン所有権の検証ができない）、次にApp Serviceポータルの「カスタムドメイン」でドメインを追加してAzureが所有権検証（DNS伝播確認）を行うこと、続いてApp Service マネージド証明書（無料）をそのカスタムドメインに対して作成・バインドすること、最後にHTTPSのみを強制するオプション（「HTTPSのみ」スイッチ）を有効にすること。選択肢AはDNSのAレコード設定のみ言及しており証明書バインドの順序が逆。選択肢CはKey Vault経由の有料証明書アップロードフローであり、無料マネージド証明書の手順ではない。選択肢Dは証明書作成がドメインバインド前になっており、マネージド証明書はカスタムドメインが検証済みでないと作成できないため順序が誤り。"}}}]},{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"HOME","item":"https://cloudcert.app/"},{"@type":"ListItem","position":2,"name":"AZ-104 試験ガイド","item":"https://cloudcert.app/exams/azure-az104/"},{"@type":"ListItem","position":3,"name":"q073"}]}]</script>
+</head>
+<body class="page-body">
+<header class="page-header"><a class="page-logo" href="../../index.html">&gt; CLOUDCERT_</a></header>
+<main class="page-main">
+
+<nav class="breadcrumb"><a href="../../index.html">HOME</a> › <a href="../../exams/azure-az104/">AZ-104 試験ガイド</a> › q073</nav>
+<div class="q-meta"><span>AZ-104</span><span>Azure コンピューティング リソースのデプロイと管理</span><span>HARD</span><span>単一選択</span></div>
+<h1>あるスタートアップがAzure App ServiceでAPIバックエンドを運用している。独自ドメイン（api.example.com）をApp Serviceにバインドし、HTTPSでのみアクセスを受け付けたい。証明書はコスト効率を優先し、Azure提供の無料マネージド証明書を使いたい。必要な操作の正しい順序はどれか。</h1>
+<ol class="q-choices">
+<li><b>A.</b> 1)App ServiceのIPアドレスをDNSのAレコードに設定 → 2)Azure App Service マネージド証明書を作成 → 3)カスタムドメインをApp Serviceにバインド → 4)HTTPSのみを強制するオプションを有効化</li>
+<li><b>B.</b> 1)DNSプロバイダーでCNAMEレコード（api.example.com → &lt;appname&gt;.azurewebsites.net）またはAレコードを設定 → 2)App Serviceでカスタムドメインの追加・検証 → 3)App Service マネージド証明書を作成してバインド → 4)HTTPS専用の強制を有効化</li>
+<li><b>C.</b> 1)Azure Key VaultにSSL証明書をアップロード → 2)App ServiceとKey Vaultを接続 → 3)カスタムドメインをバインド → 4)HTTPS専用を有効化</li>
+<li><b>D.</b> 1)App Serviceマネージド証明書を作成 → 2)証明書をカスタムドメインにバインド → 3)DNSのCNAMEレコードを設定 → 4)HTTPS専用を有効化</li>
+</ol>
+<details class="q-answer">
+<summary>解答と解説を見る</summary>
+<div class="inner">
+<p><b>正解: B</b></p>
+<p>Azure App Serviceへのカスタムドメイン設定の正しい順序は、まずDNSプロバイダー側でCNAMEまたはAレコードを設定してドメインをApp ServiceのURLまたはIPに向けること（DNSの変更が先でないとApp Service側でドメイン所有権の検証ができない）、次にApp Serviceポータルの「カスタムドメイン」でドメインを追加してAzureが所有権検証（DNS伝播確認）を行うこと、続いてApp Service マネージド証明書（無料）をそのカスタムドメインに対して作成・バインドすること、最後にHTTPSのみを強制するオプション（「HTTPSのみ」スイッチ）を有効にすること。選択肢AはDNSのAレコード設定のみ言及しており証明書バインドの順序が逆。選択肢CはKey Vault経由の有料証明書アップロードフローであり、無料マネージド証明書の手順ではない。選択肢Dは証明書作成がドメインバインド前になっており、マネージド証明書はカスタムドメインが検証済みでないと作成できないため順序が誤り。</p>
+<div class="svc-links">📚 関連サービスの解説: <a href="../../learn/azure-app-service.html">Azure App Service</a></div>
+</div>
+</details>
+<div class="cta-box"><a class="btn btn-primary" href="../../exam.html?exam=azure-az104">▸ この試験を本気で演習する（全150問・無料）</a></div>
+<nav class="q-nav">
+<span><a href="q072.html">← 前の問題</a></span>
+<span><a href="q074.html">次の問題 →</a></span>
+</nav>
+<section class="related"><h2>同じ分野の関連問題</h2><ul class="q-list">
+<li><a href="q072.html">ある企業がAzure App Service（Standard S2プラン）でWebアプリケーションを本番運用している。…</a></li>
+<li><a href="q074.html">ある企業がAzure App Serviceで複数のWebアプリを運用しており、トラフィックの急増に対してApp Ser…</a></li>
+<li><a href="q071.html">ある開発チームがBicepを使ってAzureリソースをデプロイしている。Bicepファイルとして宣言的にリソースを管理す…</a></li>
+<li><a href="q075.html">開発チームがAzure Container Instances（ACI）を使って短時間の処理ジョブ（バッチ処理、CI/C…</a></li>
+</ul></section>
+</main>
+<footer class="page-footer">
+<nav class="hub-nav"><a href="../../exams/aws-clf-c02/">CLF-C02 試験ガイド</a><a href="../../exams/aws-aif-c01/">AIF-C01 試験ガイド</a><a href="../../exams/aws-saa-c03/">SAA-C03 試験ガイド</a><a href="../../exams/aws-dva-c02/">DVA-C02 試験ガイド</a><a href="../../exams/aws-sap-c02/">SAP-C02 試験ガイド</a><a href="../../exams/gcp-cdl/">CDL 試験ガイド</a><a href="../../exams/gcp-ace/">ACE 試験ガイド</a><a href="../../exams/azure-az900/">AZ-900 試験ガイド</a><a href="../../exams/azure-ai900/">AI-900 試験ガイド</a><a href="../../exams/azure-dp900/">DP-900 試験ガイド</a><a href="../../exams/azure-sc900/">SC-900 試験ガイド</a><a href="../../exams/azure-az104/">AZ-104 試験ガイド</a></nav>
+<nav class="site-nav"><a href="../../guide/">資格ガイド</a><a href="../../learn/">サービス解説</a><a href="../../career/">キャリア</a><a href="../../about.html">運営者情報</a><a href="../../privacy.html">プライバシーポリシー</a><a href="../../contact.html">お問い合わせ</a></nav>
+<p class="copy">© CLOUDCERT_ — 本サイトは各認定試験の公式試験ではなく、収録問題はすべてオリジナルの演習問題です。</p>
+</footer>
+</body>
+</html>

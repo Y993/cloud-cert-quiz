@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>【AI-900 演習問題 #40】あるMLエンジニアが機械学習パイプラインを設計している。ハイパーパラメータのチューニングを…</title>
+<meta name="description" content="AI-900の本試験レベル演習問題。あるMLエンジニアが機械学習パイプラインを設計している。ハイパーパラメータのチューニングを行いたいが、テストデータをハイパーパラメータ選択に使ってしまうとモデルの最終評価が汚染される。… 全選択肢の解説つき。">
+<link rel="canonical" href="https://cloudcert.app/q/azure-ai900/q040.html">
+<meta property="og:title" content="【AI-900 演習問題 #40】あるMLエンジニアが機械学習パイプラインを設計している。ハイパーパラメータのチューニングを…">
+<meta property="og:description" content="AI-900の本試験レベル演習問題。あるMLエンジニアが機械学習パイプラインを設計している。ハイパーパラメータのチューニングを行いたいが、テストデータをハイパーパラメータ選択に使ってしまうとモデルの最終評価が汚染される。… 全選択肢の解説つき。">
+<meta property="og:url" content="https://cloudcert.app/q/azure-ai900/q040.html">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="CLOUDCERT_">
+<meta property="og:image" content="https://cloudcert.app/assets/og.png">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='80' font-size='80' fill='%233fe0a4' font-family='monospace'>▸</text></svg>">
+
+<meta name="google-adsense-account" content="ca-pub-5647574947191958">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+JP:wght@400;500;700&family=JetBrains+Mono:wght@400;600;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../../css/style.css">
+<link rel="stylesheet" href="../../css/page.css">
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-SZR5CB5Q3X"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag('js',new Date());gtag('config','G-SZR5CB5Q3X');</script>
+<script type="application/ld+json">[{"@context":"https://schema.org/","@type":"Quiz","about":{"@type":"Thing","name":"Microsoft Azure AI Fundamentals"},"hasPart":[{"@type":"Question","eduQuestionType":"Multiple choice","learningResourceType":"Practice problem","text":"あるMLエンジニアが機械学習パイプラインを設計している。ハイパーパラメータのチューニングを行いたいが、テストデータをハイパーパラメータ選択に使ってしまうとモデルの最終評価が汚染される。この問題を避けるために、データを3つに分ける構成を取ることにした。3つの分割の名称と目的の正しい組み合わせはどれか。","suggestedAnswer":[{"@type":"Answer","position":0,"text":"検証データ（パラメータ更新）・訓練データ（ハイパーパラメータ調整）・テストデータ（最終評価）"},{"@type":"Answer","position":2,"text":"訓練データ（パラメータ更新）・テストデータ（ハイパーパラメータ調整）・検証データ（最終評価）"},{"@type":"Answer","position":3,"text":"訓練データ（パラメータ更新）・テストデータ（ハイパーパラメータ調整）・予測データ（最終評価）"}],"acceptedAnswer":{"@type":"Answer","position":1,"text":"訓練データ（パラメータ更新）・検証データ（ハイパーパラメータ調整）・テストデータ（最終評価）","comment":{"@type":"Comment","text":"機械学習の標準的なデータ分割は「訓練データ：モデルのパラメータを学習に使う」「検証データ：ハイパーパラメータ調整や早期停止判定に使う（学習には使わない）」「テストデータ：最終的な汎化性能を1回だけ評価するために使う」の3種である。Cはテストデータをハイパーパラメータ調整に使っており、これではテストデータが汚染されて最終評価が不公平になる。Aは検証データと訓練データの役割が逆転しており誤り。Dは「予測データ」という非標準的な用語を使っており、テストデータをハイパーパラメータ調整に使う点でも誤り。正解はBである。"}}}]},{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"HOME","item":"https://cloudcert.app/"},{"@type":"ListItem","position":2,"name":"AI-900 試験ガイド","item":"https://cloudcert.app/exams/azure-ai900/"},{"@type":"ListItem","position":3,"name":"q040"}]}]</script>
+</head>
+<body class="page-body">
+<header class="page-header"><a class="page-logo" href="../../index.html">&gt; CLOUDCERT_</a></header>
+<main class="page-main">
+
+<nav class="breadcrumb"><a href="../../index.html">HOME</a> › <a href="../../exams/azure-ai900/">AI-900 試験ガイド</a> › q040</nav>
+<div class="q-meta"><span>AI-900</span><span>機械学習の基本原則</span><span>MEDIUM</span><span>単一選択</span></div>
+<h1>あるMLエンジニアが機械学習パイプラインを設計している。ハイパーパラメータのチューニングを行いたいが、テストデータをハイパーパラメータ選択に使ってしまうとモデルの最終評価が汚染される。この問題を避けるために、データを3つに分ける構成を取ることにした。3つの分割の名称と目的の正しい組み合わせはどれか。</h1>
+<ol class="q-choices">
+<li><b>A.</b> 検証データ（パラメータ更新）・訓練データ（ハイパーパラメータ調整）・テストデータ（最終評価）</li>
+<li><b>B.</b> 訓練データ（パラメータ更新）・検証データ（ハイパーパラメータ調整）・テストデータ（最終評価）</li>
+<li><b>C.</b> 訓練データ（パラメータ更新）・テストデータ（ハイパーパラメータ調整）・検証データ（最終評価）</li>
+<li><b>D.</b> 訓練データ（パラメータ更新）・テストデータ（ハイパーパラメータ調整）・予測データ（最終評価）</li>
+</ol>
+<details class="q-answer">
+<summary>解答と解説を見る</summary>
+<div class="inner">
+<p><b>正解: B</b></p>
+<p>機械学習の標準的なデータ分割は「訓練データ：モデルのパラメータを学習に使う」「検証データ：ハイパーパラメータ調整や早期停止判定に使う（学習には使わない）」「テストデータ：最終的な汎化性能を1回だけ評価するために使う」の3種である。Cはテストデータをハイパーパラメータ調整に使っており、これではテストデータが汚染されて最終評価が不公平になる。Aは検証データと訓練データの役割が逆転しており誤り。Dは「予測データ」という非標準的な用語を使っており、テストデータをハイパーパラメータ調整に使う点でも誤り。正解はBである。</p>
+
+</div>
+</details>
+<div class="cta-box"><a class="btn btn-primary" href="../../exam.html?exam=azure-ai900">▸ この試験を本気で演習する（全150問・無料）</a></div>
+<nav class="q-nav">
+<span><a href="q039.html">← 前の問題</a></span>
+<span><a href="q041.html">次の問題 →</a></span>
+</nav>
+<section class="related"><h2>同じ分野の関連問題</h2><ul class="q-list">
+<li><a href="q039.html">あるデータサイエンティストが、Azure Machine Learning のコンピューティングリソースを選択している。…</a></li>
+<li><a href="q041.html">あるデータエンジニアが顧客離脱予測モデルを構築しようとしている。データセットには「顧客ID」「年齢」「契約期間」「月次利…</a></li>
+<li><a href="q038.html">あるチームが住宅価格予測モデルを評価している。予測値と実際の価格の差（誤差）を評価したいが、「外れ値（大きく外れた予測）…</a></li>
+<li><a href="q042.html">ある画像認識モデルを構築するチームが、ディープラーニング（深層学習）を採用することにした。ディープラーニングが従来の機械…</a></li>
+</ul></section>
+</main>
+<footer class="page-footer">
+<nav class="hub-nav"><a href="../../exams/aws-clf-c02/">CLF-C02 試験ガイド</a><a href="../../exams/aws-aif-c01/">AIF-C01 試験ガイド</a><a href="../../exams/aws-saa-c03/">SAA-C03 試験ガイド</a><a href="../../exams/aws-dva-c02/">DVA-C02 試験ガイド</a><a href="../../exams/aws-sap-c02/">SAP-C02 試験ガイド</a><a href="../../exams/gcp-cdl/">CDL 試験ガイド</a><a href="../../exams/gcp-ace/">ACE 試験ガイド</a><a href="../../exams/azure-az900/">AZ-900 試験ガイド</a><a href="../../exams/azure-ai900/">AI-900 試験ガイド</a><a href="../../exams/azure-dp900/">DP-900 試験ガイド</a><a href="../../exams/azure-sc900/">SC-900 試験ガイド</a><a href="../../exams/azure-az104/">AZ-104 試験ガイド</a></nav>
+<nav class="site-nav"><a href="../../guide/">資格ガイド</a><a href="../../learn/">サービス解説</a><a href="../../career/">キャリア</a><a href="../../about.html">運営者情報</a><a href="../../privacy.html">プライバシーポリシー</a><a href="../../contact.html">お問い合わせ</a></nav>
+<p class="copy">© CLOUDCERT_ — 本サイトは各認定試験の公式試験ではなく、収録問題はすべてオリジナルの演習問題です。</p>
+</footer>
+</body>
+</html>

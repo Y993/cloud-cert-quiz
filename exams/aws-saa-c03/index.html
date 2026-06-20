@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>SAA-C03（ソリューションアーキテクト アソシエイト）の難易度・勉強法と演習問題150問【無料】</title>
+<meta name="description" content="AWS Certified Solutions Architect – Associate（SAA-C03）の難易度・出題ドメイン・勉強法を解説。本試験レベルのオリジナル演習問題150問を無料公開、全問に詳細解説つき。">
+<link rel="canonical" href="https://cloudcert.app/exams/aws-saa-c03/">
+<meta property="og:title" content="SAA-C03（ソリューションアーキテクト アソシエイト）の難易度・勉強法と演習問題150問【無料】">
+<meta property="og:description" content="AWS Certified Solutions Architect – Associate（SAA-C03）の難易度・出題ドメイン・勉強法を解説。本試験レベルのオリジナル演習問題150問を無料公開、全問に詳細解説つき。">
+<meta property="og:url" content="https://cloudcert.app/exams/aws-saa-c03/">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="CLOUDCERT_">
+<meta property="og:image" content="https://cloudcert.app/assets/og.png">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='80' font-size='80' fill='%233fe0a4' font-family='monospace'>▸</text></svg>">
+
+<meta name="google-adsense-account" content="ca-pub-5647574947191958">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+JP:wght@400;500;700&family=JetBrains+Mono:wght@400;600;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../../css/style.css">
+<link rel="stylesheet" href="../../css/page.css">
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-SZR5CB5Q3X"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag('js',new Date());gtag('config','G-SZR5CB5Q3X');</script>
+<script type="application/ld+json">[{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"試験は何問で何分ですか？","acceptedAnswer":{"@type":"Answer","text":"65問、130分。合格スコアは1000点満点中720点。65問のうち15問は採点対象外の未採点問題で、どの問題がそれに当たるかは受験中に分からない。"}},{"@type":"Question","name":"受験料はいくらですか？","acceptedAnswer":{"@type":"Answer","text":"150米ドル。日本円での請求額は決済時の為替レートに依存する。Pearson VUEまたはPSI経由で申し込む。"}},{"@type":"Question","name":"Cloud Practitioner（CLF）を取ってからSAAを受けるべきですか、それともSAAから始めていいですか？","acceptedAnswer":{"@type":"Answer","text":"SAAから始めて問題ない。CLFはAWSの概念整理には役立つが、SAAの前提条件ではなく、SAAの学習で同様の内容は自然にカバーできる。「CLFを取ってからSAAを取ろう」と思うと単純に受験回数と費用が増える。"}},{"@type":"Question","name":"不合格になったら、いつから再受験できますか？","acceptedAnswer":{"@type":"Answer","text":"不合格の翌日から14日後以降に再受験登録が可能。再受験料は全額必要で、受験回数の上限はない。"}},{"@type":"Question","name":"認定の有効期限はありますか？","acceptedAnswer":{"@type":"Answer","text":"取得から3年間有効。期限が近づいたら再認定試験（同じ試験か、上位のプロフェッショナル試験に合格）で更新できる。"}},{"@type":"Question","name":"合格後にどの試験に進むのが一般的ですか？","acceptedAnswer":{"@type":"Answer","text":"同じアソシエイト層のDeveloper（DVA）やSysOps Administrator（SOA）に横展開するか、上位のSolutions Architect Professional（SAP）に進む人が多い。SAA合格後すぐSAPに挑む場合、難易度の差は大きいため、1〜2年の実務か集中的な追加学習を見込んでおく方が現実的だ。"}}]},{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"HOME","item":"https://cloudcert.app/"},{"@type":"ListItem","position":2,"name":"SAA-C03 試験ガイド"}]}]</script>
+</head>
+<body class="page-body">
+<header class="page-header"><a class="page-logo" href="../../index.html">&gt; CLOUDCERT_</a></header>
+<main class="page-main">
+
+<nav class="breadcrumb"><a href="../../index.html">HOME</a> › SAA-C03</nav>
+<h1>SAA-C03（ソリューションアーキテクト アソシエイト）の難易度・勉強法と演習問題150問【無料】</h1>
+<p>合格ライン 72% ／ 制限時間 130分 ／ 収録 150問（すべて無料・登録不要）</p>
+<div class="cta-box"><a class="btn btn-primary" href="../../exam.html?exam=aws-saa-c03">▸ いますぐ演習をはじめる</a></div>
+
+<h2>試験概要</h2><p>AWS Certified Solutions Architect – Associate（SAA-C03）は、AWSアーキテクチャ設計の基礎力を問うアソシエイトレベルの認定試験だ。出題数は65問、試験時間は130分。合格スコアは1000点満点中720点で、100〜1000のスケールドスコアで報告される。受験料は150米ドル（日本円での金額は受験登録時のレートによる）。</p>
+<p>試験は4つのドメインで構成されている。「セキュアなアーキテクチャの設計」が30%、「弾力性のあるアーキテクチャの設計」が26%、「ハイパフォーマンスなアーキテクチャの設計」が24%、「コスト最適化されたアーキテクチャの設計」が20%という配分だ。65問のうち15問はスコアに影響しない未採点問題で、実際に採点されるのは50問になる。</p>
+<p>対象はAWSを使ったクラウドソリューション設計の実務経験が1年以上ある人材を想定している。ただし実務経験ゼロでも合格している人は多い。問われるのは特定サービスの操作方法ではなく、「このユースケースにはどのAWSサービスの組み合わせが最適か」という設計判断の力だ。EC2やS3、VPC、IAMのような基本サービスから、ALB・Auto Scaling・RDS・DynamoDB・SQS・SNSといったサービスまで、幅広い知識が求められる。</p>
+<h2>難易度</h2><p>AWSの資格体系の中ではアソシエイト層に位置するが、体感的な難易度はやや高め。同じアソシエイトでも、Cloud Practitioner（CLF）が「AWSとは何か」を問うのに対して、SAAは「どう設計するか」を問う。暗記で通用する部分は少なく、サービスの特性を理解したうえで、問題の制約（コスト重視・可用性重視・既存オンプレとの連携など）に合わせて最適解を選ぶ力が必要になる。</p>
+<p>一段上のプロフェッショナル試験（SAP）と比べると、問題の複雑さと必要な実務知識量は大幅に下がる。SAPでは複数の要件が絡み合った長文シナリオが続くが、SAAはシナリオの規模が小さく、選択肢の絞り方も比較的シンプルだ。ただしSAA合格後にSAPを受けると、その差に驚く人は多い。</p>
+<p>つまずきやすいのは主にネットワーク（VPC・サブネット・セキュリティグループ・NACLの違い）とストレージ（S3のストレージクラス、EBSとEFSの使い分け）の2領域。どちらも「名前は聞いたことがある」レベルで止まっていると、実際の問題で迷う。また、AWSのマネージドサービスをいつ使い、いつ使わないかの判断基準が曖昧なまま受験すると、点数が伸び悩む。</p>
+<h2>勉強法</h2><p>目安の学習期間はAWS実務未経験なら2〜3か月、基本的なAWS操作経験があれば1〜1.5か月。ただし週に使える時間によって大きく変わる。まず最初にやるべきは試験ガイド（公式PDFで無料公開されている）を一読して、4ドメインの範囲感をつかむことだ。範囲を知らずに勉強すると、関係ない深みにはまりやすい。</p>
+<p>インプットには動画講座が向いている。Udemyの「AWS認定ソリューションアーキテクト アソシエイト模擬試験問題集」や、Stephane Maatekの英語コース（日本語字幕あり）が広く使われている。動画を見るだけで終わらせず、講座内のハンズオンか、AWSの無料利用枠で実際にサービスを触りながら進めると定着が早い。</p>
+<p>アウトプットは模擬問題集を中心に据える。AWS公式の「AWS Certified Solutions Architect – Associate Official Practice Question Set」は無料で使えるため、最低でも2〜3周する。問題を解くより不正解の解説を読む時間のほうが価値がある。間違えた理由を「サービス名を知らなかった」か「選択の軸がずれていた」かで分けて記録すると、弱点が見えやすい。</p>
+<p>試験前の2週間は新しいサービスの知識を詰め込むより、苦手なドメインの問題を繰り返す時間にしたほうがいい。試験時間は130分あり、65問を解くと1問あたり2分の計算だ。実際には短文問題なら30秒で終わるものもあるため、時間が足りなくなることは少ない。それより見直しの時間を確保する習慣をつけておくほうが、当日の安心感につながる。</p>
+<h2>よくある質問</h2><h3>試験は何問で何分ですか？</h3><p>65問、130分。合格スコアは1000点満点中720点。65問のうち15問は採点対象外の未採点問題で、どの問題がそれに当たるかは受験中に分からない。</p>
+<h3>受験料はいくらですか？</h3><p>150米ドル。日本円での請求額は決済時の為替レートに依存する。Pearson VUEまたはPSI経由で申し込む。</p>
+<h3>Cloud Practitioner（CLF）を取ってからSAAを受けるべきですか、それともSAAから始めていいですか？</h3><p>SAAから始めて問題ない。CLFはAWSの概念整理には役立つが、SAAの前提条件ではなく、SAAの学習で同様の内容は自然にカバーできる。「CLFを取ってからSAAを取ろう」と思うと単純に受験回数と費用が増える。</p>
+<h3>不合格になったら、いつから再受験できますか？</h3><p>不合格の翌日から14日後以降に再受験登録が可能。再受験料は全額必要で、受験回数の上限はない。</p>
+<h3>認定の有効期限はありますか？</h3><p>取得から3年間有効。期限が近づいたら再認定試験（同じ試験か、上位のプロフェッショナル試験に合格）で更新できる。</p>
+<h3>合格後にどの試験に進むのが一般的ですか？</h3><p>同じアソシエイト層のDeveloper（DVA）やSysOps Administrator（SOA）に横展開するか、上位のSolutions Architect Professional（SAP）に進む人が多い。SAA合格後すぐSAPに挑む場合、難易度の差は大きいため、1〜2年の実務か集中的な追加学習を見込んでおく方が現実的だ。</p>
+<h2>出題ドメイン構成（収録問題の内訳）</h2>
+<table class="domain-table"><tr><th>ドメイン</th><th>収録数</th></tr><tr><td>セキュアなアーキテクチャの設計</td><td>45問（30%）</td></tr>
+<tr><td>弾力性に優れたアーキテクチャの設計</td><td>38問（25%）</td></tr>
+<tr><td>高パフォーマンスなアーキテクチャの設計</td><td>35問（23%）</td></tr>
+<tr><td>コストを最適化したアーキテクチャの設計</td><td>32問（21%）</td></tr></table>
+<h2>収録問題一覧（全150問・解説つき）</h2>
+<ol class="q-list">
+<li><a href="../../q/aws-saa-c03/q001.html">ある企業が、EC2 インスタンス上で動作するアプリケーションから Amazon S3 バケットにアクセスする必要がある。…</a></li>
+<li><a href="../../q/aws-saa-c03/q002.html">ある企業が、VPC 内のプライベートサブネットに配置した EC2 インスタンスから Amazon S3 へのアクセスを必…</a></li>
+<li><a href="../../q/aws-saa-c03/q003.html">ある企業が AWS Organizations を使用して複数の AWS アカウントを管理している。開発チームが誤って …</a></li>
+<li><a href="../../q/aws-saa-c03/q004.html">ある企業が、社外のパートナー企業のユーザーに対して自社の AWS リソースへの一時的なアクセスを許可する必要がある。パー…</a></li>
+<li><a href="../../q/aws-saa-c03/q005.html">ある金融機関が、機密データを保存する RDS for PostgreSQL データベースを運用している。規制要件として、…</a></li>
+<li><a href="../../q/aws-saa-c03/q006.html">ある企業が、インターネット向けの Web アプリケーションを ALB + EC2 で運用している。セキュリティチームから…</a></li>
+<li><a href="../../q/aws-saa-c03/q007.html">ある企業が、Lambda 関数から Amazon RDS for MySQL へ接続するアーキテクチャを構築している。デ…</a></li>
+<li><a href="../../q/aws-saa-c03/q008.html">ある企業が、複数の開発者が共有で使用する S3 バケットを管理している。各開発者は自分のプレフィックス（/dev/&lt;ユー…</a></li>
+<li><a href="../../q/aws-saa-c03/q009.html">ある企業が、機密性の高いワークロードを EC2 インスタンス上で実行している。セキュリティチームから、AWS リソースへ…</a></li>
+<li><a href="../../q/aws-saa-c03/q010.html">ある企業が、Lambda 関数を使って VPC 内のプライベートサブネットに配置した RDS データベースにアクセスした…</a></li>
+<li><a href="../../q/aws-saa-c03/q011.html">ある企業が、オンプレミスのActive Directory（AD）を使って AWS マネジメントコンソールへの SSO …</a></li>
+<li><a href="../../q/aws-saa-c03/q012.html">ある企業が、Amazon S3 に保存された機密データへのアクセスを特定の VPC からのみ許可したい。社内のユーザーは…</a></li>
+<li><a href="../../q/aws-saa-c03/q013.html">ある企業が、AWS で Web アプリケーションを運用している。セキュリティ監査で、EC2 インスタンスへのポート 22…</a></li>
+<li><a href="../../q/aws-saa-c03/q014.html">ある企業が、マルチアカウント環境で AWS リソースのセキュリティ体制を強化したい。セキュリティチームから以下の要件が出…</a></li>
+<li><a href="../../q/aws-saa-c03/q015.html">ある企業が、EC2 インスタンスで動作するアプリケーションに対して、AWS KMS を使って特定のデータを暗号化/復号す…</a></li>
+<li><a href="../../q/aws-saa-c03/q016.html">ある企業が、本番環境の AWS アカウントで重要なリソース（EC2 インスタンス、RDS データベース、S3 バケット）…</a></li>
+<li><a href="../../q/aws-saa-c03/q017.html">ある企業が、Amazon API Gateway + Lambda のサーバーレスアーキテクチャを使って公開 API を…</a></li>
+<li><a href="../../q/aws-saa-c03/q018.html">ある企業が、EC2 インスタンス上でデータ処理アプリケーションを運用している。アプリケーションが使用する S3 バケット…</a></li>
+<li><a href="../../q/aws-saa-c03/q019.html">ある企業が、社内のセキュリティポリシーとして「本番アカウントへの直接的な人間によるアクセスを禁止し、すべての変更は CI…</a></li>
+<li><a href="../../q/aws-saa-c03/q020.html">ある企業が、インターネットに公開している Web アプリケーションのセキュリティを強化したい。特に、著名な脅威インテリジ…</a></li>
+<li><a href="../../q/aws-saa-c03/q021.html">ある企業の EC2 上で動くアプリケーションが、データベースのパスワードや外部 API の認証情報をソースコード内にハー…</a></li>
+<li><a href="../../q/aws-saa-c03/q022.html">ある企業が、Amazon ECS（Fargate）上で複数のマイクロサービスを運用している。各マイクロサービスはそれぞれ…</a></li>
+<li><a href="../../q/aws-saa-c03/q023.html">ある企業が、AWS マネジメントコンソールへのすべてのアクセスに対して多要素認証（MFA）を必須にしたい。特に、MFA …</a></li>
+<li><a href="../../q/aws-saa-c03/q024.html">ある企業が、S3 バケットに保存されている機密データへのアクセスをログに記録したい。誰がいつどのオブジェクトにアクセスし…</a></li>
+<li><a href="../../q/aws-saa-c03/q025.html">ある企業が、AWS Transfer Family を使用して社外パートナーとの SFTP によるファイル転送を実現した…</a></li>
+<li><a href="../../q/aws-saa-c03/q026.html">ある企業が、Amazon EKS クラスター上で動作するマイクロサービスに対して、Kubernetes Pod ごとに異…</a></li>
+<li><a href="../../q/aws-saa-c03/q027.html">ある企業が、ALB + EC2 Auto Scaling グループで Web アプリケーションを運用している。現在は単一…</a></li>
+<li><a href="../../q/aws-saa-c03/q028.html">ある企業が、Amazon RDS for MySQL（Single-AZ）を本番環境で使用している。データベースの可用性…</a></li>
+<li><a href="../../q/aws-saa-c03/q029.html">ある企業が、Amazon SQS を使って EC2 で動作するメッセージ処理ワーカーとのキューイングアーキテクチャを構築…</a></li>
+<li><a href="../../q/aws-saa-c03/q030.html">ある小売企業が、年末商戦期間中（11 月〜1 月）に通常の 5 倍のトラフィックが発生することを予測している。通常期は …</a></li>
+<li><a href="../../q/aws-saa-c03/q031.html">ある企業が、Amazon DynamoDB を使ったアプリケーションを運用している。特定のパーティションキーに対するリク…</a></li>
+<li><a href="../../q/aws-saa-c03/q032.html">ある企業が、マイクロサービスアーキテクチャを採用して複数の API を Amazon API Gateway と AWS…</a></li>
+<li><a href="../../q/aws-saa-c03/q033.html">ある企業が、EC2 Auto Scaling グループで運用している Web アプリケーションのスケーリングを改善したい…</a></li>
+<li><a href="../../q/aws-saa-c03/q034.html">ある企業が、Amazon Kinesis Data Streams を使ってリアルタイムのイベントストリームを処理してい…</a></li>
+<li><a href="../../q/aws-saa-c03/q035.html">ある企業が、Amazon Route 53 を使ってグローバルに分散した Web アプリケーションのトラフィックを管理し…</a></li>
+<li><a href="../../q/aws-saa-c03/q036.html">ある企業が、Lambda 関数でサードパーティの外部 API を呼び出すワークフローを実装している。外部 API は時々…</a></li>
+<li><a href="../../q/aws-saa-c03/q037.html">ある企業が、Amazon S3 に重要な業務データを保管している。誤ってオブジェクトを削除してしまった場合に 30 日以…</a></li>
+<li><a href="../../q/aws-saa-c03/q038.html">ある企業が、マルチリージョン（us-east-1 と ap-northeast-1）でアクティブ-アクティブ構成の We…</a></li>
+<li><a href="../../q/aws-saa-c03/q039.html">ある企業が、Amazon ECS（Fargate）で稼働するコンテナアプリケーションの可用性を向上させたい。現在は 1 …</a></li>
+<li><a href="../../q/aws-saa-c03/q040.html">ある企業が、Lambda 関数を使って RDS データベースに定期的にアクセスするバッチ処理を実装している。Lambda…</a></li>
+<li><a href="../../q/aws-saa-c03/q041.html">ある企業が、本番環境の AWS アーキテクチャを見直し、単一障害点（SPOF）を排除したい。現在の構成は以下の通りである…</a></li>
+<li><a href="../../q/aws-saa-c03/q042.html">ある企業が、Amazon SQS FIFO キューを使って注文処理システムを構築している。1 注文につき複数のメッセージ…</a></li>
+<li><a href="../../q/aws-saa-c03/q043.html">ある企業が、EC2 インスタンス上で動作するステートフルな Web アプリケーションを Auto Scaling 対応に…</a></li>
+<li><a href="../../q/aws-saa-c03/q044.html">ある企業が、AWS Lambda を使ってイベント駆動のデータ処理パイプラインを構築している。Amazon SNS から…</a></li>
+<li><a href="../../q/aws-saa-c03/q045.html">ある企業が、マルチアカウント環境で AWS Backup を使って EC2・RDS・EFS のバックアップを一元管理した…</a></li>
+<li><a href="../../q/aws-saa-c03/q046.html">ある企業が、Amazon S3 に保存する業務データに対して、データを誰かが誤って削除したり上書きしたりしても、30 日…</a></li>
+<li><a href="../../q/aws-saa-c03/q047.html">ある企業が、Amazon SQS 標準キューを使ってメッセージ処理システムを構築している。コンシューマーの処理には平均 …</a></li>
+<li><a href="../../q/aws-saa-c03/q048.html">ある企業が、グローバルに分散したユーザー向けに静的 Web サイト（HTML/CSS/JS/画像）を Amazon S3…</a></li>
+<li><a href="../../q/aws-saa-c03/q049.html">ある企業が、Amazon RDS for MySQL を使って頻繁に読み取られる商品カタログデータを管理している。読み取…</a></li>
+<li><a href="../../q/aws-saa-c03/q050.html">ある企業が、大量の IoT デバイスからセンサーデータ（1 秒間に最大 100 万件のメッセージ）をリアルタイムで受信・…</a></li>
+<li><a href="../../q/aws-saa-c03/q051.html">ある企業が、機械学習モデルの学習に大量のデータセット（合計 500TB）をストレージから読み込む処理を AWS で実行し…</a></li>
+<li><a href="../../q/aws-saa-c03/q052.html">ある企業が、Amazon Aurora MySQL でオンライントランザクション処理（OLTP）と分析クエリ（OLAP）…</a></li>
+<li><a href="../../q/aws-saa-c03/q053.html">ある企業が、Amazon DynamoDB を使って 1 日あたり数億件のリクエストを処理するソーシャルゲームのリーダー…</a></li>
+<li><a href="../../q/aws-saa-c03/q054.html">ある企業が、Amazon CloudFront を使って動的コンテンツ（API レスポンス）と静的コンテンツ（画像・CS…</a></li>
+<li><a href="../../q/aws-saa-c03/q055.html">ある企業が、オンプレミスのデータセンターから AWS へのデータ移行を計画している。移行対象は約 200TB のファイル…</a></li>
+<li><a href="../../q/aws-saa-c03/q056.html">ある企業が、Amazon S3 に保存された数 PB のデータに対してアドホックな SQL クエリを実行するデータレイク…</a></li>
+<li><a href="../../q/aws-saa-c03/q057.html">ある企業が、Amazon EC2 インスタンスで HPC（高性能コンピューティング）ワークロードを実行しており、インスタ…</a></li>
+<li><a href="../../q/aws-saa-c03/q058.html">ある企業が、Amazon Aurora Serverless v2 を使って Web アプリケーションのバックエンドデー…</a></li>
+<li><a href="../../q/aws-saa-c03/q059.html">ある企業が、Amazon Redshift でビジネスインテリジェンス（BI）ダッシュボードへのクエリを実行している。複…</a></li>
+<li><a href="../../q/aws-saa-c03/q060.html">ある企業が、Amazon EC2 の Web アプリケーションに対して Application Load Balance…</a></li>
+<li><a href="../../q/aws-saa-c03/q061.html">ある企業が、Amazon ECS（Fargate）で動作するコンテナアプリケーションのコールドスタート（タスク起動時間）…</a></li>
+<li><a href="../../q/aws-saa-c03/q062.html">ある企業が、大規模な e コマースサイトのトップページに表示する商品リコメンデーションを、Amazon Personal…</a></li>
+<li><a href="../../q/aws-saa-c03/q063.html">ある企業が、複数の EC2 インスタンスから Amazon EFS（Elastic File System）をマウントし…</a></li>
+<li><a href="../../q/aws-saa-c03/q064.html">ある企業が、Amazon Neptune を使ってソーシャルネットワークのグラフデータを管理している。ユーザーの友達のリ…</a></li>
+<li><a href="../../q/aws-saa-c03/q065.html">ある企業が、Amazon DynamoDB テーブルへの読み取りパフォーマンスを向上させたい。テーブルには 1 億件以上…</a></li>
+<li><a href="../../q/aws-saa-c03/q066.html">ある企業が、AWS Lambda 関数と Amazon RDS for PostgreSQL を使ったサーバーレスアプリ…</a></li>
+<li><a href="../../q/aws-saa-c03/q067.html">ある企業が、開発・テスト環境のワークロードを Auto Scaling グループ（ASG）配下の EC2 インスタンスで…</a></li>
+<li><a href="../../q/aws-saa-c03/q068.html">ある企業が、Amazon S3 に大量の画像ファイルを保存している。最初の 30 日間は頻繁にアクセスされるが、それ以降…</a></li>
+<li><a href="../../q/aws-saa-c03/q069.html">ある企業が、Amazon Athena を使って S3 上のログデータ（CSV 形式、毎日約 100GB 追加）に対して…</a></li>
+<li><a href="../../q/aws-saa-c03/q070.html">ある企業が、AWS 上で継続的に稼働する本番環境の EC2 インスタンス（3 年間は同じインスタンスファミリー・リージョ…</a></li>
+<li><a href="../../q/aws-saa-c03/q071.html">ある企業が、Amazon S3 バケットのストレージコストが急増しているため、コスト最適化を行いたい。S3 バケットには…</a></li>
+<li><a href="../../q/aws-saa-c03/q072.html">ある企業が、AWS Lambda を使ったサーバーレスアプリケーションのコストを最適化したい。Lambda 関数のメモリ…</a></li>
+<li><a href="../../q/aws-saa-c03/q073.html">ある企業が、Amazon EKS（Kubernetes）クラスターを運用しており、開発・本番環境で多数の Pod が常時…</a></li>
+<li><a href="../../q/aws-saa-c03/q074.html">ある企業が、Amazon CloudFront を使ってコンテンツを配信しており、オリジン（S3）へのデータ転送コストと…</a></li>
+<li><a href="../../q/aws-saa-c03/q075.html">ある企業が、毎晩 22:00 に大量データのバッチ ETL 処理を Amazon EMR で実行している。処理は約 2〜…</a></li>
+<li><a href="../../q/aws-saa-c03/q076.html">ある企業が、AWS データ転送コストを削減したい。現在の構成では、ap-northeast-1 の EC2 インスタンス…</a></li>
+<li><a href="../../q/aws-saa-c03/q077.html">ある企業が、AWS のマルチアカウント環境で各部門のコストを把握し、部門別のコスト配分レポートを経営層に提出したい。各リ…</a></li>
+<li><a href="../../q/aws-saa-c03/q078.html">ある企業が、AWS Lambda 関数を使った API バックエンドを運用しており、1 日の呼び出し回数が安定的に多い（…</a></li>
+<li><a href="../../q/aws-saa-c03/q079.html">ある企業が、AWS の月次コストレポートを確認したところ、Amazon EC2 と Amazon RDS のコストが急増…</a></li>
+<li><a href="../../q/aws-saa-c03/q080.html">ある企業が、Amazon RDS for MySQL（db.r5.2xlarge）を本番環境で使用しており、週末（土日）…</a></li>
+<li><a href="../../q/aws-saa-c03/q081.html">ある企業が、AWS の月次コストを詳細に分析したい。各 AWS サービスのリソースレベルの使用量（時間単位）・コスト・割…</a></li>
+<li><a href="../../q/aws-saa-c03/q082.html">ある企業が、AWS Fargate で動作するコンテナアプリケーションのコストを削減したい。ワークロードの特性として、処…</a></li>
+<li><a href="../../q/aws-saa-c03/q083.html">ある企業が、AWS のネットワーク関連コスト（データ転送費用）を削減したい。現在の構成では、2 つの VPC がピアリン…</a></li>
+<li><a href="../../q/aws-saa-c03/q084.html">ある企業が、AWS Organizations で管理する複数のアカウントで AWS CloudTrail を有効化し、…</a></li>
+<li><a href="../../q/aws-saa-c03/q085.html">ある企業が、EC2 インスタンスで動作するアプリケーションが AWS API を呼び出す際に、特定のリージョンと特定のサ…</a></li>
+<li><a href="../../q/aws-saa-c03/q086.html">ある企業が、Amazon API Gateway（REST API）を使ったサービスで特定のクライアント（特定の API…</a></li>
+<li><a href="../../q/aws-saa-c03/q087.html">ある企業が、Amazon EC2 インスタンスのディスク I/O パフォーマンスが不足しており、データベースのトランザク…</a></li>
+<li><a href="../../q/aws-saa-c03/q088.html">ある企業が、AWS マネジメントコンソールへのアクセスを、特定の IP アドレス範囲（社内ネットワーク）からのみ許可した…</a></li>
+<li><a href="../../q/aws-saa-c03/q089.html">ある企業が、AWS でのディザスタリカバリ（DR）戦略を検討している。現在の RTO は 24 時間・RPO は 1 時…</a></li>
+<li><a href="../../q/aws-saa-c03/q090.html">ある企業が、AWS Lambda 関数で大量の S3 オブジェクト（1 ファイル 500KB 程度、1 バッチで 10,…</a></li>
+<li><a href="../../q/aws-saa-c03/q091.html">ある企業が、Amazon SNS を使ってメッセージを複数の AWS Lambda 関数と Amazon SQS キュー…</a></li>
+<li><a href="../../q/aws-saa-c03/q092.html">ある企業が、AWS Certificate Manager（ACM）で発行した TLS 証明書を ALB にアタッチして…</a></li>
+<li><a href="../../q/aws-saa-c03/q093.html">ある企業が、AWS の NAT ゲートウェイの月次コストが高いことに気づいた。調査の結果、プライベートサブネットの EC…</a></li>
+<li><a href="../../q/aws-saa-c03/q094.html">ある企業が、Amazon Aurora PostgreSQL を使ったシステムで、大量のデータをバッチ処理でロードするE…</a></li>
+<li><a href="../../q/aws-saa-c03/q095.html">ある企業が、Amazon ECS タスクで動作するコンテナアプリケーションのネットワークセキュリティを強化したい。特定の…</a></li>
+<li><a href="../../q/aws-saa-c03/q096.html">ある企業が、Amazon EKS でマイクロサービスを運用しており、特定のサービスへのトラフィックが急増したときに、その…</a></li>
+<li><a href="../../q/aws-saa-c03/q097.html">ある企業が、Amazon S3 バケットへの意図しないパブリックアクセスを組織全体で確実に防止したい。現在の構成では、開…</a></li>
+<li><a href="../../q/aws-saa-c03/q098.html">ある企業が、Amazon RDS Aurora MySQL クラスターで運用しているアプリケーションの可用性をさらに向上…</a></li>
+<li><a href="../../q/aws-saa-c03/q099.html">ある企業が、大量の非構造化データ（ログファイル）を Amazon S3 に保存している。データは日次で追加され、最初の …</a></li>
+<li><a href="../../q/aws-saa-c03/q100.html">ある企業が、AWS で機械学習モデルの学習ジョブを定期的に実行している。学習には GPU インスタンスが必要で、週に 2…</a></li>
+<li><a href="../../q/aws-saa-c03/q101.html">ある企業が、Amazon S3 バケットへのオブジェクトアップロードをトリガーとして Lambda 関数を起動し、画像の…</a></li>
+<li><a href="../../q/aws-saa-c03/q102.html">ある企業が、Amazon EC2 インスタンスの適正化（Rightsizing）を実施しようとしている。現在のインスタン…</a></li>
+<li><a href="../../q/aws-saa-c03/q103.html">ある企業が、AWS で運用するシステムのインシデント対応時に、特定の IAM ロールを持つセキュリティエンジニアが本番 …</a></li>
+<li><a href="../../q/aws-saa-c03/q104.html">ある企業が、Amazon Aurora PostgreSQL に対して複雑な結合クエリを含む分析ワークロードを定期的に実…</a></li>
+<li><a href="../../q/aws-saa-c03/q105.html">ある企業が、EC2 インスタンスから外部の Python パッケージリポジトリ（PyPI）にアクセスせずに Python…</a></li>
+<li><a href="../../q/aws-saa-c03/q106.html">ある企業が、AWS の予算管理を強化したい。特定のサービスコストが月次予算の 80% に達した時点でアラートを受け取り、…</a></li>
+<li><a href="../../q/aws-saa-c03/q107.html">ある企業が、Amazon API Gateway と AWS Lambda でサーバーレスアプリケーションを運用しており…</a></li>
+<li><a href="../../q/aws-saa-c03/q108.html">ある企業が、Amazon OpenSearch Service（旧 Elasticsearch Service）クラスタ…</a></li>
+<li><a href="../../q/aws-saa-c03/q109.html">ある企業が、AWS Lambda と Amazon API Gateway でサーバーレス API を運用している。AP…</a></li>
+<li><a href="../../q/aws-saa-c03/q110.html">ある企業が、Amazon Cognito ユーザープールを使ったモバイルアプリを運用している。ユーザーがサインインした後…</a></li>
+<li><a href="../../q/aws-saa-c03/q111.html">ある企業が、AWS でオンプレミスシステムとのハイブリッド構成を採用しており、AWS Direct Connect で接…</a></li>
+<li><a href="../../q/aws-saa-c03/q112.html">ある企業が、Amazon DynamoDB を使ってリアルタイムの在庫管理システムを構築している。注文処理時に在庫数を減…</a></li>
+<li><a href="../../q/aws-saa-c03/q113.html">ある企業が、Amazon EC2 Spot インスタンスを使って機械学習モデルのハイパーパラメータチューニングを実行して…</a></li>
+<li><a href="../../q/aws-saa-c03/q114.html">ある企業が、Amazon ECR（Elastic Container Registry）に保存されているコンテナイメージ…</a></li>
+<li><a href="../../q/aws-saa-c03/q115.html">ある企業が、Amazon Kinesis Data Streams からリアルタイムでデータを消費して Amazon S…</a></li>
+<li><a href="../../q/aws-saa-c03/q116.html">ある企業が、Amazon Aurora MySQL クラスターのデータを誤った SQL UPDATE/DELETE ステ…</a></li>
+<li><a href="../../q/aws-saa-c03/q117.html">ある企業が、AWS で運用する複数の Web アプリケーションに対して SSL/TLS 証明書を発行・管理したい。現在は…</a></li>
+<li><a href="../../q/aws-saa-c03/q118.html">ある企業が、AWS で動作するアプリケーションから機密データを含む複数の S3 バケットへの全アクセスを暗号化し、データ…</a></li>
+<li><a href="../../q/aws-saa-c03/q119.html">ある企業が、Amazon RDS for PostgreSQL を使ったアプリケーションで読み取りクエリのスケーリングの…</a></li>
+<li><a href="../../q/aws-saa-c03/q120.html">ある企業が、Amazon SQS を使ってメッセージキューイングを実装しており、消費者（Consumer）の EC2 イ…</a></li>
+<li><a href="../../q/aws-saa-c03/q121.html">ある企業が、Amazon EKS クラスター上で動作するマイクロサービスの通信をセキュアにしたい。サービス間の通信は m…</a></li>
+<li><a href="../../q/aws-saa-c03/q122.html">ある企業が、Amazon RDS for MySQL インスタンス（db.m5.4xlarge）を本番環境で運用している…</a></li>
+<li><a href="../../q/aws-saa-c03/q123.html">ある企業が、マルチリージョンの Amazon S3 バケット間でデータを同期したい。1 つのリージョン（us-east-…</a></li>
+<li><a href="../../q/aws-saa-c03/q124.html">ある企業が、毎日大量の ETL ジョブを AWS Glue で実行しており、Glue のコストを削減したい。ジョブは複数…</a></li>
+<li><a href="../../q/aws-saa-c03/q125.html">ある企業が、AWS Lambda を使ってサードパーティの REST API から毎時間データを取得し、DynamoDB…</a></li>
+<li><a href="../../q/aws-saa-c03/q126.html">ある企業が、複数の AWS アカウントにわたるリソースへのアクセスを Lambda 関数から行う必要がある。Lambda…</a></li>
+<li><a href="../../q/aws-saa-c03/q127.html">ある企業が、AWS で Web アプリケーションを運用しており、ALB → EC2 Auto Scaling → RDS…</a></li>
+<li><a href="../../q/aws-saa-c03/q128.html">ある企業が、Amazon EC2 上で動作する Web アプリケーションへのトラフィックを Application Lo…</a></li>
+<li><a href="../../q/aws-saa-c03/q129.html">ある企業が、AWS の本番環境のアーキテクチャを見直した結果、インターネットに公開しているサービスのデータ転送アウトバウ…</a></li>
+<li><a href="../../q/aws-saa-c03/q130.html">ある企業が、AWS で HIPAA 準拠のアーキテクチャを設計している。EHR（電子健康記録）データを S3 に保存し、…</a></li>
+<li><a href="../../q/aws-saa-c03/q131.html">ある企業が、Amazon API Gateway + Lambda のサーバーレス API で、同一ユーザーが短時間に連…</a></li>
+<li><a href="../../q/aws-saa-c03/q132.html">ある企業が、マイクロサービスアーキテクチャで Amazon ECS を使っている。特定のサービスへのリクエストが急増した…</a></li>
+<li><a href="../../q/aws-saa-c03/q133.html">ある企業が、開発環境と本番環境の両方で Amazon EC2 インスタンスを運用している。本番環境は 24 時間 365…</a></li>
+<li><a href="../../q/aws-saa-c03/q134.html">ある企業が、社内の従業員が AWS リソースにアクセスする際のパスワードポリシーを強化したい。IAM ユーザーのパスワー…</a></li>
+<li><a href="../../q/aws-saa-c03/q135.html">ある企業が、AWS Lambda を使ったイベント処理システムで、Amazon EventBridge からトリガーされ…</a></li>
+<li><a href="../../q/aws-saa-c03/q136.html">ある企業が、Amazon CloudFront を使って API レスポンスをキャッシュしている。ユーザーのログインセッ…</a></li>
+<li><a href="../../q/aws-saa-c03/q137.html">ある企業が、Amazon S3 への大量のオブジェクトアップロードを行っており、S3 PUT リクエストのコストが高額に…</a></li>
+<li><a href="../../q/aws-saa-c03/q138.html">ある企業が、Amazon ECS on EC2 でコンテナアプリケーションを運用しており、EC2 ノードの OS パッチ…</a></li>
+<li><a href="../../q/aws-saa-c03/q139.html">ある企業が、Amazon RDS for PostgreSQL に保存されているカード番号などの機密データを、アプリケー…</a></li>
+<li><a href="../../q/aws-saa-c03/q140.html">ある企業が、オンプレミスのファイルサーバー（Windows ファイル共有・SMB）を AWS に移行したい。数千人の社員…</a></li>
+<li><a href="../../q/aws-saa-c03/q141.html">ある企業が、AWS Well-Architected フレームワークのコスト最適化の柱に基づいて定期的なコストレビューを…</a></li>
+<li><a href="../../q/aws-saa-c03/q142.html">ある企業が、AWS Network Firewall を使って VPC のインターネット向けトラフィックを保護している。…</a></li>
+<li><a href="../../q/aws-saa-c03/q143.html">ある企業が、Amazon EKS クラスター上のアプリケーションのカナリアデプロイを実現したい。新バージョンのコンテナイ…</a></li>
+<li><a href="../../q/aws-saa-c03/q144.html">ある企業が、AWS Glue Data Catalog を使って S3 上のデータカタログを管理し、Amazon Ath…</a></li>
+<li><a href="../../q/aws-saa-c03/q145.html">ある企業が、AWS のコスト削減策として未使用の Elastic IP アドレス（EIP）を特定したい。AWS でコスト…</a></li>
+<li><a href="../../q/aws-saa-c03/q146.html">ある企業が、Amazon S3 バケットを使ったデータレイクを構築しており、異なるチームに対してデータへのアクセス制御を…</a></li>
+<li><a href="../../q/aws-saa-c03/q147.html">ある企業が、Amazon EC2 の Auto Scaling グループでのスケールアウト時間（新インスタンスが In …</a></li>
+<li><a href="../../q/aws-saa-c03/q148.html">ある企業が、Amazon RDS Aurora PostgreSQL を使ったアプリケーションで、特定の時間帯（毎日 2…</a></li>
+<li><a href="../../q/aws-saa-c03/q149.html">ある企業が、AWS のコンテナワークロードを Amazon ECS（Fargate）で運用しており、アプリケーションの負…</a></li>
+<li><a href="../../q/aws-saa-c03/q150.html">ある企業が、Amazon VPC 内のリソースが意図しない外部との通信を行っていないかを監視したい。特に、VPC 内の …</a></li>
+</ol>
+</main>
+<footer class="page-footer">
+<nav class="hub-nav"><a href="../../exams/aws-clf-c02/">CLF-C02 試験ガイド</a><a href="../../exams/aws-aif-c01/">AIF-C01 試験ガイド</a><a href="../../exams/aws-saa-c03/">SAA-C03 試験ガイド</a><a href="../../exams/aws-dva-c02/">DVA-C02 試験ガイド</a><a href="../../exams/aws-sap-c02/">SAP-C02 試験ガイド</a><a href="../../exams/gcp-cdl/">CDL 試験ガイド</a><a href="../../exams/gcp-ace/">ACE 試験ガイド</a><a href="../../exams/azure-az900/">AZ-900 試験ガイド</a><a href="../../exams/azure-ai900/">AI-900 試験ガイド</a><a href="../../exams/azure-dp900/">DP-900 試験ガイド</a><a href="../../exams/azure-sc900/">SC-900 試験ガイド</a><a href="../../exams/azure-az104/">AZ-104 試験ガイド</a></nav>
+<nav class="site-nav"><a href="../../guide/">資格ガイド</a><a href="../../learn/">サービス解説</a><a href="../../career/">キャリア</a><a href="../../about.html">運営者情報</a><a href="../../privacy.html">プライバシーポリシー</a><a href="../../contact.html">お問い合わせ</a></nav>
+<p class="copy">© CLOUDCERT_ — 本サイトは各認定試験の公式試験ではなく、収録問題はすべてオリジナルの演習問題です。</p>
+</footer>
+</body>
+</html>

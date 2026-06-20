@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>【DP-900 演習問題 #132】ある企業が Microsoft Fabric のレイクハウスアーキテクチャを採用し、Bro…</title>
+<meta name="description" content="DP-900の本試験レベル演習問題。ある企業が Microsoft Fabric のレイクハウスアーキテクチャを採用し、Bronze（生データ）→ Silver（クレンジング済み）→ Gold（ビジネスロジック適用済み）… 全選択肢の解説つき。">
+<link rel="canonical" href="https://cloudcert.app/q/azure-dp900/q132.html">
+<meta property="og:title" content="【DP-900 演習問題 #132】ある企業が Microsoft Fabric のレイクハウスアーキテクチャを採用し、Bro…">
+<meta property="og:description" content="DP-900の本試験レベル演習問題。ある企業が Microsoft Fabric のレイクハウスアーキテクチャを採用し、Bronze（生データ）→ Silver（クレンジング済み）→ Gold（ビジネスロジック適用済み）… 全選択肢の解説つき。">
+<meta property="og:url" content="https://cloudcert.app/q/azure-dp900/q132.html">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="CLOUDCERT_">
+<meta property="og:image" content="https://cloudcert.app/assets/og.png">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='80' font-size='80' fill='%233fe0a4' font-family='monospace'>▸</text></svg>">
+
+<meta name="google-adsense-account" content="ca-pub-5647574947191958">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+JP:wght@400;500;700&family=JetBrains+Mono:wght@400;600;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../../css/style.css">
+<link rel="stylesheet" href="../../css/page.css">
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-SZR5CB5Q3X"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag('js',new Date());gtag('config','G-SZR5CB5Q3X');</script>
+<script type="application/ld+json">[{"@context":"https://schema.org/","@type":"Quiz","about":{"@type":"Thing","name":"Microsoft Azure Data Fundamentals"},"hasPart":[{"@type":"Question","eduQuestionType":"Multiple choice","learningResourceType":"Practice problem","text":"ある企業が Microsoft Fabric のレイクハウスアーキテクチャを採用し、Bronze（生データ）→ Silver（クレンジング済み）→ Gold（ビジネスロジック適用済み）のメダリオンアーキテクチャを実装したい。このアーキテクチャで Delta Lake 形式を各レイヤーで使用する主な利点はどれか。","suggestedAnswer":[{"@type":"Answer","position":1,"text":"Delta Lake は CSV 形式と完全互換であり、変換なしにそのまま BI ツールで参照できる"},{"@type":"Answer","position":2,"text":"Delta Lake を使うと SQL クエリが不要になり、すべての処理を GUI で実行できる"},{"@type":"Answer","position":3,"text":"Delta Lake はリレーショナルデータベースと同等の行ロックをサポートし、高頻度 OLTP 処理に最適化されている"}],"acceptedAnswer":{"@type":"Answer","position":0,"text":"Delta Lake は ACID トランザクション・タイムトラベル（過去バージョン参照）・スキーマ進化をサポートし、各レイヤー間のデータ品質と変更管理を保証する","comment":{"@type":"Comment","text":"Delta Lake はオープンソースのストレージレイヤーで、Parquet ファイルにトランザクションログを加えた形式である。ACID トランザクション（中間状態の整合性保証）・タイムトラベル（過去時点のデータをバージョン指定で参照）・スキーマ進化（後から列を追加しても過去データと互換性を保つ）をサポートするため、メダリオンアーキテクチャの各レイヤーでのデータ品質管理と変更追跡に適している。選択肢 B は誤りで、Delta Lake は Parquet ベースであり CSV 形式とは異なる。また CSV はそのままでは BI ツールで最適に参照できない。選択肢 D は誤りで、Delta Lake はファイルベースのストレージレイヤーであり、リレーショナル DB 相当の行ロック OLTP 処理ではなく、分析ワークロードに最適化されている。選択肢 C は誤りで、Delta Lake は SQL クエリを不要にするものではなく、むしろ Spark SQL や Fabric の SQL エンドポイントから SQL でアクセスできる点が利点の一つである。"}}}]},{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"HOME","item":"https://cloudcert.app/"},{"@type":"ListItem","position":2,"name":"DP-900 試験ガイド","item":"https://cloudcert.app/exams/azure-dp900/"},{"@type":"ListItem","position":3,"name":"q132"}]}]</script>
+</head>
+<body class="page-body">
+<header class="page-header"><a class="page-logo" href="../../index.html">&gt; CLOUDCERT_</a></header>
+<main class="page-main">
+
+<nav class="breadcrumb"><a href="../../index.html">HOME</a> › <a href="../../exams/azure-dp900/">DP-900 試験ガイド</a> › q132</nav>
+<div class="q-meta"><span>DP-900</span><span>Azure の分析ワークロード</span><span>HARD</span><span>単一選択</span></div>
+<h1>ある企業が Microsoft Fabric のレイクハウスアーキテクチャを採用し、Bronze（生データ）→ Silver（クレンジング済み）→ Gold（ビジネスロジック適用済み）のメダリオンアーキテクチャを実装したい。このアーキテクチャで Delta Lake 形式を各レイヤーで使用する主な利点はどれか。</h1>
+<ol class="q-choices">
+<li><b>A.</b> Delta Lake は ACID トランザクション・タイムトラベル（過去バージョン参照）・スキーマ進化をサポートし、各レイヤー間のデータ品質と変更管理を保証する</li>
+<li><b>B.</b> Delta Lake は CSV 形式と完全互換であり、変換なしにそのまま BI ツールで参照できる</li>
+<li><b>C.</b> Delta Lake を使うと SQL クエリが不要になり、すべての処理を GUI で実行できる</li>
+<li><b>D.</b> Delta Lake はリレーショナルデータベースと同等の行ロックをサポートし、高頻度 OLTP 処理に最適化されている</li>
+</ol>
+<details class="q-answer">
+<summary>解答と解説を見る</summary>
+<div class="inner">
+<p><b>正解: A</b></p>
+<p>Delta Lake はオープンソースのストレージレイヤーで、Parquet ファイルにトランザクションログを加えた形式である。ACID トランザクション（中間状態の整合性保証）・タイムトラベル（過去時点のデータをバージョン指定で参照）・スキーマ進化（後から列を追加しても過去データと互換性を保つ）をサポートするため、メダリオンアーキテクチャの各レイヤーでのデータ品質管理と変更追跡に適している。選択肢 B は誤りで、Delta Lake は Parquet ベースであり CSV 形式とは異なる。また CSV はそのままでは BI ツールで最適に参照できない。選択肢 D は誤りで、Delta Lake はファイルベースのストレージレイヤーであり、リレーショナル DB 相当の行ロック OLTP 処理ではなく、分析ワークロードに最適化されている。選択肢 C は誤りで、Delta Lake は SQL クエリを不要にするものではなく、むしろ Spark SQL や Fabric の SQL エンドポイントから SQL でアクセスできる点が利点の一つである。</p>
+
+</div>
+</details>
+<div class="cta-box"><a class="btn btn-primary" href="../../exam.html?exam=azure-dp900">▸ この試験を本気で演習する（全150問・無料）</a></div>
+<nav class="q-nav">
+<span><a href="q131.html">← 前の問題</a></span>
+<span><a href="q133.html">次の問題 →</a></span>
+</nav>
+<section class="related"><h2>同じ分野の関連問題</h2><ul class="q-list">
+<li><a href="q131.html">ある小売企業が、オンラインショップのクリックストリームデータを Azure Event Hubs で受信し、直近5分間の…</a></li>
+<li><a href="q133.html">Power BI レポートにおいて、スライサーで選択した期間に応じて動的に計算されるメジャー（例:「前月比成長率」）を定…</a></li>
+<li><a href="q130.html">ある企業が Azure Synapse Analytics の専用 SQL プールでクエリのパフォーマンスチューニングを…</a></li>
+<li><a href="q134.html">ある企業が Azure Data Factory のパイプラインで ETL 処理を実装している。ADF パイプラインの主…</a></li>
+</ul></section>
+</main>
+<footer class="page-footer">
+<nav class="hub-nav"><a href="../../exams/aws-clf-c02/">CLF-C02 試験ガイド</a><a href="../../exams/aws-aif-c01/">AIF-C01 試験ガイド</a><a href="../../exams/aws-saa-c03/">SAA-C03 試験ガイド</a><a href="../../exams/aws-dva-c02/">DVA-C02 試験ガイド</a><a href="../../exams/aws-sap-c02/">SAP-C02 試験ガイド</a><a href="../../exams/gcp-cdl/">CDL 試験ガイド</a><a href="../../exams/gcp-ace/">ACE 試験ガイド</a><a href="../../exams/azure-az900/">AZ-900 試験ガイド</a><a href="../../exams/azure-ai900/">AI-900 試験ガイド</a><a href="../../exams/azure-dp900/">DP-900 試験ガイド</a><a href="../../exams/azure-sc900/">SC-900 試験ガイド</a><a href="../../exams/azure-az104/">AZ-104 試験ガイド</a></nav>
+<nav class="site-nav"><a href="../../guide/">資格ガイド</a><a href="../../learn/">サービス解説</a><a href="../../career/">キャリア</a><a href="../../about.html">運営者情報</a><a href="../../privacy.html">プライバシーポリシー</a><a href="../../contact.html">お問い合わせ</a></nav>
+<p class="copy">© CLOUDCERT_ — 本サイトは各認定試験の公式試験ではなく、収録問題はすべてオリジナルの演習問題です。</p>
+</footer>
+</body>
+</html>

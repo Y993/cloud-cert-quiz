@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>DP-900（Azure データ基礎）の難易度・勉強法と演習問題150問【無料】</title>
+<meta name="description" content="Microsoft Azure Data Fundamentals（DP-900）の難易度・出題ドメイン・勉強法を解説。本試験レベルのオリジナル演習問題150問を無料公開、全問に詳細解説つき。">
+<link rel="canonical" href="https://cloudcert.app/exams/azure-dp900/">
+<meta property="og:title" content="DP-900（Azure データ基礎）の難易度・勉強法と演習問題150問【無料】">
+<meta property="og:description" content="Microsoft Azure Data Fundamentals（DP-900）の難易度・出題ドメイン・勉強法を解説。本試験レベルのオリジナル演習問題150問を無料公開、全問に詳細解説つき。">
+<meta property="og:url" content="https://cloudcert.app/exams/azure-dp900/">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="CLOUDCERT_">
+<meta property="og:image" content="https://cloudcert.app/assets/og.png">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='80' font-size='80' fill='%233fe0a4' font-family='monospace'>▸</text></svg>">
+
+<meta name="google-adsense-account" content="ca-pub-5647574947191958">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+JP:wght@400;500;700&family=JetBrains+Mono:wght@400;600;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../../css/style.css">
+<link rel="stylesheet" href="../../css/page.css">
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-SZR5CB5Q3X"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag('js',new Date());gtag('config','G-SZR5CB5Q3X');</script>
+<script type="application/ld+json">[{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"試験は何問・何分ですか？","acceptedAnswer":{"@type":"Answer","text":"出題数は40〜60問、試験時間は45分です。受付・説明込みの着席時間は約65分になります。"}},{"@type":"Question","name":"受験料はいくらですか？","acceptedAnswer":{"@type":"Answer","text":"日本では12,980円（税込）が目安ですが、価格は改定されることがあります。申し込み前にPearson VUEまたはMicrosoftの認定資格ページで最新の金額を確認してください。Microsoft Virtual Training Dayを受講すると無料バウチャーがもらえる場合もあります。"}},{"@type":"Question","name":"AZ-900を先に取るべきですか？","acceptedAnswer":{"@type":"Answer","text":"必須ではありません。DP-900はAZ-900の取得を前提としておらず、単独で受験できます。ただし、クラウドの基本概念が全く初めての場合はAZ-900を先に勉強すると土台ができて学習しやすくなります。逆に、データベースやSQL経験者はAZ-900なしでDP-900から始めても問題ないことが多いです。"}},{"@type":"Question","name":"不合格になったら何日後に再受験できますか？","acceptedAnswer":{"@type":"Answer","text":"1回目の不合格後は24時間待てば再受験できます。2回目以降の失敗は14日間の待機が必要で、同一試験を12か月以内に受けられる上限は5回です。"}},{"@type":"Question","name":"合格スコアと有効期限を教えてください。","acceptedAnswer":{"@type":"Answer","text":"合格スコアは1000点満点中700点です。Fundamentals認定に有効期限はなく、一度取得すれば更新不要で永続します。"}},{"@type":"Question","name":"2026年時点で廃止・改訂の予定はありますか？","acceptedAnswer":{"@type":"Answer","text":"2026年6月時点でDP-900の廃止予定は発表されていません。ただし試験内容は更新されることがあり、2026年初にMicrosoft Fabricに関する出題比重が増加しています。受験前に公式の試験ページで最新の出題範囲を確認することをお勧めします。"}}]},{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"HOME","item":"https://cloudcert.app/"},{"@type":"ListItem","position":2,"name":"DP-900 試験ガイド"}]}]</script>
+</head>
+<body class="page-body">
+<header class="page-header"><a class="page-logo" href="../../index.html">&gt; CLOUDCERT_</a></header>
+<main class="page-main">
+
+<nav class="breadcrumb"><a href="../../index.html">HOME</a> › DP-900</nav>
+<h1>DP-900（Azure データ基礎）の難易度・勉強法と演習問題150問【無料】</h1>
+<p>合格ライン 70% ／ 制限時間 45分 ／ 収録 150問（すべて無料・登録不要）</p>
+<div class="cta-box"><a class="btn btn-primary" href="../../exam.html?exam=azure-dp900">▸ いますぐ演習をはじめる</a></div>
+
+<h2>試験概要</h2><p>DP-900はMicrosoftのAzureデータサービスに関する入門認定試験で、リレーショナルデータ・非リレーショナルデータ・分析ワークロードの基本概念をカバーする。エンジニア職に限らず、データを扱う業務に関わる人や「クラウド上でデータをどう管理するのか」を体系的に理解したい人に向けて設計されており、前提資格は不要だ。</p>
+<p>試験範囲は大きく4つに分かれる。リレーショナルデータの概念（SQL・テーブル・正規化など）、Azure SQL DatabaseやAzure Database for MySQLといったリレーショナルサービス、Azure Cosmos DBに代表される非リレーショナルデータサービス、そしてAzure Synapse AnalyticsやMicrosoft FabricによるデータウェアハウスとAnalyticsワークロード。2026年現在、Microsoft Fabricが試験で重視されるようになっており、Azure Synapse Analyticsとの使い分けも問われる。</p>
+<p>合格するとMicrosoft Certified: Azure Data Fundamentalsバッジを取得でき、有効期限は設定されていない。データエンジニア・データアナリスト方向への第一歩として、あるいはAZ-900取得後の次のステップとして選ぶ人が多い。</p>
+<h2>難易度</h2><p>難易度はFundamentalsレベルの中では標準的で、AZ-900よりやや専門寄りという位置づけだ。SQLやデータベースの経験があればかなり有利に進められるが、なくても構わない。Azureのサービスを実際に操作したことがない人でも、概念をきちんと整理すれば十分合格できる。</p>
+<p>出題数は40〜60問で、試験時間は45分（着席総時間は約65分）。合格スコアは700/1000。問題形式は選択問題のほか、ドラッグ＆ドロップやホットエリア（図のどこかをクリックする）など複数のタイプが混在する。問題形式に不慣れだと焦ることがあるので、練習問題でひととおり体験しておくと安心だ。</p>
+<p>つまずきやすいのは「ストレージの種類の使い分け」と「ETLとELTの違い」あたり。それぞれの用途をサービス名とセットで覚えておくと、試験中に迷う頻度が減る。</p>
+<h2>勉強法</h2><p>Microsoft Learnの公式ラーニングパス「Azure データの基礎」が最初の一手だ。日本語で読め、モジュールごとにナレッジチェックが付いている。全体で8〜12時間程度あれば一周できる。まずここを通読して、知らないサービス名と用語の全体像をつかむのが先決だ。</p>
+<p>一周したら、自分がどのドメインで点を落としているかを確認する。Analyticsが弱ければSynapse AnalyticsとFabricの違いを重点的に読み直す、非リレーショナルが弱ければCosmos DBのAPIの種類を整理する、というように絞り込んでいく。全分野を均等に時間をかけるより、弱点集中の方が点数の伸びが早い。</p>
+<p>仕上げはこのページ下の演習問題を繰り返すこと。間違えた問題は解説を読んで、対応するMicrosoft Learnのページに戻る、という往復をしばらく続ける。勉強期間はクラウドやデータの実務経験がある人で1週間前後、完全未経験なら2〜3週間が現実的な見込みだ。</p>
+<h2>よくある質問</h2><h3>試験は何問・何分ですか？</h3><p>出題数は40〜60問、試験時間は45分です。受付・説明込みの着席時間は約65分になります。</p>
+<h3>受験料はいくらですか？</h3><p>日本では12,980円（税込）が目安ですが、価格は改定されることがあります。申し込み前にPearson VUEまたはMicrosoftの認定資格ページで最新の金額を確認してください。Microsoft Virtual Training Dayを受講すると無料バウチャーがもらえる場合もあります。</p>
+<h3>AZ-900を先に取るべきですか？</h3><p>必須ではありません。DP-900はAZ-900の取得を前提としておらず、単独で受験できます。ただし、クラウドの基本概念が全く初めての場合はAZ-900を先に勉強すると土台ができて学習しやすくなります。逆に、データベースやSQL経験者はAZ-900なしでDP-900から始めても問題ないことが多いです。</p>
+<h3>不合格になったら何日後に再受験できますか？</h3><p>1回目の不合格後は24時間待てば再受験できます。2回目以降の失敗は14日間の待機が必要で、同一試験を12か月以内に受けられる上限は5回です。</p>
+<h3>合格スコアと有効期限を教えてください。</h3><p>合格スコアは1000点満点中700点です。Fundamentals認定に有効期限はなく、一度取得すれば更新不要で永続します。</p>
+<h3>2026年時点で廃止・改訂の予定はありますか？</h3><p>2026年6月時点でDP-900の廃止予定は発表されていません。ただし試験内容は更新されることがあり、2026年初にMicrosoft Fabricに関する出題比重が増加しています。受験前に公式の試験ページで最新の出題範囲を確認することをお勧めします。</p>
+<h2>出題ドメイン構成（収録問題の内訳）</h2>
+<table class="domain-table"><tr><th>ドメイン</th><th>収録数</th></tr><tr><td>コア データ概念</td><td>42問（28%）</td></tr>
+<tr><td>Azure のリレーショナル データ</td><td>35問（23%）</td></tr>
+<tr><td>Azure の非リレーショナル データ</td><td>29問（19%）</td></tr>
+<tr><td>Azure の分析ワークロード</td><td>44問（29%）</td></tr></table>
+<h2>収録問題一覧（全150問・解説つき）</h2>
+<ol class="q-list">
+<li><a href="../../q/azure-dp900/q001.html">ある小売企業が、顧客の注文データを管理するシステムを設計している。注文には「注文ID、顧客名、商品コード、数量、注文日時…</a></li>
+<li><a href="../../q/azure-dp900/q002.html">ある医療機関が、患者ごとに異なる検査項目を記録するシステムを検討している。ある患者には血圧・血糖値のみが記録され、別の患…</a></li>
+<li><a href="../../q/azure-dp900/q003.html">ある動画配信サービスが、ユーザーがアップロードした動画ファイル（MP4形式）と、その動画に対するコメントテキスト、サムネ…</a></li>
+<li><a href="../../q/azure-dp900/q004.html">ある EC サイトが、毎日深夜に前日の全受注データをデータウェアハウスに転送してレポートを生成している。この処理方式と、…</a></li>
+<li><a href="../../q/azure-dp900/q005.html">ある金融機関が、ATMや POS 端末からリアルタイムで送られてくる取引データを解析して、不正な取引パターンを即座に検知…</a></li>
+<li><a href="../../q/azure-dp900/q006.html">ある企業のデータチームには、データベース管理者（DBA）、データエンジニア、データアナリストの3つのロールがいる。「営業…</a></li>
+<li><a href="../../q/azure-dp900/q007.html">ある製造企業のデータエンジニアが、社内の複数のソースシステム（基幹ERPシステム、生産ラインのIoTセンサー、顧客管理シ…</a></li>
+<li><a href="../../q/azure-dp900/q008.html">ある企業が、オンラインショッピングサイトのトランザクション処理システム（OLTP）を設計している。このシステムに求められ…</a></li>
+<li><a href="../../q/azure-dp900/q009.html">ある企業が、顧客の購買履歴データを格納するファイル形式を検討している。データサイエンティストが大規模な機械学習の特徴量エ…</a></li>
+<li><a href="../../q/azure-dp900/q010.html">ある小売グループが、全国 500 店舗のPOSシステムから収集した購買データを分析して「どの時間帯・地域・商品カテゴリの…</a></li>
+<li><a href="../../q/azure-dp900/q011.html">ある企業が、IoT センサーから毎秒数万件のイベントデータ（センサーID、タイムスタンプ、温度値、異常フラグ）を収集する…</a></li>
+<li><a href="../../q/azure-dp900/q012.html">あるグローバル銀行が、OLTP システムとデータウェアハウスを並行運用しており、「勘定系（OLTP）の取引処理に影響を与…</a></li>
+<li><a href="../../q/azure-dp900/q013.html">ある企業が、データ管理チームの役割分担を明確にしようとしている。「データベース管理者（DBA）」の責務として正しいものを…</a></li>
+<li><a href="../../q/azure-dp900/q014.html">あるスタートアップが、ユーザーのプロフィール情報（ユーザーID、名前、メールアドレス、登録日）を管理するシステムを構築し…</a></li>
+<li><a href="../../q/azure-dp900/q015.html">ある人事部門が、従業員の勤怠レコードをCSV形式でシステムから出力しているが、データサイエンスチームが大規模な分析で使う…</a></li>
+<li><a href="../../q/azure-dp900/q016.html">あるスマートフォンアプリが、ユーザーのタップ・スワイプ・スクロールのインタラクションイベントをリアルタイムで収集し、UX…</a></li>
+<li><a href="../../q/azure-dp900/q017.html">ある企業がソーシャルメディアの投稿データを収集している。各投稿にはテキスト本文に加え、投稿者がつけたハッシュタグ（0個か…</a></li>
+<li><a href="../../q/azure-dp900/q018.html">ある企業がデータ活用プロジェクトを進めるにあたり、「データエンジニア」と「データアナリスト」の役割を明確に分担しようとし…</a></li>
+<li><a href="../../q/azure-dp900/q019.html">ある企業が、顧客からのサポートメールの内容をシステムに格納している。各メールはテキスト本文のみで、定義されたフィールドや…</a></li>
+<li><a href="../../q/azure-dp900/q020.html">ある企業が、受注システムからの注文データを毎日夜間にデータウェアハウスへ転送するバッチジョブを実行している。ある朝、経営…</a></li>
+<li><a href="../../q/azure-dp900/q021.html">ある EC サイトが「商品カタログデータ」を管理している。各商品には必ず商品ID・価格・在庫数があるが、一部商品には「カ…</a></li>
+<li><a href="../../q/azure-dp900/q022.html">ある企業が、ラムダアーキテクチャの導入を検討している。このアーキテクチャが「バッチレイヤー」と「スピードレイヤー（ストリ…</a></li>
+<li><a href="../../q/azure-dp900/q023.html">ある企業が、OLTPシステムのトランザクションデータをデータウェアハウスに転送する際のデータ変換プロセス（ETL）を設計…</a></li>
+<li><a href="../../q/azure-dp900/q024.html">ある物流会社が、荷物の追跡データを管理するシステムを設計している。各荷物レコードには「荷物ID、発送元郵便番号、配送先郵…</a></li>
+<li><a href="../../q/azure-dp900/q025.html">ある企業のデータチームが、新しく参加したメンバーにデータロールの説明をしている。「データエンジニアとデータベース管理者（…</a></li>
+<li><a href="../../q/azure-dp900/q026.html">ある小売業者が、前日の全店舗売上データをもとに毎朝8時に自動レポートを生成するシステムを運用している。このシステムのデー…</a></li>
+<li><a href="../../q/azure-dp900/q027.html">ある企業がデータ活用プロジェクトで3つのロール（データベース管理者、データエンジニア、データアナリスト）を採用した。新入…</a></li>
+<li><a href="../../q/azure-dp900/q028.html">ある企業の技術チームが、JSON形式とCSV形式のファイルを比較検討している。「商品カテゴリ・地域・売上期間」という固定…</a></li>
+<li><a href="../../q/azure-dp900/q029.html">ある企業が、データのファイル形式を選定しようとしている。「スキーマが行ごとに異なる可能性があるログデータ」を保存するのに…</a></li>
+<li><a href="../../q/azure-dp900/q030.html">ある大手小売チェーンが、全国 300 店舗のPOSシステムから1日に約5,000万件の取引レコードを生成している。このデ…</a></li>
+<li><a href="../../q/azure-dp900/q031.html">ある保険会社が、契約者の基本情報（契約者ID、名前、生年月日、住所）を管理するリレーショナルデータベースを運用している。…</a></li>
+<li><a href="../../q/azure-dp900/q032.html">ある企業の分析チームが、過去2年間の販売データに基づいて「月別・商品カテゴリ別・地域別の売上サマリー」を生成している。こ…</a></li>
+<li><a href="../../q/azure-dp900/q033.html">ある大学が、学生の成績記録システムを構築しようとしている。各科目の成績は「学生ID、科目コード、成績、取得単位数、担当教…</a></li>
+<li><a href="../../q/azure-dp900/q034.html">ある企業が、データウェアハウスのスタースキーマ設計を採用してOLAP分析を行おうとしている。「売上ファクトテーブル」と「…</a></li>
+<li><a href="../../q/azure-dp900/q035.html">ある企業が、IoT センサーからのリアルタイムストリームデータと、データウェアハウスに格納された過去5年間の履歴データを…</a></li>
+<li><a href="../../q/azure-dp900/q036.html">ある企業が、データ品質管理の重要性を社内で啓蒙しようとしている。データの「完全性（Completeness）」「正確性（…</a></li>
+<li><a href="../../q/azure-dp900/q037.html">ある企業が「半構造化データ」を扱うシステムを設計している。半構造化データをリレーショナルデータベースに格納する場合と、ド…</a></li>
+<li><a href="../../q/azure-dp900/q038.html">ある金融機関が、毎月の不正取引分析レポートを作成している。過去12ヶ月分の取引データ（約1億件）に対して「地域・取引種別…</a></li>
+<li><a href="../../q/azure-dp900/q039.html">ある企業が「データエンジニア」「データアナリスト」「データベース管理者（DBA）」の3つのロールを採用した。「Postg…</a></li>
+<li><a href="../../q/azure-dp900/q040.html">ある企業が、顧客データをJSON形式で保存しているが、特定の顧客の「年齢」フィールドが一部のレコードには存在し、他のレコ…</a></li>
+<li><a href="../../q/azure-dp900/q041.html">ある物流会社が、配送車両のGPSデバイスから1秒ごとに「車両ID・緯度・経度・速度・タイムスタンプ」を送信するシステムを…</a></li>
+<li><a href="../../q/azure-dp900/q042.html">ある企業が、データの種類とその保存に適したストレージの組み合わせを整理しようとしている。「非構造化データ」の保存に適した…</a></li>
+<li><a href="../../q/azure-dp900/q043.html">ある企業が、顧客テーブルと注文テーブルを保有するリレーショナルデータベースを設計している。注文テーブルの各行が必ず特定の…</a></li>
+<li><a href="../../q/azure-dp900/q044.html">ある開発チームが、商品テーブルから在庫数が10未満の商品名と価格の一覧を取得したいと考えている。この要件を満たす最も適切…</a></li>
+<li><a href="../../q/azure-dp900/q045.html">あるデータベース管理者が、顧客テーブルに対して頻繁に実行される『メールアドレスで顧客を検索する』クエリのパフォーマンスを…</a></li>
+<li><a href="../../q/azure-dp900/q046.html">あるシステム管理者が、複数の部門から頻繁に参照される複雑な結合クエリ（数テーブルを JOIN した集計クエリ）を、毎回 …</a></li>
+<li><a href="../../q/azure-dp900/q047.html">あるソフトウェア開発チームが SQL 文の種類について学習している。テーブルを新規作成する CREATE TABLE 文…</a></li>
+<li><a href="../../q/azure-dp900/q048.html">ある企業のデータベース担当者が、受注管理データベースの設計品質を向上させるために正規化を実施することにした。正規化の主な…</a></li>
+<li><a href="../../q/azure-dp900/q049.html">あるビジネスアナリストが、販売テーブル（sales）から全レコードの全カラムを取得したいと考えている。最もシンプルな S…</a></li>
+<li><a href="../../q/azure-dp900/q050.html">ある中規模のSaaS企業が、新しいWebアプリケーション向けのリレーショナルデータベースを Azure 上に構築しようと…</a></li>
+<li><a href="../../q/azure-dp900/q051.html">ある企業が、オンプレミスで稼働している SQL Server アプリケーション（SQL Server Agent ジョブ…</a></li>
+<li><a href="../../q/azure-dp900/q052.html">ある企業がオンプレミスのレガシー SQL Server アプリケーションを Azure に移行しようとしている。アプリケ…</a></li>
+<li><a href="../../q/azure-dp900/q053.html">あるスタートアップ企業が、トラフィックが非常に変動しやすい Web アプリケーション（平日昼間はアクティブ・深夜や週末は…</a></li>
+<li><a href="../../q/azure-dp900/q054.html">ある SaaS プロバイダーが、顧客ごとに独立した Azure SQL Database を 50 個運用している。各デ…</a></li>
+<li><a href="../../q/azure-dp900/q055.html">ある企業がシステム開発で使用するデータベース接続を標準化するため、SQL の構文について整理している。「SELECT、I…</a></li>
+<li><a href="../../q/azure-dp900/q056.html">ある企業が顧客テーブル（customers）と注文テーブル（orders）を持つデータベースを運用している。顧客テーブル…</a></li>
+<li><a href="../../q/azure-dp900/q057.html">ある金融系システムが Azure 上で PostgreSQL データベースを使用している。オープンソースの Postgr…</a></li>
+<li><a href="../../q/azure-dp900/q058.html">ある Web アプリケーション開発チームが、LAMP スタック（Linux・Apache・MySQL・PHP）で開発した…</a></li>
+<li><a href="../../q/azure-dp900/q059.html">ある企業のデータベース設計者が、主キー（PRIMARY KEY）の性質について説明している。主キーの説明として正しいもの…</a></li>
+<li><a href="../../q/azure-dp900/q060.html">ある企業のアプリケーションが、Azure SQL Database に接続する際に発生する接続遅延（レイテンシ）を最小化…</a></li>
+<li><a href="../../q/azure-dp900/q061.html">ある受発注システムのデータベース担当者が、以下の SQL 文を実行した。「DELETE FROM orders WHER…</a></li>
+<li><a href="../../q/azure-dp900/q062.html">ある開発チームが Azure SQL Database を使用して注文管理システムを構築している。商品テーブル（prod…</a></li>
+<li><a href="../../q/azure-dp900/q063.html">ある製造業企業が、社内の生産管理システムで使用している SQL Server 2016 のデータベース（Service …</a></li>
+<li><a href="../../q/azure-dp900/q064.html">ある企業が、Azure SQL Database の特定テーブルへの SELECT 権限を特定のデータベースユーザーに付…</a></li>
+<li><a href="../../q/azure-dp900/q065.html">ある企業が受注データベースを設計している。受注テーブルの「顧客 ID」カラムは顧客テーブルの主キーを参照する外部キーとし…</a></li>
+<li><a href="../../q/azure-dp900/q066.html">ある企業が Azure でリレーショナルデータベースサービスを選定しようとしている。Azure SQL Database…</a></li>
+<li><a href="../../q/azure-dp900/q067.html">ある開発チームがリレーショナルデータベースの正規化について学習している。正規化を実施した場合に得られる効果として正しいも…</a></li>
+<li><a href="../../q/azure-dp900/q068.html">ある企業が、オンプレミスから Azure への SQL Server データベース移行を計画している。要件は「最小限のコ…</a></li>
+<li><a href="../../q/azure-dp900/q069.html">ある DBA が Azure SQL Database のコスト最適化戦略を検討している。エラスティックプールが特に有効…</a></li>
+<li><a href="../../q/azure-dp900/q070.html">ある企業のデータベース設計者が、インデックスの種類と用途について整理している。クラスター化インデックス（Clustere…</a></li>
+<li><a href="../../q/azure-dp900/q071.html">ある企業がリレーショナルデータベースにおけるビュー（VIEW）の利点について評価している。ビューを使用することで得られる…</a></li>
+<li><a href="../../q/azure-dp900/q072.html">ある IT 部門が SQL 命令の分類を整理している。DDL（データ定義言語）に分類される命令を2つ選択してください。</a></li>
+<li><a href="../../q/azure-dp900/q073.html">ある企業のアーキテクトが、Azure SQL Database の購入モデルとサービス層を評価している。ハイパースケール…</a></li>
+<li><a href="../../q/azure-dp900/q074.html">ある企業が Azure SQL Database でコンプライアンス要件を満たすために、特定のカラム（クレジットカード番…</a></li>
+<li><a href="../../q/azure-dp900/q075.html">ある金融機関が、Azure SQL Database のデータベース設計でデータ整合性を確保する方法を検討している。「口…</a></li>
+<li><a href="../../q/azure-dp900/q076.html">ある企業のデータアーキテクトが、第3正規形（3NF）のデータベース設計について説明している。第3正規形を満たすために除去…</a></li>
+<li><a href="../../q/azure-dp900/q077.html">ある企業のアーキテクトが、Azure SQL Database の Business Critical 層と Gener…</a></li>
+<li><a href="../../q/azure-dp900/q078.html">ある開発チームが、IoT デバイスから送信されるセンサーログを Azure Blob Storage に書き込んでいる。…</a></li>
+<li><a href="../../q/azure-dp900/q079.html">ある企業が Azure Blob Storage に大量のドキュメントを保管している。ドキュメントは作成後 30 日間は…</a></li>
+<li><a href="../../q/azure-dp900/q080.html">ある会計事務所が、作成完了した決算書類（PDF）を Azure Blob Storage に格納している。書類は法的義務…</a></li>
+<li><a href="../../q/azure-dp900/q081.html">ある企業が Azure 上に複数の Windows 仮想マシンをデプロイしており、それらの VM が共通の設定ファイルや…</a></li>
+<li><a href="../../q/azure-dp900/q082.html">ある EC サイトが、ユーザーのショッピングカート情報（ユーザー ID、商品 ID、数量）を Azure Table S…</a></li>
+<li><a href="../../q/azure-dp900/q083.html">ある旅行予約サービスが、全世界 5 か国に顧客を持ち、各国でミリ秒レベルの低レイテンシで予約データを読み書きする必要があ…</a></li>
+<li><a href="../../q/azure-dp900/q084.html">あるゲーム会社が、MongoDB のクライアントライブラリを使ってすでに開発済みの実績・スコア管理アプリをクラウドに移行…</a></li>
+<li><a href="../../q/azure-dp900/q085.html">ある SNS プラットフォームが、ユーザー間の「フォロー」「フォロワー」「いいね」などの関係をデータとして管理し、「ある…</a></li>
+<li><a href="../../q/azure-dp900/q086.html">あるフィンテック企業が、トランザクションデータを Azure Cosmos DB に格納している。金融データとして、コミ…</a></li>
+<li><a href="../../q/azure-dp900/q087.html">ある医療系スタートアップが、患者の診療記録（テキスト・画像・検査データを混在する非構造化 JSON）を格納し、患者 ID…</a></li>
+<li><a href="../../q/azure-dp900/q088.html">ある eラーニング企業が、受講者がコースを修了するたびに修了証書 PDF を Azure Blob Storage に保…</a></li>
+<li><a href="../../q/azure-dp900/q089.html">ある物流企業が、配送トラック 1 万台からリアルタイムに位置情報（デバイス ID、緯度・経度、タイムスタンプ）を Azu…</a></li>
+<li><a href="../../q/azure-dp900/q090.html">ある小売チェーンが、各店舗の在庫データ（品番、数量、最終更新日時）を Azure Table Storage で管理して…</a></li>
+<li><a href="../../q/azure-dp900/q091.html">ある動画配信サービスが、プレミアム会員向けにしか公開しない高解像度動画ファイルを Azure Blob Storage …</a></li>
+<li><a href="../../q/azure-dp900/q092.html">ある Cassandra を使った分析基盤を Azure に移行する際、既存の CQL（Cassandra Query …</a></li>
+<li><a href="../../q/azure-dp900/q093.html">ある企業が Azure Blob Storage に機密性の高い契約書類を保管している。書類はアップロードされると 90…</a></li>
+<li><a href="../../q/azure-dp900/q094.html">ある金融機関が Azure Cosmos DB for NoSQL を使って口座取引履歴を格納している。アプリケーション…</a></li>
+<li><a href="../../q/azure-dp900/q095.html">ある EC サイトが、商品カタログデータ（製品名、説明、価格、スペック）を Azure Cosmos DB for Ta…</a></li>
+<li><a href="../../q/azure-dp900/q096.html">ある製造企業が、工場の 5,000 台の機器から 1 秒ごとにセンサーデータ（機器 ID、センサー値、タイムスタンプ）を…</a></li>
+<li><a href="../../q/azure-dp900/q097.html">ある航空会社が、世界 12 か国の空港カウンターで座席予約を管理している。座席の二重予約を防ぐために、任意のリージョンで…</a></li>
+<li><a href="../../q/azure-dp900/q098.html">ある不動産テック企業が、物件情報（テキスト・写真・価格履歴・オーナー変遷）を Azure Cosmos DB for N…</a></li>
+<li><a href="../../q/azure-dp900/q099.html">ある HR テック企業が、従業員の職歴・資格・スキル・プロジェクト経験を Azure Cosmos DB for NoS…</a></li>
+<li><a href="../../q/azure-dp900/q100.html">ある金融機関が Azure Blob Storage にアーカイブ層で格納しているコンプライアンスレポートを緊急に取り出…</a></li>
+<li><a href="../../q/azure-dp900/q101.html">Azure Blob Storage の「ブロック BLOB」と「ページ BLOB」についての説明として正しいものを 2…</a></li>
+<li><a href="../../q/azure-dp900/q102.html">Azure Cosmos DB のグローバル分散機能について正しい説明を 2 つ選択してください。</a></li>
+<li><a href="../../q/azure-dp900/q103.html">Azure Table Storage のデータモデルに関する正しい説明を 2 つ選択してください。</a></li>
+<li><a href="../../q/azure-dp900/q104.html">ある SaaS 企業が複数テナントのデータを Azure Cosmos DB for NoSQL の単一コンテナで管理し…</a></li>
+<li><a href="../../q/azure-dp900/q105.html">ある大規模メディア企業が Azure Blob Storage に動画コンテンツを格納して全世界へ配信している。コストを…</a></li>
+<li><a href="../../q/azure-dp900/q106.html">Azure Cosmos DB の整合性レベルについて正しい説明を 2 つ選択してください。</a></li>
+<li><a href="../../q/azure-dp900/q107.html">ある小売チェーンが、全国1,000店舗の日次売上データを蓄積して、商品カテゴリ別・地域別の売上傾向を分析するシステムを構…</a></li>
+<li><a href="../../q/azure-dp900/q108.html">データウェアハウスにおけるスタースキーマ設計において、売上金額・数量・利益などの測定値（メジャー）を格納するテーブルの種…</a></li>
+<li><a href="../../q/azure-dp900/q109.html">ある企業のデータエンジニアが、複数のソースシステムからデータを抽出し、データウェアハウスへ格納するためのパイプラインを構…</a></li>
+<li><a href="../../q/azure-dp900/q110.html">Power BI において、複数のデータソースを接続し、テーブル間のリレーションシップとメジャーを定義した論理データモデ…</a></li>
+<li><a href="../../q/azure-dp900/q111.html">Azure のデータレイクとして機能し、階層型名前空間による高性能なファイルシステムアクセスと、大規模な分析ワークロード…</a></li>
+<li><a href="../../q/azure-dp900/q112.html">ある製造会社のデータチームが、工場の IoT センサーから毎秒数万件のストリーミングデータを受信し、過去10秒間の異常値…</a></li>
+<li><a href="../../q/azure-dp900/q113.html">あるデータエンジニアリングチームが、Azure Data Lake Storage Gen2 に格納された生ログデータ（…</a></li>
+<li><a href="../../q/azure-dp900/q114.html">ある金融企業が、Azure Synapse Analytics にデータウェアハウスを構築している。売上テーブル（ファク…</a></li>
+<li><a href="../../q/azure-dp900/q115.html">あるデータサイエンスチームが、Azure Databricks を使って機械学習モデルのトレーニングを行いたい。チームは…</a></li>
+<li><a href="../../q/azure-dp900/q116.html">Power BI において、経営幹部向けに KPI 指標（売上・利益・顧客数）を一画面で常時監視できるビューを作成したい…</a></li>
+<li><a href="../../q/azure-dp900/q117.html">ある企業が Microsoft Fabric のレイクハウスアーキテクチャを採用した。OneLake に格納された De…</a></li>
+<li><a href="../../q/azure-dp900/q118.html">ある e コマース企業が、Azure Data Factory を使って注文管理データベース（Azure SQL Dat…</a></li>
+<li><a href="../../q/azure-dp900/q119.html">あるデータチームが、Azure Synapse Analytics で売上分析レポートを構築している。Synapse の…</a></li>
+<li><a href="../../q/azure-dp900/q120.html">ある企業が Microsoft Fabric を採用してデータ分析基盤を刷新しようとしている。Microsoft Fab…</a></li>
+<li><a href="../../q/azure-dp900/q121.html">ある大手製造業が、全世界の工場センサーデータ（1秒あたり500万イベント）をリアルタイムで分析し、異常を検知した場合は5…</a></li>
+<li><a href="../../q/azure-dp900/q122.html">ある小売企業が Azure Synapse Analytics で販売分析基盤を構築している。専用 SQL プールのディ…</a></li>
+<li><a href="../../q/azure-dp900/q123.html">ある企業のアナリストが、Power BI Desktop でレポートを作成してから、同僚がどこからでも閲覧・共有できるよ…</a></li>
+<li><a href="../../q/azure-dp900/q124.html">ある企業のデータエンジニアが、Azure Data Factory のデータフロー機能（Mapping Data Flo…</a></li>
+<li><a href="../../q/azure-dp900/q125.html">ある企業が Power BI のセマンティックモデルを活用したレポート開発の標準化を進めている。セマンティックモデルの特…</a></li>
+<li><a href="../../q/azure-dp900/q126.html">ある企業が Azure Databricks を使って機械学習パイプラインを構築している。モデルのトレーニング実験（ハイ…</a></li>
+<li><a href="../../q/azure-dp900/q127.html">データウェアハウスのスタースキーマにおいて、「日付」ディメンションテーブルが保持する典型的な属性として適切なものはどれか…</a></li>
+<li><a href="../../q/azure-dp900/q128.html">ある企業が、Azure Synapse Analytics でデータウェアハウスを構築している。SQL プールを使用せず…</a></li>
+<li><a href="../../q/azure-dp900/q129.html">ある保険会社が、保険金請求データ（Azure SQL Database）・顧客マスタ（オンプレミス Oracle）・外部…</a></li>
+<li><a href="../../q/azure-dp900/q130.html">ある企業が Azure Synapse Analytics の専用 SQL プールでクエリのパフォーマンスチューニングを…</a></li>
+<li><a href="../../q/azure-dp900/q131.html">ある小売企業が、オンラインショップのクリックストリームデータを Azure Event Hubs で受信し、直近5分間の…</a></li>
+<li><a href="../../q/azure-dp900/q132.html">ある企業が Microsoft Fabric のレイクハウスアーキテクチャを採用し、Bronze（生データ）→ Silv…</a></li>
+<li><a href="../../q/azure-dp900/q133.html">Power BI レポートにおいて、スライサーで選択した期間に応じて動的に計算されるメジャー（例:「前月比成長率」）を定…</a></li>
+<li><a href="../../q/azure-dp900/q134.html">ある企業が Azure Data Factory のパイプラインで ETL 処理を実装している。ADF パイプラインの主…</a></li>
+<li><a href="../../q/azure-dp900/q135.html">ある企業が、Azure Databricks の Spark Structured Streaming を使って、Azu…</a></li>
+<li><a href="../../q/azure-dp900/q136.html">ある企業が、ETL と ELT の2つのアプローチを比較検討している。クラウドデータウェアハウス（Azure Synap…</a></li>
+<li><a href="../../q/azure-dp900/q137.html">ある企業が Microsoft Fabric の OneLake に関する設計を行っている。OneLake の「ショート…</a></li>
+<li><a href="../../q/azure-dp900/q138.html">ある企業が大規模なデータウェアハウス移行プロジェクトで、既存のオンプレミス SSIS パッケージを Azure で実行し…</a></li>
+<li><a href="../../q/azure-dp900/q139.html">ある企業の BI チームが Power BI で全社レポートの管理を標準化しようとしている。Power BI Servi…</a></li>
+<li><a href="../../q/azure-dp900/q140.html">ある企業がデータレイクアーキテクチャを設計している。Azure Data Lake Storage Gen2 の特徴とし…</a></li>
+<li><a href="../../q/azure-dp900/q141.html">ある金融機関が、規制要件により過去7年間の取引履歴データを保持しつつ、毎月のバッチレポート処理でそのデータを分析する必要…</a></li>
+<li><a href="../../q/azure-dp900/q142.html">ある企業が Power BI を使ってデータを可視化する際、データの取り込みモードとして「DirectQuery」を選択…</a></li>
+<li><a href="../../q/azure-dp900/q143.html">ある企業が Azure Stream Analytics でリアルタイムストリーミング分析を設計している。Stream …</a></li>
+<li><a href="../../q/azure-dp900/q144.html">ある企業が Azure Databricks でデータ分析チームを運営している。データエンジニア・データサイエンティスト…</a></li>
+<li><a href="../../q/azure-dp900/q145.html">ある企業が、Power BI の行レベルセキュリティ（RLS: Row-Level Security）を設計している。東…</a></li>
+<li><a href="../../q/azure-dp900/q146.html">ある企業が Azure Stream Analytics のジョブで、Twitter（X）から受信したツイートデータを処…</a></li>
+<li><a href="../../q/azure-dp900/q147.html">データウェアハウスのスタースキーマにおける「ディメンションテーブル」の主な役割はどれか。</a></li>
+<li><a href="../../q/azure-dp900/q148.html">ある企業が Azure Databricks と Microsoft Fabric のどちらを採用するか検討している。そ…</a></li>
+<li><a href="../../q/azure-dp900/q149.html">ある企業が、Azure Data Factory のコピーアクティビティを使って、オンプレミスの SQL Server …</a></li>
+<li><a href="../../q/azure-dp900/q150.html">ある企業がリアルタイム分析基盤を構築しており、Azure Stream Analytics と Spark Struct…</a></li>
+</ol>
+</main>
+<footer class="page-footer">
+<nav class="hub-nav"><a href="../../exams/aws-clf-c02/">CLF-C02 試験ガイド</a><a href="../../exams/aws-aif-c01/">AIF-C01 試験ガイド</a><a href="../../exams/aws-saa-c03/">SAA-C03 試験ガイド</a><a href="../../exams/aws-dva-c02/">DVA-C02 試験ガイド</a><a href="../../exams/aws-sap-c02/">SAP-C02 試験ガイド</a><a href="../../exams/gcp-cdl/">CDL 試験ガイド</a><a href="../../exams/gcp-ace/">ACE 試験ガイド</a><a href="../../exams/azure-az900/">AZ-900 試験ガイド</a><a href="../../exams/azure-ai900/">AI-900 試験ガイド</a><a href="../../exams/azure-dp900/">DP-900 試験ガイド</a><a href="../../exams/azure-sc900/">SC-900 試験ガイド</a><a href="../../exams/azure-az104/">AZ-104 試験ガイド</a></nav>
+<nav class="site-nav"><a href="../../guide/">資格ガイド</a><a href="../../learn/">サービス解説</a><a href="../../career/">キャリア</a><a href="../../about.html">運営者情報</a><a href="../../privacy.html">プライバシーポリシー</a><a href="../../contact.html">お問い合わせ</a></nav>
+<p class="copy">© CLOUDCERT_ — 本サイトは各認定試験の公式試験ではなく、収録問題はすべてオリジナルの演習問題です。</p>
+</footer>
+</body>
+</html>

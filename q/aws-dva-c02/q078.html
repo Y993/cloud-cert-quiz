@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>【DVA-C02 演習問題 #78】ある開発チームは IAM ロールを使って S3 の署名付き URL（Presigned U…</title>
+<meta name="description" content="DVA-C02の本試験レベル演習問題。ある開発チームは IAM ロールを使って S3 の署名付き URL（Presigned URL）を生成するサービスを構築しています。テスト中に「署名付き URL が生成されても、UR… 全選択肢の解説つき。">
+<link rel="canonical" href="https://cloudcert.app/q/aws-dva-c02/q078.html">
+<meta property="og:title" content="【DVA-C02 演習問題 #78】ある開発チームは IAM ロールを使って S3 の署名付き URL（Presigned U…">
+<meta property="og:description" content="DVA-C02の本試験レベル演習問題。ある開発チームは IAM ロールを使って S3 の署名付き URL（Presigned URL）を生成するサービスを構築しています。テスト中に「署名付き URL が生成されても、UR… 全選択肢の解説つき。">
+<meta property="og:url" content="https://cloudcert.app/q/aws-dva-c02/q078.html">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="CLOUDCERT_">
+<meta property="og:image" content="https://cloudcert.app/assets/og.png">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='80' font-size='80' fill='%233fe0a4' font-family='monospace'>▸</text></svg>">
+
+<meta name="google-adsense-account" content="ca-pub-5647574947191958">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+JP:wght@400;500;700&family=JetBrains+Mono:wght@400;600;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../../css/style.css">
+<link rel="stylesheet" href="../../css/page.css">
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-SZR5CB5Q3X"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag('js',new Date());gtag('config','G-SZR5CB5Q3X');</script>
+<script type="application/ld+json">[{"@context":"https://schema.org/","@type":"Quiz","about":{"@type":"Thing","name":"AWS Certified Developer - Associate"},"hasPart":[{"@type":"Question","eduQuestionType":"Multiple choice","learningResourceType":"Practice problem","text":"ある開発チームは IAM ロールを使って S3 の署名付き URL（Presigned URL）を生成するサービスを構築しています。テスト中に「署名付き URL が生成されても、URL にアクセスすると Access Denied になる」という問題が発生しました。最も可能性が高い原因はどれですか？","suggestedAnswer":[{"@type":"Answer","position":0,"text":"署名付き URL の有効期限が最大 7 日間を超えて設定されている"},{"@type":"Answer","position":2,"text":"署名付き URL を HTTPS ではなく HTTP で生成したためセキュリティ上無効化されている"},{"@type":"Answer","position":3,"text":"S3 バケットがパブリックアクセスブロックで保護されており署名付き URL が機能しない"}],"acceptedAnswer":{"@type":"Answer","position":1,"text":"署名付き URL を生成した IAM ロールの一時認証情報が署名付き URL へのアクセス時点で失効している","comment":{"@type":"Comment","text":"IAM ロール（一時認証情報）を使って署名付き URL を生成した場合、その URL の有効期間は「URL に設定した有効期限」と「IAM ロールの一時認証情報の残存有効期間」の短い方になります。ロールの一時認証情報が URL アクセス時点で既に失効していると、URL 自体の有効期限内でも Access Denied が発生します。A は最大有効期限の設定（IAM ロール使用時は最大 7 日間が上限）の問題ですが、設定した有効期限内であれば問題にはなりません。D のパブリックアクセスブロックは署名付き URL には影響しません。署名付き URL は Presigned リクエストとして認証されるためバケットがプライベートでも有効です。C の HTTP/HTTPS の違いは署名付き URL の有効性に直接関係しません。"}}}]},{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"HOME","item":"https://cloudcert.app/"},{"@type":"ListItem","position":2,"name":"DVA-C02 試験ガイド","item":"https://cloudcert.app/exams/aws-dva-c02/"},{"@type":"ListItem","position":3,"name":"q078"}]}]</script>
+</head>
+<body class="page-body">
+<header class="page-header"><a class="page-logo" href="../../index.html">&gt; CLOUDCERT_</a></header>
+<main class="page-main">
+
+<nav class="breadcrumb"><a href="../../index.html">HOME</a> › <a href="../../exams/aws-dva-c02/">DVA-C02 試験ガイド</a> › q078</nav>
+<div class="q-meta"><span>DVA-C02</span><span>セキュリティ</span><span>MEDIUM</span><span>単一選択</span></div>
+<h1>ある開発チームは IAM ロールを使って S3 の署名付き URL（Presigned URL）を生成するサービスを構築しています。テスト中に「署名付き URL が生成されても、URL にアクセスすると Access Denied になる」という問題が発生しました。最も可能性が高い原因はどれですか？</h1>
+<ol class="q-choices">
+<li><b>A.</b> 署名付き URL の有効期限が最大 7 日間を超えて設定されている</li>
+<li><b>B.</b> 署名付き URL を生成した IAM ロールの一時認証情報が署名付き URL へのアクセス時点で失効している</li>
+<li><b>C.</b> 署名付き URL を HTTPS ではなく HTTP で生成したためセキュリティ上無効化されている</li>
+<li><b>D.</b> S3 バケットがパブリックアクセスブロックで保護されており署名付き URL が機能しない</li>
+</ol>
+<details class="q-answer">
+<summary>解答と解説を見る</summary>
+<div class="inner">
+<p><b>正解: B</b></p>
+<p>IAM ロール（一時認証情報）を使って署名付き URL を生成した場合、その URL の有効期間は「URL に設定した有効期限」と「IAM ロールの一時認証情報の残存有効期間」の短い方になります。ロールの一時認証情報が URL アクセス時点で既に失効していると、URL 自体の有効期限内でも Access Denied が発生します。A は最大有効期限の設定（IAM ロール使用時は最大 7 日間が上限）の問題ですが、設定した有効期限内であれば問題にはなりません。D のパブリックアクセスブロックは署名付き URL には影響しません。署名付き URL は Presigned リクエストとして認証されるためバケットがプライベートでも有効です。C の HTTP/HTTPS の違いは署名付き URL の有効性に直接関係しません。</p>
+<div class="svc-links">📚 関連サービスの解説: <a href="../../learn/aws-iam.html">AWS IAM</a></div>
+</div>
+</details>
+<div class="cta-box"><a class="btn btn-primary" href="../../exam.html?exam=aws-dva-c02">▸ この試験を本気で演習する（全150問・無料）</a></div>
+<nav class="q-nav">
+<span><a href="q077.html">← 前の問題</a></span>
+<span><a href="q079.html">次の問題 →</a></span>
+</nav>
+<section class="related"><h2>同じ分野の関連問題</h2><ul class="q-list">
+<li><a href="q077.html">ある企業の Cognito ユーザープールでは、ユーザーサインアップ時に企業ドメイン（@example.com）のメール…</a></li>
+<li><a href="q079.html">あるセキュリティエンジニアは IAM リソースベースポリシー（Resource-Based Policy）とアイデンティ…</a></li>
+<li><a href="q076.html">ある開発者は AWS Systems Manager Parameter Store を使って設定値を管理しています。現…</a></li>
+<li><a href="q080.html">ある企業は AWS KMS の CMK を使用しています。外部の監査会社に対して、特定の期間（30 日間）だけ対象 CM…</a></li>
+</ul></section>
+</main>
+<footer class="page-footer">
+<nav class="hub-nav"><a href="../../exams/aws-clf-c02/">CLF-C02 試験ガイド</a><a href="../../exams/aws-aif-c01/">AIF-C01 試験ガイド</a><a href="../../exams/aws-saa-c03/">SAA-C03 試験ガイド</a><a href="../../exams/aws-dva-c02/">DVA-C02 試験ガイド</a><a href="../../exams/aws-sap-c02/">SAP-C02 試験ガイド</a><a href="../../exams/gcp-cdl/">CDL 試験ガイド</a><a href="../../exams/gcp-ace/">ACE 試験ガイド</a><a href="../../exams/azure-az900/">AZ-900 試験ガイド</a><a href="../../exams/azure-ai900/">AI-900 試験ガイド</a><a href="../../exams/azure-dp900/">DP-900 試験ガイド</a><a href="../../exams/azure-sc900/">SC-900 試験ガイド</a><a href="../../exams/azure-az104/">AZ-104 試験ガイド</a></nav>
+<nav class="site-nav"><a href="../../guide/">資格ガイド</a><a href="../../learn/">サービス解説</a><a href="../../career/">キャリア</a><a href="../../about.html">運営者情報</a><a href="../../privacy.html">プライバシーポリシー</a><a href="../../contact.html">お問い合わせ</a></nav>
+<p class="copy">© CLOUDCERT_ — 本サイトは各認定試験の公式試験ではなく、収録問題はすべてオリジナルの演習問題です。</p>
+</footer>
+</body>
+</html>

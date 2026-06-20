@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>【DP-900 演習問題 #48】ある企業のデータベース担当者が、受注管理データベースの設計品質を向上させるために正規化を実…</title>
+<meta name="description" content="DP-900の本試験レベル演習問題。ある企業のデータベース担当者が、受注管理データベースの設計品質を向上させるために正規化を実施することにした。正規化の主な目的として最も適切な説明はどれか。 全選択肢の解説つき。">
+<link rel="canonical" href="https://cloudcert.app/q/azure-dp900/q048.html">
+<meta property="og:title" content="【DP-900 演習問題 #48】ある企業のデータベース担当者が、受注管理データベースの設計品質を向上させるために正規化を実…">
+<meta property="og:description" content="DP-900の本試験レベル演習問題。ある企業のデータベース担当者が、受注管理データベースの設計品質を向上させるために正規化を実施することにした。正規化の主な目的として最も適切な説明はどれか。 全選択肢の解説つき。">
+<meta property="og:url" content="https://cloudcert.app/q/azure-dp900/q048.html">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="CLOUDCERT_">
+<meta property="og:image" content="https://cloudcert.app/assets/og.png">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='80' font-size='80' fill='%233fe0a4' font-family='monospace'>▸</text></svg>">
+
+<meta name="google-adsense-account" content="ca-pub-5647574947191958">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+JP:wght@400;500;700&family=JetBrains+Mono:wght@400;600;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../../css/style.css">
+<link rel="stylesheet" href="../../css/page.css">
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-SZR5CB5Q3X"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag('js',new Date());gtag('config','G-SZR5CB5Q3X');</script>
+<script type="application/ld+json">[{"@context":"https://schema.org/","@type":"Quiz","about":{"@type":"Thing","name":"Microsoft Azure Data Fundamentals"},"hasPart":[{"@type":"Question","eduQuestionType":"Multiple choice","learningResourceType":"Practice problem","text":"ある企業のデータベース担当者が、受注管理データベースの設計品質を向上させるために正規化を実施することにした。正規化の主な目的として最も適切な説明はどれか。","suggestedAnswer":[{"@type":"Answer","position":0,"text":"全ユーザーに対するアクセス権限を統一するために、テーブル構造を単純化する"},{"@type":"Answer","position":1,"text":"バックアップと復旧の手順を簡略化するために、テーブル数を最小にする"},{"@type":"Answer","position":3,"text":"クエリの応答速度を最大化するために、よく使うデータを1つのテーブルに集約する"}],"acceptedAnswer":{"@type":"Answer","position":2,"text":"データの重複や更新時の不整合を排除し、データの一貫性と整合性を確保する","comment":{"@type":"Comment","text":"正規化はリレーショナルデータベース設計の手法で、データの重複排除・更新異常・挿入異常・削除異常を防ぐことを主目的とする。例えば、顧客の住所が複数の注文レコードに重複して保存されていると、引越し時に全レコードを更新しなければならず、更新漏れによる不整合が生じる。正規化によりデータを一箇所に集約し整合性を保つ。クエリ速度の最大化は非正規化（デノーマライゼーション）の目的であり、正規化とは逆の方向性をとる場合がある。バックアップ簡略化やアクセス権限統一は正規化の目的ではない。"}}}]},{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"HOME","item":"https://cloudcert.app/"},{"@type":"ListItem","position":2,"name":"DP-900 試験ガイド","item":"https://cloudcert.app/exams/azure-dp900/"},{"@type":"ListItem","position":3,"name":"q048"}]}]</script>
+</head>
+<body class="page-body">
+<header class="page-header"><a class="page-logo" href="../../index.html">&gt; CLOUDCERT_</a></header>
+<main class="page-main">
+
+<nav class="breadcrumb"><a href="../../index.html">HOME</a> › <a href="../../exams/azure-dp900/">DP-900 試験ガイド</a> › q048</nav>
+<div class="q-meta"><span>DP-900</span><span>Azure のリレーショナル データ</span><span>EASY</span><span>単一選択</span></div>
+<h1>ある企業のデータベース担当者が、受注管理データベースの設計品質を向上させるために正規化を実施することにした。正規化の主な目的として最も適切な説明はどれか。</h1>
+<ol class="q-choices">
+<li><b>A.</b> 全ユーザーに対するアクセス権限を統一するために、テーブル構造を単純化する</li>
+<li><b>B.</b> バックアップと復旧の手順を簡略化するために、テーブル数を最小にする</li>
+<li><b>C.</b> データの重複や更新時の不整合を排除し、データの一貫性と整合性を確保する</li>
+<li><b>D.</b> クエリの応答速度を最大化するために、よく使うデータを1つのテーブルに集約する</li>
+</ol>
+<details class="q-answer">
+<summary>解答と解説を見る</summary>
+<div class="inner">
+<p><b>正解: C</b></p>
+<p>正規化はリレーショナルデータベース設計の手法で、データの重複排除・更新異常・挿入異常・削除異常を防ぐことを主目的とする。例えば、顧客の住所が複数の注文レコードに重複して保存されていると、引越し時に全レコードを更新しなければならず、更新漏れによる不整合が生じる。正規化によりデータを一箇所に集約し整合性を保つ。クエリ速度の最大化は非正規化（デノーマライゼーション）の目的であり、正規化とは逆の方向性をとる場合がある。バックアップ簡略化やアクセス権限統一は正規化の目的ではない。</p>
+
+</div>
+</details>
+<div class="cta-box"><a class="btn btn-primary" href="../../exam.html?exam=azure-dp900">▸ この試験を本気で演習する（全150問・無料）</a></div>
+<nav class="q-nav">
+<span><a href="q047.html">← 前の問題</a></span>
+<span><a href="q049.html">次の問題 →</a></span>
+</nav>
+<section class="related"><h2>同じ分野の関連問題</h2><ul class="q-list">
+<li><a href="q047.html">あるソフトウェア開発チームが SQL 文の種類について学習している。テーブルを新規作成する CREATE TABLE 文…</a></li>
+<li><a href="q049.html">あるビジネスアナリストが、販売テーブル（sales）から全レコードの全カラムを取得したいと考えている。最もシンプルな S…</a></li>
+<li><a href="q046.html">あるシステム管理者が、複数の部門から頻繁に参照される複雑な結合クエリ（数テーブルを JOIN した集計クエリ）を、毎回 …</a></li>
+<li><a href="q050.html">ある中規模のSaaS企業が、新しいWebアプリケーション向けのリレーショナルデータベースを Azure 上に構築しようと…</a></li>
+</ul></section>
+</main>
+<footer class="page-footer">
+<nav class="hub-nav"><a href="../../exams/aws-clf-c02/">CLF-C02 試験ガイド</a><a href="../../exams/aws-aif-c01/">AIF-C01 試験ガイド</a><a href="../../exams/aws-saa-c03/">SAA-C03 試験ガイド</a><a href="../../exams/aws-dva-c02/">DVA-C02 試験ガイド</a><a href="../../exams/aws-sap-c02/">SAP-C02 試験ガイド</a><a href="../../exams/gcp-cdl/">CDL 試験ガイド</a><a href="../../exams/gcp-ace/">ACE 試験ガイド</a><a href="../../exams/azure-az900/">AZ-900 試験ガイド</a><a href="../../exams/azure-ai900/">AI-900 試験ガイド</a><a href="../../exams/azure-dp900/">DP-900 試験ガイド</a><a href="../../exams/azure-sc900/">SC-900 試験ガイド</a><a href="../../exams/azure-az104/">AZ-104 試験ガイド</a></nav>
+<nav class="site-nav"><a href="../../guide/">資格ガイド</a><a href="../../learn/">サービス解説</a><a href="../../career/">キャリア</a><a href="../../about.html">運営者情報</a><a href="../../privacy.html">プライバシーポリシー</a><a href="../../contact.html">お問い合わせ</a></nav>
+<p class="copy">© CLOUDCERT_ — 本サイトは各認定試験の公式試験ではなく、収録問題はすべてオリジナルの演習問題です。</p>
+</footer>
+</body>
+</html>

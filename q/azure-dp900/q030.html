@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>【DP-900 演習問題 #30】ある大手小売チェーンが、全国 300 店舗のPOSシステムから1日に約5,000万件の取引…</title>
+<meta name="description" content="DP-900の本試験レベル演習問題。ある大手小売チェーンが、全国 300 店舗のPOSシステムから1日に約5,000万件の取引レコードを生成している。このデータを「過去3年分（合計約550億件）の取引を使って、来年の商品… 全選択肢の解説つき。">
+<link rel="canonical" href="https://cloudcert.app/q/azure-dp900/q030.html">
+<meta property="og:title" content="【DP-900 演習問題 #30】ある大手小売チェーンが、全国 300 店舗のPOSシステムから1日に約5,000万件の取引…">
+<meta property="og:description" content="DP-900の本試験レベル演習問題。ある大手小売チェーンが、全国 300 店舗のPOSシステムから1日に約5,000万件の取引レコードを生成している。このデータを「過去3年分（合計約550億件）の取引を使って、来年の商品… 全選択肢の解説つき。">
+<meta property="og:url" content="https://cloudcert.app/q/azure-dp900/q030.html">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="CLOUDCERT_">
+<meta property="og:image" content="https://cloudcert.app/assets/og.png">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='80' font-size='80' fill='%233fe0a4' font-family='monospace'>▸</text></svg>">
+
+<meta name="google-adsense-account" content="ca-pub-5647574947191958">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+JP:wght@400;500;700&family=JetBrains+Mono:wght@400;600;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../../css/style.css">
+<link rel="stylesheet" href="../../css/page.css">
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-SZR5CB5Q3X"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag('js',new Date());gtag('config','G-SZR5CB5Q3X');</script>
+<script type="application/ld+json">[{"@context":"https://schema.org/","@type":"Quiz","about":{"@type":"Thing","name":"Microsoft Azure Data Fundamentals"},"hasPart":[{"@type":"Question","eduQuestionType":"Multiple choice","learningResourceType":"Practice problem","text":"ある大手小売チェーンが、全国 300 店舗のPOSシステムから1日に約5,000万件の取引レコードを生成している。このデータを「過去3年分（合計約550億件）の取引を使って、来年の商品カテゴリ別需要を地域×季節×プロモーションの3軸で予測するモデルをトレーニングしたい」という要件がある。このユースケースで最も適したデータ処理とファイル形式の組み合わせはどれか。","suggestedAnswer":[{"@type":"Answer","position":0,"text":"ストリーミング処理 ＋ JSON：各取引をリアルタイムJSONで保存してMLパイプラインに直接投入する"},{"@type":"Answer","position":1,"text":"バッチ処理 ＋ XML：履歴データをXMLタグで構造化してモデルトレーニング用のスキーマを明確にする"},{"@type":"Answer","position":3,"text":"ストリーミング処理 ＋ CSV：POSデータをリアルタイムで処理してCSVに逐次書き出し、モデルトレーニングに使用する"}],"acceptedAnswer":{"@type":"Answer","position":2,"text":"バッチ処理 ＋ Parquet：大量の履歴データを列指向圧縮形式に変換して効率的に保存し、機械学習フレームワークが列プルーニングで必要列だけを読み込む","comment":{"@type":"Comment","text":"550億件という大量の履歴データを使った機械学習モデルのトレーニングには「バッチ処理＋Parquet」が最適である。バッチ処理で3年分の取引をまとめて処理・変換するのは大量履歴データの一括変換に適した方式である。Parquetは列指向の圧縮バイナリ形式で、550億件のデータを大幅に圧縮でき、モデルトレーニング時にも使う特徴量の列だけを読む列プルーニングによりI/Oを削減できる。Apache Spark・Azure Synapse・Azure MLなど主要なMLフレームワークはParquetとの親和性が高い。選択肢Dのストリーミング＋CSVは、過去3年間の履歴データのモデルトレーニングにストリーミングを使う必然性がなく（既存データのためリアルタイム性不要）、CSVは550億件規模では圧縮効率・読み込み速度でParquetに大きく劣る。選択肢Aのストリーミング＋JSONも同様に履歴データに対してリアルタイム処理を適用する必要がなく、JSONは550億件のMLデータとして圧縮効率が悪い。選択肢BのバッチはOKだがXMLはタグのオーバーヘッドでファイルサイズが膨大になり、大規模MLデータには非効率で実用的でない。"}}}]},{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"HOME","item":"https://cloudcert.app/"},{"@type":"ListItem","position":2,"name":"DP-900 試験ガイド","item":"https://cloudcert.app/exams/azure-dp900/"},{"@type":"ListItem","position":3,"name":"q030"}]}]</script>
+</head>
+<body class="page-body">
+<header class="page-header"><a class="page-logo" href="../../index.html">&gt; CLOUDCERT_</a></header>
+<main class="page-main">
+
+<nav class="breadcrumb"><a href="../../index.html">HOME</a> › <a href="../../exams/azure-dp900/">DP-900 試験ガイド</a> › q030</nav>
+<div class="q-meta"><span>DP-900</span><span>コア データ概念</span><span>HARD</span><span>単一選択</span></div>
+<h1>ある大手小売チェーンが、全国 300 店舗のPOSシステムから1日に約5,000万件の取引レコードを生成している。このデータを「過去3年分（合計約550億件）の取引を使って、来年の商品カテゴリ別需要を地域×季節×プロモーションの3軸で予測するモデルをトレーニングしたい」という要件がある。このユースケースで最も適したデータ処理とファイル形式の組み合わせはどれか。</h1>
+<ol class="q-choices">
+<li><b>A.</b> ストリーミング処理 ＋ JSON：各取引をリアルタイムJSONで保存してMLパイプラインに直接投入する</li>
+<li><b>B.</b> バッチ処理 ＋ XML：履歴データをXMLタグで構造化してモデルトレーニング用のスキーマを明確にする</li>
+<li><b>C.</b> バッチ処理 ＋ Parquet：大量の履歴データを列指向圧縮形式に変換して効率的に保存し、機械学習フレームワークが列プルーニングで必要列だけを読み込む</li>
+<li><b>D.</b> ストリーミング処理 ＋ CSV：POSデータをリアルタイムで処理してCSVに逐次書き出し、モデルトレーニングに使用する</li>
+</ol>
+<details class="q-answer">
+<summary>解答と解説を見る</summary>
+<div class="inner">
+<p><b>正解: C</b></p>
+<p>550億件という大量の履歴データを使った機械学習モデルのトレーニングには「バッチ処理＋Parquet」が最適である。バッチ処理で3年分の取引をまとめて処理・変換するのは大量履歴データの一括変換に適した方式である。Parquetは列指向の圧縮バイナリ形式で、550億件のデータを大幅に圧縮でき、モデルトレーニング時にも使う特徴量の列だけを読む列プルーニングによりI/Oを削減できる。Apache Spark・Azure Synapse・Azure MLなど主要なMLフレームワークはParquetとの親和性が高い。選択肢Dのストリーミング＋CSVは、過去3年間の履歴データのモデルトレーニングにストリーミングを使う必然性がなく（既存データのためリアルタイム性不要）、CSVは550億件規模では圧縮効率・読み込み速度でParquetに大きく劣る。選択肢Aのストリーミング＋JSONも同様に履歴データに対してリアルタイム処理を適用する必要がなく、JSONは550億件のMLデータとして圧縮効率が悪い。選択肢BのバッチはOKだがXMLはタグのオーバーヘッドでファイルサイズが膨大になり、大規模MLデータには非効率で実用的でない。</p>
+
+</div>
+</details>
+<div class="cta-box"><a class="btn btn-primary" href="../../exam.html?exam=azure-dp900">▸ この試験を本気で演習する（全150問・無料）</a></div>
+<nav class="q-nav">
+<span><a href="q029.html">← 前の問題</a></span>
+<span><a href="q031.html">次の問題 →</a></span>
+</nav>
+<section class="related"><h2>同じ分野の関連問題</h2><ul class="q-list">
+<li><a href="q029.html">ある企業が、データのファイル形式を選定しようとしている。「スキーマが行ごとに異なる可能性があるログデータ」を保存するのに…</a></li>
+<li><a href="q031.html">ある保険会社が、契約者の基本情報（契約者ID、名前、生年月日、住所）を管理するリレーショナルデータベースを運用している。…</a></li>
+<li><a href="q028.html">ある企業の技術チームが、JSON形式とCSV形式のファイルを比較検討している。「商品カテゴリ・地域・売上期間」という固定…</a></li>
+<li><a href="q032.html">ある企業の分析チームが、過去2年間の販売データに基づいて「月別・商品カテゴリ別・地域別の売上サマリー」を生成している。こ…</a></li>
+</ul></section>
+</main>
+<footer class="page-footer">
+<nav class="hub-nav"><a href="../../exams/aws-clf-c02/">CLF-C02 試験ガイド</a><a href="../../exams/aws-aif-c01/">AIF-C01 試験ガイド</a><a href="../../exams/aws-saa-c03/">SAA-C03 試験ガイド</a><a href="../../exams/aws-dva-c02/">DVA-C02 試験ガイド</a><a href="../../exams/aws-sap-c02/">SAP-C02 試験ガイド</a><a href="../../exams/gcp-cdl/">CDL 試験ガイド</a><a href="../../exams/gcp-ace/">ACE 試験ガイド</a><a href="../../exams/azure-az900/">AZ-900 試験ガイド</a><a href="../../exams/azure-ai900/">AI-900 試験ガイド</a><a href="../../exams/azure-dp900/">DP-900 試験ガイド</a><a href="../../exams/azure-sc900/">SC-900 試験ガイド</a><a href="../../exams/azure-az104/">AZ-104 試験ガイド</a></nav>
+<nav class="site-nav"><a href="../../guide/">資格ガイド</a><a href="../../learn/">サービス解説</a><a href="../../career/">キャリア</a><a href="../../about.html">運営者情報</a><a href="../../privacy.html">プライバシーポリシー</a><a href="../../contact.html">お問い合わせ</a></nav>
+<p class="copy">© CLOUDCERT_ — 本サイトは各認定試験の公式試験ではなく、収録問題はすべてオリジナルの演習問題です。</p>
+</footer>
+</body>
+</html>

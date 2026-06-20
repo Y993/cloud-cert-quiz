@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>【DVA-C02 演習問題 #39】ある医療記録管理企業が、Step FunctionsのStandard Workflowを…</title>
+<meta name="description" content="DVA-C02の本試験レベル演習問題。ある医療記録管理企業が、Step FunctionsのStandard Workflowを使って患者データの変換・検証・保存パイプラインを実装している。パイプラインの途中でサードパー… 全選択肢の解説つき。">
+<link rel="canonical" href="https://cloudcert.app/q/aws-dva-c02/q039.html">
+<meta property="og:title" content="【DVA-C02 演習問題 #39】ある医療記録管理企業が、Step FunctionsのStandard Workflowを…">
+<meta property="og:description" content="DVA-C02の本試験レベル演習問題。ある医療記録管理企業が、Step FunctionsのStandard Workflowを使って患者データの変換・検証・保存パイプラインを実装している。パイプラインの途中でサードパー… 全選択肢の解説つき。">
+<meta property="og:url" content="https://cloudcert.app/q/aws-dva-c02/q039.html">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="CLOUDCERT_">
+<meta property="og:image" content="https://cloudcert.app/assets/og.png">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='80' font-size='80' fill='%233fe0a4' font-family='monospace'>▸</text></svg>">
+
+<meta name="google-adsense-account" content="ca-pub-5647574947191958">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+JP:wght@400;500;700&family=JetBrains+Mono:wght@400;600;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../../css/style.css">
+<link rel="stylesheet" href="../../css/page.css">
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-SZR5CB5Q3X"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag('js',new Date());gtag('config','G-SZR5CB5Q3X');</script>
+<script type="application/ld+json">[{"@context":"https://schema.org/","@type":"Quiz","about":{"@type":"Thing","name":"AWS Certified Developer - Associate"},"hasPart":[{"@type":"Question","eduQuestionType":"Multiple choice","learningResourceType":"Practice problem","text":"ある医療記録管理企業が、Step FunctionsのStandard Workflowを使って患者データの変換・検証・保存パイプラインを実装している。パイプラインの途中でサードパーティAPIの呼び出し（最大15分待機）がある。Lambdaの15分タイムアウト制限を回避しつつ、待機中のコスト（Lambda実行時間課金）を削減したい。最も適切な実装パターンはどれか。","suggestedAnswer":[{"@type":"Answer","position":0,"text":"Lambda関数をStep FunctionsのMapステートで並列実行し、それぞれのAPIコールの完了を待機する"},{"@type":"Answer","position":1,"text":"Lambdaの中でWhileループとSleepを使い、APIレスポンスをポーリングする。Lambda実行時間は最大15分まで許容する"},{"@type":"Answer","position":2,"text":"サードパーティAPIの呼び出しをEventBridgeスケジュールルールで5分ごとにポーリングするLambdaに分離し、完了時にEventBridgeでStep Functionsを再起動する"}],"acceptedAnswer":{"@type":"Answer","position":3,"text":"Step FunctionsのWaitForTaskTokenパターンを使う。LambdaがタスクトークンとともにサードパーティAPIを呼び出し、その後Lambdaは終了する。APIが完了したら外部からSendTaskSuccessをコールしてワークフローを再開させる","comment":{"@type":"Comment","text":"WaitForTaskTokenはStep Functionsの「人間による承認」や「外部システム待機」に使われる非同期パターンである。Lambdaがタスクトークン（context.taskToken）をAPIに渡して終了することで、Lambda実行時間課金が発生しない。サードパーティAPIが処理を完了してSendTaskSuccess（またはSendTaskFailure）を呼ぶまでStep Functionsはコスト効率の良い「待機」状態になる。ハートビートタイムアウトを設定すれば無限待機も防止できる。BのLambdaポーリングは最大15分のLambda実行時間制限が制約になり、15分を超える待機には対応できない。また待機中も課金が発生し続けてコスト削減の要件を満たさない。AのMapステート並列実行は複数の独立したタスクを同時実行するためのものであり、単一APIの15分待機問題を解決しない。CのEventBridgeポーリングは複雑な非同期協調が必要でステートフルな管理が難しく、ワークフロー再起動では以前の実行コンテキストが失われる。"}}}]},{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"HOME","item":"https://cloudcert.app/"},{"@type":"ListItem","position":2,"name":"DVA-C02 試験ガイド","item":"https://cloudcert.app/exams/aws-dva-c02/"},{"@type":"ListItem","position":3,"name":"q039"}]}]</script>
+</head>
+<body class="page-body">
+<header class="page-header"><a class="page-logo" href="../../index.html">&gt; CLOUDCERT_</a></header>
+<main class="page-main">
+
+<nav class="breadcrumb"><a href="../../index.html">HOME</a> › <a href="../../exams/aws-dva-c02/">DVA-C02 試験ガイド</a> › q039</nav>
+<div class="q-meta"><span>DVA-C02</span><span>開発</span><span>HARD</span><span>単一選択</span></div>
+<h1>ある医療記録管理企業が、Step FunctionsのStandard Workflowを使って患者データの変換・検証・保存パイプラインを実装している。パイプラインの途中でサードパーティAPIの呼び出し（最大15分待機）がある。Lambdaの15分タイムアウト制限を回避しつつ、待機中のコスト（Lambda実行時間課金）を削減したい。最も適切な実装パターンはどれか。</h1>
+<ol class="q-choices">
+<li><b>A.</b> Lambda関数をStep FunctionsのMapステートで並列実行し、それぞれのAPIコールの完了を待機する</li>
+<li><b>B.</b> Lambdaの中でWhileループとSleepを使い、APIレスポンスをポーリングする。Lambda実行時間は最大15分まで許容する</li>
+<li><b>C.</b> サードパーティAPIの呼び出しをEventBridgeスケジュールルールで5分ごとにポーリングするLambdaに分離し、完了時にEventBridgeでStep Functionsを再起動する</li>
+<li><b>D.</b> Step FunctionsのWaitForTaskTokenパターンを使う。LambdaがタスクトークンとともにサードパーティAPIを呼び出し、その後Lambdaは終了する。APIが完了したら外部からSendTaskSuccessをコールしてワークフローを再開させる</li>
+</ol>
+<details class="q-answer">
+<summary>解答と解説を見る</summary>
+<div class="inner">
+<p><b>正解: D</b></p>
+<p>WaitForTaskTokenはStep Functionsの「人間による承認」や「外部システム待機」に使われる非同期パターンである。Lambdaがタスクトークン（context.taskToken）をAPIに渡して終了することで、Lambda実行時間課金が発生しない。サードパーティAPIが処理を完了してSendTaskSuccess（またはSendTaskFailure）を呼ぶまでStep Functionsはコスト効率の良い「待機」状態になる。ハートビートタイムアウトを設定すれば無限待機も防止できる。BのLambdaポーリングは最大15分のLambda実行時間制限が制約になり、15分を超える待機には対応できない。また待機中も課金が発生し続けてコスト削減の要件を満たさない。AのMapステート並列実行は複数の独立したタスクを同時実行するためのものであり、単一APIの15分待機問題を解決しない。CのEventBridgeポーリングは複雑な非同期協調が必要でステートフルな管理が難しく、ワークフロー再起動では以前の実行コンテキストが失われる。</p>
+<div class="svc-links">📚 関連サービスの解説: <a href="../../learn/aws-step-functions.html">AWS Step Functions</a> ・ <a href="../../learn/aws-lambda.html">AWS Lambda</a></div>
+</div>
+</details>
+<div class="cta-box"><a class="btn btn-primary" href="../../exam.html?exam=aws-dva-c02">▸ この試験を本気で演習する（全150問・無料）</a></div>
+<nav class="q-nav">
+<span><a href="q038.html">← 前の問題</a></span>
+<span><a href="q040.html">次の問題 →</a></span>
+</nav>
+<section class="related"><h2>同じ分野の関連問題</h2><ul class="q-list">
+<li><a href="q038.html">あるグローバルゲーム会社が、DynamoDBとKinesis Data Streamsを組み合わせたリアルタイムランキン…</a></li>
+<li><a href="q040.html">あるフィンテック企業が、DynamoDBで決済レコードを管理している。複数のマイクロサービスが同時に同じ決済レコードを更…</a></li>
+<li><a href="q037.html">あるマーケットプレイス企業が、DynamoDBを使って注文管理システムを構築している。注文処理では「在庫テーブルから在庫…</a></li>
+<li><a href="q041.html">ある広告テクノロジー企業が、リアルタイム入札システムをStep Functionsで実装している。数百万の入札リクエスト…</a></li>
+</ul></section>
+</main>
+<footer class="page-footer">
+<nav class="hub-nav"><a href="../../exams/aws-clf-c02/">CLF-C02 試験ガイド</a><a href="../../exams/aws-aif-c01/">AIF-C01 試験ガイド</a><a href="../../exams/aws-saa-c03/">SAA-C03 試験ガイド</a><a href="../../exams/aws-dva-c02/">DVA-C02 試験ガイド</a><a href="../../exams/aws-sap-c02/">SAP-C02 試験ガイド</a><a href="../../exams/gcp-cdl/">CDL 試験ガイド</a><a href="../../exams/gcp-ace/">ACE 試験ガイド</a><a href="../../exams/azure-az900/">AZ-900 試験ガイド</a><a href="../../exams/azure-ai900/">AI-900 試験ガイド</a><a href="../../exams/azure-dp900/">DP-900 試験ガイド</a><a href="../../exams/azure-sc900/">SC-900 試験ガイド</a><a href="../../exams/azure-az104/">AZ-104 試験ガイド</a></nav>
+<nav class="site-nav"><a href="../../guide/">資格ガイド</a><a href="../../learn/">サービス解説</a><a href="../../career/">キャリア</a><a href="../../about.html">運営者情報</a><a href="../../privacy.html">プライバシーポリシー</a><a href="../../contact.html">お問い合わせ</a></nav>
+<p class="copy">© CLOUDCERT_ — 本サイトは各認定試験の公式試験ではなく、収録問題はすべてオリジナルの演習問題です。</p>
+</footer>
+</body>
+</html>

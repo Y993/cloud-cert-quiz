@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>【DVA-C02 演習問題 #118】ある企業がAWS CloudFormationのドリフト検出機能を活用してインフラの設定を…</title>
+<meta name="description" content="DVA-C02の本試験レベル演習問題。ある企業がAWS CloudFormationのドリフト検出機能を活用してインフラの設定を管理している。CloudFormationスタックのドリフト検出について正しい説明はどれか。 全選択肢の解説つき。">
+<link rel="canonical" href="https://cloudcert.app/q/aws-dva-c02/q118.html">
+<meta property="og:title" content="【DVA-C02 演習問題 #118】ある企業がAWS CloudFormationのドリフト検出機能を活用してインフラの設定を…">
+<meta property="og:description" content="DVA-C02の本試験レベル演習問題。ある企業がAWS CloudFormationのドリフト検出機能を活用してインフラの設定を管理している。CloudFormationスタックのドリフト検出について正しい説明はどれか。 全選択肢の解説つき。">
+<meta property="og:url" content="https://cloudcert.app/q/aws-dva-c02/q118.html">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="CLOUDCERT_">
+<meta property="og:image" content="https://cloudcert.app/assets/og.png">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='80' font-size='80' fill='%233fe0a4' font-family='monospace'>▸</text></svg>">
+
+<meta name="google-adsense-account" content="ca-pub-5647574947191958">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+JP:wght@400;500;700&family=JetBrains+Mono:wght@400;600;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../../css/style.css">
+<link rel="stylesheet" href="../../css/page.css">
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-SZR5CB5Q3X"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag('js',new Date());gtag('config','G-SZR5CB5Q3X');</script>
+<script type="application/ld+json">[{"@context":"https://schema.org/","@type":"Quiz","about":{"@type":"Thing","name":"AWS Certified Developer - Associate"},"hasPart":[{"@type":"Question","eduQuestionType":"Multiple choice","learningResourceType":"Practice problem","text":"ある企業がAWS CloudFormationのドリフト検出機能を活用してインフラの設定を管理している。CloudFormationスタックのドリフト検出について正しい説明はどれか。","suggestedAnswer":[{"@type":"Answer","position":0,"text":"ドリフト検出はEC2インスタンスとIAMロールのみサポートし、S3やRDSなどのリソースには対応していない"},{"@type":"Answer","position":1,"text":"ドリフト検出はリアルタイムで自動的に実行され、手動変更が発生した瞬間にSNS通知が送信される"},{"@type":"Answer","position":2,"text":"ドリフト検出を実行すると検出されたドリフトが自動修復され、リソースがテンプレートの定義に戻る"}],"acceptedAnswer":{"@type":"Answer","position":3,"text":"ドリフト検出はリクエストに応じて実行（オンデマンド）され、スタックのリソースが現在のテンプレート定義と異なるかどうかをレポートするが、修復は行わない","comment":{"@type":"Comment","text":"CloudFormationのドリフト検出はオンデマンド実行（コンソール操作・CLI・API呼び出し）で行われ、各リソースの現在の実際の設定とCloudFormationテンプレートの定義を比較して差異（ドリフト）を検出しレポートする。自動修復機能は存在せず、修復するにはスタックの更新（またはスタックセットの再適用）を手動で実行する必要がある。Bのリアルタイム自動実行とSNS通知はドリフト検出の動作ではない（AWS Configを使えばリアルタイム変更検知は可能）。Cの自動修復は行われない点が重要な理解ポイントである。Aのサポートリソースについては、CloudFormationがドリフト検出をサポートするリソースの種類は多数あり（EC2、IAM、S3、RDSなど主要リソースを含む）、EC2とIAMのみに限定されるわけではない。AWS公式ドキュメントのサポートリソース一覧を定期的に確認することが推奨される。"}}}]},{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"HOME","item":"https://cloudcert.app/"},{"@type":"ListItem","position":2,"name":"DVA-C02 試験ガイド","item":"https://cloudcert.app/exams/aws-dva-c02/"},{"@type":"ListItem","position":3,"name":"q118"}]}]</script>
+</head>
+<body class="page-body">
+<header class="page-header"><a class="page-logo" href="../../index.html">&gt; CLOUDCERT_</a></header>
+<main class="page-main">
+
+<nav class="breadcrumb"><a href="../../index.html">HOME</a> › <a href="../../exams/aws-dva-c02/">DVA-C02 試験ガイド</a> › q118</nav>
+<div class="q-meta"><span>DVA-C02</span><span>デプロイ</span><span>HARD</span><span>単一選択</span></div>
+<h1>ある企業がAWS CloudFormationのドリフト検出機能を活用してインフラの設定を管理している。CloudFormationスタックのドリフト検出について正しい説明はどれか。</h1>
+<ol class="q-choices">
+<li><b>A.</b> ドリフト検出はEC2インスタンスとIAMロールのみサポートし、S3やRDSなどのリソースには対応していない</li>
+<li><b>B.</b> ドリフト検出はリアルタイムで自動的に実行され、手動変更が発生した瞬間にSNS通知が送信される</li>
+<li><b>C.</b> ドリフト検出を実行すると検出されたドリフトが自動修復され、リソースがテンプレートの定義に戻る</li>
+<li><b>D.</b> ドリフト検出はリクエストに応じて実行（オンデマンド）され、スタックのリソースが現在のテンプレート定義と異なるかどうかをレポートするが、修復は行わない</li>
+</ol>
+<details class="q-answer">
+<summary>解答と解説を見る</summary>
+<div class="inner">
+<p><b>正解: D</b></p>
+<p>CloudFormationのドリフト検出はオンデマンド実行（コンソール操作・CLI・API呼び出し）で行われ、各リソースの現在の実際の設定とCloudFormationテンプレートの定義を比較して差異（ドリフト）を検出しレポートする。自動修復機能は存在せず、修復するにはスタックの更新（またはスタックセットの再適用）を手動で実行する必要がある。Bのリアルタイム自動実行とSNS通知はドリフト検出の動作ではない（AWS Configを使えばリアルタイム変更検知は可能）。Cの自動修復は行われない点が重要な理解ポイントである。Aのサポートリソースについては、CloudFormationがドリフト検出をサポートするリソースの種類は多数あり（EC2、IAM、S3、RDSなど主要リソースを含む）、EC2とIAMのみに限定されるわけではない。AWS公式ドキュメントのサポートリソース一覧を定期的に確認することが推奨される。</p>
+
+</div>
+</details>
+<div class="cta-box"><a class="btn btn-primary" href="../../exam.html?exam=aws-dva-c02">▸ この試験を本気で演習する（全150問・無料）</a></div>
+<nav class="q-nav">
+<span><a href="q117.html">← 前の問題</a></span>
+<span><a href="q119.html">次の問題 →</a></span>
+</nav>
+<section class="related"><h2>同じ分野の関連問題</h2><ul class="q-list">
+<li><a href="q117.html">ある企業がAWS CodeDeployを使ってLambda関数のカナリアデプロイを実装している。デプロイ中にPreTra…</a></li>
+<li><a href="q119.html">ある企業がAWS CodeArtifactを使ってプライベートなMavenパッケージを管理している。社内チームが公開され…</a></li>
+<li><a href="q116.html">ある企業がAmazon ECSのEC2起動タイプでマイクロサービスを運用している。新バージョンのタスク定義をデプロイする…</a></li>
+<li><a href="q120.html">ある企業がAWS CodePipelineでマルチステージのCI/CDパイプラインを構築している。パイプラインには複数の…</a></li>
+</ul></section>
+</main>
+<footer class="page-footer">
+<nav class="hub-nav"><a href="../../exams/aws-clf-c02/">CLF-C02 試験ガイド</a><a href="../../exams/aws-aif-c01/">AIF-C01 試験ガイド</a><a href="../../exams/aws-saa-c03/">SAA-C03 試験ガイド</a><a href="../../exams/aws-dva-c02/">DVA-C02 試験ガイド</a><a href="../../exams/aws-sap-c02/">SAP-C02 試験ガイド</a><a href="../../exams/gcp-cdl/">CDL 試験ガイド</a><a href="../../exams/gcp-ace/">ACE 試験ガイド</a><a href="../../exams/azure-az900/">AZ-900 試験ガイド</a><a href="../../exams/azure-ai900/">AI-900 試験ガイド</a><a href="../../exams/azure-dp900/">DP-900 試験ガイド</a><a href="../../exams/azure-sc900/">SC-900 試験ガイド</a><a href="../../exams/azure-az104/">AZ-104 試験ガイド</a></nav>
+<nav class="site-nav"><a href="../../guide/">資格ガイド</a><a href="../../learn/">サービス解説</a><a href="../../career/">キャリア</a><a href="../../about.html">運営者情報</a><a href="../../privacy.html">プライバシーポリシー</a><a href="../../contact.html">お問い合わせ</a></nav>
+<p class="copy">© CLOUDCERT_ — 本サイトは各認定試験の公式試験ではなく、収録問題はすべてオリジナルの演習問題です。</p>
+</footer>
+</body>
+</html>

@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CLOUDCERT_ | クラウド資格 演習ターミナル — AWS / GCP / Azure</title>
+  <meta name="description" content="AWS・GCP・Azureのクラウド資格を本試験レベルのシナリオ問題で演習。全問詳細解説＋ドメイン別スコア分析。スマホ対応・無料。">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+JP:wght@400;500;700&family=JetBrains+Mono:wght@400;600;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='80' font-size='80' fill='%233fe0a4' font-family='monospace'>▸</text></svg>">
+  <meta name="google-adsense-account" content="ca-pub-5647574947191958">
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-SZR5CB5Q3X"></script>
+  <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag('js',new Date());gtag('config','G-SZR5CB5Q3X');</script>
+<link rel="canonical" href="https://cloudcert.app/"><meta property="og:title" content="CLOUDCERT_ | クラウド資格 演習ターミナル — AWS / GCP / Azure">
+<meta property="og:description" content="AWS・GCP・Azureのクラウド資格を本試験レベルのシナリオ問題で演習。全問詳細解説＋ドメイン別スコア分析。スマホ対応・無料。">
+<meta property="og:url" content="https://cloudcert.app/">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="CLOUDCERT_">
+<meta property="og:image" content="https://cloudcert.app/assets/og.png">
+<meta name="twitter:card" content="summary_large_image"><script async src="https://www.googletagmanager.com/gtag/js?id=G-SZR5CB5Q3X"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag('js',new Date());gtag('config','G-SZR5CB5Q3X');</script></head>
+<body>
+
+  <!-- ===== ヘッダー ===== -->
+  <header class="site-header">
+    <div class="container">
+      <a class="brand" href="#">
+        <span class="prompt">&gt;</span>CLOUDCERT<span class="cursor"></span>
+      </a>
+      <nav class="nav">
+        <a href="#exams">exams</a>
+        <a href="guide/">guide</a>
+        <a href="learn/">learn</a>
+        <a href="builder.html">builder<span class="beta-badge">beta</span></a>
+        <a href="#features" class="nav-anchor">features</a>
+        <a href="#roadmap" class="nav-anchor">roadmap</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- ===== ヒーロー ===== -->
+  <section class="hero">
+    <div class="container">
+      <div>
+        <span class="kicker reveal d1"><span class="dot"></span>AWS / GCP / AZURE 対応</span>
+        <h1 class="reveal d2">クラウド資格は、<br><span class="em">本試験レベル</span>の実戦で制す。</h1>
+        <p class="lede reveal d3">
+          単語の暗記では受からない。CLOUDCERT_ は実際の試験と同じ
+          「シナリオベース」の問題だけを収録した演習ターミナル。
+          全問に詳細解説、ドメイン別の弱点分析つき。登録不要・無料。
+        </p>
+        <div class="cta-row reveal d4">
+          <a class="btn btn-primary" href="#exams">▸ 演習をはじめる</a>
+          <a class="btn btn-ghost" href="#features">特徴を見る</a>
+        </div>
+      </div>
+      <div class="reveal d3">
+        <div class="terminal">
+          <div class="terminal-bar">
+            <span class="tdot r"></span><span class="tdot y"></span><span class="tdot g"></span>
+            <span class="title">cloudcert — practice session</span>
+          </div>
+          <div class="terminal-body" id="termBody"></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== 統計 ===== -->
+  <section class="stats">
+    <div class="container">
+      <div class="stat">
+        <div class="num">3</div>
+        <div class="label">対応クラウド</div>
+      </div>
+      <div class="stat">
+        <div class="num" id="statExams">—</div>
+        <div class="label">収録予定試験</div>
+      </div>
+      <div class="stat">
+        <div class="num" id="statQuestions">—</div>
+        <div class="label">収録問題数</div>
+      </div>
+      <div class="stat">
+        <div class="num">¥0</div>
+        <div class="label">登録不要・無料</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== 試験カタログ ===== -->
+  <section class="section" id="exams">
+    <div class="container">
+      <div class="section-head sr">
+        <span class="index">01 / EXAMS</span>
+        <h2>試験カタログ</h2>
+        <p>受けたい試験を選んで、いますぐ演習を開始。</p>
+      </div>
+      <div class="filter-tabs sr" id="filterTabs">
+        <button class="ftab active" data-filter="all">ALL</button>
+        <button class="ftab" data-filter="aws">AWS</button>
+        <button class="ftab" data-filter="gcp">GCP</button>
+        <button class="ftab" data-filter="azure">Azure</button>
+      </div>
+      <div id="catalogRoot"><!-- JSで描画 --></div>
+    </div>
+  </section>
+
+  <!-- ===== 特徴 ===== -->
+  <section class="section" id="features" style="background: rgba(255,255,255,0.012); border-top:1px solid var(--line); border-bottom:1px solid var(--line);">
+    <div class="container">
+      <div class="section-head sr">
+        <span class="index">02 / FEATURES</span>
+        <h2>「解ける」を作る、4つの仕組み</h2>
+      </div>
+      <div class="features-grid">
+        <div class="feature sr">
+          <span class="ficon">--real-level</span>
+          <h3>本試験レベルのシナリオ問題</h3>
+          <p>「ある企業が…」から始まる実戦形式。一問一答の暗記問題は一切なし。誤答の選択肢まで本番品質で作り込んでいます。</p>
+        </div>
+        <div class="feature sr">
+          <span class="ficon">--explain-all</span>
+          <h3>全問に詳細解説</h3>
+          <p>正解の根拠だけでなく「他の選択肢がなぜ違うのか」まで解説。1問解くごとに4つ分の知識が身につきます。</p>
+        </div>
+        <div class="feature sr">
+          <span class="ficon">--domain-score</span>
+          <h3>ドメイン別スコア分析</h3>
+          <p>本試験と同じ出題ドメインごとに正答率を可視化。どこを復習すべきかが一目でわかります。</p>
+        </div>
+        <div class="feature sr">
+          <span class="ficon">--anywhere</span>
+          <h3>スマホでもPCでも</h3>
+          <p>通勤中はスマホ、家ではPC。インストール不要、ブラウザだけで完結。前回スコアも自動保存されます。</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== ロードマップ ===== -->
+  <section class="section" id="roadmap">
+    <div class="container">
+      <div class="section-head sr">
+        <span class="index">03 / ROADMAP</span>
+        <h2>続々追加予定</h2>
+        <p>COMING SOON の試験は順次公開していきます。カタログのバッジが <span class="mono" style="color:var(--accent)">LIVE</span> に変わったら演習可能です。</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- 広告スロット: 中身が空の間はCSS(:empty)で非表示。導入手順は docs/ADS.md -->
+  <aside class="ad-rail left" id="adRailLeft" aria-hidden="true"></aside>
+  <aside class="ad-rail right" id="adRailRight" aria-hidden="true"></aside>
+
+  <!-- ===== フッター ===== -->
+  <footer class="site-footer">
+    <div class="container">
+      <span class="prompt">&gt;</span> CLOUDCERT_ — cloud certification practice terminal<br>
+      本サイトは学習目的の非公式教材です。各認定資格は各社の商標です。<br>
+      <nav style="margin-top:10px;font-size:.85rem;"><a href="guide/">資格ガイド</a>　<a href="learn/">サービス解説</a>　<a href="career/">キャリア</a>　<a href="about.html">運営者情報</a>　<a href="privacy.html">プライバシーポリシー</a>　<a href="contact.html">お問い合わせ</a></nav>
+    </div>
+  </footer>
+
+  <script src="js/data/manifest.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>

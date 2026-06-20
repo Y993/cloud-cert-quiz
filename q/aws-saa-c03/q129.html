@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>【SAA-C03 演習問題 #129】ある企業が、AWS の本番環境のアーキテクチャを見直した結果、インターネットに公開している…</title>
+<meta name="description" content="SAA-C03の本試験レベル演習問題。ある企業が、AWS の本番環境のアーキテクチャを見直した結果、インターネットに公開しているサービスのデータ転送アウトバウンドコストが高額であることが判明した。月あたり約 50TB の… 全選択肢の解説つき。">
+<link rel="canonical" href="https://cloudcert.app/q/aws-saa-c03/q129.html">
+<meta property="og:title" content="【SAA-C03 演習問題 #129】ある企業が、AWS の本番環境のアーキテクチャを見直した結果、インターネットに公開している…">
+<meta property="og:description" content="SAA-C03の本試験レベル演習問題。ある企業が、AWS の本番環境のアーキテクチャを見直した結果、インターネットに公開しているサービスのデータ転送アウトバウンドコストが高額であることが判明した。月あたり約 50TB の… 全選択肢の解説つき。">
+<meta property="og:url" content="https://cloudcert.app/q/aws-saa-c03/q129.html">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="CLOUDCERT_">
+<meta property="og:image" content="https://cloudcert.app/assets/og.png">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='80' font-size='80' fill='%233fe0a4' font-family='monospace'>▸</text></svg>">
+
+<meta name="google-adsense-account" content="ca-pub-5647574947191958">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+JP:wght@400;500;700&family=JetBrains+Mono:wght@400;600;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../../css/style.css">
+<link rel="stylesheet" href="../../css/page.css">
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-SZR5CB5Q3X"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag('js',new Date());gtag('config','G-SZR5CB5Q3X');</script>
+<script type="application/ld+json">[{"@context":"https://schema.org/","@type":"Quiz","about":{"@type":"Thing","name":"AWS Certified Solutions Architect – Associate"},"hasPart":[{"@type":"Question","eduQuestionType":"Multiple choice","learningResourceType":"Practice problem","text":"ある企業が、AWS の本番環境のアーキテクチャを見直した結果、インターネットに公開しているサービスのデータ転送アウトバウンドコストが高額であることが判明した。月あたり約 50TB のデータをユーザーに配信している。最もコスト効率よくデータ転送コストを削減する方法はどれか。","suggestedAnswer":[{"@type":"Answer","position":0,"text":"EC2 インスタンスを複数のリージョンに分散配置して各リージョンの転送量を削減する。"},{"@type":"Answer","position":1,"text":"Amazon S3 Transfer Acceleration を有効化してデータ転送を最適化する。"},{"@type":"Answer","position":3,"text":"AWS Direct Connect を追加してインターネット経由の転送コストを削減する。"}],"acceptedAnswer":{"@type":"Answer","position":2,"text":"Amazon CloudFront を経由してコンテンツを配信する。CloudFront のデータ転送単価は S3 や EC2 からの直接配信より安く、キャッシュヒット率が高いほど全体の転送量も削減できる。","comment":{"@type":"Comment","text":"Amazon CloudFront のデータ転送アウトバウンドコストは、S3 や EC2 からの直接インターネット転送コストより安い。特に CloudFront のキャッシュヒット率が高い場合、実際にオリジン（S3/EC2）からデータを取得する量が削減されるため、オリジンのデータ転送コストも下がる。50TB/月のような大量転送では CloudFront の節約効果が大きい。選択肢BのS3 Transfer Acceleration はアップロード（S3 へのデータ書き込み）の高速化であり、コンテンツ配信（ダウンロード）コストの削減には直接貢献しない。選択肢AのEC2 マルチリージョン配置はインフラコストが増加し、各リージョンの転送量は分散しても総転送コストは変わらない。選択肢DのDirect Connect はオンプレミス接続向けであり、インターネットユーザーへのデータ配信コストの削減にはならない。"}}}]},{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"HOME","item":"https://cloudcert.app/"},{"@type":"ListItem","position":2,"name":"SAA-C03 試験ガイド","item":"https://cloudcert.app/exams/aws-saa-c03/"},{"@type":"ListItem","position":3,"name":"q129"}]}]</script>
+</head>
+<body class="page-body">
+<header class="page-header"><a class="page-logo" href="../../index.html">&gt; CLOUDCERT_</a></header>
+<main class="page-main">
+
+<nav class="breadcrumb"><a href="../../index.html">HOME</a> › <a href="../../exams/aws-saa-c03/">SAA-C03 試験ガイド</a> › q129</nav>
+<div class="q-meta"><span>SAA-C03</span><span>コストを最適化したアーキテクチャの設計</span><span>MEDIUM</span><span>単一選択</span></div>
+<h1>ある企業が、AWS の本番環境のアーキテクチャを見直した結果、インターネットに公開しているサービスのデータ転送アウトバウンドコストが高額であることが判明した。月あたり約 50TB のデータをユーザーに配信している。最もコスト効率よくデータ転送コストを削減する方法はどれか。</h1>
+<ol class="q-choices">
+<li><b>A.</b> EC2 インスタンスを複数のリージョンに分散配置して各リージョンの転送量を削減する。</li>
+<li><b>B.</b> Amazon S3 Transfer Acceleration を有効化してデータ転送を最適化する。</li>
+<li><b>C.</b> Amazon CloudFront を経由してコンテンツを配信する。CloudFront のデータ転送単価は S3 や EC2 からの直接配信より安く、キャッシュヒット率が高いほど全体の転送量も削減できる。</li>
+<li><b>D.</b> AWS Direct Connect を追加してインターネット経由の転送コストを削減する。</li>
+</ol>
+<details class="q-answer">
+<summary>解答と解説を見る</summary>
+<div class="inner">
+<p><b>正解: C</b></p>
+<p>Amazon CloudFront のデータ転送アウトバウンドコストは、S3 や EC2 からの直接インターネット転送コストより安い。特に CloudFront のキャッシュヒット率が高い場合、実際にオリジン（S3/EC2）からデータを取得する量が削減されるため、オリジンのデータ転送コストも下がる。50TB/月のような大量転送では CloudFront の節約効果が大きい。選択肢BのS3 Transfer Acceleration はアップロード（S3 へのデータ書き込み）の高速化であり、コンテンツ配信（ダウンロード）コストの削減には直接貢献しない。選択肢AのEC2 マルチリージョン配置はインフラコストが増加し、各リージョンの転送量は分散しても総転送コストは変わらない。選択肢DのDirect Connect はオンプレミス接続向けであり、インターネットユーザーへのデータ配信コストの削減にはならない。</p>
+<div class="svc-links">📚 関連サービスの解説: <a href="../../learn/amazon-cloudfront.html">Amazon CloudFront</a> ・ <a href="../../learn/amazon-s3.html">Amazon S3</a></div>
+</div>
+</details>
+<div class="cta-box"><a class="btn btn-primary" href="../../exam.html?exam=aws-saa-c03">▸ この試験を本気で演習する（全150問・無料）</a></div>
+<nav class="q-nav">
+<span><a href="q128.html">← 前の問題</a></span>
+<span><a href="q130.html">次の問題 →</a></span>
+</nav>
+<section class="related"><h2>同じ分野の関連問題</h2><ul class="q-list">
+<li><a href="q133.html">ある企業が、開発環境と本番環境の両方で Amazon EC2 インスタンスを運用している。本番環境は 24 時間 365…</a></li>
+<li><a href="q124.html">ある企業が、毎日大量の ETL ジョブを AWS Glue で実行しており、Glue のコストを削減したい。ジョブは複数…</a></li>
+<li><a href="q122.html">ある企業が、Amazon RDS for MySQL インスタンス（db.m5.4xlarge）を本番環境で運用している…</a></li>
+<li><a href="q137.html">ある企業が、Amazon S3 への大量のオブジェクトアップロードを行っており、S3 PUT リクエストのコストが高額に…</a></li>
+</ul></section>
+</main>
+<footer class="page-footer">
+<nav class="hub-nav"><a href="../../exams/aws-clf-c02/">CLF-C02 試験ガイド</a><a href="../../exams/aws-aif-c01/">AIF-C01 試験ガイド</a><a href="../../exams/aws-saa-c03/">SAA-C03 試験ガイド</a><a href="../../exams/aws-dva-c02/">DVA-C02 試験ガイド</a><a href="../../exams/aws-sap-c02/">SAP-C02 試験ガイド</a><a href="../../exams/gcp-cdl/">CDL 試験ガイド</a><a href="../../exams/gcp-ace/">ACE 試験ガイド</a><a href="../../exams/azure-az900/">AZ-900 試験ガイド</a><a href="../../exams/azure-ai900/">AI-900 試験ガイド</a><a href="../../exams/azure-dp900/">DP-900 試験ガイド</a><a href="../../exams/azure-sc900/">SC-900 試験ガイド</a><a href="../../exams/azure-az104/">AZ-104 試験ガイド</a></nav>
+<nav class="site-nav"><a href="../../guide/">資格ガイド</a><a href="../../learn/">サービス解説</a><a href="../../career/">キャリア</a><a href="../../about.html">運営者情報</a><a href="../../privacy.html">プライバシーポリシー</a><a href="../../contact.html">お問い合わせ</a></nav>
+<p class="copy">© CLOUDCERT_ — 本サイトは各認定試験の公式試験ではなく、収録問題はすべてオリジナルの演習問題です。</p>
+</footer>
+</body>
+</html>

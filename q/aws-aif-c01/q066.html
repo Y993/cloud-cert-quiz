@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>【AIF-C01 演習問題 #66】ある企業が、Amazon Bedrock 上で本番運用中の生成 AI アプリケーションのコ…</title>
+<meta name="description" content="AIF-C01の本試験レベル演習問題。ある企業が、Amazon Bedrock 上で本番運用中の生成 AI アプリケーションのコストを削減したいと考えている。出力品質を維持しながらコストを最適化するための手法を2つ選択し… 全選択肢の解説つき。">
+<link rel="canonical" href="https://cloudcert.app/q/aws-aif-c01/q066.html">
+<meta property="og:title" content="【AIF-C01 演習問題 #66】ある企業が、Amazon Bedrock 上で本番運用中の生成 AI アプリケーションのコ…">
+<meta property="og:description" content="AIF-C01の本試験レベル演習問題。ある企業が、Amazon Bedrock 上で本番運用中の生成 AI アプリケーションのコストを削減したいと考えている。出力品質を維持しながらコストを最適化するための手法を2つ選択し… 全選択肢の解説つき。">
+<meta property="og:url" content="https://cloudcert.app/q/aws-aif-c01/q066.html">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="CLOUDCERT_">
+<meta property="og:image" content="https://cloudcert.app/assets/og.png">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='80' font-size='80' fill='%233fe0a4' font-family='monospace'>▸</text></svg>">
+
+<meta name="google-adsense-account" content="ca-pub-5647574947191958">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+JP:wght@400;500;700&family=JetBrains+Mono:wght@400;600;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../../css/style.css">
+<link rel="stylesheet" href="../../css/page.css">
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-SZR5CB5Q3X"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag('js',new Date());gtag('config','G-SZR5CB5Q3X');</script>
+<script type="application/ld+json">[{"@context":"https://schema.org/","@type":"Quiz","about":{"@type":"Thing","name":"AWS Certified AI Practitioner"},"hasPart":[{"@type":"Question","eduQuestionType":"Checkbox","learningResourceType":"Practice problem","text":"ある企業が、Amazon Bedrock 上で本番運用中の生成 AI アプリケーションのコストを削減したいと考えている。出力品質を維持しながらコストを最適化するための手法を2つ選択してください。","suggestedAnswer":[{"@type":"Answer","position":0,"text":"高トラフィック時間帯のリクエストをキューに積み、低トラフィック時間帯にまとめて処理することでレイテンシを無視してコストを下げる"},{"@type":"Answer","position":2,"text":"コスト削減のため、Bedrock Guardrails を無効化してトークン処理のオーバーヘッドをゼロにする"},{"@type":"Answer","position":4,"text":"すべてのリクエストに対して max_tokens を最大値（例：4096）に設定し、常に長い回答を生成させる"}],"acceptedAnswer":[{"@type":"Answer","position":1,"text":"用途に応じてモデルを使い分け、シンプルな分類タスクには小型・低コストモデル、複雑な推論が必要なタスクにのみ大型モデルを使う","comment":{"@type":"Comment","text":"モデルの使い分け（B）とトークン削減（D）は、品質を維持しながらコストを下げる最も直接的な手法。Eは誤り：max_tokens を最大値にすると出力が長くなり出力トークン費用が増加する。出力長は必要最小限に制限すべき。Cは誤り：Guardrails の無効化はセキュリティリスクを生み出し、本番環境では許容できない。Aは誤り：リアルタイム応答が必要なアプリケーションでキューによる遅延処理は UX を破壊する。また非同期バッチ処理は必ずしも単価削減にはならず、Bedrock Batch Inference 等を利用する場合の検討が必要。"}},{"@type":"Answer","position":3,"text":"プロンプトの冗長な表現を削除し、必要最小限のコンテキストに絞ることで入力トークン数を削減する","comment":{"@type":"Comment","text":"モデルの使い分け（B）とトークン削減（D）は、品質を維持しながらコストを下げる最も直接的な手法。Eは誤り：max_tokens を最大値にすると出力が長くなり出力トークン費用が増加する。出力長は必要最小限に制限すべき。Cは誤り：Guardrails の無効化はセキュリティリスクを生み出し、本番環境では許容できない。Aは誤り：リアルタイム応答が必要なアプリケーションでキューによる遅延処理は UX を破壊する。また非同期バッチ処理は必ずしも単価削減にはならず、Bedrock Batch Inference 等を利用する場合の検討が必要。"}}]}]},{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"HOME","item":"https://cloudcert.app/"},{"@type":"ListItem","position":2,"name":"AIF-C01 試験ガイド","item":"https://cloudcert.app/exams/aws-aif-c01/"},{"@type":"ListItem","position":3,"name":"q066"}]}]</script>
+</head>
+<body class="page-body">
+<header class="page-header"><a class="page-logo" href="../../index.html">&gt; CLOUDCERT_</a></header>
+<main class="page-main">
+
+<nav class="breadcrumb"><a href="../../index.html">HOME</a> › <a href="../../exams/aws-aif-c01/">AIF-C01 試験ガイド</a> › q066</nav>
+<div class="q-meta"><span>AIF-C01</span><span>生成 AI の基礎</span><span>HARD</span><span>複数選択</span></div>
+<h1>ある企業が、Amazon Bedrock 上で本番運用中の生成 AI アプリケーションのコストを削減したいと考えている。出力品質を維持しながらコストを最適化するための手法を2つ選択してください。</h1>
+<ol class="q-choices">
+<li><b>A.</b> 高トラフィック時間帯のリクエストをキューに積み、低トラフィック時間帯にまとめて処理することでレイテンシを無視してコストを下げる</li>
+<li><b>B.</b> 用途に応じてモデルを使い分け、シンプルな分類タスクには小型・低コストモデル、複雑な推論が必要なタスクにのみ大型モデルを使う</li>
+<li><b>C.</b> コスト削減のため、Bedrock Guardrails を無効化してトークン処理のオーバーヘッドをゼロにする</li>
+<li><b>D.</b> プロンプトの冗長な表現を削除し、必要最小限のコンテキストに絞ることで入力トークン数を削減する</li>
+<li><b>E.</b> すべてのリクエストに対して max_tokens を最大値（例：4096）に設定し、常に長い回答を生成させる</li>
+</ol>
+<details class="q-answer">
+<summary>解答と解説を見る</summary>
+<div class="inner">
+<p><b>正解: B, D</b></p>
+<p>モデルの使い分け（B）とトークン削減（D）は、品質を維持しながらコストを下げる最も直接的な手法。Eは誤り：max_tokens を最大値にすると出力が長くなり出力トークン費用が増加する。出力長は必要最小限に制限すべき。Cは誤り：Guardrails の無効化はセキュリティリスクを生み出し、本番環境では許容できない。Aは誤り：リアルタイム応答が必要なアプリケーションでキューによる遅延処理は UX を破壊する。また非同期バッチ処理は必ずしも単価削減にはならず、Bedrock Batch Inference 等を利用する場合の検討が必要。</p>
+
+</div>
+</details>
+<div class="cta-box"><a class="btn btn-primary" href="../../exam.html?exam=aws-aif-c01">▸ この試験を本気で演習する（全150問・無料）</a></div>
+<nav class="q-nav">
+<span><a href="q065.html">← 前の問題</a></span>
+<span><a href="q067.html">次の問題 →</a></span>
+</nav>
+<section class="related"><h2>同じ分野の関連問題</h2><ul class="q-list">
+<li><a href="q065.html">ある企業が、大規模なコーパス（100GB の PDF テキスト）を対象とした社内検索 RAG システムを Amazon …</a></li>
+<li><a href="q064.html">ある企業が、機密性の高い医療データを扱う生成 AI アプリケーションを Amazon Bedrock で構築している。デ…</a></li>
+<li><a href="q063.html">ある企業が、外部に公開するカスタマーサポートチャットボットを Amazon Bedrock で構築している。「生成 AI…</a></li>
+<li><a href="q062.html">ある企業が LLM を使ったアプリケーションにおけるハルシネーション（Hallucination）のリスクを低減したいと…</a></li>
+</ul></section>
+</main>
+<footer class="page-footer">
+<nav class="hub-nav"><a href="../../exams/aws-clf-c02/">CLF-C02 試験ガイド</a><a href="../../exams/aws-aif-c01/">AIF-C01 試験ガイド</a><a href="../../exams/aws-saa-c03/">SAA-C03 試験ガイド</a><a href="../../exams/aws-dva-c02/">DVA-C02 試験ガイド</a><a href="../../exams/aws-sap-c02/">SAP-C02 試験ガイド</a><a href="../../exams/gcp-cdl/">CDL 試験ガイド</a><a href="../../exams/gcp-ace/">ACE 試験ガイド</a><a href="../../exams/azure-az900/">AZ-900 試験ガイド</a><a href="../../exams/azure-ai900/">AI-900 試験ガイド</a><a href="../../exams/azure-dp900/">DP-900 試験ガイド</a><a href="../../exams/azure-sc900/">SC-900 試験ガイド</a><a href="../../exams/azure-az104/">AZ-104 試験ガイド</a></nav>
+<nav class="site-nav"><a href="../../guide/">資格ガイド</a><a href="../../learn/">サービス解説</a><a href="../../career/">キャリア</a><a href="../../about.html">運営者情報</a><a href="../../privacy.html">プライバシーポリシー</a><a href="../../contact.html">お問い合わせ</a></nav>
+<p class="copy">© CLOUDCERT_ — 本サイトは各認定試験の公式試験ではなく、収録問題はすべてオリジナルの演習問題です。</p>
+</footer>
+</body>
+</html>

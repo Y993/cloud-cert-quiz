@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>【SAP-C02 演習問題 #85】ある企業が AWS 上で稼働する複数のアカウントにわたる EC2 インスタンスのセキュリテ…</title>
+<meta name="description" content="SAP-C02の本試験レベル演習問題。ある企業が AWS 上で稼働する複数のアカウントにわたる EC2 インスタンスのセキュリティパッチ状況を確認したところ、深刻な脆弱性（CVE）が多数存在することが判明しました。セキュ… 全選択肢の解説つき。">
+<link rel="canonical" href="https://cloudcert.app/q/aws-sap-c02/q085.html">
+<meta property="og:title" content="【SAP-C02 演習問題 #85】ある企業が AWS 上で稼働する複数のアカウントにわたる EC2 インスタンスのセキュリテ…">
+<meta property="og:description" content="SAP-C02の本試験レベル演習問題。ある企業が AWS 上で稼働する複数のアカウントにわたる EC2 インスタンスのセキュリティパッチ状況を確認したところ、深刻な脆弱性（CVE）が多数存在することが判明しました。セキュ… 全選択肢の解説つき。">
+<meta property="og:url" content="https://cloudcert.app/q/aws-sap-c02/q085.html">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="CLOUDCERT_">
+<meta property="og:image" content="https://cloudcert.app/assets/og.png">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='80' font-size='80' fill='%233fe0a4' font-family='monospace'>▸</text></svg>">
+
+<meta name="google-adsense-account" content="ca-pub-5647574947191958">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+JP:wght@400;500;700&family=JetBrains+Mono:wght@400;600;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../../css/style.css">
+<link rel="stylesheet" href="../../css/page.css">
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-SZR5CB5Q3X"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag('js',new Date());gtag('config','G-SZR5CB5Q3X');</script>
+<script type="application/ld+json">[{"@context":"https://schema.org/","@type":"Quiz","about":{"@type":"Thing","name":"AWS Certified Solutions Architect - Professional"},"hasPart":[{"@type":"Question","eduQuestionType":"Multiple choice","learningResourceType":"Practice problem","text":"ある企業が AWS 上で稼働する複数のアカウントにわたる EC2 インスタンスのセキュリティパッチ状況を確認したところ、深刻な脆弱性（CVE）が多数存在することが判明しました。セキュリティチームは、新たに検出された CVE に対してパッチが適用されるまでの時間（MTTR）を短縮し、パッチ適用の自動化を実現したいと考えています。また、パッチ適用後のコンプライアンス状態を継続的に報告書として提出できる仕組みも必要です。最も適切なアーキテクチャはどれですか？","suggestedAnswer":[{"@type":"Answer","position":0,"text":"AWS Trusted Advisor のセキュリティチェックでパッチ状態を確認し、推奨事項に従って手動対応する"},{"@type":"Answer","position":1,"text":"Amazon Inspector で CVE を検出し、検出結果を Security Hub に送信して手動でパッチを適用する"},{"@type":"Answer","position":3,"text":"各 EC2 インスタンスに cron ジョブで weekly パッチスクリプトを設定し、月次でパッチ状態を手動確認する"}],"acceptedAnswer":{"@type":"Answer","position":2,"text":"AWS Systems Manager Patch Manager でパッチベースライン（CVE の深刻度に応じた自動承認ルール）を定義し、Maintenance Window でスケジュールに従って自動パッチ適用を設定する。Patch Manager のコンプライアンスレポートを AWS Config と統合し、非準拠インスタンスを継続的に検出して Security Hub に集約する。Critical/High CVE には Auto-Remediation で即時パッチ適用をトリガーする","comment":{"@type":"Comment","text":"Patch Manager のパッチベースラインで CVE の深刻度に基づいた自動承認ルール（例：Critical は即日承認）を設定し、Maintenance Window で定期的な自動適用を行います。コンプライアンスレポートは Config と統合することで継続的な状態確認が可能です。Inspector と Security Hub との統合でクロスアカウントの脆弱性管理が実現します。\n\nD: cron ジョブは管理が分散し、パッチの承認管理や依存関係の考慮がなく、コンプライアンスレポートの自動生成もできません。\n\nB: Inspector は CVE 検出に優れますが、パッチ適用の自動化機能自体は提供しません。Patch Manager との組み合わせは有効ですが、Inspector 単独では自動パッチ適用とコンプライアンスレポートを完結できません。\n\nA: Trusted Advisor のセキュリティチェックは一部のセキュリティ設定を確認しますが、EC2 のパッチ詳細管理や自動パッチ適用には対応していません。"}}}]},{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"HOME","item":"https://cloudcert.app/"},{"@type":"ListItem","position":2,"name":"SAP-C02 試験ガイド","item":"https://cloudcert.app/exams/aws-sap-c02/"},{"@type":"ListItem","position":3,"name":"q085"}]}]</script>
+</head>
+<body class="page-body">
+<header class="page-header"><a class="page-logo" href="../../index.html">&gt; CLOUDCERT_</a></header>
+<main class="page-main">
+
+<nav class="breadcrumb"><a href="../../index.html">HOME</a> › <a href="../../exams/aws-sap-c02/">SAP-C02 試験ガイド</a> › q085</nav>
+<div class="q-meta"><span>SAP-C02</span><span>既存のソリューションの継続的な改善</span><span>HARD</span><span>単一選択</span></div>
+<h1>ある企業が AWS 上で稼働する複数のアカウントにわたる EC2 インスタンスのセキュリティパッチ状況を確認したところ、深刻な脆弱性（CVE）が多数存在することが判明しました。セキュリティチームは、新たに検出された CVE に対してパッチが適用されるまでの時間（MTTR）を短縮し、パッチ適用の自動化を実現したいと考えています。また、パッチ適用後のコンプライアンス状態を継続的に報告書として提出できる仕組みも必要です。最も適切なアーキテクチャはどれですか？</h1>
+<ol class="q-choices">
+<li><b>A.</b> AWS Trusted Advisor のセキュリティチェックでパッチ状態を確認し、推奨事項に従って手動対応する</li>
+<li><b>B.</b> Amazon Inspector で CVE を検出し、検出結果を Security Hub に送信して手動でパッチを適用する</li>
+<li><b>C.</b> AWS Systems Manager Patch Manager でパッチベースライン（CVE の深刻度に応じた自動承認ルール）を定義し、Maintenance Window でスケジュールに従って自動パッチ適用を設定する。Patch Manager のコンプライアンスレポートを AWS Config と統合し、非準拠インスタンスを継続的に検出して Security Hub に集約する。Critical/High CVE には Auto-Remediation で即時パッチ適用をトリガーする</li>
+<li><b>D.</b> 各 EC2 インスタンスに cron ジョブで weekly パッチスクリプトを設定し、月次でパッチ状態を手動確認する</li>
+</ol>
+<details class="q-answer">
+<summary>解答と解説を見る</summary>
+<div class="inner">
+<p><b>正解: C</b></p>
+<p>Patch Manager のパッチベースラインで CVE の深刻度に基づいた自動承認ルール（例：Critical は即日承認）を設定し、Maintenance Window で定期的な自動適用を行います。コンプライアンスレポートは Config と統合することで継続的な状態確認が可能です。Inspector と Security Hub との統合でクロスアカウントの脆弱性管理が実現します。
+
+D: cron ジョブは管理が分散し、パッチの承認管理や依存関係の考慮がなく、コンプライアンスレポートの自動生成もできません。
+
+B: Inspector は CVE 検出に優れますが、パッチ適用の自動化機能自体は提供しません。Patch Manager との組み合わせは有効ですが、Inspector 単独では自動パッチ適用とコンプライアンスレポートを完結できません。
+
+A: Trusted Advisor のセキュリティチェックは一部のセキュリティ設定を確認しますが、EC2 のパッチ詳細管理や自動パッチ適用には対応していません。</p>
+<div class="svc-links">📚 関連サービスの解説: <a href="../../learn/aws-systems-manager.html">AWS Systems Manager</a> ・ <a href="../../learn/aws-config.html">AWS Config</a></div>
+</div>
+</details>
+<div class="cta-box"><a class="btn btn-primary" href="../../exam.html?exam=aws-sap-c02">▸ この試験を本気で演習する（全150問・無料）</a></div>
+<nav class="q-nav">
+<span><a href="q084.html">← 前の問題</a></span>
+<span><a href="q086.html">次の問題 →</a></span>
+</nav>
+<section class="related"><h2>同じ分野の関連問題</h2><ul class="q-list">
+<li><a href="q088.html">ある企業が AWS 上の Amazon RDS Aurora PostgreSQL クラスターのコストを削減したいと考え…</a></li>
+<li><a href="q091.html">ある企業が AWS 上で Amazon EKS クラスターを運用しており、Kubernetes ノードのコスト最適化を検…</a></li>
+<li><a href="q094.html">ある企業が AWS 上で稼働する複数のマイクロサービスのログを Amazon CloudWatch Logs で管理して…</a></li>
+<li><a href="q098.html">ある企業が AWS 上の本番環境でコスト削減を行うため、Amazon EC2 の使用状況を分析しました。分析の結果、本番…</a></li>
+</ul></section>
+</main>
+<footer class="page-footer">
+<nav class="hub-nav"><a href="../../exams/aws-clf-c02/">CLF-C02 試験ガイド</a><a href="../../exams/aws-aif-c01/">AIF-C01 試験ガイド</a><a href="../../exams/aws-saa-c03/">SAA-C03 試験ガイド</a><a href="../../exams/aws-dva-c02/">DVA-C02 試験ガイド</a><a href="../../exams/aws-sap-c02/">SAP-C02 試験ガイド</a><a href="../../exams/gcp-cdl/">CDL 試験ガイド</a><a href="../../exams/gcp-ace/">ACE 試験ガイド</a><a href="../../exams/azure-az900/">AZ-900 試験ガイド</a><a href="../../exams/azure-ai900/">AI-900 試験ガイド</a><a href="../../exams/azure-dp900/">DP-900 試験ガイド</a><a href="../../exams/azure-sc900/">SC-900 試験ガイド</a><a href="../../exams/azure-az104/">AZ-104 試験ガイド</a></nav>
+<nav class="site-nav"><a href="../../guide/">資格ガイド</a><a href="../../learn/">サービス解説</a><a href="../../career/">キャリア</a><a href="../../about.html">運営者情報</a><a href="../../privacy.html">プライバシーポリシー</a><a href="../../contact.html">お問い合わせ</a></nav>
+<p class="copy">© CLOUDCERT_ — 本サイトは各認定試験の公式試験ではなく、収録問題はすべてオリジナルの演習問題です。</p>
+</footer>
+</body>
+</html>

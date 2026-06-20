@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>【AZ-900 演習問題 #122】ある企業がAzureで非リレーショナル（NoSQL）データを扱うシステムを構築しようとして…</title>
+<meta name="description" content="AZ-900の本試験レベル演習問題。ある企業がAzureで非リレーショナル（NoSQL）データを扱うシステムを構築しようとしている。各Azureのストレージサービスと最も適合するデータ型の組み合わせとして正しいものはどれ… 全選択肢の解説つき。">
+<link rel="canonical" href="https://cloudcert.app/q/azure-az900/q122.html">
+<meta property="og:title" content="【AZ-900 演習問題 #122】ある企業がAzureで非リレーショナル（NoSQL）データを扱うシステムを構築しようとして…">
+<meta property="og:description" content="AZ-900の本試験レベル演習問題。ある企業がAzureで非リレーショナル（NoSQL）データを扱うシステムを構築しようとしている。各Azureのストレージサービスと最も適合するデータ型の組み合わせとして正しいものはどれ… 全選択肢の解説つき。">
+<meta property="og:url" content="https://cloudcert.app/q/azure-az900/q122.html">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="CLOUDCERT_">
+<meta property="og:image" content="https://cloudcert.app/assets/og.png">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='80' font-size='80' fill='%233fe0a4' font-family='monospace'>▸</text></svg>">
+
+<meta name="google-adsense-account" content="ca-pub-5647574947191958">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+JP:wght@400;500;700&family=JetBrains+Mono:wght@400;600;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../../css/style.css">
+<link rel="stylesheet" href="../../css/page.css">
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-SZR5CB5Q3X"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag('js',new Date());gtag('config','G-SZR5CB5Q3X');</script>
+<script type="application/ld+json">[{"@context":"https://schema.org/","@type":"Quiz","about":{"@type":"Thing","name":"Microsoft Azure Fundamentals"},"hasPart":[{"@type":"Question","eduQuestionType":"Multiple choice","learningResourceType":"Practice problem","text":"ある企業がAzureで非リレーショナル（NoSQL）データを扱うシステムを構築しようとしている。各Azureのストレージサービスと最も適合するデータ型の組み合わせとして正しいものはどれか。","suggestedAnswer":[{"@type":"Answer","position":0,"text":"Azure Disk Storage → HTTPSで公開するWebコンテンツ、Azure CDN → データベースクエリ結果"},{"@type":"Answer","position":1,"text":"Azure Queue Storage → 長時間保存する永続データ、Azure Files → 大量の非構造化ファイル"},{"@type":"Answer","position":2,"text":"Azure Table Storage → 動画ファイル、Azure Blob Storage → ユーザーの属性データ（構造化JSON）"}],"acceptedAnswer":{"@type":"Answer","position":3,"text":"Azure Table Storage → 構造化されたキーバリュー形式のデータ（例：ユーザープロフィール）、Azure Blob Storage → 非構造化データ（画像・動画・ドキュメント）","comment":{"@type":"Comment","text":"Azure Table Storageはスキーマレスなキーバリュー形式のNoSQLストレージで、ユーザープロフィール・製品カタログ・デバイスの状態など構造化されたが柔軟なスキーマが必要なデータの保存に適している。Azure Blob Storageは画像・動画・ドキュメント・ログファイルなどの非構造化データの大量保存と配信に適している。選択肢Cは各サービスのデータタイプが逆（Table Storageに動画、BlobにJSON）であり誤り。選択肢BのQueue Storageは一時的なメッセージキュー（処理待ちのメッセージを一時保存）であり、長時間の永続データ保存には使用しない。選択肢AのDisk StorageはVM専用ブロックストレージ、CDNはキャッシュ配信サービスであり記述が誤り。"}}}]},{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"HOME","item":"https://cloudcert.app/"},{"@type":"ListItem","position":2,"name":"AZ-900 試験ガイド","item":"https://cloudcert.app/exams/azure-az900/"},{"@type":"ListItem","position":3,"name":"q122"}]}]</script>
+</head>
+<body class="page-body">
+<header class="page-header"><a class="page-logo" href="../../index.html">&gt; CLOUDCERT_</a></header>
+<main class="page-main">
+
+<nav class="breadcrumb"><a href="../../index.html">HOME</a> › <a href="../../exams/azure-az900/">AZ-900 試験ガイド</a> › q122</nav>
+<div class="q-meta"><span>AZ-900</span><span>Azureのアーキテクチャとサービス</span><span>HARD</span><span>単一選択</span></div>
+<h1>ある企業がAzureで非リレーショナル（NoSQL）データを扱うシステムを構築しようとしている。各Azureのストレージサービスと最も適合するデータ型の組み合わせとして正しいものはどれか。</h1>
+<ol class="q-choices">
+<li><b>A.</b> Azure Disk Storage → HTTPSで公開するWebコンテンツ、Azure CDN → データベースクエリ結果</li>
+<li><b>B.</b> Azure Queue Storage → 長時間保存する永続データ、Azure Files → 大量の非構造化ファイル</li>
+<li><b>C.</b> Azure Table Storage → 動画ファイル、Azure Blob Storage → ユーザーの属性データ（構造化JSON）</li>
+<li><b>D.</b> Azure Table Storage → 構造化されたキーバリュー形式のデータ（例：ユーザープロフィール）、Azure Blob Storage → 非構造化データ（画像・動画・ドキュメント）</li>
+</ol>
+<details class="q-answer">
+<summary>解答と解説を見る</summary>
+<div class="inner">
+<p><b>正解: D</b></p>
+<p>Azure Table Storageはスキーマレスなキーバリュー形式のNoSQLストレージで、ユーザープロフィール・製品カタログ・デバイスの状態など構造化されたが柔軟なスキーマが必要なデータの保存に適している。Azure Blob Storageは画像・動画・ドキュメント・ログファイルなどの非構造化データの大量保存と配信に適している。選択肢Cは各サービスのデータタイプが逆（Table Storageに動画、BlobにJSON）であり誤り。選択肢BのQueue Storageは一時的なメッセージキュー（処理待ちのメッセージを一時保存）であり、長時間の永続データ保存には使用しない。選択肢AのDisk StorageはVM専用ブロックストレージ、CDNはキャッシュ配信サービスであり記述が誤り。</p>
+<div class="svc-links">📚 関連サービスの解説: <a href="../../learn/azure-blob-storage.html">Azure Blob Storage</a></div>
+</div>
+</details>
+<div class="cta-box"><a class="btn btn-primary" href="../../exam.html?exam=azure-az900">▸ この試験を本気で演習する（全150問・無料）</a></div>
+<nav class="q-nav">
+<span><a href="q121.html">← 前の問題</a></span>
+<span><a href="q123.html">次の問題 →</a></span>
+</nav>
+<section class="related"><h2>同じ分野の関連問題</h2><ul class="q-list">
+<li><a href="q121.html">ある企業がAzureに移行後、オンプレミスのVMware・Hyper-V・物理サーバー・AWSなどの他クラウドにあるリソ…</a></li>
+<li><a href="q123.html">ある企業がAzure App Serviceを使ってWebアプリをホストしており、新しいバージョンのアプリを本番環境に影…</a></li>
+<li><a href="q120.html">ある企業がAzureでビジネスプロセスを自動化したい。Salesforce・Office 365・Twitter・SAP…</a></li>
+<li><a href="q124.html">ある企業がAzure上のリソースを複数のプロジェクトチームで共有しているが、各チームが誤って他チームのリソースを変更・削…</a></li>
+</ul></section>
+</main>
+<footer class="page-footer">
+<nav class="hub-nav"><a href="../../exams/aws-clf-c02/">CLF-C02 試験ガイド</a><a href="../../exams/aws-aif-c01/">AIF-C01 試験ガイド</a><a href="../../exams/aws-saa-c03/">SAA-C03 試験ガイド</a><a href="../../exams/aws-dva-c02/">DVA-C02 試験ガイド</a><a href="../../exams/aws-sap-c02/">SAP-C02 試験ガイド</a><a href="../../exams/gcp-cdl/">CDL 試験ガイド</a><a href="../../exams/gcp-ace/">ACE 試験ガイド</a><a href="../../exams/azure-az900/">AZ-900 試験ガイド</a><a href="../../exams/azure-ai900/">AI-900 試験ガイド</a><a href="../../exams/azure-dp900/">DP-900 試験ガイド</a><a href="../../exams/azure-sc900/">SC-900 試験ガイド</a><a href="../../exams/azure-az104/">AZ-104 試験ガイド</a></nav>
+<nav class="site-nav"><a href="../../guide/">資格ガイド</a><a href="../../learn/">サービス解説</a><a href="../../career/">キャリア</a><a href="../../about.html">運営者情報</a><a href="../../privacy.html">プライバシーポリシー</a><a href="../../contact.html">お問い合わせ</a></nav>
+<p class="copy">© CLOUDCERT_ — 本サイトは各認定試験の公式試験ではなく、収録問題はすべてオリジナルの演習問題です。</p>
+</footer>
+</body>
+</html>

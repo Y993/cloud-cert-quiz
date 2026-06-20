@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>【AZ-104 演習問題 #47】ある企業が規制要件として、特定の Azure BLOB ストレージコンテナに保存したデータ…</title>
+<meta name="description" content="AZ-104の本試験レベル演習問題。ある企業が規制要件として、特定の Azure BLOB ストレージコンテナに保存したデータを保存後 3 年間は変更も削除もできないようにしたい。この要件をストレージサービスのネイティブ… 全選択肢の解説つき。">
+<link rel="canonical" href="https://cloudcert.app/q/azure-az104/q047.html">
+<meta property="og:title" content="【AZ-104 演習問題 #47】ある企業が規制要件として、特定の Azure BLOB ストレージコンテナに保存したデータ…">
+<meta property="og:description" content="AZ-104の本試験レベル演習問題。ある企業が規制要件として、特定の Azure BLOB ストレージコンテナに保存したデータを保存後 3 年間は変更も削除もできないようにしたい。この要件をストレージサービスのネイティブ… 全選択肢の解説つき。">
+<meta property="og:url" content="https://cloudcert.app/q/azure-az104/q047.html">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="CLOUDCERT_">
+<meta property="og:image" content="https://cloudcert.app/assets/og.png">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='80' font-size='80' fill='%233fe0a4' font-family='monospace'>▸</text></svg>">
+
+<meta name="google-adsense-account" content="ca-pub-5647574947191958">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+JP:wght@400;500;700&family=JetBrains+Mono:wght@400;600;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../../css/style.css">
+<link rel="stylesheet" href="../../css/page.css">
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-SZR5CB5Q3X"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag('js',new Date());gtag('config','G-SZR5CB5Q3X');</script>
+<script type="application/ld+json">[{"@context":"https://schema.org/","@type":"Quiz","about":{"@type":"Thing","name":"Microsoft Azure Administrator"},"hasPart":[{"@type":"Question","eduQuestionType":"Multiple choice","learningResourceType":"Practice problem","text":"ある企業が規制要件として、特定の Azure BLOB ストレージコンテナに保存したデータを保存後 3 年間は変更も削除もできないようにしたい。この要件をストレージサービスのネイティブ機能で実現する最も適切な方法はどれか。","suggestedAnswer":[{"@type":"Answer","position":0,"text":"Azure Policy を使ってコンテナへの書き込み・削除操作を Deny する"},{"@type":"Answer","position":1,"text":"コンテナに RBAC ロールを設定して削除権限を全ユーザーから剥奪する"},{"@type":"Answer","position":2,"text":"ストレージアカウントのロック（Delete ロック）を設定する"}],"acceptedAnswer":{"@type":"Answer","position":3,"text":"コンテナに時間ベースの保持ポリシーを設定した不変ストレージ（WORM）を有効にする","comment":{"@type":"Comment","text":"不変ストレージ（Immutable Storage / WORM: Write Once, Read Many）の時間ベース保持ポリシーを設定すると、指定期間（3 年）はデータの変更・削除が物理的に不可能になる。ポリシーをロック状態にすると管理者でも変更できず、金融・医療・法令対応のコンプライアンス要件を満たせる。RBAC ロールによる削除権限の剥奪は管理者がロールを再割り当てすれば回避可能であり、強制力が弱い。Azure Policy の Deny 設定は運用ポリシーレベルの制御であり、緊急時やポリシー変更で回避できる。ストレージアカウントのロックはアカウント自体の削除・変更を防ぐリソースロックであり、アカウント内のデータの変更・削除を防ぐものではない。"}}}]},{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"HOME","item":"https://cloudcert.app/"},{"@type":"ListItem","position":2,"name":"AZ-104 試験ガイド","item":"https://cloudcert.app/exams/azure-az104/"},{"@type":"ListItem","position":3,"name":"q047"}]}]</script>
+</head>
+<body class="page-body">
+<header class="page-header"><a class="page-logo" href="../../index.html">&gt; CLOUDCERT_</a></header>
+<main class="page-main">
+
+<nav class="breadcrumb"><a href="../../index.html">HOME</a> › <a href="../../exams/azure-az104/">AZ-104 試験ガイド</a> › q047</nav>
+<div class="q-meta"><span>AZ-104</span><span>Azure ストレージの実装と管理</span><span>MEDIUM</span><span>単一選択</span></div>
+<h1>ある企業が規制要件として、特定の Azure BLOB ストレージコンテナに保存したデータを保存後 3 年間は変更も削除もできないようにしたい。この要件をストレージサービスのネイティブ機能で実現する最も適切な方法はどれか。</h1>
+<ol class="q-choices">
+<li><b>A.</b> Azure Policy を使ってコンテナへの書き込み・削除操作を Deny する</li>
+<li><b>B.</b> コンテナに RBAC ロールを設定して削除権限を全ユーザーから剥奪する</li>
+<li><b>C.</b> ストレージアカウントのロック（Delete ロック）を設定する</li>
+<li><b>D.</b> コンテナに時間ベースの保持ポリシーを設定した不変ストレージ（WORM）を有効にする</li>
+</ol>
+<details class="q-answer">
+<summary>解答と解説を見る</summary>
+<div class="inner">
+<p><b>正解: D</b></p>
+<p>不変ストレージ（Immutable Storage / WORM: Write Once, Read Many）の時間ベース保持ポリシーを設定すると、指定期間（3 年）はデータの変更・削除が物理的に不可能になる。ポリシーをロック状態にすると管理者でも変更できず、金融・医療・法令対応のコンプライアンス要件を満たせる。RBAC ロールによる削除権限の剥奪は管理者がロールを再割り当てすれば回避可能であり、強制力が弱い。Azure Policy の Deny 設定は運用ポリシーレベルの制御であり、緊急時やポリシー変更で回避できる。ストレージアカウントのロックはアカウント自体の削除・変更を防ぐリソースロックであり、アカウント内のデータの変更・削除を防ぐものではない。</p>
+
+</div>
+</details>
+<div class="cta-box"><a class="btn btn-primary" href="../../exam.html?exam=azure-az104">▸ この試験を本気で演習する（全150問・無料）</a></div>
+<nav class="q-nav">
+<span><a href="q046.html">← 前の問題</a></span>
+<span><a href="q048.html">次の問題 →</a></span>
+</nav>
+<section class="related"><h2>同じ分野の関連問題</h2><ul class="q-list">
+<li><a href="q046.html">ある企業が Azure File Sync を導入してオンプレミスのファイルサーバーと Azure Files を同期さ…</a></li>
+<li><a href="q048.html">ある開発者が AzCopy を使って Azure BLOB ストレージとオンプレミス環境の間でデータを同期させたい。毎晩…</a></li>
+<li><a href="q045.html">ある企業が Azure Files を使って部門間のファイル共有を実現している。ある特定の共有に対して誤って大量のファイ…</a></li>
+<li><a href="q049.html">ある企業がリージョン C の Azure BLOB ストレージコンテナのデータをリージョン A の別のストレージアカウン…</a></li>
+</ul></section>
+</main>
+<footer class="page-footer">
+<nav class="hub-nav"><a href="../../exams/aws-clf-c02/">CLF-C02 試験ガイド</a><a href="../../exams/aws-aif-c01/">AIF-C01 試験ガイド</a><a href="../../exams/aws-saa-c03/">SAA-C03 試験ガイド</a><a href="../../exams/aws-dva-c02/">DVA-C02 試験ガイド</a><a href="../../exams/aws-sap-c02/">SAP-C02 試験ガイド</a><a href="../../exams/gcp-cdl/">CDL 試験ガイド</a><a href="../../exams/gcp-ace/">ACE 試験ガイド</a><a href="../../exams/azure-az900/">AZ-900 試験ガイド</a><a href="../../exams/azure-ai900/">AI-900 試験ガイド</a><a href="../../exams/azure-dp900/">DP-900 試験ガイド</a><a href="../../exams/azure-sc900/">SC-900 試験ガイド</a><a href="../../exams/azure-az104/">AZ-104 試験ガイド</a></nav>
+<nav class="site-nav"><a href="../../guide/">資格ガイド</a><a href="../../learn/">サービス解説</a><a href="../../career/">キャリア</a><a href="../../about.html">運営者情報</a><a href="../../privacy.html">プライバシーポリシー</a><a href="../../contact.html">お問い合わせ</a></nav>
+<p class="copy">© CLOUDCERT_ — 本サイトは各認定試験の公式試験ではなく、収録問題はすべてオリジナルの演習問題です。</p>
+</footer>
+</body>
+</html>

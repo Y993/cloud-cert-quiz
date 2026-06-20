@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>【SAP-C02 演習問題 #135】ある企業が大規模なモノリシック Java アプリケーション（Spring Boot）を段階…</title>
+<meta name="description" content="SAP-C02の本試験レベル演習問題。ある企業が大規模なモノリシック Java アプリケーション（Spring Boot）を段階的にマイクロサービス化する計画を立てています。現在のアプリケーションはリレーショナルデータベ… 全選択肢の解説つき。">
+<link rel="canonical" href="https://cloudcert.app/q/aws-sap-c02/q135.html">
+<meta property="og:title" content="【SAP-C02 演習問題 #135】ある企業が大規模なモノリシック Java アプリケーション（Spring Boot）を段階…">
+<meta property="og:description" content="SAP-C02の本試験レベル演習問題。ある企業が大規模なモノリシック Java アプリケーション（Spring Boot）を段階的にマイクロサービス化する計画を立てています。現在のアプリケーションはリレーショナルデータベ… 全選択肢の解説つき。">
+<meta property="og:url" content="https://cloudcert.app/q/aws-sap-c02/q135.html">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="CLOUDCERT_">
+<meta property="og:image" content="https://cloudcert.app/assets/og.png">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='80' font-size='80' fill='%233fe0a4' font-family='monospace'>▸</text></svg>">
+
+<meta name="google-adsense-account" content="ca-pub-5647574947191958">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+JP:wght@400;500;700&family=JetBrains+Mono:wght@400;600;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../../css/style.css">
+<link rel="stylesheet" href="../../css/page.css">
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-SZR5CB5Q3X"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag('js',new Date());gtag('config','G-SZR5CB5Q3X');</script>
+<script type="application/ld+json">[{"@context":"https://schema.org/","@type":"Quiz","about":{"@type":"Thing","name":"AWS Certified Solutions Architect - Professional"},"hasPart":[{"@type":"Question","eduQuestionType":"Multiple choice","learningResourceType":"Practice problem","text":"ある企業が大規模なモノリシック Java アプリケーション（Spring Boot）を段階的にマイクロサービス化する計画を立てています。現在のアプリケーションはリレーショナルデータベース（PostgreSQL）に強く依存しており、モノリス内の多数のモジュールが同じテーブルを共有しています。モダナイゼーションの第一ステップとして、新しい機能は独立したマイクロサービスとして開発し、将来的には既存のモノリスの機能も順次切り出す予定です。この「ストラングラーフィグ」アプローチで最も一般的な技術的課題はどれですか？","suggestedAnswer":[{"@type":"Answer","position":1,"text":"API Gateway は既存のモノリスのエンドポイントと新しいマイクロサービスのエンドポイントを同時に管理できない"},{"@type":"Answer","position":2,"text":"マイクロサービスの開発言語はモノリスと同じ Java にする必要がある"},{"@type":"Answer","position":3,"text":"コンテナ化されたマイクロサービスは EC2 ベースのモノリスと共存できない"}],"acceptedAnswer":{"@type":"Answer","position":0,"text":"モノリスと新しいマイクロサービスが同じデータベーステーブルを共有すると、データの整合性とスキーマ管理が複雑になる。解決策として、新しいマイクロサービスは独自のデータベース（Database per Service パターン）を持ち、モノリスとの同期は非同期イベント（EventBridge、SNS/SQS）または API レイヤー経由で行うことが推奨される","comment":{"@type":"Comment","text":"ストラングラーフィグパターンで最も一般的な技術的課題は「共有データベース（Shared Database）」問題です。モノリスと新しいマイクロサービスが同じテーブルを共有すると、スキーマ変更の影響範囲が広がり、マイクロサービスの独立したデプロイが困難になります。Database per Service パターン（各サービスが専用 DB を持つ）と非同期イベント連携がこの問題の標準的な解決策です。\n\nC: マイクロサービスは任意の言語で開発できます（多言語アーキテクチャ）。モノリスと同じ言語にする必要はありません。\n\nB: API Gateway はモノリスと新しいマイクロサービスの両方をバックエンドとして設定でき、ルーティングルールで切り替えられます。\n\nD: コンテナ化されたマイクロサービスと EC2 ベースのモノリスは完全に共存できます。ネットワークレベルでの通信が可能です。"}}}]},{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"HOME","item":"https://cloudcert.app/"},{"@type":"ListItem","position":2,"name":"SAP-C02 試験ガイド","item":"https://cloudcert.app/exams/aws-sap-c02/"},{"@type":"ListItem","position":3,"name":"q135"}]}]</script>
+</head>
+<body class="page-body">
+<header class="page-header"><a class="page-logo" href="../../index.html">&gt; CLOUDCERT_</a></header>
+<main class="page-main">
+
+<nav class="breadcrumb"><a href="../../index.html">HOME</a> › <a href="../../exams/aws-sap-c02/">SAP-C02 試験ガイド</a> › q135</nav>
+<div class="q-meta"><span>SAP-C02</span><span>ワークロードの移行とモダナイゼーションの加速</span><span>HARD</span><span>単一選択</span></div>
+<h1>ある企業が大規模なモノリシック Java アプリケーション（Spring Boot）を段階的にマイクロサービス化する計画を立てています。現在のアプリケーションはリレーショナルデータベース（PostgreSQL）に強く依存しており、モノリス内の多数のモジュールが同じテーブルを共有しています。モダナイゼーションの第一ステップとして、新しい機能は独立したマイクロサービスとして開発し、将来的には既存のモノリスの機能も順次切り出す予定です。この「ストラングラーフィグ」アプローチで最も一般的な技術的課題はどれですか？</h1>
+<ol class="q-choices">
+<li><b>A.</b> モノリスと新しいマイクロサービスが同じデータベーステーブルを共有すると、データの整合性とスキーマ管理が複雑になる。解決策として、新しいマイクロサービスは独自のデータベース（Database per Service パターン）を持ち、モノリスとの同期は非同期イベント（EventBridge、SNS/SQS）または API レイヤー経由で行うことが推奨される</li>
+<li><b>B.</b> API Gateway は既存のモノリスのエンドポイントと新しいマイクロサービスのエンドポイントを同時に管理できない</li>
+<li><b>C.</b> マイクロサービスの開発言語はモノリスと同じ Java にする必要がある</li>
+<li><b>D.</b> コンテナ化されたマイクロサービスは EC2 ベースのモノリスと共存できない</li>
+</ol>
+<details class="q-answer">
+<summary>解答と解説を見る</summary>
+<div class="inner">
+<p><b>正解: A</b></p>
+<p>ストラングラーフィグパターンで最も一般的な技術的課題は「共有データベース（Shared Database）」問題です。モノリスと新しいマイクロサービスが同じテーブルを共有すると、スキーマ変更の影響範囲が広がり、マイクロサービスの独立したデプロイが困難になります。Database per Service パターン（各サービスが専用 DB を持つ）と非同期イベント連携がこの問題の標準的な解決策です。
+
+C: マイクロサービスは任意の言語で開発できます（多言語アーキテクチャ）。モノリスと同じ言語にする必要はありません。
+
+B: API Gateway はモノリスと新しいマイクロサービスの両方をバックエンドとして設定でき、ルーティングルールで切り替えられます。
+
+D: コンテナ化されたマイクロサービスと EC2 ベースのモノリスは完全に共存できます。ネットワークレベルでの通信が可能です。</p>
+<div class="svc-links">📚 関連サービスの解説: <a href="../../learn/amazon-eventbridge.html">Amazon EventBridge</a> ・ <a href="../../learn/amazon-sns.html">Amazon SNS</a></div>
+</div>
+</details>
+<div class="cta-box"><a class="btn btn-primary" href="../../exam.html?exam=aws-sap-c02">▸ この試験を本気で演習する（全150問・無料）</a></div>
+<nav class="q-nav">
+<span><a href="q134.html">← 前の問題</a></span>
+<span><a href="q136.html">次の問題 →</a></span>
+</nav>
+<section class="related"><h2>同じ分野の関連問題</h2><ul class="q-list">
+<li><a href="q131.html">ある企業が AWS への移行計画を検討しており、まず業務に支障のない非本番アプリケーションから移行し、その後に本番システ…</a></li>
+<li><a href="q141.html">ある企業がオンプレミスからクラウドへの移行において「6 つの R」（Rehost、Replatform、Repurcha…</a></li>
+<li><a href="q128.html">ある企業が AWS への全社的な移行を完了させようとしていますが、一部の古いアプリケーションがオンプレミスのネットワーク…</a></li>
+<li><a href="q125.html">ある企業がオンプレミスの IBM MQ メッセージングインフラ（エンタープライズメッセージブローカー）を AWS に移行…</a></li>
+</ul></section>
+</main>
+<footer class="page-footer">
+<nav class="hub-nav"><a href="../../exams/aws-clf-c02/">CLF-C02 試験ガイド</a><a href="../../exams/aws-aif-c01/">AIF-C01 試験ガイド</a><a href="../../exams/aws-saa-c03/">SAA-C03 試験ガイド</a><a href="../../exams/aws-dva-c02/">DVA-C02 試験ガイド</a><a href="../../exams/aws-sap-c02/">SAP-C02 試験ガイド</a><a href="../../exams/gcp-cdl/">CDL 試験ガイド</a><a href="../../exams/gcp-ace/">ACE 試験ガイド</a><a href="../../exams/azure-az900/">AZ-900 試験ガイド</a><a href="../../exams/azure-ai900/">AI-900 試験ガイド</a><a href="../../exams/azure-dp900/">DP-900 試験ガイド</a><a href="../../exams/azure-sc900/">SC-900 試験ガイド</a><a href="../../exams/azure-az104/">AZ-104 試験ガイド</a></nav>
+<nav class="site-nav"><a href="../../guide/">資格ガイド</a><a href="../../learn/">サービス解説</a><a href="../../career/">キャリア</a><a href="../../about.html">運営者情報</a><a href="../../privacy.html">プライバシーポリシー</a><a href="../../contact.html">お問い合わせ</a></nav>
+<p class="copy">© CLOUDCERT_ — 本サイトは各認定試験の公式試験ではなく、収録問題はすべてオリジナルの演習問題です。</p>
+</footer>
+</body>
+</html>

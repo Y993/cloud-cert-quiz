@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>【AZ-900 演習問題 #13】ある企業のアーキテクトが、クラウドシステムの「信頼性（Reliability）」を設計する…</title>
+<meta name="description" content="AZ-900の本試験レベル演習問題。ある企業のアーキテクトが、クラウドシステムの「信頼性（Reliability）」を設計する際に考慮すべき要素を説明している。AZ-900の文脈において、「信頼性のある（Reliable… 全選択肢の解説つき。">
+<link rel="canonical" href="https://cloudcert.app/q/azure-az900/q013.html">
+<meta property="og:title" content="【AZ-900 演習問題 #13】ある企業のアーキテクトが、クラウドシステムの「信頼性（Reliability）」を設計する…">
+<meta property="og:description" content="AZ-900の本試験レベル演習問題。ある企業のアーキテクトが、クラウドシステムの「信頼性（Reliability）」を設計する際に考慮すべき要素を説明している。AZ-900の文脈において、「信頼性のある（Reliable… 全選択肢の解説つき。">
+<meta property="og:url" content="https://cloudcert.app/q/azure-az900/q013.html">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="CLOUDCERT_">
+<meta property="og:image" content="https://cloudcert.app/assets/og.png">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='80' font-size='80' fill='%233fe0a4' font-family='monospace'>▸</text></svg>">
+
+<meta name="google-adsense-account" content="ca-pub-5647574947191958">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+JP:wght@400;500;700&family=JetBrains+Mono:wght@400;600;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../../css/style.css">
+<link rel="stylesheet" href="../../css/page.css">
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-SZR5CB5Q3X"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag('js',new Date());gtag('config','G-SZR5CB5Q3X');</script>
+<script type="application/ld+json">[{"@context":"https://schema.org/","@type":"Quiz","about":{"@type":"Thing","name":"Microsoft Azure Fundamentals"},"hasPart":[{"@type":"Question","eduQuestionType":"Multiple choice","learningResourceType":"Practice problem","text":"ある企業のアーキテクトが、クラウドシステムの「信頼性（Reliability）」を設計する際に考慮すべき要素を説明している。AZ-900の文脈において、「信頼性のある（Reliable）クラウドシステム」を実現する上で最も重要な設計方針はどれか。","suggestedAnswer":[{"@type":"Answer","position":1,"text":"最高スペックの仮想マシンを使用することで、ハードウェア故障が発生しにくくする"},{"@type":"Answer","position":2,"text":"データのバックアップを毎日手動で取得し、別ストレージに保存する"},{"@type":"Answer","position":3,"text":"すべてのコンポーネントを単一のリージョンに集中させ、管理を簡素化する"}],"acceptedAnswer":{"@type":"Answer","position":0,"text":"単一障害点（SPOF）を排除し、コンポーネントの冗長化と自動フェールオーバーを実装する","comment":{"@type":"Comment","text":"クラウドにおける信頼性（Reliability）の設計原則は「単一障害点の排除」と「冗長化」である。あるコンポーネントが障害を起こしても、冗長化されたほかのコンポーネントが自動的に処理を引き継ぐことで、サービス全体の継続性を確保する。Azureでは可用性ゾーン、リージョンペア、ロードバランサー、フェールオーバーグループなどが冗長化の手段として提供される。選択肢Dは単一リージョン集中であり、リージョン全体の障害に対して脆弱で信頼性が低い。選択肢Bは高スペックVMでも物理的なハードウェア故障は防げず、単一障害点が残る。選択肢Cの手動バックアップはRTO（目標復旧時間）が長く、自動フェールオーバーと比べて信頼性の観点で劣る設計である。"}}}]},{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"HOME","item":"https://cloudcert.app/"},{"@type":"ListItem","position":2,"name":"AZ-900 試験ガイド","item":"https://cloudcert.app/exams/azure-az900/"},{"@type":"ListItem","position":3,"name":"q013"}]}]</script>
+</head>
+<body class="page-body">
+<header class="page-header"><a class="page-logo" href="../../index.html">&gt; CLOUDCERT_</a></header>
+<main class="page-main">
+
+<nav class="breadcrumb"><a href="../../index.html">HOME</a> › <a href="../../exams/azure-az900/">AZ-900 試験ガイド</a> › q013</nav>
+<div class="q-meta"><span>AZ-900</span><span>クラウドの概念</span><span>HARD</span><span>単一選択</span></div>
+<h1>ある企業のアーキテクトが、クラウドシステムの「信頼性（Reliability）」を設計する際に考慮すべき要素を説明している。AZ-900の文脈において、「信頼性のある（Reliable）クラウドシステム」を実現する上で最も重要な設計方針はどれか。</h1>
+<ol class="q-choices">
+<li><b>A.</b> 単一障害点（SPOF）を排除し、コンポーネントの冗長化と自動フェールオーバーを実装する</li>
+<li><b>B.</b> 最高スペックの仮想マシンを使用することで、ハードウェア故障が発生しにくくする</li>
+<li><b>C.</b> データのバックアップを毎日手動で取得し、別ストレージに保存する</li>
+<li><b>D.</b> すべてのコンポーネントを単一のリージョンに集中させ、管理を簡素化する</li>
+</ol>
+<details class="q-answer">
+<summary>解答と解説を見る</summary>
+<div class="inner">
+<p><b>正解: A</b></p>
+<p>クラウドにおける信頼性（Reliability）の設計原則は「単一障害点の排除」と「冗長化」である。あるコンポーネントが障害を起こしても、冗長化されたほかのコンポーネントが自動的に処理を引き継ぐことで、サービス全体の継続性を確保する。Azureでは可用性ゾーン、リージョンペア、ロードバランサー、フェールオーバーグループなどが冗長化の手段として提供される。選択肢Dは単一リージョン集中であり、リージョン全体の障害に対して脆弱で信頼性が低い。選択肢Bは高スペックVMでも物理的なハードウェア故障は防げず、単一障害点が残る。選択肢Cの手動バックアップはRTO（目標復旧時間）が長く、自動フェールオーバーと比べて信頼性の観点で劣る設計である。</p>
+
+</div>
+</details>
+<div class="cta-box"><a class="btn btn-primary" href="../../exam.html?exam=azure-az900">▸ この試験を本気で演習する（全150問・無料）</a></div>
+<nav class="q-nav">
+<span><a href="q012.html">← 前の問題</a></span>
+<span><a href="q014.html">次の問題 →</a></span>
+</nav>
+<section class="related"><h2>同じ分野の関連問題</h2><ul class="q-list">
+<li><a href="q012.html">ある企業が「SLA（サービスレベルアグリーメント）」の内容を確認している。AzureのSLAで保証されている内容として最…</a></li>
+<li><a href="q014.html">あるIT部門がクラウドへの移行計画を立てている。「コンサンプション（従量消費）ベースモデル」と「固定価格モデル」の違いを…</a></li>
+<li><a href="q011.html">クラウドサービスの「高可用性（High Availability）」とは何を意味するか。</a></li>
+<li><a href="q015.html">ある企業がAzureのパブリッククラウドを利用することを決定した。パブリッククラウドモデルの特徴として正しい説明はどれか…</a></li>
+</ul></section>
+</main>
+<footer class="page-footer">
+<nav class="hub-nav"><a href="../../exams/aws-clf-c02/">CLF-C02 試験ガイド</a><a href="../../exams/aws-aif-c01/">AIF-C01 試験ガイド</a><a href="../../exams/aws-saa-c03/">SAA-C03 試験ガイド</a><a href="../../exams/aws-dva-c02/">DVA-C02 試験ガイド</a><a href="../../exams/aws-sap-c02/">SAP-C02 試験ガイド</a><a href="../../exams/gcp-cdl/">CDL 試験ガイド</a><a href="../../exams/gcp-ace/">ACE 試験ガイド</a><a href="../../exams/azure-az900/">AZ-900 試験ガイド</a><a href="../../exams/azure-ai900/">AI-900 試験ガイド</a><a href="../../exams/azure-dp900/">DP-900 試験ガイド</a><a href="../../exams/azure-sc900/">SC-900 試験ガイド</a><a href="../../exams/azure-az104/">AZ-104 試験ガイド</a></nav>
+<nav class="site-nav"><a href="../../guide/">資格ガイド</a><a href="../../learn/">サービス解説</a><a href="../../career/">キャリア</a><a href="../../about.html">運営者情報</a><a href="../../privacy.html">プライバシーポリシー</a><a href="../../contact.html">お問い合わせ</a></nav>
+<p class="copy">© CLOUDCERT_ — 本サイトは各認定試験の公式試験ではなく、収録問題はすべてオリジナルの演習問題です。</p>
+</footer>
+</body>
+</html>

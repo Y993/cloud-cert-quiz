@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>【CDL 演習問題 #72】ある企業が、GKE上で稼働しているアプリケーションのコンテナイメージに含まれる既知のセキュ…</title>
+<meta name="description" content="CDLの本試験レベル演習問題。ある企業が、GKE上で稼働しているアプリケーションのコンテナイメージに含まれる既知のセキュリティ脆弱性（CVE）を自動的に検出したいと考えています。最も適切なGoogle Cloudのアプロ… 全選択肢の解説つき。">
+<link rel="canonical" href="https://cloudcert.app/q/gcp-cdl/q072.html">
+<meta property="og:title" content="【CDL 演習問題 #72】ある企業が、GKE上で稼働しているアプリケーションのコンテナイメージに含まれる既知のセキュ…">
+<meta property="og:description" content="CDLの本試験レベル演習問題。ある企業が、GKE上で稼働しているアプリケーションのコンテナイメージに含まれる既知のセキュリティ脆弱性（CVE）を自動的に検出したいと考えています。最も適切なGoogle Cloudのアプロ… 全選択肢の解説つき。">
+<meta property="og:url" content="https://cloudcert.app/q/gcp-cdl/q072.html">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="CLOUDCERT_">
+<meta property="og:image" content="https://cloudcert.app/assets/og.png">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='80' font-size='80' fill='%233fe0a4' font-family='monospace'>▸</text></svg>">
+
+<meta name="google-adsense-account" content="ca-pub-5647574947191958">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+JP:wght@400;500;700&family=JetBrains+Mono:wght@400;600;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../../css/style.css">
+<link rel="stylesheet" href="../../css/page.css">
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-SZR5CB5Q3X"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag('js',new Date());gtag('config','G-SZR5CB5Q3X');</script>
+<script type="application/ld+json">[{"@context":"https://schema.org/","@type":"Quiz","about":{"@type":"Thing","name":"Cloud Digital Leader"},"hasPart":[{"@type":"Question","eduQuestionType":"Multiple choice","learningResourceType":"Practice problem","text":"ある企業が、GKE上で稼働しているアプリケーションのコンテナイメージに含まれる既知のセキュリティ脆弱性（CVE）を自動的に検出したいと考えています。最も適切なGoogle Cloudのアプローチはどれですか？","suggestedAnswer":[{"@type":"Answer","position":0,"text":"Cloud Storageにコンテナイメージを保存し、手動でスキャンスクリプトを実行する"},{"@type":"Answer","position":2,"text":"コンテナイメージの脆弱性はGoogleが自動的に修正するため、ユーザー側での対応は不要である"},{"@type":"Answer","position":3,"text":"毎月手動でコンテナイメージを確認し、脆弱性があれば対応する"}],"acceptedAnswer":{"@type":"Answer","position":1,"text":"Artifact Registryの脆弱性スキャン（Container Analysis）を有効化し、イメージのプッシュ時や継続的なスキャンで既知CVEを自動検出し、アラートを設定する","comment":{"@type":"Comment","text":"Artifact RegistryのContainer Analysis（脆弱性スキャン）機能を有効化すると、コンテナイメージのプッシュ時に自動スキャンが実行され、既知のCVE（Common Vulnerabilities and Exposures）を検出してセキュリティダッシュボードに表示。継続的スキャンにより新しく発見された脆弱性も既存イメージに対して自動通知される。手動月次確認は検知が遅れる。Cloud Storageはコンテナレジストリではなくスキャン機能も持たない。コンテナ内のアプリ脆弱性はユーザー（開発者）の責任であり、Googleが自動修正することはない。"}}}]},{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"HOME","item":"https://cloudcert.app/"},{"@type":"ListItem","position":2,"name":"CDL 試験ガイド","item":"https://cloudcert.app/exams/gcp-cdl/"},{"@type":"ListItem","position":3,"name":"q072"}]}]</script>
+</head>
+<body class="page-body">
+<header class="page-header"><a class="page-logo" href="../../index.html">&gt; CLOUDCERT_</a></header>
+<main class="page-main">
+
+<nav class="breadcrumb"><a href="../../index.html">HOME</a> › <a href="../../exams/gcp-cdl/">CDL 試験ガイド</a> › q072</nav>
+<div class="q-meta"><span>CDL</span><span>インフラストラクチャとアプリケーションのモダナイゼーション</span><span>MEDIUM</span><span>単一選択</span></div>
+<h1>ある企業が、GKE上で稼働しているアプリケーションのコンテナイメージに含まれる既知のセキュリティ脆弱性（CVE）を自動的に検出したいと考えています。最も適切なGoogle Cloudのアプローチはどれですか？</h1>
+<ol class="q-choices">
+<li><b>A.</b> Cloud Storageにコンテナイメージを保存し、手動でスキャンスクリプトを実行する</li>
+<li><b>B.</b> Artifact Registryの脆弱性スキャン（Container Analysis）を有効化し、イメージのプッシュ時や継続的なスキャンで既知CVEを自動検出し、アラートを設定する</li>
+<li><b>C.</b> コンテナイメージの脆弱性はGoogleが自動的に修正するため、ユーザー側での対応は不要である</li>
+<li><b>D.</b> 毎月手動でコンテナイメージを確認し、脆弱性があれば対応する</li>
+</ol>
+<details class="q-answer">
+<summary>解答と解説を見る</summary>
+<div class="inner">
+<p><b>正解: B</b></p>
+<p>Artifact RegistryのContainer Analysis（脆弱性スキャン）機能を有効化すると、コンテナイメージのプッシュ時に自動スキャンが実行され、既知のCVE（Common Vulnerabilities and Exposures）を検出してセキュリティダッシュボードに表示。継続的スキャンにより新しく発見された脆弱性も既存イメージに対して自動通知される。手動月次確認は検知が遅れる。Cloud Storageはコンテナレジストリではなくスキャン機能も持たない。コンテナ内のアプリ脆弱性はユーザー（開発者）の責任であり、Googleが自動修正することはない。</p>
+<div class="svc-links">📚 関連サービスの解説: <a href="../../learn/artifact-registry.html">Artifact Registry</a></div>
+</div>
+</details>
+<div class="cta-box"><a class="btn btn-primary" href="../../exam.html?exam=gcp-cdl">▸ この試験を本気で演習する（全150問・無料）</a></div>
+<nav class="q-nav">
+<span><a href="q071.html">← 前の問題</a></span>
+<span><a href="q073.html">次の問題 →</a></span>
+</nav>
+<section class="related"><h2>同じ分野の関連問題</h2><ul class="q-list">
+<li><a href="q071.html">ある企業が、オンプレミスのサーバーで稼働している既存のWebアプリケーションを最小限の変更でGoogle Cloudに移…</a></li>
+<li><a href="q073.html">ある企業が、GKEクラスターのコスト最適化を検討しています。開発・テスト環境のバッチジョブワークロードに「プリエンプティ…</a></li>
+<li><a href="q070.html">ある企業が、Google CloudのCI/CDパイプラインを構築しようとしています。ソースコードのコミットをトリガーに…</a></li>
+<li><a href="q074.html">ある企業が、Google Cloudに移行した後もオンプレミスとクラウドを専用線で接続し、安定した高帯域幅通信を実現した…</a></li>
+</ul></section>
+</main>
+<footer class="page-footer">
+<nav class="hub-nav"><a href="../../exams/aws-clf-c02/">CLF-C02 試験ガイド</a><a href="../../exams/aws-aif-c01/">AIF-C01 試験ガイド</a><a href="../../exams/aws-saa-c03/">SAA-C03 試験ガイド</a><a href="../../exams/aws-dva-c02/">DVA-C02 試験ガイド</a><a href="../../exams/aws-sap-c02/">SAP-C02 試験ガイド</a><a href="../../exams/gcp-cdl/">CDL 試験ガイド</a><a href="../../exams/gcp-ace/">ACE 試験ガイド</a><a href="../../exams/azure-az900/">AZ-900 試験ガイド</a><a href="../../exams/azure-ai900/">AI-900 試験ガイド</a><a href="../../exams/azure-dp900/">DP-900 試験ガイド</a><a href="../../exams/azure-sc900/">SC-900 試験ガイド</a><a href="../../exams/azure-az104/">AZ-104 試験ガイド</a></nav>
+<nav class="site-nav"><a href="../../guide/">資格ガイド</a><a href="../../learn/">サービス解説</a><a href="../../career/">キャリア</a><a href="../../about.html">運営者情報</a><a href="../../privacy.html">プライバシーポリシー</a><a href="../../contact.html">お問い合わせ</a></nav>
+<p class="copy">© CLOUDCERT_ — 本サイトは各認定試験の公式試験ではなく、収録問題はすべてオリジナルの演習問題です。</p>
+</footer>
+</body>
+</html>

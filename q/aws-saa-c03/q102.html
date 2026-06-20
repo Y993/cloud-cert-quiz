@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>【SAA-C03 演習問題 #102】ある企業が、Amazon EC2 インスタンスの適正化（Rightsizing）を実施しよ…</title>
+<meta name="description" content="SAA-C03の本試験レベル演習問題。ある企業が、Amazon EC2 インスタンスの適正化（Rightsizing）を実施しようとしている。現在のインスタンスが過剰プロビジョニングか不足プロビジョニングかを判断するため… 全選択肢の解説つき。">
+<link rel="canonical" href="https://cloudcert.app/q/aws-saa-c03/q102.html">
+<meta property="og:title" content="【SAA-C03 演習問題 #102】ある企業が、Amazon EC2 インスタンスの適正化（Rightsizing）を実施しよ…">
+<meta property="og:description" content="SAA-C03の本試験レベル演習問題。ある企業が、Amazon EC2 インスタンスの適正化（Rightsizing）を実施しようとしている。現在のインスタンスが過剰プロビジョニングか不足プロビジョニングかを判断するため… 全選択肢の解説つき。">
+<meta property="og:url" content="https://cloudcert.app/q/aws-saa-c03/q102.html">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="CLOUDCERT_">
+<meta property="og:image" content="https://cloudcert.app/assets/og.png">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='80' font-size='80' fill='%233fe0a4' font-family='monospace'>▸</text></svg>">
+
+<meta name="google-adsense-account" content="ca-pub-5647574947191958">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+JP:wght@400;500;700&family=JetBrains+Mono:wght@400;600;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../../css/style.css">
+<link rel="stylesheet" href="../../css/page.css">
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-SZR5CB5Q3X"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag('js',new Date());gtag('config','G-SZR5CB5Q3X');</script>
+<script type="application/ld+json">[{"@context":"https://schema.org/","@type":"Quiz","about":{"@type":"Thing","name":"AWS Certified Solutions Architect – Associate"},"hasPart":[{"@type":"Question","eduQuestionType":"Multiple choice","learningResourceType":"Practice problem","text":"ある企業が、Amazon EC2 インスタンスの適正化（Rightsizing）を実施しようとしている。現在のインスタンスが過剰プロビジョニングか不足プロビジョニングかを判断するため、CPU・メモリ・ネットワーク使用量の過去 14 日間のメトリクスを分析したい。コードの実装や追加サービスの導入なしに、AWS コンソールから直接推奨事項を確認できる最も適切なサービスはどれか。","suggestedAnswer":[{"@type":"Answer","position":1,"text":"Amazon CloudWatch のメトリクスダッシュボードを作成して各インスタンスの使用率を可視化する。"},{"@type":"Answer","position":2,"text":"AWS Cost Explorer のリソース最適化推奨事項（Rightsizing Recommendations）を確認する。"},{"@type":"Answer","position":3,"text":"AWS Trusted Advisor のコスト最適化セクションで低使用率の EC2 インスタンスを確認する。"}],"acceptedAnswer":{"@type":"Answer","position":0,"text":"AWS Compute Optimizer を有効化して、EC2 インスタンスの最適なインスタンスタイプを推奨してもらう。","comment":{"@type":"Comment","text":"AWS Compute Optimizer は過去 14 日間（オプトインで 93 日間）のメトリクスを機械学習で分析し、EC2 インスタンスの現在のサイズが適切か、過剰/不足プロビジョニングかを診断して最適なインスタンスタイプを推奨する。CPU・メモリ（CloudWatch エージェント）・ネットワーク・ディスク使用量を考慮した包括的な分析ができ、コンソールから直接確認でき追加コードは不要。選択肢CのCost Explorer のリサイジング推奨事項は有効だが、CPU 使用率のみを基準にした比較的シンプルな分析。メモリ・ネットワークを含む包括的な分析は Compute Optimizer が優れている。選択肢BのCloudWatch ダッシュボード作成は手動での設定・分析が必要で、推奨インスタンスタイプを自動提案する機能がない。選択肢DのTrusted Advisor の低使用率チェックは CPU < 10% のインスタンスのみを対象とし、詳細な推奨はしない。Compute Optimizer の方が精度と詳細が高い。"}}}]},{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"HOME","item":"https://cloudcert.app/"},{"@type":"ListItem","position":2,"name":"SAA-C03 試験ガイド","item":"https://cloudcert.app/exams/aws-saa-c03/"},{"@type":"ListItem","position":3,"name":"q102"}]}]</script>
+</head>
+<body class="page-body">
+<header class="page-header"><a class="page-logo" href="../../index.html">&gt; CLOUDCERT_</a></header>
+<main class="page-main">
+
+<nav class="breadcrumb"><a href="../../index.html">HOME</a> › <a href="../../exams/aws-saa-c03/">SAA-C03 試験ガイド</a> › q102</nav>
+<div class="q-meta"><span>SAA-C03</span><span>コストを最適化したアーキテクチャの設計</span><span>MEDIUM</span><span>単一選択</span></div>
+<h1>ある企業が、Amazon EC2 インスタンスの適正化（Rightsizing）を実施しようとしている。現在のインスタンスが過剰プロビジョニングか不足プロビジョニングかを判断するため、CPU・メモリ・ネットワーク使用量の過去 14 日間のメトリクスを分析したい。コードの実装や追加サービスの導入なしに、AWS コンソールから直接推奨事項を確認できる最も適切なサービスはどれか。</h1>
+<ol class="q-choices">
+<li><b>A.</b> AWS Compute Optimizer を有効化して、EC2 インスタンスの最適なインスタンスタイプを推奨してもらう。</li>
+<li><b>B.</b> Amazon CloudWatch のメトリクスダッシュボードを作成して各インスタンスの使用率を可視化する。</li>
+<li><b>C.</b> AWS Cost Explorer のリソース最適化推奨事項（Rightsizing Recommendations）を確認する。</li>
+<li><b>D.</b> AWS Trusted Advisor のコスト最適化セクションで低使用率の EC2 インスタンスを確認する。</li>
+</ol>
+<details class="q-answer">
+<summary>解答と解説を見る</summary>
+<div class="inner">
+<p><b>正解: A</b></p>
+<p>AWS Compute Optimizer は過去 14 日間（オプトインで 93 日間）のメトリクスを機械学習で分析し、EC2 インスタンスの現在のサイズが適切か、過剰/不足プロビジョニングかを診断して最適なインスタンスタイプを推奨する。CPU・メモリ（CloudWatch エージェント）・ネットワーク・ディスク使用量を考慮した包括的な分析ができ、コンソールから直接確認でき追加コードは不要。選択肢CのCost Explorer のリサイジング推奨事項は有効だが、CPU 使用率のみを基準にした比較的シンプルな分析。メモリ・ネットワークを含む包括的な分析は Compute Optimizer が優れている。選択肢BのCloudWatch ダッシュボード作成は手動での設定・分析が必要で、推奨インスタンスタイプを自動提案する機能がない。選択肢DのTrusted Advisor の低使用率チェックは CPU &lt; 10% のインスタンスのみを対象とし、詳細な推奨はしない。Compute Optimizer の方が精度と詳細が高い。</p>
+<div class="svc-links">📚 関連サービスの解説: <a href="../../learn/amazon-ec2.html">Amazon EC2</a></div>
+</div>
+</details>
+<div class="cta-box"><a class="btn btn-primary" href="../../exam.html?exam=aws-saa-c03">▸ この試験を本気で演習する（全150問・無料）</a></div>
+<nav class="q-nav">
+<span><a href="q101.html">← 前の問題</a></span>
+<span><a href="q103.html">次の問題 →</a></span>
+</nav>
+<section class="related"><h2>同じ分野の関連問題</h2><ul class="q-list">
+<li><a href="q099.html">ある企業が、大量の非構造化データ（ログファイル）を Amazon S3 に保存している。データは日次で追加され、最初の …</a></li>
+<li><a href="q106.html">ある企業が、AWS の予算管理を強化したい。特定のサービスコストが月次予算の 80% に達した時点でアラートを受け取り、…</a></li>
+<li><a href="q109.html">ある企業が、AWS Lambda と Amazon API Gateway でサーバーレス API を運用している。AP…</a></li>
+<li><a href="q093.html">ある企業が、AWS の NAT ゲートウェイの月次コストが高いことに気づいた。調査の結果、プライベートサブネットの EC…</a></li>
+</ul></section>
+</main>
+<footer class="page-footer">
+<nav class="hub-nav"><a href="../../exams/aws-clf-c02/">CLF-C02 試験ガイド</a><a href="../../exams/aws-aif-c01/">AIF-C01 試験ガイド</a><a href="../../exams/aws-saa-c03/">SAA-C03 試験ガイド</a><a href="../../exams/aws-dva-c02/">DVA-C02 試験ガイド</a><a href="../../exams/aws-sap-c02/">SAP-C02 試験ガイド</a><a href="../../exams/gcp-cdl/">CDL 試験ガイド</a><a href="../../exams/gcp-ace/">ACE 試験ガイド</a><a href="../../exams/azure-az900/">AZ-900 試験ガイド</a><a href="../../exams/azure-ai900/">AI-900 試験ガイド</a><a href="../../exams/azure-dp900/">DP-900 試験ガイド</a><a href="../../exams/azure-sc900/">SC-900 試験ガイド</a><a href="../../exams/azure-az104/">AZ-104 試験ガイド</a></nav>
+<nav class="site-nav"><a href="../../guide/">資格ガイド</a><a href="../../learn/">サービス解説</a><a href="../../career/">キャリア</a><a href="../../about.html">運営者情報</a><a href="../../privacy.html">プライバシーポリシー</a><a href="../../contact.html">お問い合わせ</a></nav>
+<p class="copy">© CLOUDCERT_ — 本サイトは各認定試験の公式試験ではなく、収録問題はすべてオリジナルの演習問題です。</p>
+</footer>
+</body>
+</html>

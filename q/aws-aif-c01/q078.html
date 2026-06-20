@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>【AIF-C01 演習問題 #78】ある企業が Amazon Bedrock で Claude モデルを使って長文の法的契約書…</title>
+<meta name="description" content="AIF-C01の本試験レベル演習問題。ある企業が Amazon Bedrock で Claude モデルを使って長文の法的契約書を分析するシステムを本番運用している。本番環境でのモデル切り替えを検討する際に、新しいモデル… 全選択肢の解説つき。">
+<link rel="canonical" href="https://cloudcert.app/q/aws-aif-c01/q078.html">
+<meta property="og:title" content="【AIF-C01 演習問題 #78】ある企業が Amazon Bedrock で Claude モデルを使って長文の法的契約書…">
+<meta property="og:description" content="AIF-C01の本試験レベル演習問題。ある企業が Amazon Bedrock で Claude モデルを使って長文の法的契約書を分析するシステムを本番運用している。本番環境でのモデル切り替えを検討する際に、新しいモデル… 全選択肢の解説つき。">
+<meta property="og:url" content="https://cloudcert.app/q/aws-aif-c01/q078.html">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="CLOUDCERT_">
+<meta property="og:image" content="https://cloudcert.app/assets/og.png">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='80' font-size='80' fill='%233fe0a4' font-family='monospace'>▸</text></svg>">
+
+<meta name="google-adsense-account" content="ca-pub-5647574947191958">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+JP:wght@400;500;700&family=JetBrains+Mono:wght@400;600;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../../css/style.css">
+<link rel="stylesheet" href="../../css/page.css">
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-SZR5CB5Q3X"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag('js',new Date());gtag('config','G-SZR5CB5Q3X');</script>
+<script type="application/ld+json">[{"@context":"https://schema.org/","@type":"Quiz","about":{"@type":"Thing","name":"AWS Certified AI Practitioner"},"hasPart":[{"@type":"Question","eduQuestionType":"Multiple choice","learningResourceType":"Practice problem","text":"ある企業が Amazon Bedrock で Claude モデルを使って長文の法的契約書を分析するシステムを本番運用している。本番環境でのモデル切り替えを検討する際に、新しいモデルが同等以上の品質を持つことを確認するための評価アプローチとして最も堅牢なものはどれか。","suggestedAnswer":[{"@type":"Answer","position":0,"text":"新モデルのパラメータ数（モデルサイズ）が旧モデル以上であれば品質も上位と判断してよい"},{"@type":"Answer","position":2,"text":"新モデルに対して同じプロンプトセットを 10 回ずつ実行し、temperature=0 のときの出力の一貫性を確認する"},{"@type":"Answer","position":3,"text":"新モデルをファインチューニングした後、本番トラフィックにいきなり投入してユーザーのフィードバックで品質を判断する"}],"acceptedAnswer":{"@type":"Answer","position":1,"text":"社内の法律専門家が作成した「ゴールデンセット（正解付き契約書サンプル）」で両モデルを評価し、ROUGE スコアと人手評価スコアの両方で比較する","comment":{"@type":"Comment","text":"モデル評価は「自動評価指標（ROUGE等）」と「人手評価」を組み合わせたゴールデンセット評価が最も信頼性が高い。ゴールデンセットとは正解ラベルが付いた代表的なテストケース集のことで、ドメイン専門家（本問では法律専門家）が作成することで業務上の品質基準を正確に反映できる。これにより新旧モデルを同条件で定量・定性的に比較できる。Cの一貫性確認は再現性の評価には有効だが、法的分析の「正しさ」を測る指標にはならない。Dの本番即時投入はリスクが高く、品質問題が発生した場合の影響が大きい。適切な評価なしに本番切り替えは不適切。Aのパラメータ数はモデル能力の粗い指標にはなるが、特定タスク（法的契約書分析）での品質を保証するものではない。蒸留等により小型モデルが大型モデルを特定タスクで上回るケースも多い。"}}}]},{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"HOME","item":"https://cloudcert.app/"},{"@type":"ListItem","position":2,"name":"AIF-C01 試験ガイド","item":"https://cloudcert.app/exams/aws-aif-c01/"},{"@type":"ListItem","position":3,"name":"q078"}]}]</script>
+</head>
+<body class="page-body">
+<header class="page-header"><a class="page-logo" href="../../index.html">&gt; CLOUDCERT_</a></header>
+<main class="page-main">
+
+<nav class="breadcrumb"><a href="../../index.html">HOME</a> › <a href="../../exams/aws-aif-c01/">AIF-C01 試験ガイド</a> › q078</nav>
+<div class="q-meta"><span>AIF-C01</span><span>基盤モデルの応用</span><span>HARD</span><span>単一選択</span></div>
+<h1>ある企業が Amazon Bedrock で Claude モデルを使って長文の法的契約書を分析するシステムを本番運用している。本番環境でのモデル切り替えを検討する際に、新しいモデルが同等以上の品質を持つことを確認するための評価アプローチとして最も堅牢なものはどれか。</h1>
+<ol class="q-choices">
+<li><b>A.</b> 新モデルのパラメータ数（モデルサイズ）が旧モデル以上であれば品質も上位と判断してよい</li>
+<li><b>B.</b> 社内の法律専門家が作成した「ゴールデンセット（正解付き契約書サンプル）」で両モデルを評価し、ROUGE スコアと人手評価スコアの両方で比較する</li>
+<li><b>C.</b> 新モデルに対して同じプロンプトセットを 10 回ずつ実行し、temperature=0 のときの出力の一貫性を確認する</li>
+<li><b>D.</b> 新モデルをファインチューニングした後、本番トラフィックにいきなり投入してユーザーのフィードバックで品質を判断する</li>
+</ol>
+<details class="q-answer">
+<summary>解答と解説を見る</summary>
+<div class="inner">
+<p><b>正解: B</b></p>
+<p>モデル評価は「自動評価指標（ROUGE等）」と「人手評価」を組み合わせたゴールデンセット評価が最も信頼性が高い。ゴールデンセットとは正解ラベルが付いた代表的なテストケース集のことで、ドメイン専門家（本問では法律専門家）が作成することで業務上の品質基準を正確に反映できる。これにより新旧モデルを同条件で定量・定性的に比較できる。Cの一貫性確認は再現性の評価には有効だが、法的分析の「正しさ」を測る指標にはならない。Dの本番即時投入はリスクが高く、品質問題が発生した場合の影響が大きい。適切な評価なしに本番切り替えは不適切。Aのパラメータ数はモデル能力の粗い指標にはなるが、特定タスク（法的契約書分析）での品質を保証するものではない。蒸留等により小型モデルが大型モデルを特定タスクで上回るケースも多い。</p>
+
+</div>
+</details>
+<div class="cta-box"><a class="btn btn-primary" href="../../exam.html?exam=aws-aif-c01">▸ この試験を本気で演習する（全150問・無料）</a></div>
+<nav class="q-nav">
+<span><a href="q077.html">← 前の問題</a></span>
+<span><a href="q079.html">次の問題 →</a></span>
+</nav>
+<section class="related"><h2>同じ分野の関連問題</h2><ul class="q-list">
+<li><a href="q077.html">ある研究機関が Amazon Bedrock の基盤モデルを使って科学論文の要約を生成するシステムを構築した。品質評価に…</a></li>
+<li><a href="q079.html">ある企業がコールセンターの通話録音を自動でテキスト化し、Amazon Bedrock の基盤モデルで「顧客感情の分類（肯…</a></li>
+<li><a href="q076.html">ある企業がカスタマーサポートの効率化のため、Amazon Bedrock エージェントを使って「ユーザーの問い合わせ内容…</a></li>
+<li><a href="q080.html">ある製薬会社が自社の医薬品承認文書（数千件）を使って Amazon Bedrock のモデルをカスタマイズし、社内専門用…</a></li>
+</ul></section>
+</main>
+<footer class="page-footer">
+<nav class="hub-nav"><a href="../../exams/aws-clf-c02/">CLF-C02 試験ガイド</a><a href="../../exams/aws-aif-c01/">AIF-C01 試験ガイド</a><a href="../../exams/aws-saa-c03/">SAA-C03 試験ガイド</a><a href="../../exams/aws-dva-c02/">DVA-C02 試験ガイド</a><a href="../../exams/aws-sap-c02/">SAP-C02 試験ガイド</a><a href="../../exams/gcp-cdl/">CDL 試験ガイド</a><a href="../../exams/gcp-ace/">ACE 試験ガイド</a><a href="../../exams/azure-az900/">AZ-900 試験ガイド</a><a href="../../exams/azure-ai900/">AI-900 試験ガイド</a><a href="../../exams/azure-dp900/">DP-900 試験ガイド</a><a href="../../exams/azure-sc900/">SC-900 試験ガイド</a><a href="../../exams/azure-az104/">AZ-104 試験ガイド</a></nav>
+<nav class="site-nav"><a href="../../guide/">資格ガイド</a><a href="../../learn/">サービス解説</a><a href="../../career/">キャリア</a><a href="../../about.html">運営者情報</a><a href="../../privacy.html">プライバシーポリシー</a><a href="../../contact.html">お問い合わせ</a></nav>
+<p class="copy">© CLOUDCERT_ — 本サイトは各認定試験の公式試験ではなく、収録問題はすべてオリジナルの演習問題です。</p>
+</footer>
+</body>
+</html>

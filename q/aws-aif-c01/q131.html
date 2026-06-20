@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>【AIF-C01 演習問題 #131】ある金融機関が AWS 上で機密性の高い顧客データを使って機械学習モデルをトレーニングして…</title>
+<meta name="description" content="AIF-C01の本試験レベル演習問題。ある金融機関が AWS 上で機密性の高い顧客データを使って機械学習モデルをトレーニングしている。保存中のデータを暗号化するためにどのサービスを使うべきか。 全選択肢の解説つき。">
+<link rel="canonical" href="https://cloudcert.app/q/aws-aif-c01/q131.html">
+<meta property="og:title" content="【AIF-C01 演習問題 #131】ある金融機関が AWS 上で機密性の高い顧客データを使って機械学習モデルをトレーニングして…">
+<meta property="og:description" content="AIF-C01の本試験レベル演習問題。ある金融機関が AWS 上で機密性の高い顧客データを使って機械学習モデルをトレーニングしている。保存中のデータを暗号化するためにどのサービスを使うべきか。 全選択肢の解説つき。">
+<meta property="og:url" content="https://cloudcert.app/q/aws-aif-c01/q131.html">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="CLOUDCERT_">
+<meta property="og:image" content="https://cloudcert.app/assets/og.png">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='80' font-size='80' fill='%233fe0a4' font-family='monospace'>▸</text></svg>">
+
+<meta name="google-adsense-account" content="ca-pub-5647574947191958">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+JP:wght@400;500;700&family=JetBrains+Mono:wght@400;600;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../../css/style.css">
+<link rel="stylesheet" href="../../css/page.css">
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-SZR5CB5Q3X"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag('js',new Date());gtag('config','G-SZR5CB5Q3X');</script>
+<script type="application/ld+json">[{"@context":"https://schema.org/","@type":"Quiz","about":{"@type":"Thing","name":"AWS Certified AI Practitioner"},"hasPart":[{"@type":"Question","eduQuestionType":"Multiple choice","learningResourceType":"Practice problem","text":"ある金融機関が AWS 上で機密性の高い顧客データを使って機械学習モデルをトレーニングしている。保存中のデータを暗号化するためにどのサービスを使うべきか。","suggestedAnswer":[{"@type":"Answer","position":0,"text":"AWS Shield"},{"@type":"Answer","position":1,"text":"AWS WAF"},{"@type":"Answer","position":3,"text":"Amazon Inspector"}],"acceptedAnswer":{"@type":"Answer","position":2,"text":"AWS Key Management Service (KMS)","comment":{"@type":"Comment","text":"AWS KMS はデータの暗号化キーを一元管理するサービスで、S3 や EBS などに保存されるデータの暗号化に使用される。SageMaker の S3 データや EBS ボリュームを KMS カスタマーマネージドキーで暗号化することで、保存中データを保護できる。AのAWS ShieldはDDoS攻撃からの保護サービス。BのAWS WAFはウェブアプリケーションファイアウォールでHTTP脅威対策。DのAmazon Inspectorは EC2 や ECR のセキュリティ脆弱性を自動評価するサービスであり、いずれもデータ暗号化の用途ではない。"}}}]},{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"HOME","item":"https://cloudcert.app/"},{"@type":"ListItem","position":2,"name":"AIF-C01 試験ガイド","item":"https://cloudcert.app/exams/aws-aif-c01/"},{"@type":"ListItem","position":3,"name":"q131"}]}]</script>
+</head>
+<body class="page-body">
+<header class="page-header"><a class="page-logo" href="../../index.html">&gt; CLOUDCERT_</a></header>
+<main class="page-main">
+
+<nav class="breadcrumb"><a href="../../index.html">HOME</a> › <a href="../../exams/aws-aif-c01/">AIF-C01 試験ガイド</a> › q131</nav>
+<div class="q-meta"><span>AIF-C01</span><span>AI ソリューションのセキュリティ、コンプライアンス、ガバナンス</span><span>EASY</span><span>単一選択</span></div>
+<h1>ある金融機関が AWS 上で機密性の高い顧客データを使って機械学習モデルをトレーニングしている。保存中のデータを暗号化するためにどのサービスを使うべきか。</h1>
+<ol class="q-choices">
+<li><b>A.</b> AWS Shield</li>
+<li><b>B.</b> AWS WAF</li>
+<li><b>C.</b> AWS Key Management Service (KMS)</li>
+<li><b>D.</b> Amazon Inspector</li>
+</ol>
+<details class="q-answer">
+<summary>解答と解説を見る</summary>
+<div class="inner">
+<p><b>正解: C</b></p>
+<p>AWS KMS はデータの暗号化キーを一元管理するサービスで、S3 や EBS などに保存されるデータの暗号化に使用される。SageMaker の S3 データや EBS ボリュームを KMS カスタマーマネージドキーで暗号化することで、保存中データを保護できる。AのAWS ShieldはDDoS攻撃からの保護サービス。BのAWS WAFはウェブアプリケーションファイアウォールでHTTP脅威対策。DのAmazon Inspectorは EC2 や ECR のセキュリティ脆弱性を自動評価するサービスであり、いずれもデータ暗号化の用途ではない。</p>
+<div class="svc-links">📚 関連サービスの解説: <a href="../../learn/aws-kms.html">AWS KMS</a></div>
+</div>
+</details>
+<div class="cta-box"><a class="btn btn-primary" href="../../exam.html?exam=aws-aif-c01">▸ この試験を本気で演習する（全150問・無料）</a></div>
+<nav class="q-nav">
+<span><a href="q130.html">← 前の問題</a></span>
+<span><a href="q132.html">次の問題 →</a></span>
+</nav>
+<section class="related"><h2>同じ分野の関連問題</h2><ul class="q-list">
+<li><a href="q130.html">ある企業が Amazon SageMaker を使ってモデルをトレーニングしています。トレーニングジョブが S3 バケッ…</a></li>
+<li><a href="q132.html">ある企業が AWS 上の AI ワークロードについて、いつ誰がどの API を呼び出したかを完全に追跡したい。最小限の追…</a></li>
+<li><a href="q133.html">ある企業が規制対応のために、自社の AWS 環境が SOC 2 や PCI DSS などのコンプライアンスフレームワーク…</a></li>
+<li><a href="q134.html">ある医療機関が患者データを含む大量の非構造化テキストを S3 に保存している。HIPAA 対応のためにこれらのドキュメン…</a></li>
+</ul></section>
+</main>
+<footer class="page-footer">
+<nav class="hub-nav"><a href="../../exams/aws-clf-c02/">CLF-C02 試験ガイド</a><a href="../../exams/aws-aif-c01/">AIF-C01 試験ガイド</a><a href="../../exams/aws-saa-c03/">SAA-C03 試験ガイド</a><a href="../../exams/aws-dva-c02/">DVA-C02 試験ガイド</a><a href="../../exams/aws-sap-c02/">SAP-C02 試験ガイド</a><a href="../../exams/gcp-cdl/">CDL 試験ガイド</a><a href="../../exams/gcp-ace/">ACE 試験ガイド</a><a href="../../exams/azure-az900/">AZ-900 試験ガイド</a><a href="../../exams/azure-ai900/">AI-900 試験ガイド</a><a href="../../exams/azure-dp900/">DP-900 試験ガイド</a><a href="../../exams/azure-sc900/">SC-900 試験ガイド</a><a href="../../exams/azure-az104/">AZ-104 試験ガイド</a></nav>
+<nav class="site-nav"><a href="../../guide/">資格ガイド</a><a href="../../learn/">サービス解説</a><a href="../../career/">キャリア</a><a href="../../about.html">運営者情報</a><a href="../../privacy.html">プライバシーポリシー</a><a href="../../contact.html">お問い合わせ</a></nav>
+<p class="copy">© CLOUDCERT_ — 本サイトは各認定試験の公式試験ではなく、収録問題はすべてオリジナルの演習問題です。</p>
+</footer>
+</body>
+</html>

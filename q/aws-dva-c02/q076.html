@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>【DVA-C02 演習問題 #76】ある開発者は AWS Systems Manager Parameter Store を使…</title>
+<meta name="description" content="DVA-C02の本試験レベル演習問題。ある開発者は AWS Systems Manager Parameter Store を使って設定値を管理しています。現在、標準パラメータ（Standard tier）を使用していま… 全選択肢の解説つき。">
+<link rel="canonical" href="https://cloudcert.app/q/aws-dva-c02/q076.html">
+<meta property="og:title" content="【DVA-C02 演習問題 #76】ある開発者は AWS Systems Manager Parameter Store を使…">
+<meta property="og:description" content="DVA-C02の本試験レベル演習問題。ある開発者は AWS Systems Manager Parameter Store を使って設定値を管理しています。現在、標準パラメータ（Standard tier）を使用していま… 全選択肢の解説つき。">
+<meta property="og:url" content="https://cloudcert.app/q/aws-dva-c02/q076.html">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="CLOUDCERT_">
+<meta property="og:image" content="https://cloudcert.app/assets/og.png">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='80' font-size='80' fill='%233fe0a4' font-family='monospace'>▸</text></svg>">
+
+<meta name="google-adsense-account" content="ca-pub-5647574947191958">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+JP:wght@400;500;700&family=JetBrains+Mono:wght@400;600;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../../css/style.css">
+<link rel="stylesheet" href="../../css/page.css">
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-SZR5CB5Q3X"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag('js',new Date());gtag('config','G-SZR5CB5Q3X');</script>
+<script type="application/ld+json">[{"@context":"https://schema.org/","@type":"Quiz","about":{"@type":"Thing","name":"AWS Certified Developer - Associate"},"hasPart":[{"@type":"Question","eduQuestionType":"Multiple choice","learningResourceType":"Practice problem","text":"ある開発者は AWS Systems Manager Parameter Store を使って設定値を管理しています。現在、標準パラメータ（Standard tier）を使用していますが、8KB を超える設定ファイルを保存したいという新しい要件が出てきました。最小限の変更で要件を満たすにはどうすればよいですか？","suggestedAnswer":[{"@type":"Answer","position":0,"text":"Parameter Store を諦めて Secrets Manager に移行し大容量のデータを保存する"},{"@type":"Answer","position":1,"text":"標準パラメータのままで使用し、8KB を超える部分は複数のパラメータに分割して保存する"},{"@type":"Answer","position":2,"text":"パラメータを Advanced tier に変更する（Advanced パラメータは最大 8KB → 最大 8KB のため変更不要）"}],"acceptedAnswer":{"@type":"Answer","position":3,"text":"パラメータを Advanced tier に変更する（Advanced パラメータは最大 8192 バイトまで格納可能）","comment":{"@type":"Comment","text":"Parameter Store の Standard tier は最大 4KB（4096 バイト）、Advanced tier は最大 8KB（8192 バイト）のパラメータを保存できます。8KB を超えるデータが要件の場合は Advanced tier への変更が必要です。Advanced tier はパラメータあたり月額 0.05 USD の追加費用が発生しますが、運用上の変更は最小です。B の分割保存はアプリケーション側で結合ロジックを実装する必要があり、管理負荷が増加します。C の説明は誤りで、Standard は 4KB、Advanced は 8KB が上限であり異なります。A の Secrets Manager への移行はコストが高く、設定ファイル管理には過剰です。"}}}]},{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"HOME","item":"https://cloudcert.app/"},{"@type":"ListItem","position":2,"name":"DVA-C02 試験ガイド","item":"https://cloudcert.app/exams/aws-dva-c02/"},{"@type":"ListItem","position":3,"name":"q076"}]}]</script>
+</head>
+<body class="page-body">
+<header class="page-header"><a class="page-logo" href="../../index.html">&gt; CLOUDCERT_</a></header>
+<main class="page-main">
+
+<nav class="breadcrumb"><a href="../../index.html">HOME</a> › <a href="../../exams/aws-dva-c02/">DVA-C02 試験ガイド</a> › q076</nav>
+<div class="q-meta"><span>DVA-C02</span><span>セキュリティ</span><span>MEDIUM</span><span>単一選択</span></div>
+<h1>ある開発者は AWS Systems Manager Parameter Store を使って設定値を管理しています。現在、標準パラメータ（Standard tier）を使用していますが、8KB を超える設定ファイルを保存したいという新しい要件が出てきました。最小限の変更で要件を満たすにはどうすればよいですか？</h1>
+<ol class="q-choices">
+<li><b>A.</b> Parameter Store を諦めて Secrets Manager に移行し大容量のデータを保存する</li>
+<li><b>B.</b> 標準パラメータのままで使用し、8KB を超える部分は複数のパラメータに分割して保存する</li>
+<li><b>C.</b> パラメータを Advanced tier に変更する（Advanced パラメータは最大 8KB → 最大 8KB のため変更不要）</li>
+<li><b>D.</b> パラメータを Advanced tier に変更する（Advanced パラメータは最大 8192 バイトまで格納可能）</li>
+</ol>
+<details class="q-answer">
+<summary>解答と解説を見る</summary>
+<div class="inner">
+<p><b>正解: D</b></p>
+<p>Parameter Store の Standard tier は最大 4KB（4096 バイト）、Advanced tier は最大 8KB（8192 バイト）のパラメータを保存できます。8KB を超えるデータが要件の場合は Advanced tier への変更が必要です。Advanced tier はパラメータあたり月額 0.05 USD の追加費用が発生しますが、運用上の変更は最小です。B の分割保存はアプリケーション側で結合ロジックを実装する必要があり、管理負荷が増加します。C の説明は誤りで、Standard は 4KB、Advanced は 8KB が上限であり異なります。A の Secrets Manager への移行はコストが高く、設定ファイル管理には過剰です。</p>
+
+</div>
+</details>
+<div class="cta-box"><a class="btn btn-primary" href="../../exam.html?exam=aws-dva-c02">▸ この試験を本気で演習する（全150問・無料）</a></div>
+<nav class="q-nav">
+<span><a href="q075.html">← 前の問題</a></span>
+<span><a href="q077.html">次の問題 →</a></span>
+</nav>
+<section class="related"><h2>同じ分野の関連問題</h2><ul class="q-list">
+<li><a href="q075.html">ある企業は S3 に保存する機密ファイルの暗号化キーを自社のオンプレミスキー管理システム（KMS）で管理することが義務付…</a></li>
+<li><a href="q077.html">ある企業の Cognito ユーザープールでは、ユーザーサインアップ時に企業ドメイン（@example.com）のメール…</a></li>
+<li><a href="q074.html">ある企業は AWS KMS のカスタマーマネージドキー（CMK）を使って S3 オブジェクトを暗号化しています。コンプラ…</a></li>
+<li><a href="q078.html">ある開発チームは IAM ロールを使って S3 の署名付き URL（Presigned URL）を生成するサービスを構築…</a></li>
+</ul></section>
+</main>
+<footer class="page-footer">
+<nav class="hub-nav"><a href="../../exams/aws-clf-c02/">CLF-C02 試験ガイド</a><a href="../../exams/aws-aif-c01/">AIF-C01 試験ガイド</a><a href="../../exams/aws-saa-c03/">SAA-C03 試験ガイド</a><a href="../../exams/aws-dva-c02/">DVA-C02 試験ガイド</a><a href="../../exams/aws-sap-c02/">SAP-C02 試験ガイド</a><a href="../../exams/gcp-cdl/">CDL 試験ガイド</a><a href="../../exams/gcp-ace/">ACE 試験ガイド</a><a href="../../exams/azure-az900/">AZ-900 試験ガイド</a><a href="../../exams/azure-ai900/">AI-900 試験ガイド</a><a href="../../exams/azure-dp900/">DP-900 試験ガイド</a><a href="../../exams/azure-sc900/">SC-900 試験ガイド</a><a href="../../exams/azure-az104/">AZ-104 試験ガイド</a></nav>
+<nav class="site-nav"><a href="../../guide/">資格ガイド</a><a href="../../learn/">サービス解説</a><a href="../../career/">キャリア</a><a href="../../about.html">運営者情報</a><a href="../../privacy.html">プライバシーポリシー</a><a href="../../contact.html">お問い合わせ</a></nav>
+<p class="copy">© CLOUDCERT_ — 本サイトは各認定試験の公式試験ではなく、収録問題はすべてオリジナルの演習問題です。</p>
+</footer>
+</body>
+</html>

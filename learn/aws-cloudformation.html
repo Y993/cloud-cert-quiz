@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AWS CloudFormationとは？試験に出るポイントと演習問題</title>
+<meta name="description" content="AWS CloudFormation（AWS）の要点と資格試験での問われ方を解説。登場する演習問題7問と公式ドキュメントへのリンクつき。">
+<link rel="canonical" href="https://cloudcert.app/learn/aws-cloudformation.html">
+<meta property="og:title" content="AWS CloudFormationとは？試験に出るポイントと演習問題">
+<meta property="og:description" content="AWS CloudFormation（AWS）の要点と資格試験での問われ方を解説。登場する演習問題7問と公式ドキュメントへのリンクつき。">
+<meta property="og:url" content="https://cloudcert.app/learn/aws-cloudformation.html">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="CLOUDCERT_">
+<meta property="og:image" content="https://cloudcert.app/assets/og.png">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='80' font-size='80' fill='%233fe0a4' font-family='monospace'>▸</text></svg>">
+
+<meta name="google-adsense-account" content="ca-pub-5647574947191958">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+JP:wght@400;500;700&family=JetBrains+Mono:wght@400;600;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../css/style.css">
+<link rel="stylesheet" href="../css/page.css">
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-SZR5CB5Q3X"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag('js',new Date());gtag('config','G-SZR5CB5Q3X');</script>
+<script type="application/ld+json">[{"@context":"https://schema.org","@type":"TechArticle","headline":"AWS CloudFormationとは？試験に出るポイントと演習問題","description":"AWS CloudFormation（AWS）の要点と資格試験での問われ方を解説。登場する演習問題7問と公式ドキュメントへのリンクつき。","inLanguage":"ja","about":{"@type":"Thing","name":"AWS CloudFormation"},"author":{"@type":"Organization","name":"CLOUDCERT_"},"publisher":{"@type":"Organization","name":"CLOUDCERT_"},"mainEntityOfPage":"https://cloudcert.app/learn/aws-cloudformation.html"},{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"HOME","item":"https://cloudcert.app/"},{"@type":"ListItem","position":2,"name":"サービス解説","item":"https://cloudcert.app/learn/"},{"@type":"ListItem","position":3,"name":"AWS CloudFormation"}]}]</script>
+</head>
+<body class="page-body">
+<header class="page-header"><a class="page-logo" href="../index.html">&gt; CLOUDCERT_</a></header>
+<main class="page-main">
+
+<nav class="breadcrumb"><a href="../index.html">HOME</a> › <a href="./">サービス解説</a> › AWS CloudFormation</nav>
+<div class="learn-head">
+<div class="badges"><span class="badge" data-provider="aws">AWS</span><span class="badge">管理・ガバナンス</span><span class="badge badge-q">演習7問</span></div>
+<h1>AWS CloudFormationとは</h1>
+</div>
+<p class="lead">AWSインフラをJSON/YAMLテンプレートで記述し、スタックとして一括プロビジョニング・管理するIaC（Infrastructure as Code）サービス。変更セット（Change Set）で実行前に変更内容を確認できる。</p>
+<p>スタックセットで複数アカウント・複数リージョンに同一スタックをデプロイできる。ネストされたスタックで大規模テンプレートをモジュール化できる。ドリフト検出でテンプレートと実態のズレを検出する。</p>
+<p><a class="official-btn" href="https://docs.aws.amazon.com/ja_jp/AWSCloudFormation/latest/UserGuide/Welcome.html" target="_blank" rel="noopener">公式ドキュメント →</a></p>
+<h2>試験での問われ方</h2>
+<p>SAAとSAPでは「インフラのコード化・反復可能なデプロイ・環境の一貫性確保」シナリオでCloudFormationを選ぶ。TerraformはサードパーティのIaCツールで、CloudFormationはAWSネイティブという使い分け。</p>
+<p>スタック更新時にリソースが置換（Replace）されるか更新（Update）されるかの判断・削除ポリシー（DeletionPolicy: Retain/Snapshot）・CloudFormationカスタムリソース（Lambdaで拡張）がDVA・SAPで問われる。</p>
+<h2>このサービスが登場する演習問題（7問）</h2>
+<ul class="q-list">
+<li><a href="../q/aws-clf-c02/q021.html">【CLF-C02】あるDevOpsチームが、「インフラストラクチャをコードとして（IaC）」管理する手法を採用しています。AWSでIaCを…</a></li>
+<li><a href="../q/aws-saa-c03/q022.html">【SAA-C03】ある企業が、Amazon ECS（Fargate）上で複数のマイクロサービスを運用している。各マイクロサービスはそれぞれ…</a></li>
+<li><a href="../q/aws-dva-c02/q069.html">【DVA-C02】ある開発者は CodePipeline から本番環境の CloudFormation スタックをデプロイしています。Co…</a></li>
+<li><a href="../q/aws-dva-c02/q113.html">【DVA-C02】ある企業がAWS CloudFormationを使ってEC2インスタンスとRDSインスタンスを管理している。本番スタック…</a></li>
+<li><a href="../q/aws-sap-c02/q012.html">【SAP-C02】ある企業が AWS に移行しており、セキュリティチームはすべての VPC で VPC Flow Logs を有効化し、ロ…</a></li>
+<li><a href="../q/aws-sap-c02/q013.html">【SAP-C02】ある製造業企業が AWS Organizations で 100 以上の AWS アカウントを管理しています。IT セキ…</a></li>
+<li><a href="../q/aws-sap-c02/q138.html">【SAP-C02】ある企業が AWS Organizations で管理するマルチアカウント環境で、AWS のサービスカタログを使って標準…</a></li>
+</ul>
+<h2>関連サービス</h2><ul class="q-list">
+<li><a href="aws-cloudtrail.html">AWS CloudTrail</a></li>
+<li><a href="amazon-cloudwatch.html">Amazon CloudWatch</a></li>
+<li><a href="aws-config.html">AWS Config</a></li>
+<li><a href="aws-organizations.html">AWS Organizations</a></li>
+<li><a href="aws-systems-manager.html">AWS Systems Manager</a></li></ul>
+</main>
+<footer class="page-footer">
+<nav class="hub-nav"><a href="../exams/aws-clf-c02/">CLF-C02 試験ガイド</a><a href="../exams/aws-aif-c01/">AIF-C01 試験ガイド</a><a href="../exams/aws-saa-c03/">SAA-C03 試験ガイド</a><a href="../exams/aws-dva-c02/">DVA-C02 試験ガイド</a><a href="../exams/aws-sap-c02/">SAP-C02 試験ガイド</a><a href="../exams/gcp-cdl/">CDL 試験ガイド</a><a href="../exams/gcp-ace/">ACE 試験ガイド</a><a href="../exams/azure-az900/">AZ-900 試験ガイド</a><a href="../exams/azure-ai900/">AI-900 試験ガイド</a><a href="../exams/azure-dp900/">DP-900 試験ガイド</a><a href="../exams/azure-sc900/">SC-900 試験ガイド</a><a href="../exams/azure-az104/">AZ-104 試験ガイド</a></nav>
+<nav class="site-nav"><a href="../guide/">資格ガイド</a><a href="../learn/">サービス解説</a><a href="../career/">キャリア</a><a href="../about.html">運営者情報</a><a href="../privacy.html">プライバシーポリシー</a><a href="../contact.html">お問い合わせ</a></nav>
+<p class="copy">© CLOUDCERT_ — 本サイトは各認定試験の公式試験ではなく、収録問題はすべてオリジナルの演習問題です。</p>
+</footer>
+</body>
+</html>

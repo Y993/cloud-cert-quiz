@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Cloud Loggingとは？試験に出るポイントと演習問題</title>
+<meta name="description" content="Cloud Logging（Google Cloud）の要点と資格試験での問われ方を解説。登場する演習問題4問と公式ドキュメントへのリンクつき。">
+<link rel="canonical" href="https://cloudcert.app/learn/cloud-logging.html">
+<meta property="og:title" content="Cloud Loggingとは？試験に出るポイントと演習問題">
+<meta property="og:description" content="Cloud Logging（Google Cloud）の要点と資格試験での問われ方を解説。登場する演習問題4問と公式ドキュメントへのリンクつき。">
+<meta property="og:url" content="https://cloudcert.app/learn/cloud-logging.html">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="CLOUDCERT_">
+<meta property="og:image" content="https://cloudcert.app/assets/og.png">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='80' font-size='80' fill='%233fe0a4' font-family='monospace'>▸</text></svg>">
+
+<meta name="google-adsense-account" content="ca-pub-5647574947191958">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+JP:wght@400;500;700&family=JetBrains+Mono:wght@400;600;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../css/style.css">
+<link rel="stylesheet" href="../css/page.css">
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-SZR5CB5Q3X"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag('js',new Date());gtag('config','G-SZR5CB5Q3X');</script>
+<script type="application/ld+json">[{"@context":"https://schema.org","@type":"TechArticle","headline":"Cloud Loggingとは？試験に出るポイントと演習問題","description":"Cloud Logging（Google Cloud）の要点と資格試験での問われ方を解説。登場する演習問題4問と公式ドキュメントへのリンクつき。","inLanguage":"ja","about":{"@type":"Thing","name":"Cloud Logging"},"author":{"@type":"Organization","name":"CLOUDCERT_"},"publisher":{"@type":"Organization","name":"CLOUDCERT_"},"mainEntityOfPage":"https://cloudcert.app/learn/cloud-logging.html"},{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"HOME","item":"https://cloudcert.app/"},{"@type":"ListItem","position":2,"name":"サービス解説","item":"https://cloudcert.app/learn/"},{"@type":"ListItem","position":3,"name":"Cloud Logging"}]}]</script>
+</head>
+<body class="page-body">
+<header class="page-header"><a class="page-logo" href="../index.html">&gt; CLOUDCERT_</a></header>
+<main class="page-main">
+
+<nav class="breadcrumb"><a href="../index.html">HOME</a> › <a href="./">サービス解説</a> › Cloud Logging</nav>
+<div class="learn-head">
+<div class="badges"><span class="badge" data-provider="gcp">Google Cloud</span><span class="badge">運用</span><span class="badge badge-q">演習4問</span></div>
+<h1>Cloud Loggingとは</h1>
+</div>
+<p class="lead">Google Cloud サービスとアプリケーションからのログを一元収集・保管・検索するマネージドロギングサービス。GKE・Cloud Run・App Engine などのログはデフォルトで自動送信され、VM は Ops Agent 経由で収集する。</p>
+<p>ログバケットでデータ保持期間をカスタマイズでき、デフォルト _Default バケットは 30 日間保持。長期保管が必要なら Cloud Storage へエクスポート（シンク）設定する。BigQuery へのシンクで分析クエリも可能。</p>
+<p>ログベースのメトリクスを作成し Cloud Monitoring のアラートと連携することで、特定ログパターン出現時に通知を送るパターンが実践でよく使われる。</p>
+<p><a class="official-btn" href="https://cloud.google.com/logging/docs?hl=ja" target="_blank" rel="noopener">公式ドキュメント →</a></p>
+<h2>試験での問われ方</h2>
+<p>ACE では ログシンクの設定（Cloud Storage・BigQuery・Pub/Sub への転送フィルタ）と、監査ログの種類（管理アクティビティログは無料・常時有効、データアクセスログは有料・明示的に有効化）が頻出。</p>
+<p>引っかけとして、デフォルトの保持期間は 30 日で長期保管には明示的なシンク設定が必要な点、管理アクティビティログは無効化できない（セキュリティのため）点を押さえる。ログエクスプローラーの Logging Query Language（LQL）の基本構文も ACE で問われる。</p>
+<h2>このサービスが登場する演習問題（4問）</h2>
+<ul class="q-list">
+<li><a href="../q/gcp-cdl/q094.html">【CDL】ある企業が、本番Google Cloudインフラのコード変更ログ、アクセスログ、エラーログをリアルタイムで収集・検索・分…</a></li>
+<li><a href="../q/gcp-ace/q076.html">【ACE】Cloud Logging のログを BigQuery にエクスポートして長期保存と分析を行いたいと考えています。設定す…</a></li>
+<li><a href="../q/gcp-ace/q086.html">【ACE】あなたの会社は本番 Cloud Run サービスで突発的に発生する 500 エラーの原因を特定したいと考えています。エラ…</a></li>
+<li><a href="../q/gcp-ace/q146.html">【ACE】あなたのチームは Cloud Error Reporting を使っています。Cloud Run サービスで Pytho…</a></li>
+</ul>
+<h2>関連サービス</h2><ul class="q-list">
+<li><a href="cloud-monitoring.html">Cloud Monitoring</a></li></ul>
+</main>
+<footer class="page-footer">
+<nav class="hub-nav"><a href="../exams/aws-clf-c02/">CLF-C02 試験ガイド</a><a href="../exams/aws-aif-c01/">AIF-C01 試験ガイド</a><a href="../exams/aws-saa-c03/">SAA-C03 試験ガイド</a><a href="../exams/aws-dva-c02/">DVA-C02 試験ガイド</a><a href="../exams/aws-sap-c02/">SAP-C02 試験ガイド</a><a href="../exams/gcp-cdl/">CDL 試験ガイド</a><a href="../exams/gcp-ace/">ACE 試験ガイド</a><a href="../exams/azure-az900/">AZ-900 試験ガイド</a><a href="../exams/azure-ai900/">AI-900 試験ガイド</a><a href="../exams/azure-dp900/">DP-900 試験ガイド</a><a href="../exams/azure-sc900/">SC-900 試験ガイド</a><a href="../exams/azure-az104/">AZ-104 試験ガイド</a></nav>
+<nav class="site-nav"><a href="../guide/">資格ガイド</a><a href="../learn/">サービス解説</a><a href="../career/">キャリア</a><a href="../about.html">運営者情報</a><a href="../privacy.html">プライバシーポリシー</a><a href="../contact.html">お問い合わせ</a></nav>
+<p class="copy">© CLOUDCERT_ — 本サイトは各認定試験の公式試験ではなく、収録問題はすべてオリジナルの演習問題です。</p>
+</footer>
+</body>
+</html>

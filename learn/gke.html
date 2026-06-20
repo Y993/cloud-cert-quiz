@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Google Kubernetes Engine（GKE）とは？試験に出るポイントと演習問題</title>
+<meta name="description" content="Google Kubernetes Engine（GKE）（Google Cloud）の要点と資格試験での問われ方を解説。登場する演習問題12問と公式ドキュメントへのリンクつき。">
+<link rel="canonical" href="https://cloudcert.app/learn/gke.html">
+<meta property="og:title" content="Google Kubernetes Engine（GKE）とは？試験に出るポイントと演習問題">
+<meta property="og:description" content="Google Kubernetes Engine（GKE）（Google Cloud）の要点と資格試験での問われ方を解説。登場する演習問題12問と公式ドキュメントへのリンクつき。">
+<meta property="og:url" content="https://cloudcert.app/learn/gke.html">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="CLOUDCERT_">
+<meta property="og:image" content="https://cloudcert.app/assets/og.png">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='80' font-size='80' fill='%233fe0a4' font-family='monospace'>▸</text></svg>">
+
+<meta name="google-adsense-account" content="ca-pub-5647574947191958">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+JP:wght@400;500;700&family=JetBrains+Mono:wght@400;600;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../css/style.css">
+<link rel="stylesheet" href="../css/page.css">
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-SZR5CB5Q3X"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag('js',new Date());gtag('config','G-SZR5CB5Q3X');</script>
+<script type="application/ld+json">[{"@context":"https://schema.org","@type":"TechArticle","headline":"Google Kubernetes Engine（GKE）とは？試験に出るポイントと演習問題","description":"Google Kubernetes Engine（GKE）（Google Cloud）の要点と資格試験での問われ方を解説。登場する演習問題12問と公式ドキュメントへのリンクつき。","inLanguage":"ja","about":{"@type":"Thing","name":"Google Kubernetes Engine（GKE）"},"author":{"@type":"Organization","name":"CLOUDCERT_"},"publisher":{"@type":"Organization","name":"CLOUDCERT_"},"mainEntityOfPage":"https://cloudcert.app/learn/gke.html"},{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"HOME","item":"https://cloudcert.app/"},{"@type":"ListItem","position":2,"name":"サービス解説","item":"https://cloudcert.app/learn/"},{"@type":"ListItem","position":3,"name":"Google Kubernetes Engine（GKE）"}]}]</script>
+</head>
+<body class="page-body">
+<header class="page-header"><a class="page-logo" href="../index.html">&gt; CLOUDCERT_</a></header>
+<main class="page-main">
+
+<nav class="breadcrumb"><a href="../index.html">HOME</a> › <a href="./">サービス解説</a> › Google Kubernetes Engine（GKE）</nav>
+<div class="learn-head">
+<div class="badges"><span class="badge" data-provider="gcp">Google Cloud</span><span class="badge">コンテナ</span><span class="badge badge-q">演習12問</span></div>
+<h1>Google Kubernetes Engine（GKE）とは</h1>
+</div>
+<p class="lead">Kubernetes クラスタをマネージドで提供するサービス。ノードの OS アップグレード・セキュリティパッチ・ヘルスチェックを自動化し、マルチゾーン・リージョンクラスタによる高可用性構成も標準サポート。</p>
+<p>モードは Standard と Autopilot の 2 種類。Standard はノードの設定を細かく制御でき、Autopilot は Pod スペックだけ指定すれば Google がノードを自動管理しリソース単位で課金する。</p>
+<p>Google Cloud サービス（Cloud Load Balancing・Artifact Registry・Cloud Monitoring など）と深く統合されており、Workload Identity を使うと Pod から GCP サービスへ安全にアクセスできる。</p>
+<p><a class="official-btn" href="https://cloud.google.com/kubernetes-engine/docs?hl=ja" target="_blank" rel="noopener">公式ドキュメント →</a></p>
+<h2>試験での問われ方</h2>
+<p>Cloud Run・Cloud Functions・GKE の三択では、マイクロサービスを長期稼働させる・複雑なオーケストレーションが必要・Kubernetes のポータビリティが欲しいなら GKE を選ぶ。</p>
+<p>ACE では Autopilot vs Standard の違い（ノード管理の有無・コスト粒度）、Cluster Autoscaler と HPA（Horizontal Pod Autoscaler）の役割分担、Node Pool の使い分けが頻出。引っかけとして、Autopilot は特権コンテナを必要とする DaemonSet を実行できず、通常の DaemonSet も制約が多い（Standard では制限なく使える）という点に注意。</p>
+<h2>このサービスが登場する演習問題（12問）</h2>
+<ul class="q-list">
+<li><a href="../q/gcp-cdl/q058.html">【CDL】ある企業が、コンテナ化されたマイクロサービスアプリケーションを本番環境で運用するためのプラットフォームを選択しています。…</a></li>
+<li><a href="../q/gcp-cdl/q063.html">【CDL】ある企業が、マイクロサービスアーキテクチャのアプリケーションにおいて、サービス間の通信管理（トラフィック制御、相互TLS…</a></li>
+<li><a href="../q/gcp-cdl/q076.html">【CDL】ある企業が、Google Cloudでの継続的デリバリー（CD）パイプラインを構築するために活用できるサービスを2つ選択…</a></li>
+<li><a href="../q/gcp-cdl/q110.html">【CDL】ある企業が、本番Google Cloudリソースへの変更管理プロセスを強化したいと考えています。Terraformによる…</a></li>
+<li><a href="../q/gcp-cdl/q121.html">【CDL】ある企業が、Google CloudのGKEクラスターに対して「ワークロードアイデンティティ（Workload Iden…</a></li>
+<li><a href="../q/gcp-cdl/q136.html">【CDL】ある企業が、Google CloudのGKEで動作するアプリケーションのコスト最適化として「GKE Autopilot」…</a></li>
+<li><a href="../q/gcp-cdl/q142.html">【CDL】ある企業が、Google Cloudで実行中のアプリケーションに対して、外部のペネトレーションテスト（侵入テスト）を実施…</a></li>
+<li><a href="../q/gcp-ace/q043.html">【ACE】あなたのチームは GCP 上で Kubernetes を使ってアプリをデプロイしていますが、インフラ管理の負荷を下げたい…</a></li>
+<li><a href="../q/gcp-ace/q079.html">【ACE】GKE クラスターのノードが定期的にアップグレードされるようにしたいと考えています。Google がノードのアップグレー…</a></li>
+<li><a href="../q/gcp-ace/q133.html">【ACE】Binary Authorization に関する説明として正しいものを 2 つ選択してください。</a></li>
+<li><a href="../q/gcp-ace/q134.html">【ACE】Google Cloud のプロジェクトでリソースが意図せず削除されるリスクを低減したいと考えています。最も効果的な 1…</a></li>
+<li><a href="../q/gcp-ace/q135.html">【ACE】GKE クラスターで Ingress リソースを使って複数のサービスへのトラフィックをパスベースでルーティングしたいと考…</a></li>
+</ul>
+
+</main>
+<footer class="page-footer">
+<nav class="hub-nav"><a href="../exams/aws-clf-c02/">CLF-C02 試験ガイド</a><a href="../exams/aws-aif-c01/">AIF-C01 試験ガイド</a><a href="../exams/aws-saa-c03/">SAA-C03 試験ガイド</a><a href="../exams/aws-dva-c02/">DVA-C02 試験ガイド</a><a href="../exams/aws-sap-c02/">SAP-C02 試験ガイド</a><a href="../exams/gcp-cdl/">CDL 試験ガイド</a><a href="../exams/gcp-ace/">ACE 試験ガイド</a><a href="../exams/azure-az900/">AZ-900 試験ガイド</a><a href="../exams/azure-ai900/">AI-900 試験ガイド</a><a href="../exams/azure-dp900/">DP-900 試験ガイド</a><a href="../exams/azure-sc900/">SC-900 試験ガイド</a><a href="../exams/azure-az104/">AZ-104 試験ガイド</a></nav>
+<nav class="site-nav"><a href="../guide/">資格ガイド</a><a href="../learn/">サービス解説</a><a href="../career/">キャリア</a><a href="../about.html">運営者情報</a><a href="../privacy.html">プライバシーポリシー</a><a href="../contact.html">お問い合わせ</a></nav>
+<p class="copy">© CLOUDCERT_ — 本サイトは各認定試験の公式試験ではなく、収録問題はすべてオリジナルの演習問題です。</p>
+</footer>
+</body>
+</html>

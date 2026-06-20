@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>【AZ-104 演習問題 #111】ある企業がAzure Application Gatewayを使用してWebアプリケーショ…</title>
+<meta name="description" content="AZ-104の本試験レベル演習問題。ある企業がAzure Application Gatewayを使用してWebアプリケーションを運用している。「/api/*」パスのリクエストをAPIバックエンドプール（3台）に、「/s… 全選択肢の解説つき。">
+<link rel="canonical" href="https://cloudcert.app/q/azure-az104/q111.html">
+<meta property="og:title" content="【AZ-104 演習問題 #111】ある企業がAzure Application Gatewayを使用してWebアプリケーショ…">
+<meta property="og:description" content="AZ-104の本試験レベル演習問題。ある企業がAzure Application Gatewayを使用してWebアプリケーションを運用している。「/api/*」パスのリクエストをAPIバックエンドプール（3台）に、「/s… 全選択肢の解説つき。">
+<meta property="og:url" content="https://cloudcert.app/q/azure-az104/q111.html">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="CLOUDCERT_">
+<meta property="og:image" content="https://cloudcert.app/assets/og.png">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='80' font-size='80' fill='%233fe0a4' font-family='monospace'>▸</text></svg>">
+
+<meta name="google-adsense-account" content="ca-pub-5647574947191958">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+JP:wght@400;500;700&family=JetBrains+Mono:wght@400;600;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../../css/style.css">
+<link rel="stylesheet" href="../../css/page.css">
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-SZR5CB5Q3X"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag('js',new Date());gtag('config','G-SZR5CB5Q3X');</script>
+<script type="application/ld+json">[{"@context":"https://schema.org/","@type":"Quiz","about":{"@type":"Thing","name":"Microsoft Azure Administrator"},"hasPart":[{"@type":"Question","eduQuestionType":"Multiple choice","learningResourceType":"Practice problem","text":"ある企業がAzure Application Gatewayを使用してWebアプリケーションを運用している。「/api/*」パスのリクエストをAPIバックエンドプール（3台）に、「/static/*」パスのリクエストをCDNオリジンサーバーに転送し、それ以外のリクエストはデフォルトのWebバックエンドプールに転送したい。この要件を満たす構成はどれか。","suggestedAnswer":[{"@type":"Answer","position":0,"text":"Azure Load BalancerのL7ルールでパスベースのルーティングを設定する"},{"@type":"Answer","position":1,"text":"Azure Front Doorを使用してパスベースのルーティングを設定する"},{"@type":"Answer","position":3,"text":"NSGのフィルタリングルールでHTTPパスに基づいてトラフィックを分割する"}],"acceptedAnswer":{"@type":"Answer","position":2,"text":"Application Gatewayにパスベースのルーティングルールを設定し、URLパスマップで各バックエンドを指定する","comment":{"@type":"Comment","text":"Azure Application GatewayはL7（アプリケーション層）ロードバランサーであり、URLパスベースのルーティングを標準機能として提供している。「URLパスマップ」を使用してルーティングルールを設定し、/api/*をAPIバックエンドプールへ、/static/*をCDNオリジンへ、それ以外をデフォルトバックエンドへとルーティングできる。選択肢BAzure Front Doorも同様のパスベースルーティングが可能だが、Application Gatewayがすでに使用中の環境でFront Doorに移行するのは「不必要な移行」であり、既存Application Gatewayの機能で解決できる。選択肢AのAzure Standard Load BalancerはL4（トランスポート層）バランサーであり、URLパスに基づくルーティングは機能として存在しないため誤り。選択肢DのNSGはトラフィックの許可/拒否のみを制御するツールであり、URLパスに基づくルーティングの機能はない。"}}}]},{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"HOME","item":"https://cloudcert.app/"},{"@type":"ListItem","position":2,"name":"AZ-104 試験ガイド","item":"https://cloudcert.app/exams/azure-az104/"},{"@type":"ListItem","position":3,"name":"q111"}]}]</script>
+</head>
+<body class="page-body">
+<header class="page-header"><a class="page-logo" href="../../index.html">&gt; CLOUDCERT_</a></header>
+<main class="page-main">
+
+<nav class="breadcrumb"><a href="../../index.html">HOME</a> › <a href="../../exams/azure-az104/">AZ-104 試験ガイド</a> › q111</nav>
+<div class="q-meta"><span>AZ-104</span><span>Azure 仮想ネットワークの実装と管理</span><span>MEDIUM</span><span>単一選択</span></div>
+<h1>ある企業がAzure Application Gatewayを使用してWebアプリケーションを運用している。「/api/*」パスのリクエストをAPIバックエンドプール（3台）に、「/static/*」パスのリクエストをCDNオリジンサーバーに転送し、それ以外のリクエストはデフォルトのWebバックエンドプールに転送したい。この要件を満たす構成はどれか。</h1>
+<ol class="q-choices">
+<li><b>A.</b> Azure Load BalancerのL7ルールでパスベースのルーティングを設定する</li>
+<li><b>B.</b> Azure Front Doorを使用してパスベースのルーティングを設定する</li>
+<li><b>C.</b> Application Gatewayにパスベースのルーティングルールを設定し、URLパスマップで各バックエンドを指定する</li>
+<li><b>D.</b> NSGのフィルタリングルールでHTTPパスに基づいてトラフィックを分割する</li>
+</ol>
+<details class="q-answer">
+<summary>解答と解説を見る</summary>
+<div class="inner">
+<p><b>正解: C</b></p>
+<p>Azure Application GatewayはL7（アプリケーション層）ロードバランサーであり、URLパスベースのルーティングを標準機能として提供している。「URLパスマップ」を使用してルーティングルールを設定し、/api/*をAPIバックエンドプールへ、/static/*をCDNオリジンへ、それ以外をデフォルトバックエンドへとルーティングできる。選択肢BAzure Front Doorも同様のパスベースルーティングが可能だが、Application Gatewayがすでに使用中の環境でFront Doorに移行するのは「不必要な移行」であり、既存Application Gatewayの機能で解決できる。選択肢AのAzure Standard Load BalancerはL4（トランスポート層）バランサーであり、URLパスに基づくルーティングは機能として存在しないため誤り。選択肢DのNSGはトラフィックの許可/拒否のみを制御するツールであり、URLパスに基づくルーティングの機能はない。</p>
+<div class="svc-links">📚 関連サービスの解説: <a href="../../learn/azure-application-gateway.html">Azure Application Gateway</a></div>
+</div>
+</details>
+<div class="cta-box"><a class="btn btn-primary" href="../../exam.html?exam=azure-az104">▸ この試験を本気で演習する（全150問・無料）</a></div>
+<nav class="q-nav">
+<span><a href="q110.html">← 前の問題</a></span>
+<span><a href="q112.html">次の問題 →</a></span>
+</nav>
+<section class="related"><h2>同じ分野の関連問題</h2><ul class="q-list">
+<li><a href="q110.html">ある企業がAzure Standard Load Balancerを使用して3台のVMにHTTPトラフィックを分散してい…</a></li>
+<li><a href="q112.html">ある企業のネットワーク管理者が、Azure VMがインターネット上の特定のIPアドレスへ通信できるかどうかを確認したい。…</a></li>
+<li><a href="q109.html">ある企業がハイブリッドクラウド環境を構築しており、オンプレミスのDNSサーバー（192.168.1.10）がAzure上…</a></li>
+<li><a href="q113.html">ある企業がAzure VMからオンプレミスのデータベースサーバーへの接続に問題が発生している。Network Watch…</a></li>
+</ul></section>
+</main>
+<footer class="page-footer">
+<nav class="hub-nav"><a href="../../exams/aws-clf-c02/">CLF-C02 試験ガイド</a><a href="../../exams/aws-aif-c01/">AIF-C01 試験ガイド</a><a href="../../exams/aws-saa-c03/">SAA-C03 試験ガイド</a><a href="../../exams/aws-dva-c02/">DVA-C02 試験ガイド</a><a href="../../exams/aws-sap-c02/">SAP-C02 試験ガイド</a><a href="../../exams/gcp-cdl/">CDL 試験ガイド</a><a href="../../exams/gcp-ace/">ACE 試験ガイド</a><a href="../../exams/azure-az900/">AZ-900 試験ガイド</a><a href="../../exams/azure-ai900/">AI-900 試験ガイド</a><a href="../../exams/azure-dp900/">DP-900 試験ガイド</a><a href="../../exams/azure-sc900/">SC-900 試験ガイド</a><a href="../../exams/azure-az104/">AZ-104 試験ガイド</a></nav>
+<nav class="site-nav"><a href="../../guide/">資格ガイド</a><a href="../../learn/">サービス解説</a><a href="../../career/">キャリア</a><a href="../../about.html">運営者情報</a><a href="../../privacy.html">プライバシーポリシー</a><a href="../../contact.html">お問い合わせ</a></nav>
+<p class="copy">© CLOUDCERT_ — 本サイトは各認定試験の公式試験ではなく、収録問題はすべてオリジナルの演習問題です。</p>
+</footer>
+</body>
+</html>

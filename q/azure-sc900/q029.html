@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>【SC-900 演習問題 #29】ある企業のセキュリティ管理者が、リモートワーク中の社員が会社所有のデバイスから社内アプリに…</title>
+<meta name="description" content="SC-900の本試験レベル演習問題。ある企業のセキュリティ管理者が、リモートワーク中の社員が会社所有のデバイスから社内アプリにアクセスする際はMFAを不要とし、個人デバイスからのアクセスには必ずMFAを要求するポリシーを… 全選択肢の解説つき。">
+<link rel="canonical" href="https://cloudcert.app/q/azure-sc900/q029.html">
+<meta property="og:title" content="【SC-900 演習問題 #29】ある企業のセキュリティ管理者が、リモートワーク中の社員が会社所有のデバイスから社内アプリに…">
+<meta property="og:description" content="SC-900の本試験レベル演習問題。ある企業のセキュリティ管理者が、リモートワーク中の社員が会社所有のデバイスから社内アプリにアクセスする際はMFAを不要とし、個人デバイスからのアクセスには必ずMFAを要求するポリシーを… 全選択肢の解説つき。">
+<meta property="og:url" content="https://cloudcert.app/q/azure-sc900/q029.html">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="CLOUDCERT_">
+<meta property="og:image" content="https://cloudcert.app/assets/og.png">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='80' font-size='80' fill='%233fe0a4' font-family='monospace'>▸</text></svg>">
+
+<meta name="google-adsense-account" content="ca-pub-5647574947191958">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+JP:wght@400;500;700&family=JetBrains+Mono:wght@400;600;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../../css/style.css">
+<link rel="stylesheet" href="../../css/page.css">
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-SZR5CB5Q3X"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag('js',new Date());gtag('config','G-SZR5CB5Q3X');</script>
+<script type="application/ld+json">[{"@context":"https://schema.org/","@type":"Quiz","about":{"@type":"Thing","name":"Microsoft Security, Compliance, and Identity Fundamentals"},"hasPart":[{"@type":"Question","eduQuestionType":"Multiple choice","learningResourceType":"Practice problem","text":"ある企業のセキュリティ管理者が、リモートワーク中の社員が会社所有のデバイスから社内アプリにアクセスする際はMFAを不要とし、個人デバイスからのアクセスには必ずMFAを要求するポリシーを設定したい。最も適切な方法はどれか。","suggestedAnswer":[{"@type":"Answer","position":0,"text":"Entra ID Protectionのリスクポリシーで個人デバイスをリスクありとマークする"},{"@type":"Answer","position":2,"text":"各社員のアカウントの認証設定でMFA要否を個別に切り替える"},{"@type":"Answer","position":3,"text":"グループポリシーオブジェクト（GPO）で会社デバイスにMFA免除設定を展開する"}],"acceptedAnswer":{"@type":"Answer","position":1,"text":"条件付きアクセスポリシーで、デバイスのコンプライアンス状態を条件に含めMFAを制御する","comment":{"@type":"Comment","text":"条件付きアクセスはユーザー、デバイスの状態、場所、アプリなど複数の条件を組み合わせてアクセスポリシーを動的に制御できる。Intuneに登録された会社所有のコンプライアントデバイスはMFA免除とし、非コンプライアントデバイスや個人デバイスにはMFAを要求するポリシーを1つのポリシーで表現できる。選択肢AのEntra ID Protectionは不正なサインインのリスクを検出するが、デバイス所有者の区別に基づくMFA制御には使用しない。選択肢DのGPOはオンプレミスのAD環境向けであり、クラウドのMFA制御には直接使えない。選択肢Cの個別設定は管理コストが高く、条件付きアクセスのような動的なポリシー制御ができない。"}}}]},{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"HOME","item":"https://cloudcert.app/"},{"@type":"ListItem","position":2,"name":"SC-900 試験ガイド","item":"https://cloudcert.app/exams/azure-sc900/"},{"@type":"ListItem","position":3,"name":"q029"}]}]</script>
+</head>
+<body class="page-body">
+<header class="page-header"><a class="page-logo" href="../../index.html">&gt; CLOUDCERT_</a></header>
+<main class="page-main">
+
+<nav class="breadcrumb"><a href="../../index.html">HOME</a> › <a href="../../exams/azure-sc900/">SC-900 試験ガイド</a> › q029</nav>
+<div class="q-meta"><span>SC-900</span><span>Microsoft Entra の機能</span><span>MEDIUM</span><span>単一選択</span></div>
+<h1>ある企業のセキュリティ管理者が、リモートワーク中の社員が会社所有のデバイスから社内アプリにアクセスする際はMFAを不要とし、個人デバイスからのアクセスには必ずMFAを要求するポリシーを設定したい。最も適切な方法はどれか。</h1>
+<ol class="q-choices">
+<li><b>A.</b> Entra ID Protectionのリスクポリシーで個人デバイスをリスクありとマークする</li>
+<li><b>B.</b> 条件付きアクセスポリシーで、デバイスのコンプライアンス状態を条件に含めMFAを制御する</li>
+<li><b>C.</b> 各社員のアカウントの認証設定でMFA要否を個別に切り替える</li>
+<li><b>D.</b> グループポリシーオブジェクト（GPO）で会社デバイスにMFA免除設定を展開する</li>
+</ol>
+<details class="q-answer">
+<summary>解答と解説を見る</summary>
+<div class="inner">
+<p><b>正解: B</b></p>
+<p>条件付きアクセスはユーザー、デバイスの状態、場所、アプリなど複数の条件を組み合わせてアクセスポリシーを動的に制御できる。Intuneに登録された会社所有のコンプライアントデバイスはMFA免除とし、非コンプライアントデバイスや個人デバイスにはMFAを要求するポリシーを1つのポリシーで表現できる。選択肢AのEntra ID Protectionは不正なサインインのリスクを検出するが、デバイス所有者の区別に基づくMFA制御には使用しない。選択肢DのGPOはオンプレミスのAD環境向けであり、クラウドのMFA制御には直接使えない。選択肢Cの個別設定は管理コストが高く、条件付きアクセスのような動的なポリシー制御ができない。</p>
+
+</div>
+</details>
+<div class="cta-box"><a class="btn btn-primary" href="../../exam.html?exam=azure-sc900">▸ この試験を本気で演習する（全150問・無料）</a></div>
+<nav class="q-nav">
+<span><a href="q028.html">← 前の問題</a></span>
+<span><a href="q030.html">次の問題 →</a></span>
+</nav>
+<section class="related"><h2>同じ分野の関連問題</h2><ul class="q-list">
+<li><a href="q028.html">ある企業がEntra IDのセルフサービスパスワードリセット（SSPR）を展開している。SSPRで使用できる本人確認方法…</a></li>
+<li><a href="q030.html">ある組織のIT管理者が、ユーザーが会社のアプリにサインインする際に特定の条件を満たさない場合はアクセスを完全にブロックし…</a></li>
+<li><a href="q027.html">ある企業が多要素認証（MFA）を導入しようとしている。セキュリティ担当者は「フィッシング攻撃に対して最も耐性が高い認証方…</a></li>
+<li><a href="q031.html">ある企業が条件付きアクセスポリシーを設定している。「全社員が社内基幹アプリにアクセスする際、準拠デバイス（Complia…</a></li>
+</ul></section>
+</main>
+<footer class="page-footer">
+<nav class="hub-nav"><a href="../../exams/aws-clf-c02/">CLF-C02 試験ガイド</a><a href="../../exams/aws-aif-c01/">AIF-C01 試験ガイド</a><a href="../../exams/aws-saa-c03/">SAA-C03 試験ガイド</a><a href="../../exams/aws-dva-c02/">DVA-C02 試験ガイド</a><a href="../../exams/aws-sap-c02/">SAP-C02 試験ガイド</a><a href="../../exams/gcp-cdl/">CDL 試験ガイド</a><a href="../../exams/gcp-ace/">ACE 試験ガイド</a><a href="../../exams/azure-az900/">AZ-900 試験ガイド</a><a href="../../exams/azure-ai900/">AI-900 試験ガイド</a><a href="../../exams/azure-dp900/">DP-900 試験ガイド</a><a href="../../exams/azure-sc900/">SC-900 試験ガイド</a><a href="../../exams/azure-az104/">AZ-104 試験ガイド</a></nav>
+<nav class="site-nav"><a href="../../guide/">資格ガイド</a><a href="../../learn/">サービス解説</a><a href="../../career/">キャリア</a><a href="../../about.html">運営者情報</a><a href="../../privacy.html">プライバシーポリシー</a><a href="../../contact.html">お問い合わせ</a></nav>
+<p class="copy">© CLOUDCERT_ — 本サイトは各認定試験の公式試験ではなく、収録問題はすべてオリジナルの演習問題です。</p>
+</footer>
+</body>
+</html>

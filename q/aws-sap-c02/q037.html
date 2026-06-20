@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>【SAP-C02 演習問題 #37】ある企業が AWS 上で大規模な検索システムを構築しています。製品カタログ（3 億件のドキ…</title>
+<meta name="description" content="SAP-C02の本試験レベル演習問題。ある企業が AWS 上で大規模な検索システムを構築しています。製品カタログ（3 億件のドキュメント）に対して、全文検索、ファセット検索、地理空間検索が必要です。検索レイテンシーは P… 全選択肢の解説つき。">
+<link rel="canonical" href="https://cloudcert.app/q/aws-sap-c02/q037.html">
+<meta property="og:title" content="【SAP-C02 演習問題 #37】ある企業が AWS 上で大規模な検索システムを構築しています。製品カタログ（3 億件のドキ…">
+<meta property="og:description" content="SAP-C02の本試験レベル演習問題。ある企業が AWS 上で大規模な検索システムを構築しています。製品カタログ（3 億件のドキュメント）に対して、全文検索、ファセット検索、地理空間検索が必要です。検索レイテンシーは P… 全選択肢の解説つき。">
+<meta property="og:url" content="https://cloudcert.app/q/aws-sap-c02/q037.html">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="CLOUDCERT_">
+<meta property="og:image" content="https://cloudcert.app/assets/og.png">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='80' font-size='80' fill='%233fe0a4' font-family='monospace'>▸</text></svg>">
+
+<meta name="google-adsense-account" content="ca-pub-5647574947191958">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+JP:wght@400;500;700&family=JetBrains+Mono:wght@400;600;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../../css/style.css">
+<link rel="stylesheet" href="../../css/page.css">
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-SZR5CB5Q3X"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag('js',new Date());gtag('config','G-SZR5CB5Q3X');</script>
+<script type="application/ld+json">[{"@context":"https://schema.org/","@type":"Quiz","about":{"@type":"Thing","name":"AWS Certified Solutions Architect - Professional"},"hasPart":[{"@type":"Question","eduQuestionType":"Multiple choice","learningResourceType":"Practice problem","text":"ある企業が AWS 上で大規模な検索システムを構築しています。製品カタログ（3 億件のドキュメント）に対して、全文検索、ファセット検索、地理空間検索が必要です。検索レイテンシーは P99 で 200ms 以下、書き込みは毎秒 1,000 件のリアルタイム更新が必要です。管理負荷を最小化したいと考えています。最も適切なサービスはどれですか？","suggestedAnswer":[{"@type":"Answer","position":0,"text":"Amazon RDS PostgreSQL で pg_trgm 拡張を使って全文検索を実装し、PostGIS で地理空間検索を処理する"},{"@type":"Answer","position":1,"text":"Amazon DynamoDB に全製品データを格納し、GSI（グローバルセカンダリインデックス）で検索機能を実装する"},{"@type":"Answer","position":3,"text":"Amazon CloudSearch を使って検索機能を実装し、ドメインを作成してインデックスを構成する"}],"acceptedAnswer":{"@type":"Answer","position":2,"text":"Amazon OpenSearch Service（旧 Elasticsearch Service）をマネージドクラスターとして展開し、インデックスシャーディング戦略を最適化する。OpenSearch の地理空間クエリと全文検索・ファセット集計をネイティブにサポートし、Auto-Tune 機能でパフォーマンスを自動最適化する","comment":{"@type":"Comment","text":"Amazon OpenSearch Service は大規模な全文検索、ファセット検索、地理空間検索をネイティブにサポートするマネージドサービスです。3 億件のドキュメントに対して適切なシャーディングを設定することで P99 200ms の達成が可能で、毎秒 1,000 件の書き込みも処理できます。Auto-Tune によるパフォーマンス自動最適化で管理負荷も軽減されます。\n\nA: RDS PostgreSQL の pg_trgm は中小規模の全文検索に有効ですが、3 億件のドキュメントへの全文検索・ファセット・地理空間クエリに P99 200ms を達成することは非常に困難です。\n\nD: Amazon CloudSearch は OpenSearch Service に比べて機能が限定的で、大規模な3億件のドキュメントや高度なファセット検索・地理空間検索への対応に制約があります。\n\nB: DynamoDB の GSI は全文検索には対応しておらず、テキストの部分一致・全文検索・ファセット検索・地理空間クエリを直接実装することはできません。"}}}]},{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"HOME","item":"https://cloudcert.app/"},{"@type":"ListItem","position":2,"name":"SAP-C02 試験ガイド","item":"https://cloudcert.app/exams/aws-sap-c02/"},{"@type":"ListItem","position":3,"name":"q037"}]}]</script>
+</head>
+<body class="page-body">
+<header class="page-header"><a class="page-logo" href="../../index.html">&gt; CLOUDCERT_</a></header>
+<main class="page-main">
+
+<nav class="breadcrumb"><a href="../../index.html">HOME</a> › <a href="../../exams/aws-sap-c02/">SAP-C02 試験ガイド</a> › q037</nav>
+<div class="q-meta"><span>SAP-C02</span><span>新しいソリューションのための設計</span><span>HARD</span><span>単一選択</span></div>
+<h1>ある企業が AWS 上で大規模な検索システムを構築しています。製品カタログ（3 億件のドキュメント）に対して、全文検索、ファセット検索、地理空間検索が必要です。検索レイテンシーは P99 で 200ms 以下、書き込みは毎秒 1,000 件のリアルタイム更新が必要です。管理負荷を最小化したいと考えています。最も適切なサービスはどれですか？</h1>
+<ol class="q-choices">
+<li><b>A.</b> Amazon RDS PostgreSQL で pg_trgm 拡張を使って全文検索を実装し、PostGIS で地理空間検索を処理する</li>
+<li><b>B.</b> Amazon DynamoDB に全製品データを格納し、GSI（グローバルセカンダリインデックス）で検索機能を実装する</li>
+<li><b>C.</b> Amazon OpenSearch Service（旧 Elasticsearch Service）をマネージドクラスターとして展開し、インデックスシャーディング戦略を最適化する。OpenSearch の地理空間クエリと全文検索・ファセット集計をネイティブにサポートし、Auto-Tune 機能でパフォーマンスを自動最適化する</li>
+<li><b>D.</b> Amazon CloudSearch を使って検索機能を実装し、ドメインを作成してインデックスを構成する</li>
+</ol>
+<details class="q-answer">
+<summary>解答と解説を見る</summary>
+<div class="inner">
+<p><b>正解: C</b></p>
+<p>Amazon OpenSearch Service は大規模な全文検索、ファセット検索、地理空間検索をネイティブにサポートするマネージドサービスです。3 億件のドキュメントに対して適切なシャーディングを設定することで P99 200ms の達成が可能で、毎秒 1,000 件の書き込みも処理できます。Auto-Tune によるパフォーマンス自動最適化で管理負荷も軽減されます。
+
+A: RDS PostgreSQL の pg_trgm は中小規模の全文検索に有効ですが、3 億件のドキュメントへの全文検索・ファセット・地理空間クエリに P99 200ms を達成することは非常に困難です。
+
+D: Amazon CloudSearch は OpenSearch Service に比べて機能が限定的で、大規模な3億件のドキュメントや高度なファセット検索・地理空間検索への対応に制約があります。
+
+B: DynamoDB の GSI は全文検索には対応しておらず、テキストの部分一致・全文検索・ファセット検索・地理空間クエリを直接実装することはできません。</p>
+
+</div>
+</details>
+<div class="cta-box"><a class="btn btn-primary" href="../../exam.html?exam=aws-sap-c02">▸ この試験を本気で演習する（全150問・無料）</a></div>
+<nav class="q-nav">
+<span><a href="q036.html">← 前の問題</a></span>
+<span><a href="q038.html">次の問題 →</a></span>
+</nav>
+<section class="related"><h2>同じ分野の関連問題</h2><ul class="q-list">
+<li><a href="q036.html">ある企業が AWS で新しいアプリケーションのデータベース層を設計しています。要件は以下の通りです。④トランザクション整…</a></li>
+<li><a href="q038.html">ある企業が AWS 上で機械学習パイプラインを構築しており、毎日新しいトレーニングデータが S3 に追加されます。データ…</a></li>
+<li><a href="q035.html">ある製薬企業が医薬品の研究データ（ゲノム解析データ）を AWS で処理するシステムを設計しています。データセットは数百テ…</a></li>
+<li><a href="q039.html">ある企業が AWS Lambda を使ったサーバーレスアプリケーションを構築しており、Lambda 関数が Amazon…</a></li>
+</ul></section>
+</main>
+<footer class="page-footer">
+<nav class="hub-nav"><a href="../../exams/aws-clf-c02/">CLF-C02 試験ガイド</a><a href="../../exams/aws-aif-c01/">AIF-C01 試験ガイド</a><a href="../../exams/aws-saa-c03/">SAA-C03 試験ガイド</a><a href="../../exams/aws-dva-c02/">DVA-C02 試験ガイド</a><a href="../../exams/aws-sap-c02/">SAP-C02 試験ガイド</a><a href="../../exams/gcp-cdl/">CDL 試験ガイド</a><a href="../../exams/gcp-ace/">ACE 試験ガイド</a><a href="../../exams/azure-az900/">AZ-900 試験ガイド</a><a href="../../exams/azure-ai900/">AI-900 試験ガイド</a><a href="../../exams/azure-dp900/">DP-900 試験ガイド</a><a href="../../exams/azure-sc900/">SC-900 試験ガイド</a><a href="../../exams/azure-az104/">AZ-104 試験ガイド</a></nav>
+<nav class="site-nav"><a href="../../guide/">資格ガイド</a><a href="../../learn/">サービス解説</a><a href="../../career/">キャリア</a><a href="../../about.html">運営者情報</a><a href="../../privacy.html">プライバシーポリシー</a><a href="../../contact.html">お問い合わせ</a></nav>
+<p class="copy">© CLOUDCERT_ — 本サイトは各認定試験の公式試験ではなく、収録問題はすべてオリジナルの演習問題です。</p>
+</footer>
+</body>
+</html>

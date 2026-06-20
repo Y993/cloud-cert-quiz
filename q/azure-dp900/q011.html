@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>【DP-900 演習問題 #11】ある企業が、IoT センサーから毎秒数万件のイベントデータ（センサーID、タイムスタンプ、…</title>
+<meta name="description" content="DP-900の本試験レベル演習問題。ある企業が、IoT センサーから毎秒数万件のイベントデータ（センサーID、タイムスタンプ、温度値、異常フラグ）を収集するシステムを設計している。このデータの保存形式として適切なものを2… 全選択肢の解説つき。">
+<link rel="canonical" href="https://cloudcert.app/q/azure-dp900/q011.html">
+<meta property="og:title" content="【DP-900 演習問題 #11】ある企業が、IoT センサーから毎秒数万件のイベントデータ（センサーID、タイムスタンプ、…">
+<meta property="og:description" content="DP-900の本試験レベル演習問題。ある企業が、IoT センサーから毎秒数万件のイベントデータ（センサーID、タイムスタンプ、温度値、異常フラグ）を収集するシステムを設計している。このデータの保存形式として適切なものを2… 全選択肢の解説つき。">
+<meta property="og:url" content="https://cloudcert.app/q/azure-dp900/q011.html">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="CLOUDCERT_">
+<meta property="og:image" content="https://cloudcert.app/assets/og.png">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='80' font-size='80' fill='%233fe0a4' font-family='monospace'>▸</text></svg>">
+
+<meta name="google-adsense-account" content="ca-pub-5647574947191958">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+JP:wght@400;500;700&family=JetBrains+Mono:wght@400;600;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../../css/style.css">
+<link rel="stylesheet" href="../../css/page.css">
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-SZR5CB5Q3X"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag('js',new Date());gtag('config','G-SZR5CB5Q3X');</script>
+<script type="application/ld+json">[{"@context":"https://schema.org/","@type":"Quiz","about":{"@type":"Thing","name":"Microsoft Azure Data Fundamentals"},"hasPart":[{"@type":"Question","eduQuestionType":"Checkbox","learningResourceType":"Practice problem","text":"ある企業が、IoT センサーから毎秒数万件のイベントデータ（センサーID、タイムスタンプ、温度値、異常フラグ）を収集するシステムを設計している。このデータの保存形式として適切なものを2つ選択してください。","suggestedAnswer":[{"@type":"Answer","position":0,"text":"Word 文書（.docx）：ヘッダーと本文のリッチテキスト形式でセンサーログを記録する"},{"@type":"Answer","position":1,"text":"CSV：テキストベースで人間が読めるが、タイムスタンプ精度の表現や圧縮効率に課題がある"},{"@type":"Answer","position":3,"text":"PowerPoint（.pptx）：スライド形式でセンサーデータのグラフを自動生成して保存する"}],"acceptedAnswer":[{"@type":"Answer","position":2,"text":"Parquet：列指向の圧縮フォーマットで、同種の値が並ぶ時系列データの圧縮率が高い","comment":{"@type":"Comment","text":"IoTセンサーの大量イベントデータには「Parquet」と「JSON Lines」が適切な選択肢である。Parquetは列指向の圧縮バイナリ形式で、センサーID・温度値のような同じデータ型が並ぶ列は非常に高い圧縮率を実現し、後の分析処理でも列プルーニングが有効に機能する。JSON Lines（.jsonl）は1行に1つのJSONオブジェクトを記述する形式で、スキーマが柔軟（異常フラグの有無など）で高速に追記書き込みができ、各種ストリーミング処理ツールとの親和性が高い。選択肢BのCSVはテキスト形式のため可読性は高いが、マイクロ秒精度のタイムスタンプ表現に曖昧さがあり、圧縮効率もParquetに劣るため毎秒数万件の大規模IoTデータには不向きである。選択肢AのWord文書（.docx）はワープロ文書形式でセンサーデータの格納に用いるものではなく、機械処理も困難である。選択肢DのPowerPoint（.pptx）はプレゼンテーション形式であり、時系列データの格納・分析用途には全く不適切である。"}},{"@type":"Answer","position":4,"text":"JSON Lines（.jsonl）：1行1イベントのJSON形式でスキーマの柔軟性を保ちながら高速書き込みができる","comment":{"@type":"Comment","text":"IoTセンサーの大量イベントデータには「Parquet」と「JSON Lines」が適切な選択肢である。Parquetは列指向の圧縮バイナリ形式で、センサーID・温度値のような同じデータ型が並ぶ列は非常に高い圧縮率を実現し、後の分析処理でも列プルーニングが有効に機能する。JSON Lines（.jsonl）は1行に1つのJSONオブジェクトを記述する形式で、スキーマが柔軟（異常フラグの有無など）で高速に追記書き込みができ、各種ストリーミング処理ツールとの親和性が高い。選択肢BのCSVはテキスト形式のため可読性は高いが、マイクロ秒精度のタイムスタンプ表現に曖昧さがあり、圧縮効率もParquetに劣るため毎秒数万件の大規模IoTデータには不向きである。選択肢AのWord文書（.docx）はワープロ文書形式でセンサーデータの格納に用いるものではなく、機械処理も困難である。選択肢DのPowerPoint（.pptx）はプレゼンテーション形式であり、時系列データの格納・分析用途には全く不適切である。"}}]}]},{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"HOME","item":"https://cloudcert.app/"},{"@type":"ListItem","position":2,"name":"DP-900 試験ガイド","item":"https://cloudcert.app/exams/azure-dp900/"},{"@type":"ListItem","position":3,"name":"q011"}]}]</script>
+</head>
+<body class="page-body">
+<header class="page-header"><a class="page-logo" href="../../index.html">&gt; CLOUDCERT_</a></header>
+<main class="page-main">
+
+<nav class="breadcrumb"><a href="../../index.html">HOME</a> › <a href="../../exams/azure-dp900/">DP-900 試験ガイド</a> › q011</nav>
+<div class="q-meta"><span>DP-900</span><span>コア データ概念</span><span>HARD</span><span>複数選択</span></div>
+<h1>ある企業が、IoT センサーから毎秒数万件のイベントデータ（センサーID、タイムスタンプ、温度値、異常フラグ）を収集するシステムを設計している。このデータの保存形式として適切なものを2つ選択してください。</h1>
+<ol class="q-choices">
+<li><b>A.</b> Word 文書（.docx）：ヘッダーと本文のリッチテキスト形式でセンサーログを記録する</li>
+<li><b>B.</b> CSV：テキストベースで人間が読めるが、タイムスタンプ精度の表現や圧縮効率に課題がある</li>
+<li><b>C.</b> Parquet：列指向の圧縮フォーマットで、同種の値が並ぶ時系列データの圧縮率が高い</li>
+<li><b>D.</b> PowerPoint（.pptx）：スライド形式でセンサーデータのグラフを自動生成して保存する</li>
+<li><b>E.</b> JSON Lines（.jsonl）：1行1イベントのJSON形式でスキーマの柔軟性を保ちながら高速書き込みができる</li>
+</ol>
+<details class="q-answer">
+<summary>解答と解説を見る</summary>
+<div class="inner">
+<p><b>正解: C, E</b></p>
+<p>IoTセンサーの大量イベントデータには「Parquet」と「JSON Lines」が適切な選択肢である。Parquetは列指向の圧縮バイナリ形式で、センサーID・温度値のような同じデータ型が並ぶ列は非常に高い圧縮率を実現し、後の分析処理でも列プルーニングが有効に機能する。JSON Lines（.jsonl）は1行に1つのJSONオブジェクトを記述する形式で、スキーマが柔軟（異常フラグの有無など）で高速に追記書き込みができ、各種ストリーミング処理ツールとの親和性が高い。選択肢BのCSVはテキスト形式のため可読性は高いが、マイクロ秒精度のタイムスタンプ表現に曖昧さがあり、圧縮効率もParquetに劣るため毎秒数万件の大規模IoTデータには不向きである。選択肢AのWord文書（.docx）はワープロ文書形式でセンサーデータの格納に用いるものではなく、機械処理も困難である。選択肢DのPowerPoint（.pptx）はプレゼンテーション形式であり、時系列データの格納・分析用途には全く不適切である。</p>
+
+</div>
+</details>
+<div class="cta-box"><a class="btn btn-primary" href="../../exam.html?exam=azure-dp900">▸ この試験を本気で演習する（全150問・無料）</a></div>
+<nav class="q-nav">
+<span><a href="q010.html">← 前の問題</a></span>
+<span><a href="q012.html">次の問題 →</a></span>
+</nav>
+<section class="related"><h2>同じ分野の関連問題</h2><ul class="q-list">
+<li><a href="q010.html">ある小売グループが、全国 500 店舗のPOSシステムから収集した購買データを分析して「どの時間帯・地域・商品カテゴリの…</a></li>
+<li><a href="q012.html">あるグローバル銀行が、OLTP システムとデータウェアハウスを並行運用しており、「勘定系（OLTP）の取引処理に影響を与…</a></li>
+<li><a href="q009.html">ある企業が、顧客の購買履歴データを格納するファイル形式を検討している。データサイエンティストが大規模な機械学習の特徴量エ…</a></li>
+<li><a href="q013.html">ある企業が、データ管理チームの役割分担を明確にしようとしている。「データベース管理者（DBA）」の責務として正しいものを…</a></li>
+</ul></section>
+</main>
+<footer class="page-footer">
+<nav class="hub-nav"><a href="../../exams/aws-clf-c02/">CLF-C02 試験ガイド</a><a href="../../exams/aws-aif-c01/">AIF-C01 試験ガイド</a><a href="../../exams/aws-saa-c03/">SAA-C03 試験ガイド</a><a href="../../exams/aws-dva-c02/">DVA-C02 試験ガイド</a><a href="../../exams/aws-sap-c02/">SAP-C02 試験ガイド</a><a href="../../exams/gcp-cdl/">CDL 試験ガイド</a><a href="../../exams/gcp-ace/">ACE 試験ガイド</a><a href="../../exams/azure-az900/">AZ-900 試験ガイド</a><a href="../../exams/azure-ai900/">AI-900 試験ガイド</a><a href="../../exams/azure-dp900/">DP-900 試験ガイド</a><a href="../../exams/azure-sc900/">SC-900 試験ガイド</a><a href="../../exams/azure-az104/">AZ-104 試験ガイド</a></nav>
+<nav class="site-nav"><a href="../../guide/">資格ガイド</a><a href="../../learn/">サービス解説</a><a href="../../career/">キャリア</a><a href="../../about.html">運営者情報</a><a href="../../privacy.html">プライバシーポリシー</a><a href="../../contact.html">お問い合わせ</a></nav>
+<p class="copy">© CLOUDCERT_ — 本サイトは各認定試験の公式試験ではなく、収録問題はすべてオリジナルの演習問題です。</p>
+</footer>
+</body>
+</html>

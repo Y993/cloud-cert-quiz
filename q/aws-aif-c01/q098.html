@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>【AIF-C01 演習問題 #98】ある企業が自社の製造プロセスに関する膨大な技術マニュアル（合計 5,000 ページ）を A…</title>
+<meta name="description" content="AIF-C01の本試験レベル演習問題。ある企業が自社の製造プロセスに関する膨大な技術マニュアル（合計 5,000 ページ）を Amazon Bedrock Knowledge Bases に格納して RAG システムを構… 全選択肢の解説つき。">
+<link rel="canonical" href="https://cloudcert.app/q/aws-aif-c01/q098.html">
+<meta property="og:title" content="【AIF-C01 演習問題 #98】ある企業が自社の製造プロセスに関する膨大な技術マニュアル（合計 5,000 ページ）を A…">
+<meta property="og:description" content="AIF-C01の本試験レベル演習問題。ある企業が自社の製造プロセスに関する膨大な技術マニュアル（合計 5,000 ページ）を Amazon Bedrock Knowledge Bases に格納して RAG システムを構… 全選択肢の解説つき。">
+<meta property="og:url" content="https://cloudcert.app/q/aws-aif-c01/q098.html">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="CLOUDCERT_">
+<meta property="og:image" content="https://cloudcert.app/assets/og.png">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='80' font-size='80' fill='%233fe0a4' font-family='monospace'>▸</text></svg>">
+
+<meta name="google-adsense-account" content="ca-pub-5647574947191958">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+JP:wght@400;500;700&family=JetBrains+Mono:wght@400;600;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../../css/style.css">
+<link rel="stylesheet" href="../../css/page.css">
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-SZR5CB5Q3X"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag('js',new Date());gtag('config','G-SZR5CB5Q3X');</script>
+<script type="application/ld+json">[{"@context":"https://schema.org/","@type":"Quiz","about":{"@type":"Thing","name":"AWS Certified AI Practitioner"},"hasPart":[{"@type":"Question","eduQuestionType":"Multiple choice","learningResourceType":"Practice problem","text":"ある企業が自社の製造プロセスに関する膨大な技術マニュアル（合計 5,000 ページ）を Amazon Bedrock Knowledge Bases に格納して RAG システムを構築した。技術者からは「質問に対して正確に関連する手順が返ってくることもあれば、まったく関係ない章の内容が返ってくることもある」という不安定な動作が報告されている。この問題の原因と対策として最も適切なものはどれか。","suggestedAnswer":[{"@type":"Answer","position":0,"text":"Knowledge Bases のデータソース同期を毎日実施して最新の文書を常に反映させる"},{"@type":"Answer","position":1,"text":"ベクトルDBの容量が不足しているため、より大きなインスタンスタイプに変更する"},{"@type":"Answer","position":3,"text":"モデルの temperature が高すぎるため、0 に下げることで検索結果が安定する"}],"acceptedAnswer":{"@type":"Answer","position":2,"text":"チャンクサイズが不適切（大きすぎると無関係な内容が混入、小さすぎると文脈が欠落）であることが原因の可能性があり、チャンクサイズとオーバーラップをチューニングし、ハイブリッド検索（ベクトル検索＋BM25キーワード検索）の導入を検討する","comment":{"@type":"Comment","text":"RAG システムの検索品質の不安定さは主に「チャンキング戦略」と「検索アルゴリズム」に起因することが多い。チャンクが大きすぎると一つのチャンクに複数のトピックが混在して無関係な情報が混入し、小さすぎると文脈情報が失われて正確な類似度計算ができなくなる。オーバーラップ設定で文章境界での文脈断絶を防ぐことも重要。さらに純粋なベクトル検索は専門用語や製品コード等の exact match に弱いため、BM25（TF-IDF ベースのキーワード検索）と組み合わせたハイブリッド検索が精度向上に有効。Dのtemperatureは「検索（Retrieval）フェーズ」には影響せず、問題の根本原因ではない。Bのインスタンスサイズはスループットに影響するが、検索の「精度」や「関連性」とは別問題。Aのデータ同期頻度は最新性の問題に対応するものであり、精度の不安定さ（ランダム性）の根本原因ではない。"}}}]},{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"HOME","item":"https://cloudcert.app/"},{"@type":"ListItem","position":2,"name":"AIF-C01 試験ガイド","item":"https://cloudcert.app/exams/aws-aif-c01/"},{"@type":"ListItem","position":3,"name":"q098"}]}]</script>
+</head>
+<body class="page-body">
+<header class="page-header"><a class="page-logo" href="../../index.html">&gt; CLOUDCERT_</a></header>
+<main class="page-main">
+
+<nav class="breadcrumb"><a href="../../index.html">HOME</a> › <a href="../../exams/aws-aif-c01/">AIF-C01 試験ガイド</a> › q098</nav>
+<div class="q-meta"><span>AIF-C01</span><span>基盤モデルの応用</span><span>HARD</span><span>単一選択</span></div>
+<h1>ある企業が自社の製造プロセスに関する膨大な技術マニュアル（合計 5,000 ページ）を Amazon Bedrock Knowledge Bases に格納して RAG システムを構築した。技術者からは「質問に対して正確に関連する手順が返ってくることもあれば、まったく関係ない章の内容が返ってくることもある」という不安定な動作が報告されている。この問題の原因と対策として最も適切なものはどれか。</h1>
+<ol class="q-choices">
+<li><b>A.</b> Knowledge Bases のデータソース同期を毎日実施して最新の文書を常に反映させる</li>
+<li><b>B.</b> ベクトルDBの容量が不足しているため、より大きなインスタンスタイプに変更する</li>
+<li><b>C.</b> チャンクサイズが不適切（大きすぎると無関係な内容が混入、小さすぎると文脈が欠落）であることが原因の可能性があり、チャンクサイズとオーバーラップをチューニングし、ハイブリッド検索（ベクトル検索＋BM25キーワード検索）の導入を検討する</li>
+<li><b>D.</b> モデルの temperature が高すぎるため、0 に下げることで検索結果が安定する</li>
+</ol>
+<details class="q-answer">
+<summary>解答と解説を見る</summary>
+<div class="inner">
+<p><b>正解: C</b></p>
+<p>RAG システムの検索品質の不安定さは主に「チャンキング戦略」と「検索アルゴリズム」に起因することが多い。チャンクが大きすぎると一つのチャンクに複数のトピックが混在して無関係な情報が混入し、小さすぎると文脈情報が失われて正確な類似度計算ができなくなる。オーバーラップ設定で文章境界での文脈断絶を防ぐことも重要。さらに純粋なベクトル検索は専門用語や製品コード等の exact match に弱いため、BM25（TF-IDF ベースのキーワード検索）と組み合わせたハイブリッド検索が精度向上に有効。Dのtemperatureは「検索（Retrieval）フェーズ」には影響せず、問題の根本原因ではない。Bのインスタンスサイズはスループットに影響するが、検索の「精度」や「関連性」とは別問題。Aのデータ同期頻度は最新性の問題に対応するものであり、精度の不安定さ（ランダム性）の根本原因ではない。</p>
+
+</div>
+</details>
+<div class="cta-box"><a class="btn btn-primary" href="../../exam.html?exam=aws-aif-c01">▸ この試験を本気で演習する（全150問・無料）</a></div>
+<nav class="q-nav">
+<span><a href="q097.html">← 前の問題</a></span>
+<span><a href="q099.html">次の問題 →</a></span>
+</nav>
+<section class="related"><h2>同じ分野の関連問題</h2><ul class="q-list">
+<li><a href="q097.html">ある企業が Amazon Bedrock を使って生成した広告コピーを大規模に評価したい。人手評価は品質が高いが 1 万…</a></li>
+<li><a href="q099.html">ある企業がコードレビューアシスタントに Amazon Bedrock の基盤モデルを採用している。モデルに「セキュリティ…</a></li>
+<li><a href="q096.html">ある企業がカスタマーサポートシステムに Amazon Bedrock を使っている。ユーザーが英語と日本語を混ぜて質問し…</a></li>
+<li><a href="q100.html">ある企業が Amazon Bedrock でファインチューニングを実施する際に準備すべきことを 2 つ選択してください。</a></li>
+</ul></section>
+</main>
+<footer class="page-footer">
+<nav class="hub-nav"><a href="../../exams/aws-clf-c02/">CLF-C02 試験ガイド</a><a href="../../exams/aws-aif-c01/">AIF-C01 試験ガイド</a><a href="../../exams/aws-saa-c03/">SAA-C03 試験ガイド</a><a href="../../exams/aws-dva-c02/">DVA-C02 試験ガイド</a><a href="../../exams/aws-sap-c02/">SAP-C02 試験ガイド</a><a href="../../exams/gcp-cdl/">CDL 試験ガイド</a><a href="../../exams/gcp-ace/">ACE 試験ガイド</a><a href="../../exams/azure-az900/">AZ-900 試験ガイド</a><a href="../../exams/azure-ai900/">AI-900 試験ガイド</a><a href="../../exams/azure-dp900/">DP-900 試験ガイド</a><a href="../../exams/azure-sc900/">SC-900 試験ガイド</a><a href="../../exams/azure-az104/">AZ-104 試験ガイド</a></nav>
+<nav class="site-nav"><a href="../../guide/">資格ガイド</a><a href="../../learn/">サービス解説</a><a href="../../career/">キャリア</a><a href="../../about.html">運営者情報</a><a href="../../privacy.html">プライバシーポリシー</a><a href="../../contact.html">お問い合わせ</a></nav>
+<p class="copy">© CLOUDCERT_ — 本サイトは各認定試験の公式試験ではなく、収録問題はすべてオリジナルの演習問題です。</p>
+</footer>
+</body>
+</html>

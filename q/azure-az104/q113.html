@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>【AZ-104 演習問題 #113】ある企業がAzure VMからオンプレミスのデータベースサーバーへの接続に問題が発生してい…</title>
+<meta name="description" content="AZ-104の本試験レベル演習問題。ある企業がAzure VMからオンプレミスのデータベースサーバーへの接続に問題が発生している。Network WatcherのIPフロー検証では「許可」の結果が返ったが、実際には接続で… 全選択肢の解説つき。">
+<link rel="canonical" href="https://cloudcert.app/q/azure-az104/q113.html">
+<meta property="og:title" content="【AZ-104 演習問題 #113】ある企業がAzure VMからオンプレミスのデータベースサーバーへの接続に問題が発生してい…">
+<meta property="og:description" content="AZ-104の本試験レベル演習問題。ある企業がAzure VMからオンプレミスのデータベースサーバーへの接続に問題が発生している。Network WatcherのIPフロー検証では「許可」の結果が返ったが、実際には接続で… 全選択肢の解説つき。">
+<meta property="og:url" content="https://cloudcert.app/q/azure-az104/q113.html">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="CLOUDCERT_">
+<meta property="og:image" content="https://cloudcert.app/assets/og.png">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='80' font-size='80' fill='%233fe0a4' font-family='monospace'>▸</text></svg>">
+
+<meta name="google-adsense-account" content="ca-pub-5647574947191958">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+JP:wght@400;500;700&family=JetBrains+Mono:wght@400;600;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../../css/style.css">
+<link rel="stylesheet" href="../../css/page.css">
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-SZR5CB5Q3X"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag('js',new Date());gtag('config','G-SZR5CB5Q3X');</script>
+<script type="application/ld+json">[{"@context":"https://schema.org/","@type":"Quiz","about":{"@type":"Thing","name":"Microsoft Azure Administrator"},"hasPart":[{"@type":"Question","eduQuestionType":"Multiple choice","learningResourceType":"Practice problem","text":"ある企業がAzure VMからオンプレミスのデータベースサーバーへの接続に問題が発生している。Network WatcherのIPフロー検証では「許可」の結果が返ったが、実際には接続できない状態が続いている。次に調査すべき内容として最も適切なものはどれか。","suggestedAnswer":[{"@type":"Answer","position":0,"text":"AzureポータルでVMのNICを確認してMACアドレスの変更がないか調べる"},{"@type":"Answer","position":2,"text":"ストレージアカウントの診断ログを有効にしてDNS解決の問題を確認する"},{"@type":"Answer","position":3,"text":"VNetのアドレス空間がオンプレミスのアドレス空間と重複していないか確認する"}],"acceptedAnswer":{"@type":"Answer","position":1,"text":"Network Watcherの接続トラブルシューティングを使用して実際のエンドツーエンド接続を確認し、パスのどこで詰まっているかを調べる","comment":{"@type":"Comment","text":"IPフロー検証はAzure側のNSGルールのみを確認するツールであり、Azure NSGで許可されていても問題が発生する場合は、オンプレミス側のファイアウォール・ルーティングの問題、VPN/ExpressRouteの接続状態、BGPルートの問題など複数の要因が考えられる。Network Watcherの接続トラブルシューティング（Connection Troubleshoot）はTCPセッションの確立を実際に試みてどのホップでブロックされているかを確認できるため、NSGの先にある問題の特定に有効である。選択肢DのVNetアドレス空間の重複確認は有効な確認事項だが、すでに接続が一部でも機能していた実績がある場合には次のステップとして優先度が低い。選択肢AのMACアドレス確認はVM移行や複製時に関連する稀なケースであり、本問の状況での優先度は低い。選択肢Cのストレージ診断ログはAzure StorageへのアクセスログでありDNS解決の確認ツールではない。"}}}]},{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"HOME","item":"https://cloudcert.app/"},{"@type":"ListItem","position":2,"name":"AZ-104 試験ガイド","item":"https://cloudcert.app/exams/azure-az104/"},{"@type":"ListItem","position":3,"name":"q113"}]}]</script>
+</head>
+<body class="page-body">
+<header class="page-header"><a class="page-logo" href="../../index.html">&gt; CLOUDCERT_</a></header>
+<main class="page-main">
+
+<nav class="breadcrumb"><a href="../../index.html">HOME</a> › <a href="../../exams/azure-az104/">AZ-104 試験ガイド</a> › q113</nav>
+<div class="q-meta"><span>AZ-104</span><span>Azure 仮想ネットワークの実装と管理</span><span>MEDIUM</span><span>単一選択</span></div>
+<h1>ある企業がAzure VMからオンプレミスのデータベースサーバーへの接続に問題が発生している。Network WatcherのIPフロー検証では「許可」の結果が返ったが、実際には接続できない状態が続いている。次に調査すべき内容として最も適切なものはどれか。</h1>
+<ol class="q-choices">
+<li><b>A.</b> AzureポータルでVMのNICを確認してMACアドレスの変更がないか調べる</li>
+<li><b>B.</b> Network Watcherの接続トラブルシューティングを使用して実際のエンドツーエンド接続を確認し、パスのどこで詰まっているかを調べる</li>
+<li><b>C.</b> ストレージアカウントの診断ログを有効にしてDNS解決の問題を確認する</li>
+<li><b>D.</b> VNetのアドレス空間がオンプレミスのアドレス空間と重複していないか確認する</li>
+</ol>
+<details class="q-answer">
+<summary>解答と解説を見る</summary>
+<div class="inner">
+<p><b>正解: B</b></p>
+<p>IPフロー検証はAzure側のNSGルールのみを確認するツールであり、Azure NSGで許可されていても問題が発生する場合は、オンプレミス側のファイアウォール・ルーティングの問題、VPN/ExpressRouteの接続状態、BGPルートの問題など複数の要因が考えられる。Network Watcherの接続トラブルシューティング（Connection Troubleshoot）はTCPセッションの確立を実際に試みてどのホップでブロックされているかを確認できるため、NSGの先にある問題の特定に有効である。選択肢DのVNetアドレス空間の重複確認は有効な確認事項だが、すでに接続が一部でも機能していた実績がある場合には次のステップとして優先度が低い。選択肢AのMACアドレス確認はVM移行や複製時に関連する稀なケースであり、本問の状況での優先度は低い。選択肢Cのストレージ診断ログはAzure StorageへのアクセスログでありDNS解決の確認ツールではない。</p>
+
+</div>
+</details>
+<div class="cta-box"><a class="btn btn-primary" href="../../exam.html?exam=azure-az104">▸ この試験を本気で演習する（全150問・無料）</a></div>
+<nav class="q-nav">
+<span><a href="q112.html">← 前の問題</a></span>
+<span><a href="q114.html">次の問題 →</a></span>
+</nav>
+<section class="related"><h2>同じ分野の関連問題</h2><ul class="q-list">
+<li><a href="q112.html">ある企業のネットワーク管理者が、Azure VMがインターネット上の特定のIPアドレスへ通信できるかどうかを確認したい。…</a></li>
+<li><a href="q114.html">ある企業がAzure上でマイクロサービスアーキテクチャを構築している。各マイクロサービスはAzure Kubernete…</a></li>
+<li><a href="q111.html">ある企業がAzure Application Gatewayを使用してWebアプリケーションを運用している。「/api/…</a></li>
+<li><a href="q115.html">ある企業がAzure Load Balancer（Standard SKU）を使用して複数リージョンへの展開を計画してい…</a></li>
+</ul></section>
+</main>
+<footer class="page-footer">
+<nav class="hub-nav"><a href="../../exams/aws-clf-c02/">CLF-C02 試験ガイド</a><a href="../../exams/aws-aif-c01/">AIF-C01 試験ガイド</a><a href="../../exams/aws-saa-c03/">SAA-C03 試験ガイド</a><a href="../../exams/aws-dva-c02/">DVA-C02 試験ガイド</a><a href="../../exams/aws-sap-c02/">SAP-C02 試験ガイド</a><a href="../../exams/gcp-cdl/">CDL 試験ガイド</a><a href="../../exams/gcp-ace/">ACE 試験ガイド</a><a href="../../exams/azure-az900/">AZ-900 試験ガイド</a><a href="../../exams/azure-ai900/">AI-900 試験ガイド</a><a href="../../exams/azure-dp900/">DP-900 試験ガイド</a><a href="../../exams/azure-sc900/">SC-900 試験ガイド</a><a href="../../exams/azure-az104/">AZ-104 試験ガイド</a></nav>
+<nav class="site-nav"><a href="../../guide/">資格ガイド</a><a href="../../learn/">サービス解説</a><a href="../../career/">キャリア</a><a href="../../about.html">運営者情報</a><a href="../../privacy.html">プライバシーポリシー</a><a href="../../contact.html">お問い合わせ</a></nav>
+<p class="copy">© CLOUDCERT_ — 本サイトは各認定試験の公式試験ではなく、収録問題はすべてオリジナルの演習問題です。</p>
+</footer>
+</body>
+</html>

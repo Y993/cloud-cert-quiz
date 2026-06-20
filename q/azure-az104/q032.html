@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>【AZ-104 演習問題 #32】ある企業が Azure でリソースの移動（Move）操作を検討している。既存のリソースグル…</title>
+<meta name="description" content="AZ-104の本試験レベル演習問題。ある企業が Azure でリソースの移動（Move）操作を検討している。既存のリソースグループ「RG-Old」から別のリソースグループ「RG-New」に複数のリソースを移動したい。リソ… 全選択肢の解説つき。">
+<link rel="canonical" href="https://cloudcert.app/q/azure-az104/q032.html">
+<meta property="og:title" content="【AZ-104 演習問題 #32】ある企業が Azure でリソースの移動（Move）操作を検討している。既存のリソースグル…">
+<meta property="og:description" content="AZ-104の本試験レベル演習問題。ある企業が Azure でリソースの移動（Move）操作を検討している。既存のリソースグループ「RG-Old」から別のリソースグループ「RG-New」に複数のリソースを移動したい。リソ… 全選択肢の解説つき。">
+<meta property="og:url" content="https://cloudcert.app/q/azure-az104/q032.html">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="CLOUDCERT_">
+<meta property="og:image" content="https://cloudcert.app/assets/og.png">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='80' font-size='80' fill='%233fe0a4' font-family='monospace'>▸</text></svg>">
+
+<meta name="google-adsense-account" content="ca-pub-5647574947191958">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+JP:wght@400;500;700&family=JetBrains+Mono:wght@400;600;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../../css/style.css">
+<link rel="stylesheet" href="../../css/page.css">
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-SZR5CB5Q3X"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag('js',new Date());gtag('config','G-SZR5CB5Q3X');</script>
+<script type="application/ld+json">[{"@context":"https://schema.org/","@type":"Quiz","about":{"@type":"Thing","name":"Microsoft Azure Administrator"},"hasPart":[{"@type":"Question","eduQuestionType":"Multiple choice","learningResourceType":"Practice problem","text":"ある企業が Azure でリソースの移動（Move）操作を検討している。既存のリソースグループ「RG-Old」から別のリソースグループ「RG-New」に複数のリソースを移動したい。リソース移動に関する制約として正しい説明はどれか。","suggestedAnswer":[{"@type":"Answer","position":0,"text":"リソース移動はサブスクリプション内のリソースグループ間のみ可能で、サブスクリプションをまたいだ移動はできない"},{"@type":"Answer","position":2,"text":"ReadOnly リソースロックが適用されているリソースグループ内のリソースは移動できない"},{"@type":"Answer","position":3,"text":"リソース移動後、リソースの ARM リソース ID は変わらないため、既存の RBAC ロール割り当てや参照は引き続き有効である"}],"acceptedAnswer":{"@type":"Answer","position":1,"text":"リソース移動操作中、移動元と移動先のリソースグループは両方ともロックされ、他の操作ができなくなる","comment":{"@type":"Comment","text":"Azure でリソースを別のリソースグループに移動する際、移動操作中は移動元と移動先のリソースグループの両方に自動的にロックがかかり、他のリソースの追加・削除・更新操作が一時的にできなくなる。移動完了後にロックは解除される。この動作は移動中の一貫性を保証するための仕組みである。選択肢Aは誤りで、リソース移動はサブスクリプション間でも可能（すべてのリソースタイプが対応しているわけではないが、多くのリソースは対応）。選択肢Cは ReadOnly ロックのリソースグループ内のリソースは移動できないというのは一部正しいが、ロックはリソースグループに適用されている場合に移動元のリソースグループからの移動がブロックされる。正確には移動元または移動先にロックがある場合に移動が制限される。選択肢Dは誤りで、リソース移動後は ARM リソース ID が変わる（リソースグループ名がパスに含まれるため）ため、既存の参照が壊れる可能性がある。RBAC ロール割り当てはリソース ID に基づくため再確認が必要。"}}}]},{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"HOME","item":"https://cloudcert.app/"},{"@type":"ListItem","position":2,"name":"AZ-104 試験ガイド","item":"https://cloudcert.app/exams/azure-az104/"},{"@type":"ListItem","position":3,"name":"q032"}]}]</script>
+</head>
+<body class="page-body">
+<header class="page-header"><a class="page-logo" href="../../index.html">&gt; CLOUDCERT_</a></header>
+<main class="page-main">
+
+<nav class="breadcrumb"><a href="../../index.html">HOME</a> › <a href="../../exams/azure-az104/">AZ-104 試験ガイド</a> › q032</nav>
+<div class="q-meta"><span>AZ-104</span><span>Azure の ID とガバナンスの管理</span><span>MEDIUM</span><span>単一選択</span></div>
+<h1>ある企業が Azure でリソースの移動（Move）操作を検討している。既存のリソースグループ「RG-Old」から別のリソースグループ「RG-New」に複数のリソースを移動したい。リソース移動に関する制約として正しい説明はどれか。</h1>
+<ol class="q-choices">
+<li><b>A.</b> リソース移動はサブスクリプション内のリソースグループ間のみ可能で、サブスクリプションをまたいだ移動はできない</li>
+<li><b>B.</b> リソース移動操作中、移動元と移動先のリソースグループは両方ともロックされ、他の操作ができなくなる</li>
+<li><b>C.</b> ReadOnly リソースロックが適用されているリソースグループ内のリソースは移動できない</li>
+<li><b>D.</b> リソース移動後、リソースの ARM リソース ID は変わらないため、既存の RBAC ロール割り当てや参照は引き続き有効である</li>
+</ol>
+<details class="q-answer">
+<summary>解答と解説を見る</summary>
+<div class="inner">
+<p><b>正解: B</b></p>
+<p>Azure でリソースを別のリソースグループに移動する際、移動操作中は移動元と移動先のリソースグループの両方に自動的にロックがかかり、他のリソースの追加・削除・更新操作が一時的にできなくなる。移動完了後にロックは解除される。この動作は移動中の一貫性を保証するための仕組みである。選択肢Aは誤りで、リソース移動はサブスクリプション間でも可能（すべてのリソースタイプが対応しているわけではないが、多くのリソースは対応）。選択肢Cは ReadOnly ロックのリソースグループ内のリソースは移動できないというのは一部正しいが、ロックはリソースグループに適用されている場合に移動元のリソースグループからの移動がブロックされる。正確には移動元または移動先にロックがある場合に移動が制限される。選択肢Dは誤りで、リソース移動後は ARM リソース ID が変わる（リソースグループ名がパスに含まれるため）ため、既存の参照が壊れる可能性がある。RBAC ロール割り当てはリソース ID に基づくため再確認が必要。</p>
+
+</div>
+</details>
+<div class="cta-box"><a class="btn btn-primary" href="../../exam.html?exam=azure-az104">▸ この試験を本気で演習する（全150問・無料）</a></div>
+<nav class="q-nav">
+<span><a href="q031.html">← 前の問題</a></span>
+<span><a href="q033.html">次の問題 →</a></span>
+</nav>
+<section class="related"><h2>同じ分野の関連問題</h2><ul class="q-list">
+<li><a href="q031.html">ある企業が Entra ID で Privileged Identity Management（PIM）を導入した。グロ…</a></li>
+<li><a href="q033.html">ある企業が Entra ID で「セキュリティグループ」と「Microsoft 365 グループ」の 2 種類のグループ…</a></li>
+<li><a href="q030.html">ある企業が Azure の管理グループ階層を設計している。現在の構成は「テナントルート」→「Corp」→「Product…</a></li>
+<li><a href="q034.html">ある企業が Azure Policy のイニシアチブ（Policy Initiative / Policy Set）を利…</a></li>
+</ul></section>
+</main>
+<footer class="page-footer">
+<nav class="hub-nav"><a href="../../exams/aws-clf-c02/">CLF-C02 試験ガイド</a><a href="../../exams/aws-aif-c01/">AIF-C01 試験ガイド</a><a href="../../exams/aws-saa-c03/">SAA-C03 試験ガイド</a><a href="../../exams/aws-dva-c02/">DVA-C02 試験ガイド</a><a href="../../exams/aws-sap-c02/">SAP-C02 試験ガイド</a><a href="../../exams/gcp-cdl/">CDL 試験ガイド</a><a href="../../exams/gcp-ace/">ACE 試験ガイド</a><a href="../../exams/azure-az900/">AZ-900 試験ガイド</a><a href="../../exams/azure-ai900/">AI-900 試験ガイド</a><a href="../../exams/azure-dp900/">DP-900 試験ガイド</a><a href="../../exams/azure-sc900/">SC-900 試験ガイド</a><a href="../../exams/azure-az104/">AZ-104 試験ガイド</a></nav>
+<nav class="site-nav"><a href="../../guide/">資格ガイド</a><a href="../../learn/">サービス解説</a><a href="../../career/">キャリア</a><a href="../../about.html">運営者情報</a><a href="../../privacy.html">プライバシーポリシー</a><a href="../../contact.html">お問い合わせ</a></nav>
+<p class="copy">© CLOUDCERT_ — 本サイトは各認定試験の公式試験ではなく、収録問題はすべてオリジナルの演習問題です。</p>
+</footer>
+</body>
+</html>

@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>【SAP-C02 演習問題 #20】あるグローバル企業が AWS Organizations で管理するマルチアカウント環境に…</title>
+<meta name="description" content="SAP-C02の本試験レベル演習問題。あるグローバル企業が AWS Organizations で管理するマルチアカウント環境において、すべての EC2 インスタンスへの SSH/RDP アクセスをセキュアに管理したいと… 全選択肢の解説つき。">
+<link rel="canonical" href="https://cloudcert.app/q/aws-sap-c02/q020.html">
+<meta property="og:title" content="【SAP-C02 演習問題 #20】あるグローバル企業が AWS Organizations で管理するマルチアカウント環境に…">
+<meta property="og:description" content="SAP-C02の本試験レベル演習問題。あるグローバル企業が AWS Organizations で管理するマルチアカウント環境において、すべての EC2 インスタンスへの SSH/RDP アクセスをセキュアに管理したいと… 全選択肢の解説つき。">
+<meta property="og:url" content="https://cloudcert.app/q/aws-sap-c02/q020.html">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="CLOUDCERT_">
+<meta property="og:image" content="https://cloudcert.app/assets/og.png">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='80' font-size='80' fill='%233fe0a4' font-family='monospace'>▸</text></svg>">
+
+<meta name="google-adsense-account" content="ca-pub-5647574947191958">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+JP:wght@400;500;700&family=JetBrains+Mono:wght@400;600;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../../css/style.css">
+<link rel="stylesheet" href="../../css/page.css">
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-SZR5CB5Q3X"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag('js',new Date());gtag('config','G-SZR5CB5Q3X');</script>
+<script type="application/ld+json">[{"@context":"https://schema.org/","@type":"Quiz","about":{"@type":"Thing","name":"AWS Certified Solutions Architect - Professional"},"hasPart":[{"@type":"Question","eduQuestionType":"Multiple choice","learningResourceType":"Practice problem","text":"あるグローバル企業が AWS Organizations で管理するマルチアカウント環境において、すべての EC2 インスタンスへの SSH/RDP アクセスをセキュアに管理したいと考えています。SSH キーペアの管理をなくし、監査ログを残し、踏み台サーバー（Bastion Host）を廃止したいと考えています。また、アクセスは IAM Identity Center で管理されるユーザーの役割に基づく必要があります。最も適切な実装はどれですか？","suggestedAnswer":[{"@type":"Answer","position":0,"text":"全アカウントで踏み台サーバーを AWS Managed Microsoft AD に統合し、AD グループでアクセスを管理する"},{"@type":"Answer","position":1,"text":"AWS EC2 Instance Connect エンドポイントを各 VPC に作成し、SSH キーをプッシュして一時的なアクセスを提供する"},{"@type":"Answer","position":3,"text":"VPN と IAM ユーザーの組み合わせで接続を管理し、キーペアを AWS Secrets Manager に保存して定期ローテーションする"}],"acceptedAnswer":{"@type":"Answer","position":2,"text":"AWS Systems Manager Session Manager を全アカウントで有効化し、EC2 インスタンスに SSM Agent をインストールする。IAM Identity Center の権限セットに Session Manager の実行権限を付与し、CloudTrail と Session Manager のセッションログを S3 と CloudWatch Logs に記録する","comment":{"@type":"Comment","text":"Systems Manager Session Manager は SSH キーペアや踏み台サーバーを一切不要にし、IAM ポリシーでアクセスを制御します。IAM Identity Center と統合することで役割ベースのアクセス管理が実現でき、セッションの開始・終了・コマンド実行が CloudTrail と Session Manager ログに完全記録されます。ポート 22/3389 の開放も不要でセキュリティが向上します。\n\nA: Managed AD との踏み台統合では SSH キーの問題は解決されず、踏み台サーバーの管理負荷も残ります。要件の「踏み台サーバーの廃止」を満たしません。\n\nB: EC2 Instance Connect エンドポイントは SSH キーをプッシュする方式であり、キーペア管理をなくす要件を完全には満たしません。また役割ベースのアクセス制御との統合も限定的です。\n\nD: VPN と IAM ユーザーの組み合わせでは SSH キーの管理が依然必要で、IAM ユーザーの管理負荷も生じます。Identity Center との役割ベース統合も実現できません。"}}}]},{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"HOME","item":"https://cloudcert.app/"},{"@type":"ListItem","position":2,"name":"SAP-C02 試験ガイド","item":"https://cloudcert.app/exams/aws-sap-c02/"},{"@type":"ListItem","position":3,"name":"q020"}]}]</script>
+</head>
+<body class="page-body">
+<header class="page-header"><a class="page-logo" href="../../index.html">&gt; CLOUDCERT_</a></header>
+<main class="page-main">
+
+<nav class="breadcrumb"><a href="../../index.html">HOME</a> › <a href="../../exams/aws-sap-c02/">SAP-C02 試験ガイド</a> › q020</nav>
+<div class="q-meta"><span>SAP-C02</span><span>複雑な組織に対応するソリューションの設計</span><span>HARD</span><span>単一選択</span></div>
+<h1>あるグローバル企業が AWS Organizations で管理するマルチアカウント環境において、すべての EC2 インスタンスへの SSH/RDP アクセスをセキュアに管理したいと考えています。SSH キーペアの管理をなくし、監査ログを残し、踏み台サーバー（Bastion Host）を廃止したいと考えています。また、アクセスは IAM Identity Center で管理されるユーザーの役割に基づく必要があります。最も適切な実装はどれですか？</h1>
+<ol class="q-choices">
+<li><b>A.</b> 全アカウントで踏み台サーバーを AWS Managed Microsoft AD に統合し、AD グループでアクセスを管理する</li>
+<li><b>B.</b> AWS EC2 Instance Connect エンドポイントを各 VPC に作成し、SSH キーをプッシュして一時的なアクセスを提供する</li>
+<li><b>C.</b> AWS Systems Manager Session Manager を全アカウントで有効化し、EC2 インスタンスに SSM Agent をインストールする。IAM Identity Center の権限セットに Session Manager の実行権限を付与し、CloudTrail と Session Manager のセッションログを S3 と CloudWatch Logs に記録する</li>
+<li><b>D.</b> VPN と IAM ユーザーの組み合わせで接続を管理し、キーペアを AWS Secrets Manager に保存して定期ローテーションする</li>
+</ol>
+<details class="q-answer">
+<summary>解答と解説を見る</summary>
+<div class="inner">
+<p><b>正解: C</b></p>
+<p>Systems Manager Session Manager は SSH キーペアや踏み台サーバーを一切不要にし、IAM ポリシーでアクセスを制御します。IAM Identity Center と統合することで役割ベースのアクセス管理が実現でき、セッションの開始・終了・コマンド実行が CloudTrail と Session Manager ログに完全記録されます。ポート 22/3389 の開放も不要でセキュリティが向上します。
+
+A: Managed AD との踏み台統合では SSH キーの問題は解決されず、踏み台サーバーの管理負荷も残ります。要件の「踏み台サーバーの廃止」を満たしません。
+
+B: EC2 Instance Connect エンドポイントは SSH キーをプッシュする方式であり、キーペア管理をなくす要件を完全には満たしません。また役割ベースのアクセス制御との統合も限定的です。
+
+D: VPN と IAM ユーザーの組み合わせでは SSH キーの管理が依然必要で、IAM ユーザーの管理負荷も生じます。Identity Center との役割ベース統合も実現できません。</p>
+<div class="svc-links">📚 関連サービスの解説: <a href="../../learn/aws-systems-manager.html">AWS Systems Manager</a> ・ <a href="../../learn/amazon-ec2.html">Amazon EC2</a></div>
+</div>
+</details>
+<div class="cta-box"><a class="btn btn-primary" href="../../exam.html?exam=aws-sap-c02">▸ この試験を本気で演習する（全150問・無料）</a></div>
+<nav class="q-nav">
+<span><a href="q019.html">← 前の問題</a></span>
+<span><a href="q021.html">次の問題 →</a></span>
+</nav>
+<section class="related"><h2>同じ分野の関連問題</h2><ul class="q-list">
+<li><a href="q019.html">ある大手メディア企業が AWS Organizations でマルチアカウント環境を管理しており、開発・テスト・本番の各…</a></li>
+<li><a href="q021.html">ある企業が AWS で SAP システムを運用しており、SAP HANA データベースは Amazon EC2 X イン…</a></li>
+<li><a href="q018.html">ある企業が AWS Organizations で 200 以上のアカウントを管理しています。財務チームは毎月末に全アカ…</a></li>
+<li><a href="q022.html">ある企業がオンプレミスの Microsoft Active Directory をそのまま維持しながら、AWS 上の E…</a></li>
+</ul></section>
+</main>
+<footer class="page-footer">
+<nav class="hub-nav"><a href="../../exams/aws-clf-c02/">CLF-C02 試験ガイド</a><a href="../../exams/aws-aif-c01/">AIF-C01 試験ガイド</a><a href="../../exams/aws-saa-c03/">SAA-C03 試験ガイド</a><a href="../../exams/aws-dva-c02/">DVA-C02 試験ガイド</a><a href="../../exams/aws-sap-c02/">SAP-C02 試験ガイド</a><a href="../../exams/gcp-cdl/">CDL 試験ガイド</a><a href="../../exams/gcp-ace/">ACE 試験ガイド</a><a href="../../exams/azure-az900/">AZ-900 試験ガイド</a><a href="../../exams/azure-ai900/">AI-900 試験ガイド</a><a href="../../exams/azure-dp900/">DP-900 試験ガイド</a><a href="../../exams/azure-sc900/">SC-900 試験ガイド</a><a href="../../exams/azure-az104/">AZ-104 試験ガイド</a></nav>
+<nav class="site-nav"><a href="../../guide/">資格ガイド</a><a href="../../learn/">サービス解説</a><a href="../../career/">キャリア</a><a href="../../about.html">運営者情報</a><a href="../../privacy.html">プライバシーポリシー</a><a href="../../contact.html">お問い合わせ</a></nav>
+<p class="copy">© CLOUDCERT_ — 本サイトは各認定試験の公式試験ではなく、収録問題はすべてオリジナルの演習問題です。</p>
+</footer>
+</body>
+</html>

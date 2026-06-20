@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>【AZ-104 演習問題 #138】ある企業の管理者が、誤操作で Azure VM のバックアップデータを削除してしまった。削…</title>
+<meta name="description" content="AZ-104の本試験レベル演習問題。ある企業の管理者が、誤操作で Azure VM のバックアップデータを削除してしまった。削除後 5 日が経過しているが、このデータを復元したいと考えている。Recovery Servi… 全選択肢の解説つき。">
+<link rel="canonical" href="https://cloudcert.app/q/azure-az104/q138.html">
+<meta property="og:title" content="【AZ-104 演習問題 #138】ある企業の管理者が、誤操作で Azure VM のバックアップデータを削除してしまった。削…">
+<meta property="og:description" content="AZ-104の本試験レベル演習問題。ある企業の管理者が、誤操作で Azure VM のバックアップデータを削除してしまった。削除後 5 日が経過しているが、このデータを復元したいと考えている。Recovery Servi… 全選択肢の解説つき。">
+<meta property="og:url" content="https://cloudcert.app/q/azure-az104/q138.html">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="CLOUDCERT_">
+<meta property="og:image" content="https://cloudcert.app/assets/og.png">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='80' font-size='80' fill='%233fe0a4' font-family='monospace'>▸</text></svg>">
+
+<meta name="google-adsense-account" content="ca-pub-5647574947191958">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+JP:wght@400;500;700&family=JetBrains+Mono:wght@400;600;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../../css/style.css">
+<link rel="stylesheet" href="../../css/page.css">
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-SZR5CB5Q3X"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag('js',new Date());gtag('config','G-SZR5CB5Q3X');</script>
+<script type="application/ld+json">[{"@context":"https://schema.org/","@type":"Quiz","about":{"@type":"Thing","name":"Microsoft Azure Administrator"},"hasPart":[{"@type":"Question","eduQuestionType":"Multiple choice","learningResourceType":"Practice problem","text":"ある企業の管理者が、誤操作で Azure VM のバックアップデータを削除してしまった。削除後 5 日が経過しているが、このデータを復元したいと考えている。Recovery Services コンテナーのソフトデリート機能が有効な場合、最も適切な対応はどれか。","suggestedAnswer":[{"@type":"Answer","position":0,"text":"ソフトデリートが有効でも、削除操作は即時確定するため管理者がアクセスできるデータは存在しない"},{"@type":"Answer","position":1,"text":"Microsoft サポートに連絡し、バックエンドストレージから直接データを復旧してもらう必要がある"},{"@type":"Answer","position":3,"text":"ソフトデリートの保持期間は 3 日間のため、5 日後には完全削除されており復元は不可能である"}],"acceptedAnswer":{"@type":"Answer","position":2,"text":"ソフトデリートが有効な場合、削除後 14 日間はデータが保持されるため、コンテナーで「削除されたバックアップアイテムの回復」を実行してデータを復元できる","comment":{"@type":"Comment","text":"Azure Backup のソフトデリート機能を有効にすると、バックアップデータが削除されてから 14 日間は「論理削除」状態で保持される（この期間は追加の料金なしで保持される）。管理者は Azure Portal またはコマンドラインで「削除されたバックアップアイテム」を確認し、「削除取り消し（Undelete）」を実行することでデータを完全に復元できる。選択肢Dの「3 日間」は誤りであり、ソフトデリートの保持期間は 14 日間である。選択肢Aはソフトデリートの仕組みそのものを否定する誤った説明であり、ソフトデリートはまさに「即時完全削除」を防ぐための機能である。選択肢Bの Microsoft サポートへの依頼は不要であり、管理者自身がポータルから操作できる。"}}}]},{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"HOME","item":"https://cloudcert.app/"},{"@type":"ListItem","position":2,"name":"AZ-104 試験ガイド","item":"https://cloudcert.app/exams/azure-az104/"},{"@type":"ListItem","position":3,"name":"q138"}]}]</script>
+</head>
+<body class="page-body">
+<header class="page-header"><a class="page-logo" href="../../index.html">&gt; CLOUDCERT_</a></header>
+<main class="page-main">
+
+<nav class="breadcrumb"><a href="../../index.html">HOME</a> › <a href="../../exams/azure-az104/">AZ-104 試験ガイド</a> › q138</nav>
+<div class="q-meta"><span>AZ-104</span><span>Azure リソースの監視と保守</span><span>MEDIUM</span><span>単一選択</span></div>
+<h1>ある企業の管理者が、誤操作で Azure VM のバックアップデータを削除してしまった。削除後 5 日が経過しているが、このデータを復元したいと考えている。Recovery Services コンテナーのソフトデリート機能が有効な場合、最も適切な対応はどれか。</h1>
+<ol class="q-choices">
+<li><b>A.</b> ソフトデリートが有効でも、削除操作は即時確定するため管理者がアクセスできるデータは存在しない</li>
+<li><b>B.</b> Microsoft サポートに連絡し、バックエンドストレージから直接データを復旧してもらう必要がある</li>
+<li><b>C.</b> ソフトデリートが有効な場合、削除後 14 日間はデータが保持されるため、コンテナーで「削除されたバックアップアイテムの回復」を実行してデータを復元できる</li>
+<li><b>D.</b> ソフトデリートの保持期間は 3 日間のため、5 日後には完全削除されており復元は不可能である</li>
+</ol>
+<details class="q-answer">
+<summary>解答と解説を見る</summary>
+<div class="inner">
+<p><b>正解: C</b></p>
+<p>Azure Backup のソフトデリート機能を有効にすると、バックアップデータが削除されてから 14 日間は「論理削除」状態で保持される（この期間は追加の料金なしで保持される）。管理者は Azure Portal またはコマンドラインで「削除されたバックアップアイテム」を確認し、「削除取り消し（Undelete）」を実行することでデータを完全に復元できる。選択肢Dの「3 日間」は誤りであり、ソフトデリートの保持期間は 14 日間である。選択肢Aはソフトデリートの仕組みそのものを否定する誤った説明であり、ソフトデリートはまさに「即時完全削除」を防ぐための機能である。選択肢Bの Microsoft サポートへの依頼は不要であり、管理者自身がポータルから操作できる。</p>
+
+</div>
+</details>
+<div class="cta-box"><a class="btn btn-primary" href="../../exam.html?exam=azure-az104">▸ この試験を本気で演習する（全150問・無料）</a></div>
+<nav class="q-nav">
+<span><a href="q137.html">← 前の問題</a></span>
+<span><a href="q139.html">次の問題 →</a></span>
+</nav>
+<section class="related"><h2>同じ分野の関連問題</h2><ul class="q-list">
+<li><a href="q137.html">ある企業が Azure の Recovery Services コンテナーを使用して、Azure VM のバックアップポ…</a></li>
+<li><a href="q139.html">ある企業が Azure VM をバックアップから復元しようとしている。VM 全体を新しいディスクとして復元するのではなく…</a></li>
+<li><a href="q136.html">ある企業がアラートの通知疲れ（アラートファティーグ）を解消するため、業務時間外（土日・夜間）に発生するメンテナンス関連の…</a></li>
+<li><a href="q140.html">ある企業がオンプレミスの Windows Server に Azure Backup を使ったファイルバックアップを導入…</a></li>
+</ul></section>
+</main>
+<footer class="page-footer">
+<nav class="hub-nav"><a href="../../exams/aws-clf-c02/">CLF-C02 試験ガイド</a><a href="../../exams/aws-aif-c01/">AIF-C01 試験ガイド</a><a href="../../exams/aws-saa-c03/">SAA-C03 試験ガイド</a><a href="../../exams/aws-dva-c02/">DVA-C02 試験ガイド</a><a href="../../exams/aws-sap-c02/">SAP-C02 試験ガイド</a><a href="../../exams/gcp-cdl/">CDL 試験ガイド</a><a href="../../exams/gcp-ace/">ACE 試験ガイド</a><a href="../../exams/azure-az900/">AZ-900 試験ガイド</a><a href="../../exams/azure-ai900/">AI-900 試験ガイド</a><a href="../../exams/azure-dp900/">DP-900 試験ガイド</a><a href="../../exams/azure-sc900/">SC-900 試験ガイド</a><a href="../../exams/azure-az104/">AZ-104 試験ガイド</a></nav>
+<nav class="site-nav"><a href="../../guide/">資格ガイド</a><a href="../../learn/">サービス解説</a><a href="../../career/">キャリア</a><a href="../../about.html">運営者情報</a><a href="../../privacy.html">プライバシーポリシー</a><a href="../../contact.html">お問い合わせ</a></nav>
+<p class="copy">© CLOUDCERT_ — 本サイトは各認定試験の公式試験ではなく、収録問題はすべてオリジナルの演習問題です。</p>
+</footer>
+</body>
+</html>

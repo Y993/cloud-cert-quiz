@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>【SAP-C02 演習問題 #98】ある企業が AWS 上の本番環境でコスト削減を行うため、Amazon EC2 の使用状況を…</title>
+<meta name="description" content="SAP-C02の本試験レベル演習問題。ある企業が AWS 上の本番環境でコスト削減を行うため、Amazon EC2 の使用状況を分析しました。分析の結果、本番の Auto Scaling グループ（On-Demand）と… 全選択肢の解説つき。">
+<link rel="canonical" href="https://cloudcert.app/q/aws-sap-c02/q098.html">
+<meta property="og:title" content="【SAP-C02 演習問題 #98】ある企業が AWS 上の本番環境でコスト削減を行うため、Amazon EC2 の使用状況を…">
+<meta property="og:description" content="SAP-C02の本試験レベル演習問題。ある企業が AWS 上の本番環境でコスト削減を行うため、Amazon EC2 の使用状況を分析しました。分析の結果、本番の Auto Scaling グループ（On-Demand）と… 全選択肢の解説つき。">
+<meta property="og:url" content="https://cloudcert.app/q/aws-sap-c02/q098.html">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="CLOUDCERT_">
+<meta property="og:image" content="https://cloudcert.app/assets/og.png">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='80' font-size='80' fill='%233fe0a4' font-family='monospace'>▸</text></svg>">
+
+<meta name="google-adsense-account" content="ca-pub-5647574947191958">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+JP:wght@400;500;700&family=JetBrains+Mono:wght@400;600;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../../css/style.css">
+<link rel="stylesheet" href="../../css/page.css">
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-SZR5CB5Q3X"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag('js',new Date());gtag('config','G-SZR5CB5Q3X');</script>
+<script type="application/ld+json">[{"@context":"https://schema.org/","@type":"Quiz","about":{"@type":"Thing","name":"AWS Certified Solutions Architect - Professional"},"hasPart":[{"@type":"Question","eduQuestionType":"Multiple choice","learningResourceType":"Practice problem","text":"ある企業が AWS 上の本番環境でコスト削減を行うため、Amazon EC2 の使用状況を分析しました。分析の結果、本番の Auto Scaling グループ（On-Demand）とは別に、追加の処理ジョブ（バッチ処理、データ変換など）を実行する EC2 フリートに月額 100 万円以上のコストが発生していることが分かりました。これらのジョブは処理時間が 2〜8 時間で、中断が発生しても再開できる設計になっています（チェックポイントあり）。最もコスト効率よくこれらのジョブを実行するには、どの方法が適切ですか？","suggestedAnswer":[{"@type":"Answer","position":0,"text":"処理ジョブを On-Demand インスタンスで継続し、Savings Plans を購入してコストを削減する"},{"@type":"Answer","position":1,"text":"AWS Lambda でバッチジョブを実行し、処理をマイクロバッチに分割して 15 分以内で完了するように再設計する"},{"@type":"Answer","position":2,"text":"バッチ処理用に Reserved Instances（1 年）を購入し、常時利用することでコストを削減する"}],"acceptedAnswer":{"@type":"Answer","position":3,"text":"Amazon EC2 スポットインスタンスを使用してバッチジョブを実行する。スポットインスタンスはオンデマンドに比べて最大 90% コスト削減が可能で、チェックポイントがあるため中断耐性がある。AWS Batch または EC2 スポットフリート（多様なインスタンスタイプ指定）で Spot 中断リスクを分散し、2 分前の中断通知（Spot Instance Interruption Notice）で状態を保存する","comment":{"@type":"Comment","text":"EC2 スポットインスタンスはオンデマンド比最大 90% のコスト削減が可能で、チェックポイントがある中断耐性のバッチジョブには最適な選択です。Spot Instance Interruption Notice の 2 分前通知をインスタンスメタデータから取得し、状態をチェックポイントとして保存することで、中断後の再開が可能です。複数のインスタンスタイプとアベイラビリティゾーンを指定することで、Spot の可用性を高めることができます。\n\nC: Reserved Instances の購入はバッチジョブが断続的に実行される場合（24 時間365日でない）に非効率です。使わない時間も料金が発生します。\n\nB: Lambda の最大実行時間は 15 分で、2〜8 時間のバッチジョブには直接対応できません。処理の分割と再設計には大きな開発コストが必要です。\n\nA: Savings Plans はコンピューティングコストを削減しますが、スポットインスタンスほどの大幅な削減（最大 90%）は達成できません。Savings Plans での最大削減は約 66% です。"}}}]},{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"HOME","item":"https://cloudcert.app/"},{"@type":"ListItem","position":2,"name":"SAP-C02 試験ガイド","item":"https://cloudcert.app/exams/aws-sap-c02/"},{"@type":"ListItem","position":3,"name":"q098"}]}]</script>
+</head>
+<body class="page-body">
+<header class="page-header"><a class="page-logo" href="../../index.html">&gt; CLOUDCERT_</a></header>
+<main class="page-main">
+
+<nav class="breadcrumb"><a href="../../index.html">HOME</a> › <a href="../../exams/aws-sap-c02/">SAP-C02 試験ガイド</a> › q098</nav>
+<div class="q-meta"><span>SAP-C02</span><span>既存のソリューションの継続的な改善</span><span>HARD</span><span>単一選択</span></div>
+<h1>ある企業が AWS 上の本番環境でコスト削減を行うため、Amazon EC2 の使用状況を分析しました。分析の結果、本番の Auto Scaling グループ（On-Demand）とは別に、追加の処理ジョブ（バッチ処理、データ変換など）を実行する EC2 フリートに月額 100 万円以上のコストが発生していることが分かりました。これらのジョブは処理時間が 2〜8 時間で、中断が発生しても再開できる設計になっています（チェックポイントあり）。最もコスト効率よくこれらのジョブを実行するには、どの方法が適切ですか？</h1>
+<ol class="q-choices">
+<li><b>A.</b> 処理ジョブを On-Demand インスタンスで継続し、Savings Plans を購入してコストを削減する</li>
+<li><b>B.</b> AWS Lambda でバッチジョブを実行し、処理をマイクロバッチに分割して 15 分以内で完了するように再設計する</li>
+<li><b>C.</b> バッチ処理用に Reserved Instances（1 年）を購入し、常時利用することでコストを削減する</li>
+<li><b>D.</b> Amazon EC2 スポットインスタンスを使用してバッチジョブを実行する。スポットインスタンスはオンデマンドに比べて最大 90% コスト削減が可能で、チェックポイントがあるため中断耐性がある。AWS Batch または EC2 スポットフリート（多様なインスタンスタイプ指定）で Spot 中断リスクを分散し、2 分前の中断通知（Spot Instance Interruption Notice）で状態を保存する</li>
+</ol>
+<details class="q-answer">
+<summary>解答と解説を見る</summary>
+<div class="inner">
+<p><b>正解: D</b></p>
+<p>EC2 スポットインスタンスはオンデマンド比最大 90% のコスト削減が可能で、チェックポイントがある中断耐性のバッチジョブには最適な選択です。Spot Instance Interruption Notice の 2 分前通知をインスタンスメタデータから取得し、状態をチェックポイントとして保存することで、中断後の再開が可能です。複数のインスタンスタイプとアベイラビリティゾーンを指定することで、Spot の可用性を高めることができます。
+
+C: Reserved Instances の購入はバッチジョブが断続的に実行される場合（24 時間365日でない）に非効率です。使わない時間も料金が発生します。
+
+B: Lambda の最大実行時間は 15 分で、2〜8 時間のバッチジョブには直接対応できません。処理の分割と再設計には大きな開発コストが必要です。
+
+A: Savings Plans はコンピューティングコストを削減しますが、スポットインスタンスほどの大幅な削減（最大 90%）は達成できません。Savings Plans での最大削減は約 66% です。</p>
+<div class="svc-links">📚 関連サービスの解説: <a href="../../learn/amazon-ec2.html">Amazon EC2</a></div>
+</div>
+</details>
+<div class="cta-box"><a class="btn btn-primary" href="../../exam.html?exam=aws-sap-c02">▸ この試験を本気で演習する（全150問・無料）</a></div>
+<nav class="q-nav">
+<span><a href="q097.html">← 前の問題</a></span>
+<span><a href="q099.html">次の問題 →</a></span>
+</nav>
+<section class="related"><h2>同じ分野の関連問題</h2><ul class="q-list">
+<li><a href="q101.html">ある企業が AWS 上で Amazon DynamoDB を使ったアプリケーションを運用しており、読み取りパフォーマンス…</a></li>
+<li><a href="q094.html">ある企業が AWS 上で稼働する複数のマイクロサービスのログを Amazon CloudWatch Logs で管理して…</a></li>
+<li><a href="q091.html">ある企業が AWS 上で Amazon EKS クラスターを運用しており、Kubernetes ノードのコスト最適化を検…</a></li>
+<li><a href="q107.html">ある企業が AWS 上で稼働する本番アプリケーションに対して、SRE（サイトリライアビリティエンジニアリング）の観点から…</a></li>
+</ul></section>
+</main>
+<footer class="page-footer">
+<nav class="hub-nav"><a href="../../exams/aws-clf-c02/">CLF-C02 試験ガイド</a><a href="../../exams/aws-aif-c01/">AIF-C01 試験ガイド</a><a href="../../exams/aws-saa-c03/">SAA-C03 試験ガイド</a><a href="../../exams/aws-dva-c02/">DVA-C02 試験ガイド</a><a href="../../exams/aws-sap-c02/">SAP-C02 試験ガイド</a><a href="../../exams/gcp-cdl/">CDL 試験ガイド</a><a href="../../exams/gcp-ace/">ACE 試験ガイド</a><a href="../../exams/azure-az900/">AZ-900 試験ガイド</a><a href="../../exams/azure-ai900/">AI-900 試験ガイド</a><a href="../../exams/azure-dp900/">DP-900 試験ガイド</a><a href="../../exams/azure-sc900/">SC-900 試験ガイド</a><a href="../../exams/azure-az104/">AZ-104 試験ガイド</a></nav>
+<nav class="site-nav"><a href="../../guide/">資格ガイド</a><a href="../../learn/">サービス解説</a><a href="../../career/">キャリア</a><a href="../../about.html">運営者情報</a><a href="../../privacy.html">プライバシーポリシー</a><a href="../../contact.html">お問い合わせ</a></nav>
+<p class="copy">© CLOUDCERT_ — 本サイトは各認定試験の公式試験ではなく、収録問題はすべてオリジナルの演習問題です。</p>
+</footer>
+</body>
+</html>

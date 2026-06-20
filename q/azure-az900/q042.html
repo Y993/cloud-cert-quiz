@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>【AZ-900 演習問題 #42】ある企業がAzureでWebアプリケーションをホストしている。このアプリはサーバーサイドの…</title>
+<meta name="description" content="AZ-900の本試験レベル演習問題。ある企業がAzureでWebアプリケーションをホストしている。このアプリはサーバーサイドのコードを実行する必要があり（Node.js/Javaなど）、OSやランタイムのパッチ適用はAz… 全選択肢の解説つき。">
+<link rel="canonical" href="https://cloudcert.app/q/azure-az900/q042.html">
+<meta property="og:title" content="【AZ-900 演習問題 #42】ある企業がAzureでWebアプリケーションをホストしている。このアプリはサーバーサイドの…">
+<meta property="og:description" content="AZ-900の本試験レベル演習問題。ある企業がAzureでWebアプリケーションをホストしている。このアプリはサーバーサイドのコードを実行する必要があり（Node.js/Javaなど）、OSやランタイムのパッチ適用はAz… 全選択肢の解説つき。">
+<meta property="og:url" content="https://cloudcert.app/q/azure-az900/q042.html">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="CLOUDCERT_">
+<meta property="og:image" content="https://cloudcert.app/assets/og.png">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='80' font-size='80' fill='%233fe0a4' font-family='monospace'>▸</text></svg>">
+
+<meta name="google-adsense-account" content="ca-pub-5647574947191958">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+JP:wght@400;500;700&family=JetBrains+Mono:wght@400;600;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../../css/style.css">
+<link rel="stylesheet" href="../../css/page.css">
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-SZR5CB5Q3X"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag('js',new Date());gtag('config','G-SZR5CB5Q3X');</script>
+<script type="application/ld+json">[{"@context":"https://schema.org/","@type":"Quiz","about":{"@type":"Thing","name":"Microsoft Azure Fundamentals"},"hasPart":[{"@type":"Question","eduQuestionType":"Multiple choice","learningResourceType":"Practice problem","text":"ある企業がAzureでWebアプリケーションをホストしている。このアプリはサーバーサイドのコードを実行する必要があり（Node.js/Javaなど）、OSやランタイムのパッチ適用はAzureに任せ、自動スケーリング・カスタムドメイン・TLS証明書管理機能が必要である。最も適切なAzureサービスはどれか。","suggestedAnswer":[{"@type":"Answer","position":1,"text":"Azure Virtual Machines：仮想マシン上に自分でWebサーバーを構成する"},{"@type":"Answer","position":2,"text":"Azure Functions：サーバーレス関数実行環境"},{"@type":"Answer","position":3,"text":"Azure Container Instances：コンテナを直接実行するサービス"}],"acceptedAnswer":{"@type":"Answer","position":0,"text":"Azure App Service：PaaSのWebアプリケーションホスティングサービス","comment":{"@type":"Comment","text":"Azure App ServiceはPaaSのWebアプリケーションホスティングプラットフォームで、Node.js・Java・.NET・Python・PHPなどのランタイムを提供し、OS・ランタイムのパッチ適用をAzureが担当する。自動スケーリング・カスタムドメイン・TLS/SSL証明書の自動発行・デプロイスロット（ステージング→本番のスワップ）など本番Webアプリに必要な機能が標準で備わっている。選択肢BのVMはOSとWebサーバーの管理が顧客の責任で管理負荷が高い。選択肢CAzure FunctionsはHTTPトリガーに対応するが、常時稼働型のWebアプリよりもイベント駆動の短時間処理に適しており、Webアプリ全体のホスティング基盤としてはApp Serviceの方が適切。選択肢DのACIはコンテナ直接実行サービスで、App Serviceが持つカスタムドメイン・TLS証明書管理・自動スケーリング機能を標準では持たない。"}}}]},{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"HOME","item":"https://cloudcert.app/"},{"@type":"ListItem","position":2,"name":"AZ-900 試験ガイド","item":"https://cloudcert.app/exams/azure-az900/"},{"@type":"ListItem","position":3,"name":"q042"}]}]</script>
+</head>
+<body class="page-body">
+<header class="page-header"><a class="page-logo" href="../../index.html">&gt; CLOUDCERT_</a></header>
+<main class="page-main">
+
+<nav class="breadcrumb"><a href="../../index.html">HOME</a> › <a href="../../exams/azure-az900/">AZ-900 試験ガイド</a> › q042</nav>
+<div class="q-meta"><span>AZ-900</span><span>Azureのアーキテクチャとサービス</span><span>MEDIUM</span><span>単一選択</span></div>
+<h1>ある企業がAzureでWebアプリケーションをホストしている。このアプリはサーバーサイドのコードを実行する必要があり（Node.js/Javaなど）、OSやランタイムのパッチ適用はAzureに任せ、自動スケーリング・カスタムドメイン・TLS証明書管理機能が必要である。最も適切なAzureサービスはどれか。</h1>
+<ol class="q-choices">
+<li><b>A.</b> Azure App Service：PaaSのWebアプリケーションホスティングサービス</li>
+<li><b>B.</b> Azure Virtual Machines：仮想マシン上に自分でWebサーバーを構成する</li>
+<li><b>C.</b> Azure Functions：サーバーレス関数実行環境</li>
+<li><b>D.</b> Azure Container Instances：コンテナを直接実行するサービス</li>
+</ol>
+<details class="q-answer">
+<summary>解答と解説を見る</summary>
+<div class="inner">
+<p><b>正解: A</b></p>
+<p>Azure App ServiceはPaaSのWebアプリケーションホスティングプラットフォームで、Node.js・Java・.NET・Python・PHPなどのランタイムを提供し、OS・ランタイムのパッチ適用をAzureが担当する。自動スケーリング・カスタムドメイン・TLS/SSL証明書の自動発行・デプロイスロット（ステージング→本番のスワップ）など本番Webアプリに必要な機能が標準で備わっている。選択肢BのVMはOSとWebサーバーの管理が顧客の責任で管理負荷が高い。選択肢CAzure FunctionsはHTTPトリガーに対応するが、常時稼働型のWebアプリよりもイベント駆動の短時間処理に適しており、Webアプリ全体のホスティング基盤としてはApp Serviceの方が適切。選択肢DのACIはコンテナ直接実行サービスで、App Serviceが持つカスタムドメイン・TLS証明書管理・自動スケーリング機能を標準では持たない。</p>
+<div class="svc-links">📚 関連サービスの解説: <a href="../../learn/azure-app-service.html">Azure App Service</a></div>
+</div>
+</details>
+<div class="cta-box"><a class="btn btn-primary" href="../../exam.html?exam=azure-az900">▸ この試験を本気で演習する（全150問・無料）</a></div>
+<nav class="q-nav">
+<span><a href="q041.html">← 前の問題</a></span>
+<span><a href="q043.html">次の問題 →</a></span>
+</nav>
+<section class="related"><h2>同じ分野の関連問題</h2><ul class="q-list">
+<li><a href="q041.html">ある企業がAzureに複数のVNetを展開しており、異なるVNet間でリソースが通信できるようにしたい。VNetは同一リ…</a></li>
+<li><a href="q043.html">ある企業がAzureのストレージ冗長性オプションを選択しようとしている。プライマリリージョンで障害が発生した場合でもデー…</a></li>
+<li><a href="q040.html">ある企業がAzureの仮想ネットワーク（VNet）に配置したリソースを、インターネット経由でなくMicrosoftのバッ…</a></li>
+<li><a href="q044.html">ある企業がAzureでデータウェアハウスを構築しようとしている。テラバイト規模の構造化データに対してSQL形式のクエリを…</a></li>
+</ul></section>
+</main>
+<footer class="page-footer">
+<nav class="hub-nav"><a href="../../exams/aws-clf-c02/">CLF-C02 試験ガイド</a><a href="../../exams/aws-aif-c01/">AIF-C01 試験ガイド</a><a href="../../exams/aws-saa-c03/">SAA-C03 試験ガイド</a><a href="../../exams/aws-dva-c02/">DVA-C02 試験ガイド</a><a href="../../exams/aws-sap-c02/">SAP-C02 試験ガイド</a><a href="../../exams/gcp-cdl/">CDL 試験ガイド</a><a href="../../exams/gcp-ace/">ACE 試験ガイド</a><a href="../../exams/azure-az900/">AZ-900 試験ガイド</a><a href="../../exams/azure-ai900/">AI-900 試験ガイド</a><a href="../../exams/azure-dp900/">DP-900 試験ガイド</a><a href="../../exams/azure-sc900/">SC-900 試験ガイド</a><a href="../../exams/azure-az104/">AZ-104 試験ガイド</a></nav>
+<nav class="site-nav"><a href="../../guide/">資格ガイド</a><a href="../../learn/">サービス解説</a><a href="../../career/">キャリア</a><a href="../../about.html">運営者情報</a><a href="../../privacy.html">プライバシーポリシー</a><a href="../../contact.html">お問い合わせ</a></nav>
+<p class="copy">© CLOUDCERT_ — 本サイトは各認定試験の公式試験ではなく、収録問題はすべてオリジナルの演習問題です。</p>
+</footer>
+</body>
+</html>

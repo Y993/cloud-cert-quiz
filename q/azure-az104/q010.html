@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>【AZ-104 演習問題 #10】ある企業が Azure Policy イニシアチブ（Initiative）を使ってセキュリ…</title>
+<meta name="description" content="AZ-104の本試験レベル演習問題。ある企業が Azure Policy イニシアチブ（Initiative）を使ってセキュリティ基準を管理している。イニシアチブ定義に含まれる 1 つのポリシーが「DeployIfNot… 全選択肢の解説つき。">
+<link rel="canonical" href="https://cloudcert.app/q/azure-az104/q010.html">
+<meta property="og:title" content="【AZ-104 演習問題 #10】ある企業が Azure Policy イニシアチブ（Initiative）を使ってセキュリ…">
+<meta property="og:description" content="AZ-104の本試験レベル演習問題。ある企業が Azure Policy イニシアチブ（Initiative）を使ってセキュリティ基準を管理している。イニシアチブ定義に含まれる 1 つのポリシーが「DeployIfNot… 全選択肢の解説つき。">
+<meta property="og:url" content="https://cloudcert.app/q/azure-az104/q010.html">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="CLOUDCERT_">
+<meta property="og:image" content="https://cloudcert.app/assets/og.png">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='80' font-size='80' fill='%233fe0a4' font-family='monospace'>▸</text></svg>">
+
+<meta name="google-adsense-account" content="ca-pub-5647574947191958">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+JP:wght@400;500;700&family=JetBrains+Mono:wght@400;600;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../../css/style.css">
+<link rel="stylesheet" href="../../css/page.css">
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-SZR5CB5Q3X"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag('js',new Date());gtag('config','G-SZR5CB5Q3X');</script>
+<script type="application/ld+json">[{"@context":"https://schema.org/","@type":"Quiz","about":{"@type":"Thing","name":"Microsoft Azure Administrator"},"hasPart":[{"@type":"Question","eduQuestionType":"Multiple choice","learningResourceType":"Practice problem","text":"ある企業が Azure Policy イニシアチブ（Initiative）を使ってセキュリティ基準を管理している。イニシアチブ定義に含まれる 1 つのポリシーが「DeployIfNotExists」効果を持ち、診断設定が存在しない VM に対して自動デプロイを行う設定になっている。ポリシーを割り当てた後、非準拠の既存 VM に対してポリシーの修復を実行したい。正しい手順として最も適切なものはどれか。","suggestedAnswer":[{"@type":"Answer","position":1,"text":"Azure Automation の Runbook を作成し、診断設定なしの VM を検索してスクリプトで設定を適用する"},{"@type":"Answer","position":2,"text":"DeployIfNotExists ポリシーは新規リソース作成時にのみ機能するため、既存 VM への修復は手動で行う必要がある"},{"@type":"Answer","position":3,"text":"ポリシー割り当てを削除して再割り当てすると、DeployIfNotExists が自動で既存リソースに適用される"}],"acceptedAnswer":{"@type":"Answer","position":0,"text":"Azure portal の「修復（Remediation）」タブから修復タスクを作成し、マネージド ID に必要な RBAC ロールを付与する","comment":{"@type":"Comment","text":"DeployIfNotExists（DINE）ポリシーは新規・更新リソースへの評価時に自動デプロイするが、既存の非準拠リソースには修復タスク（Remediation task）を手動でトリガーする必要がある。修復タスクはポリシーが割り当てられたスコープの既存リソースを再評価し、必要なリソースをデプロイする。この際、ポリシー割り当てに関連付けられたマネージド ID（システム割り当てまたはユーザー割り当て）にターゲットリソースへのデプロイ権限（例：Contributor や特定リソースプロバイダーの書き込み権限）を付与しておく必要がある。選択肢Dの再割り当てでは既存リソースへの DINE の自動適用は起きない。選択肢Cは誤りで、修復タスク機能により既存リソースへの適用が可能。選択肢BはAzure Automation は有効だが、Azure Policy 標準機能の修復タスクを使う方がガバナンスと一貫性の観点で優れている。"}}}]},{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"HOME","item":"https://cloudcert.app/"},{"@type":"ListItem","position":2,"name":"AZ-104 試験ガイド","item":"https://cloudcert.app/exams/azure-az104/"},{"@type":"ListItem","position":3,"name":"q010"}]}]</script>
+</head>
+<body class="page-body">
+<header class="page-header"><a class="page-logo" href="../../index.html">&gt; CLOUDCERT_</a></header>
+<main class="page-main">
+
+<nav class="breadcrumb"><a href="../../index.html">HOME</a> › <a href="../../exams/azure-az104/">AZ-104 試験ガイド</a> › q010</nav>
+<div class="q-meta"><span>AZ-104</span><span>Azure の ID とガバナンスの管理</span><span>HARD</span><span>単一選択</span></div>
+<h1>ある企業が Azure Policy イニシアチブ（Initiative）を使ってセキュリティ基準を管理している。イニシアチブ定義に含まれる 1 つのポリシーが「DeployIfNotExists」効果を持ち、診断設定が存在しない VM に対して自動デプロイを行う設定になっている。ポリシーを割り当てた後、非準拠の既存 VM に対してポリシーの修復を実行したい。正しい手順として最も適切なものはどれか。</h1>
+<ol class="q-choices">
+<li><b>A.</b> Azure portal の「修復（Remediation）」タブから修復タスクを作成し、マネージド ID に必要な RBAC ロールを付与する</li>
+<li><b>B.</b> Azure Automation の Runbook を作成し、診断設定なしの VM を検索してスクリプトで設定を適用する</li>
+<li><b>C.</b> DeployIfNotExists ポリシーは新規リソース作成時にのみ機能するため、既存 VM への修復は手動で行う必要がある</li>
+<li><b>D.</b> ポリシー割り当てを削除して再割り当てすると、DeployIfNotExists が自動で既存リソースに適用される</li>
+</ol>
+<details class="q-answer">
+<summary>解答と解説を見る</summary>
+<div class="inner">
+<p><b>正解: A</b></p>
+<p>DeployIfNotExists（DINE）ポリシーは新規・更新リソースへの評価時に自動デプロイするが、既存の非準拠リソースには修復タスク（Remediation task）を手動でトリガーする必要がある。修復タスクはポリシーが割り当てられたスコープの既存リソースを再評価し、必要なリソースをデプロイする。この際、ポリシー割り当てに関連付けられたマネージド ID（システム割り当てまたはユーザー割り当て）にターゲットリソースへのデプロイ権限（例：Contributor や特定リソースプロバイダーの書き込み権限）を付与しておく必要がある。選択肢Dの再割り当てでは既存リソースへの DINE の自動適用は起きない。選択肢Cは誤りで、修復タスク機能により既存リソースへの適用が可能。選択肢BはAzure Automation は有効だが、Azure Policy 標準機能の修復タスクを使う方がガバナンスと一貫性の観点で優れている。</p>
+<div class="svc-links">📚 関連サービスの解説: <a href="../../learn/azure-rbac.html">Azure RBAC</a></div>
+</div>
+</details>
+<div class="cta-box"><a class="btn btn-primary" href="../../exam.html?exam=azure-az104">▸ この試験を本気で演習する（全150問・無料）</a></div>
+<nav class="q-nav">
+<span><a href="q009.html">← 前の問題</a></span>
+<span><a href="q011.html">次の問題 →</a></span>
+</nav>
+<section class="related"><h2>同じ分野の関連問題</h2><ul class="q-list">
+<li><a href="q009.html">ある企業が Azure Policy を使い、すべてのリソースに対して「Environment」タグが必須という規則をサ…</a></li>
+<li><a href="q011.html">ある企業が本番環境のリソースグループに ReadOnly リソースロックを適用している。運用チームが、このリソースグルー…</a></li>
+<li><a href="q008.html">ある企業が複数のサブスクリプションを管理グループ階層で管理している。管理グループ「Corp」の配下に「Productio…</a></li>
+<li><a href="q012.html">ある企業が Azure サブスクリプションを別の Entra ID テナントに移動させる必要が生じた。移動後の影響として…</a></li>
+</ul></section>
+</main>
+<footer class="page-footer">
+<nav class="hub-nav"><a href="../../exams/aws-clf-c02/">CLF-C02 試験ガイド</a><a href="../../exams/aws-aif-c01/">AIF-C01 試験ガイド</a><a href="../../exams/aws-saa-c03/">SAA-C03 試験ガイド</a><a href="../../exams/aws-dva-c02/">DVA-C02 試験ガイド</a><a href="../../exams/aws-sap-c02/">SAP-C02 試験ガイド</a><a href="../../exams/gcp-cdl/">CDL 試験ガイド</a><a href="../../exams/gcp-ace/">ACE 試験ガイド</a><a href="../../exams/azure-az900/">AZ-900 試験ガイド</a><a href="../../exams/azure-ai900/">AI-900 試験ガイド</a><a href="../../exams/azure-dp900/">DP-900 試験ガイド</a><a href="../../exams/azure-sc900/">SC-900 試験ガイド</a><a href="../../exams/azure-az104/">AZ-104 試験ガイド</a></nav>
+<nav class="site-nav"><a href="../../guide/">資格ガイド</a><a href="../../learn/">サービス解説</a><a href="../../career/">キャリア</a><a href="../../about.html">運営者情報</a><a href="../../privacy.html">プライバシーポリシー</a><a href="../../contact.html">お問い合わせ</a></nav>
+<p class="copy">© CLOUDCERT_ — 本サイトは各認定試験の公式試験ではなく、収録問題はすべてオリジナルの演習問題です。</p>
+</footer>
+</body>
+</html>

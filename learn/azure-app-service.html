@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Azure App Serviceとは？試験に出るポイントと演習問題</title>
+<meta name="description" content="Azure App Service（Microsoft Azure）の要点と資格試験での問われ方を解説。登場する演習問題9問と公式ドキュメントへのリンクつき。">
+<link rel="canonical" href="https://cloudcert.app/learn/azure-app-service.html">
+<meta property="og:title" content="Azure App Serviceとは？試験に出るポイントと演習問題">
+<meta property="og:description" content="Azure App Service（Microsoft Azure）の要点と資格試験での問われ方を解説。登場する演習問題9問と公式ドキュメントへのリンクつき。">
+<meta property="og:url" content="https://cloudcert.app/learn/azure-app-service.html">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="CLOUDCERT_">
+<meta property="og:image" content="https://cloudcert.app/assets/og.png">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='80' font-size='80' fill='%233fe0a4' font-family='monospace'>▸</text></svg>">
+
+<meta name="google-adsense-account" content="ca-pub-5647574947191958">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+JP:wght@400;500;700&family=JetBrains+Mono:wght@400;600;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../css/style.css">
+<link rel="stylesheet" href="../css/page.css">
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-SZR5CB5Q3X"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag('js',new Date());gtag('config','G-SZR5CB5Q3X');</script>
+<script type="application/ld+json">[{"@context":"https://schema.org","@type":"TechArticle","headline":"Azure App Serviceとは？試験に出るポイントと演習問題","description":"Azure App Service（Microsoft Azure）の要点と資格試験での問われ方を解説。登場する演習問題9問と公式ドキュメントへのリンクつき。","inLanguage":"ja","about":{"@type":"Thing","name":"Azure App Service"},"author":{"@type":"Organization","name":"CLOUDCERT_"},"publisher":{"@type":"Organization","name":"CLOUDCERT_"},"mainEntityOfPage":"https://cloudcert.app/learn/azure-app-service.html"},{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"HOME","item":"https://cloudcert.app/"},{"@type":"ListItem","position":2,"name":"サービス解説","item":"https://cloudcert.app/learn/"},{"@type":"ListItem","position":3,"name":"Azure App Service"}]}]</script>
+</head>
+<body class="page-body">
+<header class="page-header"><a class="page-logo" href="../index.html">&gt; CLOUDCERT_</a></header>
+<main class="page-main">
+
+<nav class="breadcrumb"><a href="../index.html">HOME</a> › <a href="./">サービス解説</a> › Azure App Service</nav>
+<div class="learn-head">
+<div class="badges"><span class="badge" data-provider="azure">Microsoft Azure</span><span class="badge">コンピューティング</span><span class="badge badge-q">演習9問</span></div>
+<h1>Azure App Serviceとは</h1>
+</div>
+<p class="lead">Azure App Serviceは、Webアプリ・モバイルバックエンド・RESTful APIをインフラ管理不要でホスティングできるPaaSサービスだ。.NET・Java・Node.js・Python・PHPなど複数のランタイムをサポートし、WindowsとLinux両方で動作する。OSやランタイムのパッチ適用はAzureが自動で行う。</p>
+<p>App Serviceプランによってスケールとコストが決まる。プランのティア（Free・Basic・Standard・Premium・Isolated）によってカスタムドメイン・SSL・自動スケーリング・デプロイスロットの利用可否が変わる。デプロイスロット（Deployment Slot）はStandard以上で使える機能で、ステージング環境と本番環境を別スロットとして管理し、スワップ操作で無停止デプロイを実現する。</p>
+<p><a class="official-btn" href="https://learn.microsoft.com/ja-jp/azure/app-service/overview" target="_blank" rel="noopener">公式ドキュメント →</a></p>
+<h2>試験での問われ方</h2>
+<p>デプロイスロットは頻出トピックだ。「ステージングでテストして本番にスワップ」という流れを理解しておく。スワップはURLを入れ替えるため本番トラフィックが即座にステージングのコードに向く。スワップ時にスティッキーな設定（接続文字列・アプリ設定にスロット固有フラグが付いたもの）はスワップされないという挙動も問われる。IaaSのVMとPaaSのApp Serviceの責任境界の違いもAZ-900の定番問題だ。</p>
+<h2>このサービスが登場する演習問題（9問）</h2>
+<ul class="q-list">
+<li><a href="../q/azure-az900/q042.html">【AZ-900】ある企業がAzureでWebアプリケーションをホストしている。このアプリはサーバーサイドのコードを実行する必要があり（N…</a></li>
+<li><a href="../q/azure-az900/q123.html">【AZ-900】ある企業がAzure App Serviceを使ってWebアプリをホストしており、新しいバージョンのアプリを本番環境に影…</a></li>
+<li><a href="../q/azure-az900/q148.html">【AZ-900】ある企業がAzureのセキュリティベストプラクティスに沿った設計を行っている。「多層防御（Defense in Dept…</a></li>
+<li><a href="../q/azure-az104/q072.html">【AZ-104】ある企業がAzure App Service（Standard S2プラン）でWebアプリケーションを本番運用している。…</a></li>
+<li><a href="../q/azure-az104/q073.html">【AZ-104】あるスタートアップがAzure App ServiceでAPIバックエンドを運用している。独自ドメイン（api.exam…</a></li>
+<li><a href="../q/azure-az104/q074.html">【AZ-104】ある企業がAzure App Serviceで複数のWebアプリを運用しており、トラフィックの急増に対してApp Ser…</a></li>
+<li><a href="../q/azure-az104/q083.html">【AZ-104】ある企業がAzure App Service（Standard プラン）で新機能を段階的にリリースしたいと考えている。本…</a></li>
+<li><a href="../q/azure-az104/q093.html">【AZ-104】ある企業がAzure App Serviceを使ってWebアプリケーションをデプロイしている。App Serviceの「…</a></li>
+<li><a href="../q/azure-az104/q097.html">【AZ-104】ある企業がAzure App ServiceでAPIアプリをホストしており、App Serviceのアプリケーション設定…</a></li>
+</ul>
+<h2>関連サービス</h2><ul class="q-list">
+<li><a href="azure-virtual-machines.html">Azure Virtual Machines</a></li>
+<li><a href="azure-vmss.html">仮想マシン スケール セット（VMSS）</a></li>
+<li><a href="azure-functions.html">Azure Functions</a></li></ul>
+</main>
+<footer class="page-footer">
+<nav class="hub-nav"><a href="../exams/aws-clf-c02/">CLF-C02 試験ガイド</a><a href="../exams/aws-aif-c01/">AIF-C01 試験ガイド</a><a href="../exams/aws-saa-c03/">SAA-C03 試験ガイド</a><a href="../exams/aws-dva-c02/">DVA-C02 試験ガイド</a><a href="../exams/aws-sap-c02/">SAP-C02 試験ガイド</a><a href="../exams/gcp-cdl/">CDL 試験ガイド</a><a href="../exams/gcp-ace/">ACE 試験ガイド</a><a href="../exams/azure-az900/">AZ-900 試験ガイド</a><a href="../exams/azure-ai900/">AI-900 試験ガイド</a><a href="../exams/azure-dp900/">DP-900 試験ガイド</a><a href="../exams/azure-sc900/">SC-900 試験ガイド</a><a href="../exams/azure-az104/">AZ-104 試験ガイド</a></nav>
+<nav class="site-nav"><a href="../guide/">資格ガイド</a><a href="../learn/">サービス解説</a><a href="../career/">キャリア</a><a href="../about.html">運営者情報</a><a href="../privacy.html">プライバシーポリシー</a><a href="../contact.html">お問い合わせ</a></nav>
+<p class="copy">© CLOUDCERT_ — 本サイトは各認定試験の公式試験ではなく、収録問題はすべてオリジナルの演習問題です。</p>
+</footer>
+</body>
+</html>

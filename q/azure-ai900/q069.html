@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>【AI-900 演習問題 #69】ある金融機関が、顧客が窓口に来店した際の本人確認プロセスを改善したい。顧客が提示した身分証…</title>
+<meta name="description" content="AI-900の本試験レベル演習問題。ある金融機関が、顧客が窓口に来店した際の本人確認プロセスを改善したい。顧客が提示した身分証明書（運転免許証）の写真画像から氏名・住所・生年月日を自動抽出し、システムに入力する時間を削減… 全選択肢の解説つき。">
+<link rel="canonical" href="https://cloudcert.app/q/azure-ai900/q069.html">
+<meta property="og:title" content="【AI-900 演習問題 #69】ある金融機関が、顧客が窓口に来店した際の本人確認プロセスを改善したい。顧客が提示した身分証…">
+<meta property="og:description" content="AI-900の本試験レベル演習問題。ある金融機関が、顧客が窓口に来店した際の本人確認プロセスを改善したい。顧客が提示した身分証明書（運転免許証）の写真画像から氏名・住所・生年月日を自動抽出し、システムに入力する時間を削減… 全選択肢の解説つき。">
+<meta property="og:url" content="https://cloudcert.app/q/azure-ai900/q069.html">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="CLOUDCERT_">
+<meta property="og:image" content="https://cloudcert.app/assets/og.png">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='80' font-size='80' fill='%233fe0a4' font-family='monospace'>▸</text></svg>">
+
+<meta name="google-adsense-account" content="ca-pub-5647574947191958">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+JP:wght@400;500;700&family=JetBrains+Mono:wght@400;600;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../../css/style.css">
+<link rel="stylesheet" href="../../css/page.css">
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-SZR5CB5Q3X"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag('js',new Date());gtag('config','G-SZR5CB5Q3X');</script>
+<script type="application/ld+json">[{"@context":"https://schema.org/","@type":"Quiz","about":{"@type":"Thing","name":"Microsoft Azure AI Fundamentals"},"hasPart":[{"@type":"Question","eduQuestionType":"Multiple choice","learningResourceType":"Practice problem","text":"ある金融機関が、顧客が窓口に来店した際の本人確認プロセスを改善したい。顧客が提示した身分証明書（運転免許証）の写真画像から氏名・住所・生年月日を自動抽出し、システムに入力する時間を削減したい。このユースケースに最も適した Azure AI Vision の機能はどれか。","suggestedAnswer":[{"@type":"Answer","position":0,"text":"空間分析（Spatial Analysis）：カメラ映像から人の動きをトラッキングする"},{"@type":"Answer","position":1,"text":"画像キャプション生成：画像の内容を文章で説明する"},{"@type":"Answer","position":2,"text":"スマートクロップ（Smart Crop）：重要な部分を自動でトリミングする"}],"acceptedAnswer":{"@type":"Answer","position":3,"text":"Read API（OCR）：画像やドキュメントからテキストを抽出する","comment":{"@type":"Comment","text":"Azure AI VisionのRead APIはOCR機能を提供し、スキャン画像・写真・PDFから印刷文字および手書き文字を高精度でテキストとして抽出できる。身分証明書の氏名・住所・生年月日の自動抽出にはRead APIが最適である。空間分析はカメラのリアルタイム映像から人の位置や動線を分析するサービスであり、静止画からのテキスト抽出とは用途が異なる。スマートクロップは画像の関心領域を自動トリミングする機能であり、テキスト抽出は行わない。画像キャプション生成は画像の内容を自然言語で説明する機能であり、特定フィールドの構造化データ抽出には適さない。"}}}]},{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"HOME","item":"https://cloudcert.app/"},{"@type":"ListItem","position":2,"name":"AI-900 試験ガイド","item":"https://cloudcert.app/exams/azure-ai900/"},{"@type":"ListItem","position":3,"name":"q069"}]}]</script>
+</head>
+<body class="page-body">
+<header class="page-header"><a class="page-logo" href="../../index.html">&gt; CLOUDCERT_</a></header>
+<main class="page-main">
+
+<nav class="breadcrumb"><a href="../../index.html">HOME</a> › <a href="../../exams/azure-ai900/">AI-900 試験ガイド</a> › q069</nav>
+<div class="q-meta"><span>AI-900</span><span>コンピュータ ビジョン ワークロード</span><span>MEDIUM</span><span>単一選択</span></div>
+<h1>ある金融機関が、顧客が窓口に来店した際の本人確認プロセスを改善したい。顧客が提示した身分証明書（運転免許証）の写真画像から氏名・住所・生年月日を自動抽出し、システムに入力する時間を削減したい。このユースケースに最も適した Azure AI Vision の機能はどれか。</h1>
+<ol class="q-choices">
+<li><b>A.</b> 空間分析（Spatial Analysis）：カメラ映像から人の動きをトラッキングする</li>
+<li><b>B.</b> 画像キャプション生成：画像の内容を文章で説明する</li>
+<li><b>C.</b> スマートクロップ（Smart Crop）：重要な部分を自動でトリミングする</li>
+<li><b>D.</b> Read API（OCR）：画像やドキュメントからテキストを抽出する</li>
+</ol>
+<details class="q-answer">
+<summary>解答と解説を見る</summary>
+<div class="inner">
+<p><b>正解: D</b></p>
+<p>Azure AI VisionのRead APIはOCR機能を提供し、スキャン画像・写真・PDFから印刷文字および手書き文字を高精度でテキストとして抽出できる。身分証明書の氏名・住所・生年月日の自動抽出にはRead APIが最適である。空間分析はカメラのリアルタイム映像から人の位置や動線を分析するサービスであり、静止画からのテキスト抽出とは用途が異なる。スマートクロップは画像の関心領域を自動トリミングする機能であり、テキスト抽出は行わない。画像キャプション生成は画像の内容を自然言語で説明する機能であり、特定フィールドの構造化データ抽出には適さない。</p>
+
+</div>
+</details>
+<div class="cta-box"><a class="btn btn-primary" href="../../exam.html?exam=azure-ai900">▸ この試験を本気で演習する（全150問・無料）</a></div>
+<nav class="q-nav">
+<span><a href="q068.html">← 前の問題</a></span>
+<span><a href="q070.html">次の問題 →</a></span>
+</nav>
+<section class="related"><h2>同じ分野の関連問題</h2><ul class="q-list">
+<li><a href="q068.html">ある小売チェーンが店舗の棚画像から「欠品している商品の棚位置（行・列）」を自動検出するシステムを導入したい。画像内の特定…</a></li>
+<li><a href="q070.html">ある公共施設のセキュリティチームが、入退場ゲートに顔認証システムを導入したい。事前に登録した従業員の顔と来訪者の顔を照合…</a></li>
+<li><a href="q067.html">ある保険会社が、事故現場の写真を自動解析するシステムを構築したい。写真から「車両損傷の有無」「損傷の種類（へこみ・割れ・…</a></li>
+<li><a href="q071.html">ある動画配信サービスが、アップロードされた動画コンテンツのメタデータを自動生成したい。各動画から「登場人物の顔」「シーン…</a></li>
+</ul></section>
+</main>
+<footer class="page-footer">
+<nav class="hub-nav"><a href="../../exams/aws-clf-c02/">CLF-C02 試験ガイド</a><a href="../../exams/aws-aif-c01/">AIF-C01 試験ガイド</a><a href="../../exams/aws-saa-c03/">SAA-C03 試験ガイド</a><a href="../../exams/aws-dva-c02/">DVA-C02 試験ガイド</a><a href="../../exams/aws-sap-c02/">SAP-C02 試験ガイド</a><a href="../../exams/gcp-cdl/">CDL 試験ガイド</a><a href="../../exams/gcp-ace/">ACE 試験ガイド</a><a href="../../exams/azure-az900/">AZ-900 試験ガイド</a><a href="../../exams/azure-ai900/">AI-900 試験ガイド</a><a href="../../exams/azure-dp900/">DP-900 試験ガイド</a><a href="../../exams/azure-sc900/">SC-900 試験ガイド</a><a href="../../exams/azure-az104/">AZ-104 試験ガイド</a></nav>
+<nav class="site-nav"><a href="../../guide/">資格ガイド</a><a href="../../learn/">サービス解説</a><a href="../../career/">キャリア</a><a href="../../about.html">運営者情報</a><a href="../../privacy.html">プライバシーポリシー</a><a href="../../contact.html">お問い合わせ</a></nav>
+<p class="copy">© CLOUDCERT_ — 本サイトは各認定試験の公式試験ではなく、収録問題はすべてオリジナルの演習問題です。</p>
+</footer>
+</body>
+</html>

@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>【AZ-900 演習問題 #95】ある企業が「クラウドの信頼性（Reliability）」の設計を検討している。「信頼性」の…</title>
+<meta name="description" content="AZ-900の本試験レベル演習問題。ある企業が「クラウドの信頼性（Reliability）」の設計を検討している。「信頼性」の定義として最も正確なものはどれか。 全選択肢の解説つき。">
+<link rel="canonical" href="https://cloudcert.app/q/azure-az900/q095.html">
+<meta property="og:title" content="【AZ-900 演習問題 #95】ある企業が「クラウドの信頼性（Reliability）」の設計を検討している。「信頼性」の…">
+<meta property="og:description" content="AZ-900の本試験レベル演習問題。ある企業が「クラウドの信頼性（Reliability）」の設計を検討している。「信頼性」の定義として最も正確なものはどれか。 全選択肢の解説つき。">
+<meta property="og:url" content="https://cloudcert.app/q/azure-az900/q095.html">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="CLOUDCERT_">
+<meta property="og:image" content="https://cloudcert.app/assets/og.png">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='80' font-size='80' fill='%233fe0a4' font-family='monospace'>▸</text></svg>">
+
+<meta name="google-adsense-account" content="ca-pub-5647574947191958">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+JP:wght@400;500;700&family=JetBrains+Mono:wght@400;600;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../../css/style.css">
+<link rel="stylesheet" href="../../css/page.css">
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-SZR5CB5Q3X"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag('js',new Date());gtag('config','G-SZR5CB5Q3X');</script>
+<script type="application/ld+json">[{"@context":"https://schema.org/","@type":"Quiz","about":{"@type":"Thing","name":"Microsoft Azure Fundamentals"},"hasPart":[{"@type":"Question","eduQuestionType":"Multiple choice","learningResourceType":"Practice problem","text":"ある企業が「クラウドの信頼性（Reliability）」の設計を検討している。「信頼性」の定義として最も正確なものはどれか。","suggestedAnswer":[{"@type":"Answer","position":0,"text":"システムが毎秒100リクエストを処理できること"},{"@type":"Answer","position":1,"text":"すべてのデータが最高レベルの暗号化で保護されること"},{"@type":"Answer","position":3,"text":"システムへのアクセスが世界中のどこからでも同じ速度で応答すること"}],"acceptedAnswer":{"@type":"Answer","position":2,"text":"障害が発生した場合にシステムが回復でき、需要の変化に対応できること。インフラが分散されることで単一障害点を持たない構成を実現する","comment":{"@type":"Comment","text":"Azureのクラウドフレームワーク（Well-Architected Framework）における信頼性（Reliability）の定義は「システムが障害から回復できる能力と、需要変化に対応できる能力」である。具体的には、単一障害点（SPOF）の排除、複数データセンターへの分散（可用性ゾーン・リージョンペア）、自動フェールオーバー、バックアップと復旧計画の整備などを含む。選択肢Aの毎秒処理能力はパフォーマンス（Performance Efficiency）の観点であり、信頼性の定義ではない。選択肢Bのデータ暗号化はセキュリティ（Security）ピラーの内容であり、信頼性とは別の概念。選択肢Dの均一なレスポンス速度はパフォーマンスや可用性に関する話だが、信頼性の定義としては正確ではない。"}}}]},{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"HOME","item":"https://cloudcert.app/"},{"@type":"ListItem","position":2,"name":"AZ-900 試験ガイド","item":"https://cloudcert.app/exams/azure-az900/"},{"@type":"ListItem","position":3,"name":"q095"}]}]</script>
+</head>
+<body class="page-body">
+<header class="page-header"><a class="page-logo" href="../../index.html">&gt; CLOUDCERT_</a></header>
+<main class="page-main">
+
+<nav class="breadcrumb"><a href="../../index.html">HOME</a> › <a href="../../exams/azure-az900/">AZ-900 試験ガイド</a> › q095</nav>
+<div class="q-meta"><span>AZ-900</span><span>クラウドの概念</span><span>MEDIUM</span><span>単一選択</span></div>
+<h1>ある企業が「クラウドの信頼性（Reliability）」の設計を検討している。「信頼性」の定義として最も正確なものはどれか。</h1>
+<ol class="q-choices">
+<li><b>A.</b> システムが毎秒100リクエストを処理できること</li>
+<li><b>B.</b> すべてのデータが最高レベルの暗号化で保護されること</li>
+<li><b>C.</b> 障害が発生した場合にシステムが回復でき、需要の変化に対応できること。インフラが分散されることで単一障害点を持たない構成を実現する</li>
+<li><b>D.</b> システムへのアクセスが世界中のどこからでも同じ速度で応答すること</li>
+</ol>
+<details class="q-answer">
+<summary>解答と解説を見る</summary>
+<div class="inner">
+<p><b>正解: C</b></p>
+<p>Azureのクラウドフレームワーク（Well-Architected Framework）における信頼性（Reliability）の定義は「システムが障害から回復できる能力と、需要変化に対応できる能力」である。具体的には、単一障害点（SPOF）の排除、複数データセンターへの分散（可用性ゾーン・リージョンペア）、自動フェールオーバー、バックアップと復旧計画の整備などを含む。選択肢Aの毎秒処理能力はパフォーマンス（Performance Efficiency）の観点であり、信頼性の定義ではない。選択肢Bのデータ暗号化はセキュリティ（Security）ピラーの内容であり、信頼性とは別の概念。選択肢Dの均一なレスポンス速度はパフォーマンスや可用性に関する話だが、信頼性の定義としては正確ではない。</p>
+
+</div>
+</details>
+<div class="cta-box"><a class="btn btn-primary" href="../../exam.html?exam=azure-az900">▸ この試験を本気で演習する（全150問・無料）</a></div>
+<nav class="q-nav">
+<span><a href="q094.html">← 前の問題</a></span>
+<span><a href="q096.html">次の問題 →</a></span>
+</nav>
+<section class="related"><h2>同じ分野の関連問題</h2><ul class="q-list">
+<li><a href="q098.html">ある企業がクラウドへの移行アプローチとして「リフト＆シフト（Lift and Shift）」を選択した。このアプローチの…</a></li>
+<li><a href="q101.html">ある企業がクラウドサービスを評価している。「クラウドの予測可能性（Predictability）」には「コストの予測可能…</a></li>
+<li><a href="q104.html">ある企業がクラウド移行の計画を立てている。「規模の経済（Economies of Scale）」がクラウドのコスト優位性…</a></li>
+<li><a href="q105.html">ある企業がクラウドの利点について学習している。「クラウドでは物理インフラのプロビジョニングに数週間かかっていた作業が数分…</a></li>
+</ul></section>
+</main>
+<footer class="page-footer">
+<nav class="hub-nav"><a href="../../exams/aws-clf-c02/">CLF-C02 試験ガイド</a><a href="../../exams/aws-aif-c01/">AIF-C01 試験ガイド</a><a href="../../exams/aws-saa-c03/">SAA-C03 試験ガイド</a><a href="../../exams/aws-dva-c02/">DVA-C02 試験ガイド</a><a href="../../exams/aws-sap-c02/">SAP-C02 試験ガイド</a><a href="../../exams/gcp-cdl/">CDL 試験ガイド</a><a href="../../exams/gcp-ace/">ACE 試験ガイド</a><a href="../../exams/azure-az900/">AZ-900 試験ガイド</a><a href="../../exams/azure-ai900/">AI-900 試験ガイド</a><a href="../../exams/azure-dp900/">DP-900 試験ガイド</a><a href="../../exams/azure-sc900/">SC-900 試験ガイド</a><a href="../../exams/azure-az104/">AZ-104 試験ガイド</a></nav>
+<nav class="site-nav"><a href="../../guide/">資格ガイド</a><a href="../../learn/">サービス解説</a><a href="../../career/">キャリア</a><a href="../../about.html">運営者情報</a><a href="../../privacy.html">プライバシーポリシー</a><a href="../../contact.html">お問い合わせ</a></nav>
+<p class="copy">© CLOUDCERT_ — 本サイトは各認定試験の公式試験ではなく、収録問題はすべてオリジナルの演習問題です。</p>
+</footer>
+</body>
+</html>

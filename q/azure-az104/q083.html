@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>【AZ-104 演習問題 #83】ある企業がAzure App Service（Standard プラン）で新機能を段階的に…</title>
+<meta name="description" content="AZ-104の本試験レベル演習問題。ある企業がAzure App Service（Standard プラン）で新機能を段階的にリリースしたいと考えている。本番スロットへの全トラフィックを即座に切り替えるのではなく、新バー… 全選択肢の解説つき。">
+<link rel="canonical" href="https://cloudcert.app/q/azure-az104/q083.html">
+<meta property="og:title" content="【AZ-104 演習問題 #83】ある企業がAzure App Service（Standard プラン）で新機能を段階的に…">
+<meta property="og:description" content="AZ-104の本試験レベル演習問題。ある企業がAzure App Service（Standard プラン）で新機能を段階的にリリースしたいと考えている。本番スロットへの全トラフィックを即座に切り替えるのではなく、新バー… 全選択肢の解説つき。">
+<meta property="og:url" content="https://cloudcert.app/q/azure-az104/q083.html">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="CLOUDCERT_">
+<meta property="og:image" content="https://cloudcert.app/assets/og.png">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='80' font-size='80' fill='%233fe0a4' font-family='monospace'>▸</text></svg>">
+
+<meta name="google-adsense-account" content="ca-pub-5647574947191958">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+JP:wght@400;500;700&family=JetBrains+Mono:wght@400;600;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../../css/style.css">
+<link rel="stylesheet" href="../../css/page.css">
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-SZR5CB5Q3X"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag('js',new Date());gtag('config','G-SZR5CB5Q3X');</script>
+<script type="application/ld+json">[{"@context":"https://schema.org/","@type":"Quiz","about":{"@type":"Thing","name":"Microsoft Azure Administrator"},"hasPart":[{"@type":"Question","eduQuestionType":"Multiple choice","learningResourceType":"Practice problem","text":"ある企業がAzure App Service（Standard プラン）で新機能を段階的にリリースしたいと考えている。本番スロットへの全トラフィックを即座に切り替えるのではなく、新バージョンをデプロイしたステージングスロットへ本番トラフィックの一部（20%）を流してユーザーへの影響を観測した上で徐々に比率を引き上げたい。この要件を満たすために Azure ポータルまたは Azure CLI で設定すべき機能はどれか。","suggestedAnswer":[{"@type":"Answer","position":1,"text":"Azure Traffic Manager の重み付きルーティングプロファイルを作成し、本番スロットとステージングスロットをエンドポイントとして 80:20 の重みを設定する"},{"@type":"Answer","position":2,"text":"Application Gateway のリスナーに 2 つのバックエンドプールを登録し、URLパスベースのルーティングルールで 20% のパスをステージングへ転送する"},{"@type":"Answer","position":3,"text":"Azure Front Door のオリジングループに両スロットを登録し、ヘルスプローブの重みパラメーターを 80:20 に設定する"}],"acceptedAnswer":{"@type":"Answer","position":0,"text":"App Service の「トラフィックルーティング（Traffic Routing）」機能でステージングスロットに 20% のトラフィック比率を設定し、残り 80% は本番スロットに流す","comment":{"@type":"Comment","text":"App Service にはデプロイスロットへのトラフィック比率を直接設定できる「トラフィックルーティング（Deployment Slot Traffic Routing）」機能が組み込まれている。Azure ポータルの「デプロイスロット」ブレードでスロットごとにトラフィック割合（%）を指定するか、CLI では `az webapp traffic-routing set --distribution staging=20` のように設定する。指定した割合のリクエストが該当スロットに自動的に振り分けられるため、カナリアリリースやA/Bテストを追加インフラなしで実現できる。クッキー（x-ms-routing-name）を使ってユーザーを特定スロットに固定することも可能で、同一ユーザーが毎回異なるバージョンを見るという問題も回避できる。選択肢Bの Traffic Manager はDNSレベルのグローバル負荷分散サービスであり、同一App Service 内のスロット間ルーティングには使用しない。選択肢CのApplication Gateway はL7ロードバランサーとして利用できるが、スロット間トラフィック分割のためだけに導入するのは過剰な構成であり、App Service 組み込み機能で同等のことが完結する。選択肢DのFront Door も高度なグローバル配信シナリオ向けであり、単一リージョン内のスロット間カナリアルーティングには組み込み機能が適切。"}}}]},{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"HOME","item":"https://cloudcert.app/"},{"@type":"ListItem","position":2,"name":"AZ-104 試験ガイド","item":"https://cloudcert.app/exams/azure-az104/"},{"@type":"ListItem","position":3,"name":"q083"}]}]</script>
+</head>
+<body class="page-body">
+<header class="page-header"><a class="page-logo" href="../../index.html">&gt; CLOUDCERT_</a></header>
+<main class="page-main">
+
+<nav class="breadcrumb"><a href="../../index.html">HOME</a> › <a href="../../exams/azure-az104/">AZ-104 試験ガイド</a> › q083</nav>
+<div class="q-meta"><span>AZ-104</span><span>Azure コンピューティング リソースのデプロイと管理</span><span>HARD</span><span>単一選択</span></div>
+<h1>ある企業がAzure App Service（Standard プラン）で新機能を段階的にリリースしたいと考えている。本番スロットへの全トラフィックを即座に切り替えるのではなく、新バージョンをデプロイしたステージングスロットへ本番トラフィックの一部（20%）を流してユーザーへの影響を観測した上で徐々に比率を引き上げたい。この要件を満たすために Azure ポータルまたは Azure CLI で設定すべき機能はどれか。</h1>
+<ol class="q-choices">
+<li><b>A.</b> App Service の「トラフィックルーティング（Traffic Routing）」機能でステージングスロットに 20% のトラフィック比率を設定し、残り 80% は本番スロットに流す</li>
+<li><b>B.</b> Azure Traffic Manager の重み付きルーティングプロファイルを作成し、本番スロットとステージングスロットをエンドポイントとして 80:20 の重みを設定する</li>
+<li><b>C.</b> Application Gateway のリスナーに 2 つのバックエンドプールを登録し、URLパスベースのルーティングルールで 20% のパスをステージングへ転送する</li>
+<li><b>D.</b> Azure Front Door のオリジングループに両スロットを登録し、ヘルスプローブの重みパラメーターを 80:20 に設定する</li>
+</ol>
+<details class="q-answer">
+<summary>解答と解説を見る</summary>
+<div class="inner">
+<p><b>正解: A</b></p>
+<p>App Service にはデプロイスロットへのトラフィック比率を直接設定できる「トラフィックルーティング（Deployment Slot Traffic Routing）」機能が組み込まれている。Azure ポータルの「デプロイスロット」ブレードでスロットごとにトラフィック割合（%）を指定するか、CLI では `az webapp traffic-routing set --distribution staging=20` のように設定する。指定した割合のリクエストが該当スロットに自動的に振り分けられるため、カナリアリリースやA/Bテストを追加インフラなしで実現できる。クッキー（x-ms-routing-name）を使ってユーザーを特定スロットに固定することも可能で、同一ユーザーが毎回異なるバージョンを見るという問題も回避できる。選択肢Bの Traffic Manager はDNSレベルのグローバル負荷分散サービスであり、同一App Service 内のスロット間ルーティングには使用しない。選択肢CのApplication Gateway はL7ロードバランサーとして利用できるが、スロット間トラフィック分割のためだけに導入するのは過剰な構成であり、App Service 組み込み機能で同等のことが完結する。選択肢DのFront Door も高度なグローバル配信シナリオ向けであり、単一リージョン内のスロット間カナリアルーティングには組み込み機能が適切。</p>
+<div class="svc-links">📚 関連サービスの解説: <a href="../../learn/azure-app-service.html">Azure App Service</a></div>
+</div>
+</details>
+<div class="cta-box"><a class="btn btn-primary" href="../../exam.html?exam=azure-az104">▸ この試験を本気で演習する（全150問・無料）</a></div>
+<nav class="q-nav">
+<span><a href="q082.html">← 前の問題</a></span>
+<span><a href="q084.html">次の問題 →</a></span>
+</nav>
+<section class="related"><h2>同じ分野の関連問題</h2><ul class="q-list">
+<li><a href="q082.html">ある企業のWebアプリケーションがAzure App Service（Premium P2v3プラン）で稼働している。本…</a></li>
+<li><a href="q084.html">ある企業がAzure Kubernetes Service（AKS）クラスターを新規作成しようとしている。ワークロードの…</a></li>
+<li><a href="q081.html">あるチームがBicepを使って既存のAzure Key Vaultのシークレットを参照し、VMのパスワードとして使用する…</a></li>
+<li><a href="q085.html">ある企業がAKSクラスターのノードプールをアップグレード（Kubernetesバージョン更新）する必要がある。本番ワーク…</a></li>
+</ul></section>
+</main>
+<footer class="page-footer">
+<nav class="hub-nav"><a href="../../exams/aws-clf-c02/">CLF-C02 試験ガイド</a><a href="../../exams/aws-aif-c01/">AIF-C01 試験ガイド</a><a href="../../exams/aws-saa-c03/">SAA-C03 試験ガイド</a><a href="../../exams/aws-dva-c02/">DVA-C02 試験ガイド</a><a href="../../exams/aws-sap-c02/">SAP-C02 試験ガイド</a><a href="../../exams/gcp-cdl/">CDL 試験ガイド</a><a href="../../exams/gcp-ace/">ACE 試験ガイド</a><a href="../../exams/azure-az900/">AZ-900 試験ガイド</a><a href="../../exams/azure-ai900/">AI-900 試験ガイド</a><a href="../../exams/azure-dp900/">DP-900 試験ガイド</a><a href="../../exams/azure-sc900/">SC-900 試験ガイド</a><a href="../../exams/azure-az104/">AZ-104 試験ガイド</a></nav>
+<nav class="site-nav"><a href="../../guide/">資格ガイド</a><a href="../../learn/">サービス解説</a><a href="../../career/">キャリア</a><a href="../../about.html">運営者情報</a><a href="../../privacy.html">プライバシーポリシー</a><a href="../../contact.html">お問い合わせ</a></nav>
+<p class="copy">© CLOUDCERT_ — 本サイトは各認定試験の公式試験ではなく、収録問題はすべてオリジナルの演習問題です。</p>
+</footer>
+</body>
+</html>

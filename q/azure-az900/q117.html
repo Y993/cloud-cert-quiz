@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>【AZ-900 演習問題 #117】ある企業がAzure上でAPIエコノミーを展開しようとしており、複数のバックエンドサービス…</title>
+<meta name="description" content="AZ-900の本試験レベル演習問題。ある企業がAzure上でAPIエコノミーを展開しようとしており、複数のバックエンドサービス（Azure Functions・App Service・外部APIなど）の前段に統一されたA… 全選択肢の解説つき。">
+<link rel="canonical" href="https://cloudcert.app/q/azure-az900/q117.html">
+<meta property="og:title" content="【AZ-900 演習問題 #117】ある企業がAzure上でAPIエコノミーを展開しようとしており、複数のバックエンドサービス…">
+<meta property="og:description" content="AZ-900の本試験レベル演習問題。ある企業がAzure上でAPIエコノミーを展開しようとしており、複数のバックエンドサービス（Azure Functions・App Service・外部APIなど）の前段に統一されたA… 全選択肢の解説つき。">
+<meta property="og:url" content="https://cloudcert.app/q/azure-az900/q117.html">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="CLOUDCERT_">
+<meta property="og:image" content="https://cloudcert.app/assets/og.png">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='80' font-size='80' fill='%233fe0a4' font-family='monospace'>▸</text></svg>">
+
+<meta name="google-adsense-account" content="ca-pub-5647574947191958">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+JP:wght@400;500;700&family=JetBrains+Mono:wght@400;600;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../../css/style.css">
+<link rel="stylesheet" href="../../css/page.css">
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-SZR5CB5Q3X"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag('js',new Date());gtag('config','G-SZR5CB5Q3X');</script>
+<script type="application/ld+json">[{"@context":"https://schema.org/","@type":"Quiz","about":{"@type":"Thing","name":"Microsoft Azure Fundamentals"},"hasPart":[{"@type":"Question","eduQuestionType":"Multiple choice","learningResourceType":"Practice problem","text":"ある企業がAzure上でAPIエコノミーを展開しようとしており、複数のバックエンドサービス（Azure Functions・App Service・外部APIなど）の前段に統一されたAPI管理レイヤーを配置したい。API認証・レート制限・APIバージョニング・開発者ポータル・モニタリングを一元管理したい。最も適切なAzureサービスはどれか。","suggestedAnswer":[{"@type":"Answer","position":0,"text":"Azure Logic Apps：ローコードのワークフロー自動化サービス"},{"@type":"Answer","position":1,"text":"Azure Service Bus：エンタープライズメッセージングブローカー"},{"@type":"Answer","position":3,"text":"Azure Load Balancer：L4の負荷分散サービス"}],"acceptedAnswer":{"@type":"Answer","position":2,"text":"Azure API Management：API公開・セキュリティ・スロットリング・変換・モニタリングを一元管理するAPIゲートウェイ","comment":{"@type":"Comment","text":"Azure API Managementは複数のバックエンドサービス（Functions・App Service・外部REST API・オンプレミスAPIなど）を統一されたAPIゲートウェイとして公開するサービスで、OAuth2.0/JWT認証・サブスクリプションキー管理・レート制限（スロットリング）・IPフィルタリング・キャッシング・APIバージョニング・開発者ポータル（外部開発者向けのAPIドキュメント・テスト環境）・モニタリング・ポリシー変換を一元管理できる。選択肢DAzure Load Balancerは L4 TCP/UDP の単純な負荷分散サービスで、API管理機能（認証・レート制限・バージョニング等）はない。選択肢BAzure Service Busはメッセージキュー・Pub/Subサービスであり、APIゲートウェイの役割は持たない。選択肢AAzure Logic Appsはコネクター経由でサービスを統合するローコードワークフロー自動化ツールで、API管理・開発者ポータルの機能は持たない。"}}}]},{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"HOME","item":"https://cloudcert.app/"},{"@type":"ListItem","position":2,"name":"AZ-900 試験ガイド","item":"https://cloudcert.app/exams/azure-az900/"},{"@type":"ListItem","position":3,"name":"q117"}]}]</script>
+</head>
+<body class="page-body">
+<header class="page-header"><a class="page-logo" href="../../index.html">&gt; CLOUDCERT_</a></header>
+<main class="page-main">
+
+<nav class="breadcrumb"><a href="../../index.html">HOME</a> › <a href="../../exams/azure-az900/">AZ-900 試験ガイド</a> › q117</nav>
+<div class="q-meta"><span>AZ-900</span><span>Azureのアーキテクチャとサービス</span><span>HARD</span><span>単一選択</span></div>
+<h1>ある企業がAzure上でAPIエコノミーを展開しようとしており、複数のバックエンドサービス（Azure Functions・App Service・外部APIなど）の前段に統一されたAPI管理レイヤーを配置したい。API認証・レート制限・APIバージョニング・開発者ポータル・モニタリングを一元管理したい。最も適切なAzureサービスはどれか。</h1>
+<ol class="q-choices">
+<li><b>A.</b> Azure Logic Apps：ローコードのワークフロー自動化サービス</li>
+<li><b>B.</b> Azure Service Bus：エンタープライズメッセージングブローカー</li>
+<li><b>C.</b> Azure API Management：API公開・セキュリティ・スロットリング・変換・モニタリングを一元管理するAPIゲートウェイ</li>
+<li><b>D.</b> Azure Load Balancer：L4の負荷分散サービス</li>
+</ol>
+<details class="q-answer">
+<summary>解答と解説を見る</summary>
+<div class="inner">
+<p><b>正解: C</b></p>
+<p>Azure API Managementは複数のバックエンドサービス（Functions・App Service・外部REST API・オンプレミスAPIなど）を統一されたAPIゲートウェイとして公開するサービスで、OAuth2.0/JWT認証・サブスクリプションキー管理・レート制限（スロットリング）・IPフィルタリング・キャッシング・APIバージョニング・開発者ポータル（外部開発者向けのAPIドキュメント・テスト環境）・モニタリング・ポリシー変換を一元管理できる。選択肢DAzure Load Balancerは L4 TCP/UDP の単純な負荷分散サービスで、API管理機能（認証・レート制限・バージョニング等）はない。選択肢BAzure Service Busはメッセージキュー・Pub/Subサービスであり、APIゲートウェイの役割は持たない。選択肢AAzure Logic Appsはコネクター経由でサービスを統合するローコードワークフロー自動化ツールで、API管理・開発者ポータルの機能は持たない。</p>
+
+</div>
+</details>
+<div class="cta-box"><a class="btn btn-primary" href="../../exam.html?exam=azure-az900">▸ この試験を本気で演習する（全150問・無料）</a></div>
+<nav class="q-nav">
+<span><a href="q116.html">← 前の問題</a></span>
+<span><a href="q118.html">次の問題 →</a></span>
+</nav>
+<section class="related"><h2>同じ分野の関連問題</h2><ul class="q-list">
+<li><a href="q116.html">ある企業がAzure Virtual Networkの「サービスエンドポイント（Service Endpoint）」と「…</a></li>
+<li><a href="q118.html">ある企業がAzureでハブ＆スポーク（Hub and Spoke）ネットワークトポロジーを設計している。このトポロジーの…</a></li>
+<li><a href="q115.html">ある企業がオンプレミスのWindowsファイルサーバーをAzureに移行したい。ユーザーが既存のSMBプロトコルを使って…</a></li>
+<li><a href="q119.html">ある企業がAzure上にあるVM・App Service・Function App・SQL Databaseなどのリソー…</a></li>
+</ul></section>
+</main>
+<footer class="page-footer">
+<nav class="hub-nav"><a href="../../exams/aws-clf-c02/">CLF-C02 試験ガイド</a><a href="../../exams/aws-aif-c01/">AIF-C01 試験ガイド</a><a href="../../exams/aws-saa-c03/">SAA-C03 試験ガイド</a><a href="../../exams/aws-dva-c02/">DVA-C02 試験ガイド</a><a href="../../exams/aws-sap-c02/">SAP-C02 試験ガイド</a><a href="../../exams/gcp-cdl/">CDL 試験ガイド</a><a href="../../exams/gcp-ace/">ACE 試験ガイド</a><a href="../../exams/azure-az900/">AZ-900 試験ガイド</a><a href="../../exams/azure-ai900/">AI-900 試験ガイド</a><a href="../../exams/azure-dp900/">DP-900 試験ガイド</a><a href="../../exams/azure-sc900/">SC-900 試験ガイド</a><a href="../../exams/azure-az104/">AZ-104 試験ガイド</a></nav>
+<nav class="site-nav"><a href="../../guide/">資格ガイド</a><a href="../../learn/">サービス解説</a><a href="../../career/">キャリア</a><a href="../../about.html">運営者情報</a><a href="../../privacy.html">プライバシーポリシー</a><a href="../../contact.html">お問い合わせ</a></nav>
+<p class="copy">© CLOUDCERT_ — 本サイトは各認定試験の公式試験ではなく、収録問題はすべてオリジナルの演習問題です。</p>
+</footer>
+</body>
+</html>

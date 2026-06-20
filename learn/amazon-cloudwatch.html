@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Amazon CloudWatchとは？試験に出るポイントと演習問題</title>
+<meta name="description" content="Amazon CloudWatch（AWS）の要点と資格試験での問われ方を解説。登場する演習問題21問と公式ドキュメントへのリンクつき。">
+<link rel="canonical" href="https://cloudcert.app/learn/amazon-cloudwatch.html">
+<meta property="og:title" content="Amazon CloudWatchとは？試験に出るポイントと演習問題">
+<meta property="og:description" content="Amazon CloudWatch（AWS）の要点と資格試験での問われ方を解説。登場する演習問題21問と公式ドキュメントへのリンクつき。">
+<meta property="og:url" content="https://cloudcert.app/learn/amazon-cloudwatch.html">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="CLOUDCERT_">
+<meta property="og:image" content="https://cloudcert.app/assets/og.png">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='80' font-size='80' fill='%233fe0a4' font-family='monospace'>▸</text></svg>">
+
+<meta name="google-adsense-account" content="ca-pub-5647574947191958">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+JP:wght@400;500;700&family=JetBrains+Mono:wght@400;600;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../css/style.css">
+<link rel="stylesheet" href="../css/page.css">
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-SZR5CB5Q3X"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag('js',new Date());gtag('config','G-SZR5CB5Q3X');</script>
+<script type="application/ld+json">[{"@context":"https://schema.org","@type":"TechArticle","headline":"Amazon CloudWatchとは？試験に出るポイントと演習問題","description":"Amazon CloudWatch（AWS）の要点と資格試験での問われ方を解説。登場する演習問題21問と公式ドキュメントへのリンクつき。","inLanguage":"ja","about":{"@type":"Thing","name":"Amazon CloudWatch"},"author":{"@type":"Organization","name":"CLOUDCERT_"},"publisher":{"@type":"Organization","name":"CLOUDCERT_"},"mainEntityOfPage":"https://cloudcert.app/learn/amazon-cloudwatch.html"},{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"HOME","item":"https://cloudcert.app/"},{"@type":"ListItem","position":2,"name":"サービス解説","item":"https://cloudcert.app/learn/"},{"@type":"ListItem","position":3,"name":"Amazon CloudWatch"}]}]</script>
+</head>
+<body class="page-body">
+<header class="page-header"><a class="page-logo" href="../index.html">&gt; CLOUDCERT_</a></header>
+<main class="page-main">
+
+<nav class="breadcrumb"><a href="../index.html">HOME</a> › <a href="./">サービス解説</a> › Amazon CloudWatch</nav>
+<div class="learn-head">
+<div class="badges"><span class="badge" data-provider="aws">AWS</span><span class="badge">管理・ガバナンス</span><span class="badge badge-q">演習21問</span></div>
+<h1>Amazon CloudWatchとは</h1>
+</div>
+<p class="lead">AWSリソースとアプリケーションの監視サービス。メトリクス収集・ログ集約（CloudWatch Logs）・アラーム・ダッシュボード・自動アクション（Auto Scalingトリガー等）を一体で提供する。</p>
+<p>カスタムメトリクスをSDKやagentでプッシュでき、Logs Insightsでログをアドホックにクエリ分析できる。Container Insightsでコンテナ環境のメトリクス・ログを集約管理できる。</p>
+<p><a class="official-btn" href="https://docs.aws.amazon.com/ja_jp/AmazonCloudWatch/latest/monitoring/WhatIsCloudWatch.html" target="_blank" rel="noopener">公式ドキュメント →</a></p>
+<h2>試験での問われ方</h2>
+<p>SAAではCloudWatch Alarmsによる自動スケーリングトリガー・SNS通知・EC2自動回復（StatusCheckFailedアラーム）が定番。CloudWatchとCloudTrailの役割の明確な区別は必須。</p>
+<p>DVAではカスタムメトリクスの単位（Count・Bytes等）・解像度（1秒〜5分）・Logs Insightsのクエリ構文が問われる。CloudWatch Agentでメモリ使用率やディスク使用率をカスタムメトリクスとして収集する（デフォルトでは収集されない）点が引っかけ。</p>
+<h2>このサービスが登場する演習問題（21問）</h2>
+<ul class="q-list">
+<li><a href="../q/aws-clf-c02/q097.html">【CLF-C02】ある企業が、AWS上のWebアプリケーションのパフォーマンス問題を調査しています。アプリケーションのボトルネックを特定す…</a></li>
+<li><a href="../q/aws-clf-c02/q100.html">【CLF-C02】ある企業が、Webアプリケーションのパフォーマンスを監視し、エラーレートが5%を超えた際に担当者にメール通知を送りたいと…</a></li>
+<li><a href="../q/aws-clf-c02/q112.html">【CLF-C02】ある企業が、アプリケーションの定期的なメンテナンスウィンドウに合わせてEC2インスタンスを停止・起動する処理を自動化した…</a></li>
+<li><a href="../q/aws-aif-c01/q064.html">【AIF-C01】ある企業が、機密性の高い医療データを扱う生成 AI アプリケーションを Amazon Bedrock で構築している。デ…</a></li>
+<li><a href="../q/aws-aif-c01/q103.html">【AIF-C01】ある企業が Amazon Bedrock エージェントを本番導入した後に追加すべき運用・監視の対策として適切なものを 2…</a></li>
+<li><a href="../q/aws-saa-c03/q009.html">【SAA-C03】ある企業が、機密性の高いワークロードを EC2 インスタンス上で実行している。セキュリティチームから、AWS リソースへ…</a></li>
+<li><a href="../q/aws-saa-c03/q092.html">【SAA-C03】ある企業が、AWS Certificate Manager（ACM）で発行した TLS 証明書を ALB にアタッチして…</a></li>
+<li><a href="../q/aws-saa-c03/q096.html">【SAA-C03】ある企業が、Amazon EKS でマイクロサービスを運用しており、特定のサービスへのトラフィックが急増したときに、その…</a></li>
+<li><a href="../q/aws-dva-c02/q034.html">【DVA-C02】ある金融サービス企業が、Step Functionsを使って与信審査ワークフローを実装している。各ステップは外部APIを…</a></li>
+<li><a href="../q/aws-dva-c02/q041.html">【DVA-C02】ある広告テクノロジー企業が、リアルタイム入札システムをStep Functionsで実装している。数百万の入札リクエスト…</a></li>
+<li><a href="../q/aws-dva-c02/q105.html">【DVA-C02】ある企業がAWS SAMテンプレートを使ってAPI Gateway + Lambda構成のサーバーレスAPIをデプロイし…</a></li>
+<li><a href="../q/aws-dva-c02/q128.html">【DVA-C02】あるチームがCloudWatchで本番Lambda関数を監視している。メモリ使用量をカスタムメトリクスとして毎回の呼び出…</a></li>
+<li><a href="../q/aws-dva-c02/q131.html">【DVA-C02】あるチームがCloudWatch Logsのロググループに大量のログが蓄積されており、特定のエラーパターン（&quot;ERROR…</a></li>
+<li><a href="../q/aws-dva-c02/q136.html">【DVA-C02】あるチームがCloudTrailとCloudWatchを両方使って監視しているが、どちらを使うべきか判断に迷っている。E…</a></li>
+<li><a href="../q/aws-dva-c02/q144.html">【DVA-C02】あるチームがCloudWatchのカスタムメトリクスを大量のLambda関数から送信している。一部のLambda呼び出し…</a></li>
+<li><a href="../q/aws-sap-c02/q060.html">【SAP-C02】ある企業が Amazon ECS on Fargate でマイクロサービスを運用しており、本番デプロイ後に特定のサービス…</a></li>
+<li><a href="../q/aws-sap-c02/q062.html">【SAP-C02】ある企業が AWS 上で稼働する EC2 ベースの Web アプリケーションについて、ユーザーから「特定の地域でサイトに…</a></li>
+<li><a href="../q/aws-sap-c02/q094.html">【SAP-C02】ある企業が AWS 上で稼働する複数のマイクロサービスのログを Amazon CloudWatch Logs で管理して…</a></li>
+<li><a href="../q/aws-sap-c02/q096.html">【SAP-C02】ある企業が AWS Organizations で 150 以上のアカウントを管理しており、定期的に AWS のサービス…</a></li>
+<li><a href="../q/aws-sap-c02/q107.html">【SAP-C02】ある企業が AWS 上で稼働する本番アプリケーションに対して、SRE（サイトリライアビリティエンジニアリング）の観点から…</a></li>
+</ul>
+<h2>関連サービス</h2><ul class="q-list">
+<li><a href="aws-cloudtrail.html">AWS CloudTrail</a></li>
+<li><a href="aws-config.html">AWS Config</a></li>
+<li><a href="aws-organizations.html">AWS Organizations</a></li>
+<li><a href="aws-cloudformation.html">AWS CloudFormation</a></li>
+<li><a href="aws-systems-manager.html">AWS Systems Manager</a></li></ul>
+</main>
+<footer class="page-footer">
+<nav class="hub-nav"><a href="../exams/aws-clf-c02/">CLF-C02 試験ガイド</a><a href="../exams/aws-aif-c01/">AIF-C01 試験ガイド</a><a href="../exams/aws-saa-c03/">SAA-C03 試験ガイド</a><a href="../exams/aws-dva-c02/">DVA-C02 試験ガイド</a><a href="../exams/aws-sap-c02/">SAP-C02 試験ガイド</a><a href="../exams/gcp-cdl/">CDL 試験ガイド</a><a href="../exams/gcp-ace/">ACE 試験ガイド</a><a href="../exams/azure-az900/">AZ-900 試験ガイド</a><a href="../exams/azure-ai900/">AI-900 試験ガイド</a><a href="../exams/azure-dp900/">DP-900 試験ガイド</a><a href="../exams/azure-sc900/">SC-900 試験ガイド</a><a href="../exams/azure-az104/">AZ-104 試験ガイド</a></nav>
+<nav class="site-nav"><a href="../guide/">資格ガイド</a><a href="../learn/">サービス解説</a><a href="../career/">キャリア</a><a href="../about.html">運営者情報</a><a href="../privacy.html">プライバシーポリシー</a><a href="../contact.html">お問い合わせ</a></nav>
+<p class="copy">© CLOUDCERT_ — 本サイトは各認定試験の公式試験ではなく、収録問題はすべてオリジナルの演習問題です。</p>
+</footer>
+</body>
+</html>

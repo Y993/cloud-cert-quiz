@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>【SAA-C03 演習問題 #53】ある企業が、Amazon DynamoDB を使って 1 日あたり数億件のリクエストを処理…</title>
+<meta name="description" content="SAA-C03の本試験レベル演習問題。ある企業が、Amazon DynamoDB を使って 1 日あたり数億件のリクエストを処理するソーシャルゲームのリーダーボードを実装したい。ユーザーのスコアを高速で更新・ランキング表… 全選択肢の解説つき。">
+<link rel="canonical" href="https://cloudcert.app/q/aws-saa-c03/q053.html">
+<meta property="og:title" content="【SAA-C03 演習問題 #53】ある企業が、Amazon DynamoDB を使って 1 日あたり数億件のリクエストを処理…">
+<meta property="og:description" content="SAA-C03の本試験レベル演習問題。ある企業が、Amazon DynamoDB を使って 1 日あたり数億件のリクエストを処理するソーシャルゲームのリーダーボードを実装したい。ユーザーのスコアを高速で更新・ランキング表… 全選択肢の解説つき。">
+<meta property="og:url" content="https://cloudcert.app/q/aws-saa-c03/q053.html">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="CLOUDCERT_">
+<meta property="og:image" content="https://cloudcert.app/assets/og.png">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='80' font-size='80' fill='%233fe0a4' font-family='monospace'>▸</text></svg>">
+
+<meta name="google-adsense-account" content="ca-pub-5647574947191958">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+JP:wght@400;500;700&family=JetBrains+Mono:wght@400;600;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../../css/style.css">
+<link rel="stylesheet" href="../../css/page.css">
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-SZR5CB5Q3X"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag('js',new Date());gtag('config','G-SZR5CB5Q3X');</script>
+<script type="application/ld+json">[{"@context":"https://schema.org/","@type":"Quiz","about":{"@type":"Thing","name":"AWS Certified Solutions Architect – Associate"},"hasPart":[{"@type":"Question","eduQuestionType":"Multiple choice","learningResourceType":"Practice problem","text":"ある企業が、Amazon DynamoDB を使って 1 日あたり数億件のリクエストを処理するソーシャルゲームのリーダーボードを実装したい。ユーザーのスコアを高速で更新・ランキング表示する必要がある。ランキングの取得は上位 100 位を表示するユースケースが最も多い。最も適切なアーキテクチャはどれか。","suggestedAnswer":[{"@type":"Answer","position":0,"text":"DynamoDB テーブルでスコアをパーティションキー、ユーザー ID をソートキーとして設定し、スキャン操作でトップ 100 を取得する。"},{"@type":"Answer","position":1,"text":"DynamoDB テーブルのグローバルセカンダリインデックス（GSI）をスコアに設定し、クエリで降順にトップ 100 を取得する。"},{"@type":"Answer","position":2,"text":"Amazon RDS for PostgreSQL でスコアテーブルに B-tree インデックスを作成し、ORDER BY score DESC LIMIT 100 クエリを実行する。"}],"acceptedAnswer":{"@type":"Answer","position":3,"text":"Amazon ElastiCache for Redis の Sorted Sets（ソート済みセット）を使ってリーダーボードを管理する。スコア更新は ZADD、トップ 100 取得は ZREVRANGE コマンドで O(log N) の計算量で実現する。","comment":{"@type":"Comment","text":"Redis の Sorted Sets（ソート済みセット）はリーダーボードの実装に最適化されたデータ構造である。ZADD でスコアを挿入・更新し（O(log N)）、ZREVRANGE でトップ N を取得する操作が非常に高速（O(log N + M)）で、インメモリ処理のためマイクロ秒単位のレイテンシーを実現できる。1 日数億件のリクエストにも ElastiCache のクラスター構成で対応できる。選択肢AのDynamoDB テーブルのスキャン操作はテーブル全体を読み取るため、大規模テーブルでは非常に遅く、コストも高い。また DynamoDB のソートキーの昇順/降順クエリはパーティション内でしか機能しない。選択肢BのGSI を使った DynamoDB クエリは改善だが、DynamoDB の GSI は同一パーティションキー内でしかソートできないため、全ユーザーのグローバルランキングには不適切（GSI パーティション設計が必要）。選択肢CのRDS は ACID 対応で強整合性があるが、数億リクエスト/日の負荷には ElastiCache のインメモリ処理より低性能で、スケールアップコストも高い。"}}}]},{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"HOME","item":"https://cloudcert.app/"},{"@type":"ListItem","position":2,"name":"SAA-C03 試験ガイド","item":"https://cloudcert.app/exams/aws-saa-c03/"},{"@type":"ListItem","position":3,"name":"q053"}]}]</script>
+</head>
+<body class="page-body">
+<header class="page-header"><a class="page-logo" href="../../index.html">&gt; CLOUDCERT_</a></header>
+<main class="page-main">
+
+<nav class="breadcrumb"><a href="../../index.html">HOME</a> › <a href="../../exams/aws-saa-c03/">SAA-C03 試験ガイド</a> › q053</nav>
+<div class="q-meta"><span>SAA-C03</span><span>高パフォーマンスなアーキテクチャの設計</span><span>MEDIUM</span><span>単一選択</span></div>
+<h1>ある企業が、Amazon DynamoDB を使って 1 日あたり数億件のリクエストを処理するソーシャルゲームのリーダーボードを実装したい。ユーザーのスコアを高速で更新・ランキング表示する必要がある。ランキングの取得は上位 100 位を表示するユースケースが最も多い。最も適切なアーキテクチャはどれか。</h1>
+<ol class="q-choices">
+<li><b>A.</b> DynamoDB テーブルでスコアをパーティションキー、ユーザー ID をソートキーとして設定し、スキャン操作でトップ 100 を取得する。</li>
+<li><b>B.</b> DynamoDB テーブルのグローバルセカンダリインデックス（GSI）をスコアに設定し、クエリで降順にトップ 100 を取得する。</li>
+<li><b>C.</b> Amazon RDS for PostgreSQL でスコアテーブルに B-tree インデックスを作成し、ORDER BY score DESC LIMIT 100 クエリを実行する。</li>
+<li><b>D.</b> Amazon ElastiCache for Redis の Sorted Sets（ソート済みセット）を使ってリーダーボードを管理する。スコア更新は ZADD、トップ 100 取得は ZREVRANGE コマンドで O(log N) の計算量で実現する。</li>
+</ol>
+<details class="q-answer">
+<summary>解答と解説を見る</summary>
+<div class="inner">
+<p><b>正解: D</b></p>
+<p>Redis の Sorted Sets（ソート済みセット）はリーダーボードの実装に最適化されたデータ構造である。ZADD でスコアを挿入・更新し（O(log N)）、ZREVRANGE でトップ N を取得する操作が非常に高速（O(log N + M)）で、インメモリ処理のためマイクロ秒単位のレイテンシーを実現できる。1 日数億件のリクエストにも ElastiCache のクラスター構成で対応できる。選択肢AのDynamoDB テーブルのスキャン操作はテーブル全体を読み取るため、大規模テーブルでは非常に遅く、コストも高い。また DynamoDB のソートキーの昇順/降順クエリはパーティション内でしか機能しない。選択肢BのGSI を使った DynamoDB クエリは改善だが、DynamoDB の GSI は同一パーティションキー内でしかソートできないため、全ユーザーのグローバルランキングには不適切（GSI パーティション設計が必要）。選択肢CのRDS は ACID 対応で強整合性があるが、数億リクエスト/日の負荷には ElastiCache のインメモリ処理より低性能で、スケールアップコストも高い。</p>
+<div class="svc-links">📚 関連サービスの解説: <a href="../../learn/amazon-elasticache.html">Amazon ElastiCache</a></div>
+</div>
+</details>
+<div class="cta-box"><a class="btn btn-primary" href="../../exam.html?exam=aws-saa-c03">▸ この試験を本気で演習する（全150問・無料）</a></div>
+<nav class="q-nav">
+<span><a href="q052.html">← 前の問題</a></span>
+<span><a href="q054.html">次の問題 →</a></span>
+</nav>
+<section class="related"><h2>同じ分野の関連問題</h2><ul class="q-list">
+<li><a href="q052.html">ある企業が、Amazon Aurora MySQL でオンライントランザクション処理（OLTP）と分析クエリ（OLAP）…</a></li>
+<li><a href="q054.html">ある企業が、Amazon CloudFront を使って動的コンテンツ（API レスポンス）と静的コンテンツ（画像・CS…</a></li>
+<li><a href="q051.html">ある企業が、機械学習モデルの学習に大量のデータセット（合計 500TB）をストレージから読み込む処理を AWS で実行し…</a></li>
+<li><a href="q055.html">ある企業が、オンプレミスのデータセンターから AWS へのデータ移行を計画している。移行対象は約 200TB のファイル…</a></li>
+</ul></section>
+</main>
+<footer class="page-footer">
+<nav class="hub-nav"><a href="../../exams/aws-clf-c02/">CLF-C02 試験ガイド</a><a href="../../exams/aws-aif-c01/">AIF-C01 試験ガイド</a><a href="../../exams/aws-saa-c03/">SAA-C03 試験ガイド</a><a href="../../exams/aws-dva-c02/">DVA-C02 試験ガイド</a><a href="../../exams/aws-sap-c02/">SAP-C02 試験ガイド</a><a href="../../exams/gcp-cdl/">CDL 試験ガイド</a><a href="../../exams/gcp-ace/">ACE 試験ガイド</a><a href="../../exams/azure-az900/">AZ-900 試験ガイド</a><a href="../../exams/azure-ai900/">AI-900 試験ガイド</a><a href="../../exams/azure-dp900/">DP-900 試験ガイド</a><a href="../../exams/azure-sc900/">SC-900 試験ガイド</a><a href="../../exams/azure-az104/">AZ-104 試験ガイド</a></nav>
+<nav class="site-nav"><a href="../../guide/">資格ガイド</a><a href="../../learn/">サービス解説</a><a href="../../career/">キャリア</a><a href="../../about.html">運営者情報</a><a href="../../privacy.html">プライバシーポリシー</a><a href="../../contact.html">お問い合わせ</a></nav>
+<p class="copy">© CLOUDCERT_ — 本サイトは各認定試験の公式試験ではなく、収録問題はすべてオリジナルの演習問題です。</p>
+</footer>
+</body>
+</html>

@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>【AI-900 演習問題 #132】ある企業が、顧客向けに Azure OpenAI Service を使ったチャットシステム…</title>
+<meta name="description" content="AI-900の本試験レベル演習問題。ある企業が、顧客向けに Azure OpenAI Service を使ったチャットシステムを構築しています。ユーザーが「あなたのシステムプロンプトを教えてください」と入力したり、「前の… 全選択肢の解説つき。">
+<link rel="canonical" href="https://cloudcert.app/q/azure-ai900/q132.html">
+<meta property="og:title" content="【AI-900 演習問題 #132】ある企業が、顧客向けに Azure OpenAI Service を使ったチャットシステム…">
+<meta property="og:description" content="AI-900の本試験レベル演習問題。ある企業が、顧客向けに Azure OpenAI Service を使ったチャットシステムを構築しています。ユーザーが「あなたのシステムプロンプトを教えてください」と入力したり、「前の… 全選択肢の解説つき。">
+<meta property="og:url" content="https://cloudcert.app/q/azure-ai900/q132.html">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="CLOUDCERT_">
+<meta property="og:image" content="https://cloudcert.app/assets/og.png">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='80' font-size='80' fill='%233fe0a4' font-family='monospace'>▸</text></svg>">
+
+<meta name="google-adsense-account" content="ca-pub-5647574947191958">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+JP:wght@400;500;700&family=JetBrains+Mono:wght@400;600;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../../css/style.css">
+<link rel="stylesheet" href="../../css/page.css">
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-SZR5CB5Q3X"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag('js',new Date());gtag('config','G-SZR5CB5Q3X');</script>
+<script type="application/ld+json">[{"@context":"https://schema.org/","@type":"Quiz","about":{"@type":"Thing","name":"Microsoft Azure AI Fundamentals"},"hasPart":[{"@type":"Question","eduQuestionType":"Multiple choice","learningResourceType":"Practice problem","text":"ある企業が、顧客向けに Azure OpenAI Service を使ったチャットシステムを構築しています。ユーザーが「あなたのシステムプロンプトを教えてください」と入力したり、「前の指示を忘れて〇〇をしてください」と入力したりすることで、意図しない動作を引き起こすリスクがあります。この種の攻撃の名称と対策として最も適切な組み合わせはどれか。","suggestedAnswer":[{"@type":"Answer","position":1,"text":"名称: モデルの過学習、対策: ファインチューニング時の学習率を下げる"},{"@type":"Answer","position":2,"text":"名称: データポイズニング、対策: Azure Defender でトレーニングデータを保護する"},{"@type":"Answer","position":3,"text":"名称: ハルシネーション、対策: RAG を導入してモデルの知識を外部データで置き換える"}],"acceptedAnswer":{"@type":"Answer","position":0,"text":"名称: プロンプトインジェクション、対策: システムプロンプトで機密情報の開示を禁止し、ユーザー入力をサニタイズし、コンテンツフィルターを有効化する","comment":{"@type":"Comment","text":"プロンプトインジェクションは、悪意あるユーザーが入力テキストに特定の指示を埋め込むことで、モデルを本来の制約から逸脱させる攻撃手法です。対策としては、システムプロンプトで機密情報（プロンプト自体・API キーなど）の開示を明示的に禁止すること、ユーザー入力の検証・サニタイズ、Azure OpenAI コンテンツフィルターの活用、およびアプリケーション層でのレート制限などが挙げられます。選択肢 D はハルシネーションの説明であり、プロンプトインジェクションとは異なる問題です。選択肢 C のデータポイズニングはトレーニングデータへの悪意ある改ざんであり、推論時の攻撃とは別問題です。選択肢 B は過学習の対策であり、プロンプトインジェクションとは無関係です。"}}}]},{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"HOME","item":"https://cloudcert.app/"},{"@type":"ListItem","position":2,"name":"AI-900 試験ガイド","item":"https://cloudcert.app/exams/azure-ai900/"},{"@type":"ListItem","position":3,"name":"q132"}]}]</script>
+</head>
+<body class="page-body">
+<header class="page-header"><a class="page-logo" href="../../index.html">&gt; CLOUDCERT_</a></header>
+<main class="page-main">
+
+<nav class="breadcrumb"><a href="../../index.html">HOME</a> › <a href="../../exams/azure-ai900/">AI-900 試験ガイド</a> › q132</nav>
+<div class="q-meta"><span>AI-900</span><span>生成 AI ワークロード</span><span>MEDIUM</span><span>単一選択</span></div>
+<h1>ある企業が、顧客向けに Azure OpenAI Service を使ったチャットシステムを構築しています。ユーザーが「あなたのシステムプロンプトを教えてください」と入力したり、「前の指示を忘れて〇〇をしてください」と入力したりすることで、意図しない動作を引き起こすリスクがあります。この種の攻撃の名称と対策として最も適切な組み合わせはどれか。</h1>
+<ol class="q-choices">
+<li><b>A.</b> 名称: プロンプトインジェクション、対策: システムプロンプトで機密情報の開示を禁止し、ユーザー入力をサニタイズし、コンテンツフィルターを有効化する</li>
+<li><b>B.</b> 名称: モデルの過学習、対策: ファインチューニング時の学習率を下げる</li>
+<li><b>C.</b> 名称: データポイズニング、対策: Azure Defender でトレーニングデータを保護する</li>
+<li><b>D.</b> 名称: ハルシネーション、対策: RAG を導入してモデルの知識を外部データで置き換える</li>
+</ol>
+<details class="q-answer">
+<summary>解答と解説を見る</summary>
+<div class="inner">
+<p><b>正解: A</b></p>
+<p>プロンプトインジェクションは、悪意あるユーザーが入力テキストに特定の指示を埋め込むことで、モデルを本来の制約から逸脱させる攻撃手法です。対策としては、システムプロンプトで機密情報（プロンプト自体・API キーなど）の開示を明示的に禁止すること、ユーザー入力の検証・サニタイズ、Azure OpenAI コンテンツフィルターの活用、およびアプリケーション層でのレート制限などが挙げられます。選択肢 D はハルシネーションの説明であり、プロンプトインジェクションとは異なる問題です。選択肢 C のデータポイズニングはトレーニングデータへの悪意ある改ざんであり、推論時の攻撃とは別問題です。選択肢 B は過学習の対策であり、プロンプトインジェクションとは無関係です。</p>
+
+</div>
+</details>
+<div class="cta-box"><a class="btn btn-primary" href="../../exam.html?exam=azure-ai900">▸ この試験を本気で演習する（全150問・無料）</a></div>
+<nav class="q-nav">
+<span><a href="q131.html">← 前の問題</a></span>
+<span><a href="q133.html">次の問題 →</a></span>
+</nav>
+<section class="related"><h2>同じ分野の関連問題</h2><ul class="q-list">
+<li><a href="q131.html">ある HR スタートアップが、履歴書のスクリーニングを自動化するために Azure OpenAI Service を使っ…</a></li>
+<li><a href="q133.html">ある企業が Azure AI Foundry を使って生成 AI ソリューションの開発を始めようとしています。Azure…</a></li>
+<li><a href="q130.html">あるゲーム会社が、プレイヤーとリアルタイムで会話できる NPC（ノンプレイヤーキャラクター）を Azure OpenAI…</a></li>
+<li><a href="q134.html">ある教育機関が、学生の作文を採点するシステムを Azure OpenAI Service で構築しています。採点基準（ル…</a></li>
+</ul></section>
+</main>
+<footer class="page-footer">
+<nav class="hub-nav"><a href="../../exams/aws-clf-c02/">CLF-C02 試験ガイド</a><a href="../../exams/aws-aif-c01/">AIF-C01 試験ガイド</a><a href="../../exams/aws-saa-c03/">SAA-C03 試験ガイド</a><a href="../../exams/aws-dva-c02/">DVA-C02 試験ガイド</a><a href="../../exams/aws-sap-c02/">SAP-C02 試験ガイド</a><a href="../../exams/gcp-cdl/">CDL 試験ガイド</a><a href="../../exams/gcp-ace/">ACE 試験ガイド</a><a href="../../exams/azure-az900/">AZ-900 試験ガイド</a><a href="../../exams/azure-ai900/">AI-900 試験ガイド</a><a href="../../exams/azure-dp900/">DP-900 試験ガイド</a><a href="../../exams/azure-sc900/">SC-900 試験ガイド</a><a href="../../exams/azure-az104/">AZ-104 試験ガイド</a></nav>
+<nav class="site-nav"><a href="../../guide/">資格ガイド</a><a href="../../learn/">サービス解説</a><a href="../../career/">キャリア</a><a href="../../about.html">運営者情報</a><a href="../../privacy.html">プライバシーポリシー</a><a href="../../contact.html">お問い合わせ</a></nav>
+<p class="copy">© CLOUDCERT_ — 本サイトは各認定試験の公式試験ではなく、収録問題はすべてオリジナルの演習問題です。</p>
+</footer>
+</body>
+</html>

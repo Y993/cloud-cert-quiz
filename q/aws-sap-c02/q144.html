@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>【SAP-C02 演習問題 #144】ある企業が AWS Organizations で管理するマルチアカウント環境において、財…</title>
+<meta name="description" content="SAP-C02の本試験レベル演習問題。ある企業が AWS Organizations で管理するマルチアカウント環境において、財務チームが全アカウントにわたるコストを正確に把握できるよう、コスト配分タグの統一と Char… 全選択肢の解説つき。">
+<link rel="canonical" href="https://cloudcert.app/q/aws-sap-c02/q144.html">
+<meta property="og:title" content="【SAP-C02 演習問題 #144】ある企業が AWS Organizations で管理するマルチアカウント環境において、財…">
+<meta property="og:description" content="SAP-C02の本試験レベル演習問題。ある企業が AWS Organizations で管理するマルチアカウント環境において、財務チームが全アカウントにわたるコストを正確に把握できるよう、コスト配分タグの統一と Char… 全選択肢の解説つき。">
+<meta property="og:url" content="https://cloudcert.app/q/aws-sap-c02/q144.html">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="CLOUDCERT_">
+<meta property="og:image" content="https://cloudcert.app/assets/og.png">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='80' font-size='80' fill='%233fe0a4' font-family='monospace'>▸</text></svg>">
+
+<meta name="google-adsense-account" content="ca-pub-5647574947191958">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+JP:wght@400;500;700&family=JetBrains+Mono:wght@400;600;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../../css/style.css">
+<link rel="stylesheet" href="../../css/page.css">
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-SZR5CB5Q3X"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag('js',new Date());gtag('config','G-SZR5CB5Q3X');</script>
+<script type="application/ld+json">[{"@context":"https://schema.org/","@type":"Quiz","about":{"@type":"Thing","name":"AWS Certified Solutions Architect - Professional"},"hasPart":[{"@type":"Question","eduQuestionType":"Multiple choice","learningResourceType":"Practice problem","text":"ある企業が AWS Organizations で管理するマルチアカウント環境において、財務チームが全アカウントにわたるコストを正確に把握できるよう、コスト配分タグの統一と Chargeback（チャージバック）レポートの自動化を実現したいと考えています。全アカウントのコストを部門・プロジェクト・環境（本番/開発）別に集計し、月次で各部門に請求書を自動発行したいと考えています。最も適切なアーキテクチャはどれですか？","suggestedAnswer":[{"@type":"Answer","position":1,"text":"各アカウントの担当者が月末に Cost Explorer でコストを確認し、Excel で集計して財務部門に送付する"},{"@type":"Answer","position":2,"text":"サードパーティのクラウドコスト管理ツール（Cloudability、CloudHealth 等）を導入し、チャージバックレポートを生成する"},{"@type":"Answer","position":3,"text":"AWS Billing and Cost Management コンソールでコスト配分タグを手動で設定し、月末に手動でレポートをダウンロードする"}],"acceptedAnswer":{"@type":"Answer","position":0,"text":"AWS Organizations の管理アカウントでコスト配分タグ（aws:CostCenter、aws:Project、aws:Environment）を有効化し、全アカウントのリソースに一貫したタグ付けを強制する SCP を設定する。Cost and Usage Report（CUR）を S3 に日次エクスポートし、AWS Glue と Amazon Athena でタグ別のコスト集計クエリを作成する。Amazon QuickSight で部門・プロジェクト・環境別のチャージバックダッシュボードを構築し、月次で自動レポートを各部門のメールアドレスに送信する","comment":{"@type":"Comment","text":"組織全体のチャージバック自動化には複数の要素が必要です。②SCP でタグ付けを強制（コスト配分タグなしのリソース作成を Deny）、①CUR で最も詳細なコストデータを取得、④Athena でタグ別集計クエリを作成、③QuickSight でダッシュボードと自動レポート送信を設定。この組み合わせで、月次の手動作業なしに全部門への正確なチャージバックレポートが自動化されます。\n\nB: 手動集計は不正確で、規模が大きくなるほど作業負荷が増大します。\n\nD: 手動でのタグ設定とレポートダウンロードは自動化されておらず、規模に対応できません。\n\nC: サードパーティツールは機能的ですが、追加コストが発生します。AWS ネイティブのサービス組み合わせで同等の機能を実現できます。"}}}]},{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"HOME","item":"https://cloudcert.app/"},{"@type":"ListItem","position":2,"name":"SAP-C02 試験ガイド","item":"https://cloudcert.app/exams/aws-sap-c02/"},{"@type":"ListItem","position":3,"name":"q144"}]}]</script>
+</head>
+<body class="page-body">
+<header class="page-header"><a class="page-logo" href="../../index.html">&gt; CLOUDCERT_</a></header>
+<main class="page-main">
+
+<nav class="breadcrumb"><a href="../../index.html">HOME</a> › <a href="../../exams/aws-sap-c02/">SAP-C02 試験ガイド</a> › q144</nav>
+<div class="q-meta"><span>SAP-C02</span><span>複雑な組織に対応するソリューションの設計</span><span>HARD</span><span>単一選択</span></div>
+<h1>ある企業が AWS Organizations で管理するマルチアカウント環境において、財務チームが全アカウントにわたるコストを正確に把握できるよう、コスト配分タグの統一と Chargeback（チャージバック）レポートの自動化を実現したいと考えています。全アカウントのコストを部門・プロジェクト・環境（本番/開発）別に集計し、月次で各部門に請求書を自動発行したいと考えています。最も適切なアーキテクチャはどれですか？</h1>
+<ol class="q-choices">
+<li><b>A.</b> AWS Organizations の管理アカウントでコスト配分タグ（aws:CostCenter、aws:Project、aws:Environment）を有効化し、全アカウントのリソースに一貫したタグ付けを強制する SCP を設定する。Cost and Usage Report（CUR）を S3 に日次エクスポートし、AWS Glue と Amazon Athena でタグ別のコスト集計クエリを作成する。Amazon QuickSight で部門・プロジェクト・環境別のチャージバックダッシュボードを構築し、月次で自動レポートを各部門のメールアドレスに送信する</li>
+<li><b>B.</b> 各アカウントの担当者が月末に Cost Explorer でコストを確認し、Excel で集計して財務部門に送付する</li>
+<li><b>C.</b> サードパーティのクラウドコスト管理ツール（Cloudability、CloudHealth 等）を導入し、チャージバックレポートを生成する</li>
+<li><b>D.</b> AWS Billing and Cost Management コンソールでコスト配分タグを手動で設定し、月末に手動でレポートをダウンロードする</li>
+</ol>
+<details class="q-answer">
+<summary>解答と解説を見る</summary>
+<div class="inner">
+<p><b>正解: A</b></p>
+<p>組織全体のチャージバック自動化には複数の要素が必要です。②SCP でタグ付けを強制（コスト配分タグなしのリソース作成を Deny）、①CUR で最も詳細なコストデータを取得、④Athena でタグ別集計クエリを作成、③QuickSight でダッシュボードと自動レポート送信を設定。この組み合わせで、月次の手動作業なしに全部門への正確なチャージバックレポートが自動化されます。
+
+B: 手動集計は不正確で、規模が大きくなるほど作業負荷が増大します。
+
+D: 手動でのタグ設定とレポートダウンロードは自動化されておらず、規模に対応できません。
+
+C: サードパーティツールは機能的ですが、追加コストが発生します。AWS ネイティブのサービス組み合わせで同等の機能を実現できます。</p>
+<div class="svc-links">📚 関連サービスの解説: <a href="../../learn/aws-organizations.html">AWS Organizations</a> ・ <a href="../../learn/amazon-s3.html">Amazon S3</a></div>
+</div>
+</details>
+<div class="cta-box"><a class="btn btn-primary" href="../../exam.html?exam=aws-sap-c02">▸ この試験を本気で演習する（全150問・無料）</a></div>
+<nav class="q-nav">
+<span><a href="q143.html">← 前の問題</a></span>
+<span><a href="q145.html">次の問題 →</a></span>
+</nav>
+<section class="related"><h2>同じ分野の関連問題</h2><ul class="q-list">
+<li><a href="q148.html">ある企業が AWS Organizations を使って管理するマルチアカウント環境で、本番環境に対するすべての変更（イ…</a></li>
+<li><a href="q138.html">ある企業が AWS Organizations で管理するマルチアカウント環境で、AWS のサービスカタログを使って標準…</a></li>
+<li><a href="q133.html">ある企業が AWS Organizations で管理するマルチアカウント環境において、AWS Lambda 関数の実行…</a></li>
+<li><a href="q126.html">ある企業が AWS Organizations で管理する複数のアカウントで、AWS Config を使ってリソースのコ…</a></li>
+</ul></section>
+</main>
+<footer class="page-footer">
+<nav class="hub-nav"><a href="../../exams/aws-clf-c02/">CLF-C02 試験ガイド</a><a href="../../exams/aws-aif-c01/">AIF-C01 試験ガイド</a><a href="../../exams/aws-saa-c03/">SAA-C03 試験ガイド</a><a href="../../exams/aws-dva-c02/">DVA-C02 試験ガイド</a><a href="../../exams/aws-sap-c02/">SAP-C02 試験ガイド</a><a href="../../exams/gcp-cdl/">CDL 試験ガイド</a><a href="../../exams/gcp-ace/">ACE 試験ガイド</a><a href="../../exams/azure-az900/">AZ-900 試験ガイド</a><a href="../../exams/azure-ai900/">AI-900 試験ガイド</a><a href="../../exams/azure-dp900/">DP-900 試験ガイド</a><a href="../../exams/azure-sc900/">SC-900 試験ガイド</a><a href="../../exams/azure-az104/">AZ-104 試験ガイド</a></nav>
+<nav class="site-nav"><a href="../../guide/">資格ガイド</a><a href="../../learn/">サービス解説</a><a href="../../career/">キャリア</a><a href="../../about.html">運営者情報</a><a href="../../privacy.html">プライバシーポリシー</a><a href="../../contact.html">お問い合わせ</a></nav>
+<p class="copy">© CLOUDCERT_ — 本サイトは各認定試験の公式試験ではなく、収録問題はすべてオリジナルの演習問題です。</p>
+</footer>
+</body>
+</html>

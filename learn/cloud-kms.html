@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Cloud KMSとは？試験に出るポイントと演習問題</title>
+<meta name="description" content="Cloud KMS（Google Cloud）の要点と資格試験での問われ方を解説。登場する演習問題2問と公式ドキュメントへのリンクつき。">
+<link rel="canonical" href="https://cloudcert.app/learn/cloud-kms.html">
+<meta property="og:title" content="Cloud KMSとは？試験に出るポイントと演習問題">
+<meta property="og:description" content="Cloud KMS（Google Cloud）の要点と資格試験での問われ方を解説。登場する演習問題2問と公式ドキュメントへのリンクつき。">
+<meta property="og:url" content="https://cloudcert.app/learn/cloud-kms.html">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="CLOUDCERT_">
+<meta property="og:image" content="https://cloudcert.app/assets/og.png">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='80' font-size='80' fill='%233fe0a4' font-family='monospace'>▸</text></svg>">
+
+<meta name="google-adsense-account" content="ca-pub-5647574947191958">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+JP:wght@400;500;700&family=JetBrains+Mono:wght@400;600;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../css/style.css">
+<link rel="stylesheet" href="../css/page.css">
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-SZR5CB5Q3X"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag('js',new Date());gtag('config','G-SZR5CB5Q3X');</script>
+<script type="application/ld+json">[{"@context":"https://schema.org","@type":"TechArticle","headline":"Cloud KMSとは？試験に出るポイントと演習問題","description":"Cloud KMS（Google Cloud）の要点と資格試験での問われ方を解説。登場する演習問題2問と公式ドキュメントへのリンクつき。","inLanguage":"ja","about":{"@type":"Thing","name":"Cloud KMS"},"author":{"@type":"Organization","name":"CLOUDCERT_"},"publisher":{"@type":"Organization","name":"CLOUDCERT_"},"mainEntityOfPage":"https://cloudcert.app/learn/cloud-kms.html"},{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"HOME","item":"https://cloudcert.app/"},{"@type":"ListItem","position":2,"name":"サービス解説","item":"https://cloudcert.app/learn/"},{"@type":"ListItem","position":3,"name":"Cloud KMS"}]}]</script>
+</head>
+<body class="page-body">
+<header class="page-header"><a class="page-logo" href="../index.html">&gt; CLOUDCERT_</a></header>
+<main class="page-main">
+
+<nav class="breadcrumb"><a href="../index.html">HOME</a> › <a href="./">サービス解説</a> › Cloud KMS</nav>
+<div class="learn-head">
+<div class="badges"><span class="badge" data-provider="gcp">Google Cloud</span><span class="badge">セキュリティ</span><span class="badge badge-q">演習2問</span></div>
+<h1>Cloud KMSとは</h1>
+</div>
+<p class="lead">暗号鍵の生成・保管・ローテーション・廃棄を一元管理するクラウド鍵管理サービス。AES-256・RSA・楕円曲線など主要な鍵タイプをサポートし、FIPS 140-2 Level 3 準拠の HSM バックエンド（Cloud HSM）も選択できる。</p>
+<p>鍵リングと鍵バージョンの階層でライフサイクルを管理。鍵を直接エクスポートする操作はできず、暗号化・復号操作は KMS API 経由で行う（エンベロープ暗号化パターン）。</p>
+<p>顧客管理暗号鍵（CMEK）として BigQuery・Cloud Storage・Compute Engine などのサービスと統合し、Google のデフォルト暗号化から独自の鍵管理へ切り替えられる。</p>
+<p><a class="official-btn" href="https://cloud.google.com/kms/docs?hl=ja" target="_blank" rel="noopener">公式ドキュメント →</a></p>
+<h2>試験での問われ方</h2>
+<p>CMEK・CSEK（顧客提供暗号鍵）・Google 管理暗号鍵の 3 種類の違いを整理する。CMEK は KMS に鍵を保管して自分で管理、CSEK は鍵をリクエスト時に毎回提供（KMS 不要）、Google 管理は最も手軽だが制御不可。</p>
+<p>ACE では鍵ローテーションの自動化設定と、ローテーション後に古い鍵バージョンで暗号化されたデータの再暗号化は自動では行われない（明示的な再暗号化が必要）点が引っかけになる。</p>
+<h2>このサービスが登場する演習問題（2問）</h2>
+<ul class="q-list">
+<li><a href="../q/gcp-cdl/q087.html">【CDL】ある企業が、Google CloudにおけるデータのKey Management Service（KMS）を活用すること…</a></li>
+<li><a href="../q/gcp-ace/q110.html">【ACE】Cloud KMS（Key Management Service）を使ってデータを暗号化しています。最も安全にキーを管理…</a></li>
+</ul>
+<h2>関連サービス</h2><ul class="q-list">
+<li><a href="gcp-iam.html">Cloud IAM</a></li>
+<li><a href="secret-manager.html">Secret Manager</a></li></ul>
+</main>
+<footer class="page-footer">
+<nav class="hub-nav"><a href="../exams/aws-clf-c02/">CLF-C02 試験ガイド</a><a href="../exams/aws-aif-c01/">AIF-C01 試験ガイド</a><a href="../exams/aws-saa-c03/">SAA-C03 試験ガイド</a><a href="../exams/aws-dva-c02/">DVA-C02 試験ガイド</a><a href="../exams/aws-sap-c02/">SAP-C02 試験ガイド</a><a href="../exams/gcp-cdl/">CDL 試験ガイド</a><a href="../exams/gcp-ace/">ACE 試験ガイド</a><a href="../exams/azure-az900/">AZ-900 試験ガイド</a><a href="../exams/azure-ai900/">AI-900 試験ガイド</a><a href="../exams/azure-dp900/">DP-900 試験ガイド</a><a href="../exams/azure-sc900/">SC-900 試験ガイド</a><a href="../exams/azure-az104/">AZ-104 試験ガイド</a></nav>
+<nav class="site-nav"><a href="../guide/">資格ガイド</a><a href="../learn/">サービス解説</a><a href="../career/">キャリア</a><a href="../about.html">運営者情報</a><a href="../privacy.html">プライバシーポリシー</a><a href="../contact.html">お問い合わせ</a></nav>
+<p class="copy">© CLOUDCERT_ — 本サイトは各認定試験の公式試験ではなく、収録問題はすべてオリジナルの演習問題です。</p>
+</footer>
+</body>
+</html>

@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Amazon Athenaとは？試験に出るポイントと演習問題</title>
+<meta name="description" content="Amazon Athena（AWS）の要点と資格試験での問われ方を解説。登場する演習問題6問と公式ドキュメントへのリンクつき。">
+<link rel="canonical" href="https://cloudcert.app/learn/amazon-athena.html">
+<meta property="og:title" content="Amazon Athenaとは？試験に出るポイントと演習問題">
+<meta property="og:description" content="Amazon Athena（AWS）の要点と資格試験での問われ方を解説。登場する演習問題6問と公式ドキュメントへのリンクつき。">
+<meta property="og:url" content="https://cloudcert.app/learn/amazon-athena.html">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="CLOUDCERT_">
+<meta property="og:image" content="https://cloudcert.app/assets/og.png">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='80' font-size='80' fill='%233fe0a4' font-family='monospace'>▸</text></svg>">
+
+<meta name="google-adsense-account" content="ca-pub-5647574947191958">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+JP:wght@400;500;700&family=JetBrains+Mono:wght@400;600;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../css/style.css">
+<link rel="stylesheet" href="../css/page.css">
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-SZR5CB5Q3X"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag('js',new Date());gtag('config','G-SZR5CB5Q3X');</script>
+<script type="application/ld+json">[{"@context":"https://schema.org","@type":"TechArticle","headline":"Amazon Athenaとは？試験に出るポイントと演習問題","description":"Amazon Athena（AWS）の要点と資格試験での問われ方を解説。登場する演習問題6問と公式ドキュメントへのリンクつき。","inLanguage":"ja","about":{"@type":"Thing","name":"Amazon Athena"},"author":{"@type":"Organization","name":"CLOUDCERT_"},"publisher":{"@type":"Organization","name":"CLOUDCERT_"},"mainEntityOfPage":"https://cloudcert.app/learn/amazon-athena.html"},{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"HOME","item":"https://cloudcert.app/"},{"@type":"ListItem","position":2,"name":"サービス解説","item":"https://cloudcert.app/learn/"},{"@type":"ListItem","position":3,"name":"Amazon Athena"}]}]</script>
+</head>
+<body class="page-body">
+<header class="page-header"><a class="page-logo" href="../index.html">&gt; CLOUDCERT_</a></header>
+<main class="page-main">
+
+<nav class="breadcrumb"><a href="../index.html">HOME</a> › <a href="./">サービス解説</a> › Amazon Athena</nav>
+<div class="learn-head">
+<div class="badges"><span class="badge" data-provider="aws">AWS</span><span class="badge">分析</span><span class="badge badge-q">演習6問</span></div>
+<h1>Amazon Athenaとは</h1>
+</div>
+<p class="lead">S3上のデータを標準SQLで直接クエリできるサーバーレスのインタラクティブクエリサービス。Presto/Trinoベースでインフラ管理が不要、スキャンしたデータ量に対してのみ課金される。</p>
+<p>CSV・JSON・Parquet・ORC・Avroなど多様なフォーマットをサポート。GlueデータカタログをメタデータストアとしてGlue ETLパイプラインと組み合わせるパターンが一般的。</p>
+<p><a class="official-btn" href="https://docs.aws.amazon.com/ja_jp/athena/latest/ug/what-is.html" target="_blank" rel="noopener">公式ドキュメント →</a></p>
+<h2>試験での問われ方</h2>
+<p>「S3上のログやCSVを即席でSQL分析したい」「サーバーレス・スキーマオンリード」のシナリオではAthenaを選ぶ。事前のデータロードが不要な点がRedshiftとの大きな違い。Federated Query（Lambdaコネクタ経由でRDS・DynamoDB・オンプレDBなどS3以外のデータソースも同じSQLで横断的にクエリできる）の存在も押さえる。</p>
+<p>Athenaの課金はスキャンしたデータ量に対してなので、コスト削減策がそのまま試験のベストプラクティス問題になる。具体的には、行指向のCSV/JSONよりParquet/ORCなど列指向フォーマットに変換すると必要な列だけ読むためスキャン量が激減し、日付などでパーティションを切ればWHERE句で対象パーティションだけを読むようになる。同じクエリを再実行する場合はクエリ結果の再利用（一定時間内はキャッシュ結果を返しスキャンしない）も効く。</p>
+<h2>このサービスが登場する演習問題（6問）</h2>
+<ul class="q-list">
+<li><a href="../q/aws-clf-c02/q143.html">【CLF-C02】ある企業が、S3に蓄積された大量のログデータに対して、SQLライクなクエリをサーバーなしで実行してコスト効率よく分析した…</a></li>
+<li><a href="../q/aws-saa-c03/q056.html">【SAA-C03】ある企業が、Amazon S3 に保存された数 PB のデータに対してアドホックな SQL クエリを実行するデータレイク…</a></li>
+<li><a href="../q/aws-saa-c03/q081.html">【SAA-C03】ある企業が、AWS の月次コストを詳細に分析したい。各 AWS サービスのリソースレベルの使用量（時間単位）・コスト・割…</a></li>
+<li><a href="../q/aws-saa-c03/q144.html">【SAA-C03】ある企業が、AWS Glue Data Catalog を使って S3 上のデータカタログを管理し、Amazon Ath…</a></li>
+<li><a href="../q/aws-sap-c02/q011.html">【SAP-C02】ある企業が AWS Organizations の一括請求を使って 30 以上のアカウントのコストを管理しています。財務…</a></li>
+<li><a href="../q/aws-sap-c02/q082.html">【SAP-C02】ある企業が AWS 上で高頻度取引（HFT）システムのバックテストプラットフォームを構築しています。10 年分の市場デー…</a></li>
+</ul>
+<h2>関連サービス</h2><ul class="q-list">
+<li><a href="amazon-redshift.html">Amazon Redshift</a></li>
+<li><a href="aws-glue.html">AWS Glue</a></li>
+<li><a href="amazon-kinesis.html">Amazon Kinesis</a></li></ul>
+</main>
+<footer class="page-footer">
+<nav class="hub-nav"><a href="../exams/aws-clf-c02/">CLF-C02 試験ガイド</a><a href="../exams/aws-aif-c01/">AIF-C01 試験ガイド</a><a href="../exams/aws-saa-c03/">SAA-C03 試験ガイド</a><a href="../exams/aws-dva-c02/">DVA-C02 試験ガイド</a><a href="../exams/aws-sap-c02/">SAP-C02 試験ガイド</a><a href="../exams/gcp-cdl/">CDL 試験ガイド</a><a href="../exams/gcp-ace/">ACE 試験ガイド</a><a href="../exams/azure-az900/">AZ-900 試験ガイド</a><a href="../exams/azure-ai900/">AI-900 試験ガイド</a><a href="../exams/azure-dp900/">DP-900 試験ガイド</a><a href="../exams/azure-sc900/">SC-900 試験ガイド</a><a href="../exams/azure-az104/">AZ-104 試験ガイド</a></nav>
+<nav class="site-nav"><a href="../guide/">資格ガイド</a><a href="../learn/">サービス解説</a><a href="../career/">キャリア</a><a href="../about.html">運営者情報</a><a href="../privacy.html">プライバシーポリシー</a><a href="../contact.html">お問い合わせ</a></nav>
+<p class="copy">© CLOUDCERT_ — 本サイトは各認定試験の公式試験ではなく、収録問題はすべてオリジナルの演習問題です。</p>
+</footer>
+</body>
+</html>

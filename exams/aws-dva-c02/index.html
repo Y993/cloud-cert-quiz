@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>DVA-C02（デベロッパー アソシエイト）の難易度・勉強法と演習問題150問【無料】</title>
+<meta name="description" content="AWS Certified Developer - Associate（DVA-C02）の難易度・出題ドメイン・勉強法を解説。本試験レベルのオリジナル演習問題150問を無料公開、全問に詳細解説つき。">
+<link rel="canonical" href="https://cloudcert.app/exams/aws-dva-c02/">
+<meta property="og:title" content="DVA-C02（デベロッパー アソシエイト）の難易度・勉強法と演習問題150問【無料】">
+<meta property="og:description" content="AWS Certified Developer - Associate（DVA-C02）の難易度・出題ドメイン・勉強法を解説。本試験レベルのオリジナル演習問題150問を無料公開、全問に詳細解説つき。">
+<meta property="og:url" content="https://cloudcert.app/exams/aws-dva-c02/">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="CLOUDCERT_">
+<meta property="og:image" content="https://cloudcert.app/assets/og.png">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='80' font-size='80' fill='%233fe0a4' font-family='monospace'>▸</text></svg>">
+
+<meta name="google-adsense-account" content="ca-pub-5647574947191958">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+JP:wght@400;500;700&family=JetBrains+Mono:wght@400;600;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../../css/style.css">
+<link rel="stylesheet" href="../../css/page.css">
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-SZR5CB5Q3X"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag('js',new Date());gtag('config','G-SZR5CB5Q3X');</script>
+<script type="application/ld+json">[{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"試験は何問で何分ですか？","acceptedAnswer":{"@type":"Answer","text":"65問、130分。合格スコアは1000点満点中720点。65問のうち15問は採点対象外の未採点問題で、どの問題がそれに当たるかは受験中にはわからない。"}},{"@type":"Question","name":"受験料はいくらですか？","acceptedAnswer":{"@type":"Answer","text":"150米ドル。日本円での請求額は決済時の為替レートに依存する。Pearson VUEまたはPSI経由で申し込む。"}},{"@type":"Question","name":"SAAを先に取ってからDVA-C02を受けるべきですか？","acceptedAnswer":{"@type":"Answer","text":"必須ではないが、SAAを先に取ると共通領域（IAM・S3・VPC基礎）を省略できる。ただし開発経験が豊富であればDVA-C02から始めても十分合格できる。どちらを先にするかは自分の経験領域で判断してよい。"}},{"@type":"Question","name":"不合格になったら、いつから再受験できますか？","acceptedAnswer":{"@type":"Answer","text":"不合格の翌日から14日後以降に再受験登録が可能。再受験料は全額必要で、受験回数の上限はない。"}},{"@type":"Question","name":"認定の有効期限はありますか？","acceptedAnswer":{"@type":"Answer","text":"取得から3年間有効。期限が近づいたら再認定試験（同じ試験か、上位のDevOps Engineerプロフェッショナル試験への合格）で更新できる。AzureのようなMicrosoft系と異なり、無料の更新アセスメントは用意されておらず、再受験が必要になる。"}},{"@type":"Question","name":"DVA-C02合格後はどの試験に進む人が多いですか？","acceptedAnswer":{"@type":"Answer","text":"SysOps Administrator（SOA）やSolutions Architect Associate（SAA）に横展開する人と、DevOps Engineer Professional（DOP）に上位進出する人に分かれる。DOPはDVA-C02の内容を多くカバーするため、DVA-C02取得直後に着手するのは自然な流れだ。"}}]},{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"HOME","item":"https://cloudcert.app/"},{"@type":"ListItem","position":2,"name":"DVA-C02 試験ガイド"}]}]</script>
+</head>
+<body class="page-body">
+<header class="page-header"><a class="page-logo" href="../../index.html">&gt; CLOUDCERT_</a></header>
+<main class="page-main">
+
+<nav class="breadcrumb"><a href="../../index.html">HOME</a> › DVA-C02</nav>
+<h1>DVA-C02（デベロッパー アソシエイト）の難易度・勉強法と演習問題150問【無料】</h1>
+<p>合格ライン 72% ／ 制限時間 130分 ／ 収録 150問（すべて無料・登録不要）</p>
+<div class="cta-box"><a class="btn btn-primary" href="../../exam.html?exam=aws-dva-c02">▸ いますぐ演習をはじめる</a></div>
+
+<h2>試験概要</h2><p>AWS Certified Developer – Associate（DVA-C02）は、AWSを使ったアプリケーション開発・デプロイ・デバッグの実務力を問うアソシエイトレベルの認定試験だ。出題数は65問、試験時間は130分。合格スコアは1000点満点中720点で、100〜1000のスケールドスコアで報告される。受験料は150米ドル（日本円での金額は受験登録時のレートによる）。</p>
+<p>試験は4つのドメインで構成される。「AWSサービスを使った開発」が32%、「セキュリティ」が26%、「デプロイ」が24%、「トラブルシューティングと最適化」が18%という配分だ。65問のうち15問はスコアに影響しない未採点問題で、どの問題がそれに当たるかは受験中にはわからない。</p>
+<p>問われるのはAWSのサービスを「使いこなす」側の知識だ。Lambda・API Gateway・DynamoDB・SQS・SNS・Kinesis・CodePipeline・CodeDeployといったサービスが出題の中心になる。アーキテクチャを設計するSolutions Architect（SAA）とは対象領域が異なり、SDKの使い方・IAMの権限設計・CI/CDパイプラインの構成・デバッグの手順など、開発者として日常的に触れる内容が多い。</p>
+<h2>難易度</h2><p>SAAと比べると出題範囲は狭い代わりに深い。SAAが「どのサービスを選ぶか」を問うのに対して、DVA-C02は「そのサービスをどう設定し、どうデバッグするか」まで踏み込んでくる。たとえばDynamoDBであれば、テーブル設計の概念だけでなく、パーティションキーの選び方やスロットリングの対処法まで問われることがある。</p>
+<p>AWSに触れたことがあるエンジニアであれば、SAAよりDVA-C02のほうが感覚的に近い問題が多いと感じるはずだ。逆に、インフラ寄りのバックグラウンドを持つ人には、DynamoDBやSQSなどのサービスの細かい挙動が盲点になりやすい。どちらが難しいかは経験領域による、というのが正直なところだ。</p>
+<p>つまずきやすいのはサーバーレス周辺（Lambda・API Gateway・Cognito）とメッセージング（SQS・SNS・Kinesisの使い分け）の2領域。どちらも「名前は知っている」だけでは問題が解けない。ElastiCacheのキャッシング戦略や、X-Rayを使ったデバッグ手順も出題されることがあるため、実際に手を動かして試した経験があると強い。</p>
+<h2>勉強法</h2><p>目安の学習期間はAWS実務未経験なら2〜3か月、開発経験がありAWSサービスをある程度触ったことがあれば1〜1.5か月。SAAを先に取得している場合、共通する概念（IAM・S3・VPC基礎など）は省略できるため、純粋な上乗せ学習は1か月程度で済む人も多い。</p>
+<p>インプットはUdemyの講座が実績面では安定している。Stephane MaatekのDVA-C02コースは英語だが日本語字幕があり、ハンズオンも充実している。コードを実際に書いてLambdaをデプロイしたり、SQSキューにメッセージを送ったりする経験が、問題の選択肢を絞るときの直感につながる。</p>
+<p>模擬問題は公式の「AWS Certified Developer – Associate Official Practice Question Set」（無料）から始めて、その後Tutorials DojoやJon Bonsoのセットで補強する流れが多い。間違えた問題は正答を暗記するのではなく、AWSドキュメントの該当ページを30秒でも見てから次へ進む習慣がつくと、類似問題でも対応できるようになる。</p>
+<p>試験本番は130分、65問。1問あたり2分の計算だが、選択肢が多い問題でも問題文が短いものが多く、時間切れになるケースは少ない。むしろ迷いやすいのは、どれも正しそうに見える選択肢の中から「最も適切なもの」を選ぶ場面だ。「AWS的に正しいかどうか」より「このシナリオの制約に合うかどうか」で絞る習慣を事前につけておくと、当日の迷いが減る。</p>
+<h2>よくある質問</h2><h3>試験は何問で何分ですか？</h3><p>65問、130分。合格スコアは1000点満点中720点。65問のうち15問は採点対象外の未採点問題で、どの問題がそれに当たるかは受験中にはわからない。</p>
+<h3>受験料はいくらですか？</h3><p>150米ドル。日本円での請求額は決済時の為替レートに依存する。Pearson VUEまたはPSI経由で申し込む。</p>
+<h3>SAAを先に取ってからDVA-C02を受けるべきですか？</h3><p>必須ではないが、SAAを先に取ると共通領域（IAM・S3・VPC基礎）を省略できる。ただし開発経験が豊富であればDVA-C02から始めても十分合格できる。どちらを先にするかは自分の経験領域で判断してよい。</p>
+<h3>不合格になったら、いつから再受験できますか？</h3><p>不合格の翌日から14日後以降に再受験登録が可能。再受験料は全額必要で、受験回数の上限はない。</p>
+<h3>認定の有効期限はありますか？</h3><p>取得から3年間有効。期限が近づいたら再認定試験（同じ試験か、上位のDevOps Engineerプロフェッショナル試験への合格）で更新できる。AzureのようなMicrosoft系と異なり、無料の更新アセスメントは用意されておらず、再受験が必要になる。</p>
+<h3>DVA-C02合格後はどの試験に進む人が多いですか？</h3><p>SysOps Administrator（SOA）やSolutions Architect Associate（SAA）に横展開する人と、DevOps Engineer Professional（DOP）に上位進出する人に分かれる。DOPはDVA-C02の内容を多くカバーするため、DVA-C02取得直後に着手するのは自然な流れだ。</p>
+<h2>出題ドメイン構成（収録問題の内訳）</h2>
+<table class="domain-table"><tr><th>ドメイン</th><th>収録数</th></tr><tr><td>開発</td><td>48問（32%）</td></tr>
+<tr><td>セキュリティ</td><td>39問（26%）</td></tr>
+<tr><td>デプロイ</td><td>36問（24%）</td></tr>
+<tr><td>トラブルシューティングと最適化</td><td>27問（18%）</td></tr></table>
+<h2>収録問題一覧（全150問・解説つき）</h2>
+<ol class="q-list">
+<li><a href="../../q/aws-dva-c02/q001.html">あるスタートアップが、画像リサイズ処理をAWS Lambdaで実装した。開発者がLambda関数のハンドラコードを次のよ…</a></li>
+<li><a href="../../q/aws-dva-c02/q002.html">ある金融系企業のLambda関数が、外部決済APIのシークレットキーを使用している。コンプライアンス要件として「シークレ…</a></li>
+<li><a href="../../q/aws-dva-c02/q003.html">あるチームが同一ランタイム（Python 3.12）のLambda関数を複数本デプロイしており、各関数がそれぞれ pan…</a></li>
+<li><a href="../../q/aws-dva-c02/q004.html">ある企業がLambdaで突発的なトラフィックスパイクに対応するシステムを運用している。平常時は1秒あたり10リクエスト程…</a></li>
+<li><a href="../../q/aws-dva-c02/q005.html">ある金融サービス企業が、Lambdaを使ってオンプレミスのデータベース（プライベートサブネット内のRDS Postgre…</a></li>
+<li><a href="../../q/aws-dva-c02/q006.html">あるEコマース企業が、注文確定時にSQSキューからLambdaを呼び出して在庫を更新するシステムを運用している。ネットワ…</a></li>
+<li><a href="../../q/aws-dva-c02/q007.html">ある企業が、外部決済APIを呼び出すLambda関数をSQSイベントソースマッピングで起動している。決済APIの仕様とし…</a></li>
+<li><a href="../../q/aws-dva-c02/q008.html">あるメディア企業がAPI GatewayのREST APIを使って動画メタデータのCRUD APIを公開している。フロン…</a></li>
+<li><a href="../../q/aws-dva-c02/q009.html">ある企業が、API GatewayのREST APIにカスタムオーソライザー（Lambda Authorizer）を実装…</a></li>
+<li><a href="../../q/aws-dva-c02/q010.html">あるチームが、API GatewayのREST APIでバックエンドのLambda関数への統合リクエストを設定している。…</a></li>
+<li><a href="../../q/aws-dva-c02/q011.html">ある企業が、API GatewayのREST APIをモバイルアプリと社内管理ツールの両方に公開している。モバイルアプリ…</a></li>
+<li><a href="../../q/aws-dva-c02/q012.html">あるエンタープライズ企業が、API GatewayのHTTP APIを使って社内のマイクロサービスを統合している。認証に…</a></li>
+<li><a href="../../q/aws-dva-c02/q013.html">ある企業がAPI GatewayのREST APIとLambda関数を使ってポイント付与APIを運用している。このAPI…</a></li>
+<li><a href="../../q/aws-dva-c02/q014.html">ある大規模なSaaSプロバイダーが、Lambda関数で10万種類のテナント設定をJSON形式（合計サイズ約800 MB）…</a></li>
+<li><a href="../../q/aws-dva-c02/q015.html">ある企業がAPI GatewayのREST APIとLambdaで構成されたAPIを本番環境に運用している。新機能のデプ…</a></li>
+<li><a href="../../q/aws-dva-c02/q016.html">ある企業が、Lambdaを使ったサーバーレスアーキテクチャでVPC内のElastiCache（Redis）クラスターにア…</a></li>
+<li><a href="../../q/aws-dva-c02/q017.html">ある企業がAPI GatewayとLambdaで構成されたAPIを運用しており、Lambdaのコードの中でAPIレスポン…</a></li>
+<li><a href="../../q/aws-dva-c02/q018.html">ある企業が、API GatewayのHTTP APIとLambda統合でREST APIを構築している。フロントエンドの…</a></li>
+<li><a href="../../q/aws-dva-c02/q019.html">あるチームが、Lambdaのコールドスタートのレイテンシを改善しようとしている。現在のLambda関数はPython 3…</a></li>
+<li><a href="../../q/aws-dva-c02/q020.html">ある企業が、API GatewayのREST APIを使って外部パートナーにAPIを提供している。以下の2つの要件を同時…</a></li>
+<li><a href="../../q/aws-dva-c02/q021.html">あるチームが、Lambda関数でVPC内のRDS Aurora（PostgreSQL）に接続するアプリケーションを構築し…</a></li>
+<li><a href="../../q/aws-dva-c02/q022.html">ある企業がAPI GatewayのREST APIを本番運用しており、以下の2つの問題が発生している。 問題1: 一部の…</a></li>
+<li><a href="../../q/aws-dva-c02/q023.html">あるチームがAPI GatewayとLambdaで社内ツール向けのREST APIを構築している。このAPIをインターネ…</a></li>
+<li><a href="../../q/aws-dva-c02/q024.html">あるスタートアップが、社内向けの軽量なWebhookエンドポイントをLambdaで実装したい。API Gatewayを使…</a></li>
+<li><a href="../../q/aws-dva-c02/q025.html">あるEコマース企業が、商品カタログをDynamoDBに保存している。商品IDはランダムなUUID形式で、1日に数百万件の…</a></li>
+<li><a href="../../q/aws-dva-c02/q026.html">あるスタートアップが、DynamoDBテーブルに対してアイテムの条件付き更新を実装しようとしている。在庫数が0より大きい…</a></li>
+<li><a href="../../q/aws-dva-c02/q027.html">あるSaaS企業が、DynamoDBに大量のユーザーセッションデータを保存している。セッションは作成から24時間後に自動…</a></li>
+<li><a href="../../q/aws-dva-c02/q028.html">あるニュースアプリが、SQSを使ってメッセージを処理している。Lambdaコンシューマーがメッセージを取得後、処理中にク…</a></li>
+<li><a href="../../q/aws-dva-c02/q029.html">あるフィンテック企業が、DynamoDBで金融取引データを管理している。テーブルのパーティションキーはuserIdで、ソ…</a></li>
+<li><a href="../../q/aws-dva-c02/q030.html">あるメディア企業が、DynamoDB Streamsを使ってコンテンツ変更イベントを別システムに連携している。Lambd…</a></li>
+<li><a href="../../q/aws-dva-c02/q031.html">あるオンラインゲーム企業が、プレイヤーランキングをDynamoDBで管理している。パーティションキーはgameIdで、ソ…</a></li>
+<li><a href="../../q/aws-dva-c02/q032.html">ある物流企業が、SQSキューを使って荷物追跡イベントを処理している。消費者LambdaがたびたびSQSメッセージの処理に…</a></li>
+<li><a href="../../q/aws-dva-c02/q033.html">あるIoTプラットフォームが、多数のデバイスからセンサーデータをSNSトピックで受信し、複数の下流サービスに配信している…</a></li>
+<li><a href="../../q/aws-dva-c02/q034.html">ある金融サービス企業が、Step Functionsを使って与信審査ワークフローを実装している。各ステップは外部APIを…</a></li>
+<li><a href="../../q/aws-dva-c02/q035.html">あるEC企業が、EventBridgeルールを使ってS3バケットへのオブジェクトアップロードイベントを検知し、画像リサイ…</a></li>
+<li><a href="../../q/aws-dva-c02/q036.html">あるスタートアップが、ElastiCache for Redisをデータベースキャッシュとして導入しようとしている。デー…</a></li>
+<li><a href="../../q/aws-dva-c02/q037.html">あるマーケットプレイス企業が、DynamoDBを使って注文管理システムを構築している。注文処理では「在庫テーブルから在庫…</a></li>
+<li><a href="../../q/aws-dva-c02/q038.html">あるグローバルゲーム会社が、DynamoDBとKinesis Data Streamsを組み合わせたリアルタイムランキン…</a></li>
+<li><a href="../../q/aws-dva-c02/q039.html">ある医療記録管理企業が、Step FunctionsのStandard Workflowを使って患者データの変換・検証・…</a></li>
+<li><a href="../../q/aws-dva-c02/q040.html">あるフィンテック企業が、DynamoDBで決済レコードを管理している。複数のマイクロサービスが同時に同じ決済レコードを更…</a></li>
+<li><a href="../../q/aws-dva-c02/q041.html">ある広告テクノロジー企業が、リアルタイム入札システムをStep Functionsで実装している。数百万の入札リクエスト…</a></li>
+<li><a href="../../q/aws-dva-c02/q042.html">あるスポーツデータ企業が、S3バケットに保存された試合動画ファイルを解析するパイプラインを構築している。S3にオブジェク…</a></li>
+<li><a href="../../q/aws-dva-c02/q043.html">ある旅行予約プラットフォームが、DynamoDBで予約データを管理している。予約検索には「出発地と目的地の組み合わせで検…</a></li>
+<li><a href="../../q/aws-dva-c02/q044.html">ある金融機関が、DynamoDB Streamsを使ったイベント駆動型の監査ログシステムを構築している。ストリームのLa…</a></li>
+<li><a href="../../q/aws-dva-c02/q045.html">あるヘルスケア企業が、患者の検査結果ファイルがS3にアップロードされると自動で複数の処理（OCR変換・暗号化・通知メール…</a></li>
+<li><a href="../../q/aws-dva-c02/q046.html">あるロジスティクス企業が、SQS FIFOキューを使って配送順序を保証した荷物追跡システムを運用している。スループットが…</a></li>
+<li><a href="../../q/aws-dva-c02/q047.html">あるメディア配信企業が、ElastiCache for Redisを使って動画メタデータのキャッシュを運用している。キャ…</a></li>
+<li><a href="../../q/aws-dva-c02/q048.html">あるEコマース企業が、商品データの更新があるたびにDynamoDBテーブルへの書き込みが発生する。このデータ変更を複数の…</a></li>
+<li><a href="../../q/aws-dva-c02/q049.html">ある開発チームは EC2 インスタンス上で動作するアプリケーションから DynamoDB テーブルにアクセスする必要があ…</a></li>
+<li><a href="../../q/aws-dva-c02/q050.html">ある企業のモバイルアプリは、ユーザーがサインアップ・サインインして独自の S3 バケットのオブジェクトにアクセスできる必…</a></li>
+<li><a href="../../q/aws-dva-c02/q051.html">開発者が Lambda 関数のコード内で外部 API の秘密鍵を管理したいと考えています。秘密鍵は 90 日ごとに自動ロ…</a></li>
+<li><a href="../../q/aws-dva-c02/q052.html">ある企業は本番 AWS アカウント（Account A）のデータを、監査用アカウント（Account B）の Lambd…</a></li>
+<li><a href="../../q/aws-dva-c02/q053.html">あるチームは KMS でデータキーを使ってアプリケーションデータを暗号化しています。大量のデータを効率的に暗号化するため…</a></li>
+<li><a href="../../q/aws-dva-c02/q054.html">ある開発者が S3 バケットに保存される顧客データに対してサーバーサイド暗号化を設定しようとしています。「暗号化キーの管…</a></li>
+<li><a href="../../q/aws-dva-c02/q055.html">ある企業は S3 バケットに保存された機密ファイルを外部のビジネスパートナーと一時的に共有する必要があります。ファイルへ…</a></li>
+<li><a href="../../q/aws-dva-c02/q056.html">ある開発者は IAM ポリシーのデバッグをしています。対象ユーザーには以下の 2 つのポリシーがアタッチされています。④…</a></li>
+<li><a href="../../q/aws-dva-c02/q057.html">あるスタートアップは SaaS アプリケーションのバックエンドで、ユーザーごとに異なる S3 パスへのアクセスを制御した…</a></li>
+<li><a href="../../q/aws-dva-c02/q058.html">ある企業のアプリケーションは AWS KMS で暗号化された S3 オブジェクトを読み込む Lambda 関数を持ってい…</a></li>
+<li><a href="../../q/aws-dva-c02/q059.html">あるチームは Cognito を使ったモバイルアプリを開発しています。アプリは Cognito ユーザープールでサインイ…</a></li>
+<li><a href="../../q/aws-dva-c02/q060.html">ある企業のセキュリティ審査で、Lambda 関数が使用する IAM ロールに過剰な権限があると指摘されました。現在のロー…</a></li>
+<li><a href="../../q/aws-dva-c02/q061.html">ある企業は STS の AssumeRole を使ってマルチアカウント環境でアクセス管理をしています。セキュリティチーム…</a></li>
+<li><a href="../../q/aws-dva-c02/q062.html">あるチームは API Gateway + Lambda で構築した REST API に HTTPS を強制したいと考え…</a></li>
+<li><a href="../../q/aws-dva-c02/q063.html">ある企業は Parameter Store を使って複数の Lambda 関数に共有設定値を提供しています。一部のパラメ…</a></li>
+<li><a href="../../q/aws-dva-c02/q064.html">ある開発者は Cognito ユーザープールを使ったウェブアプリを構築しています。サインインページをゼロから実装する工数…</a></li>
+<li><a href="../../q/aws-dva-c02/q065.html">ある企業は本番環境のデータベース接続文字列（ホスト名・ユーザー名・パスワード）を安全に管理したいと考えています。データベ…</a></li>
+<li><a href="../../q/aws-dva-c02/q066.html">ある企業は CloudFront + S3 で静的ウェブサイトを提供しています。S3 バケットへの直接アクセスを禁止し、…</a></li>
+<li><a href="../../q/aws-dva-c02/q067.html">ある開発者は STS の GetSessionToken を使ってコンソールに MFA を使用するスクリプトを作成してい…</a></li>
+<li><a href="../../q/aws-dva-c02/q068.html">ある企業はマルチテナント SaaS アプリケーションを開発しています。各テナントのデータを DynamoDB テーブルに…</a></li>
+<li><a href="../../q/aws-dva-c02/q069.html">ある開発者は CodePipeline から本番環境の CloudFormation スタックをデプロイしています。Co…</a></li>
+<li><a href="../../q/aws-dva-c02/q070.html">ある企業は IAM ロールの Permission Boundary（アクセス許可境界）を活用したいと考えています。開発…</a></li>
+<li><a href="../../q/aws-dva-c02/q071.html">ある企業は S3 に保存されたデータを KMS カスタマーマネージドキー（CMK）で暗号化しています。セキュリティ監査で…</a></li>
+<li><a href="../../q/aws-dva-c02/q072.html">ある開発チームは新規プロジェクトの IAM ポリシーを設計しています。同一ポリシーを複数の IAM エンティティ（ユーザ…</a></li>
+<li><a href="../../q/aws-dva-c02/q073.html">ある企業はモバイルアプリでユーザーが Google アカウントでサインインできる機能を実装しています。Google 認証…</a></li>
+<li><a href="../../q/aws-dva-c02/q074.html">ある企業は AWS KMS のカスタマーマネージドキー（CMK）を使って S3 オブジェクトを暗号化しています。コンプラ…</a></li>
+<li><a href="../../q/aws-dva-c02/q075.html">ある企業は S3 に保存する機密ファイルの暗号化キーを自社のオンプレミスキー管理システム（KMS）で管理することが義務付…</a></li>
+<li><a href="../../q/aws-dva-c02/q076.html">ある開発者は AWS Systems Manager Parameter Store を使って設定値を管理しています。現…</a></li>
+<li><a href="../../q/aws-dva-c02/q077.html">ある企業の Cognito ユーザープールでは、ユーザーサインアップ時に企業ドメイン（@example.com）のメール…</a></li>
+<li><a href="../../q/aws-dva-c02/q078.html">ある開発チームは IAM ロールを使って S3 の署名付き URL（Presigned URL）を生成するサービスを構築…</a></li>
+<li><a href="../../q/aws-dva-c02/q079.html">あるセキュリティエンジニアは IAM リソースベースポリシー（Resource-Based Policy）とアイデンティ…</a></li>
+<li><a href="../../q/aws-dva-c02/q080.html">ある企業は AWS KMS の CMK を使用しています。外部の監査会社に対して、特定の期間（30 日間）だけ対象 CM…</a></li>
+<li><a href="../../q/aws-dva-c02/q081.html">ある企業は Cognito ID プールを使って認証済みユーザーと未認証（ゲスト）ユーザーの両方に AWS リソースへの…</a></li>
+<li><a href="../../q/aws-dva-c02/q082.html">ある開発チームは AWS STS を使って一時認証情報を取得する複数のユースケースを検討しています。「IAM ユーザーが…</a></li>
+<li><a href="../../q/aws-dva-c02/q083.html">ある企業は Cognito ユーザープールの Lambda トリガーを活用して、サインアップおよびサインイン時のカスタム…</a></li>
+<li><a href="../../q/aws-dva-c02/q084.html">ある企業のセキュリティ担当者は IAM ポリシーの Condition 要素を活用して精緻なアクセス制御を実装したいと考…</a></li>
+<li><a href="../../q/aws-dva-c02/q085.html">ある企業はグローバルに展開するアプリケーションで、複数のリージョンから KMS で暗号化されたデータを読み書きしています…</a></li>
+<li><a href="../../q/aws-dva-c02/q086.html">ある開発チームは Lambda 関数から Secrets Manager のシークレットを取得するコードを実装しています…</a></li>
+<li><a href="../../q/aws-dva-c02/q087.html">ある企業は S3 バケットへの PUT リクエスト時に、アップロードされるオブジェクトに対して SSE-KMS 暗号化を…</a></li>
+<li><a href="../../q/aws-dva-c02/q088.html">あるチームが AWS CodeDeploy を使ってEC2インスタンスにアプリケーションをデプロイしている。デプロイ設定…</a></li>
+<li><a href="../../q/aws-dva-c02/q089.html">あるスタートアップ企業が AWS Elastic Beanstalk を使ってWebアプリケーションを運用している。開発…</a></li>
+<li><a href="../../q/aws-dva-c02/q090.html">ある企業がAWS CodeBuildを使ってアプリケーションのビルドパイプラインを構築している。ビルドプロジェクトのソー…</a></li>
+<li><a href="../../q/aws-dva-c02/q091.html">あるチームがAWS Lambda関数の新バージョンをデプロイし、本番トラフィックの10%だけを新バージョンに送り、問題が…</a></li>
+<li><a href="../../q/aws-dva-c02/q092.html">あるチームがAWS SAMを使ってサーバーレスアプリケーションを管理している。初回デプロイ時にS3バケットの作成やIAM…</a></li>
+<li><a href="../../q/aws-dva-c02/q093.html">ある企業のDevOpsチームがAWS CodeDeployを使ってEC2フリートへのデプロイを管理している。デプロイ中に…</a></li>
+<li><a href="../../q/aws-dva-c02/q094.html">あるチームがAWS CodePipelineを使ってCI/CDパイプラインを構築している。GitHubにコードをプッシュ…</a></li>
+<li><a href="../../q/aws-dva-c02/q095.html">ある企業がAWS CloudFormationを使ってインフラを管理している。本番スタックの設定変更を適用する前に、どの…</a></li>
+<li><a href="../../q/aws-dva-c02/q096.html">あるチームがAWS CodeDeployを使ってAmazon ECSサービスへのBlue/Greenデプロイを実装しよう…</a></li>
+<li><a href="../../q/aws-dva-c02/q097.html">ある企業がAWS SAMを使ってLambda関数のデプロイを管理している。新しいバージョンのデプロイ時に、1分ごとに10…</a></li>
+<li><a href="../../q/aws-dva-c02/q098.html">あるチームがAWS CodeBuildのbuildspec.ymlを作成している。ビルドステージで環境変数として使うデー…</a></li>
+<li><a href="../../q/aws-dva-c02/q099.html">ある企業がAWS CloudFormationスタックを使って複数のAWSアカウントにわたって標準化されたVPCとセキュ…</a></li>
+<li><a href="../../q/aws-dva-c02/q100.html">あるチームがAWS CodePipelineで構築したCI/CDパイプラインを改善しようとしている。ビルドフェーズでDo…</a></li>
+<li><a href="../../q/aws-dva-c02/q101.html">ある企業がElastic Beanstalkで運用するWebアプリケーションの新バージョンをデプロイしようとしている。本…</a></li>
+<li><a href="../../q/aws-dva-c02/q102.html">ある開発チームがAWS Lambda関数のバージョン管理を改善しようとしている。現在は関数名を直接参照してデプロイしてい…</a></li>
+<li><a href="../../q/aws-dva-c02/q103.html">ある企業がAWS CodeDeployを使ってEC2フリート100台にアプリケーションをデプロイしている。デプロイ中にア…</a></li>
+<li><a href="../../q/aws-dva-c02/q104.html">ある企業がAWS CloudFormationのスタックセット（StackSets）を使って、AWS Organizat…</a></li>
+<li><a href="../../q/aws-dva-c02/q105.html">ある企業がAWS SAMテンプレートを使ってAPI Gateway + Lambda構成のサーバーレスAPIをデプロイし…</a></li>
+<li><a href="../../q/aws-dva-c02/q106.html">ある企業がAmazon ECSのFargateクラスターにマイクロサービスをデプロイしている。新しいタスク定義をデプロイ…</a></li>
+<li><a href="../../q/aws-dva-c02/q107.html">ある企業がAWS CodeArtifactを使ってプライベートnpmパッケージを管理している。CI/CDパイプラインのC…</a></li>
+<li><a href="../../q/aws-dva-c02/q108.html">あるチームがAWS CodeBuildのbuildspec.ymlを設計している。ビルドフェーズの流れとして、依存関係の…</a></li>
+<li><a href="../../q/aws-dva-c02/q109.html">ある企業がAWS CodeDeployを使ってEC2インスタンスにアプリケーションをデプロイしている。デプロイ時に既存プ…</a></li>
+<li><a href="../../q/aws-dva-c02/q110.html">あるチームがAWS Lambda関数を新バージョンに更新した後、関数の動作を確認するためにバージョン番号を直接指定してテ…</a></li>
+<li><a href="../../q/aws-dva-c02/q111.html">ある企業がElastic Beanstalkでデプロイ中の可用性を最大化したいと考えている。Rolling with a…</a></li>
+<li><a href="../../q/aws-dva-c02/q112.html">あるチームがAWS CodeBuildのビルドキャッシュを設定してビルド時間を短縮しようとしている。CodeBuildが…</a></li>
+<li><a href="../../q/aws-dva-c02/q113.html">ある企業がAWS CloudFormationを使ってEC2インスタンスとRDSインスタンスを管理している。本番スタック…</a></li>
+<li><a href="../../q/aws-dva-c02/q114.html">あるチームがAWS CodePipelineにステージ間の手動承認ステップを追加した。ステージングへのデプロイ後、本番デ…</a></li>
+<li><a href="../../q/aws-dva-c02/q115.html">ある開発チームがAmazon ECRにDockerイメージをプッシュして管理している。誤って同じタグ（例: latest…</a></li>
+<li><a href="../../q/aws-dva-c02/q116.html">ある企業がAmazon ECSのEC2起動タイプでマイクロサービスを運用している。新バージョンのタスク定義をデプロイする…</a></li>
+<li><a href="../../q/aws-dva-c02/q117.html">ある企業がAWS CodeDeployを使ってLambda関数のカナリアデプロイを実装している。デプロイ中にPreTra…</a></li>
+<li><a href="../../q/aws-dva-c02/q118.html">ある企業がAWS CloudFormationのドリフト検出機能を活用してインフラの設定を管理している。CloudFor…</a></li>
+<li><a href="../../q/aws-dva-c02/q119.html">ある企業がAWS CodeArtifactを使ってプライベートなMavenパッケージを管理している。社内チームが公開され…</a></li>
+<li><a href="../../q/aws-dva-c02/q120.html">ある企業がAWS CodePipelineでマルチステージのCI/CDパイプラインを構築している。パイプラインには複数の…</a></li>
+<li><a href="../../q/aws-dva-c02/q121.html">ある企業がAWS CloudFormationを使って本番環境のインフラを管理している。重要なスタックが誤って削除・更新…</a></li>
+<li><a href="../../q/aws-dva-c02/q122.html">ある企業がAWS SAMを使ってLambda関数をデプロイしている。デプロイ後に本番トラフィックの一部を新バージョンに切…</a></li>
+<li><a href="../../q/aws-dva-c02/q123.html">あるチームがAWS Elastic Beanstalkでデプロイ後のアプリケーション動作確認を自動化したいと考えている。…</a></li>
+<li><a href="../../q/aws-dva-c02/q124.html">あるチームがLambda関数のパフォーマンス改善に取り組んでいる。関数は毎回初期化処理に2秒かかっており、1日に数回しか…</a></li>
+<li><a href="../../q/aws-dva-c02/q125.html">あるチームがAWS X-Rayを使ってマイクロサービスのパフォーマンスを可視化しようとしている。Lambda関数からRD…</a></li>
+<li><a href="../../q/aws-dva-c02/q126.html">あるチームがAmazon DynamoDBを使ったAPIを運用している。突然「ProvisionedThroughput…</a></li>
+<li><a href="../../q/aws-dva-c02/q127.html">あるWebアプリケーションでAPI GatewayとLambdaを使ったAPIが稼働している。クライアントからのリクエス…</a></li>
+<li><a href="../../q/aws-dva-c02/q128.html">あるチームがCloudWatchで本番Lambda関数を監視している。メモリ使用量をカスタムメトリクスとして毎回の呼び出…</a></li>
+<li><a href="../../q/aws-dva-c02/q129.html">あるEコマース企業がAPI Gateway + Lambda + DynamoDBのサーバーレスAPIを運用している。あ…</a></li>
+<li><a href="../../q/aws-dva-c02/q130.html">あるチームがAPI GatewayとLambdaで構成されたAPIをデプロイした。本番環境では「HTTP 502 Bad…</a></li>
+<li><a href="../../q/aws-dva-c02/q131.html">あるチームがCloudWatch Logsのロググループに大量のログが蓄積されており、特定のエラーパターン（&quot;ERROR…</a></li>
+<li><a href="../../q/aws-dva-c02/q132.html">あるチームがX-Rayでトレースを設定したが、本番環境で1秒間に10,000リクエストが来ており、すべてをトレースすると…</a></li>
+<li><a href="../../q/aws-dva-c02/q133.html">あるチームがAPI GatewayとLambdaの組み合わせで読み取り専用の商品カタログAPIを提供している。クライアン…</a></li>
+<li><a href="../../q/aws-dva-c02/q134.html">あるチームがX-RayのサービスマップでAPI Gatewayから始まりLambdaを経由してDynamoDBに到達する…</a></li>
+<li><a href="../../q/aws-dva-c02/q135.html">あるチームがDynamoDBのOnDemandモードでAPIを運用している。突然トラフィックが過去の最大値の2倍に跳ね上…</a></li>
+<li><a href="../../q/aws-dva-c02/q136.html">あるチームがCloudTrailとCloudWatchを両方使って監視しているが、どちらを使うべきか判断に迷っている。E…</a></li>
+<li><a href="../../q/aws-dva-c02/q137.html">あるチームがElastiCache for Redisをセッションストアとして使ったWebアプリを運用している。キャッシ…</a></li>
+<li><a href="../../q/aws-dva-c02/q138.html">あるチームがLambda関数でサードパーティAPIを呼び出すコードを運用している。本番環境で「Task timed ou…</a></li>
+<li><a href="../../q/aws-dva-c02/q139.html">あるチームがDynamoDBのグローバルセカンダリインデックス（GSI）を活用した検索機能を開発した。テーブルへの書き込…</a></li>
+<li><a href="../../q/aws-dva-c02/q140.html">あるチームが本番Lambda関数のコールドスタートを削減するためにプロビジョニング済み同時実行を設定した。Applica…</a></li>
+<li><a href="../../q/aws-dva-c02/q141.html">あるチームがX-Rayを使ってマルチサービスアーキテクチャをトレースしている。あるリクエストのX-Rayトレースを確認す…</a></li>
+<li><a href="../../q/aws-dva-c02/q142.html">あるチームがDynamoDBのスロットリングを解決するため、指数バックオフを実装したリトライロジックをアプリケーションコ…</a></li>
+<li><a href="../../q/aws-dva-c02/q143.html">あるチームがLambda関数でデータベース接続を管理している。Lambda関数は毎秒100回呼ばれており、関数内でハンド…</a></li>
+<li><a href="../../q/aws-dva-c02/q144.html">あるチームがCloudWatchのカスタムメトリクスを大量のLambda関数から送信している。一部のLambda呼び出し…</a></li>
+<li><a href="../../q/aws-dva-c02/q145.html">あるチームがCloudWatchアラームを設定したが、アラームが誤検知を頻繁に起こしている。Lambda関数のエラー率が…</a></li>
+<li><a href="../../q/aws-dva-c02/q146.html">あるチームがAPI GatewayとLambdaで構成されたAPIで、一部のユーザーから「リクエストが成功するときと失敗…</a></li>
+<li><a href="../../q/aws-dva-c02/q147.html">あるチームがDynamoDBのスロットリング問題を解決しようとしている。CloudWatchのReadThrottleE…</a></li>
+<li><a href="../../q/aws-dva-c02/q148.html">あるチームがLambda関数のコールドスタート時間を最小化したい。関数はJavaで実装されており、Spring Fram…</a></li>
+<li><a href="../../q/aws-dva-c02/q149.html">あるチームがElastiCache for Redisを使って頻繁にアクセスされるDynamoDBデータをキャッシュして…</a></li>
+<li><a href="../../q/aws-dva-c02/q150.html">あるチームが本番環境でX-Rayを使ったトレーシングを最適化したい。現在の設定では1秒間に1リクエスト+残り5%をサンプ…</a></li>
+</ol>
+</main>
+<footer class="page-footer">
+<nav class="hub-nav"><a href="../../exams/aws-clf-c02/">CLF-C02 試験ガイド</a><a href="../../exams/aws-aif-c01/">AIF-C01 試験ガイド</a><a href="../../exams/aws-saa-c03/">SAA-C03 試験ガイド</a><a href="../../exams/aws-dva-c02/">DVA-C02 試験ガイド</a><a href="../../exams/aws-sap-c02/">SAP-C02 試験ガイド</a><a href="../../exams/gcp-cdl/">CDL 試験ガイド</a><a href="../../exams/gcp-ace/">ACE 試験ガイド</a><a href="../../exams/azure-az900/">AZ-900 試験ガイド</a><a href="../../exams/azure-ai900/">AI-900 試験ガイド</a><a href="../../exams/azure-dp900/">DP-900 試験ガイド</a><a href="../../exams/azure-sc900/">SC-900 試験ガイド</a><a href="../../exams/azure-az104/">AZ-104 試験ガイド</a></nav>
+<nav class="site-nav"><a href="../../guide/">資格ガイド</a><a href="../../learn/">サービス解説</a><a href="../../career/">キャリア</a><a href="../../about.html">運営者情報</a><a href="../../privacy.html">プライバシーポリシー</a><a href="../../contact.html">お問い合わせ</a></nav>
+<p class="copy">© CLOUDCERT_ — 本サイトは各認定試験の公式試験ではなく、収録問題はすべてオリジナルの演習問題です。</p>
+</footer>
+</body>
+</html>

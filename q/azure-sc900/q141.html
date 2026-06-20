@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>【SC-900 演習問題 #141】ある企業が Microsoft Purview 監査（Premium）の高度な機能を活用し…</title>
+<meta name="description" content="SC-900の本試験レベル演習問題。ある企業が Microsoft Purview 監査（Premium）の高度な機能を活用して、セキュリティインシデント調査の精度を高めたいと考えている。監査（Premium）で追加提供… 全選択肢の解説つき。">
+<link rel="canonical" href="https://cloudcert.app/q/azure-sc900/q141.html">
+<meta property="og:title" content="【SC-900 演習問題 #141】ある企業が Microsoft Purview 監査（Premium）の高度な機能を活用し…">
+<meta property="og:description" content="SC-900の本試験レベル演習問題。ある企業が Microsoft Purview 監査（Premium）の高度な機能を活用して、セキュリティインシデント調査の精度を高めたいと考えている。監査（Premium）で追加提供… 全選択肢の解説つき。">
+<meta property="og:url" content="https://cloudcert.app/q/azure-sc900/q141.html">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="CLOUDCERT_">
+<meta property="og:image" content="https://cloudcert.app/assets/og.png">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='80' font-size='80' fill='%233fe0a4' font-family='monospace'>▸</text></svg>">
+
+<meta name="google-adsense-account" content="ca-pub-5647574947191958">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+JP:wght@400;500;700&family=JetBrains+Mono:wght@400;600;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../../css/style.css">
+<link rel="stylesheet" href="../../css/page.css">
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-SZR5CB5Q3X"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag('js',new Date());gtag('config','G-SZR5CB5Q3X');</script>
+<script type="application/ld+json">[{"@context":"https://schema.org/","@type":"Quiz","about":{"@type":"Thing","name":"Microsoft Security, Compliance, and Identity Fundamentals"},"hasPart":[{"@type":"Question","eduQuestionType":"Multiple choice","learningResourceType":"Practice problem","text":"ある企業が Microsoft Purview 監査（Premium）の高度な機能を活用して、セキュリティインシデント調査の精度を高めたいと考えている。監査（Premium）で追加提供される機能として正しいものを選べ。","suggestedAnswer":[{"@type":"Answer","position":1,"text":"ユーザーの監査ログに対してリアルタイムの異常検知アラートを自動生成し、Defender ポータルにインシデントを作成する"},{"@type":"Answer","position":2,"text":"監査ログのデータが Microsoft Sentinel のワークブックに自動連携され、KQL クエリなしで可視化できる"},{"@type":"Answer","position":3,"text":"監査ログを SIEM（Azure Sentinel）にリアルタイムストリーミングする専用コネクタが自動設定される"}],"acceptedAnswer":{"@type":"Answer","position":0,"text":"MailItemsAccessed（個別のメールアクセス記録）などの重要イベントが追加され、より詳細なフォレンジック調査が可能になる","comment":{"@type":"Comment","text":"監査（Premium）では、Standard では記録されない重要な高価値イベントが追加される。特に MailItemsAccessed イベントは、どのメールアイテムにどのようにアクセスされたかを詳細に記録するものであり、メールボックスの不正アクセス（Compromise）調査において攻撃者がどのメールを読んだかを特定するフォレンジック調査に不可欠である。また保持期間が最大 1 年（E5）または 10 年（アドオン）に延長される点も Premium の重要な追加機能である。選択肢Dの Sentinel へのリアルタイムストリーミングは監査 Premium の機能ではなく、別途データコネクタの設定が必要であり自動設定はされない。選択肢Bのリアルタイム異常検知アラートは監査ログの機能ではなく、Microsoft Defender や Sentinel のアラートルールが担う。選択肢Cの Sentinel への自動連携も Premium の機能ではなく、別途設定が必要である。"}}}]},{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"HOME","item":"https://cloudcert.app/"},{"@type":"ListItem","position":2,"name":"SC-900 試験ガイド","item":"https://cloudcert.app/exams/azure-sc900/"},{"@type":"ListItem","position":3,"name":"q141"}]}]</script>
+</head>
+<body class="page-body">
+<header class="page-header"><a class="page-logo" href="../../index.html">&gt; CLOUDCERT_</a></header>
+<main class="page-main">
+
+<nav class="breadcrumb"><a href="../../index.html">HOME</a> › <a href="../../exams/azure-sc900/">SC-900 試験ガイド</a> › q141</nav>
+<div class="q-meta"><span>SC-900</span><span>Microsoft コンプライアンス ソリューションの機能</span><span>HARD</span><span>単一選択</span></div>
+<h1>ある企業が Microsoft Purview 監査（Premium）の高度な機能を活用して、セキュリティインシデント調査の精度を高めたいと考えている。監査（Premium）で追加提供される機能として正しいものを選べ。</h1>
+<ol class="q-choices">
+<li><b>A.</b> MailItemsAccessed（個別のメールアクセス記録）などの重要イベントが追加され、より詳細なフォレンジック調査が可能になる</li>
+<li><b>B.</b> ユーザーの監査ログに対してリアルタイムの異常検知アラートを自動生成し、Defender ポータルにインシデントを作成する</li>
+<li><b>C.</b> 監査ログのデータが Microsoft Sentinel のワークブックに自動連携され、KQL クエリなしで可視化できる</li>
+<li><b>D.</b> 監査ログを SIEM（Azure Sentinel）にリアルタイムストリーミングする専用コネクタが自動設定される</li>
+</ol>
+<details class="q-answer">
+<summary>解答と解説を見る</summary>
+<div class="inner">
+<p><b>正解: A</b></p>
+<p>監査（Premium）では、Standard では記録されない重要な高価値イベントが追加される。特に MailItemsAccessed イベントは、どのメールアイテムにどのようにアクセスされたかを詳細に記録するものであり、メールボックスの不正アクセス（Compromise）調査において攻撃者がどのメールを読んだかを特定するフォレンジック調査に不可欠である。また保持期間が最大 1 年（E5）または 10 年（アドオン）に延長される点も Premium の重要な追加機能である。選択肢Dの Sentinel へのリアルタイムストリーミングは監査 Premium の機能ではなく、別途データコネクタの設定が必要であり自動設定はされない。選択肢Bのリアルタイム異常検知アラートは監査ログの機能ではなく、Microsoft Defender や Sentinel のアラートルールが担う。選択肢Cの Sentinel への自動連携も Premium の機能ではなく、別途設定が必要である。</p>
+
+</div>
+</details>
+<div class="cta-box"><a class="btn btn-primary" href="../../exam.html?exam=azure-sc900">▸ この試験を本気で演習する（全150問・無料）</a></div>
+<nav class="q-nav">
+<span><a href="q140.html">← 前の問題</a></span>
+<span><a href="q142.html">次の問題 →</a></span>
+</nav>
+<section class="related"><h2>同じ分野の関連問題</h2><ul class="q-list">
+<li><a href="q140.html">ある企業が、Microsoft Purview のアダプティブ保護（Adaptive Protection）機能をインサ…</a></li>
+<li><a href="q142.html">ある規制業種の企業が、SharePoint Online に保存されたドキュメントが保持ポリシーによる保持期間終了後に廃…</a></li>
+<li><a href="q139.html">ある金融機関が、コンプライアンスマネージャーで NIST SP 800-53 評価を実施したところ、コンプライアンススコ…</a></li>
+<li><a href="q143.html">ある企業が Microsoft Purview インサイダーリスク管理を導入する際、プライバシー保護の観点から、初期調査…</a></li>
+</ul></section>
+</main>
+<footer class="page-footer">
+<nav class="hub-nav"><a href="../../exams/aws-clf-c02/">CLF-C02 試験ガイド</a><a href="../../exams/aws-aif-c01/">AIF-C01 試験ガイド</a><a href="../../exams/aws-saa-c03/">SAA-C03 試験ガイド</a><a href="../../exams/aws-dva-c02/">DVA-C02 試験ガイド</a><a href="../../exams/aws-sap-c02/">SAP-C02 試験ガイド</a><a href="../../exams/gcp-cdl/">CDL 試験ガイド</a><a href="../../exams/gcp-ace/">ACE 試験ガイド</a><a href="../../exams/azure-az900/">AZ-900 試験ガイド</a><a href="../../exams/azure-ai900/">AI-900 試験ガイド</a><a href="../../exams/azure-dp900/">DP-900 試験ガイド</a><a href="../../exams/azure-sc900/">SC-900 試験ガイド</a><a href="../../exams/azure-az104/">AZ-104 試験ガイド</a></nav>
+<nav class="site-nav"><a href="../../guide/">資格ガイド</a><a href="../../learn/">サービス解説</a><a href="../../career/">キャリア</a><a href="../../about.html">運営者情報</a><a href="../../privacy.html">プライバシーポリシー</a><a href="../../contact.html">お問い合わせ</a></nav>
+<p class="copy">© CLOUDCERT_ — 本サイトは各認定試験の公式試験ではなく、収録問題はすべてオリジナルの演習問題です。</p>
+</footer>
+</body>
+</html>

@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>【SAP-C02 演習問題 #41】ある小売企業が商品推薦システムを AWS 上に構築しています。ユーザーの購買履歴・閲覧履歴…</title>
+<meta name="description" content="SAP-C02の本試験レベル演習問題。ある小売企業が商品推薦システムを AWS 上に構築しています。ユーザーの購買履歴・閲覧履歴をリアルタイムで取り込み、個人化された商品推薦を 50ms 以内に API レスポンスとして… 全選択肢の解説つき。">
+<link rel="canonical" href="https://cloudcert.app/q/aws-sap-c02/q041.html">
+<meta property="og:title" content="【SAP-C02 演習問題 #41】ある小売企業が商品推薦システムを AWS 上に構築しています。ユーザーの購買履歴・閲覧履歴…">
+<meta property="og:description" content="SAP-C02の本試験レベル演習問題。ある小売企業が商品推薦システムを AWS 上に構築しています。ユーザーの購買履歴・閲覧履歴をリアルタイムで取り込み、個人化された商品推薦を 50ms 以内に API レスポンスとして… 全選択肢の解説つき。">
+<meta property="og:url" content="https://cloudcert.app/q/aws-sap-c02/q041.html">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="CLOUDCERT_">
+<meta property="og:image" content="https://cloudcert.app/assets/og.png">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='80' font-size='80' fill='%233fe0a4' font-family='monospace'>▸</text></svg>">
+
+<meta name="google-adsense-account" content="ca-pub-5647574947191958">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+JP:wght@400;500;700&family=JetBrains+Mono:wght@400;600;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../../css/style.css">
+<link rel="stylesheet" href="../../css/page.css">
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-SZR5CB5Q3X"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag('js',new Date());gtag('config','G-SZR5CB5Q3X');</script>
+<script type="application/ld+json">[{"@context":"https://schema.org/","@type":"Quiz","about":{"@type":"Thing","name":"AWS Certified Solutions Architect - Professional"},"hasPart":[{"@type":"Question","eduQuestionType":"Multiple choice","learningResourceType":"Practice problem","text":"ある小売企業が商品推薦システムを AWS 上に構築しています。ユーザーの購買履歴・閲覧履歴をリアルタイムで取り込み、個人化された商品推薦を 50ms 以内に API レスポンスとして返す必要があります。新しい商品の追加や在庫状況の変更は推薦結果にリアルタイムで反映される必要があり、システムは毎秒 10,000 リクエストを処理する必要があります。最も適切なアーキテクチャはどれですか？","suggestedAnswer":[{"@type":"Answer","position":0,"text":"AWS Lambda で協調フィルタリングアルゴリズムをゼロから実装し、ElastiCache Redis にユーザーごとの推薦リストをキャッシュする"},{"@type":"Answer","position":2,"text":"Amazon Elasticsearch（OpenSearch）で全商品データをインデックス化し、ユーザーの購買履歴からルールベースの推薦を実装する"},{"@type":"Answer","position":3,"text":"Amazon SageMaker のリアルタイム推論エンドポイントで推薦モデルをホストし、Lambda 経由で推薦 API を提供する。ユーザー行動データは Kinesis で収集し、日次バッチでモデルを再トレーニングする"}],"acceptedAnswer":{"@type":"Answer","position":1,"text":"Amazon Personalize でリアルタイム推薦システムを構築し、PutEvents API でリアルタイムのユーザーインタラクションを取り込む。推薦 API は Personalize のキャンペーンエンドポイント経由で提供し、商品カタログの更新は Personalize のデータセットを継続的に同期する","comment":{"@type":"Comment","text":"Amazon Personalize はリアルタイム個人化推薦を提供するフルマネージドサービスです。PutEvents API でユーザーインタラクションをリアルタイムに取り込み、推薦に即時反映できます。キャンペーンエンドポイントは自動スケールで毎秒 10,000 リクエストに対応し、50ms 以内のレイテンシーも達成可能です。商品カタログの継続同期で在庫変更も反映できます。\n\nD: SageMaker + Lambda も機能しますが、日次バッチのモデル再トレーニングでは新商品や在庫変更をリアルタイムに反映する要件を満たせません。Amazon Personalize の方が推薦システムに特化した機能を持ちます。\n\nC: OpenSearch のルールベース推薦は個人化 ML 推薦ではなく、ユーザーごとの個人化された推薦品質が大幅に低下します。\n\nA: Lambda でのゼロ実装は高い開発コストがかかり、50ms のレイテンシーと毎秒 10,000 リクエストをキャッシュだけで実現するには複雑な設計が必要です。Amazon Personalize の利用がより効率的です。"}}}]},{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"HOME","item":"https://cloudcert.app/"},{"@type":"ListItem","position":2,"name":"SAP-C02 試験ガイド","item":"https://cloudcert.app/exams/aws-sap-c02/"},{"@type":"ListItem","position":3,"name":"q041"}]}]</script>
+</head>
+<body class="page-body">
+<header class="page-header"><a class="page-logo" href="../../index.html">&gt; CLOUDCERT_</a></header>
+<main class="page-main">
+
+<nav class="breadcrumb"><a href="../../index.html">HOME</a> › <a href="../../exams/aws-sap-c02/">SAP-C02 試験ガイド</a> › q041</nav>
+<div class="q-meta"><span>SAP-C02</span><span>新しいソリューションのための設計</span><span>HARD</span><span>単一選択</span></div>
+<h1>ある小売企業が商品推薦システムを AWS 上に構築しています。ユーザーの購買履歴・閲覧履歴をリアルタイムで取り込み、個人化された商品推薦を 50ms 以内に API レスポンスとして返す必要があります。新しい商品の追加や在庫状況の変更は推薦結果にリアルタイムで反映される必要があり、システムは毎秒 10,000 リクエストを処理する必要があります。最も適切なアーキテクチャはどれですか？</h1>
+<ol class="q-choices">
+<li><b>A.</b> AWS Lambda で協調フィルタリングアルゴリズムをゼロから実装し、ElastiCache Redis にユーザーごとの推薦リストをキャッシュする</li>
+<li><b>B.</b> Amazon Personalize でリアルタイム推薦システムを構築し、PutEvents API でリアルタイムのユーザーインタラクションを取り込む。推薦 API は Personalize のキャンペーンエンドポイント経由で提供し、商品カタログの更新は Personalize のデータセットを継続的に同期する</li>
+<li><b>C.</b> Amazon Elasticsearch（OpenSearch）で全商品データをインデックス化し、ユーザーの購買履歴からルールベースの推薦を実装する</li>
+<li><b>D.</b> Amazon SageMaker のリアルタイム推論エンドポイントで推薦モデルをホストし、Lambda 経由で推薦 API を提供する。ユーザー行動データは Kinesis で収集し、日次バッチでモデルを再トレーニングする</li>
+</ol>
+<details class="q-answer">
+<summary>解答と解説を見る</summary>
+<div class="inner">
+<p><b>正解: B</b></p>
+<p>Amazon Personalize はリアルタイム個人化推薦を提供するフルマネージドサービスです。PutEvents API でユーザーインタラクションをリアルタイムに取り込み、推薦に即時反映できます。キャンペーンエンドポイントは自動スケールで毎秒 10,000 リクエストに対応し、50ms 以内のレイテンシーも達成可能です。商品カタログの継続同期で在庫変更も反映できます。
+
+D: SageMaker + Lambda も機能しますが、日次バッチのモデル再トレーニングでは新商品や在庫変更をリアルタイムに反映する要件を満たせません。Amazon Personalize の方が推薦システムに特化した機能を持ちます。
+
+C: OpenSearch のルールベース推薦は個人化 ML 推薦ではなく、ユーザーごとの個人化された推薦品質が大幅に低下します。
+
+A: Lambda でのゼロ実装は高い開発コストがかかり、50ms のレイテンシーと毎秒 10,000 リクエストをキャッシュだけで実現するには複雑な設計が必要です。Amazon Personalize の利用がより効率的です。</p>
+
+</div>
+</details>
+<div class="cta-box"><a class="btn btn-primary" href="../../exam.html?exam=aws-sap-c02">▸ この試験を本気で演習する（全150問・無料）</a></div>
+<nav class="q-nav">
+<span><a href="q040.html">← 前の問題</a></span>
+<span><a href="q042.html">次の問題 →</a></span>
+</nav>
+<section class="related"><h2>同じ分野の関連問題</h2><ul class="q-list">
+<li><a href="q040.html">ある企業が AWS 上でリアルタイムチャットアプリケーションを構築しています。ユーザーは WebSocket 接続でチャ…</a></li>
+<li><a href="q042.html">ある企業がオンプレミスから AWS へのリフト＆シフト移行を完了しており、次のフェーズとしてコンテナ化を進めています。現…</a></li>
+<li><a href="q039.html">ある企業が AWS Lambda を使ったサーバーレスアプリケーションを構築しており、Lambda 関数が Amazon…</a></li>
+<li><a href="q043.html">あるゲーム会社がグローバルなオンラインゲームのバックエンドを AWS に構築しています。ゲームのセッションデータ（プレイ…</a></li>
+</ul></section>
+</main>
+<footer class="page-footer">
+<nav class="hub-nav"><a href="../../exams/aws-clf-c02/">CLF-C02 試験ガイド</a><a href="../../exams/aws-aif-c01/">AIF-C01 試験ガイド</a><a href="../../exams/aws-saa-c03/">SAA-C03 試験ガイド</a><a href="../../exams/aws-dva-c02/">DVA-C02 試験ガイド</a><a href="../../exams/aws-sap-c02/">SAP-C02 試験ガイド</a><a href="../../exams/gcp-cdl/">CDL 試験ガイド</a><a href="../../exams/gcp-ace/">ACE 試験ガイド</a><a href="../../exams/azure-az900/">AZ-900 試験ガイド</a><a href="../../exams/azure-ai900/">AI-900 試験ガイド</a><a href="../../exams/azure-dp900/">DP-900 試験ガイド</a><a href="../../exams/azure-sc900/">SC-900 試験ガイド</a><a href="../../exams/azure-az104/">AZ-104 試験ガイド</a></nav>
+<nav class="site-nav"><a href="../../guide/">資格ガイド</a><a href="../../learn/">サービス解説</a><a href="../../career/">キャリア</a><a href="../../about.html">運営者情報</a><a href="../../privacy.html">プライバシーポリシー</a><a href="../../contact.html">お問い合わせ</a></nav>
+<p class="copy">© CLOUDCERT_ — 本サイトは各認定試験の公式試験ではなく、収録問題はすべてオリジナルの演習問題です。</p>
+</footer>
+</body>
+</html>

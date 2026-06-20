@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>【AIF-C01 演習問題 #101】ある金融機関が Amazon Bedrock を使って規制対応レポートを自動生成するシステ…</title>
+<meta name="description" content="AIF-C01の本試験レベル演習問題。ある金融機関が Amazon Bedrock を使って規制対応レポートを自動生成するシステムを構築している。生成されたレポートには「情報源を必ず引用し、出典となる内部ドキュメントのフ… 全選択肢の解説つき。">
+<link rel="canonical" href="https://cloudcert.app/q/aws-aif-c01/q101.html">
+<meta property="og:title" content="【AIF-C01 演習問題 #101】ある金融機関が Amazon Bedrock を使って規制対応レポートを自動生成するシステ…">
+<meta property="og:description" content="AIF-C01の本試験レベル演習問題。ある金融機関が Amazon Bedrock を使って規制対応レポートを自動生成するシステムを構築している。生成されたレポートには「情報源を必ず引用し、出典となる内部ドキュメントのフ… 全選択肢の解説つき。">
+<meta property="og:url" content="https://cloudcert.app/q/aws-aif-c01/q101.html">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="CLOUDCERT_">
+<meta property="og:image" content="https://cloudcert.app/assets/og.png">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='80' font-size='80' fill='%233fe0a4' font-family='monospace'>▸</text></svg>">
+
+<meta name="google-adsense-account" content="ca-pub-5647574947191958">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+JP:wght@400;500;700&family=JetBrains+Mono:wght@400;600;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../../css/style.css">
+<link rel="stylesheet" href="../../css/page.css">
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-SZR5CB5Q3X"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag('js',new Date());gtag('config','G-SZR5CB5Q3X');</script>
+<script type="application/ld+json">[{"@context":"https://schema.org/","@type":"Quiz","about":{"@type":"Thing","name":"AWS Certified AI Practitioner"},"hasPart":[{"@type":"Question","eduQuestionType":"Multiple choice","learningResourceType":"Practice problem","text":"ある金融機関が Amazon Bedrock を使って規制対応レポートを自動生成するシステムを構築している。生成されたレポートには「情報源を必ず引用し、出典となる内部ドキュメントのファイル名とページ番号を記載する」という規制要件がある。この要件を満たすために最も適切なアーキテクチャはどれか。","suggestedAnswer":[{"@type":"Answer","position":0,"text":"モデルのプロンプトに「引用元を必ず記載してください」と指示し、モデルが自律的に出典を生成するようにする"},{"@type":"Answer","position":1,"text":"Amazon Comprehend で生成テキストの固有表現を抽出し、それをドキュメントDB で検索して出典を自動補完する"},{"@type":"Answer","position":2,"text":"ファインチューニングで引用付きレポートのサンプルを学習させ、モデルが自動的に引用を生成できるようにする"}],"acceptedAnswer":{"@type":"Answer","position":3,"text":"Amazon Bedrock Knowledge Bases の引用（Citations）機能を使い、RAG 検索で使用したソースドキュメントのメタデータ（ファイル名・ページ番号等）を回答とともに返す","comment":{"@type":"Comment","text":"Amazon Bedrock Knowledge Bases には検索に使用したソースドキュメントのメタデータ（S3 オブジェクトの URI・ページ番号等）を回答とともに返す「引用（Citations）」機能が組み込まれている。RAG で参照した実際のドキュメントチャンクのソースを追跡できるため、規制要件の「引用元の明示」を確実かつ自動的に満たすことができる。Aのプロンプト指示によるモデルへの自律的な引用生成は「幻覚（ハルシネーション）」のリスクがある。モデルが存在しない出典を「でっち上げる」可能性があり、規制対応としては信頼できない。Cのファインチューニングによる引用生成も同様に幻覚リスクが残る。引用元の正確性をモデルが保証することはできない。BのComprehend + ドキュメントDB 検索は独自のマッチングロジックが必要で実装コストが高く、また抽出精度の問題から誤った出典が付与されるリスクがある。"}}}]},{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"HOME","item":"https://cloudcert.app/"},{"@type":"ListItem","position":2,"name":"AIF-C01 試験ガイド","item":"https://cloudcert.app/exams/aws-aif-c01/"},{"@type":"ListItem","position":3,"name":"q101"}]}]</script>
+</head>
+<body class="page-body">
+<header class="page-header"><a class="page-logo" href="../../index.html">&gt; CLOUDCERT_</a></header>
+<main class="page-main">
+
+<nav class="breadcrumb"><a href="../../index.html">HOME</a> › <a href="../../exams/aws-aif-c01/">AIF-C01 試験ガイド</a> › q101</nav>
+<div class="q-meta"><span>AIF-C01</span><span>基盤モデルの応用</span><span>HARD</span><span>単一選択</span></div>
+<h1>ある金融機関が Amazon Bedrock を使って規制対応レポートを自動生成するシステムを構築している。生成されたレポートには「情報源を必ず引用し、出典となる内部ドキュメントのファイル名とページ番号を記載する」という規制要件がある。この要件を満たすために最も適切なアーキテクチャはどれか。</h1>
+<ol class="q-choices">
+<li><b>A.</b> モデルのプロンプトに「引用元を必ず記載してください」と指示し、モデルが自律的に出典を生成するようにする</li>
+<li><b>B.</b> Amazon Comprehend で生成テキストの固有表現を抽出し、それをドキュメントDB で検索して出典を自動補完する</li>
+<li><b>C.</b> ファインチューニングで引用付きレポートのサンプルを学習させ、モデルが自動的に引用を生成できるようにする</li>
+<li><b>D.</b> Amazon Bedrock Knowledge Bases の引用（Citations）機能を使い、RAG 検索で使用したソースドキュメントのメタデータ（ファイル名・ページ番号等）を回答とともに返す</li>
+</ol>
+<details class="q-answer">
+<summary>解答と解説を見る</summary>
+<div class="inner">
+<p><b>正解: D</b></p>
+<p>Amazon Bedrock Knowledge Bases には検索に使用したソースドキュメントのメタデータ（S3 オブジェクトの URI・ページ番号等）を回答とともに返す「引用（Citations）」機能が組み込まれている。RAG で参照した実際のドキュメントチャンクのソースを追跡できるため、規制要件の「引用元の明示」を確実かつ自動的に満たすことができる。Aのプロンプト指示によるモデルへの自律的な引用生成は「幻覚（ハルシネーション）」のリスクがある。モデルが存在しない出典を「でっち上げる」可能性があり、規制対応としては信頼できない。Cのファインチューニングによる引用生成も同様に幻覚リスクが残る。引用元の正確性をモデルが保証することはできない。BのComprehend + ドキュメントDB 検索は独自のマッチングロジックが必要で実装コストが高く、また抽出精度の問題から誤った出典が付与されるリスクがある。</p>
+<div class="svc-links">📚 関連サービスの解説: <a href="../../learn/amazon-bedrock.html">Amazon Bedrock</a></div>
+</div>
+</details>
+<div class="cta-box"><a class="btn btn-primary" href="../../exam.html?exam=aws-aif-c01">▸ この試験を本気で演習する（全150問・無料）</a></div>
+<nav class="q-nav">
+<span><a href="q100.html">← 前の問題</a></span>
+<span><a href="q102.html">次の問題 →</a></span>
+</nav>
+<section class="related"><h2>同じ分野の関連問題</h2><ul class="q-list">
+<li><a href="q100.html">ある企業が Amazon Bedrock でファインチューニングを実施する際に準備すべきことを 2 つ選択してください。</a></li>
+<li><a href="q102.html">ある企業が Amazon Bedrock の基盤モデルに対してベンチマーク評価を実施しようとしている。モデルを本番採用す…</a></li>
+<li><a href="q099.html">ある企業がコードレビューアシスタントに Amazon Bedrock の基盤モデルを採用している。モデルに「セキュリティ…</a></li>
+<li><a href="q103.html">ある企業が Amazon Bedrock エージェントを本番導入した後に追加すべき運用・監視の対策として適切なものを 2…</a></li>
+</ul></section>
+</main>
+<footer class="page-footer">
+<nav class="hub-nav"><a href="../../exams/aws-clf-c02/">CLF-C02 試験ガイド</a><a href="../../exams/aws-aif-c01/">AIF-C01 試験ガイド</a><a href="../../exams/aws-saa-c03/">SAA-C03 試験ガイド</a><a href="../../exams/aws-dva-c02/">DVA-C02 試験ガイド</a><a href="../../exams/aws-sap-c02/">SAP-C02 試験ガイド</a><a href="../../exams/gcp-cdl/">CDL 試験ガイド</a><a href="../../exams/gcp-ace/">ACE 試験ガイド</a><a href="../../exams/azure-az900/">AZ-900 試験ガイド</a><a href="../../exams/azure-ai900/">AI-900 試験ガイド</a><a href="../../exams/azure-dp900/">DP-900 試験ガイド</a><a href="../../exams/azure-sc900/">SC-900 試験ガイド</a><a href="../../exams/azure-az104/">AZ-104 試験ガイド</a></nav>
+<nav class="site-nav"><a href="../../guide/">資格ガイド</a><a href="../../learn/">サービス解説</a><a href="../../career/">キャリア</a><a href="../../about.html">運営者情報</a><a href="../../privacy.html">プライバシーポリシー</a><a href="../../contact.html">お問い合わせ</a></nav>
+<p class="copy">© CLOUDCERT_ — 本サイトは各認定試験の公式試験ではなく、収録問題はすべてオリジナルの演習問題です。</p>
+</footer>
+</body>
+</html>

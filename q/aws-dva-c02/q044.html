@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>【DVA-C02 演習問題 #44】ある金融機関が、DynamoDB Streamsを使ったイベント駆動型の監査ログシステムを…</title>
+<meta name="description" content="DVA-C02の本試験レベル演習問題。ある金融機関が、DynamoDB Streamsを使ったイベント駆動型の監査ログシステムを構築している。ストリームのLambdaコンシューマーが処理遅延を起こしており、Iterato… 全選択肢の解説つき。">
+<link rel="canonical" href="https://cloudcert.app/q/aws-dva-c02/q044.html">
+<meta property="og:title" content="【DVA-C02 演習問題 #44】ある金融機関が、DynamoDB Streamsを使ったイベント駆動型の監査ログシステムを…">
+<meta property="og:description" content="DVA-C02の本試験レベル演習問題。ある金融機関が、DynamoDB Streamsを使ったイベント駆動型の監査ログシステムを構築している。ストリームのLambdaコンシューマーが処理遅延を起こしており、Iterato… 全選択肢の解説つき。">
+<meta property="og:url" content="https://cloudcert.app/q/aws-dva-c02/q044.html">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="CLOUDCERT_">
+<meta property="og:image" content="https://cloudcert.app/assets/og.png">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='80' font-size='80' fill='%233fe0a4' font-family='monospace'>▸</text></svg>">
+
+<meta name="google-adsense-account" content="ca-pub-5647574947191958">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+JP:wght@400;500;700&family=JetBrains+Mono:wght@400;600;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../../css/style.css">
+<link rel="stylesheet" href="../../css/page.css">
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-SZR5CB5Q3X"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag('js',new Date());gtag('config','G-SZR5CB5Q3X');</script>
+<script type="application/ld+json">[{"@context":"https://schema.org/","@type":"Quiz","about":{"@type":"Thing","name":"AWS Certified Developer - Associate"},"hasPart":[{"@type":"Question","eduQuestionType":"Checkbox","learningResourceType":"Practice problem","text":"ある金融機関が、DynamoDB Streamsを使ったイベント駆動型の監査ログシステムを構築している。ストリームのLambdaコンシューマーが処理遅延を起こしており、IteratorAgeが増大している。根本原因を特定して対策を講じる方法を2つ選択してください。","suggestedAnswer":[{"@type":"Answer","position":1,"text":"Kinesis Data StreamsとKinesis拡張ファンアウトに移行し、コンシューマーごとに専用スループットを確保する"},{"@type":"Answer","position":2,"text":"DynamoDBテーブルのプロビジョンドキャパシティ（RCU）を増やして読み取りスループットを向上させる"},{"@type":"Answer","position":3,"text":"DynamoDB StreamsのシャードをKinesis Data Streamsにも連携し、Kinesis Analytics Studioでリアルタイム分析する"}],"acceptedAnswer":[{"@type":"Answer","position":0,"text":"Lambdaのメモリサイズを増やしてCPUパフォーマンスを向上させ、1レコードの処理時間を短縮する","comment":{"@type":"Comment","text":"DynamoDB StreamsのIteratorAge増大はLambdaがレコードを処理しきれていないことを示す。parallelizationFactor（1〜10）を増やすとシャードあたりのLambda同時実行数が増加し、バッチ処理のスループットが向上する。追加コードなしに設定変更のみで効果がある。またLambdaのメモリを増やすとCPU割り当ても比例して増加するため（Lambdaはメモリ比例でCPUが割り当てられる）、各レコードの処理時間を短縮できる。両者を組み合わせることで処理遅延が改善される。CのDynamoDBのRCU増加は書き込みスループット（WCU）に対してであり、Streamsのコンシューマー処理遅延はLambda側の処理能力の問題でありRCUとは無関係。Bのkinesis拡張ファンアウトへの移行はアーキテクチャ変更が大きく、DynamoDB Streamsとは別サービスへの移行となるため「最小限の変更」に反する。DのKinesis Analytics Studioへの連携は監査ログ処理の遅延解消ではなく分析用途であり、IteratorAge問題の解決にはならない。"}},{"@type":"Answer","position":4,"text":"Lambda関数のparallelizationFactorを1から10に増やして、シャードあたりの並列処理数を向上させる","comment":{"@type":"Comment","text":"DynamoDB StreamsのIteratorAge増大はLambdaがレコードを処理しきれていないことを示す。parallelizationFactor（1〜10）を増やすとシャードあたりのLambda同時実行数が増加し、バッチ処理のスループットが向上する。追加コードなしに設定変更のみで効果がある。またLambdaのメモリを増やすとCPU割り当ても比例して増加するため（Lambdaはメモリ比例でCPUが割り当てられる）、各レコードの処理時間を短縮できる。両者を組み合わせることで処理遅延が改善される。CのDynamoDBのRCU増加は書き込みスループット（WCU）に対してであり、Streamsのコンシューマー処理遅延はLambda側の処理能力の問題でありRCUとは無関係。Bのkinesis拡張ファンアウトへの移行はアーキテクチャ変更が大きく、DynamoDB Streamsとは別サービスへの移行となるため「最小限の変更」に反する。DのKinesis Analytics Studioへの連携は監査ログ処理の遅延解消ではなく分析用途であり、IteratorAge問題の解決にはならない。"}}]}]},{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"HOME","item":"https://cloudcert.app/"},{"@type":"ListItem","position":2,"name":"DVA-C02 試験ガイド","item":"https://cloudcert.app/exams/aws-dva-c02/"},{"@type":"ListItem","position":3,"name":"q044"}]}]</script>
+</head>
+<body class="page-body">
+<header class="page-header"><a class="page-logo" href="../../index.html">&gt; CLOUDCERT_</a></header>
+<main class="page-main">
+
+<nav class="breadcrumb"><a href="../../index.html">HOME</a> › <a href="../../exams/aws-dva-c02/">DVA-C02 試験ガイド</a> › q044</nav>
+<div class="q-meta"><span>DVA-C02</span><span>開発</span><span>HARD</span><span>複数選択</span></div>
+<h1>ある金融機関が、DynamoDB Streamsを使ったイベント駆動型の監査ログシステムを構築している。ストリームのLambdaコンシューマーが処理遅延を起こしており、IteratorAgeが増大している。根本原因を特定して対策を講じる方法を2つ選択してください。</h1>
+<ol class="q-choices">
+<li><b>A.</b> Lambdaのメモリサイズを増やしてCPUパフォーマンスを向上させ、1レコードの処理時間を短縮する</li>
+<li><b>B.</b> Kinesis Data StreamsとKinesis拡張ファンアウトに移行し、コンシューマーごとに専用スループットを確保する</li>
+<li><b>C.</b> DynamoDBテーブルのプロビジョンドキャパシティ（RCU）を増やして読み取りスループットを向上させる</li>
+<li><b>D.</b> DynamoDB StreamsのシャードをKinesis Data Streamsにも連携し、Kinesis Analytics Studioでリアルタイム分析する</li>
+<li><b>E.</b> Lambda関数のparallelizationFactorを1から10に増やして、シャードあたりの並列処理数を向上させる</li>
+</ol>
+<details class="q-answer">
+<summary>解答と解説を見る</summary>
+<div class="inner">
+<p><b>正解: A, E</b></p>
+<p>DynamoDB StreamsのIteratorAge増大はLambdaがレコードを処理しきれていないことを示す。parallelizationFactor（1〜10）を増やすとシャードあたりのLambda同時実行数が増加し、バッチ処理のスループットが向上する。追加コードなしに設定変更のみで効果がある。またLambdaのメモリを増やすとCPU割り当ても比例して増加するため（Lambdaはメモリ比例でCPUが割り当てられる）、各レコードの処理時間を短縮できる。両者を組み合わせることで処理遅延が改善される。CのDynamoDBのRCU増加は書き込みスループット（WCU）に対してであり、Streamsのコンシューマー処理遅延はLambda側の処理能力の問題でありRCUとは無関係。Bのkinesis拡張ファンアウトへの移行はアーキテクチャ変更が大きく、DynamoDB Streamsとは別サービスへの移行となるため「最小限の変更」に反する。DのKinesis Analytics Studioへの連携は監査ログ処理の遅延解消ではなく分析用途であり、IteratorAge問題の解決にはならない。</p>
+<div class="svc-links">📚 関連サービスの解説: <a href="../../learn/aws-lambda.html">AWS Lambda</a></div>
+</div>
+</details>
+<div class="cta-box"><a class="btn btn-primary" href="../../exam.html?exam=aws-dva-c02">▸ この試験を本気で演習する（全150問・無料）</a></div>
+<nav class="q-nav">
+<span><a href="q043.html">← 前の問題</a></span>
+<span><a href="q045.html">次の問題 →</a></span>
+</nav>
+<section class="related"><h2>同じ分野の関連問題</h2><ul class="q-list">
+<li><a href="q043.html">ある旅行予約プラットフォームが、DynamoDBで予約データを管理している。予約検索には「出発地と目的地の組み合わせで検…</a></li>
+<li><a href="q045.html">あるヘルスケア企業が、患者の検査結果ファイルがS3にアップロードされると自動で複数の処理（OCR変換・暗号化・通知メール…</a></li>
+<li><a href="q042.html">あるスポーツデータ企業が、S3バケットに保存された試合動画ファイルを解析するパイプラインを構築している。S3にオブジェク…</a></li>
+<li><a href="q046.html">あるロジスティクス企業が、SQS FIFOキューを使って配送順序を保証した荷物追跡システムを運用している。スループットが…</a></li>
+</ul></section>
+</main>
+<footer class="page-footer">
+<nav class="hub-nav"><a href="../../exams/aws-clf-c02/">CLF-C02 試験ガイド</a><a href="../../exams/aws-aif-c01/">AIF-C01 試験ガイド</a><a href="../../exams/aws-saa-c03/">SAA-C03 試験ガイド</a><a href="../../exams/aws-dva-c02/">DVA-C02 試験ガイド</a><a href="../../exams/aws-sap-c02/">SAP-C02 試験ガイド</a><a href="../../exams/gcp-cdl/">CDL 試験ガイド</a><a href="../../exams/gcp-ace/">ACE 試験ガイド</a><a href="../../exams/azure-az900/">AZ-900 試験ガイド</a><a href="../../exams/azure-ai900/">AI-900 試験ガイド</a><a href="../../exams/azure-dp900/">DP-900 試験ガイド</a><a href="../../exams/azure-sc900/">SC-900 試験ガイド</a><a href="../../exams/azure-az104/">AZ-104 試験ガイド</a></nav>
+<nav class="site-nav"><a href="../../guide/">資格ガイド</a><a href="../../learn/">サービス解説</a><a href="../../career/">キャリア</a><a href="../../about.html">運営者情報</a><a href="../../privacy.html">プライバシーポリシー</a><a href="../../contact.html">お問い合わせ</a></nav>
+<p class="copy">© CLOUDCERT_ — 本サイトは各認定試験の公式試験ではなく、収録問題はすべてオリジナルの演習問題です。</p>
+</footer>
+</body>
+</html>

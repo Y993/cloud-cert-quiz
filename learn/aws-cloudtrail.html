@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AWS CloudTrailとは？試験に出るポイントと演習問題</title>
+<meta name="description" content="AWS CloudTrail（AWS）の要点と資格試験での問われ方を解説。登場する演習問題12問と公式ドキュメントへのリンクつき。">
+<link rel="canonical" href="https://cloudcert.app/learn/aws-cloudtrail.html">
+<meta property="og:title" content="AWS CloudTrailとは？試験に出るポイントと演習問題">
+<meta property="og:description" content="AWS CloudTrail（AWS）の要点と資格試験での問われ方を解説。登場する演習問題12問と公式ドキュメントへのリンクつき。">
+<meta property="og:url" content="https://cloudcert.app/learn/aws-cloudtrail.html">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="CLOUDCERT_">
+<meta property="og:image" content="https://cloudcert.app/assets/og.png">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='80' font-size='80' fill='%233fe0a4' font-family='monospace'>▸</text></svg>">
+
+<meta name="google-adsense-account" content="ca-pub-5647574947191958">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+JP:wght@400;500;700&family=JetBrains+Mono:wght@400;600;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../css/style.css">
+<link rel="stylesheet" href="../css/page.css">
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-SZR5CB5Q3X"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag('js',new Date());gtag('config','G-SZR5CB5Q3X');</script>
+<script type="application/ld+json">[{"@context":"https://schema.org","@type":"TechArticle","headline":"AWS CloudTrailとは？試験に出るポイントと演習問題","description":"AWS CloudTrail（AWS）の要点と資格試験での問われ方を解説。登場する演習問題12問と公式ドキュメントへのリンクつき。","inLanguage":"ja","about":{"@type":"Thing","name":"AWS CloudTrail"},"author":{"@type":"Organization","name":"CLOUDCERT_"},"publisher":{"@type":"Organization","name":"CLOUDCERT_"},"mainEntityOfPage":"https://cloudcert.app/learn/aws-cloudtrail.html"},{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"HOME","item":"https://cloudcert.app/"},{"@type":"ListItem","position":2,"name":"サービス解説","item":"https://cloudcert.app/learn/"},{"@type":"ListItem","position":3,"name":"AWS CloudTrail"}]}]</script>
+</head>
+<body class="page-body">
+<header class="page-header"><a class="page-logo" href="../index.html">&gt; CLOUDCERT_</a></header>
+<main class="page-main">
+
+<nav class="breadcrumb"><a href="../index.html">HOME</a> › <a href="./">サービス解説</a> › AWS CloudTrail</nav>
+<div class="learn-head">
+<div class="badges"><span class="badge" data-provider="aws">AWS</span><span class="badge">管理・ガバナンス</span><span class="badge badge-q">演習12問</span></div>
+<h1>AWS CloudTrailとは</h1>
+</div>
+<p class="lead">AWSアカウント内のすべてのAPIコール（管理イベント・データイベント）を記録して監査証跡を提供するサービス。誰が・いつ・どのリソースに・何をしたかをS3に保存し、Athenaで検索・分析できる。</p>
+<p>デフォルトで管理イベント（コントロールプレーン操作）を90日間保持する。長期保存にはS3への配信を設定し、CloudWatch Logsへの統合でリアルタイムアラートを実装できる。</p>
+<p><a class="official-btn" href="https://docs.aws.amazon.com/ja_jp/awscloudtrail/latest/userguide/cloudtrail-user-guide.html" target="_blank" rel="noopener">公式ドキュメント →</a></p>
+<h2>試験での問われ方</h2>
+<p>SAAでは「誰がEC2を削除したか調査したい」「不審なAPIコールをアラートしたい」シナリオでCloudTrailを選ぶ。CloudWatchとの違いはCloudTrailがAPI監査ログ、CloudWatchがパフォーマンス監視・ログ収集という役割分担。</p>
+<p>CloudTrailログのS3保存における整合性検証（ログファイルバリデーション）・KMS暗号化・クロスアカウントへの証跡配信がSCSで問われる。</p>
+<p>データイベント（S3オブジェクトレベル操作・Lambda呼び出し）は別途有効化が必要でコストが発生する点が引っかけ。</p>
+<h2>このサービスが登場する演習問題（12問）</h2>
+<ul class="q-list">
+<li><a href="../q/aws-clf-c02/q032.html">【CLF-C02】ある企業のエンジニアが、AWSアカウントでどのAPIコールがいつ誰によって実行されたかを追跡・監査したいと考えています。…</a></li>
+<li><a href="../q/aws-clf-c02/q063.html">【CLF-C02】ある企業が、AWSのセキュリティベストプラクティスに従ってAWSアカウントを設定しています。初期設定として優先度が高いセ…</a></li>
+<li><a href="../q/aws-clf-c02/q141.html">【CLF-C02】ある企業が、本番AWSアカウントでの不審な活動を調査しています。セキュリティインシデントの調査に役立つAWSサービスを2…</a></li>
+<li><a href="../q/aws-aif-c01/q132.html">【AIF-C01】ある企業が AWS 上の AI ワークロードについて、いつ誰がどの API を呼び出したかを完全に追跡したい。最小限の追…</a></li>
+<li><a href="../q/aws-aif-c01/q143.html">【AIF-C01】ある企業の AI セキュリティチームが、本番の SageMaker エンドポイントへの API 呼び出しを長期間保持して…</a></li>
+<li><a href="../q/aws-aif-c01/q150.html">【AIF-C01】ある企業が AWS 上で大規模な機械学習プラットフォームを構築・運用している。監査部門から「AI モデルのデプロイ履歴と…</a></li>
+<li><a href="../q/aws-saa-c03/q009.html">【SAA-C03】ある企業が、機密性の高いワークロードを EC2 インスタンス上で実行している。セキュリティチームから、AWS リソースへ…</a></li>
+<li><a href="../q/aws-saa-c03/q024.html">【SAA-C03】ある企業が、S3 バケットに保存されている機密データへのアクセスをログに記録したい。誰がいつどのオブジェクトにアクセスし…</a></li>
+<li><a href="../q/aws-sap-c02/q061.html">【SAP-C02】ある企業が AWS KMS でカスタマー管理キー（CMK）を使って S3 バケット内のデータを暗号化しています。コンプラ…</a></li>
+<li><a href="../q/aws-sap-c02/q087.html">【SAP-C02】ある企業が AWS Organizations を使って管理しているマルチアカウント環境で、各開発チームが自律的に AW…</a></li>
+<li><a href="../q/aws-sap-c02/q112.html">【SAP-C02】ある企業が AWS 上でマルチリージョンのアプリケーションを運用しており、各リージョンのアプリケーションが独自の設定（フ…</a></li>
+<li><a href="../q/aws-sap-c02/q130.html">【SAP-C02】ある企業が AWS 上で稼働するアプリケーションについて、セキュリティチームから「GitHub リポジトリに AWS の…</a></li>
+</ul>
+<h2>関連サービス</h2><ul class="q-list">
+<li><a href="amazon-cloudwatch.html">Amazon CloudWatch</a></li>
+<li><a href="aws-config.html">AWS Config</a></li>
+<li><a href="aws-organizations.html">AWS Organizations</a></li>
+<li><a href="aws-cloudformation.html">AWS CloudFormation</a></li>
+<li><a href="aws-systems-manager.html">AWS Systems Manager</a></li></ul>
+</main>
+<footer class="page-footer">
+<nav class="hub-nav"><a href="../exams/aws-clf-c02/">CLF-C02 試験ガイド</a><a href="../exams/aws-aif-c01/">AIF-C01 試験ガイド</a><a href="../exams/aws-saa-c03/">SAA-C03 試験ガイド</a><a href="../exams/aws-dva-c02/">DVA-C02 試験ガイド</a><a href="../exams/aws-sap-c02/">SAP-C02 試験ガイド</a><a href="../exams/gcp-cdl/">CDL 試験ガイド</a><a href="../exams/gcp-ace/">ACE 試験ガイド</a><a href="../exams/azure-az900/">AZ-900 試験ガイド</a><a href="../exams/azure-ai900/">AI-900 試験ガイド</a><a href="../exams/azure-dp900/">DP-900 試験ガイド</a><a href="../exams/azure-sc900/">SC-900 試験ガイド</a><a href="../exams/azure-az104/">AZ-104 試験ガイド</a></nav>
+<nav class="site-nav"><a href="../guide/">資格ガイド</a><a href="../learn/">サービス解説</a><a href="../career/">キャリア</a><a href="../about.html">運営者情報</a><a href="../privacy.html">プライバシーポリシー</a><a href="../contact.html">お問い合わせ</a></nav>
+<p class="copy">© CLOUDCERT_ — 本サイトは各認定試験の公式試験ではなく、収録問題はすべてオリジナルの演習問題です。</p>
+</footer>
+</body>
+</html>

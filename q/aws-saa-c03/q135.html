@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>【SAA-C03 演習問題 #135】ある企業が、AWS Lambda を使ったイベント処理システムで、Amazon Event…</title>
+<meta name="description" content="SAA-C03の本試験レベル演習問題。ある企業が、AWS Lambda を使ったイベント処理システムで、Amazon EventBridge からトリガーされた Lambda 関数が外部 API の一時的なエラーで失敗す… 全選択肢の解説つき。">
+<link rel="canonical" href="https://cloudcert.app/q/aws-saa-c03/q135.html">
+<meta property="og:title" content="【SAA-C03 演習問題 #135】ある企業が、AWS Lambda を使ったイベント処理システムで、Amazon Event…">
+<meta property="og:description" content="SAA-C03の本試験レベル演習問題。ある企業が、AWS Lambda を使ったイベント処理システムで、Amazon EventBridge からトリガーされた Lambda 関数が外部 API の一時的なエラーで失敗す… 全選択肢の解説つき。">
+<meta property="og:url" content="https://cloudcert.app/q/aws-saa-c03/q135.html">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="CLOUDCERT_">
+<meta property="og:image" content="https://cloudcert.app/assets/og.png">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='80' font-size='80' fill='%233fe0a4' font-family='monospace'>▸</text></svg>">
+
+<meta name="google-adsense-account" content="ca-pub-5647574947191958">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+JP:wght@400;500;700&family=JetBrains+Mono:wght@400;600;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../../css/style.css">
+<link rel="stylesheet" href="../../css/page.css">
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-SZR5CB5Q3X"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag('js',new Date());gtag('config','G-SZR5CB5Q3X');</script>
+<script type="application/ld+json">[{"@context":"https://schema.org/","@type":"Quiz","about":{"@type":"Thing","name":"AWS Certified Solutions Architect – Associate"},"hasPart":[{"@type":"Question","eduQuestionType":"Multiple choice","learningResourceType":"Practice problem","text":"ある企業が、AWS Lambda を使ったイベント処理システムで、Amazon EventBridge からトリガーされた Lambda 関数が外部 API の一時的なエラーで失敗することがある。失敗したイベントを最大 3 時間後まで保持して再処理できるようにしたい。最も適切な設定はどれか。","suggestedAnswer":[{"@type":"Answer","position":0,"text":"EventBridge ルールを 3 時間ごとに実行するよう変更する。"},{"@type":"Answer","position":1,"text":"Lambda 関数内の try-catch で最大 3 時間のループを実装する。"},{"@type":"Answer","position":2,"text":"Amazon SQS を Lambda と EventBridge の間に挟み、SQS のメッセージ保持期間を 3 時間に設定する。"}],"acceptedAnswer":{"@type":"Answer","position":3,"text":"Lambda 関数の非同期呼び出し設定で最大イベント有効期間を 3 時間（10,800 秒）に設定し、最大再試行回数を 2 に設定する。","comment":{"@type":"Comment","text":"Lambda の非同期呼び出し設定（EventBridge からのトリガーは非同期）では、最大イベント有効期間（Maximum Event Age）を設定できる。このパラメータを 10,800 秒（3 時間）に設定すると、イベントが 3 時間以内であれば Lambda は最大再試行回数に従ってリトライを繰り返す。最大再試行回数（0〜2）を設定することで再試行のタイミングと回数を制御できる。選択肢AのEventBridge ルールの変更は元のイベントを再発火させるものではなく、新しいイベントが 3 時間後に発火するようになるだけ。失敗したイベントの再処理という要件を満たさない。選択肢Bの Lambda 関数内での 3 時間ループは Lambda の最大実行時間（15 分）を超えるため技術的に不可能。選択肢CのSQS の挿入は有効な手段だが、EventBridge → SQS → Lambda の構成変更が必要で、Lambda の非同期設定を変更するより構成変更が大きい。"}}}]},{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"HOME","item":"https://cloudcert.app/"},{"@type":"ListItem","position":2,"name":"SAA-C03 試験ガイド","item":"https://cloudcert.app/exams/aws-saa-c03/"},{"@type":"ListItem","position":3,"name":"q135"}]}]</script>
+</head>
+<body class="page-body">
+<header class="page-header"><a class="page-logo" href="../../index.html">&gt; CLOUDCERT_</a></header>
+<main class="page-main">
+
+<nav class="breadcrumb"><a href="../../index.html">HOME</a> › <a href="../../exams/aws-saa-c03/">SAA-C03 試験ガイド</a> › q135</nav>
+<div class="q-meta"><span>SAA-C03</span><span>弾力性に優れたアーキテクチャの設計</span><span>MEDIUM</span><span>単一選択</span></div>
+<h1>ある企業が、AWS Lambda を使ったイベント処理システムで、Amazon EventBridge からトリガーされた Lambda 関数が外部 API の一時的なエラーで失敗することがある。失敗したイベントを最大 3 時間後まで保持して再処理できるようにしたい。最も適切な設定はどれか。</h1>
+<ol class="q-choices">
+<li><b>A.</b> EventBridge ルールを 3 時間ごとに実行するよう変更する。</li>
+<li><b>B.</b> Lambda 関数内の try-catch で最大 3 時間のループを実装する。</li>
+<li><b>C.</b> Amazon SQS を Lambda と EventBridge の間に挟み、SQS のメッセージ保持期間を 3 時間に設定する。</li>
+<li><b>D.</b> Lambda 関数の非同期呼び出し設定で最大イベント有効期間を 3 時間（10,800 秒）に設定し、最大再試行回数を 2 に設定する。</li>
+</ol>
+<details class="q-answer">
+<summary>解答と解説を見る</summary>
+<div class="inner">
+<p><b>正解: D</b></p>
+<p>Lambda の非同期呼び出し設定（EventBridge からのトリガーは非同期）では、最大イベント有効期間（Maximum Event Age）を設定できる。このパラメータを 10,800 秒（3 時間）に設定すると、イベントが 3 時間以内であれば Lambda は最大再試行回数に従ってリトライを繰り返す。最大再試行回数（0〜2）を設定することで再試行のタイミングと回数を制御できる。選択肢AのEventBridge ルールの変更は元のイベントを再発火させるものではなく、新しいイベントが 3 時間後に発火するようになるだけ。失敗したイベントの再処理という要件を満たさない。選択肢Bの Lambda 関数内での 3 時間ループは Lambda の最大実行時間（15 分）を超えるため技術的に不可能。選択肢CのSQS の挿入は有効な手段だが、EventBridge → SQS → Lambda の構成変更が必要で、Lambda の非同期設定を変更するより構成変更が大きい。</p>
+<div class="svc-links">📚 関連サービスの解説: <a href="../../learn/aws-lambda.html">AWS Lambda</a></div>
+</div>
+</details>
+<div class="cta-box"><a class="btn btn-primary" href="../../exam.html?exam=aws-saa-c03">▸ この試験を本気で演習する（全150問・無料）</a></div>
+<nav class="q-nav">
+<span><a href="q134.html">← 前の問題</a></span>
+<span><a href="q136.html">次の問題 →</a></span>
+</nav>
+<section class="related"><h2>同じ分野の関連問題</h2><ul class="q-list">
+<li><a href="q132.html">ある企業が、マイクロサービスアーキテクチャで Amazon ECS を使っている。特定のサービスへのリクエストが急増した…</a></li>
+<li><a href="q138.html">ある企業が、Amazon ECS on EC2 でコンテナアプリケーションを運用しており、EC2 ノードの OS パッチ…</a></li>
+<li><a href="q127.html">ある企業が、AWS で Web アプリケーションを運用しており、ALB → EC2 Auto Scaling → RDS…</a></li>
+<li><a href="q143.html">ある企業が、Amazon EKS クラスター上のアプリケーションのカナリアデプロイを実現したい。新バージョンのコンテナイ…</a></li>
+</ul></section>
+</main>
+<footer class="page-footer">
+<nav class="hub-nav"><a href="../../exams/aws-clf-c02/">CLF-C02 試験ガイド</a><a href="../../exams/aws-aif-c01/">AIF-C01 試験ガイド</a><a href="../../exams/aws-saa-c03/">SAA-C03 試験ガイド</a><a href="../../exams/aws-dva-c02/">DVA-C02 試験ガイド</a><a href="../../exams/aws-sap-c02/">SAP-C02 試験ガイド</a><a href="../../exams/gcp-cdl/">CDL 試験ガイド</a><a href="../../exams/gcp-ace/">ACE 試験ガイド</a><a href="../../exams/azure-az900/">AZ-900 試験ガイド</a><a href="../../exams/azure-ai900/">AI-900 試験ガイド</a><a href="../../exams/azure-dp900/">DP-900 試験ガイド</a><a href="../../exams/azure-sc900/">SC-900 試験ガイド</a><a href="../../exams/azure-az104/">AZ-104 試験ガイド</a></nav>
+<nav class="site-nav"><a href="../../guide/">資格ガイド</a><a href="../../learn/">サービス解説</a><a href="../../career/">キャリア</a><a href="../../about.html">運営者情報</a><a href="../../privacy.html">プライバシーポリシー</a><a href="../../contact.html">お問い合わせ</a></nav>
+<p class="copy">© CLOUDCERT_ — 本サイトは各認定試験の公式試験ではなく、収録問題はすべてオリジナルの演習問題です。</p>
+</footer>
+</body>
+</html>

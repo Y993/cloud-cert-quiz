@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>【DVA-C02 演習問題 #42】あるスポーツデータ企業が、S3バケットに保存された試合動画ファイルを解析するパイプラインを…</title>
+<meta name="description" content="DVA-C02の本試験レベル演習問題。あるスポーツデータ企業が、S3バケットに保存された試合動画ファイルを解析するパイプラインを構築している。S3にオブジェクトがアップロードされると自動で解析Lambdaが起動する構成だ… 全選択肢の解説つき。">
+<link rel="canonical" href="https://cloudcert.app/q/aws-dva-c02/q042.html">
+<meta property="og:title" content="【DVA-C02 演習問題 #42】あるスポーツデータ企業が、S3バケットに保存された試合動画ファイルを解析するパイプラインを…">
+<meta property="og:description" content="DVA-C02の本試験レベル演習問題。あるスポーツデータ企業が、S3バケットに保存された試合動画ファイルを解析するパイプラインを構築している。S3にオブジェクトがアップロードされると自動で解析Lambdaが起動する構成だ… 全選択肢の解説つき。">
+<meta property="og:url" content="https://cloudcert.app/q/aws-dva-c02/q042.html">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="CLOUDCERT_">
+<meta property="og:image" content="https://cloudcert.app/assets/og.png">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='80' font-size='80' fill='%233fe0a4' font-family='monospace'>▸</text></svg>">
+
+<meta name="google-adsense-account" content="ca-pub-5647574947191958">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+JP:wght@400;500;700&family=JetBrains+Mono:wght@400;600;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../../css/style.css">
+<link rel="stylesheet" href="../../css/page.css">
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-SZR5CB5Q3X"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag('js',new Date());gtag('config','G-SZR5CB5Q3X');</script>
+<script type="application/ld+json">[{"@context":"https://schema.org/","@type":"Quiz","about":{"@type":"Thing","name":"AWS Certified Developer - Associate"},"hasPart":[{"@type":"Question","eduQuestionType":"Multiple choice","learningResourceType":"Practice problem","text":"あるスポーツデータ企業が、S3バケットに保存された試合動画ファイルを解析するパイプラインを構築している。S3にオブジェクトがアップロードされると自動で解析Lambdaが起動する構成だが、まれに同じファイルに対してLambdaが複数回起動されて重複処理が発生している。アーキテクチャの大きな変更なく冪等処理を保証する最も適切な方法はどれか。","suggestedAnswer":[{"@type":"Answer","position":0,"text":"Lambdaの同時実行数を1に制限して逐次処理し、重複起動が起きないようにする"},{"@type":"Answer","position":1,"text":"S3オブジェクトのETagをLambda内で毎回チェックし、前回処理時と異なる場合のみ処理を実行する"},{"@type":"Answer","position":3,"text":"S3バケットのイベント通知をSNSトピックに変更し、SNSの重複排除IDを設定する"}],"acceptedAnswer":{"@type":"Answer","position":2,"text":"S3イベントをEventBridge経由でSQSキュー（FIFO）に送信し、メッセージグループIDにS3オブジェクトキーを設定してFIFO重複排除を活用する。Lambdaの処理開始時にDynamoDB条件付きWriteでジョブIDを記録し（既存なら失敗→スキップ）、冪等処理を保証する","comment":{"@type":"Comment","text":"S3イベント通知は「少なくとも1回（at-least-once）」配信であるため、重複通知が発生することがある。FIFO SQSのメッセージ重複排除（5分以内の同一重複排除IDのメッセージを排除）でほとんどの重複を防ぎ、さらにDynamoDBの条件付きWrite（attribute_not_exists(jobId)）で冪等処理のべき等制御を追加する。両層の保護により、FIFOの5分ウィンドウ外の重複に対してもDynamoDB側で検知できる。DのSNS重複排除IDはSNS FIFOトピックの機能だが、S3イベント通知をSNS FIFOに直接送ることはできず（S3はSNS標準トピックのみサポート）、設計が成立しない。CLambdaの同時実行数1は処理のシリアル化であり、S3が同じオブジェクトのイベントを2回発行した場合の重複処理は防げない（時間的に分離した2回の呼び出しを防ぐには不十分）。BのETag比較は前回処理の結果をどこかに記録する仕組みが必要で、その記録の更新と比較の間にレースコンディションが生じる。"}}}]},{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"HOME","item":"https://cloudcert.app/"},{"@type":"ListItem","position":2,"name":"DVA-C02 試験ガイド","item":"https://cloudcert.app/exams/aws-dva-c02/"},{"@type":"ListItem","position":3,"name":"q042"}]}]</script>
+</head>
+<body class="page-body">
+<header class="page-header"><a class="page-logo" href="../../index.html">&gt; CLOUDCERT_</a></header>
+<main class="page-main">
+
+<nav class="breadcrumb"><a href="../../index.html">HOME</a> › <a href="../../exams/aws-dva-c02/">DVA-C02 試験ガイド</a> › q042</nav>
+<div class="q-meta"><span>DVA-C02</span><span>開発</span><span>HARD</span><span>単一選択</span></div>
+<h1>あるスポーツデータ企業が、S3バケットに保存された試合動画ファイルを解析するパイプラインを構築している。S3にオブジェクトがアップロードされると自動で解析Lambdaが起動する構成だが、まれに同じファイルに対してLambdaが複数回起動されて重複処理が発生している。アーキテクチャの大きな変更なく冪等処理を保証する最も適切な方法はどれか。</h1>
+<ol class="q-choices">
+<li><b>A.</b> Lambdaの同時実行数を1に制限して逐次処理し、重複起動が起きないようにする</li>
+<li><b>B.</b> S3オブジェクトのETagをLambda内で毎回チェックし、前回処理時と異なる場合のみ処理を実行する</li>
+<li><b>C.</b> S3イベントをEventBridge経由でSQSキュー（FIFO）に送信し、メッセージグループIDにS3オブジェクトキーを設定してFIFO重複排除を活用する。Lambdaの処理開始時にDynamoDB条件付きWriteでジョブIDを記録し（既存なら失敗→スキップ）、冪等処理を保証する</li>
+<li><b>D.</b> S3バケットのイベント通知をSNSトピックに変更し、SNSの重複排除IDを設定する</li>
+</ol>
+<details class="q-answer">
+<summary>解答と解説を見る</summary>
+<div class="inner">
+<p><b>正解: C</b></p>
+<p>S3イベント通知は「少なくとも1回（at-least-once）」配信であるため、重複通知が発生することがある。FIFO SQSのメッセージ重複排除（5分以内の同一重複排除IDのメッセージを排除）でほとんどの重複を防ぎ、さらにDynamoDBの条件付きWrite（attribute_not_exists(jobId)）で冪等処理のべき等制御を追加する。両層の保護により、FIFOの5分ウィンドウ外の重複に対してもDynamoDB側で検知できる。DのSNS重複排除IDはSNS FIFOトピックの機能だが、S3イベント通知をSNS FIFOに直接送ることはできず（S3はSNS標準トピックのみサポート）、設計が成立しない。CLambdaの同時実行数1は処理のシリアル化であり、S3が同じオブジェクトのイベントを2回発行した場合の重複処理は防げない（時間的に分離した2回の呼び出しを防ぐには不十分）。BのETag比較は前回処理の結果をどこかに記録する仕組みが必要で、その記録の更新と比較の間にレースコンディションが生じる。</p>
+<div class="svc-links">📚 関連サービスの解説: <a href="../../learn/amazon-s3.html">Amazon S3</a> ・ <a href="../../learn/amazon-eventbridge.html">Amazon EventBridge</a></div>
+</div>
+</details>
+<div class="cta-box"><a class="btn btn-primary" href="../../exam.html?exam=aws-dva-c02">▸ この試験を本気で演習する（全150問・無料）</a></div>
+<nav class="q-nav">
+<span><a href="q041.html">← 前の問題</a></span>
+<span><a href="q043.html">次の問題 →</a></span>
+</nav>
+<section class="related"><h2>同じ分野の関連問題</h2><ul class="q-list">
+<li><a href="q041.html">ある広告テクノロジー企業が、リアルタイム入札システムをStep Functionsで実装している。数百万の入札リクエスト…</a></li>
+<li><a href="q043.html">ある旅行予約プラットフォームが、DynamoDBで予約データを管理している。予約検索には「出発地と目的地の組み合わせで検…</a></li>
+<li><a href="q040.html">あるフィンテック企業が、DynamoDBで決済レコードを管理している。複数のマイクロサービスが同時に同じ決済レコードを更…</a></li>
+<li><a href="q044.html">ある金融機関が、DynamoDB Streamsを使ったイベント駆動型の監査ログシステムを構築している。ストリームのLa…</a></li>
+</ul></section>
+</main>
+<footer class="page-footer">
+<nav class="hub-nav"><a href="../../exams/aws-clf-c02/">CLF-C02 試験ガイド</a><a href="../../exams/aws-aif-c01/">AIF-C01 試験ガイド</a><a href="../../exams/aws-saa-c03/">SAA-C03 試験ガイド</a><a href="../../exams/aws-dva-c02/">DVA-C02 試験ガイド</a><a href="../../exams/aws-sap-c02/">SAP-C02 試験ガイド</a><a href="../../exams/gcp-cdl/">CDL 試験ガイド</a><a href="../../exams/gcp-ace/">ACE 試験ガイド</a><a href="../../exams/azure-az900/">AZ-900 試験ガイド</a><a href="../../exams/azure-ai900/">AI-900 試験ガイド</a><a href="../../exams/azure-dp900/">DP-900 試験ガイド</a><a href="../../exams/azure-sc900/">SC-900 試験ガイド</a><a href="../../exams/azure-az104/">AZ-104 試験ガイド</a></nav>
+<nav class="site-nav"><a href="../../guide/">資格ガイド</a><a href="../../learn/">サービス解説</a><a href="../../career/">キャリア</a><a href="../../about.html">運営者情報</a><a href="../../privacy.html">プライバシーポリシー</a><a href="../../contact.html">お問い合わせ</a></nav>
+<p class="copy">© CLOUDCERT_ — 本サイトは各認定試験の公式試験ではなく、収録問題はすべてオリジナルの演習問題です。</p>
+</footer>
+</body>
+</html>

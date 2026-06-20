@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>【SAA-C03 演習問題 #58】ある企業が、Amazon Aurora Serverless v2 を使って Web アプ…</title>
+<meta name="description" content="SAA-C03の本試験レベル演習問題。ある企業が、Amazon Aurora Serverless v2 を使って Web アプリケーションのバックエンドデータベースを運用している。多くのクエリが同じ結果を繰り返し取得し… 全選択肢の解説つき。">
+<link rel="canonical" href="https://cloudcert.app/q/aws-saa-c03/q058.html">
+<meta property="og:title" content="【SAA-C03 演習問題 #58】ある企業が、Amazon Aurora Serverless v2 を使って Web アプ…">
+<meta property="og:description" content="SAA-C03の本試験レベル演習問題。ある企業が、Amazon Aurora Serverless v2 を使って Web アプリケーションのバックエンドデータベースを運用している。多くのクエリが同じ結果を繰り返し取得し… 全選択肢の解説つき。">
+<meta property="og:url" content="https://cloudcert.app/q/aws-saa-c03/q058.html">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="CLOUDCERT_">
+<meta property="og:image" content="https://cloudcert.app/assets/og.png">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='80' font-size='80' fill='%233fe0a4' font-family='monospace'>▸</text></svg>">
+
+<meta name="google-adsense-account" content="ca-pub-5647574947191958">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+JP:wght@400;500;700&family=JetBrains+Mono:wght@400;600;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../../css/style.css">
+<link rel="stylesheet" href="../../css/page.css">
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-SZR5CB5Q3X"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag('js',new Date());gtag('config','G-SZR5CB5Q3X');</script>
+<script type="application/ld+json">[{"@context":"https://schema.org/","@type":"Quiz","about":{"@type":"Thing","name":"AWS Certified Solutions Architect – Associate"},"hasPart":[{"@type":"Question","eduQuestionType":"Multiple choice","learningResourceType":"Practice problem","text":"ある企業が、Amazon Aurora Serverless v2 を使って Web アプリケーションのバックエンドデータベースを運用している。多くのクエリが同じ結果を繰り返し取得しており、不要な Aurora への負荷が発生している。アプリケーション層での変更を最小限にして、クエリ結果をキャッシュし Aurora への負荷を下げたい。最も適切なソリューションはどれか。","suggestedAnswer":[{"@type":"Answer","position":0,"text":"Aurora のクエリキャッシュ機能を有効化する。"},{"@type":"Answer","position":2,"text":"Amazon RDS Proxy をデータベースの前段に配置し、コネクションプーリングで Aurora への接続数を削減する。"},{"@type":"Answer","position":3,"text":"Aurora Serverless v2 の最大 ACU を増やして処理能力を向上させる。"}],"acceptedAnswer":{"@type":"Answer","position":1,"text":"Amazon ElastiCache for Memcached をアプリケーションとAurora の中間に配置し、頻繁にアクセスされるクエリ結果をキャッシュする。","comment":{"@type":"Comment","text":"Amazon ElastiCache for Memcached はシンプルなキー-バリューキャッシュとして機能し、よく実行されるクエリの結果をキャッシュに保存することで、同じクエリが来た際は Aurora にアクセスせずにキャッシュから高速に返せる。TTL でキャッシュの有効期間を制御でき、Aurora への不要な負荷を大幅に削減できる。アプリケーションの変更はキャッシュ読み取り/書き込みロジックの追加だが、Memcached クライアントは多くの言語で提供されている。選択肢Aの Aurora クエリキャッシュ機能は MySQL 5.7 までのクエリキャッシュに相当するが、Aurora では標準のクエリキャッシュ機能は MySQL 8.0 と同様に削除されており、使用できない。選択肢CのRDS Proxy はコネクションプーリングによるデータベース接続数の削減には効果があるが、クエリ結果のキャッシュは行わないため Aurora への実際のクエリ負荷は変わらない。選択肢DのACU 増加は処理能力を向上させるが、コスト増加となり不要なクエリの繰り返し実行という根本問題を解決しない。"}}}]},{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"HOME","item":"https://cloudcert.app/"},{"@type":"ListItem","position":2,"name":"SAA-C03 試験ガイド","item":"https://cloudcert.app/exams/aws-saa-c03/"},{"@type":"ListItem","position":3,"name":"q058"}]}]</script>
+</head>
+<body class="page-body">
+<header class="page-header"><a class="page-logo" href="../../index.html">&gt; CLOUDCERT_</a></header>
+<main class="page-main">
+
+<nav class="breadcrumb"><a href="../../index.html">HOME</a> › <a href="../../exams/aws-saa-c03/">SAA-C03 試験ガイド</a> › q058</nav>
+<div class="q-meta"><span>SAA-C03</span><span>高パフォーマンスなアーキテクチャの設計</span><span>MEDIUM</span><span>単一選択</span></div>
+<h1>ある企業が、Amazon Aurora Serverless v2 を使って Web アプリケーションのバックエンドデータベースを運用している。多くのクエリが同じ結果を繰り返し取得しており、不要な Aurora への負荷が発生している。アプリケーション層での変更を最小限にして、クエリ結果をキャッシュし Aurora への負荷を下げたい。最も適切なソリューションはどれか。</h1>
+<ol class="q-choices">
+<li><b>A.</b> Aurora のクエリキャッシュ機能を有効化する。</li>
+<li><b>B.</b> Amazon ElastiCache for Memcached をアプリケーションとAurora の中間に配置し、頻繁にアクセスされるクエリ結果をキャッシュする。</li>
+<li><b>C.</b> Amazon RDS Proxy をデータベースの前段に配置し、コネクションプーリングで Aurora への接続数を削減する。</li>
+<li><b>D.</b> Aurora Serverless v2 の最大 ACU を増やして処理能力を向上させる。</li>
+</ol>
+<details class="q-answer">
+<summary>解答と解説を見る</summary>
+<div class="inner">
+<p><b>正解: B</b></p>
+<p>Amazon ElastiCache for Memcached はシンプルなキー-バリューキャッシュとして機能し、よく実行されるクエリの結果をキャッシュに保存することで、同じクエリが来た際は Aurora にアクセスせずにキャッシュから高速に返せる。TTL でキャッシュの有効期間を制御でき、Aurora への不要な負荷を大幅に削減できる。アプリケーションの変更はキャッシュ読み取り/書き込みロジックの追加だが、Memcached クライアントは多くの言語で提供されている。選択肢Aの Aurora クエリキャッシュ機能は MySQL 5.7 までのクエリキャッシュに相当するが、Aurora では標準のクエリキャッシュ機能は MySQL 8.0 と同様に削除されており、使用できない。選択肢CのRDS Proxy はコネクションプーリングによるデータベース接続数の削減には効果があるが、クエリ結果のキャッシュは行わないため Aurora への実際のクエリ負荷は変わらない。選択肢DのACU 増加は処理能力を向上させるが、コスト増加となり不要なクエリの繰り返し実行という根本問題を解決しない。</p>
+<div class="svc-links">📚 関連サービスの解説: <a href="../../learn/amazon-elasticache.html">Amazon ElastiCache</a> ・ <a href="../../learn/amazon-aurora.html">Amazon Aurora</a></div>
+</div>
+</details>
+<div class="cta-box"><a class="btn btn-primary" href="../../exam.html?exam=aws-saa-c03">▸ この試験を本気で演習する（全150問・無料）</a></div>
+<nav class="q-nav">
+<span><a href="q057.html">← 前の問題</a></span>
+<span><a href="q059.html">次の問題 →</a></span>
+</nav>
+<section class="related"><h2>同じ分野の関連問題</h2><ul class="q-list">
+<li><a href="q057.html">ある企業が、Amazon EC2 インスタンスで HPC（高性能コンピューティング）ワークロードを実行しており、インスタ…</a></li>
+<li><a href="q059.html">ある企業が、Amazon Redshift でビジネスインテリジェンス（BI）ダッシュボードへのクエリを実行している。複…</a></li>
+<li><a href="q056.html">ある企業が、Amazon S3 に保存された数 PB のデータに対してアドホックな SQL クエリを実行するデータレイク…</a></li>
+<li><a href="q060.html">ある企業が、Amazon EC2 の Web アプリケーションに対して Application Load Balance…</a></li>
+</ul></section>
+</main>
+<footer class="page-footer">
+<nav class="hub-nav"><a href="../../exams/aws-clf-c02/">CLF-C02 試験ガイド</a><a href="../../exams/aws-aif-c01/">AIF-C01 試験ガイド</a><a href="../../exams/aws-saa-c03/">SAA-C03 試験ガイド</a><a href="../../exams/aws-dva-c02/">DVA-C02 試験ガイド</a><a href="../../exams/aws-sap-c02/">SAP-C02 試験ガイド</a><a href="../../exams/gcp-cdl/">CDL 試験ガイド</a><a href="../../exams/gcp-ace/">ACE 試験ガイド</a><a href="../../exams/azure-az900/">AZ-900 試験ガイド</a><a href="../../exams/azure-ai900/">AI-900 試験ガイド</a><a href="../../exams/azure-dp900/">DP-900 試験ガイド</a><a href="../../exams/azure-sc900/">SC-900 試験ガイド</a><a href="../../exams/azure-az104/">AZ-104 試験ガイド</a></nav>
+<nav class="site-nav"><a href="../../guide/">資格ガイド</a><a href="../../learn/">サービス解説</a><a href="../../career/">キャリア</a><a href="../../about.html">運営者情報</a><a href="../../privacy.html">プライバシーポリシー</a><a href="../../contact.html">お問い合わせ</a></nav>
+<p class="copy">© CLOUDCERT_ — 本サイトは各認定試験の公式試験ではなく、収録問題はすべてオリジナルの演習問題です。</p>
+</footer>
+</body>
+</html>

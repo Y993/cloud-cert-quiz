@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>【AZ-104 演習問題 #46】ある企業が Azure File Sync を導入してオンプレミスのファイルサーバーと A…</title>
+<meta name="description" content="AZ-104の本試験レベル演習問題。ある企業が Azure File Sync を導入してオンプレミスのファイルサーバーと Azure Files を同期させている。オンプレミスサーバーのディスク容量が不足してきたため、… 全選択肢の解説つき。">
+<link rel="canonical" href="https://cloudcert.app/q/azure-az104/q046.html">
+<meta property="og:title" content="【AZ-104 演習問題 #46】ある企業が Azure File Sync を導入してオンプレミスのファイルサーバーと A…">
+<meta property="og:description" content="AZ-104の本試験レベル演習問題。ある企業が Azure File Sync を導入してオンプレミスのファイルサーバーと Azure Files を同期させている。オンプレミスサーバーのディスク容量が不足してきたため、… 全選択肢の解説つき。">
+<meta property="og:url" content="https://cloudcert.app/q/azure-az104/q046.html">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="CLOUDCERT_">
+<meta property="og:image" content="https://cloudcert.app/assets/og.png">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='80' font-size='80' fill='%233fe0a4' font-family='monospace'>▸</text></svg>">
+
+<meta name="google-adsense-account" content="ca-pub-5647574947191958">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+JP:wght@400;500;700&family=JetBrains+Mono:wght@400;600;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../../css/style.css">
+<link rel="stylesheet" href="../../css/page.css">
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-SZR5CB5Q3X"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag('js',new Date());gtag('config','G-SZR5CB5Q3X');</script>
+<script type="application/ld+json">[{"@context":"https://schema.org/","@type":"Quiz","about":{"@type":"Thing","name":"Microsoft Azure Administrator"},"hasPart":[{"@type":"Question","eduQuestionType":"Multiple choice","learningResourceType":"Practice problem","text":"ある企業が Azure File Sync を導入してオンプレミスのファイルサーバーと Azure Files を同期させている。オンプレミスサーバーのディスク容量が不足してきたため、クラウド階層化（Cloud Tiering）を有効にしたい。クラウド階層化を有効にした場合の動作として正しいものはどれか。","suggestedAnswer":[{"@type":"Answer","position":1,"text":"クラウド階層化はファイルをアーカイブ層に移動するため、アクセス時に最大 15 時間かかる"},{"@type":"Answer","position":2,"text":"すべてのファイルがリアルタイムで Azure Files にアップロードされ、オンプレミスには複製が残らない"},{"@type":"Answer","position":3,"text":"クラウド階層化はファイルを自動的に暗号化してから Azure Files にアップロードする"}],"acceptedAnswer":{"@type":"Answer","position":0,"text":"アクセス頻度の低いファイルは Azure Files にのみ存在し、オンプレミスにはスタブ（プレースホルダー）が残る","comment":{"@type":"Comment","text":"クラウド階層化（Cloud Tiering）を有効にすると、Azure File Sync はアクセス頻度の低いファイルを Azure Files クラウド側にのみ保存し、オンプレミスサーバーには小さなスタブファイル（リパースポイント）を残す。ユーザーがスタブファイルを開くと透過的にクラウドから呼び出されてアクセスできる。これによりオンプレミスのディスク使用率を設定したボリューム空き容量ポリシーや日付ポリシーで管理できる。すべてのファイルを削除する動作ではなく、よく使うファイルはキャッシュとしてオンプレミスに残る。クラウド階層化は Azure Files のホット/クール/アーカイブ層とは別の機能であり、リハイドレート遅延とは無関係である。暗号化は Azure Files の保存時暗号化の機能であり、クラウド階層化の説明としては不正確である。"}}}]},{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"HOME","item":"https://cloudcert.app/"},{"@type":"ListItem","position":2,"name":"AZ-104 試験ガイド","item":"https://cloudcert.app/exams/azure-az104/"},{"@type":"ListItem","position":3,"name":"q046"}]}]</script>
+</head>
+<body class="page-body">
+<header class="page-header"><a class="page-logo" href="../../index.html">&gt; CLOUDCERT_</a></header>
+<main class="page-main">
+
+<nav class="breadcrumb"><a href="../../index.html">HOME</a> › <a href="../../exams/azure-az104/">AZ-104 試験ガイド</a> › q046</nav>
+<div class="q-meta"><span>AZ-104</span><span>Azure ストレージの実装と管理</span><span>MEDIUM</span><span>単一選択</span></div>
+<h1>ある企業が Azure File Sync を導入してオンプレミスのファイルサーバーと Azure Files を同期させている。オンプレミスサーバーのディスク容量が不足してきたため、クラウド階層化（Cloud Tiering）を有効にしたい。クラウド階層化を有効にした場合の動作として正しいものはどれか。</h1>
+<ol class="q-choices">
+<li><b>A.</b> アクセス頻度の低いファイルは Azure Files にのみ存在し、オンプレミスにはスタブ（プレースホルダー）が残る</li>
+<li><b>B.</b> クラウド階層化はファイルをアーカイブ層に移動するため、アクセス時に最大 15 時間かかる</li>
+<li><b>C.</b> すべてのファイルがリアルタイムで Azure Files にアップロードされ、オンプレミスには複製が残らない</li>
+<li><b>D.</b> クラウド階層化はファイルを自動的に暗号化してから Azure Files にアップロードする</li>
+</ol>
+<details class="q-answer">
+<summary>解答と解説を見る</summary>
+<div class="inner">
+<p><b>正解: A</b></p>
+<p>クラウド階層化（Cloud Tiering）を有効にすると、Azure File Sync はアクセス頻度の低いファイルを Azure Files クラウド側にのみ保存し、オンプレミスサーバーには小さなスタブファイル（リパースポイント）を残す。ユーザーがスタブファイルを開くと透過的にクラウドから呼び出されてアクセスできる。これによりオンプレミスのディスク使用率を設定したボリューム空き容量ポリシーや日付ポリシーで管理できる。すべてのファイルを削除する動作ではなく、よく使うファイルはキャッシュとしてオンプレミスに残る。クラウド階層化は Azure Files のホット/クール/アーカイブ層とは別の機能であり、リハイドレート遅延とは無関係である。暗号化は Azure Files の保存時暗号化の機能であり、クラウド階層化の説明としては不正確である。</p>
+<div class="svc-links">📚 関連サービスの解説: <a href="../../learn/azure-files.html">Azure Files</a></div>
+</div>
+</details>
+<div class="cta-box"><a class="btn btn-primary" href="../../exam.html?exam=azure-az104">▸ この試験を本気で演習する（全150問・無料）</a></div>
+<nav class="q-nav">
+<span><a href="q045.html">← 前の問題</a></span>
+<span><a href="q047.html">次の問題 →</a></span>
+</nav>
+<section class="related"><h2>同じ分野の関連問題</h2><ul class="q-list">
+<li><a href="q045.html">ある企業が Azure Files を使って部門間のファイル共有を実現している。ある特定の共有に対して誤って大量のファイ…</a></li>
+<li><a href="q047.html">ある企業が規制要件として、特定の Azure BLOB ストレージコンテナに保存したデータを保存後 3 年間は変更も削除…</a></li>
+<li><a href="q044.html">ある企業が Azure ストレージアカウントへのネットワークアクセスを強化したい。特定の Azure 仮想ネットワーク（…</a></li>
+<li><a href="q048.html">ある開発者が AzCopy を使って Azure BLOB ストレージとオンプレミス環境の間でデータを同期させたい。毎晩…</a></li>
+</ul></section>
+</main>
+<footer class="page-footer">
+<nav class="hub-nav"><a href="../../exams/aws-clf-c02/">CLF-C02 試験ガイド</a><a href="../../exams/aws-aif-c01/">AIF-C01 試験ガイド</a><a href="../../exams/aws-saa-c03/">SAA-C03 試験ガイド</a><a href="../../exams/aws-dva-c02/">DVA-C02 試験ガイド</a><a href="../../exams/aws-sap-c02/">SAP-C02 試験ガイド</a><a href="../../exams/gcp-cdl/">CDL 試験ガイド</a><a href="../../exams/gcp-ace/">ACE 試験ガイド</a><a href="../../exams/azure-az900/">AZ-900 試験ガイド</a><a href="../../exams/azure-ai900/">AI-900 試験ガイド</a><a href="../../exams/azure-dp900/">DP-900 試験ガイド</a><a href="../../exams/azure-sc900/">SC-900 試験ガイド</a><a href="../../exams/azure-az104/">AZ-104 試験ガイド</a></nav>
+<nav class="site-nav"><a href="../../guide/">資格ガイド</a><a href="../../learn/">サービス解説</a><a href="../../career/">キャリア</a><a href="../../about.html">運営者情報</a><a href="../../privacy.html">プライバシーポリシー</a><a href="../../contact.html">お問い合わせ</a></nav>
+<p class="copy">© CLOUDCERT_ — 本サイトは各認定試験の公式試験ではなく、収録問題はすべてオリジナルの演習問題です。</p>
+</footer>
+</body>
+</html>

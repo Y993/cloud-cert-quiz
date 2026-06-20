@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>【AZ-104 演習問題 #53】ある企業が Azure Files の NFS 共有を Linux VM にマウントして利…</title>
+<meta name="description" content="AZ-104の本試験レベル演習問題。ある企業が Azure Files の NFS 共有を Linux VM にマウントして利用しようとしている。NFS 4.1 マウントが失敗し続けているため、トラブルシューティングを実… 全選択肢の解説つき。">
+<link rel="canonical" href="https://cloudcert.app/q/azure-az104/q053.html">
+<meta property="og:title" content="【AZ-104 演習問題 #53】ある企業が Azure Files の NFS 共有を Linux VM にマウントして利…">
+<meta property="og:description" content="AZ-104の本試験レベル演習問題。ある企業が Azure Files の NFS 共有を Linux VM にマウントして利用しようとしている。NFS 4.1 マウントが失敗し続けているため、トラブルシューティングを実… 全選択肢の解説つき。">
+<meta property="og:url" content="https://cloudcert.app/q/azure-az104/q053.html">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="CLOUDCERT_">
+<meta property="og:image" content="https://cloudcert.app/assets/og.png">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='80' font-size='80' fill='%233fe0a4' font-family='monospace'>▸</text></svg>">
+
+<meta name="google-adsense-account" content="ca-pub-5647574947191958">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+JP:wght@400;500;700&family=JetBrains+Mono:wght@400;600;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../../css/style.css">
+<link rel="stylesheet" href="../../css/page.css">
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-SZR5CB5Q3X"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag('js',new Date());gtag('config','G-SZR5CB5Q3X');</script>
+<script type="application/ld+json">[{"@context":"https://schema.org/","@type":"Quiz","about":{"@type":"Thing","name":"Microsoft Azure Administrator"},"hasPart":[{"@type":"Question","eduQuestionType":"Multiple choice","learningResourceType":"Practice problem","text":"ある企業が Azure Files の NFS 共有を Linux VM にマウントして利用しようとしている。NFS 4.1 マウントが失敗し続けているため、トラブルシューティングを実施している。NFS 共有が正常にマウントできるための要件として正しいものをすべて確認したところ、「ストレージアカウントの設定」として欠けていた設定はどれか。","suggestedAnswer":[{"@type":"Answer","position":0,"text":"NFS 共有を利用するにはストレージアカウントで階層型名前空間（HNS）を有効にする必要があった"},{"@type":"Answer","position":2,"text":"NFS 共有には Azure Active Directory（Entra ID）の認証を必須で設定する必要があった"},{"@type":"Answer","position":3,"text":"NFS 共有は Public アクセスを有効にする必要があるが、プライベートエンドポイントのみを設定していた"}],"acceptedAnswer":{"@type":"Answer","position":1,"text":"ストレージアカウントの種別をプレミアム FileStorage にする必要があるが、汎用 v2 を使用していた","comment":{"@type":"Comment","text":"Azure Files の NFS 4.1 プロトコルはプレミアム FileStorage ストレージアカウント（SSD ベース）でのみサポートされており、汎用 v2 アカウントでは NFS 共有を作成できない。これが最も一般的なマウント失敗の原因のひとつである。また NFS 共有はパブリックエンドポイントではなくプライベートエンドポイントまたは VNet サービスエンドポイント経由でのみ安全にアクセス可能な設計となっており、インターネット経由の NFS マウントはサポートされない。階層型名前空間（HNS）は Azure Data Lake Storage Gen2 の機能であり、Azure Files NFS の要件ではない。NFS プロトコル自体は Entra ID 認証ではなく、UID/GID ベースの Linux 認証を使用するため、Entra ID 認証の設定は NFS の必須要件ではない。"}}}]},{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"HOME","item":"https://cloudcert.app/"},{"@type":"ListItem","position":2,"name":"AZ-104 試験ガイド","item":"https://cloudcert.app/exams/azure-az104/"},{"@type":"ListItem","position":3,"name":"q053"}]}]</script>
+</head>
+<body class="page-body">
+<header class="page-header"><a class="page-logo" href="../../index.html">&gt; CLOUDCERT_</a></header>
+<main class="page-main">
+
+<nav class="breadcrumb"><a href="../../index.html">HOME</a> › <a href="../../exams/azure-az104/">AZ-104 試験ガイド</a> › q053</nav>
+<div class="q-meta"><span>AZ-104</span><span>Azure ストレージの実装と管理</span><span>HARD</span><span>単一選択</span></div>
+<h1>ある企業が Azure Files の NFS 共有を Linux VM にマウントして利用しようとしている。NFS 4.1 マウントが失敗し続けているため、トラブルシューティングを実施している。NFS 共有が正常にマウントできるための要件として正しいものをすべて確認したところ、「ストレージアカウントの設定」として欠けていた設定はどれか。</h1>
+<ol class="q-choices">
+<li><b>A.</b> NFS 共有を利用するにはストレージアカウントで階層型名前空間（HNS）を有効にする必要があった</li>
+<li><b>B.</b> ストレージアカウントの種別をプレミアム FileStorage にする必要があるが、汎用 v2 を使用していた</li>
+<li><b>C.</b> NFS 共有には Azure Active Directory（Entra ID）の認証を必須で設定する必要があった</li>
+<li><b>D.</b> NFS 共有は Public アクセスを有効にする必要があるが、プライベートエンドポイントのみを設定していた</li>
+</ol>
+<details class="q-answer">
+<summary>解答と解説を見る</summary>
+<div class="inner">
+<p><b>正解: B</b></p>
+<p>Azure Files の NFS 4.1 プロトコルはプレミアム FileStorage ストレージアカウント（SSD ベース）でのみサポートされており、汎用 v2 アカウントでは NFS 共有を作成できない。これが最も一般的なマウント失敗の原因のひとつである。また NFS 共有はパブリックエンドポイントではなくプライベートエンドポイントまたは VNet サービスエンドポイント経由でのみ安全にアクセス可能な設計となっており、インターネット経由の NFS マウントはサポートされない。階層型名前空間（HNS）は Azure Data Lake Storage Gen2 の機能であり、Azure Files NFS の要件ではない。NFS プロトコル自体は Entra ID 認証ではなく、UID/GID ベースの Linux 認証を使用するため、Entra ID 認証の設定は NFS の必須要件ではない。</p>
+<div class="svc-links">📚 関連サービスの解説: <a href="../../learn/azure-storage-account.html">Azure ストレージ アカウント</a></div>
+</div>
+</details>
+<div class="cta-box"><a class="btn btn-primary" href="../../exam.html?exam=azure-az104">▸ この試験を本気で演習する（全150問・無料）</a></div>
+<nav class="q-nav">
+<span><a href="q052.html">← 前の問題</a></span>
+<span><a href="q054.html">次の問題 →</a></span>
+</nav>
+<section class="related"><h2>同じ分野の関連問題</h2><ul class="q-list">
+<li><a href="q052.html">ある企業が Azure ストレージアカウントのネットワーク構成を検討している。プライベートエンドポイントを作成した後も、…</a></li>
+<li><a href="q054.html">ある企業が Azure ストレージアカウントでユーザー委任 SAS（User Delegation SAS）を作成したい…</a></li>
+<li><a href="q051.html">ある企業が Azure BLOB ストレージのライフサイクル管理ポリシーで、最終アクセス日から 90 日後に BLOB …</a></li>
+<li><a href="q055.html">ある企業が Azure BLOB ストレージのライフサイクル管理ポリシーで以下のルールを設定している：「最終変更日から …</a></li>
+</ul></section>
+</main>
+<footer class="page-footer">
+<nav class="hub-nav"><a href="../../exams/aws-clf-c02/">CLF-C02 試験ガイド</a><a href="../../exams/aws-aif-c01/">AIF-C01 試験ガイド</a><a href="../../exams/aws-saa-c03/">SAA-C03 試験ガイド</a><a href="../../exams/aws-dva-c02/">DVA-C02 試験ガイド</a><a href="../../exams/aws-sap-c02/">SAP-C02 試験ガイド</a><a href="../../exams/gcp-cdl/">CDL 試験ガイド</a><a href="../../exams/gcp-ace/">ACE 試験ガイド</a><a href="../../exams/azure-az900/">AZ-900 試験ガイド</a><a href="../../exams/azure-ai900/">AI-900 試験ガイド</a><a href="../../exams/azure-dp900/">DP-900 試験ガイド</a><a href="../../exams/azure-sc900/">SC-900 試験ガイド</a><a href="../../exams/azure-az104/">AZ-104 試験ガイド</a></nav>
+<nav class="site-nav"><a href="../../guide/">資格ガイド</a><a href="../../learn/">サービス解説</a><a href="../../career/">キャリア</a><a href="../../about.html">運営者情報</a><a href="../../privacy.html">プライバシーポリシー</a><a href="../../contact.html">お問い合わせ</a></nav>
+<p class="copy">© CLOUDCERT_ — 本サイトは各認定試験の公式試験ではなく、収録問題はすべてオリジナルの演習問題です。</p>
+</footer>
+</body>
+</html>

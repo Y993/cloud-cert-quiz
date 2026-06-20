@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>【SC-900 演習問題 #7】ある企業がシステムに保存するユーザーパスワードのセキュリティを向上させようとしている。パス…</title>
+<meta name="description" content="SC-900の本試験レベル演習問題。ある企業がシステムに保存するユーザーパスワードのセキュリティを向上させようとしている。パスワードが漏洩した場合でも元のパスワードを特定されにくくするため、パスワードを固定長の文字列に変… 全選択肢の解説つき。">
+<link rel="canonical" href="https://cloudcert.app/q/azure-sc900/q007.html">
+<meta property="og:title" content="【SC-900 演習問題 #7】ある企業がシステムに保存するユーザーパスワードのセキュリティを向上させようとしている。パス…">
+<meta property="og:description" content="SC-900の本試験レベル演習問題。ある企業がシステムに保存するユーザーパスワードのセキュリティを向上させようとしている。パスワードが漏洩した場合でも元のパスワードを特定されにくくするため、パスワードを固定長の文字列に変… 全選択肢の解説つき。">
+<meta property="og:url" content="https://cloudcert.app/q/azure-sc900/q007.html">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="CLOUDCERT_">
+<meta property="og:image" content="https://cloudcert.app/assets/og.png">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='80' font-size='80' fill='%233fe0a4' font-family='monospace'>▸</text></svg>">
+
+<meta name="google-adsense-account" content="ca-pub-5647574947191958">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+JP:wght@400;500;700&family=JetBrains+Mono:wght@400;600;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../../css/style.css">
+<link rel="stylesheet" href="../../css/page.css">
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-SZR5CB5Q3X"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag('js',new Date());gtag('config','G-SZR5CB5Q3X');</script>
+<script type="application/ld+json">[{"@context":"https://schema.org/","@type":"Quiz","about":{"@type":"Thing","name":"Microsoft Security, Compliance, and Identity Fundamentals"},"hasPart":[{"@type":"Question","eduQuestionType":"Multiple choice","learningResourceType":"Practice problem","text":"ある企業がシステムに保存するユーザーパスワードのセキュリティを向上させようとしている。パスワードが漏洩した場合でも元のパスワードを特定されにくくするため、パスワードを固定長の文字列に変換して保存したいと考えている。また、同じ入力値からは常に同じ変換結果が得られる特性も必要である。この要件を満たす技術として最も適切なものはどれか。","suggestedAnswer":[{"@type":"Answer","position":0,"text":"デジタル証明書（Digital Certificate）：IDと公開鍵を紐付けて信頼を確立する"},{"@type":"Answer","position":1,"text":"対称暗号化（Symmetric Encryption）：共通鍵を使って可逆的に変換・復号する"},{"@type":"Answer","position":3,"text":"非対称暗号化（Asymmetric Encryption）：公開鍵と秘密鍵で可逆的に変換・復号する"}],"acceptedAnswer":{"@type":"Answer","position":2,"text":"ハッシュ（Hashing）：入力を固定長の一方向変換値に変換し、元の値には戻せない","comment":{"@type":"Comment","text":"ハッシュ関数は任意の入力を固定長の値（ハッシュ値）に変換する一方向変換であり、ハッシュ値から元の入力を復元することは計算上不可能である。同じ入力からは常に同じハッシュ値が生成される決定論的な性質を持つ。パスワード保存では元のパスワードを保管せずハッシュ値を保管し、ログイン時は入力値のハッシュを比較する。選択肢Bの対称暗号化は可逆であり、鍵が漏洩すれば元のパスワードが復元されてしまうため不適切である。選択肢Dの非対称暗号化も可逆であり、パスワード保存の用途には適さない。選択肢Aのデジタル証明書はIDと公開鍵の紐付けを第三者機関が保証する仕組みであり、パスワードの保護には使用しない。"}}}]},{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"HOME","item":"https://cloudcert.app/"},{"@type":"ListItem","position":2,"name":"SC-900 試験ガイド","item":"https://cloudcert.app/exams/azure-sc900/"},{"@type":"ListItem","position":3,"name":"q007"}]}]</script>
+</head>
+<body class="page-body">
+<header class="page-header"><a class="page-logo" href="../../index.html">&gt; CLOUDCERT_</a></header>
+<main class="page-main">
+
+<nav class="breadcrumb"><a href="../../index.html">HOME</a> › <a href="../../exams/azure-sc900/">SC-900 試験ガイド</a> › q007</nav>
+<div class="q-meta"><span>SC-900</span><span>セキュリティ、コンプライアンス、および ID の概念</span><span>MEDIUM</span><span>単一選択</span></div>
+<h1>ある企業がシステムに保存するユーザーパスワードのセキュリティを向上させようとしている。パスワードが漏洩した場合でも元のパスワードを特定されにくくするため、パスワードを固定長の文字列に変換して保存したいと考えている。また、同じ入力値からは常に同じ変換結果が得られる特性も必要である。この要件を満たす技術として最も適切なものはどれか。</h1>
+<ol class="q-choices">
+<li><b>A.</b> デジタル証明書（Digital Certificate）：IDと公開鍵を紐付けて信頼を確立する</li>
+<li><b>B.</b> 対称暗号化（Symmetric Encryption）：共通鍵を使って可逆的に変換・復号する</li>
+<li><b>C.</b> ハッシュ（Hashing）：入力を固定長の一方向変換値に変換し、元の値には戻せない</li>
+<li><b>D.</b> 非対称暗号化（Asymmetric Encryption）：公開鍵と秘密鍵で可逆的に変換・復号する</li>
+</ol>
+<details class="q-answer">
+<summary>解答と解説を見る</summary>
+<div class="inner">
+<p><b>正解: C</b></p>
+<p>ハッシュ関数は任意の入力を固定長の値（ハッシュ値）に変換する一方向変換であり、ハッシュ値から元の入力を復元することは計算上不可能である。同じ入力からは常に同じハッシュ値が生成される決定論的な性質を持つ。パスワード保存では元のパスワードを保管せずハッシュ値を保管し、ログイン時は入力値のハッシュを比較する。選択肢Bの対称暗号化は可逆であり、鍵が漏洩すれば元のパスワードが復元されてしまうため不適切である。選択肢Dの非対称暗号化も可逆であり、パスワード保存の用途には適さない。選択肢Aのデジタル証明書はIDと公開鍵の紐付けを第三者機関が保証する仕組みであり、パスワードの保護には使用しない。</p>
+
+</div>
+</details>
+<div class="cta-box"><a class="btn btn-primary" href="../../exam.html?exam=azure-sc900">▸ この試験を本気で演習する（全150問・無料）</a></div>
+<nav class="q-nav">
+<span><a href="q006.html">← 前の問題</a></span>
+<span><a href="q008.html">次の問題 →</a></span>
+</nav>
+<section class="related"><h2>同じ分野の関連問題</h2><ul class="q-list">
+<li><a href="q006.html">ある企業の情報セキュリティ担当者が、保管中の顧客データを保護するために暗号化を導入しようとしている。暗号化に使用する鍵と…</a></li>
+<li><a href="q008.html">ある企業がITガバナンスを強化するため、経営リスク管理の枠組みを整備しようとしている。具体的には、組織として守るべきルー…</a></li>
+<li><a href="q005.html">ある企業のセキュリティアーキテクトが、ゼロトラスト戦略を採用する際に「明示的に検証する（Verify explicitl…</a></li>
+<li><a href="q009.html">ある組織のセキュリティ担当者が、ユーザーがシステムにアクセスするプロセスを整理しようとしている。「ユーザーが誰であるかを…</a></li>
+</ul></section>
+</main>
+<footer class="page-footer">
+<nav class="hub-nav"><a href="../../exams/aws-clf-c02/">CLF-C02 試験ガイド</a><a href="../../exams/aws-aif-c01/">AIF-C01 試験ガイド</a><a href="../../exams/aws-saa-c03/">SAA-C03 試験ガイド</a><a href="../../exams/aws-dva-c02/">DVA-C02 試験ガイド</a><a href="../../exams/aws-sap-c02/">SAP-C02 試験ガイド</a><a href="../../exams/gcp-cdl/">CDL 試験ガイド</a><a href="../../exams/gcp-ace/">ACE 試験ガイド</a><a href="../../exams/azure-az900/">AZ-900 試験ガイド</a><a href="../../exams/azure-ai900/">AI-900 試験ガイド</a><a href="../../exams/azure-dp900/">DP-900 試験ガイド</a><a href="../../exams/azure-sc900/">SC-900 試験ガイド</a><a href="../../exams/azure-az104/">AZ-104 試験ガイド</a></nav>
+<nav class="site-nav"><a href="../../guide/">資格ガイド</a><a href="../../learn/">サービス解説</a><a href="../../career/">キャリア</a><a href="../../about.html">運営者情報</a><a href="../../privacy.html">プライバシーポリシー</a><a href="../../contact.html">お問い合わせ</a></nav>
+<p class="copy">© CLOUDCERT_ — 本サイトは各認定試験の公式試験ではなく、収録問題はすべてオリジナルの演習問題です。</p>
+</footer>
+</body>
+</html>

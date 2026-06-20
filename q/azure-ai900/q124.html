@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>【AI-900 演習問題 #124】ある開発者が Azure OpenAI Service で GPT-4o モデルを使ったア…</title>
+<meta name="description" content="AI-900の本試験レベル演習問題。ある開発者が Azure OpenAI Service で GPT-4o モデルを使ったアプリケーションを構築しています。プロンプトエンジニアリングの観点から、モデルに対して「カスタマ… 全選択肢の解説つき。">
+<link rel="canonical" href="https://cloudcert.app/q/azure-ai900/q124.html">
+<meta property="og:title" content="【AI-900 演習問題 #124】ある開発者が Azure OpenAI Service で GPT-4o モデルを使ったア…">
+<meta property="og:description" content="AI-900の本試験レベル演習問題。ある開発者が Azure OpenAI Service で GPT-4o モデルを使ったアプリケーションを構築しています。プロンプトエンジニアリングの観点から、モデルに対して「カスタマ… 全選択肢の解説つき。">
+<meta property="og:url" content="https://cloudcert.app/q/azure-ai900/q124.html">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="CLOUDCERT_">
+<meta property="og:image" content="https://cloudcert.app/assets/og.png">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='80' font-size='80' fill='%233fe0a4' font-family='monospace'>▸</text></svg>">
+
+<meta name="google-adsense-account" content="ca-pub-5647574947191958">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+JP:wght@400;500;700&family=JetBrains+Mono:wght@400;600;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../../css/style.css">
+<link rel="stylesheet" href="../../css/page.css">
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-SZR5CB5Q3X"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag('js',new Date());gtag('config','G-SZR5CB5Q3X');</script>
+<script type="application/ld+json">[{"@context":"https://schema.org/","@type":"Quiz","about":{"@type":"Thing","name":"Microsoft Azure AI Fundamentals"},"hasPart":[{"@type":"Question","eduQuestionType":"Multiple choice","learningResourceType":"Practice problem","text":"ある開発者が Azure OpenAI Service で GPT-4o モデルを使ったアプリケーションを構築しています。プロンプトエンジニアリングの観点から、モデルに対して「カスタマーサポート担当者として振る舞い、常に丁寧な日本語で短く回答する」という永続的な役割と制約を設定する最も適切な方法はどれか。","suggestedAnswer":[{"@type":"Answer","position":1,"text":"ユーザーメッセージの先頭に毎回「あなたはカスタマーサポート担当者です」と追加する"},{"@type":"Answer","position":2,"text":"モデルのデプロイ設定で「temperature=0」に設定し、回答の一貫性を確保する"},{"@type":"Answer","position":3,"text":"Azure AI Foundry のモデルカードに役割説明を記述する"}],"acceptedAnswer":{"@type":"Answer","position":0,"text":"Chat Completions API のシステムメッセージ（system ロール）に役割と制約を記述する","comment":{"@type":"Comment","text":"Chat Completions API のシステムメッセージ（system ロール）は、モデルの振る舞い・役割・制約を会話全体に渡って永続的に設定するための仕組みです。ユーザーには直接見えず、開発者がモデルのペルソナや出力形式を制御するために使用します。選択肢 B のユーザーメッセージへの毎回追加は機能しますが、ユーザーに見えてしまうこと・毎回実装が必要なことから、システムメッセージより不適切です。選択肢 D の Azure AI Foundry のモデルカードはモデルの説明文書であり、実行時の挙動に影響しません。選択肢 C の temperature は回答の多様性・ランダム性を制御するパラメータであり、役割や文体の設定とは無関係です。"}}}]},{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"HOME","item":"https://cloudcert.app/"},{"@type":"ListItem","position":2,"name":"AI-900 試験ガイド","item":"https://cloudcert.app/exams/azure-ai900/"},{"@type":"ListItem","position":3,"name":"q124"}]}]</script>
+</head>
+<body class="page-body">
+<header class="page-header"><a class="page-logo" href="../../index.html">&gt; CLOUDCERT_</a></header>
+<main class="page-main">
+
+<nav class="breadcrumb"><a href="../../index.html">HOME</a> › <a href="../../exams/azure-ai900/">AI-900 試験ガイド</a> › q124</nav>
+<div class="q-meta"><span>AI-900</span><span>生成 AI ワークロード</span><span>MEDIUM</span><span>単一選択</span></div>
+<h1>ある開発者が Azure OpenAI Service で GPT-4o モデルを使ったアプリケーションを構築しています。プロンプトエンジニアリングの観点から、モデルに対して「カスタマーサポート担当者として振る舞い、常に丁寧な日本語で短く回答する」という永続的な役割と制約を設定する最も適切な方法はどれか。</h1>
+<ol class="q-choices">
+<li><b>A.</b> Chat Completions API のシステムメッセージ（system ロール）に役割と制約を記述する</li>
+<li><b>B.</b> ユーザーメッセージの先頭に毎回「あなたはカスタマーサポート担当者です」と追加する</li>
+<li><b>C.</b> モデルのデプロイ設定で「temperature=0」に設定し、回答の一貫性を確保する</li>
+<li><b>D.</b> Azure AI Foundry のモデルカードに役割説明を記述する</li>
+</ol>
+<details class="q-answer">
+<summary>解答と解説を見る</summary>
+<div class="inner">
+<p><b>正解: A</b></p>
+<p>Chat Completions API のシステムメッセージ（system ロール）は、モデルの振る舞い・役割・制約を会話全体に渡って永続的に設定するための仕組みです。ユーザーには直接見えず、開発者がモデルのペルソナや出力形式を制御するために使用します。選択肢 B のユーザーメッセージへの毎回追加は機能しますが、ユーザーに見えてしまうこと・毎回実装が必要なことから、システムメッセージより不適切です。選択肢 D の Azure AI Foundry のモデルカードはモデルの説明文書であり、実行時の挙動に影響しません。選択肢 C の temperature は回答の多様性・ランダム性を制御するパラメータであり、役割や文体の設定とは無関係です。</p>
+
+</div>
+</details>
+<div class="cta-box"><a class="btn btn-primary" href="../../exam.html?exam=azure-ai900">▸ この試験を本気で演習する（全150問・無料）</a></div>
+<nav class="q-nav">
+<span><a href="q123.html">← 前の問題</a></span>
+<span><a href="q125.html">次の問題 →</a></span>
+</nav>
+<section class="related"><h2>同じ分野の関連問題</h2><ul class="q-list">
+<li><a href="q123.html">ある金融サービス企業が、顧客向けの投資アドバイスチャットボットを構築するために Azure OpenAI Service…</a></li>
+<li><a href="q125.html">ある教育スタートアップが Azure OpenAI Service を使って数学の問題を解説する AI チューターを構築…</a></li>
+<li><a href="q122.html">ある企業が、従業員が自然言語で質問すると Azure OpenAI Service のモデルが回答を返す社内知識検索シス…</a></li>
+<li><a href="q126.html">ある企業が Azure OpenAI Service の GPT-4 を使ったコード生成ツールを社内展開しています。開発…</a></li>
+</ul></section>
+</main>
+<footer class="page-footer">
+<nav class="hub-nav"><a href="../../exams/aws-clf-c02/">CLF-C02 試験ガイド</a><a href="../../exams/aws-aif-c01/">AIF-C01 試験ガイド</a><a href="../../exams/aws-saa-c03/">SAA-C03 試験ガイド</a><a href="../../exams/aws-dva-c02/">DVA-C02 試験ガイド</a><a href="../../exams/aws-sap-c02/">SAP-C02 試験ガイド</a><a href="../../exams/gcp-cdl/">CDL 試験ガイド</a><a href="../../exams/gcp-ace/">ACE 試験ガイド</a><a href="../../exams/azure-az900/">AZ-900 試験ガイド</a><a href="../../exams/azure-ai900/">AI-900 試験ガイド</a><a href="../../exams/azure-dp900/">DP-900 試験ガイド</a><a href="../../exams/azure-sc900/">SC-900 試験ガイド</a><a href="../../exams/azure-az104/">AZ-104 試験ガイド</a></nav>
+<nav class="site-nav"><a href="../../guide/">資格ガイド</a><a href="../../learn/">サービス解説</a><a href="../../career/">キャリア</a><a href="../../about.html">運営者情報</a><a href="../../privacy.html">プライバシーポリシー</a><a href="../../contact.html">お問い合わせ</a></nav>
+<p class="copy">© CLOUDCERT_ — 本サイトは各認定試験の公式試験ではなく、収録問題はすべてオリジナルの演習問題です。</p>
+</footer>
+</body>
+</html>

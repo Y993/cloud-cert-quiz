@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>【DP-900 演習問題 #22】ある企業が、ラムダアーキテクチャの導入を検討している。このアーキテクチャが「バッチレイヤー…</title>
+<meta name="description" content="DP-900の本試験レベル演習問題。ある企業が、ラムダアーキテクチャの導入を検討している。このアーキテクチャが「バッチレイヤー」と「スピードレイヤー（ストリーミングレイヤー）」の両方を持つ最大の理由として最も適切なものは… 全選択肢の解説つき。">
+<link rel="canonical" href="https://cloudcert.app/q/azure-dp900/q022.html">
+<meta property="og:title" content="【DP-900 演習問題 #22】ある企業が、ラムダアーキテクチャの導入を検討している。このアーキテクチャが「バッチレイヤー…">
+<meta property="og:description" content="DP-900の本試験レベル演習問題。ある企業が、ラムダアーキテクチャの導入を検討している。このアーキテクチャが「バッチレイヤー」と「スピードレイヤー（ストリーミングレイヤー）」の両方を持つ最大の理由として最も適切なものは… 全選択肢の解説つき。">
+<meta property="og:url" content="https://cloudcert.app/q/azure-dp900/q022.html">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="CLOUDCERT_">
+<meta property="og:image" content="https://cloudcert.app/assets/og.png">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='80' font-size='80' fill='%233fe0a4' font-family='monospace'>▸</text></svg>">
+
+<meta name="google-adsense-account" content="ca-pub-5647574947191958">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+JP:wght@400;500;700&family=JetBrains+Mono:wght@400;600;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../../css/style.css">
+<link rel="stylesheet" href="../../css/page.css">
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-SZR5CB5Q3X"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag('js',new Date());gtag('config','G-SZR5CB5Q3X');</script>
+<script type="application/ld+json">[{"@context":"https://schema.org/","@type":"Quiz","about":{"@type":"Thing","name":"Microsoft Azure Data Fundamentals"},"hasPart":[{"@type":"Question","eduQuestionType":"Multiple choice","learningResourceType":"Practice problem","text":"ある企業が、ラムダアーキテクチャの導入を検討している。このアーキテクチャが「バッチレイヤー」と「スピードレイヤー（ストリーミングレイヤー）」の両方を持つ最大の理由として最も適切なものはどれか。","suggestedAnswer":[{"@type":"Answer","position":0,"text":"どちらのレイヤーも同一の処理を重複して実行することで、冗長性によるシステム可用性を高める"},{"@type":"Answer","position":2,"text":"バッチレイヤーはリアルタイム処理を担当し、スピードレイヤーは大量の履歴データの集計を担当するため、役割分担が明確になる"},{"@type":"Answer","position":3,"text":"バッチレイヤーはコスト削減のために使われ、スピードレイヤーはセキュリティ要件を満たすために使われる"}],"acceptedAnswer":{"@type":"Answer","position":1,"text":"バッチレイヤーは高精度・完全な集計結果を時間をかけて生成し、スピードレイヤーはバッチ結果が揃うまでの間のリアルタイム近似値を提供することで、精度と鮮度のトレードオフを補完する","comment":{"@type":"Comment","text":"ラムダアーキテクチャの本質は「精度と鮮度のトレードオフ」を補完し合う2レイヤー構造にある。バッチレイヤーは全データを対象に高精度な集計を実行するが完了まで時間がかかる。スピードレイヤー（ストリーミングレイヤー）は最新データをリアルタイムで処理して近似的な即時結果を提供し、バッチが追いつくまでの「鮮度のギャップ」を埋める。サービングレイヤーが両者の結果をマージして提供する。選択肢Cはバッチとスピードの役割が逆になっており完全に誤りである。バッチレイヤーが時間をかけて大量履歴を集計し、スピードレイヤーがリアルタイム処理を担う。選択肢Dはコストとセキュリティでレイヤーを説明しているが、これはラムダアーキテクチャの目的ではない。選択肢AはラムダアーキテクチャをHA（高可用性）のための冗長構成と誤解しており、目的が異なる。2つのレイヤーは同一処理の重複ではなく、異なる目的・タイムスケールの処理を担っている。"}}}]},{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"HOME","item":"https://cloudcert.app/"},{"@type":"ListItem","position":2,"name":"DP-900 試験ガイド","item":"https://cloudcert.app/exams/azure-dp900/"},{"@type":"ListItem","position":3,"name":"q022"}]}]</script>
+</head>
+<body class="page-body">
+<header class="page-header"><a class="page-logo" href="../../index.html">&gt; CLOUDCERT_</a></header>
+<main class="page-main">
+
+<nav class="breadcrumb"><a href="../../index.html">HOME</a> › <a href="../../exams/azure-dp900/">DP-900 試験ガイド</a> › q022</nav>
+<div class="q-meta"><span>DP-900</span><span>コア データ概念</span><span>HARD</span><span>単一選択</span></div>
+<h1>ある企業が、ラムダアーキテクチャの導入を検討している。このアーキテクチャが「バッチレイヤー」と「スピードレイヤー（ストリーミングレイヤー）」の両方を持つ最大の理由として最も適切なものはどれか。</h1>
+<ol class="q-choices">
+<li><b>A.</b> どちらのレイヤーも同一の処理を重複して実行することで、冗長性によるシステム可用性を高める</li>
+<li><b>B.</b> バッチレイヤーは高精度・完全な集計結果を時間をかけて生成し、スピードレイヤーはバッチ結果が揃うまでの間のリアルタイム近似値を提供することで、精度と鮮度のトレードオフを補完する</li>
+<li><b>C.</b> バッチレイヤーはリアルタイム処理を担当し、スピードレイヤーは大量の履歴データの集計を担当するため、役割分担が明確になる</li>
+<li><b>D.</b> バッチレイヤーはコスト削減のために使われ、スピードレイヤーはセキュリティ要件を満たすために使われる</li>
+</ol>
+<details class="q-answer">
+<summary>解答と解説を見る</summary>
+<div class="inner">
+<p><b>正解: B</b></p>
+<p>ラムダアーキテクチャの本質は「精度と鮮度のトレードオフ」を補完し合う2レイヤー構造にある。バッチレイヤーは全データを対象に高精度な集計を実行するが完了まで時間がかかる。スピードレイヤー（ストリーミングレイヤー）は最新データをリアルタイムで処理して近似的な即時結果を提供し、バッチが追いつくまでの「鮮度のギャップ」を埋める。サービングレイヤーが両者の結果をマージして提供する。選択肢Cはバッチとスピードの役割が逆になっており完全に誤りである。バッチレイヤーが時間をかけて大量履歴を集計し、スピードレイヤーがリアルタイム処理を担う。選択肢Dはコストとセキュリティでレイヤーを説明しているが、これはラムダアーキテクチャの目的ではない。選択肢AはラムダアーキテクチャをHA（高可用性）のための冗長構成と誤解しており、目的が異なる。2つのレイヤーは同一処理の重複ではなく、異なる目的・タイムスケールの処理を担っている。</p>
+
+</div>
+</details>
+<div class="cta-box"><a class="btn btn-primary" href="../../exam.html?exam=azure-dp900">▸ この試験を本気で演習する（全150問・無料）</a></div>
+<nav class="q-nav">
+<span><a href="q021.html">← 前の問題</a></span>
+<span><a href="q023.html">次の問題 →</a></span>
+</nav>
+<section class="related"><h2>同じ分野の関連問題</h2><ul class="q-list">
+<li><a href="q021.html">ある EC サイトが「商品カタログデータ」を管理している。各商品には必ず商品ID・価格・在庫数があるが、一部商品には「カ…</a></li>
+<li><a href="q023.html">ある企業が、OLTPシステムのトランザクションデータをデータウェアハウスに転送する際のデータ変換プロセス（ETL）を設計…</a></li>
+<li><a href="q020.html">ある企業が、受注システムからの注文データを毎日夜間にデータウェアハウスへ転送するバッチジョブを実行している。ある朝、経営…</a></li>
+<li><a href="q024.html">ある物流会社が、荷物の追跡データを管理するシステムを設計している。各荷物レコードには「荷物ID、発送元郵便番号、配送先郵…</a></li>
+</ul></section>
+</main>
+<footer class="page-footer">
+<nav class="hub-nav"><a href="../../exams/aws-clf-c02/">CLF-C02 試験ガイド</a><a href="../../exams/aws-aif-c01/">AIF-C01 試験ガイド</a><a href="../../exams/aws-saa-c03/">SAA-C03 試験ガイド</a><a href="../../exams/aws-dva-c02/">DVA-C02 試験ガイド</a><a href="../../exams/aws-sap-c02/">SAP-C02 試験ガイド</a><a href="../../exams/gcp-cdl/">CDL 試験ガイド</a><a href="../../exams/gcp-ace/">ACE 試験ガイド</a><a href="../../exams/azure-az900/">AZ-900 試験ガイド</a><a href="../../exams/azure-ai900/">AI-900 試験ガイド</a><a href="../../exams/azure-dp900/">DP-900 試験ガイド</a><a href="../../exams/azure-sc900/">SC-900 試験ガイド</a><a href="../../exams/azure-az104/">AZ-104 試験ガイド</a></nav>
+<nav class="site-nav"><a href="../../guide/">資格ガイド</a><a href="../../learn/">サービス解説</a><a href="../../career/">キャリア</a><a href="../../about.html">運営者情報</a><a href="../../privacy.html">プライバシーポリシー</a><a href="../../contact.html">お問い合わせ</a></nav>
+<p class="copy">© CLOUDCERT_ — 本サイトは各認定試験の公式試験ではなく、収録問題はすべてオリジナルの演習問題です。</p>
+</footer>
+</body>
+</html>

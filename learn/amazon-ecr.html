@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Amazon ECRとは？試験に出るポイントと演習問題</title>
+<meta name="description" content="Amazon ECR（AWS）の要点と資格試験での問われ方を解説。登場する演習問題7問と公式ドキュメントへのリンクつき。">
+<link rel="canonical" href="https://cloudcert.app/learn/amazon-ecr.html">
+<meta property="og:title" content="Amazon ECRとは？試験に出るポイントと演習問題">
+<meta property="og:description" content="Amazon ECR（AWS）の要点と資格試験での問われ方を解説。登場する演習問題7問と公式ドキュメントへのリンクつき。">
+<meta property="og:url" content="https://cloudcert.app/learn/amazon-ecr.html">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="CLOUDCERT_">
+<meta property="og:image" content="https://cloudcert.app/assets/og.png">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='80' font-size='80' fill='%233fe0a4' font-family='monospace'>▸</text></svg>">
+
+<meta name="google-adsense-account" content="ca-pub-5647574947191958">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+JP:wght@400;500;700&family=JetBrains+Mono:wght@400;600;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../css/style.css">
+<link rel="stylesheet" href="../css/page.css">
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-SZR5CB5Q3X"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag('js',new Date());gtag('config','G-SZR5CB5Q3X');</script>
+<script type="application/ld+json">[{"@context":"https://schema.org","@type":"TechArticle","headline":"Amazon ECRとは？試験に出るポイントと演習問題","description":"Amazon ECR（AWS）の要点と資格試験での問われ方を解説。登場する演習問題7問と公式ドキュメントへのリンクつき。","inLanguage":"ja","about":{"@type":"Thing","name":"Amazon ECR"},"author":{"@type":"Organization","name":"CLOUDCERT_"},"publisher":{"@type":"Organization","name":"CLOUDCERT_"},"mainEntityOfPage":"https://cloudcert.app/learn/amazon-ecr.html"},{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"HOME","item":"https://cloudcert.app/"},{"@type":"ListItem","position":2,"name":"サービス解説","item":"https://cloudcert.app/learn/"},{"@type":"ListItem","position":3,"name":"Amazon ECR"}]}]</script>
+</head>
+<body class="page-body">
+<header class="page-header"><a class="page-logo" href="../index.html">&gt; CLOUDCERT_</a></header>
+<main class="page-main">
+
+<nav class="breadcrumb"><a href="../index.html">HOME</a> › <a href="./">サービス解説</a> › Amazon ECR</nav>
+<div class="learn-head">
+<div class="badges"><span class="badge" data-provider="aws">AWS</span><span class="badge">コンテナ</span><span class="badge badge-q">演習7問</span></div>
+<h1>Amazon ECRとは</h1>
+</div>
+<p class="lead">DockerコンテナイメージをAWS上でホスティングするフルマネージドのプライベートレジストリサービス。ECSやEKSとシームレスに統合でき、IAMによるアクセス制御が可能。</p>
+<p>イメージスキャン機能でOSおよびプログラミング言語パッケージの脆弱性を検出できる。ライフサイクルポリシーで古いイメージを自動削除しストレージコストを管理する。</p>
+<p><a class="official-btn" href="https://docs.aws.amazon.com/ja_jp/AmazonECR/latest/userguide/what-is-ecr.html" target="_blank" rel="noopener">公式ドキュメント →</a></p>
+<h2>試験での問われ方</h2>
+<p>ECSやEKSと組み合わせるコンテナ構成の問題で「どこにイメージを保存するか」という問いにはECRを選ぶ。DockerHubとの比較ではIAM統合・VPC内通信（PrivateLink）のメリットが引っかけになる。</p>
+<p>クロスアカウントでのイメージ共有にはリポジトリポリシーを使う点、誰でも無償で公開イメージを取得できるECR Public Gallery（パブリックレジストリ）の存在も確認しておく。</p>
+<p>DVAではイミュータブルタグ（同じタグへの上書きpushを禁止し、latestのようなタグが指すイメージが変わらないようにする設定）と、クロスリージョンレプリケーション（リージョン障害対策や各リージョンでのpull高速化のためにイメージを自動複製するレプリケーション設定）が頻出。前者は再現性、後者は可用性とレイテンシ最適化のためという目的の違いで問われる。</p>
+<h2>このサービスが登場する演習問題（7問）</h2>
+<ul class="q-list">
+<li><a href="../q/aws-clf-c02/q115.html">【CLF-C02】ある企業が、コンテナイメージをAWS上で管理・保存するためのプライベートなレジストリを必要としています。最も適切なAWS…</a></li>
+<li><a href="../q/aws-saa-c03/q105.html">【SAA-C03】ある企業が、EC2 インスタンスから外部の Python パッケージリポジトリ（PyPI）にアクセスせずに Python…</a></li>
+<li><a href="../q/aws-saa-c03/q114.html">【SAA-C03】ある企業が、Amazon ECR（Elastic Container Registry）に保存されているコンテナイメージ…</a></li>
+<li><a href="../q/aws-dva-c02/q115.html">【DVA-C02】ある開発チームがAmazon ECRにDockerイメージをプッシュして管理している。誤って同じタグ（例: latest…</a></li>
+<li><a href="../q/aws-sap-c02/q078.html">【SAP-C02】ある企業が AWS 上でアプリケーションのコンテナ化を進めており、Docker イメージを Amazon ECR に格納…</a></li>
+<li><a href="../q/aws-sap-c02/q111.html">【SAP-C02】ある企業が AWS 上で分散システムを構築しており、複数のマイクロサービスが並行して同じリソース（在庫数、残席数）を更新…</a></li>
+<li><a href="../q/aws-sap-c02/q129.html">【SAP-C02】ある企業が AWS 上でコンテナ化されたアプリケーションを Amazon ECS Fargate で運用しており、アプリ…</a></li>
+</ul>
+<h2>関連サービス</h2><ul class="q-list">
+<li><a href="amazon-ecs.html">Amazon ECS</a></li>
+<li><a href="amazon-eks.html">Amazon EKS</a></li></ul>
+</main>
+<footer class="page-footer">
+<nav class="hub-nav"><a href="../exams/aws-clf-c02/">CLF-C02 試験ガイド</a><a href="../exams/aws-aif-c01/">AIF-C01 試験ガイド</a><a href="../exams/aws-saa-c03/">SAA-C03 試験ガイド</a><a href="../exams/aws-dva-c02/">DVA-C02 試験ガイド</a><a href="../exams/aws-sap-c02/">SAP-C02 試験ガイド</a><a href="../exams/gcp-cdl/">CDL 試験ガイド</a><a href="../exams/gcp-ace/">ACE 試験ガイド</a><a href="../exams/azure-az900/">AZ-900 試験ガイド</a><a href="../exams/azure-ai900/">AI-900 試験ガイド</a><a href="../exams/azure-dp900/">DP-900 試験ガイド</a><a href="../exams/azure-sc900/">SC-900 試験ガイド</a><a href="../exams/azure-az104/">AZ-104 試験ガイド</a></nav>
+<nav class="site-nav"><a href="../guide/">資格ガイド</a><a href="../learn/">サービス解説</a><a href="../career/">キャリア</a><a href="../about.html">運営者情報</a><a href="../privacy.html">プライバシーポリシー</a><a href="../contact.html">お問い合わせ</a></nav>
+<p class="copy">© CLOUDCERT_ — 本サイトは各認定試験の公式試験ではなく、収録問題はすべてオリジナルの演習問題です。</p>
+</footer>
+</body>
+</html>

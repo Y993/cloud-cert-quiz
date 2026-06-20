@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>【SAA-C03 演習問題 #62】ある企業が、大規模な e コマースサイトのトップページに表示する商品リコメンデーションを、…</title>
+<meta name="description" content="SAA-C03の本試験レベル演習問題。ある企業が、大規模な e コマースサイトのトップページに表示する商品リコメンデーションを、Amazon Personalize を使ってリアルタイムで生成している。推論レイテンシーが… 全選択肢の解説つき。">
+<link rel="canonical" href="https://cloudcert.app/q/aws-saa-c03/q062.html">
+<meta property="og:title" content="【SAA-C03 演習問題 #62】ある企業が、大規模な e コマースサイトのトップページに表示する商品リコメンデーションを、…">
+<meta property="og:description" content="SAA-C03の本試験レベル演習問題。ある企業が、大規模な e コマースサイトのトップページに表示する商品リコメンデーションを、Amazon Personalize を使ってリアルタイムで生成している。推論レイテンシーが… 全選択肢の解説つき。">
+<meta property="og:url" content="https://cloudcert.app/q/aws-saa-c03/q062.html">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="CLOUDCERT_">
+<meta property="og:image" content="https://cloudcert.app/assets/og.png">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='80' font-size='80' fill='%233fe0a4' font-family='monospace'>▸</text></svg>">
+
+<meta name="google-adsense-account" content="ca-pub-5647574947191958">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+JP:wght@400;500;700&family=JetBrains+Mono:wght@400;600;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../../css/style.css">
+<link rel="stylesheet" href="../../css/page.css">
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-SZR5CB5Q3X"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag('js',new Date());gtag('config','G-SZR5CB5Q3X');</script>
+<script type="application/ld+json">[{"@context":"https://schema.org/","@type":"Quiz","about":{"@type":"Thing","name":"AWS Certified Solutions Architect – Associate"},"hasPart":[{"@type":"Question","eduQuestionType":"Multiple choice","learningResourceType":"Practice problem","text":"ある企業が、大規模な e コマースサイトのトップページに表示する商品リコメンデーションを、Amazon Personalize を使ってリアルタイムで生成している。推論レイテンシーが 500ms を超えており、ユーザー体験を改善するために 100ms 以下に短縮したい。コスト効率を維持しながら実現する最も適切なソリューションはどれか。","suggestedAnswer":[{"@type":"Answer","position":1,"text":"Amazon Personalize の推論エンドポイントをより大きいインスタンスタイプにアップグレードする。"},{"@type":"Answer","position":2,"text":"AWS Lambda を Personalize と統合して非同期に推論を実行し、結果が準備できたらユーザーに送信する。"},{"@type":"Answer","position":3,"text":"Amazon CloudFront で Personalize の推論結果をキャッシュする。"}],"acceptedAnswer":{"@type":"Answer","position":0,"text":"ユーザーごとのリコメンデーション結果を Amazon ElastiCache for Redis にキャッシュし、TTL（例: 5 分）を設定する。キャッシュがある場合は Personalize を呼び出さずにキャッシュから返す。","comment":{"@type":"Comment","text":"ElastiCache for Redis にリコメンデーション結果をキャッシュすることで、同一ユーザーへの 2 回目以降のリクエストはマイクロ秒〜ミリ秒単位で応答できる。TTL で定期的にキャッシュを更新してリコメンデーションの鮮度も維持できる。Personalize の API コール数も大幅に削減されコスト効率も向上する。選択肢BはPersonalize エンドポイントのアップグレードでレイテンシー改善は期待できるが、Personalize の推論レイテンシー自体は数百 ms 程度が標準であり、100ms 以下を安定的に保証するにはキャッシュ戦略が効果的。コストも増加する。選択肢Dの CloudFront キャッシュはパーソナライズされたレスポンスには適さない。CDN はユーザーによって異なるレコメンデーションの個別キャッシュには向いていない（キャッシュキーの設計が複雑になる）。選択肢Cの非同期推論では最初のリクエストではユーザーはレスポンスを待つことになり、100ms 以下という要件を最初のリクエストで満たせない。"}}}]},{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"HOME","item":"https://cloudcert.app/"},{"@type":"ListItem","position":2,"name":"SAA-C03 試験ガイド","item":"https://cloudcert.app/exams/aws-saa-c03/"},{"@type":"ListItem","position":3,"name":"q062"}]}]</script>
+</head>
+<body class="page-body">
+<header class="page-header"><a class="page-logo" href="../../index.html">&gt; CLOUDCERT_</a></header>
+<main class="page-main">
+
+<nav class="breadcrumb"><a href="../../index.html">HOME</a> › <a href="../../exams/aws-saa-c03/">SAA-C03 試験ガイド</a> › q062</nav>
+<div class="q-meta"><span>SAA-C03</span><span>高パフォーマンスなアーキテクチャの設計</span><span>MEDIUM</span><span>単一選択</span></div>
+<h1>ある企業が、大規模な e コマースサイトのトップページに表示する商品リコメンデーションを、Amazon Personalize を使ってリアルタイムで生成している。推論レイテンシーが 500ms を超えており、ユーザー体験を改善するために 100ms 以下に短縮したい。コスト効率を維持しながら実現する最も適切なソリューションはどれか。</h1>
+<ol class="q-choices">
+<li><b>A.</b> ユーザーごとのリコメンデーション結果を Amazon ElastiCache for Redis にキャッシュし、TTL（例: 5 分）を設定する。キャッシュがある場合は Personalize を呼び出さずにキャッシュから返す。</li>
+<li><b>B.</b> Amazon Personalize の推論エンドポイントをより大きいインスタンスタイプにアップグレードする。</li>
+<li><b>C.</b> AWS Lambda を Personalize と統合して非同期に推論を実行し、結果が準備できたらユーザーに送信する。</li>
+<li><b>D.</b> Amazon CloudFront で Personalize の推論結果をキャッシュする。</li>
+</ol>
+<details class="q-answer">
+<summary>解答と解説を見る</summary>
+<div class="inner">
+<p><b>正解: A</b></p>
+<p>ElastiCache for Redis にリコメンデーション結果をキャッシュすることで、同一ユーザーへの 2 回目以降のリクエストはマイクロ秒〜ミリ秒単位で応答できる。TTL で定期的にキャッシュを更新してリコメンデーションの鮮度も維持できる。Personalize の API コール数も大幅に削減されコスト効率も向上する。選択肢BはPersonalize エンドポイントのアップグレードでレイテンシー改善は期待できるが、Personalize の推論レイテンシー自体は数百 ms 程度が標準であり、100ms 以下を安定的に保証するにはキャッシュ戦略が効果的。コストも増加する。選択肢Dの CloudFront キャッシュはパーソナライズされたレスポンスには適さない。CDN はユーザーによって異なるレコメンデーションの個別キャッシュには向いていない（キャッシュキーの設計が複雑になる）。選択肢Cの非同期推論では最初のリクエストではユーザーはレスポンスを待つことになり、100ms 以下という要件を最初のリクエストで満たせない。</p>
+<div class="svc-links">📚 関連サービスの解説: <a href="../../learn/amazon-elasticache.html">Amazon ElastiCache</a></div>
+</div>
+</details>
+<div class="cta-box"><a class="btn btn-primary" href="../../exam.html?exam=aws-saa-c03">▸ この試験を本気で演習する（全150問・無料）</a></div>
+<nav class="q-nav">
+<span><a href="q061.html">← 前の問題</a></span>
+<span><a href="q063.html">次の問題 →</a></span>
+</nav>
+<section class="related"><h2>同じ分野の関連問題</h2><ul class="q-list">
+<li><a href="q061.html">ある企業が、Amazon ECS（Fargate）で動作するコンテナアプリケーションのコールドスタート（タスク起動時間）…</a></li>
+<li><a href="q063.html">ある企業が、複数の EC2 インスタンスから Amazon EFS（Elastic File System）をマウントし…</a></li>
+<li><a href="q060.html">ある企業が、Amazon EC2 の Web アプリケーションに対して Application Load Balance…</a></li>
+<li><a href="q064.html">ある企業が、Amazon Neptune を使ってソーシャルネットワークのグラフデータを管理している。ユーザーの友達のリ…</a></li>
+</ul></section>
+</main>
+<footer class="page-footer">
+<nav class="hub-nav"><a href="../../exams/aws-clf-c02/">CLF-C02 試験ガイド</a><a href="../../exams/aws-aif-c01/">AIF-C01 試験ガイド</a><a href="../../exams/aws-saa-c03/">SAA-C03 試験ガイド</a><a href="../../exams/aws-dva-c02/">DVA-C02 試験ガイド</a><a href="../../exams/aws-sap-c02/">SAP-C02 試験ガイド</a><a href="../../exams/gcp-cdl/">CDL 試験ガイド</a><a href="../../exams/gcp-ace/">ACE 試験ガイド</a><a href="../../exams/azure-az900/">AZ-900 試験ガイド</a><a href="../../exams/azure-ai900/">AI-900 試験ガイド</a><a href="../../exams/azure-dp900/">DP-900 試験ガイド</a><a href="../../exams/azure-sc900/">SC-900 試験ガイド</a><a href="../../exams/azure-az104/">AZ-104 試験ガイド</a></nav>
+<nav class="site-nav"><a href="../../guide/">資格ガイド</a><a href="../../learn/">サービス解説</a><a href="../../career/">キャリア</a><a href="../../about.html">運営者情報</a><a href="../../privacy.html">プライバシーポリシー</a><a href="../../contact.html">お問い合わせ</a></nav>
+<p class="copy">© CLOUDCERT_ — 本サイトは各認定試験の公式試験ではなく、収録問題はすべてオリジナルの演習問題です。</p>
+</footer>
+</body>
+</html>

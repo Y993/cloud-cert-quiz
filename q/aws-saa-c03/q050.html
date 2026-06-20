@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>【SAA-C03 演習問題 #50】ある企業が、大量の IoT デバイスからセンサーデータ（1 秒間に最大 100 万件のメッ…</title>
+<meta name="description" content="SAA-C03の本試験レベル演習問題。ある企業が、大量の IoT デバイスからセンサーデータ（1 秒間に最大 100 万件のメッセージ）をリアルタイムで受信・処理・保存するシステムを構築したい。データの受信と処理を分離し… 全選択肢の解説つき。">
+<link rel="canonical" href="https://cloudcert.app/q/aws-saa-c03/q050.html">
+<meta property="og:title" content="【SAA-C03 演習問題 #50】ある企業が、大量の IoT デバイスからセンサーデータ（1 秒間に最大 100 万件のメッ…">
+<meta property="og:description" content="SAA-C03の本試験レベル演習問題。ある企業が、大量の IoT デバイスからセンサーデータ（1 秒間に最大 100 万件のメッセージ）をリアルタイムで受信・処理・保存するシステムを構築したい。データの受信と処理を分離し… 全選択肢の解説つき。">
+<meta property="og:url" content="https://cloudcert.app/q/aws-saa-c03/q050.html">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="CLOUDCERT_">
+<meta property="og:image" content="https://cloudcert.app/assets/og.png">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='80' font-size='80' fill='%233fe0a4' font-family='monospace'>▸</text></svg>">
+
+<meta name="google-adsense-account" content="ca-pub-5647574947191958">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+JP:wght@400;500;700&family=JetBrains+Mono:wght@400;600;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../../css/style.css">
+<link rel="stylesheet" href="../../css/page.css">
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-SZR5CB5Q3X"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag('js',new Date());gtag('config','G-SZR5CB5Q3X');</script>
+<script type="application/ld+json">[{"@context":"https://schema.org/","@type":"Quiz","about":{"@type":"Thing","name":"AWS Certified Solutions Architect – Associate"},"hasPart":[{"@type":"Question","eduQuestionType":"Multiple choice","learningResourceType":"Practice problem","text":"ある企業が、大量の IoT デバイスからセンサーデータ（1 秒間に最大 100 万件のメッセージ）をリアルタイムで受信・処理・保存するシステムを構築したい。データの受信と処理を分離し、スパイク時でもデータを取りこぼさずに処理したい。最も適切なアーキテクチャはどれか。","suggestedAnswer":[{"@type":"Answer","position":0,"text":"Amazon API Gateway のエンドポイントで各デバイスからのメッセージを受信し、Lambda で直接処理して RDS に保存する。"},{"@type":"Answer","position":2,"text":"Amazon SQS 標準キューでメッセージを受信し、Auto Scaling グループの EC2 インスタンスで処理する。"},{"@type":"Answer","position":3,"text":"AWS IoT Core で全デバイスを管理し、メッセージブローカーでルーティングした後に Amazon SQS FIFO キューで順序保証して処理する。"}],"acceptedAnswer":{"@type":"Answer","position":1,"text":"Amazon Kinesis Data Streams でデータを受信（シャード数を必要量にスケール）し、AWS Lambda または KCL アプリケーションでリアルタイム処理する。処理済みデータは Amazon S3 または DynamoDB に保存する。","comment":{"@type":"Comment","text":"Kinesis Data Streams は毎秒数百万レコードの大量ストリームデータを処理できる高スループットのサービスである。シャードを増やすことで受信スループットをスケールでき（1シャード = 1MB/s受信・1,000レコード/s）、最大 7 日間のデータ保持により受信と処理の非同期化も実現できる。Lambda または KCL でリアルタイム処理も可能。選択肢CのSQS は高スループットだが、1 秒 100 万件のような超高頻度では Kinesis の方が専用設計で適している。また SQS はメッセージ順序保証が FIFO のみでパーティション分割機能がない。選択肢AのAPI Gateway + Lambda はリクエスト数に応じたコストが非常に高くなり（100 万件/秒では 1 秒で 100 万 Lambda 起動）、現実的ではない。選択肢DのSQS FIFO はスループット上限（300 TPS、バッチで 3,000 TPS）が 100 万件/秒には大きく不足し、要件を満たせない。"}}}]},{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"HOME","item":"https://cloudcert.app/"},{"@type":"ListItem","position":2,"name":"SAA-C03 試験ガイド","item":"https://cloudcert.app/exams/aws-saa-c03/"},{"@type":"ListItem","position":3,"name":"q050"}]}]</script>
+</head>
+<body class="page-body">
+<header class="page-header"><a class="page-logo" href="../../index.html">&gt; CLOUDCERT_</a></header>
+<main class="page-main">
+
+<nav class="breadcrumb"><a href="../../index.html">HOME</a> › <a href="../../exams/aws-saa-c03/">SAA-C03 試験ガイド</a> › q050</nav>
+<div class="q-meta"><span>SAA-C03</span><span>高パフォーマンスなアーキテクチャの設計</span><span>HARD</span><span>単一選択</span></div>
+<h1>ある企業が、大量の IoT デバイスからセンサーデータ（1 秒間に最大 100 万件のメッセージ）をリアルタイムで受信・処理・保存するシステムを構築したい。データの受信と処理を分離し、スパイク時でもデータを取りこぼさずに処理したい。最も適切なアーキテクチャはどれか。</h1>
+<ol class="q-choices">
+<li><b>A.</b> Amazon API Gateway のエンドポイントで各デバイスからのメッセージを受信し、Lambda で直接処理して RDS に保存する。</li>
+<li><b>B.</b> Amazon Kinesis Data Streams でデータを受信（シャード数を必要量にスケール）し、AWS Lambda または KCL アプリケーションでリアルタイム処理する。処理済みデータは Amazon S3 または DynamoDB に保存する。</li>
+<li><b>C.</b> Amazon SQS 標準キューでメッセージを受信し、Auto Scaling グループの EC2 インスタンスで処理する。</li>
+<li><b>D.</b> AWS IoT Core で全デバイスを管理し、メッセージブローカーでルーティングした後に Amazon SQS FIFO キューで順序保証して処理する。</li>
+</ol>
+<details class="q-answer">
+<summary>解答と解説を見る</summary>
+<div class="inner">
+<p><b>正解: B</b></p>
+<p>Kinesis Data Streams は毎秒数百万レコードの大量ストリームデータを処理できる高スループットのサービスである。シャードを増やすことで受信スループットをスケールでき（1シャード = 1MB/s受信・1,000レコード/s）、最大 7 日間のデータ保持により受信と処理の非同期化も実現できる。Lambda または KCL でリアルタイム処理も可能。選択肢CのSQS は高スループットだが、1 秒 100 万件のような超高頻度では Kinesis の方が専用設計で適している。また SQS はメッセージ順序保証が FIFO のみでパーティション分割機能がない。選択肢AのAPI Gateway + Lambda はリクエスト数に応じたコストが非常に高くなり（100 万件/秒では 1 秒で 100 万 Lambda 起動）、現実的ではない。選択肢DのSQS FIFO はスループット上限（300 TPS、バッチで 3,000 TPS）が 100 万件/秒には大きく不足し、要件を満たせない。</p>
+<div class="svc-links">📚 関連サービスの解説: <a href="../../learn/amazon-kinesis.html">Amazon Kinesis</a> ・ <a href="../../learn/aws-lambda.html">AWS Lambda</a></div>
+</div>
+</details>
+<div class="cta-box"><a class="btn btn-primary" href="../../exam.html?exam=aws-saa-c03">▸ この試験を本気で演習する（全150問・無料）</a></div>
+<nav class="q-nav">
+<span><a href="q049.html">← 前の問題</a></span>
+<span><a href="q051.html">次の問題 →</a></span>
+</nav>
+<section class="related"><h2>同じ分野の関連問題</h2><ul class="q-list">
+<li><a href="q049.html">ある企業が、Amazon RDS for MySQL を使って頻繁に読み取られる商品カタログデータを管理している。読み取…</a></li>
+<li><a href="q051.html">ある企業が、機械学習モデルの学習に大量のデータセット（合計 500TB）をストレージから読み込む処理を AWS で実行し…</a></li>
+<li><a href="q048.html">ある企業が、グローバルに分散したユーザー向けに静的 Web サイト（HTML/CSS/JS/画像）を Amazon S3…</a></li>
+<li><a href="q052.html">ある企業が、Amazon Aurora MySQL でオンライントランザクション処理（OLTP）と分析クエリ（OLAP）…</a></li>
+</ul></section>
+</main>
+<footer class="page-footer">
+<nav class="hub-nav"><a href="../../exams/aws-clf-c02/">CLF-C02 試験ガイド</a><a href="../../exams/aws-aif-c01/">AIF-C01 試験ガイド</a><a href="../../exams/aws-saa-c03/">SAA-C03 試験ガイド</a><a href="../../exams/aws-dva-c02/">DVA-C02 試験ガイド</a><a href="../../exams/aws-sap-c02/">SAP-C02 試験ガイド</a><a href="../../exams/gcp-cdl/">CDL 試験ガイド</a><a href="../../exams/gcp-ace/">ACE 試験ガイド</a><a href="../../exams/azure-az900/">AZ-900 試験ガイド</a><a href="../../exams/azure-ai900/">AI-900 試験ガイド</a><a href="../../exams/azure-dp900/">DP-900 試験ガイド</a><a href="../../exams/azure-sc900/">SC-900 試験ガイド</a><a href="../../exams/azure-az104/">AZ-104 試験ガイド</a></nav>
+<nav class="site-nav"><a href="../../guide/">資格ガイド</a><a href="../../learn/">サービス解説</a><a href="../../career/">キャリア</a><a href="../../about.html">運営者情報</a><a href="../../privacy.html">プライバシーポリシー</a><a href="../../contact.html">お問い合わせ</a></nav>
+<p class="copy">© CLOUDCERT_ — 本サイトは各認定試験の公式試験ではなく、収録問題はすべてオリジナルの演習問題です。</p>
+</footer>
+</body>
+</html>

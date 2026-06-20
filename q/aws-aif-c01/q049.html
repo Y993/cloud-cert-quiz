@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>【AIF-C01 演習問題 #49】ある企業が、Python コードの自動生成機能を内部ツールに統合している。生成された Py…</title>
+<meta name="description" content="AIF-C01の本試験レベル演習問題。ある企業が、Python コードの自動生成機能を内部ツールに統合している。生成された Python コードに依存ライブラリの脆弱なバージョンが含まれるリスクを、開発フローの中で自動的… 全選択肢の解説つき。">
+<link rel="canonical" href="https://cloudcert.app/q/aws-aif-c01/q049.html">
+<meta property="og:title" content="【AIF-C01 演習問題 #49】ある企業が、Python コードの自動生成機能を内部ツールに統合している。生成された Py…">
+<meta property="og:description" content="AIF-C01の本試験レベル演習問題。ある企業が、Python コードの自動生成機能を内部ツールに統合している。生成された Python コードに依存ライブラリの脆弱なバージョンが含まれるリスクを、開発フローの中で自動的… 全選択肢の解説つき。">
+<meta property="og:url" content="https://cloudcert.app/q/aws-aif-c01/q049.html">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="CLOUDCERT_">
+<meta property="og:image" content="https://cloudcert.app/assets/og.png">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='80' font-size='80' fill='%233fe0a4' font-family='monospace'>▸</text></svg>">
+
+<meta name="google-adsense-account" content="ca-pub-5647574947191958">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+JP:wght@400;500;700&family=JetBrains+Mono:wght@400;600;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../../css/style.css">
+<link rel="stylesheet" href="../../css/page.css">
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-SZR5CB5Q3X"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag('js',new Date());gtag('config','G-SZR5CB5Q3X');</script>
+<script type="application/ld+json">[{"@context":"https://schema.org/","@type":"Quiz","about":{"@type":"Thing","name":"AWS Certified AI Practitioner"},"hasPart":[{"@type":"Question","eduQuestionType":"Multiple choice","learningResourceType":"Practice problem","text":"ある企業が、Python コードの自動生成機能を内部ツールに統合している。生成された Python コードに依存ライブラリの脆弱なバージョンが含まれるリスクを、開発フローの中で自動的に検出するための最も適切なアプローチはどれか。","suggestedAnswer":[{"@type":"Answer","position":0,"text":"LLM に対して「セキュリティ上安全なコードのみを生成すること」というシステムプロンプトを追加するだけで十分とする"},{"@type":"Answer","position":2,"text":"生成されたコードを全件、毎回手動でセキュリティエンジニアがレビューする"},{"@type":"Answer","position":3,"text":"LLM が生成したコードは常に安全であるという前提で、セキュリティレビューを省略する"}],"acceptedAnswer":{"@type":"Answer","position":1,"text":"CI/CD パイプラインに SAST（静的解析）ツールと依存関係スキャナーを組み込み、LLM 生成コードを自動的に検査する","comment":{"@type":"Comment","text":"LLM はトレーニングデータに含まれる脆弱なコードパターンを学習・再現することがあるため、システムプロンプトのみによる制御には限界がある。CI/CD への SAST・SCA（ソフトウェアコンポジション分析）統合により、コードコミット時に自動で脆弱性・脆弱な依存バージョンを検出できる。Dは誤り：LLM の出力は安全性を保証しないため、セキュリティレビューの省略は重大なリスクである。Aは誤り：システムプロンプトによる指示は LLM の確率的な出力を完全制御できないため、技術的ガードレールとの組み合わせが必要。Cは誤り：全件手動レビューは開発速度を大きく阻害し、自動化の恩恵を失う。"}}}]},{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"HOME","item":"https://cloudcert.app/"},{"@type":"ListItem","position":2,"name":"AIF-C01 試験ガイド","item":"https://cloudcert.app/exams/aws-aif-c01/"},{"@type":"ListItem","position":3,"name":"q049"}]}]</script>
+</head>
+<body class="page-body">
+<header class="page-header"><a class="page-logo" href="../../index.html">&gt; CLOUDCERT_</a></header>
+<main class="page-main">
+
+<nav class="breadcrumb"><a href="../../index.html">HOME</a> › <a href="../../exams/aws-aif-c01/">AIF-C01 試験ガイド</a> › q049</nav>
+<div class="q-meta"><span>AIF-C01</span><span>生成 AI の基礎</span><span>MEDIUM</span><span>単一選択</span></div>
+<h1>ある企業が、Python コードの自動生成機能を内部ツールに統合している。生成された Python コードに依存ライブラリの脆弱なバージョンが含まれるリスクを、開発フローの中で自動的に検出するための最も適切なアプローチはどれか。</h1>
+<ol class="q-choices">
+<li><b>A.</b> LLM に対して「セキュリティ上安全なコードのみを生成すること」というシステムプロンプトを追加するだけで十分とする</li>
+<li><b>B.</b> CI/CD パイプラインに SAST（静的解析）ツールと依存関係スキャナーを組み込み、LLM 生成コードを自動的に検査する</li>
+<li><b>C.</b> 生成されたコードを全件、毎回手動でセキュリティエンジニアがレビューする</li>
+<li><b>D.</b> LLM が生成したコードは常に安全であるという前提で、セキュリティレビューを省略する</li>
+</ol>
+<details class="q-answer">
+<summary>解答と解説を見る</summary>
+<div class="inner">
+<p><b>正解: B</b></p>
+<p>LLM はトレーニングデータに含まれる脆弱なコードパターンを学習・再現することがあるため、システムプロンプトのみによる制御には限界がある。CI/CD への SAST・SCA（ソフトウェアコンポジション分析）統合により、コードコミット時に自動で脆弱性・脆弱な依存バージョンを検出できる。Dは誤り：LLM の出力は安全性を保証しないため、セキュリティレビューの省略は重大なリスクである。Aは誤り：システムプロンプトによる指示は LLM の確率的な出力を完全制御できないため、技術的ガードレールとの組み合わせが必要。Cは誤り：全件手動レビューは開発速度を大きく阻害し、自動化の恩恵を失う。</p>
+
+</div>
+</details>
+<div class="cta-box"><a class="btn btn-primary" href="../../exam.html?exam=aws-aif-c01">▸ この試験を本気で演習する（全150問・無料）</a></div>
+<nav class="q-nav">
+<span><a href="q048.html">← 前の問題</a></span>
+<span><a href="q050.html">次の問題 →</a></span>
+</nav>
+<section class="related"><h2>同じ分野の関連問題</h2><ul class="q-list">
+<li><a href="q048.html">ある企業が、月次財務報告書（PDF、平均 50 ページ）の要約を生成 AI で自動化したいと考えている。要約には数値・表…</a></li>
+<li><a href="q050.html">ある企業が、社内の技術文書（200 万トークン相当）を対象にした質問応答システムを構築している。コンテキストウィンドウが…</a></li>
+<li><a href="q047.html">ある医療テック企業が、患者の入力テキストから病名候補を提示するチャットボットの開発を検討している。生成 AI の特性を踏…</a></li>
+<li><a href="q051.html">ある小売企業が、過去の販売データ（数値時系列）から翌週の需要を予測するシステムを構築したい。データには明確な季節性とトレ…</a></li>
+</ul></section>
+</main>
+<footer class="page-footer">
+<nav class="hub-nav"><a href="../../exams/aws-clf-c02/">CLF-C02 試験ガイド</a><a href="../../exams/aws-aif-c01/">AIF-C01 試験ガイド</a><a href="../../exams/aws-saa-c03/">SAA-C03 試験ガイド</a><a href="../../exams/aws-dva-c02/">DVA-C02 試験ガイド</a><a href="../../exams/aws-sap-c02/">SAP-C02 試験ガイド</a><a href="../../exams/gcp-cdl/">CDL 試験ガイド</a><a href="../../exams/gcp-ace/">ACE 試験ガイド</a><a href="../../exams/azure-az900/">AZ-900 試験ガイド</a><a href="../../exams/azure-ai900/">AI-900 試験ガイド</a><a href="../../exams/azure-dp900/">DP-900 試験ガイド</a><a href="../../exams/azure-sc900/">SC-900 試験ガイド</a><a href="../../exams/azure-az104/">AZ-104 試験ガイド</a></nav>
+<nav class="site-nav"><a href="../../guide/">資格ガイド</a><a href="../../learn/">サービス解説</a><a href="../../career/">キャリア</a><a href="../../about.html">運営者情報</a><a href="../../privacy.html">プライバシーポリシー</a><a href="../../contact.html">お問い合わせ</a></nav>
+<p class="copy">© CLOUDCERT_ — 本サイトは各認定試験の公式試験ではなく、収録問題はすべてオリジナルの演習問題です。</p>
+</footer>
+</body>
+</html>

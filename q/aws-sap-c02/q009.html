@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>【SAP-C02 演習問題 #9】グローバルな製造企業が AWS で事業継続計画（BCP）を策定しています。プライマリリージ…</title>
+<meta name="description" content="SAP-C02の本試験レベル演習問題。グローバルな製造企業が AWS で事業継続計画（BCP）を策定しています。プライマリリージョンは ap-northeast-1（東京）で、DR サイトは ap-southeast-1… 全選択肢の解説つき。">
+<link rel="canonical" href="https://cloudcert.app/q/aws-sap-c02/q009.html">
+<meta property="og:title" content="【SAP-C02 演習問題 #9】グローバルな製造企業が AWS で事業継続計画（BCP）を策定しています。プライマリリージ…">
+<meta property="og:description" content="SAP-C02の本試験レベル演習問題。グローバルな製造企業が AWS で事業継続計画（BCP）を策定しています。プライマリリージョンは ap-northeast-1（東京）で、DR サイトは ap-southeast-1… 全選択肢の解説つき。">
+<meta property="og:url" content="https://cloudcert.app/q/aws-sap-c02/q009.html">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="CLOUDCERT_">
+<meta property="og:image" content="https://cloudcert.app/assets/og.png">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='80' font-size='80' fill='%233fe0a4' font-family='monospace'>▸</text></svg>">
+
+<meta name="google-adsense-account" content="ca-pub-5647574947191958">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+JP:wght@400;500;700&family=JetBrains+Mono:wght@400;600;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../../css/style.css">
+<link rel="stylesheet" href="../../css/page.css">
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-SZR5CB5Q3X"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag('js',new Date());gtag('config','G-SZR5CB5Q3X');</script>
+<script type="application/ld+json">[{"@context":"https://schema.org/","@type":"Quiz","about":{"@type":"Thing","name":"AWS Certified Solutions Architect - Professional"},"hasPart":[{"@type":"Question","eduQuestionType":"Multiple choice","learningResourceType":"Practice problem","text":"グローバルな製造企業が AWS で事業継続計画（BCP）を策定しています。プライマリリージョンは ap-northeast-1（東京）で、DR サイトは ap-southeast-1（シンガポール）です。RTO は 1 時間、RPO は 15 分です。コストを最小化しながらこの要件を満たすアーキテクチャはどれですか？","suggestedAnswer":[{"@type":"Answer","position":0,"text":"アクティブ-アクティブのマルチリージョン構成を構築し、Route 53 レイテンシールーティングで両リージョンに常時トラフィックを分散する"},{"@type":"Answer","position":1,"text":"コールドスタンバイ（パイロットライト）構成を採用し、DR リージョンには最小限のコアコンポーネントのみを起動状態に保つ。フェイルオーバー時に CloudFormation で完全なインフラをデプロイする"},{"@type":"Answer","position":2,"text":"バックアップ＆リストア戦略を採用し、1 時間ごとに AMI と RDS スナップショットを DR リージョンにコピーする"}],"acceptedAnswer":{"@type":"Answer","position":3,"text":"ウォームスタンバイ構成を採用し、DR リージョンに縮小スケールのリソースを常時稼働させる。Aurora Global Database と S3 クロスリージョンレプリケーションで RPO 15 分を確保し、フェイルオーバー時に Auto Scaling でキャパシティを拡張する","comment":{"@type":"Comment","text":"ウォームスタンバイはコストを抑えつつ RTO 1 時間・RPO 15 分を達成できる最適な選択です。Aurora Global Database のレプリケーション遅延は通常 1 秒未満で RPO 15 分は容易に達成できます。縮小スケールのリソースが稼働しているため、フェイルオーバー時は Auto Scaling でスケールアップするだけで RTO 1 時間を達成できます。\n\nA: アクティブ-アクティブは最高の可用性を提供しますが、DR 要件以上のコストがかかり「コスト最小化」要件に反します。\n\nB: パイロットライトはウォームスタンバイよりコストは低いですが、CloudFormation での完全デプロイには通常 1 時間以上かかる場合があり、RTO 1 時間の達成が難しくなります。\n\nC: バックアップ＆リストアは 1 時間ごとのスナップショットでは RPO 15 分を満たせません。またリストア時間も RTO 1 時間の達成が困難です。"}}}]},{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"HOME","item":"https://cloudcert.app/"},{"@type":"ListItem","position":2,"name":"SAP-C02 試験ガイド","item":"https://cloudcert.app/exams/aws-sap-c02/"},{"@type":"ListItem","position":3,"name":"q009"}]}]</script>
+</head>
+<body class="page-body">
+<header class="page-header"><a class="page-logo" href="../../index.html">&gt; CLOUDCERT_</a></header>
+<main class="page-main">
+
+<nav class="breadcrumb"><a href="../../index.html">HOME</a> › <a href="../../exams/aws-sap-c02/">SAP-C02 試験ガイド</a> › q009</nav>
+<div class="q-meta"><span>SAP-C02</span><span>複雑な組織に対応するソリューションの設計</span><span>HARD</span><span>単一選択</span></div>
+<h1>グローバルな製造企業が AWS で事業継続計画（BCP）を策定しています。プライマリリージョンは ap-northeast-1（東京）で、DR サイトは ap-southeast-1（シンガポール）です。RTO は 1 時間、RPO は 15 分です。コストを最小化しながらこの要件を満たすアーキテクチャはどれですか？</h1>
+<ol class="q-choices">
+<li><b>A.</b> アクティブ-アクティブのマルチリージョン構成を構築し、Route 53 レイテンシールーティングで両リージョンに常時トラフィックを分散する</li>
+<li><b>B.</b> コールドスタンバイ（パイロットライト）構成を採用し、DR リージョンには最小限のコアコンポーネントのみを起動状態に保つ。フェイルオーバー時に CloudFormation で完全なインフラをデプロイする</li>
+<li><b>C.</b> バックアップ＆リストア戦略を採用し、1 時間ごとに AMI と RDS スナップショットを DR リージョンにコピーする</li>
+<li><b>D.</b> ウォームスタンバイ構成を採用し、DR リージョンに縮小スケールのリソースを常時稼働させる。Aurora Global Database と S3 クロスリージョンレプリケーションで RPO 15 分を確保し、フェイルオーバー時に Auto Scaling でキャパシティを拡張する</li>
+</ol>
+<details class="q-answer">
+<summary>解答と解説を見る</summary>
+<div class="inner">
+<p><b>正解: D</b></p>
+<p>ウォームスタンバイはコストを抑えつつ RTO 1 時間・RPO 15 分を達成できる最適な選択です。Aurora Global Database のレプリケーション遅延は通常 1 秒未満で RPO 15 分は容易に達成できます。縮小スケールのリソースが稼働しているため、フェイルオーバー時は Auto Scaling でスケールアップするだけで RTO 1 時間を達成できます。
+
+A: アクティブ-アクティブは最高の可用性を提供しますが、DR 要件以上のコストがかかり「コスト最小化」要件に反します。
+
+B: パイロットライトはウォームスタンバイよりコストは低いですが、CloudFormation での完全デプロイには通常 1 時間以上かかる場合があり、RTO 1 時間の達成が難しくなります。
+
+C: バックアップ＆リストアは 1 時間ごとのスナップショットでは RPO 15 分を満たせません。またリストア時間も RTO 1 時間の達成が困難です。</p>
+<div class="svc-links">📚 関連サービスの解説: <a href="../../learn/amazon-aurora.html">Amazon Aurora</a> ・ <a href="../../learn/amazon-s3.html">Amazon S3</a></div>
+</div>
+</details>
+<div class="cta-box"><a class="btn btn-primary" href="../../exam.html?exam=aws-sap-c02">▸ この試験を本気で演習する（全150問・無料）</a></div>
+<nav class="q-nav">
+<span><a href="q008.html">← 前の問題</a></span>
+<span><a href="q010.html">次の問題 →</a></span>
+</nav>
+<section class="related"><h2>同じ分野の関連問題</h2><ul class="q-list">
+<li><a href="q008.html">ある企業が AWS Organizations 内の複数アカウントで Reserved Instances と Savi…</a></li>
+<li><a href="q010.html">ある大手保険会社が AWS Organizations で管理するマルチアカウント環境に、新たにパートナー企業のアカウン…</a></li>
+<li><a href="q007.html">多国籍企業が AWS に移行を進めており、欧州のデータ主権規制（GDPR）により欧州顧客のデータは EU リージョン外に…</a></li>
+<li><a href="q011.html">ある企業が AWS Organizations の一括請求を使って 30 以上のアカウントのコストを管理しています。財務…</a></li>
+</ul></section>
+</main>
+<footer class="page-footer">
+<nav class="hub-nav"><a href="../../exams/aws-clf-c02/">CLF-C02 試験ガイド</a><a href="../../exams/aws-aif-c01/">AIF-C01 試験ガイド</a><a href="../../exams/aws-saa-c03/">SAA-C03 試験ガイド</a><a href="../../exams/aws-dva-c02/">DVA-C02 試験ガイド</a><a href="../../exams/aws-sap-c02/">SAP-C02 試験ガイド</a><a href="../../exams/gcp-cdl/">CDL 試験ガイド</a><a href="../../exams/gcp-ace/">ACE 試験ガイド</a><a href="../../exams/azure-az900/">AZ-900 試験ガイド</a><a href="../../exams/azure-ai900/">AI-900 試験ガイド</a><a href="../../exams/azure-dp900/">DP-900 試験ガイド</a><a href="../../exams/azure-sc900/">SC-900 試験ガイド</a><a href="../../exams/azure-az104/">AZ-104 試験ガイド</a></nav>
+<nav class="site-nav"><a href="../../guide/">資格ガイド</a><a href="../../learn/">サービス解説</a><a href="../../career/">キャリア</a><a href="../../about.html">運営者情報</a><a href="../../privacy.html">プライバシーポリシー</a><a href="../../contact.html">お問い合わせ</a></nav>
+<p class="copy">© CLOUDCERT_ — 本サイトは各認定試験の公式試験ではなく、収録問題はすべてオリジナルの演習問題です。</p>
+</footer>
+</body>
+</html>

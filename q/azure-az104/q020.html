@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>【AZ-104 演習問題 #20】ある企業が本番環境のリソースグループに対してリソースロックを適用しようとしている。重要なデ…</title>
+<meta name="description" content="AZ-104の本試験レベル演習問題。ある企業が本番環境のリソースグループに対してリソースロックを適用しようとしている。重要なデータベースサーバーを誰も誤って削除できないようにしたいが、構成の読み取りや更新（設定変更）は引… 全選択肢の解説つき。">
+<link rel="canonical" href="https://cloudcert.app/q/azure-az104/q020.html">
+<meta property="og:title" content="【AZ-104 演習問題 #20】ある企業が本番環境のリソースグループに対してリソースロックを適用しようとしている。重要なデ…">
+<meta property="og:description" content="AZ-104の本試験レベル演習問題。ある企業が本番環境のリソースグループに対してリソースロックを適用しようとしている。重要なデータベースサーバーを誰も誤って削除できないようにしたいが、構成の読み取りや更新（設定変更）は引… 全選択肢の解説つき。">
+<meta property="og:url" content="https://cloudcert.app/q/azure-az104/q020.html">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="CLOUDCERT_">
+<meta property="og:image" content="https://cloudcert.app/assets/og.png">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='80' font-size='80' fill='%233fe0a4' font-family='monospace'>▸</text></svg>">
+
+<meta name="google-adsense-account" content="ca-pub-5647574947191958">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+JP:wght@400;500;700&family=JetBrains+Mono:wght@400;600;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../../css/style.css">
+<link rel="stylesheet" href="../../css/page.css">
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-SZR5CB5Q3X"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag('js',new Date());gtag('config','G-SZR5CB5Q3X');</script>
+<script type="application/ld+json">[{"@context":"https://schema.org/","@type":"Quiz","about":{"@type":"Thing","name":"Microsoft Azure Administrator"},"hasPart":[{"@type":"Question","eduQuestionType":"Multiple choice","learningResourceType":"Practice problem","text":"ある企業が本番環境のリソースグループに対してリソースロックを適用しようとしている。重要なデータベースサーバーを誰も誤って削除できないようにしたいが、構成の読み取りや更新（設定変更）は引き続き許可したい。最も適切なリソースロックの種類はどれか。","suggestedAnswer":[{"@type":"Answer","position":0,"text":"CanNotDelete ポリシーを Azure Policy で作成して割り当てる"},{"@type":"Answer","position":1,"text":"ReadOnly ロックを適用する：読み取りのみ許可し、すべての書き込み操作を拒否する"},{"@type":"Answer","position":3,"text":"ロックは不要で、RBAC の「共同作成者」ロールから削除権限だけを除外したカスタムロールを作成する"}],"acceptedAnswer":{"@type":"Answer","position":2,"text":"Delete ロックを適用する：削除操作のみを拒否し、読み取りや更新は引き続き許可する","comment":{"@type":"Comment","text":"Azure リソースロックには「Delete（CanNotDelete）」と「ReadOnly」の 2 種類がある。Delete ロックはリソースの削除のみを禁止し、読み取りや設定変更（書き込み）は引き続き許可する。要件は「削除禁止かつ更新は許可」であるため Delete ロックが正解。選択肢Bの ReadOnly ロックは読み取りのみ許可し、更新・削除の両方の書き込み操作をブロックするため、設定変更も禁止されてしまい要件を満たさない。選択肢Aの「CanNotDelete ポリシー」という Azure Policy 組み込み定義は存在せず、リソースロックは Policy とは別の仕組みである。選択肢DはカスタムRBACロールでも削除権限を除外できるが、リソースオーナーは既存の Owner ロールで削除できてしまうため、ロックの方が確実に上書きされた制御となる。リソースロックは RBAC よりも優先されるため、オーナーであっても削除できなくなる。"}}}]},{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"HOME","item":"https://cloudcert.app/"},{"@type":"ListItem","position":2,"name":"AZ-104 試験ガイド","item":"https://cloudcert.app/exams/azure-az104/"},{"@type":"ListItem","position":3,"name":"q020"}]}]</script>
+</head>
+<body class="page-body">
+<header class="page-header"><a class="page-logo" href="../../index.html">&gt; CLOUDCERT_</a></header>
+<main class="page-main">
+
+<nav class="breadcrumb"><a href="../../index.html">HOME</a> › <a href="../../exams/azure-az104/">AZ-104 試験ガイド</a> › q020</nav>
+<div class="q-meta"><span>AZ-104</span><span>Azure の ID とガバナンスの管理</span><span>EASY</span><span>単一選択</span></div>
+<h1>ある企業が本番環境のリソースグループに対してリソースロックを適用しようとしている。重要なデータベースサーバーを誰も誤って削除できないようにしたいが、構成の読み取りや更新（設定変更）は引き続き許可したい。最も適切なリソースロックの種類はどれか。</h1>
+<ol class="q-choices">
+<li><b>A.</b> CanNotDelete ポリシーを Azure Policy で作成して割り当てる</li>
+<li><b>B.</b> ReadOnly ロックを適用する：読み取りのみ許可し、すべての書き込み操作を拒否する</li>
+<li><b>C.</b> Delete ロックを適用する：削除操作のみを拒否し、読み取りや更新は引き続き許可する</li>
+<li><b>D.</b> ロックは不要で、RBAC の「共同作成者」ロールから削除権限だけを除外したカスタムロールを作成する</li>
+</ol>
+<details class="q-answer">
+<summary>解答と解説を見る</summary>
+<div class="inner">
+<p><b>正解: C</b></p>
+<p>Azure リソースロックには「Delete（CanNotDelete）」と「ReadOnly」の 2 種類がある。Delete ロックはリソースの削除のみを禁止し、読み取りや設定変更（書き込み）は引き続き許可する。要件は「削除禁止かつ更新は許可」であるため Delete ロックが正解。選択肢Bの ReadOnly ロックは読み取りのみ許可し、更新・削除の両方の書き込み操作をブロックするため、設定変更も禁止されてしまい要件を満たさない。選択肢Aの「CanNotDelete ポリシー」という Azure Policy 組み込み定義は存在せず、リソースロックは Policy とは別の仕組みである。選択肢DはカスタムRBACロールでも削除権限を除外できるが、リソースオーナーは既存の Owner ロールで削除できてしまうため、ロックの方が確実に上書きされた制御となる。リソースロックは RBAC よりも優先されるため、オーナーであっても削除できなくなる。</p>
+
+</div>
+</details>
+<div class="cta-box"><a class="btn btn-primary" href="../../exam.html?exam=azure-az104">▸ この試験を本気で演習する（全150問・無料）</a></div>
+<nav class="q-nav">
+<span><a href="q019.html">← 前の問題</a></span>
+<span><a href="q021.html">次の問題 →</a></span>
+</nav>
+<section class="related"><h2>同じ分野の関連問題</h2><ul class="q-list">
+<li><a href="q019.html">ある会社がゲストユーザー（Entra ID B2B）向けにアクセスレビューを実施している。アクセスレビューが完了した後、…</a></li>
+<li><a href="q021.html">ある企業が Entra ID で社内全体の SSPR（セルフサービスパスワードリセット）を段階的に展開したい。まず IT…</a></li>
+<li><a href="q018.html">ある企業が Entra ID の動的グループを活用している。次の動的メンバーシップルールを設定した場合、どのユーザーがグ…</a></li>
+<li><a href="q022.html">ある企業が Azure で 3 つの事業部門をそれぞれ独立したサブスクリプションで管理している。全サブスクリプションに統…</a></li>
+</ul></section>
+</main>
+<footer class="page-footer">
+<nav class="hub-nav"><a href="../../exams/aws-clf-c02/">CLF-C02 試験ガイド</a><a href="../../exams/aws-aif-c01/">AIF-C01 試験ガイド</a><a href="../../exams/aws-saa-c03/">SAA-C03 試験ガイド</a><a href="../../exams/aws-dva-c02/">DVA-C02 試験ガイド</a><a href="../../exams/aws-sap-c02/">SAP-C02 試験ガイド</a><a href="../../exams/gcp-cdl/">CDL 試験ガイド</a><a href="../../exams/gcp-ace/">ACE 試験ガイド</a><a href="../../exams/azure-az900/">AZ-900 試験ガイド</a><a href="../../exams/azure-ai900/">AI-900 試験ガイド</a><a href="../../exams/azure-dp900/">DP-900 試験ガイド</a><a href="../../exams/azure-sc900/">SC-900 試験ガイド</a><a href="../../exams/azure-az104/">AZ-104 試験ガイド</a></nav>
+<nav class="site-nav"><a href="../../guide/">資格ガイド</a><a href="../../learn/">サービス解説</a><a href="../../career/">キャリア</a><a href="../../about.html">運営者情報</a><a href="../../privacy.html">プライバシーポリシー</a><a href="../../contact.html">お問い合わせ</a></nav>
+<p class="copy">© CLOUDCERT_ — 本サイトは各認定試験の公式試験ではなく、収録問題はすべてオリジナルの演習問題です。</p>
+</footer>
+</body>
+</html>

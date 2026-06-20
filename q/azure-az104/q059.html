@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>【AZ-104 演習問題 #59】ある企業が Azure Files を評価している。Azure Files で SMB プ…</title>
+<meta name="description" content="AZ-104の本試験レベル演習問題。ある企業が Azure Files を評価している。Azure Files で SMB プロトコルを使用する際の要件として正しいものを 2 つ選択してください。 全選択肢の解説つき。">
+<link rel="canonical" href="https://cloudcert.app/q/azure-az104/q059.html">
+<meta property="og:title" content="【AZ-104 演習問題 #59】ある企業が Azure Files を評価している。Azure Files で SMB プ…">
+<meta property="og:description" content="AZ-104の本試験レベル演習問題。ある企業が Azure Files を評価している。Azure Files で SMB プロトコルを使用する際の要件として正しいものを 2 つ選択してください。 全選択肢の解説つき。">
+<meta property="og:url" content="https://cloudcert.app/q/azure-az104/q059.html">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="CLOUDCERT_">
+<meta property="og:image" content="https://cloudcert.app/assets/og.png">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='80' font-size='80' fill='%233fe0a4' font-family='monospace'>▸</text></svg>">
+
+<meta name="google-adsense-account" content="ca-pub-5647574947191958">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+JP:wght@400;500;700&family=JetBrains+Mono:wght@400;600;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../../css/style.css">
+<link rel="stylesheet" href="../../css/page.css">
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-SZR5CB5Q3X"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag('js',new Date());gtag('config','G-SZR5CB5Q3X');</script>
+<script type="application/ld+json">[{"@context":"https://schema.org/","@type":"Quiz","about":{"@type":"Thing","name":"Microsoft Azure Administrator"},"hasPart":[{"@type":"Question","eduQuestionType":"Checkbox","learningResourceType":"Practice problem","text":"ある企業が Azure Files を評価している。Azure Files で SMB プロトコルを使用する際の要件として正しいものを 2 つ選択してください。","suggestedAnswer":[{"@type":"Answer","position":1,"text":"Azure Files への SMB アクセスには必ずプライベートエンドポイントが必要である"},{"@type":"Answer","position":3,"text":"NFS と SMB を同じ共有で同時に使用できる"},{"@type":"Answer","position":4,"text":"SMB Azure Files 共有はプレミアム FileStorage アカウントでのみ利用できる"}],"acceptedAnswer":[{"@type":"Answer","position":0,"text":"Azure Files は Entra ID Kerberos 認証を使用して、Windows のドメイン参加 PC からシームレスに認証できる","comment":{"@type":"Comment","text":"SMB 3.0 以降は AES 暗号化による転送中データの暗号化（SMB 暗号化）をサポートしており、Azure Files はデフォルトで SMB 暗号化を要求する（SMB 2.1 では転送暗号化がなく、Azure 内部通信のみに限定される）。また、Azure Files は Entra ID Kerberos 認証（旧 Azure AD Kerberos）および AD DS 認証をサポートしており、ドメイン参加 Windows PC から Windows 認証でシームレスにアクセスできる。選択肢 E は誤りで、標準（HDD ベース）の SMB 共有は汎用 v2 ストレージアカウントでも作成できる（プレミアムは NFS やパフォーマンス要件が高い場合に使用）。選択肢 B は誤りで、Azure Files はポート 445 が開いていればインターネット経由でのアクセスも可能（プライベートエンドポイントは推奨だが必須ではない）。選択肢 D は誤りで、1 つの共有は SMB または NFS のいずれか一方のプロトコルのみ使用できる。"}},{"@type":"Answer","position":2,"text":"SMB 3.0 以降を使用することで転送中の暗号化（SMB 暗号化）をサポートする","comment":{"@type":"Comment","text":"SMB 3.0 以降は AES 暗号化による転送中データの暗号化（SMB 暗号化）をサポートしており、Azure Files はデフォルトで SMB 暗号化を要求する（SMB 2.1 では転送暗号化がなく、Azure 内部通信のみに限定される）。また、Azure Files は Entra ID Kerberos 認証（旧 Azure AD Kerberos）および AD DS 認証をサポートしており、ドメイン参加 Windows PC から Windows 認証でシームレスにアクセスできる。選択肢 E は誤りで、標準（HDD ベース）の SMB 共有は汎用 v2 ストレージアカウントでも作成できる（プレミアムは NFS やパフォーマンス要件が高い場合に使用）。選択肢 B は誤りで、Azure Files はポート 445 が開いていればインターネット経由でのアクセスも可能（プライベートエンドポイントは推奨だが必須ではない）。選択肢 D は誤りで、1 つの共有は SMB または NFS のいずれか一方のプロトコルのみ使用できる。"}}]}]},{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"HOME","item":"https://cloudcert.app/"},{"@type":"ListItem","position":2,"name":"AZ-104 試験ガイド","item":"https://cloudcert.app/exams/azure-az104/"},{"@type":"ListItem","position":3,"name":"q059"}]}]</script>
+</head>
+<body class="page-body">
+<header class="page-header"><a class="page-logo" href="../../index.html">&gt; CLOUDCERT_</a></header>
+<main class="page-main">
+
+<nav class="breadcrumb"><a href="../../index.html">HOME</a> › <a href="../../exams/azure-az104/">AZ-104 試験ガイド</a> › q059</nav>
+<div class="q-meta"><span>AZ-104</span><span>Azure ストレージの実装と管理</span><span>MEDIUM</span><span>複数選択</span></div>
+<h1>ある企業が Azure Files を評価している。Azure Files で SMB プロトコルを使用する際の要件として正しいものを 2 つ選択してください。</h1>
+<ol class="q-choices">
+<li><b>A.</b> Azure Files は Entra ID Kerberos 認証を使用して、Windows のドメイン参加 PC からシームレスに認証できる</li>
+<li><b>B.</b> Azure Files への SMB アクセスには必ずプライベートエンドポイントが必要である</li>
+<li><b>C.</b> SMB 3.0 以降を使用することで転送中の暗号化（SMB 暗号化）をサポートする</li>
+<li><b>D.</b> NFS と SMB を同じ共有で同時に使用できる</li>
+<li><b>E.</b> SMB Azure Files 共有はプレミアム FileStorage アカウントでのみ利用できる</li>
+</ol>
+<details class="q-answer">
+<summary>解答と解説を見る</summary>
+<div class="inner">
+<p><b>正解: A, C</b></p>
+<p>SMB 3.0 以降は AES 暗号化による転送中データの暗号化（SMB 暗号化）をサポートしており、Azure Files はデフォルトで SMB 暗号化を要求する（SMB 2.1 では転送暗号化がなく、Azure 内部通信のみに限定される）。また、Azure Files は Entra ID Kerberos 認証（旧 Azure AD Kerberos）および AD DS 認証をサポートしており、ドメイン参加 Windows PC から Windows 認証でシームレスにアクセスできる。選択肢 E は誤りで、標準（HDD ベース）の SMB 共有は汎用 v2 ストレージアカウントでも作成できる（プレミアムは NFS やパフォーマンス要件が高い場合に使用）。選択肢 B は誤りで、Azure Files はポート 445 が開いていればインターネット経由でのアクセスも可能（プライベートエンドポイントは推奨だが必須ではない）。選択肢 D は誤りで、1 つの共有は SMB または NFS のいずれか一方のプロトコルのみ使用できる。</p>
+<div class="svc-links">📚 関連サービスの解説: <a href="../../learn/azure-files.html">Azure Files</a> ・ <a href="../../learn/microsoft-entra-id.html">Microsoft Entra ID</a></div>
+</div>
+</details>
+<div class="cta-box"><a class="btn btn-primary" href="../../exam.html?exam=azure-az104">▸ この試験を本気で演習する（全150問・無料）</a></div>
+<nav class="q-nav">
+<span><a href="q058.html">← 前の問題</a></span>
+<span><a href="q060.html">次の問題 →</a></span>
+</nav>
+<section class="related"><h2>同じ分野の関連問題</h2><ul class="q-list">
+<li><a href="q058.html">ある企業が Azure BLOB ストレージのアクセス層について検討している。ホット層とクール層の違いについて正しい説明…</a></li>
+<li><a href="q060.html">ある企業がストレージアカウントに SAS（Shared Access Signature）を設計している。セキュリティの…</a></li>
+<li><a href="q057.html">ある企業のセキュリティ要件として、Azure ストレージアカウントへのすべてのアクセスはストレージアカウントのアクセスキ…</a></li>
+<li><a href="q061.html">ある企業が Azure ストレージアカウントの冗長性とフェールオーバーについて計画を立てている。ストレージアカウントのフ…</a></li>
+</ul></section>
+</main>
+<footer class="page-footer">
+<nav class="hub-nav"><a href="../../exams/aws-clf-c02/">CLF-C02 試験ガイド</a><a href="../../exams/aws-aif-c01/">AIF-C01 試験ガイド</a><a href="../../exams/aws-saa-c03/">SAA-C03 試験ガイド</a><a href="../../exams/aws-dva-c02/">DVA-C02 試験ガイド</a><a href="../../exams/aws-sap-c02/">SAP-C02 試験ガイド</a><a href="../../exams/gcp-cdl/">CDL 試験ガイド</a><a href="../../exams/gcp-ace/">ACE 試験ガイド</a><a href="../../exams/azure-az900/">AZ-900 試験ガイド</a><a href="../../exams/azure-ai900/">AI-900 試験ガイド</a><a href="../../exams/azure-dp900/">DP-900 試験ガイド</a><a href="../../exams/azure-sc900/">SC-900 試験ガイド</a><a href="../../exams/azure-az104/">AZ-104 試験ガイド</a></nav>
+<nav class="site-nav"><a href="../../guide/">資格ガイド</a><a href="../../learn/">サービス解説</a><a href="../../career/">キャリア</a><a href="../../about.html">運営者情報</a><a href="../../privacy.html">プライバシーポリシー</a><a href="../../contact.html">お問い合わせ</a></nav>
+<p class="copy">© CLOUDCERT_ — 本サイトは各認定試験の公式試験ではなく、収録問題はすべてオリジナルの演習問題です。</p>
+</footer>
+</body>
+</html>

@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>【AIF-C01 演習問題 #39】あるスタートアップが、ユーザーのレビュー文（数百字）を1〜5の感情スコアに分類するタスクを…</title>
+<meta name="description" content="AIF-C01の本試験レベル演習問題。あるスタートアップが、ユーザーのレビュー文（数百字）を1〜5の感情スコアに分類するタスクを実装しようとしている。トレーニングデータは1万件のラベル付きレビューが手元にある。コストと精… 全選択肢の解説つき。">
+<link rel="canonical" href="https://cloudcert.app/q/aws-aif-c01/q039.html">
+<meta property="og:title" content="【AIF-C01 演習問題 #39】あるスタートアップが、ユーザーのレビュー文（数百字）を1〜5の感情スコアに分類するタスクを…">
+<meta property="og:description" content="AIF-C01の本試験レベル演習問題。あるスタートアップが、ユーザーのレビュー文（数百字）を1〜5の感情スコアに分類するタスクを実装しようとしている。トレーニングデータは1万件のラベル付きレビューが手元にある。コストと精… 全選択肢の解説つき。">
+<meta property="og:url" content="https://cloudcert.app/q/aws-aif-c01/q039.html">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="CLOUDCERT_">
+<meta property="og:image" content="https://cloudcert.app/assets/og.png">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='80' font-size='80' fill='%233fe0a4' font-family='monospace'>▸</text></svg>">
+
+<meta name="google-adsense-account" content="ca-pub-5647574947191958">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+JP:wght@400;500;700&family=JetBrains+Mono:wght@400;600;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../../css/style.css">
+<link rel="stylesheet" href="../../css/page.css">
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-SZR5CB5Q3X"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag('js',new Date());gtag('config','G-SZR5CB5Q3X');</script>
+<script type="application/ld+json">[{"@context":"https://schema.org/","@type":"Quiz","about":{"@type":"Thing","name":"AWS Certified AI Practitioner"},"hasPart":[{"@type":"Question","eduQuestionType":"Multiple choice","learningResourceType":"Practice problem","text":"あるスタートアップが、ユーザーのレビュー文（数百字）を1〜5の感情スコアに分類するタスクを実装しようとしている。トレーニングデータは1万件のラベル付きレビューが手元にある。コストと精度のバランスを重視する場合、最も適切な選択はどれか。","suggestedAnswer":[{"@type":"Answer","position":0,"text":"Amazon Rekognition の画像分析機能を利用してテキスト感情を判定する"},{"@type":"Answer","position":1,"text":"ルールベースのキーワードマッチングのみで分類し、ML を一切使わない"},{"@type":"Answer","position":3,"text":"GPT-4 相当の大規模 LLM を API 経由で呼び出し、1リクエストごとに感情スコアを生成させる"}],"acceptedAnswer":{"@type":"Answer","position":2,"text":"小規模な BERT 系分類モデルをファインチューニングして専用分類器を構築する","comment":{"@type":"Comment","text":"感情分類のような構造化予測タスクは、1万件のラベルデータがあれば BERT 系モデルのファインチューニングで十分な精度が得られ、推論コストも大規模 LLM より大幅に安い。これは「生成 AI と従来 ML の使い分け」の典型例である。Dは誤り：大規模 LLM は汎用性は高いが推論コストが高く、ラベルデータが存在するタスクには過剰投資になりやすい。Aは誤り：Rekognition は画像・動画の分析サービスであり、テキスト感情分類には使えない。Bは誤り：ルールベースはメンテナンスコストが高く、表現の多様性に対応できず精度も低い。"}}}]},{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"HOME","item":"https://cloudcert.app/"},{"@type":"ListItem","position":2,"name":"AIF-C01 試験ガイド","item":"https://cloudcert.app/exams/aws-aif-c01/"},{"@type":"ListItem","position":3,"name":"q039"}]}]</script>
+</head>
+<body class="page-body">
+<header class="page-header"><a class="page-logo" href="../../index.html">&gt; CLOUDCERT_</a></header>
+<main class="page-main">
+
+<nav class="breadcrumb"><a href="../../index.html">HOME</a> › <a href="../../exams/aws-aif-c01/">AIF-C01 試験ガイド</a> › q039</nav>
+<div class="q-meta"><span>AIF-C01</span><span>生成 AI の基礎</span><span>MEDIUM</span><span>単一選択</span></div>
+<h1>あるスタートアップが、ユーザーのレビュー文（数百字）を1〜5の感情スコアに分類するタスクを実装しようとしている。トレーニングデータは1万件のラベル付きレビューが手元にある。コストと精度のバランスを重視する場合、最も適切な選択はどれか。</h1>
+<ol class="q-choices">
+<li><b>A.</b> Amazon Rekognition の画像分析機能を利用してテキスト感情を判定する</li>
+<li><b>B.</b> ルールベースのキーワードマッチングのみで分類し、ML を一切使わない</li>
+<li><b>C.</b> 小規模な BERT 系分類モデルをファインチューニングして専用分類器を構築する</li>
+<li><b>D.</b> GPT-4 相当の大規模 LLM を API 経由で呼び出し、1リクエストごとに感情スコアを生成させる</li>
+</ol>
+<details class="q-answer">
+<summary>解答と解説を見る</summary>
+<div class="inner">
+<p><b>正解: C</b></p>
+<p>感情分類のような構造化予測タスクは、1万件のラベルデータがあれば BERT 系モデルのファインチューニングで十分な精度が得られ、推論コストも大規模 LLM より大幅に安い。これは「生成 AI と従来 ML の使い分け」の典型例である。Dは誤り：大規模 LLM は汎用性は高いが推論コストが高く、ラベルデータが存在するタスクには過剰投資になりやすい。Aは誤り：Rekognition は画像・動画の分析サービスであり、テキスト感情分類には使えない。Bは誤り：ルールベースはメンテナンスコストが高く、表現の多様性に対応できず精度も低い。</p>
+
+</div>
+</details>
+<div class="cta-box"><a class="btn btn-primary" href="../../exam.html?exam=aws-aif-c01">▸ この試験を本気で演習する（全150問・無料）</a></div>
+<nav class="q-nav">
+<span><a href="q038.html">← 前の問題</a></span>
+<span><a href="q040.html">次の問題 →</a></span>
+</nav>
+<section class="related"><h2>同じ分野の関連問題</h2><ul class="q-list">
+<li><a href="q038.html">ある金融サービス企業が、顧客向けチャットボットに生成 AI を導入することを検討している。規制上の理由から、モデルが出力…</a></li>
+<li><a href="q040.html">ある SaaS 企業が、顧客サポートチケットの要約機能を生成 AI で実装した。サービスリリース後、一部の要約に含まれて…</a></li>
+<li><a href="q037.html">ある企業が Amazon Q Business を評価している。Amazon Q Business の主な用途として最も…</a></li>
+<li><a href="q041.html">ある企業が、コード補完 AI ツールを開発者向けに社内導入した。セキュリティチームから「モデルが古いライブラリの脆弱なコ…</a></li>
+</ul></section>
+</main>
+<footer class="page-footer">
+<nav class="hub-nav"><a href="../../exams/aws-clf-c02/">CLF-C02 試験ガイド</a><a href="../../exams/aws-aif-c01/">AIF-C01 試験ガイド</a><a href="../../exams/aws-saa-c03/">SAA-C03 試験ガイド</a><a href="../../exams/aws-dva-c02/">DVA-C02 試験ガイド</a><a href="../../exams/aws-sap-c02/">SAP-C02 試験ガイド</a><a href="../../exams/gcp-cdl/">CDL 試験ガイド</a><a href="../../exams/gcp-ace/">ACE 試験ガイド</a><a href="../../exams/azure-az900/">AZ-900 試験ガイド</a><a href="../../exams/azure-ai900/">AI-900 試験ガイド</a><a href="../../exams/azure-dp900/">DP-900 試験ガイド</a><a href="../../exams/azure-sc900/">SC-900 試験ガイド</a><a href="../../exams/azure-az104/">AZ-104 試験ガイド</a></nav>
+<nav class="site-nav"><a href="../../guide/">資格ガイド</a><a href="../../learn/">サービス解説</a><a href="../../career/">キャリア</a><a href="../../about.html">運営者情報</a><a href="../../privacy.html">プライバシーポリシー</a><a href="../../contact.html">お問い合わせ</a></nav>
+<p class="copy">© CLOUDCERT_ — 本サイトは各認定試験の公式試験ではなく、収録問題はすべてオリジナルの演習問題です。</p>
+</footer>
+</body>
+</html>

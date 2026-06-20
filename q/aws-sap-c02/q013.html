@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>【SAP-C02 演習問題 #13】ある製造業企業が AWS Organizations で 100 以上の AWS アカウン…</title>
+<meta name="description" content="SAP-C02の本試験レベル演習問題。ある製造業企業が AWS Organizations で 100 以上の AWS アカウントを管理しています。IT セキュリティポリシーにより、すべての EBS ボリュームは AWS… 全選択肢の解説つき。">
+<link rel="canonical" href="https://cloudcert.app/q/aws-sap-c02/q013.html">
+<meta property="og:title" content="【SAP-C02 演習問題 #13】ある製造業企業が AWS Organizations で 100 以上の AWS アカウン…">
+<meta property="og:description" content="SAP-C02の本試験レベル演習問題。ある製造業企業が AWS Organizations で 100 以上の AWS アカウントを管理しています。IT セキュリティポリシーにより、すべての EBS ボリュームは AWS… 全選択肢の解説つき。">
+<meta property="og:url" content="https://cloudcert.app/q/aws-sap-c02/q013.html">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="CLOUDCERT_">
+<meta property="og:image" content="https://cloudcert.app/assets/og.png">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='80' font-size='80' fill='%233fe0a4' font-family='monospace'>▸</text></svg>">
+
+<meta name="google-adsense-account" content="ca-pub-5647574947191958">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+JP:wght@400;500;700&family=JetBrains+Mono:wght@400;600;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../../css/style.css">
+<link rel="stylesheet" href="../../css/page.css">
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-SZR5CB5Q3X"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag('js',new Date());gtag('config','G-SZR5CB5Q3X');</script>
+<script type="application/ld+json">[{"@context":"https://schema.org/","@type":"Quiz","about":{"@type":"Thing","name":"AWS Certified Solutions Architect - Professional"},"hasPart":[{"@type":"Question","eduQuestionType":"Multiple choice","learningResourceType":"Practice problem","text":"ある製造業企業が AWS Organizations で 100 以上の AWS アカウントを管理しています。IT セキュリティポリシーにより、すべての EBS ボリュームは AWS KMS カスタマー管理キー（CMK）で暗号化する必要があります。また、CMK のキーローテーションは年次で自動的に行われる必要があり、キーの削除には 30 日間の待機期間が必要です。これをすべてのアカウントに強制適用する最も効率的な方法はどれですか？","suggestedAnswer":[{"@type":"Answer","position":0,"text":"各アカウントで EC2 の EBS 暗号化デフォルト設定を有効化し、KMS CMK を使用するように設定する。キーポリシーでローテーションと削除待機を設定する"},{"@type":"Answer","position":2,"text":"AWS Security Hub の暗号化管理機能を使って全アカウントの EBS 暗号化ステータスを監視し、週次レポートを生成して手動対応する"},{"@type":"Answer","position":3,"text":"AWS Config のカスタムルールを作成して暗号化されていない EBS ボリュームを検出し、Systems Manager Automation で自動暗号化する"}],"acceptedAnswer":{"@type":"Answer","position":1,"text":"CloudFormation StackSets を使って全アカウントに EC2 EBS デフォルト暗号化（CMK 指定）と KMS キーポリシー（自動ローテーション有効、削除待機 30 日）の設定スタックを展開する。SCP で kms:DisableKeyRotation と kms:ScheduleKeyDeletion（PendingWindowInDays < 30 の場合）を Deny する","comment":{"@type":"Comment","text":"StackSets で EBS デフォルト暗号化と KMS キーポリシーを展開し、SCP で kms:DisableKeyRotation と短い削除待機での ScheduleKeyDeletion を Deny することで、予防的かつ自動化された強制が実現できます。StackSets の自動展開により新規アカウントにも適用されます。\n\nA: 各アカウントで手動設定する方法はスケールしません。100 以上のアカウントでは管理が困難で、設定漏れが生じるリスクがあります。\n\nD: Config による事後検出と自動修復では、未暗号化の EBS ボリュームが一時的に存在する期間が生じます。また新規作成時の暗号化強制には「デフォルト暗号化」の有効化が必要で Config だけでは不十分です。\n\nC: Security Hub による監視と週次レポートは完全な検出と報告が目的であり、暗号化の強制的な適用（予防的制御）ではありません。手動対応は運用負荷が高く、コンプライアンスギャップが生じます。"}}}]},{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"HOME","item":"https://cloudcert.app/"},{"@type":"ListItem","position":2,"name":"SAP-C02 試験ガイド","item":"https://cloudcert.app/exams/aws-sap-c02/"},{"@type":"ListItem","position":3,"name":"q013"}]}]</script>
+</head>
+<body class="page-body">
+<header class="page-header"><a class="page-logo" href="../../index.html">&gt; CLOUDCERT_</a></header>
+<main class="page-main">
+
+<nav class="breadcrumb"><a href="../../index.html">HOME</a> › <a href="../../exams/aws-sap-c02/">SAP-C02 試験ガイド</a> › q013</nav>
+<div class="q-meta"><span>SAP-C02</span><span>複雑な組織に対応するソリューションの設計</span><span>HARD</span><span>単一選択</span></div>
+<h1>ある製造業企業が AWS Organizations で 100 以上の AWS アカウントを管理しています。IT セキュリティポリシーにより、すべての EBS ボリュームは AWS KMS カスタマー管理キー（CMK）で暗号化する必要があります。また、CMK のキーローテーションは年次で自動的に行われる必要があり、キーの削除には 30 日間の待機期間が必要です。これをすべてのアカウントに強制適用する最も効率的な方法はどれですか？</h1>
+<ol class="q-choices">
+<li><b>A.</b> 各アカウントで EC2 の EBS 暗号化デフォルト設定を有効化し、KMS CMK を使用するように設定する。キーポリシーでローテーションと削除待機を設定する</li>
+<li><b>B.</b> CloudFormation StackSets を使って全アカウントに EC2 EBS デフォルト暗号化（CMK 指定）と KMS キーポリシー（自動ローテーション有効、削除待機 30 日）の設定スタックを展開する。SCP で kms:DisableKeyRotation と kms:ScheduleKeyDeletion（PendingWindowInDays &lt; 30 の場合）を Deny する</li>
+<li><b>C.</b> AWS Security Hub の暗号化管理機能を使って全アカウントの EBS 暗号化ステータスを監視し、週次レポートを生成して手動対応する</li>
+<li><b>D.</b> AWS Config のカスタムルールを作成して暗号化されていない EBS ボリュームを検出し、Systems Manager Automation で自動暗号化する</li>
+</ol>
+<details class="q-answer">
+<summary>解答と解説を見る</summary>
+<div class="inner">
+<p><b>正解: B</b></p>
+<p>StackSets で EBS デフォルト暗号化と KMS キーポリシーを展開し、SCP で kms:DisableKeyRotation と短い削除待機での ScheduleKeyDeletion を Deny することで、予防的かつ自動化された強制が実現できます。StackSets の自動展開により新規アカウントにも適用されます。
+
+A: 各アカウントで手動設定する方法はスケールしません。100 以上のアカウントでは管理が困難で、設定漏れが生じるリスクがあります。
+
+D: Config による事後検出と自動修復では、未暗号化の EBS ボリュームが一時的に存在する期間が生じます。また新規作成時の暗号化強制には「デフォルト暗号化」の有効化が必要で Config だけでは不十分です。
+
+C: Security Hub による監視と週次レポートは完全な検出と報告が目的であり、暗号化の強制的な適用（予防的制御）ではありません。手動対応は運用負荷が高く、コンプライアンスギャップが生じます。</p>
+<div class="svc-links">📚 関連サービスの解説: <a href="../../learn/aws-cloudformation.html">AWS CloudFormation</a> ・ <a href="../../learn/amazon-ec2.html">Amazon EC2</a></div>
+</div>
+</details>
+<div class="cta-box"><a class="btn btn-primary" href="../../exam.html?exam=aws-sap-c02">▸ この試験を本気で演習する（全150問・無料）</a></div>
+<nav class="q-nav">
+<span><a href="q012.html">← 前の問題</a></span>
+<span><a href="q014.html">次の問題 →</a></span>
+</nav>
+<section class="related"><h2>同じ分野の関連問題</h2><ul class="q-list">
+<li><a href="q012.html">ある企業が AWS に移行しており、セキュリティチームはすべての VPC で VPC Flow Logs を有効化し、ロ…</a></li>
+<li><a href="q014.html">ある企業が AWS Organizations で管理するマルチアカウント環境において、全アカウントのセキュリティイベン…</a></li>
+<li><a href="q011.html">ある企業が AWS Organizations の一括請求を使って 30 以上のアカウントのコストを管理しています。財務…</a></li>
+<li><a href="q015.html">あるエンタープライズ企業が AWS Direct Connect を使用してオンプレミスデータセンターと AWS を接続…</a></li>
+</ul></section>
+</main>
+<footer class="page-footer">
+<nav class="hub-nav"><a href="../../exams/aws-clf-c02/">CLF-C02 試験ガイド</a><a href="../../exams/aws-aif-c01/">AIF-C01 試験ガイド</a><a href="../../exams/aws-saa-c03/">SAA-C03 試験ガイド</a><a href="../../exams/aws-dva-c02/">DVA-C02 試験ガイド</a><a href="../../exams/aws-sap-c02/">SAP-C02 試験ガイド</a><a href="../../exams/gcp-cdl/">CDL 試験ガイド</a><a href="../../exams/gcp-ace/">ACE 試験ガイド</a><a href="../../exams/azure-az900/">AZ-900 試験ガイド</a><a href="../../exams/azure-ai900/">AI-900 試験ガイド</a><a href="../../exams/azure-dp900/">DP-900 試験ガイド</a><a href="../../exams/azure-sc900/">SC-900 試験ガイド</a><a href="../../exams/azure-az104/">AZ-104 試験ガイド</a></nav>
+<nav class="site-nav"><a href="../../guide/">資格ガイド</a><a href="../../learn/">サービス解説</a><a href="../../career/">キャリア</a><a href="../../about.html">運営者情報</a><a href="../../privacy.html">プライバシーポリシー</a><a href="../../contact.html">お問い合わせ</a></nav>
+<p class="copy">© CLOUDCERT_ — 本サイトは各認定試験の公式試験ではなく、収録問題はすべてオリジナルの演習問題です。</p>
+</footer>
+</body>
+</html>

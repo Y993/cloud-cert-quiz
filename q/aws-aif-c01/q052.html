@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>【AIF-C01 演習問題 #52】ある企業が Amazon Bedrock でマルチモーダルモデル（テキスト＋画像入力）を利…</title>
+<meta name="description" content="AIF-C01の本試験レベル演習問題。ある企業が Amazon Bedrock でマルチモーダルモデル（テキスト＋画像入力）を利用して、商品画像から自動的に詳細説明文を生成するシステムを構築した。出力の品質を評価するため… 全選択肢の解説つき。">
+<link rel="canonical" href="https://cloudcert.app/q/aws-aif-c01/q052.html">
+<meta property="og:title" content="【AIF-C01 演習問題 #52】ある企業が Amazon Bedrock でマルチモーダルモデル（テキスト＋画像入力）を利…">
+<meta property="og:description" content="AIF-C01の本試験レベル演習問題。ある企業が Amazon Bedrock でマルチモーダルモデル（テキスト＋画像入力）を利用して、商品画像から自動的に詳細説明文を生成するシステムを構築した。出力の品質を評価するため… 全選択肢の解説つき。">
+<meta property="og:url" content="https://cloudcert.app/q/aws-aif-c01/q052.html">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="CLOUDCERT_">
+<meta property="og:image" content="https://cloudcert.app/assets/og.png">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='80' font-size='80' fill='%233fe0a4' font-family='monospace'>▸</text></svg>">
+
+<meta name="google-adsense-account" content="ca-pub-5647574947191958">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+JP:wght@400;500;700&family=JetBrains+Mono:wght@400;600;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../../css/style.css">
+<link rel="stylesheet" href="../../css/page.css">
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-SZR5CB5Q3X"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag('js',new Date());gtag('config','G-SZR5CB5Q3X');</script>
+<script type="application/ld+json">[{"@context":"https://schema.org/","@type":"Quiz","about":{"@type":"Thing","name":"AWS Certified AI Practitioner"},"hasPart":[{"@type":"Question","eduQuestionType":"Multiple choice","learningResourceType":"Practice problem","text":"ある企業が Amazon Bedrock でマルチモーダルモデル（テキスト＋画像入力）を利用して、商品画像から自動的に詳細説明文を生成するシステムを構築した。出力の品質を評価するための最も適切な指標の組み合わせはどれか。","suggestedAnswer":[{"@type":"Answer","position":1,"text":"モデルの API 呼び出しコストのみを測定し、コストが低いモデルを高品質と見なす"},{"@type":"Answer","position":2,"text":"出力テキストの文字数のみを品質指標とし、長文であるほど高品質と判断する"},{"@type":"Answer","position":3,"text":"生成速度（スループット）のみを測定し、速ければ速いほど品質が高いと判断する"}],"acceptedAnswer":{"@type":"Answer","position":0,"text":"人間評価者による関連性スコアと BLEU/ROUGE スコアを組み合わせて、自動評価と人間評価の両方を実施する","comment":{"@type":"Comment","text":"生成テキストの品質評価には、BLEU（参照文との n-gram 一致率）・ROUGE（召還率ベース）などの自動指標と、人間評価者による関連性・正確性・流暢性の主観評価を組み合わせることが、業界標準の評価手法である。Dは誤り：スループットはシステム性能指標であり、テキストの意味的品質（関連性・正確性）を測らない。Bは誤り：コストはビジネス制約であり、安価なモデルが必ずしも高品質な出力を生成するとは言えない。Cは誤り：長文であることは冗長性や内容の繰り返しを意味する場合もあり、文字数と品質は相関しない。"}}}]},{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"HOME","item":"https://cloudcert.app/"},{"@type":"ListItem","position":2,"name":"AIF-C01 試験ガイド","item":"https://cloudcert.app/exams/aws-aif-c01/"},{"@type":"ListItem","position":3,"name":"q052"}]}]</script>
+</head>
+<body class="page-body">
+<header class="page-header"><a class="page-logo" href="../../index.html">&gt; CLOUDCERT_</a></header>
+<main class="page-main">
+
+<nav class="breadcrumb"><a href="../../index.html">HOME</a> › <a href="../../exams/aws-aif-c01/">AIF-C01 試験ガイド</a> › q052</nav>
+<div class="q-meta"><span>AIF-C01</span><span>生成 AI の基礎</span><span>MEDIUM</span><span>単一選択</span></div>
+<h1>ある企業が Amazon Bedrock でマルチモーダルモデル（テキスト＋画像入力）を利用して、商品画像から自動的に詳細説明文を生成するシステムを構築した。出力の品質を評価するための最も適切な指標の組み合わせはどれか。</h1>
+<ol class="q-choices">
+<li><b>A.</b> 人間評価者による関連性スコアと BLEU/ROUGE スコアを組み合わせて、自動評価と人間評価の両方を実施する</li>
+<li><b>B.</b> モデルの API 呼び出しコストのみを測定し、コストが低いモデルを高品質と見なす</li>
+<li><b>C.</b> 出力テキストの文字数のみを品質指標とし、長文であるほど高品質と判断する</li>
+<li><b>D.</b> 生成速度（スループット）のみを測定し、速ければ速いほど品質が高いと判断する</li>
+</ol>
+<details class="q-answer">
+<summary>解答と解説を見る</summary>
+<div class="inner">
+<p><b>正解: A</b></p>
+<p>生成テキストの品質評価には、BLEU（参照文との n-gram 一致率）・ROUGE（召還率ベース）などの自動指標と、人間評価者による関連性・正確性・流暢性の主観評価を組み合わせることが、業界標準の評価手法である。Dは誤り：スループットはシステム性能指標であり、テキストの意味的品質（関連性・正確性）を測らない。Bは誤り：コストはビジネス制約であり、安価なモデルが必ずしも高品質な出力を生成するとは言えない。Cは誤り：長文であることは冗長性や内容の繰り返しを意味する場合もあり、文字数と品質は相関しない。</p>
+
+</div>
+</details>
+<div class="cta-box"><a class="btn btn-primary" href="../../exam.html?exam=aws-aif-c01">▸ この試験を本気で演習する（全150問・無料）</a></div>
+<nav class="q-nav">
+<span><a href="q051.html">← 前の問題</a></span>
+<span><a href="q053.html">次の問題 →</a></span>
+</nav>
+<section class="related"><h2>同じ分野の関連問題</h2><ul class="q-list">
+<li><a href="q051.html">ある小売企業が、過去の販売データ（数値時系列）から翌週の需要を予測するシステムを構築したい。データには明確な季節性とトレ…</a></li>
+<li><a href="q053.html">ある企業が、自社の AWS 環境に関する質問（「コスト削減のベストプラクティスは？」「セキュリティグループの設定を確認し…</a></li>
+<li><a href="q050.html">ある企業が、社内の技術文書（200 万トークン相当）を対象にした質問応答システムを構築している。コンテキストウィンドウが…</a></li>
+<li><a href="q054.html">ある企業が、ユーザーのチャット入力をリアルタイムでストリーミング表示する生成 AI チャットボットを設計している。レスポ…</a></li>
+</ul></section>
+</main>
+<footer class="page-footer">
+<nav class="hub-nav"><a href="../../exams/aws-clf-c02/">CLF-C02 試験ガイド</a><a href="../../exams/aws-aif-c01/">AIF-C01 試験ガイド</a><a href="../../exams/aws-saa-c03/">SAA-C03 試験ガイド</a><a href="../../exams/aws-dva-c02/">DVA-C02 試験ガイド</a><a href="../../exams/aws-sap-c02/">SAP-C02 試験ガイド</a><a href="../../exams/gcp-cdl/">CDL 試験ガイド</a><a href="../../exams/gcp-ace/">ACE 試験ガイド</a><a href="../../exams/azure-az900/">AZ-900 試験ガイド</a><a href="../../exams/azure-ai900/">AI-900 試験ガイド</a><a href="../../exams/azure-dp900/">DP-900 試験ガイド</a><a href="../../exams/azure-sc900/">SC-900 試験ガイド</a><a href="../../exams/azure-az104/">AZ-104 試験ガイド</a></nav>
+<nav class="site-nav"><a href="../../guide/">資格ガイド</a><a href="../../learn/">サービス解説</a><a href="../../career/">キャリア</a><a href="../../about.html">運営者情報</a><a href="../../privacy.html">プライバシーポリシー</a><a href="../../contact.html">お問い合わせ</a></nav>
+<p class="copy">© CLOUDCERT_ — 本サイトは各認定試験の公式試験ではなく、収録問題はすべてオリジナルの演習問題です。</p>
+</footer>
+</body>
+</html>

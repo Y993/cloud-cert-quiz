@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>【SAA-C03 演習問題 #121】ある企業が、Amazon EKS クラスター上で動作するマイクロサービスの通信をセキュアに…</title>
+<meta name="description" content="SAA-C03の本試験レベル演習問題。ある企業が、Amazon EKS クラスター上で動作するマイクロサービスの通信をセキュアにしたい。サービス間の通信は mTLS（相互TLS）で暗号化・認証し、各サービスが最小限のサー… 全選択肢の解説つき。">
+<link rel="canonical" href="https://cloudcert.app/q/aws-saa-c03/q121.html">
+<meta property="og:title" content="【SAA-C03 演習問題 #121】ある企業が、Amazon EKS クラスター上で動作するマイクロサービスの通信をセキュアに…">
+<meta property="og:description" content="SAA-C03の本試験レベル演習問題。ある企業が、Amazon EKS クラスター上で動作するマイクロサービスの通信をセキュアにしたい。サービス間の通信は mTLS（相互TLS）で暗号化・認証し、各サービスが最小限のサー… 全選択肢の解説つき。">
+<meta property="og:url" content="https://cloudcert.app/q/aws-saa-c03/q121.html">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="CLOUDCERT_">
+<meta property="og:image" content="https://cloudcert.app/assets/og.png">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='80' font-size='80' fill='%233fe0a4' font-family='monospace'>▸</text></svg>">
+
+<meta name="google-adsense-account" content="ca-pub-5647574947191958">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+JP:wght@400;500;700&family=JetBrains+Mono:wght@400;600;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../../css/style.css">
+<link rel="stylesheet" href="../../css/page.css">
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-SZR5CB5Q3X"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag('js',new Date());gtag('config','G-SZR5CB5Q3X');</script>
+<script type="application/ld+json">[{"@context":"https://schema.org/","@type":"Quiz","about":{"@type":"Thing","name":"AWS Certified Solutions Architect – Associate"},"hasPart":[{"@type":"Question","eduQuestionType":"Checkbox","learningResourceType":"Practice problem","text":"ある企業が、Amazon EKS クラスター上で動作するマイクロサービスの通信をセキュアにしたい。サービス間の通信は mTLS（相互TLS）で暗号化・認証し、各サービスが最小限のサービスとのみ通信できるようにアクセス制御したい。また、Kubernetes のネットワークポリシーを超えた高度なアクセス制御も必要。これらを実現するサービス/コンポーネントを 2 つ選択してください。","suggestedAnswer":[{"@type":"Answer","position":0,"text":"Amazon Cognito でサービス間の認証を行う。"},{"@type":"Answer","position":3,"text":"AWS WAF を EKS クラスターに統合してサービス間通信を保護する。"},{"@type":"Answer","position":4,"text":"Amazon VPC セキュリティグループで Pod 間の通信を IP アドレスレベルで制限する。"}],"acceptedAnswer":[{"@type":"Answer","position":1,"text":"AWS App Mesh をサービスメッシュとして導入し、Envoy プロキシサイドカーで mTLS 通信と高度なトラフィック管理を実現する。","comment":{"@type":"Comment","text":"EKS のサービス間通信のセキュリティには複数の層でのアプローチが有効である。選択肢BのAWS App Mesh はサービスメッシュとして Envoy プロキシを各 Pod にサイドカーとして注入し、mTLS による自動的なサービス間通信の暗号化と相互認証を実現する。また、HTTP ルーティングルール・サービスグラフ・詳細なトラフィック制御など Kubernetes NetworkPolicy を超えた高度なアクセス制御が可能。選択肢CのKubernetes NetworkPolicy は Pod ラベルに基づく L3/L4 レベルのアクセス制御を提供し、特定の Pod グループ間の通信のみを許可するホワイトリスト型の制御が実装できる。App Mesh（L7 レベルのアクセス制御）と NetworkPolicy（L3/L4 レベル）の組み合わせにより多層防御が実現できる。選択肢EのVPC セキュリティグループは Pod 単位ではなくノード単位の制御が基本であり、Pod レベルの細かい制御には NetworkPolicy が適切（ただし EKS で VPC CNI Security Groups for Pods を使えば Pod 単位も可能だが要件の mTLS 実現には不十分）。選択肢AのCognito はエンドユーザー認証向けであり、サービス間 mTLS 認証には不適切。選択肢DのWAF は HTTP/HTTPS の外部トラフィックのフィルタリングに使うもので、クラスター内部のサービス間通信には適用しない。"}},{"@type":"Answer","position":2,"text":"Kubernetes の NetworkPolicy リソースを使ってラベルベースのネットワーク分離を設定する（Kubernetes ネイティブな L3/L4 アクセス制御）。","comment":{"@type":"Comment","text":"EKS のサービス間通信のセキュリティには複数の層でのアプローチが有効である。選択肢BのAWS App Mesh はサービスメッシュとして Envoy プロキシを各 Pod にサイドカーとして注入し、mTLS による自動的なサービス間通信の暗号化と相互認証を実現する。また、HTTP ルーティングルール・サービスグラフ・詳細なトラフィック制御など Kubernetes NetworkPolicy を超えた高度なアクセス制御が可能。選択肢CのKubernetes NetworkPolicy は Pod ラベルに基づく L3/L4 レベルのアクセス制御を提供し、特定の Pod グループ間の通信のみを許可するホワイトリスト型の制御が実装できる。App Mesh（L7 レベルのアクセス制御）と NetworkPolicy（L3/L4 レベル）の組み合わせにより多層防御が実現できる。選択肢EのVPC セキュリティグループは Pod 単位ではなくノード単位の制御が基本であり、Pod レベルの細かい制御には NetworkPolicy が適切（ただし EKS で VPC CNI Security Groups for Pods を使えば Pod 単位も可能だが要件の mTLS 実現には不十分）。選択肢AのCognito はエンドユーザー認証向けであり、サービス間 mTLS 認証には不適切。選択肢DのWAF は HTTP/HTTPS の外部トラフィックのフィルタリングに使うもので、クラスター内部のサービス間通信には適用しない。"}}]}]},{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"HOME","item":"https://cloudcert.app/"},{"@type":"ListItem","position":2,"name":"SAA-C03 試験ガイド","item":"https://cloudcert.app/exams/aws-saa-c03/"},{"@type":"ListItem","position":3,"name":"q121"}]}]</script>
+</head>
+<body class="page-body">
+<header class="page-header"><a class="page-logo" href="../../index.html">&gt; CLOUDCERT_</a></header>
+<main class="page-main">
+
+<nav class="breadcrumb"><a href="../../index.html">HOME</a> › <a href="../../exams/aws-saa-c03/">SAA-C03 試験ガイド</a> › q121</nav>
+<div class="q-meta"><span>SAA-C03</span><span>セキュアなアーキテクチャの設計</span><span>HARD</span><span>複数選択</span></div>
+<h1>ある企業が、Amazon EKS クラスター上で動作するマイクロサービスの通信をセキュアにしたい。サービス間の通信は mTLS（相互TLS）で暗号化・認証し、各サービスが最小限のサービスとのみ通信できるようにアクセス制御したい。また、Kubernetes のネットワークポリシーを超えた高度なアクセス制御も必要。これらを実現するサービス/コンポーネントを 2 つ選択してください。</h1>
+<ol class="q-choices">
+<li><b>A.</b> Amazon Cognito でサービス間の認証を行う。</li>
+<li><b>B.</b> AWS App Mesh をサービスメッシュとして導入し、Envoy プロキシサイドカーで mTLS 通信と高度なトラフィック管理を実現する。</li>
+<li><b>C.</b> Kubernetes の NetworkPolicy リソースを使ってラベルベースのネットワーク分離を設定する（Kubernetes ネイティブな L3/L4 アクセス制御）。</li>
+<li><b>D.</b> AWS WAF を EKS クラスターに統合してサービス間通信を保護する。</li>
+<li><b>E.</b> Amazon VPC セキュリティグループで Pod 間の通信を IP アドレスレベルで制限する。</li>
+</ol>
+<details class="q-answer">
+<summary>解答と解説を見る</summary>
+<div class="inner">
+<p><b>正解: B, C</b></p>
+<p>EKS のサービス間通信のセキュリティには複数の層でのアプローチが有効である。選択肢BのAWS App Mesh はサービスメッシュとして Envoy プロキシを各 Pod にサイドカーとして注入し、mTLS による自動的なサービス間通信の暗号化と相互認証を実現する。また、HTTP ルーティングルール・サービスグラフ・詳細なトラフィック制御など Kubernetes NetworkPolicy を超えた高度なアクセス制御が可能。選択肢CのKubernetes NetworkPolicy は Pod ラベルに基づく L3/L4 レベルのアクセス制御を提供し、特定の Pod グループ間の通信のみを許可するホワイトリスト型の制御が実装できる。App Mesh（L7 レベルのアクセス制御）と NetworkPolicy（L3/L4 レベル）の組み合わせにより多層防御が実現できる。選択肢EのVPC セキュリティグループは Pod 単位ではなくノード単位の制御が基本であり、Pod レベルの細かい制御には NetworkPolicy が適切（ただし EKS で VPC CNI Security Groups for Pods を使えば Pod 単位も可能だが要件の mTLS 実現には不十分）。選択肢AのCognito はエンドユーザー認証向けであり、サービス間 mTLS 認証には不適切。選択肢DのWAF は HTTP/HTTPS の外部トラフィックのフィルタリングに使うもので、クラスター内部のサービス間通信には適用しない。</p>
+
+</div>
+</details>
+<div class="cta-box"><a class="btn btn-primary" href="../../exam.html?exam=aws-saa-c03">▸ この試験を本気で演習する（全150問・無料）</a></div>
+<nav class="q-nav">
+<span><a href="q120.html">← 前の問題</a></span>
+<span><a href="q122.html">次の問題 →</a></span>
+</nav>
+<section class="related"><h2>同じ分野の関連問題</h2><ul class="q-list">
+<li><a href="q118.html">ある企業が、AWS で動作するアプリケーションから機密データを含む複数の S3 バケットへの全アクセスを暗号化し、データ…</a></li>
+<li><a href="q126.html">ある企業が、複数の AWS アカウントにわたるリソースへのアクセスを Lambda 関数から行う必要がある。Lambda…</a></li>
+<li><a href="q114.html">ある企業が、Amazon ECR（Elastic Container Registry）に保存されているコンテナイメージ…</a></li>
+<li><a href="q130.html">ある企業が、AWS で HIPAA 準拠のアーキテクチャを設計している。EHR（電子健康記録）データを S3 に保存し、…</a></li>
+</ul></section>
+</main>
+<footer class="page-footer">
+<nav class="hub-nav"><a href="../../exams/aws-clf-c02/">CLF-C02 試験ガイド</a><a href="../../exams/aws-aif-c01/">AIF-C01 試験ガイド</a><a href="../../exams/aws-saa-c03/">SAA-C03 試験ガイド</a><a href="../../exams/aws-dva-c02/">DVA-C02 試験ガイド</a><a href="../../exams/aws-sap-c02/">SAP-C02 試験ガイド</a><a href="../../exams/gcp-cdl/">CDL 試験ガイド</a><a href="../../exams/gcp-ace/">ACE 試験ガイド</a><a href="../../exams/azure-az900/">AZ-900 試験ガイド</a><a href="../../exams/azure-ai900/">AI-900 試験ガイド</a><a href="../../exams/azure-dp900/">DP-900 試験ガイド</a><a href="../../exams/azure-sc900/">SC-900 試験ガイド</a><a href="../../exams/azure-az104/">AZ-104 試験ガイド</a></nav>
+<nav class="site-nav"><a href="../../guide/">資格ガイド</a><a href="../../learn/">サービス解説</a><a href="../../career/">キャリア</a><a href="../../about.html">運営者情報</a><a href="../../privacy.html">プライバシーポリシー</a><a href="../../contact.html">お問い合わせ</a></nav>
+<p class="copy">© CLOUDCERT_ — 本サイトは各認定試験の公式試験ではなく、収録問題はすべてオリジナルの演習問題です。</p>
+</footer>
+</body>
+</html>

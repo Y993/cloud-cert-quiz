@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>【DVA-C02 演習問題 #124】あるチームがLambda関数のパフォーマンス改善に取り組んでいる。関数は毎回初期化処理に2…</title>
+<meta name="description" content="DVA-C02の本試験レベル演習問題。あるチームがLambda関数のパフォーマンス改善に取り組んでいる。関数は毎回初期化処理に2秒かかっており、1日に数回しか呼ばれないため、呼び出しのたびにコールドスタートが発生している… 全選択肢の解説つき。">
+<link rel="canonical" href="https://cloudcert.app/q/aws-dva-c02/q124.html">
+<meta property="og:title" content="【DVA-C02 演習問題 #124】あるチームがLambda関数のパフォーマンス改善に取り組んでいる。関数は毎回初期化処理に2…">
+<meta property="og:description" content="DVA-C02の本試験レベル演習問題。あるチームがLambda関数のパフォーマンス改善に取り組んでいる。関数は毎回初期化処理に2秒かかっており、1日に数回しか呼ばれないため、呼び出しのたびにコールドスタートが発生している… 全選択肢の解説つき。">
+<meta property="og:url" content="https://cloudcert.app/q/aws-dva-c02/q124.html">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="CLOUDCERT_">
+<meta property="og:image" content="https://cloudcert.app/assets/og.png">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='80' font-size='80' fill='%233fe0a4' font-family='monospace'>▸</text></svg>">
+
+<meta name="google-adsense-account" content="ca-pub-5647574947191958">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+JP:wght@400;500;700&family=JetBrains+Mono:wght@400;600;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../../css/style.css">
+<link rel="stylesheet" href="../../css/page.css">
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-SZR5CB5Q3X"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag('js',new Date());gtag('config','G-SZR5CB5Q3X');</script>
+<script type="application/ld+json">[{"@context":"https://schema.org/","@type":"Quiz","about":{"@type":"Thing","name":"AWS Certified Developer - Associate"},"hasPart":[{"@type":"Question","eduQuestionType":"Multiple choice","learningResourceType":"Practice problem","text":"あるチームがLambda関数のパフォーマンス改善に取り組んでいる。関数は毎回初期化処理に2秒かかっており、1日に数回しか呼ばれないため、呼び出しのたびにコールドスタートが発生している。追加コストを最小限に抑えつつコールドスタートの影響を排除したい。最も適切な対策はどれか。","suggestedAnswer":[{"@type":"Answer","position":0,"text":"Lambda関数のメモリを最大の10,240MBに設定することでコールドスタート時間を短縮する"},{"@type":"Answer","position":1,"text":"Lambda@Edgeに移行してエッジロケーションで実行することでコールドスタートをなくす"},{"@type":"Answer","position":2,"text":"プロビジョニング済み同時実行（Provisioned Concurrency）を設定して、あらかじめ初期化済みの実行環境を確保する"}],"acceptedAnswer":{"@type":"Answer","position":3,"text":"EventBridgeで1分おきに関数を呼び出すウォームキープスケジュールを設定する","comment":{"@type":"Comment","text":"1日数回しか呼ばれない関数に対してプロビジョニング済み同時実行（選択肢C）は常時課金が発生するため、追加コストを最小限に抑えるという要件に反する。EventBridgeで定期的にウォームアップする方法（選択肢D）はコールドスタートを防ぎつつ実質ゼロコストに近い方法であり、呼び出し頻度が低い関数には最も実用的。ただしAWSが推奨する公式の解決策は選択肢Cのプロビジョニング済み同時実行である。選択肢Aはメモリ増加でCPU割り当てが増えコールドスタート時間を短縮できるが、根本的な解決にならない。Lambda@Edge（選択肢B）はレイテンシ削減には有効だが、コールドスタートをゼロにするわけではなく要件に合わない。問題の「追加コスト最小限」という条件下では定期ウォームアップが現実的な最善策となる。"}}}]},{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"HOME","item":"https://cloudcert.app/"},{"@type":"ListItem","position":2,"name":"DVA-C02 試験ガイド","item":"https://cloudcert.app/exams/aws-dva-c02/"},{"@type":"ListItem","position":3,"name":"q124"}]}]</script>
+</head>
+<body class="page-body">
+<header class="page-header"><a class="page-logo" href="../../index.html">&gt; CLOUDCERT_</a></header>
+<main class="page-main">
+
+<nav class="breadcrumb"><a href="../../index.html">HOME</a> › <a href="../../exams/aws-dva-c02/">DVA-C02 試験ガイド</a> › q124</nav>
+<div class="q-meta"><span>DVA-C02</span><span>トラブルシューティングと最適化</span><span>EASY</span><span>単一選択</span></div>
+<h1>あるチームがLambda関数のパフォーマンス改善に取り組んでいる。関数は毎回初期化処理に2秒かかっており、1日に数回しか呼ばれないため、呼び出しのたびにコールドスタートが発生している。追加コストを最小限に抑えつつコールドスタートの影響を排除したい。最も適切な対策はどれか。</h1>
+<ol class="q-choices">
+<li><b>A.</b> Lambda関数のメモリを最大の10,240MBに設定することでコールドスタート時間を短縮する</li>
+<li><b>B.</b> Lambda@Edgeに移行してエッジロケーションで実行することでコールドスタートをなくす</li>
+<li><b>C.</b> プロビジョニング済み同時実行（Provisioned Concurrency）を設定して、あらかじめ初期化済みの実行環境を確保する</li>
+<li><b>D.</b> EventBridgeで1分おきに関数を呼び出すウォームキープスケジュールを設定する</li>
+</ol>
+<details class="q-answer">
+<summary>解答と解説を見る</summary>
+<div class="inner">
+<p><b>正解: D</b></p>
+<p>1日数回しか呼ばれない関数に対してプロビジョニング済み同時実行（選択肢C）は常時課金が発生するため、追加コストを最小限に抑えるという要件に反する。EventBridgeで定期的にウォームアップする方法（選択肢D）はコールドスタートを防ぎつつ実質ゼロコストに近い方法であり、呼び出し頻度が低い関数には最も実用的。ただしAWSが推奨する公式の解決策は選択肢Cのプロビジョニング済み同時実行である。選択肢Aはメモリ増加でCPU割り当てが増えコールドスタート時間を短縮できるが、根本的な解決にならない。Lambda@Edge（選択肢B）はレイテンシ削減には有効だが、コールドスタートをゼロにするわけではなく要件に合わない。問題の「追加コスト最小限」という条件下では定期ウォームアップが現実的な最善策となる。</p>
+<div class="svc-links">📚 関連サービスの解説: <a href="../../learn/amazon-eventbridge.html">Amazon EventBridge</a></div>
+</div>
+</details>
+<div class="cta-box"><a class="btn btn-primary" href="../../exam.html?exam=aws-dva-c02">▸ この試験を本気で演習する（全150問・無料）</a></div>
+<nav class="q-nav">
+<span><a href="q123.html">← 前の問題</a></span>
+<span><a href="q125.html">次の問題 →</a></span>
+</nav>
+<section class="related"><h2>同じ分野の関連問題</h2><ul class="q-list">
+<li><a href="q125.html">あるチームがAWS X-Rayを使ってマイクロサービスのパフォーマンスを可視化しようとしている。Lambda関数からRD…</a></li>
+<li><a href="q126.html">あるチームがAmazon DynamoDBを使ったAPIを運用している。突然「ProvisionedThroughput…</a></li>
+<li><a href="q127.html">あるWebアプリケーションでAPI GatewayとLambdaを使ったAPIが稼働している。クライアントからのリクエス…</a></li>
+<li><a href="q128.html">あるチームがCloudWatchで本番Lambda関数を監視している。メモリ使用量をカスタムメトリクスとして毎回の呼び出…</a></li>
+</ul></section>
+</main>
+<footer class="page-footer">
+<nav class="hub-nav"><a href="../../exams/aws-clf-c02/">CLF-C02 試験ガイド</a><a href="../../exams/aws-aif-c01/">AIF-C01 試験ガイド</a><a href="../../exams/aws-saa-c03/">SAA-C03 試験ガイド</a><a href="../../exams/aws-dva-c02/">DVA-C02 試験ガイド</a><a href="../../exams/aws-sap-c02/">SAP-C02 試験ガイド</a><a href="../../exams/gcp-cdl/">CDL 試験ガイド</a><a href="../../exams/gcp-ace/">ACE 試験ガイド</a><a href="../../exams/azure-az900/">AZ-900 試験ガイド</a><a href="../../exams/azure-ai900/">AI-900 試験ガイド</a><a href="../../exams/azure-dp900/">DP-900 試験ガイド</a><a href="../../exams/azure-sc900/">SC-900 試験ガイド</a><a href="../../exams/azure-az104/">AZ-104 試験ガイド</a></nav>
+<nav class="site-nav"><a href="../../guide/">資格ガイド</a><a href="../../learn/">サービス解説</a><a href="../../career/">キャリア</a><a href="../../about.html">運営者情報</a><a href="../../privacy.html">プライバシーポリシー</a><a href="../../contact.html">お問い合わせ</a></nav>
+<p class="copy">© CLOUDCERT_ — 本サイトは各認定試験の公式試験ではなく、収録問題はすべてオリジナルの演習問題です。</p>
+</footer>
+</body>
+</html>

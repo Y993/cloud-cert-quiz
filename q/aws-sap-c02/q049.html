@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>【SAP-C02 演習問題 #49】ある企業が AWS 上で稼働するアプリケーションのセキュリティポスチャを改善しています。S…</title>
+<meta name="description" content="SAP-C02の本試験レベル演習問題。ある企業が AWS 上で稼働するアプリケーションのセキュリティポスチャを改善しています。Security Hub の調査で、以下の問題が発見されました。②EC2 インスタンスのパッチ… 全選択肢の解説つき。">
+<link rel="canonical" href="https://cloudcert.app/q/aws-sap-c02/q049.html">
+<meta property="og:title" content="【SAP-C02 演習問題 #49】ある企業が AWS 上で稼働するアプリケーションのセキュリティポスチャを改善しています。S…">
+<meta property="og:description" content="SAP-C02の本試験レベル演習問題。ある企業が AWS 上で稼働するアプリケーションのセキュリティポスチャを改善しています。Security Hub の調査で、以下の問題が発見されました。②EC2 インスタンスのパッチ… 全選択肢の解説つき。">
+<meta property="og:url" content="https://cloudcert.app/q/aws-sap-c02/q049.html">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="CLOUDCERT_">
+<meta property="og:image" content="https://cloudcert.app/assets/og.png">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='80' font-size='80' fill='%233fe0a4' font-family='monospace'>▸</text></svg>">
+
+<meta name="google-adsense-account" content="ca-pub-5647574947191958">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+JP:wght@400;500;700&family=JetBrains+Mono:wght@400;600;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../../css/style.css">
+<link rel="stylesheet" href="../../css/page.css">
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-SZR5CB5Q3X"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag('js',new Date());gtag('config','G-SZR5CB5Q3X');</script>
+<script type="application/ld+json">[{"@context":"https://schema.org/","@type":"Quiz","about":{"@type":"Thing","name":"AWS Certified Solutions Architect - Professional"},"hasPart":[{"@type":"Question","eduQuestionType":"Checkbox","learningResourceType":"Practice problem","text":"ある企業が AWS 上で稼働するアプリケーションのセキュリティポスチャを改善しています。Security Hub の調査で、以下の問題が発見されました。②EC2 インスタンスのパッチ適用が不定期、⑤S3 バケットの一部でサーバーサイド暗号化が有効になっていない、④IAM ユーザーに MFA が設定されていない。これらの問題を自動化された方法で継続的に修正するために適切な AWS サービスを2つ選択してください。","suggestedAnswer":[{"@type":"Answer","position":0,"text":"IAM ユーザーへの MFA 強制は Organizations の SCP で全アカウントに適用する"},{"@type":"Answer","position":2,"text":"Amazon Inspector でEC2 の CVE スキャンを実施し、重大な脆弱性を検出したら SNS 通知を送信する"},{"@type":"Answer","position":3,"text":"AWS Trusted Advisor で定期的にセキュリティチェックを実行し、結果を週次で IT チームにメール送信する"}],"acceptedAnswer":[{"@type":"Answer","position":1,"text":"AWS Systems Manager Patch Manager でパッチベースラインを定義し、Maintenance Window でスケジュールに従って EC2 インスタンスへのパッチ適用を自動化する","comment":{"@type":"Comment","text":"Systems Manager Patch Manager（B）はパッチベースラインと Maintenance Window の組み合わせで EC2 への自動パッチ適用を実現し、問題②を継続的に解決します。AWS Config のリメディエーション（E）は非準拠の S3 バケットを自動検出して Lambda で修復することで問題⑤を継続的に解決します。この2つが「自動化された継続的な修正」の要件に最も合致します。\n\nD: Trusted Advisor の週次メール送信は手動対応を促すもので、「自動修正」ではありません。\n\nA: SCP で MFA 強制は有効ですが、これは「既存の IAM ユーザーに MFA を設定する」修正ではなく、MFA なしのアクセスを拒否する予防的制御です。既存ユーザーへの MFA 設定は自動化できません。\n\nC: Amazon Inspector は脆弱性の検出に有効ですが、パッチ適用の自動化は Inspector 単独では実現できず、Systems Manager との連携が別途必要です。"}},{"@type":"Answer","position":4,"text":"AWS Config のマネージドルール（s3-bucket-server-side-encryption-enabled）でS3 暗号化を検出し、Config リメディエーション（自動修復）で非準拠バケットに暗号化を有効化する Lambda 関数を自動実行する","comment":{"@type":"Comment","text":"Systems Manager Patch Manager（B）はパッチベースラインと Maintenance Window の組み合わせで EC2 への自動パッチ適用を実現し、問題②を継続的に解決します。AWS Config のリメディエーション（E）は非準拠の S3 バケットを自動検出して Lambda で修復することで問題⑤を継続的に解決します。この2つが「自動化された継続的な修正」の要件に最も合致します。\n\nD: Trusted Advisor の週次メール送信は手動対応を促すもので、「自動修正」ではありません。\n\nA: SCP で MFA 強制は有効ですが、これは「既存の IAM ユーザーに MFA を設定する」修正ではなく、MFA なしのアクセスを拒否する予防的制御です。既存ユーザーへの MFA 設定は自動化できません。\n\nC: Amazon Inspector は脆弱性の検出に有効ですが、パッチ適用の自動化は Inspector 単独では実現できず、Systems Manager との連携が別途必要です。"}}]}]},{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"HOME","item":"https://cloudcert.app/"},{"@type":"ListItem","position":2,"name":"SAP-C02 試験ガイド","item":"https://cloudcert.app/exams/aws-sap-c02/"},{"@type":"ListItem","position":3,"name":"q049"}]}]</script>
+</head>
+<body class="page-body">
+<header class="page-header"><a class="page-logo" href="../../index.html">&gt; CLOUDCERT_</a></header>
+<main class="page-main">
+
+<nav class="breadcrumb"><a href="../../index.html">HOME</a> › <a href="../../exams/aws-sap-c02/">SAP-C02 試験ガイド</a> › q049</nav>
+<div class="q-meta"><span>SAP-C02</span><span>既存のソリューションの継続的な改善</span><span>HARD</span><span>複数選択</span></div>
+<h1>ある企業が AWS 上で稼働するアプリケーションのセキュリティポスチャを改善しています。Security Hub の調査で、以下の問題が発見されました。②EC2 インスタンスのパッチ適用が不定期、⑤S3 バケットの一部でサーバーサイド暗号化が有効になっていない、④IAM ユーザーに MFA が設定されていない。これらの問題を自動化された方法で継続的に修正するために適切な AWS サービスを2つ選択してください。</h1>
+<ol class="q-choices">
+<li><b>A.</b> IAM ユーザーへの MFA 強制は Organizations の SCP で全アカウントに適用する</li>
+<li><b>B.</b> AWS Systems Manager Patch Manager でパッチベースラインを定義し、Maintenance Window でスケジュールに従って EC2 インスタンスへのパッチ適用を自動化する</li>
+<li><b>C.</b> Amazon Inspector でEC2 の CVE スキャンを実施し、重大な脆弱性を検出したら SNS 通知を送信する</li>
+<li><b>D.</b> AWS Trusted Advisor で定期的にセキュリティチェックを実行し、結果を週次で IT チームにメール送信する</li>
+<li><b>E.</b> AWS Config のマネージドルール（s3-bucket-server-side-encryption-enabled）でS3 暗号化を検出し、Config リメディエーション（自動修復）で非準拠バケットに暗号化を有効化する Lambda 関数を自動実行する</li>
+</ol>
+<details class="q-answer">
+<summary>解答と解説を見る</summary>
+<div class="inner">
+<p><b>正解: B, E</b></p>
+<p>Systems Manager Patch Manager（B）はパッチベースラインと Maintenance Window の組み合わせで EC2 への自動パッチ適用を実現し、問題②を継続的に解決します。AWS Config のリメディエーション（E）は非準拠の S3 バケットを自動検出して Lambda で修復することで問題⑤を継続的に解決します。この2つが「自動化された継続的な修正」の要件に最も合致します。
+
+D: Trusted Advisor の週次メール送信は手動対応を促すもので、「自動修正」ではありません。
+
+A: SCP で MFA 強制は有効ですが、これは「既存の IAM ユーザーに MFA を設定する」修正ではなく、MFA なしのアクセスを拒否する予防的制御です。既存ユーザーへの MFA 設定は自動化できません。
+
+C: Amazon Inspector は脆弱性の検出に有効ですが、パッチ適用の自動化は Inspector 単独では実現できず、Systems Manager との連携が別途必要です。</p>
+<div class="svc-links">📚 関連サービスの解説: <a href="../../learn/aws-systems-manager.html">AWS Systems Manager</a> ・ <a href="../../learn/amazon-ec2.html">Amazon EC2</a></div>
+</div>
+</details>
+<div class="cta-box"><a class="btn btn-primary" href="../../exam.html?exam=aws-sap-c02">▸ この試験を本気で演習する（全150問・無料）</a></div>
+<nav class="q-nav">
+<span><a href="q048.html">← 前の問題</a></span>
+<span><a href="q050.html">次の問題 →</a></span>
+</nav>
+<section class="related"><h2>同じ分野の関連問題</h2><ul class="q-list">
+<li><a href="q048.html">ある企業が AWS 上で Amazon EKS クラスターを運用しています。クラスターには数百のマイクロサービスがデプロ…</a></li>
+<li><a href="q050.html">ある企業が AWS 上で複数の Lambda 関数を運用しており、月次のコスト分析で Lambda のコストが予想を大幅…</a></li>
+<li><a href="q047.html">ある企業の AWS 環境で、開発チームが Lambda 関数を頻繁にデプロイしています。最近、デプロイ後に特定のリージョ…</a></li>
+<li><a href="q051.html">ある企業が AWS WAF を ALB の前段に設置してウェブアプリケーションを保護していますが、セキュリティチームから…</a></li>
+</ul></section>
+</main>
+<footer class="page-footer">
+<nav class="hub-nav"><a href="../../exams/aws-clf-c02/">CLF-C02 試験ガイド</a><a href="../../exams/aws-aif-c01/">AIF-C01 試験ガイド</a><a href="../../exams/aws-saa-c03/">SAA-C03 試験ガイド</a><a href="../../exams/aws-dva-c02/">DVA-C02 試験ガイド</a><a href="../../exams/aws-sap-c02/">SAP-C02 試験ガイド</a><a href="../../exams/gcp-cdl/">CDL 試験ガイド</a><a href="../../exams/gcp-ace/">ACE 試験ガイド</a><a href="../../exams/azure-az900/">AZ-900 試験ガイド</a><a href="../../exams/azure-ai900/">AI-900 試験ガイド</a><a href="../../exams/azure-dp900/">DP-900 試験ガイド</a><a href="../../exams/azure-sc900/">SC-900 試験ガイド</a><a href="../../exams/azure-az104/">AZ-104 試験ガイド</a></nav>
+<nav class="site-nav"><a href="../../guide/">資格ガイド</a><a href="../../learn/">サービス解説</a><a href="../../career/">キャリア</a><a href="../../about.html">運営者情報</a><a href="../../privacy.html">プライバシーポリシー</a><a href="../../contact.html">お問い合わせ</a></nav>
+<p class="copy">© CLOUDCERT_ — 本サイトは各認定試験の公式試験ではなく、収録問題はすべてオリジナルの演習問題です。</p>
+</footer>
+</body>
+</html>

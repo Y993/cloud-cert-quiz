@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>【AZ-104 演習問題 #119】ある企業のセキュリティ監査で、Azure VMがインターネットから予期しないポートで通信を…</title>
+<meta name="description" content="AZ-104の本試験レベル演習問題。ある企業のセキュリティ監査で、Azure VMがインターネットから予期しないポートで通信を受けていることが判明した。Network WatcherとNSGフローログを使って詳細な調査を… 全選択肢の解説つき。">
+<link rel="canonical" href="https://cloudcert.app/q/azure-az104/q119.html">
+<meta property="og:title" content="【AZ-104 演習問題 #119】ある企業のセキュリティ監査で、Azure VMがインターネットから予期しないポートで通信を…">
+<meta property="og:description" content="AZ-104の本試験レベル演習問題。ある企業のセキュリティ監査で、Azure VMがインターネットから予期しないポートで通信を受けていることが判明した。Network WatcherとNSGフローログを使って詳細な調査を… 全選択肢の解説つき。">
+<meta property="og:url" content="https://cloudcert.app/q/azure-az104/q119.html">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="CLOUDCERT_">
+<meta property="og:image" content="https://cloudcert.app/assets/og.png">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='80' font-size='80' fill='%233fe0a4' font-family='monospace'>▸</text></svg>">
+
+<meta name="google-adsense-account" content="ca-pub-5647574947191958">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+JP:wght@400;500;700&family=JetBrains+Mono:wght@400;600;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../../css/style.css">
+<link rel="stylesheet" href="../../css/page.css">
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-SZR5CB5Q3X"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag('js',new Date());gtag('config','G-SZR5CB5Q3X');</script>
+<script type="application/ld+json">[{"@context":"https://schema.org/","@type":"Quiz","about":{"@type":"Thing","name":"Microsoft Azure Administrator"},"hasPart":[{"@type":"Question","eduQuestionType":"Multiple choice","learningResourceType":"Practice problem","text":"ある企業のセキュリティ監査で、Azure VMがインターネットから予期しないポートで通信を受けていることが判明した。Network WatcherとNSGフローログを使って詳細な調査を行いたい。NSGフローログを有効にするための前提条件として正しいものはどれか。","suggestedAnswer":[{"@type":"Answer","position":0,"text":"NSGフローログはAzure Security Centerを有効にしたサブスクリプションでのみ利用可能"},{"@type":"Answer","position":1,"text":"Network Watcherリソースがサブスクリプションレベルで有効になっていること"},{"@type":"Answer","position":2,"text":"NSGフローログはAzure MonitorのLog Analytics Workspaceに直接書き込まれるため、Storageアカウントは不要"}],"acceptedAnswer":{"@type":"Answer","position":3,"text":"Network WatcherリソースがNSGと同じリージョンに存在し、フローログの出力先にAzure Storageアカウントが設定されていること","comment":{"@type":"Comment","text":"NSGフローログを有効にするには、Network WatcherリソースがそのNSGと同一のリージョンに存在している必要があり（Network Watcherはリージョンごとに存在する）、フローログデータの書き込み先としてAzure Storageアカウントの指定が必要である。また、Storage AccountのNetwork Watcherリソースプロバイダー（Microsoft.Insights）が登録されていることも前提条件となる。フローログはStorageに書き込まれた後、必要に応じてTraffic Analytics経由でLog Analytics Workspaceに転送して分析できる。選択肢BはNetwork Watcherがサブスクリプションレベルで有効という表現が不正確で、正確にはリージョンごとに有効化/作成する。選択肢CはStorageアカウントが不要という記述が誤りで、NSGフローログの一次保存先は必ずStorageアカウントである（Traffic Analyticsを使えばLog Analyticsにも流せるが、Storageは引き続き必要）。選択肢AはAzure Security Center（現Microsoft Defender for Cloud）への依存は存在しない誤りである。"}}}]},{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"HOME","item":"https://cloudcert.app/"},{"@type":"ListItem","position":2,"name":"AZ-104 試験ガイド","item":"https://cloudcert.app/exams/azure-az104/"},{"@type":"ListItem","position":3,"name":"q119"}]}]</script>
+</head>
+<body class="page-body">
+<header class="page-header"><a class="page-logo" href="../../index.html">&gt; CLOUDCERT_</a></header>
+<main class="page-main">
+
+<nav class="breadcrumb"><a href="../../index.html">HOME</a> › <a href="../../exams/azure-az104/">AZ-104 試験ガイド</a> › q119</nav>
+<div class="q-meta"><span>AZ-104</span><span>Azure 仮想ネットワークの実装と管理</span><span>HARD</span><span>単一選択</span></div>
+<h1>ある企業のセキュリティ監査で、Azure VMがインターネットから予期しないポートで通信を受けていることが判明した。Network WatcherとNSGフローログを使って詳細な調査を行いたい。NSGフローログを有効にするための前提条件として正しいものはどれか。</h1>
+<ol class="q-choices">
+<li><b>A.</b> NSGフローログはAzure Security Centerを有効にしたサブスクリプションでのみ利用可能</li>
+<li><b>B.</b> Network Watcherリソースがサブスクリプションレベルで有効になっていること</li>
+<li><b>C.</b> NSGフローログはAzure MonitorのLog Analytics Workspaceに直接書き込まれるため、Storageアカウントは不要</li>
+<li><b>D.</b> Network WatcherリソースがNSGと同じリージョンに存在し、フローログの出力先にAzure Storageアカウントが設定されていること</li>
+</ol>
+<details class="q-answer">
+<summary>解答と解説を見る</summary>
+<div class="inner">
+<p><b>正解: D</b></p>
+<p>NSGフローログを有効にするには、Network WatcherリソースがそのNSGと同一のリージョンに存在している必要があり（Network Watcherはリージョンごとに存在する）、フローログデータの書き込み先としてAzure Storageアカウントの指定が必要である。また、Storage AccountのNetwork Watcherリソースプロバイダー（Microsoft.Insights）が登録されていることも前提条件となる。フローログはStorageに書き込まれた後、必要に応じてTraffic Analytics経由でLog Analytics Workspaceに転送して分析できる。選択肢BはNetwork Watcherがサブスクリプションレベルで有効という表現が不正確で、正確にはリージョンごとに有効化/作成する。選択肢CはStorageアカウントが不要という記述が誤りで、NSGフローログの一次保存先は必ずStorageアカウントである（Traffic Analyticsを使えばLog Analyticsにも流せるが、Storageは引き続き必要）。選択肢AはAzure Security Center（現Microsoft Defender for Cloud）への依存は存在しない誤りである。</p>
+<div class="svc-links">📚 関連サービスの解説: <a href="../../learn/azure-nsg.html">ネットワーク セキュリティ グループ（NSG）</a></div>
+</div>
+</details>
+<div class="cta-box"><a class="btn btn-primary" href="../../exam.html?exam=azure-az104">▸ この試験を本気で演習する（全150問・無料）</a></div>
+<nav class="q-nav">
+<span><a href="q118.html">← 前の問題</a></span>
+<span><a href="q120.html">次の問題 →</a></span>
+</nav>
+<section class="related"><h2>同じ分野の関連問題</h2><ul class="q-list">
+<li><a href="q118.html">ある金融機関がAzureへの移行を計画している。規制要件から「すべての本番データはAzureのネットワークバックボーンを…</a></li>
+<li><a href="q120.html">ある企業がAzureのVNetピアリングを使用して3つのVNet（VNet-A: 10.1.0.0/16、VNet-B:…</a></li>
+<li><a href="q117.html">ある企業がハブアンドスポーク構成でAzureを運用している。ハブVNetにはAzure VPN GatewayとAzur…</a></li>
+<li><a href="q121.html">ある企業がAzure Application Gateway v2とWAF（Web Application Firewa…</a></li>
+</ul></section>
+</main>
+<footer class="page-footer">
+<nav class="hub-nav"><a href="../../exams/aws-clf-c02/">CLF-C02 試験ガイド</a><a href="../../exams/aws-aif-c01/">AIF-C01 試験ガイド</a><a href="../../exams/aws-saa-c03/">SAA-C03 試験ガイド</a><a href="../../exams/aws-dva-c02/">DVA-C02 試験ガイド</a><a href="../../exams/aws-sap-c02/">SAP-C02 試験ガイド</a><a href="../../exams/gcp-cdl/">CDL 試験ガイド</a><a href="../../exams/gcp-ace/">ACE 試験ガイド</a><a href="../../exams/azure-az900/">AZ-900 試験ガイド</a><a href="../../exams/azure-ai900/">AI-900 試験ガイド</a><a href="../../exams/azure-dp900/">DP-900 試験ガイド</a><a href="../../exams/azure-sc900/">SC-900 試験ガイド</a><a href="../../exams/azure-az104/">AZ-104 試験ガイド</a></nav>
+<nav class="site-nav"><a href="../../guide/">資格ガイド</a><a href="../../learn/">サービス解説</a><a href="../../career/">キャリア</a><a href="../../about.html">運営者情報</a><a href="../../privacy.html">プライバシーポリシー</a><a href="../../contact.html">お問い合わせ</a></nav>
+<p class="copy">© CLOUDCERT_ — 本サイトは各認定試験の公式試験ではなく、収録問題はすべてオリジナルの演習問題です。</p>
+</footer>
+</body>
+</html>

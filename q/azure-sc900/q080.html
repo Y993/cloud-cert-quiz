@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>【SC-900 演習問題 #80】ある企業が Azure DDoS Protection Standard を有効化している…</title>
+<meta name="description" content="SC-900の本試験レベル演習問題。ある企業が Azure DDoS Protection Standard を有効化している。大規模なDDoS攻撃を受けた際、対応チームがリアルタイムで攻撃状況を把握し、緩和効果を確認す… 全選択肢の解説つき。">
+<link rel="canonical" href="https://cloudcert.app/q/azure-sc900/q080.html">
+<meta property="og:title" content="【SC-900 演習問題 #80】ある企業が Azure DDoS Protection Standard を有効化している…">
+<meta property="og:description" content="SC-900の本試験レベル演習問題。ある企業が Azure DDoS Protection Standard を有効化している。大規模なDDoS攻撃を受けた際、対応チームがリアルタイムで攻撃状況を把握し、緩和効果を確認す… 全選択肢の解説つき。">
+<meta property="og:url" content="https://cloudcert.app/q/azure-sc900/q080.html">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="CLOUDCERT_">
+<meta property="og:image" content="https://cloudcert.app/assets/og.png">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='80' font-size='80' fill='%233fe0a4' font-family='monospace'>▸</text></svg>">
+
+<meta name="google-adsense-account" content="ca-pub-5647574947191958">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+JP:wght@400;500;700&family=JetBrains+Mono:wght@400;600;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../../css/style.css">
+<link rel="stylesheet" href="../../css/page.css">
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-SZR5CB5Q3X"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag('js',new Date());gtag('config','G-SZR5CB5Q3X');</script>
+<script type="application/ld+json">[{"@context":"https://schema.org/","@type":"Quiz","about":{"@type":"Thing","name":"Microsoft Security, Compliance, and Identity Fundamentals"},"hasPart":[{"@type":"Question","eduQuestionType":"Multiple choice","learningResourceType":"Practice problem","text":"ある企業が Azure DDoS Protection Standard を有効化している。大規模なDDoS攻撃を受けた際、対応チームがリアルタイムで攻撃状況を把握し、緩和効果を確認するために利用できる機能として最も適切なものはどれか。","suggestedAnswer":[{"@type":"Answer","position":0,"text":"Azure Advisor の推奨事項で攻撃中に表示されるDDoS対応アドバイスを参照する"},{"@type":"Answer","position":1,"text":"Azure Security Center の推奨事項ダッシュボードで攻撃ベクトルの一覧を確認する"},{"@type":"Answer","position":2,"text":"NSGのフロー ログをLog Analytics に転送してリアルタイムの攻撃パケット情報を解析する"}],"acceptedAnswer":{"@type":"Answer","position":3,"text":"DDoS Protection Standard のDDoSメトリクスとアラートをAzure Monitorで監視し、攻撃詳細レポートを確認する","comment":{"@type":"Comment","text":"Azure DDoS Protection Standard では、攻撃中に Azure Monitor メトリクス（受信パケット数、ドロップパケット数、緩和されたパケット数など）がリアルタイムで公開され、アラートを設定して閾値超過を通知できる。攻撃終了後には攻撃の詳細（攻撃ベクトル、ピーク帯域など）を含む攻撃レポートも自動生成される。DDoS Rapid Response（DRR）チームへのサポート要求も Standard プランの特典として利用できる。選択肢AのAzure Advisorは長期的なベストプラクティス推奨であり、攻撃中のリアルタイム状況把握ツールではない。選択肢CのNSGフローログはネットワークトラフィックの記録であり、DDoS緩和の効果（何パケット緩和されたか）をリアルタイムで可視化する専用メトリクスは持たない。選択肢BのSecurity Center（Defender for Cloud）の推奨事項ダッシュボードは構成評価であり、攻撃中のリアルタイムDDoSメトリクス表示には使わない。"}}}]},{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"HOME","item":"https://cloudcert.app/"},{"@type":"ListItem","position":2,"name":"SC-900 試験ガイド","item":"https://cloudcert.app/exams/azure-sc900/"},{"@type":"ListItem","position":3,"name":"q080"}]}]</script>
+</head>
+<body class="page-body">
+<header class="page-header"><a class="page-logo" href="../../index.html">&gt; CLOUDCERT_</a></header>
+<main class="page-main">
+
+<nav class="breadcrumb"><a href="../../index.html">HOME</a> › <a href="../../exams/azure-sc900/">SC-900 試験ガイド</a> › q080</nav>
+<div class="q-meta"><span>SC-900</span><span>Microsoft セキュリティ ソリューションの機能</span><span>MEDIUM</span><span>単一選択</span></div>
+<h1>ある企業が Azure DDoS Protection Standard を有効化している。大規模なDDoS攻撃を受けた際、対応チームがリアルタイムで攻撃状況を把握し、緩和効果を確認するために利用できる機能として最も適切なものはどれか。</h1>
+<ol class="q-choices">
+<li><b>A.</b> Azure Advisor の推奨事項で攻撃中に表示されるDDoS対応アドバイスを参照する</li>
+<li><b>B.</b> Azure Security Center の推奨事項ダッシュボードで攻撃ベクトルの一覧を確認する</li>
+<li><b>C.</b> NSGのフロー ログをLog Analytics に転送してリアルタイムの攻撃パケット情報を解析する</li>
+<li><b>D.</b> DDoS Protection Standard のDDoSメトリクスとアラートをAzure Monitorで監視し、攻撃詳細レポートを確認する</li>
+</ol>
+<details class="q-answer">
+<summary>解答と解説を見る</summary>
+<div class="inner">
+<p><b>正解: D</b></p>
+<p>Azure DDoS Protection Standard では、攻撃中に Azure Monitor メトリクス（受信パケット数、ドロップパケット数、緩和されたパケット数など）がリアルタイムで公開され、アラートを設定して閾値超過を通知できる。攻撃終了後には攻撃の詳細（攻撃ベクトル、ピーク帯域など）を含む攻撃レポートも自動生成される。DDoS Rapid Response（DRR）チームへのサポート要求も Standard プランの特典として利用できる。選択肢AのAzure Advisorは長期的なベストプラクティス推奨であり、攻撃中のリアルタイム状況把握ツールではない。選択肢CのNSGフローログはネットワークトラフィックの記録であり、DDoS緩和の効果（何パケット緩和されたか）をリアルタイムで可視化する専用メトリクスは持たない。選択肢BのSecurity Center（Defender for Cloud）の推奨事項ダッシュボードは構成評価であり、攻撃中のリアルタイムDDoSメトリクス表示には使わない。</p>
+<div class="svc-links">📚 関連サービスの解説: <a href="../../learn/azure-monitor.html">Azure Monitor</a></div>
+</div>
+</details>
+<div class="cta-box"><a class="btn btn-primary" href="../../exam.html?exam=azure-sc900">▸ この試験を本気で演習する（全150問・無料）</a></div>
+<nav class="q-nav">
+<span><a href="q079.html">← 前の問題</a></span>
+<span><a href="q081.html">次の問題 →</a></span>
+</nav>
+<section class="related"><h2>同じ分野の関連問題</h2><ul class="q-list">
+<li><a href="q079.html">ある企業が Azure Key Vault でマスター暗号化キーを管理し、複数の Azure サービス（Storage、…</a></li>
+<li><a href="q081.html">ある企業のセキュリティ担当者が Microsoft Defender for Cloud の推奨事項を確認したところ、「…</a></li>
+<li><a href="q078.html">ある企業がAzure上でコンテナ化したマイクロサービスをAKS（Azure Kubernetes Service）クラス…</a></li>
+<li><a href="q082.html">ある企業が Azure 上にWebアプリとデータベースを展開する際、ネットワークセキュリティを強化するために使用できるA…</a></li>
+</ul></section>
+</main>
+<footer class="page-footer">
+<nav class="hub-nav"><a href="../../exams/aws-clf-c02/">CLF-C02 試験ガイド</a><a href="../../exams/aws-aif-c01/">AIF-C01 試験ガイド</a><a href="../../exams/aws-saa-c03/">SAA-C03 試験ガイド</a><a href="../../exams/aws-dva-c02/">DVA-C02 試験ガイド</a><a href="../../exams/aws-sap-c02/">SAP-C02 試験ガイド</a><a href="../../exams/gcp-cdl/">CDL 試験ガイド</a><a href="../../exams/gcp-ace/">ACE 試験ガイド</a><a href="../../exams/azure-az900/">AZ-900 試験ガイド</a><a href="../../exams/azure-ai900/">AI-900 試験ガイド</a><a href="../../exams/azure-dp900/">DP-900 試験ガイド</a><a href="../../exams/azure-sc900/">SC-900 試験ガイド</a><a href="../../exams/azure-az104/">AZ-104 試験ガイド</a></nav>
+<nav class="site-nav"><a href="../../guide/">資格ガイド</a><a href="../../learn/">サービス解説</a><a href="../../career/">キャリア</a><a href="../../about.html">運営者情報</a><a href="../../privacy.html">プライバシーポリシー</a><a href="../../contact.html">お問い合わせ</a></nav>
+<p class="copy">© CLOUDCERT_ — 本サイトは各認定試験の公式試験ではなく、収録問題はすべてオリジナルの演習問題です。</p>
+</footer>
+</body>
+</html>

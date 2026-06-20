@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>【SAA-C03 演習問題 #43】ある企業が、EC2 インスタンス上で動作するステートフルな Web アプリケーションを A…</title>
+<meta name="description" content="SAA-C03の本試験レベル演習問題。ある企業が、EC2 インスタンス上で動作するステートフルな Web アプリケーションを Auto Scaling 対応に改修しようとしている。現在はユーザーのセッションデータがサーバ… 全選択肢の解説つき。">
+<link rel="canonical" href="https://cloudcert.app/q/aws-saa-c03/q043.html">
+<meta property="og:title" content="【SAA-C03 演習問題 #43】ある企業が、EC2 インスタンス上で動作するステートフルな Web アプリケーションを A…">
+<meta property="og:description" content="SAA-C03の本試験レベル演習問題。ある企業が、EC2 インスタンス上で動作するステートフルな Web アプリケーションを Auto Scaling 対応に改修しようとしている。現在はユーザーのセッションデータがサーバ… 全選択肢の解説つき。">
+<meta property="og:url" content="https://cloudcert.app/q/aws-saa-c03/q043.html">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="CLOUDCERT_">
+<meta property="og:image" content="https://cloudcert.app/assets/og.png">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='80' font-size='80' fill='%233fe0a4' font-family='monospace'>▸</text></svg>">
+
+<meta name="google-adsense-account" content="ca-pub-5647574947191958">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+JP:wght@400;500;700&family=JetBrains+Mono:wght@400;600;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../../css/style.css">
+<link rel="stylesheet" href="../../css/page.css">
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-SZR5CB5Q3X"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag('js',new Date());gtag('config','G-SZR5CB5Q3X');</script>
+<script type="application/ld+json">[{"@context":"https://schema.org/","@type":"Quiz","about":{"@type":"Thing","name":"AWS Certified Solutions Architect – Associate"},"hasPart":[{"@type":"Question","eduQuestionType":"Multiple choice","learningResourceType":"Practice problem","text":"ある企業が、EC2 インスタンス上で動作するステートフルな Web アプリケーションを Auto Scaling 対応に改修しようとしている。現在はユーザーのセッションデータがサーバーのローカルメモリに保存されており、スケールイン時にセッションが失われてしまう。アプリケーションコードの変更を最小限にしてセッションを保持する最も適切なソリューションはどれか。","suggestedAnswer":[{"@type":"Answer","position":0,"text":"EC2 インスタンスのローカルストレージを Instance Store に変更し、高速な読み書きでセッション処理を高速化する。"},{"@type":"Answer","position":1,"text":"Auto Scaling グループのスケールインプロセスを無効化して、インスタンスが削除されないようにする。"},{"@type":"Answer","position":2,"text":"ALB のスティッキーセッション（Session Stickiness）を有効化して、同一ユーザーのリクエストが常に同一インスタンスに届くようにする。"}],"acceptedAnswer":{"@type":"Answer","position":3,"text":"セッションデータを Amazon ElastiCache for Redis に外部化し、アプリケーションのセッションストアを ElastiCache に向ける。","comment":{"@type":"Comment","text":"セッションデータを Amazon ElastiCache for Redis などの外部共有ストアに保存することで、どのインスタンスがリクエストを処理してもセッション情報を取得できる。これがステートフルアプリケーションの Auto Scaling 対応の標準パターンである。セッションストアのライブラリを ElastiCache エンドポイントに向ける変更が必要だが、比較的少ないコード変更で対応できる。選択肢CのALB スティッキーセッションはセッション維持には有効だが、そのインスタンスがスケールインで終了するとセッションが失われる。根本的な解決策にはならない。選択肢BのAuto Scaling スケールイン無効化はスケーラビリティを失い、コスト効率も悪化する。Auto Scaling の意味をなさない設定変更である。選択肢AのInstance Store は揮発性ストレージで、インスタンス終了時にすべてのデータが失われる。セッション保持の要件を満たさない。"}}}]},{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"HOME","item":"https://cloudcert.app/"},{"@type":"ListItem","position":2,"name":"SAA-C03 試験ガイド","item":"https://cloudcert.app/exams/aws-saa-c03/"},{"@type":"ListItem","position":3,"name":"q043"}]}]</script>
+</head>
+<body class="page-body">
+<header class="page-header"><a class="page-logo" href="../../index.html">&gt; CLOUDCERT_</a></header>
+<main class="page-main">
+
+<nav class="breadcrumb"><a href="../../index.html">HOME</a> › <a href="../../exams/aws-saa-c03/">SAA-C03 試験ガイド</a> › q043</nav>
+<div class="q-meta"><span>SAA-C03</span><span>弾力性に優れたアーキテクチャの設計</span><span>MEDIUM</span><span>単一選択</span></div>
+<h1>ある企業が、EC2 インスタンス上で動作するステートフルな Web アプリケーションを Auto Scaling 対応に改修しようとしている。現在はユーザーのセッションデータがサーバーのローカルメモリに保存されており、スケールイン時にセッションが失われてしまう。アプリケーションコードの変更を最小限にしてセッションを保持する最も適切なソリューションはどれか。</h1>
+<ol class="q-choices">
+<li><b>A.</b> EC2 インスタンスのローカルストレージを Instance Store に変更し、高速な読み書きでセッション処理を高速化する。</li>
+<li><b>B.</b> Auto Scaling グループのスケールインプロセスを無効化して、インスタンスが削除されないようにする。</li>
+<li><b>C.</b> ALB のスティッキーセッション（Session Stickiness）を有効化して、同一ユーザーのリクエストが常に同一インスタンスに届くようにする。</li>
+<li><b>D.</b> セッションデータを Amazon ElastiCache for Redis に外部化し、アプリケーションのセッションストアを ElastiCache に向ける。</li>
+</ol>
+<details class="q-answer">
+<summary>解答と解説を見る</summary>
+<div class="inner">
+<p><b>正解: D</b></p>
+<p>セッションデータを Amazon ElastiCache for Redis などの外部共有ストアに保存することで、どのインスタンスがリクエストを処理してもセッション情報を取得できる。これがステートフルアプリケーションの Auto Scaling 対応の標準パターンである。セッションストアのライブラリを ElastiCache エンドポイントに向ける変更が必要だが、比較的少ないコード変更で対応できる。選択肢CのALB スティッキーセッションはセッション維持には有効だが、そのインスタンスがスケールインで終了するとセッションが失われる。根本的な解決策にはならない。選択肢BのAuto Scaling スケールイン無効化はスケーラビリティを失い、コスト効率も悪化する。Auto Scaling の意味をなさない設定変更である。選択肢AのInstance Store は揮発性ストレージで、インスタンス終了時にすべてのデータが失われる。セッション保持の要件を満たさない。</p>
+<div class="svc-links">📚 関連サービスの解説: <a href="../../learn/amazon-elasticache.html">Amazon ElastiCache</a></div>
+</div>
+</details>
+<div class="cta-box"><a class="btn btn-primary" href="../../exam.html?exam=aws-saa-c03">▸ この試験を本気で演習する（全150問・無料）</a></div>
+<nav class="q-nav">
+<span><a href="q042.html">← 前の問題</a></span>
+<span><a href="q044.html">次の問題 →</a></span>
+</nav>
+<section class="related"><h2>同じ分野の関連問題</h2><ul class="q-list">
+<li><a href="q042.html">ある企業が、Amazon SQS FIFO キューを使って注文処理システムを構築している。1 注文につき複数のメッセージ…</a></li>
+<li><a href="q044.html">ある企業が、AWS Lambda を使ってイベント駆動のデータ処理パイプラインを構築している。Amazon SNS から…</a></li>
+<li><a href="q041.html">ある企業が、本番環境の AWS アーキテクチャを見直し、単一障害点（SPOF）を排除したい。現在の構成は以下の通りである…</a></li>
+<li><a href="q045.html">ある企業が、マルチアカウント環境で AWS Backup を使って EC2・RDS・EFS のバックアップを一元管理した…</a></li>
+</ul></section>
+</main>
+<footer class="page-footer">
+<nav class="hub-nav"><a href="../../exams/aws-clf-c02/">CLF-C02 試験ガイド</a><a href="../../exams/aws-aif-c01/">AIF-C01 試験ガイド</a><a href="../../exams/aws-saa-c03/">SAA-C03 試験ガイド</a><a href="../../exams/aws-dva-c02/">DVA-C02 試験ガイド</a><a href="../../exams/aws-sap-c02/">SAP-C02 試験ガイド</a><a href="../../exams/gcp-cdl/">CDL 試験ガイド</a><a href="../../exams/gcp-ace/">ACE 試験ガイド</a><a href="../../exams/azure-az900/">AZ-900 試験ガイド</a><a href="../../exams/azure-ai900/">AI-900 試験ガイド</a><a href="../../exams/azure-dp900/">DP-900 試験ガイド</a><a href="../../exams/azure-sc900/">SC-900 試験ガイド</a><a href="../../exams/azure-az104/">AZ-104 試験ガイド</a></nav>
+<nav class="site-nav"><a href="../../guide/">資格ガイド</a><a href="../../learn/">サービス解説</a><a href="../../career/">キャリア</a><a href="../../about.html">運営者情報</a><a href="../../privacy.html">プライバシーポリシー</a><a href="../../contact.html">お問い合わせ</a></nav>
+<p class="copy">© CLOUDCERT_ — 本サイトは各認定試験の公式試験ではなく、収録問題はすべてオリジナルの演習問題です。</p>
+</footer>
+</body>
+</html>

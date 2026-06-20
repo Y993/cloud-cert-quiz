@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>【AZ-900 演習問題 #88】ある企業がAzureのガバナンスを強化しようとしている。Azureの管理階層においてポリシ…</title>
+<meta name="description" content="AZ-900の本試験レベル演習問題。ある企業がAzureのガバナンスを強化しようとしている。Azureの管理階層においてポリシーとRBACの継承が適用される2つの正しい説明を選択してください。 全選択肢の解説つき。">
+<link rel="canonical" href="https://cloudcert.app/q/azure-az900/q088.html">
+<meta property="og:title" content="【AZ-900 演習問題 #88】ある企業がAzureのガバナンスを強化しようとしている。Azureの管理階層においてポリシ…">
+<meta property="og:description" content="AZ-900の本試験レベル演習問題。ある企業がAzureのガバナンスを強化しようとしている。Azureの管理階層においてポリシーとRBACの継承が適用される2つの正しい説明を選択してください。 全選択肢の解説つき。">
+<meta property="og:url" content="https://cloudcert.app/q/azure-az900/q088.html">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="CLOUDCERT_">
+<meta property="og:image" content="https://cloudcert.app/assets/og.png">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='80' font-size='80' fill='%233fe0a4' font-family='monospace'>▸</text></svg>">
+
+<meta name="google-adsense-account" content="ca-pub-5647574947191958">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+JP:wght@400;500;700&family=JetBrains+Mono:wght@400;600;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../../css/style.css">
+<link rel="stylesheet" href="../../css/page.css">
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-SZR5CB5Q3X"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag('js',new Date());gtag('config','G-SZR5CB5Q3X');</script>
+<script type="application/ld+json">[{"@context":"https://schema.org/","@type":"Quiz","about":{"@type":"Thing","name":"Microsoft Azure Fundamentals"},"hasPart":[{"@type":"Question","eduQuestionType":"Checkbox","learningResourceType":"Practice problem","text":"ある企業がAzureのガバナンスを強化しようとしている。Azureの管理階層においてポリシーとRBACの継承が適用される2つの正しい説明を選択してください。","suggestedAnswer":[{"@type":"Answer","position":0,"text":"Azureの管理グループ階層の深さに制限はなく、無限に入れ子にできる"},{"@type":"Answer","position":1,"text":"サブスクリプションレベルで割り当てたAzure Policyは、そのサブスクリプション内のリソースには適用されるが、管理グループには逆伝播しない"},{"@type":"Answer","position":2,"text":"リソースレベルで割り当てたRBACロールは、そのリソースを含むリソースグループ全体に自動的に継承される（上位への逆伝播）"}],"acceptedAnswer":[{"@type":"Answer","position":3,"text":"管理グループに割り当てたAzure Policyは、その管理グループ配下のすべてのサブスクリプション・リソースグループ・リソースに自動的に継承される","comment":{"@type":"Comment","text":"Azureの管理階層（管理グループ→サブスクリプション→リソースグループ→リソース）では、上位レベルで割り当てたAzure PolicyとRBACは下位レベルに継承される（トップダウン継承）。管理グループへのPolicy割り当ては配下のすべてに継承され（選択肢D正解）、リソースグループへのRBACは配下のリソースに継承される（選択肢E正解）。逆方向（ボトムアップ）への継承は発生しない。選択肢Bは「サブスクリプションのポリシーはサブスクリプション内に適用される」という説明は概ね正しいが「管理グループには逆伝播しない」は当然であり、この記述自体は正しいが「2つの正しい説明」の候補として選択肢D・Eの方が明確に重要なポイントを述べている。選択肢CはRBACの逆伝播（下位から上位）は発生しないため誤り。選択肢AはAzureの管理グループは最大6レベルの深さに制限されているため誤り。"}},{"@type":"Answer","position":4,"text":"リソースグループに割り当てたRBACロールは、そのリソースグループ内のすべてのリソースに継承される（ただし、個別リソースで別のロールを追加割り当てることも可能）","comment":{"@type":"Comment","text":"Azureの管理階層（管理グループ→サブスクリプション→リソースグループ→リソース）では、上位レベルで割り当てたAzure PolicyとRBACは下位レベルに継承される（トップダウン継承）。管理グループへのPolicy割り当ては配下のすべてに継承され（選択肢D正解）、リソースグループへのRBACは配下のリソースに継承される（選択肢E正解）。逆方向（ボトムアップ）への継承は発生しない。選択肢Bは「サブスクリプションのポリシーはサブスクリプション内に適用される」という説明は概ね正しいが「管理グループには逆伝播しない」は当然であり、この記述自体は正しいが「2つの正しい説明」の候補として選択肢D・Eの方が明確に重要なポイントを述べている。選択肢CはRBACの逆伝播（下位から上位）は発生しないため誤り。選択肢AはAzureの管理グループは最大6レベルの深さに制限されているため誤り。"}}]}]},{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"HOME","item":"https://cloudcert.app/"},{"@type":"ListItem","position":2,"name":"AZ-900 試験ガイド","item":"https://cloudcert.app/exams/azure-az900/"},{"@type":"ListItem","position":3,"name":"q088"}]}]</script>
+</head>
+<body class="page-body">
+<header class="page-header"><a class="page-logo" href="../../index.html">&gt; CLOUDCERT_</a></header>
+<main class="page-main">
+
+<nav class="breadcrumb"><a href="../../index.html">HOME</a> › <a href="../../exams/azure-az900/">AZ-900 試験ガイド</a> › q088</nav>
+<div class="q-meta"><span>AZ-900</span><span>Azureの管理とガバナンス</span><span>HARD</span><span>複数選択</span></div>
+<h1>ある企業がAzureのガバナンスを強化しようとしている。Azureの管理階層においてポリシーとRBACの継承が適用される2つの正しい説明を選択してください。</h1>
+<ol class="q-choices">
+<li><b>A.</b> Azureの管理グループ階層の深さに制限はなく、無限に入れ子にできる</li>
+<li><b>B.</b> サブスクリプションレベルで割り当てたAzure Policyは、そのサブスクリプション内のリソースには適用されるが、管理グループには逆伝播しない</li>
+<li><b>C.</b> リソースレベルで割り当てたRBACロールは、そのリソースを含むリソースグループ全体に自動的に継承される（上位への逆伝播）</li>
+<li><b>D.</b> 管理グループに割り当てたAzure Policyは、その管理グループ配下のすべてのサブスクリプション・リソースグループ・リソースに自動的に継承される</li>
+<li><b>E.</b> リソースグループに割り当てたRBACロールは、そのリソースグループ内のすべてのリソースに継承される（ただし、個別リソースで別のロールを追加割り当てることも可能）</li>
+</ol>
+<details class="q-answer">
+<summary>解答と解説を見る</summary>
+<div class="inner">
+<p><b>正解: D, E</b></p>
+<p>Azureの管理階層（管理グループ→サブスクリプション→リソースグループ→リソース）では、上位レベルで割り当てたAzure PolicyとRBACは下位レベルに継承される（トップダウン継承）。管理グループへのPolicy割り当ては配下のすべてに継承され（選択肢D正解）、リソースグループへのRBACは配下のリソースに継承される（選択肢E正解）。逆方向（ボトムアップ）への継承は発生しない。選択肢Bは「サブスクリプションのポリシーはサブスクリプション内に適用される」という説明は概ね正しいが「管理グループには逆伝播しない」は当然であり、この記述自体は正しいが「2つの正しい説明」の候補として選択肢D・Eの方が明確に重要なポイントを述べている。選択肢CはRBACの逆伝播（下位から上位）は発生しないため誤り。選択肢AはAzureの管理グループは最大6レベルの深さに制限されているため誤り。</p>
+<div class="svc-links">📚 関連サービスの解説: <a href="../../learn/azure-policy.html">Azure Policy</a> ・ <a href="../../learn/azure-rbac.html">Azure RBAC</a></div>
+</div>
+</details>
+<div class="cta-box"><a class="btn btn-primary" href="../../exam.html?exam=azure-az900">▸ この試験を本気で演習する（全150問・無料）</a></div>
+<nav class="q-nav">
+<span><a href="q087.html">← 前の問題</a></span>
+<span><a href="q089.html">次の問題 →</a></span>
+</nav>
+<section class="related"><h2>同じ分野の関連問題</h2><ul class="q-list">
+<li><a href="q087.html">ある企業のエンジニアがAzureポータルにアクセスするためのURLはどれか。</a></li>
+<li><a href="q089.html">ある企業がAzureサブスクリプションのコストを部門別に把握するため、「Finance」「IT」「Marketing」と…</a></li>
+<li><a href="q086.html">ある企業がAzureのすべてのリソースへのアクセスを一元的に管理したい。最小権限の原則に基づき、各ユーザー・グループ・サ…</a></li>
+<li><a href="q090.html">ある企業が「マネージドID（Managed Identity）」を使ってAzure VMからAzure Key Vaul…</a></li>
+</ul></section>
+</main>
+<footer class="page-footer">
+<nav class="hub-nav"><a href="../../exams/aws-clf-c02/">CLF-C02 試験ガイド</a><a href="../../exams/aws-aif-c01/">AIF-C01 試験ガイド</a><a href="../../exams/aws-saa-c03/">SAA-C03 試験ガイド</a><a href="../../exams/aws-dva-c02/">DVA-C02 試験ガイド</a><a href="../../exams/aws-sap-c02/">SAP-C02 試験ガイド</a><a href="../../exams/gcp-cdl/">CDL 試験ガイド</a><a href="../../exams/gcp-ace/">ACE 試験ガイド</a><a href="../../exams/azure-az900/">AZ-900 試験ガイド</a><a href="../../exams/azure-ai900/">AI-900 試験ガイド</a><a href="../../exams/azure-dp900/">DP-900 試験ガイド</a><a href="../../exams/azure-sc900/">SC-900 試験ガイド</a><a href="../../exams/azure-az104/">AZ-104 試験ガイド</a></nav>
+<nav class="site-nav"><a href="../../guide/">資格ガイド</a><a href="../../learn/">サービス解説</a><a href="../../career/">キャリア</a><a href="../../about.html">運営者情報</a><a href="../../privacy.html">プライバシーポリシー</a><a href="../../contact.html">お問い合わせ</a></nav>
+<p class="copy">© CLOUDCERT_ — 本サイトは各認定試験の公式試験ではなく、収録問題はすべてオリジナルの演習問題です。</p>
+</footer>
+</body>
+</html>

@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>【SAP-C02 演習問題 #79】ある企業が AWS への移行を進めており、移行後のコストを事前に見積もりたいと考えています…</title>
+<meta name="description" content="SAP-C02の本試験レベル演習問題。ある企業が AWS への移行を進めており、移行後のコストを事前に見積もりたいと考えています。オンプレミスでは物理サーバー 100 台（CPU 使用率、メモリ使用率、ストレージ使用量の… 全選択肢の解説つき。">
+<link rel="canonical" href="https://cloudcert.app/q/aws-sap-c02/q079.html">
+<meta property="og:title" content="【SAP-C02 演習問題 #79】ある企業が AWS への移行を進めており、移行後のコストを事前に見積もりたいと考えています…">
+<meta property="og:description" content="SAP-C02の本試験レベル演習問題。ある企業が AWS への移行を進めており、移行後のコストを事前に見積もりたいと考えています。オンプレミスでは物理サーバー 100 台（CPU 使用率、メモリ使用率、ストレージ使用量の… 全選択肢の解説つき。">
+<meta property="og:url" content="https://cloudcert.app/q/aws-sap-c02/q079.html">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="CLOUDCERT_">
+<meta property="og:image" content="https://cloudcert.app/assets/og.png">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='80' font-size='80' fill='%233fe0a4' font-family='monospace'>▸</text></svg>">
+
+<meta name="google-adsense-account" content="ca-pub-5647574947191958">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+JP:wght@400;500;700&family=JetBrains+Mono:wght@400;600;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../../css/style.css">
+<link rel="stylesheet" href="../../css/page.css">
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-SZR5CB5Q3X"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag('js',new Date());gtag('config','G-SZR5CB5Q3X');</script>
+<script type="application/ld+json">[{"@context":"https://schema.org/","@type":"Quiz","about":{"@type":"Thing","name":"AWS Certified Solutions Architect - Professional"},"hasPart":[{"@type":"Question","eduQuestionType":"Multiple choice","learningResourceType":"Practice problem","text":"ある企業が AWS への移行を進めており、移行後のコストを事前に見積もりたいと考えています。オンプレミスでは物理サーバー 100 台（CPU 使用率、メモリ使用率、ストレージ使用量のデータあり）が稼働しており、AWS への移行後の EC2、RDS、S3 などの予想コストを計算したいと考えています。また、Reserved Instances と Savings Plans の適用による割引後の総コストも知りたいと考えています。最も適切なアプローチはどれですか？","suggestedAnswer":[{"@type":"Answer","position":0,"text":"競合他社のクラウドコスト計算ツール（CloudHealth など）を使って AWS コストを見積もる"},{"@type":"Answer","position":1,"text":"AWS 料金計算ツール（AWS Pricing Calculator）で各サービスを個別に入力して概算コストを計算する"},{"@type":"Answer","position":3,"text":"AWS Trusted Advisor で現在の AWS コストを確認し、オンプレミスと比較する"}],"acceptedAnswer":{"@type":"Answer","position":2,"text":"AWS Migration Evaluator（旧 TSO Logic）を使用して、オンプレミスの実際のリソース使用状況（CPU、メモリ、ストレージ）を収集・分析し、最適な AWS インスタンスタイプへのマッピングと、RI/Savings Plans 適用後の総 TCO 見積もりを生成する","comment":{"@type":"Comment","text":"AWS Migration Evaluator（旧 TSO Logic）は、オンプレミスサーバーの実際のリソース使用データ（CPU、メモリ、ストレージの時系列データ）を分析し、適切な AWS インスタンスタイプへの最適なマッピングを行います。RI と Savings Plans の適用シミュレーションにより、移行後の実際のコストに近い TCO レポートを生成できます。AWS が提供する無償の移行評価ツールです。\n\nB: AWS Pricing Calculator は個別サービスのコスト計算に有用ですが、100 台のサーバーを個別に手動入力するのは非効率で、実際の使用状況を反映した精度の高い見積もりが困難です。\n\nA: サードパーティツールは機能的ですが、AWS Migration Evaluator のような AWS の実際のプロビジョニングデータベースと RI/Savings Plans の詳細な割引計算への完全なアクセスはありません。\n\nD: Trusted Advisor は現在の AWS リソースの最適化を提案するものであり、オンプレミスから AWS への移行コスト見積もりには対応していません。"}}}]},{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"HOME","item":"https://cloudcert.app/"},{"@type":"ListItem","position":2,"name":"SAP-C02 試験ガイド","item":"https://cloudcert.app/exams/aws-sap-c02/"},{"@type":"ListItem","position":3,"name":"q079"}]}]</script>
+</head>
+<body class="page-body">
+<header class="page-header"><a class="page-logo" href="../../index.html">&gt; CLOUDCERT_</a></header>
+<main class="page-main">
+
+<nav class="breadcrumb"><a href="../../index.html">HOME</a> › <a href="../../exams/aws-sap-c02/">SAP-C02 試験ガイド</a> › q079</nav>
+<div class="q-meta"><span>SAP-C02</span><span>ワークロードの移行とモダナイゼーションの加速</span><span>HARD</span><span>単一選択</span></div>
+<h1>ある企業が AWS への移行を進めており、移行後のコストを事前に見積もりたいと考えています。オンプレミスでは物理サーバー 100 台（CPU 使用率、メモリ使用率、ストレージ使用量のデータあり）が稼働しており、AWS への移行後の EC2、RDS、S3 などの予想コストを計算したいと考えています。また、Reserved Instances と Savings Plans の適用による割引後の総コストも知りたいと考えています。最も適切なアプローチはどれですか？</h1>
+<ol class="q-choices">
+<li><b>A.</b> 競合他社のクラウドコスト計算ツール（CloudHealth など）を使って AWS コストを見積もる</li>
+<li><b>B.</b> AWS 料金計算ツール（AWS Pricing Calculator）で各サービスを個別に入力して概算コストを計算する</li>
+<li><b>C.</b> AWS Migration Evaluator（旧 TSO Logic）を使用して、オンプレミスの実際のリソース使用状況（CPU、メモリ、ストレージ）を収集・分析し、最適な AWS インスタンスタイプへのマッピングと、RI/Savings Plans 適用後の総 TCO 見積もりを生成する</li>
+<li><b>D.</b> AWS Trusted Advisor で現在の AWS コストを確認し、オンプレミスと比較する</li>
+</ol>
+<details class="q-answer">
+<summary>解答と解説を見る</summary>
+<div class="inner">
+<p><b>正解: C</b></p>
+<p>AWS Migration Evaluator（旧 TSO Logic）は、オンプレミスサーバーの実際のリソース使用データ（CPU、メモリ、ストレージの時系列データ）を分析し、適切な AWS インスタンスタイプへの最適なマッピングを行います。RI と Savings Plans の適用シミュレーションにより、移行後の実際のコストに近い TCO レポートを生成できます。AWS が提供する無償の移行評価ツールです。
+
+B: AWS Pricing Calculator は個別サービスのコスト計算に有用ですが、100 台のサーバーを個別に手動入力するのは非効率で、実際の使用状況を反映した精度の高い見積もりが困難です。
+
+A: サードパーティツールは機能的ですが、AWS Migration Evaluator のような AWS の実際のプロビジョニングデータベースと RI/Savings Plans の詳細な割引計算への完全なアクセスはありません。
+
+D: Trusted Advisor は現在の AWS リソースの最適化を提案するものであり、オンプレミスから AWS への移行コスト見積もりには対応していません。</p>
+
+</div>
+</details>
+<div class="cta-box"><a class="btn btn-primary" href="../../exam.html?exam=aws-sap-c02">▸ この試験を本気で演習する（全150問・無料）</a></div>
+<nav class="q-nav">
+<span><a href="q078.html">← 前の問題</a></span>
+<span><a href="q080.html">次の問題 →</a></span>
+</nav>
+<section class="related"><h2>同じ分野の関連問題</h2><ul class="q-list">
+<li><a href="q078.html">ある企業が AWS 上でアプリケーションのコンテナ化を進めており、Docker イメージを Amazon ECR に格納…</a></li>
+<li><a href="q080.html">ある金融機関が AWS への移行を計画しており、コンプライアンス要件として移行対象のすべてのシステムについて「詳細なビジ…</a></li>
+<li><a href="q077.html">ある企業が VMware vSphere 環境をクラウドに移行する際、「クラウドへの移行」ではなく「クラウドへの拡張」と…</a></li>
+<li><a href="q076.html">ある企業がオンプレミスのファイルサーバー（Windows File Server、50TB）を AWS に移行しようとし…</a></li>
+</ul></section>
+</main>
+<footer class="page-footer">
+<nav class="hub-nav"><a href="../../exams/aws-clf-c02/">CLF-C02 試験ガイド</a><a href="../../exams/aws-aif-c01/">AIF-C01 試験ガイド</a><a href="../../exams/aws-saa-c03/">SAA-C03 試験ガイド</a><a href="../../exams/aws-dva-c02/">DVA-C02 試験ガイド</a><a href="../../exams/aws-sap-c02/">SAP-C02 試験ガイド</a><a href="../../exams/gcp-cdl/">CDL 試験ガイド</a><a href="../../exams/gcp-ace/">ACE 試験ガイド</a><a href="../../exams/azure-az900/">AZ-900 試験ガイド</a><a href="../../exams/azure-ai900/">AI-900 試験ガイド</a><a href="../../exams/azure-dp900/">DP-900 試験ガイド</a><a href="../../exams/azure-sc900/">SC-900 試験ガイド</a><a href="../../exams/azure-az104/">AZ-104 試験ガイド</a></nav>
+<nav class="site-nav"><a href="../../guide/">資格ガイド</a><a href="../../learn/">サービス解説</a><a href="../../career/">キャリア</a><a href="../../about.html">運営者情報</a><a href="../../privacy.html">プライバシーポリシー</a><a href="../../contact.html">お問い合わせ</a></nav>
+<p class="copy">© CLOUDCERT_ — 本サイトは各認定試験の公式試験ではなく、収録問題はすべてオリジナルの演習問題です。</p>
+</footer>
+</body>
+</html>

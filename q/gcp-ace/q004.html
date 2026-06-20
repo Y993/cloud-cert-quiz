@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>【ACE 演習問題 #4】あなたは gcloud CLI を新しい開発マシンにインストールしました。複数の Goog…</title>
+<meta name="description" content="ACEの本試験レベル演習問題。あなたは gcloud CLI を新しい開発マシンにインストールしました。複数の Google Cloud プロジェクトを切り替えて作業するための設定を効率的に管理する方法として最も適切なも… 全選択肢の解説つき。">
+<link rel="canonical" href="https://cloudcert.app/q/gcp-ace/q004.html">
+<meta property="og:title" content="【ACE 演習問題 #4】あなたは gcloud CLI を新しい開発マシンにインストールしました。複数の Goog…">
+<meta property="og:description" content="ACEの本試験レベル演習問題。あなたは gcloud CLI を新しい開発マシンにインストールしました。複数の Google Cloud プロジェクトを切り替えて作業するための設定を効率的に管理する方法として最も適切なも… 全選択肢の解説つき。">
+<meta property="og:url" content="https://cloudcert.app/q/gcp-ace/q004.html">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="CLOUDCERT_">
+<meta property="og:image" content="https://cloudcert.app/assets/og.png">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='80' font-size='80' fill='%233fe0a4' font-family='monospace'>▸</text></svg>">
+
+<meta name="google-adsense-account" content="ca-pub-5647574947191958">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+JP:wght@400;500;700&family=JetBrains+Mono:wght@400;600;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../../css/style.css">
+<link rel="stylesheet" href="../../css/page.css">
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-SZR5CB5Q3X"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag('js',new Date());gtag('config','G-SZR5CB5Q3X');</script>
+<script type="application/ld+json">[{"@context":"https://schema.org/","@type":"Quiz","about":{"@type":"Thing","name":"Associate Cloud Engineer"},"hasPart":[{"@type":"Question","eduQuestionType":"Multiple choice","learningResourceType":"Practice problem","text":"あなたは gcloud CLI を新しい開発マシンにインストールしました。複数の Google Cloud プロジェクトを切り替えて作業するための設定を効率的に管理する方法として最も適切なものはどれですか？","suggestedAnswer":[{"@type":"Answer","position":0,"text":"各プロジェクト用のサービスアカウントキーを手動で切り替える"},{"@type":"Answer","position":2,"text":"環境変数 GOOGLE_CLOUD_PROJECT に毎回プロジェクト ID をセットする"},{"@type":"Answer","position":3,"text":"作業のたびに gcloud config set project <PROJECT_ID> を実行する"}],"acceptedAnswer":{"@type":"Answer","position":1,"text":"gcloud config configurations create コマンドで複数の設定プロファイルを作成し切り替える","comment":{"@type":"Comment","text":"gcloud config configurations create で名前付き設定プロファイルを作成し、gcloud config configurations activate で切り替えることで、プロジェクト・アカウント・リージョンなどをセットとして管理できます。毎回 gcloud config set を実行する方法は手間がかかり、ミスの原因になります。環境変数 GOOGLE_CLOUD_PROJECT はシェルセッション固有であり、アカウントやリージョン設定との整合が取りにくいです。サービスアカウントキーの手動切り替えはセキュリティリスクが高く、運用負荷も大きいため推奨されません。"}}}]},{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"HOME","item":"https://cloudcert.app/"},{"@type":"ListItem","position":2,"name":"ACE 試験ガイド","item":"https://cloudcert.app/exams/gcp-ace/"},{"@type":"ListItem","position":3,"name":"q004"}]}]</script>
+</head>
+<body class="page-body">
+<header class="page-header"><a class="page-logo" href="../../index.html">&gt; CLOUDCERT_</a></header>
+<main class="page-main">
+
+<nav class="breadcrumb"><a href="../../index.html">HOME</a> › <a href="../../exams/gcp-ace/">ACE 試験ガイド</a> › q004</nav>
+<div class="q-meta"><span>ACE</span><span>クラウドソリューション環境の設定</span><span>EASY</span><span>単一選択</span></div>
+<h1>あなたは gcloud CLI を新しい開発マシンにインストールしました。複数の Google Cloud プロジェクトを切り替えて作業するための設定を効率的に管理する方法として最も適切なものはどれですか？</h1>
+<ol class="q-choices">
+<li><b>A.</b> 各プロジェクト用のサービスアカウントキーを手動で切り替える</li>
+<li><b>B.</b> gcloud config configurations create コマンドで複数の設定プロファイルを作成し切り替える</li>
+<li><b>C.</b> 環境変数 GOOGLE_CLOUD_PROJECT に毎回プロジェクト ID をセットする</li>
+<li><b>D.</b> 作業のたびに gcloud config set project &lt;PROJECT_ID&gt; を実行する</li>
+</ol>
+<details class="q-answer">
+<summary>解答と解説を見る</summary>
+<div class="inner">
+<p><b>正解: B</b></p>
+<p>gcloud config configurations create で名前付き設定プロファイルを作成し、gcloud config configurations activate で切り替えることで、プロジェクト・アカウント・リージョンなどをセットとして管理できます。毎回 gcloud config set を実行する方法は手間がかかり、ミスの原因になります。環境変数 GOOGLE_CLOUD_PROJECT はシェルセッション固有であり、アカウントやリージョン設定との整合が取りにくいです。サービスアカウントキーの手動切り替えはセキュリティリスクが高く、運用負荷も大きいため推奨されません。</p>
+
+</div>
+</details>
+<div class="cta-box"><a class="btn btn-primary" href="../../exam.html?exam=gcp-ace">▸ この試験を本気で演習する（全150問・無料）</a></div>
+<nav class="q-nav">
+<span><a href="q003.html">← 前の問題</a></span>
+<span><a href="q005.html">次の問題 →</a></span>
+</nav>
+<section class="related"><h2>同じ分野の関連問題</h2><ul class="q-list">
+<li><a href="q003.html">開発チームは Google Cloud Console へのアクセスに個人の Google アカウントを使用しています。…</a></li>
+<li><a href="q005.html">あなたのチームは月の Cloud Run 費用が 500 ドルを超えたときにアラートを受け取りたいと考えています。最も少…</a></li>
+<li><a href="q002.html">あなたの会社は複数の部門が別々の Google Cloud プロジェクトを持っており、一元的な請求管理と予算制御が必要で…</a></li>
+<li><a href="q006.html">大企業が Google Cloud の導入を開始します。各部門が独立してプロジェクトを管理しながらも、会社全体のセキュリ…</a></li>
+</ul></section>
+</main>
+<footer class="page-footer">
+<nav class="hub-nav"><a href="../../exams/aws-clf-c02/">CLF-C02 試験ガイド</a><a href="../../exams/aws-aif-c01/">AIF-C01 試験ガイド</a><a href="../../exams/aws-saa-c03/">SAA-C03 試験ガイド</a><a href="../../exams/aws-dva-c02/">DVA-C02 試験ガイド</a><a href="../../exams/aws-sap-c02/">SAP-C02 試験ガイド</a><a href="../../exams/gcp-cdl/">CDL 試験ガイド</a><a href="../../exams/gcp-ace/">ACE 試験ガイド</a><a href="../../exams/azure-az900/">AZ-900 試験ガイド</a><a href="../../exams/azure-ai900/">AI-900 試験ガイド</a><a href="../../exams/azure-dp900/">DP-900 試験ガイド</a><a href="../../exams/azure-sc900/">SC-900 試験ガイド</a><a href="../../exams/azure-az104/">AZ-104 試験ガイド</a></nav>
+<nav class="site-nav"><a href="../../guide/">資格ガイド</a><a href="../../learn/">サービス解説</a><a href="../../career/">キャリア</a><a href="../../about.html">運営者情報</a><a href="../../privacy.html">プライバシーポリシー</a><a href="../../contact.html">お問い合わせ</a></nav>
+<p class="copy">© CLOUDCERT_ — 本サイトは各認定試験の公式試験ではなく、収録問題はすべてオリジナルの演習問題です。</p>
+</footer>
+</body>
+</html>

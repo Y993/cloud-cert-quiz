@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>【DP-900 演習問題 #129】ある保険会社が、保険金請求データ（Azure SQL Database）・顧客マスタ（オン…</title>
+<meta name="description" content="DP-900の本試験レベル演習問題。ある保険会社が、保険金請求データ（Azure SQL Database）・顧客マスタ（オンプレミス Oracle）・外部の気象データ（REST API）の3つのソースを統合して、Azu… 全選択肢の解説つき。">
+<link rel="canonical" href="https://cloudcert.app/q/azure-dp900/q129.html">
+<meta property="og:title" content="【DP-900 演習問題 #129】ある保険会社が、保険金請求データ（Azure SQL Database）・顧客マスタ（オン…">
+<meta property="og:description" content="DP-900の本試験レベル演習問題。ある保険会社が、保険金請求データ（Azure SQL Database）・顧客マスタ（オンプレミス Oracle）・外部の気象データ（REST API）の3つのソースを統合して、Azu… 全選択肢の解説つき。">
+<meta property="og:url" content="https://cloudcert.app/q/azure-dp900/q129.html">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="CLOUDCERT_">
+<meta property="og:image" content="https://cloudcert.app/assets/og.png">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='80' font-size='80' fill='%233fe0a4' font-family='monospace'>▸</text></svg>">
+
+<meta name="google-adsense-account" content="ca-pub-5647574947191958">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+JP:wght@400;500;700&family=JetBrains+Mono:wght@400;600;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../../css/style.css">
+<link rel="stylesheet" href="../../css/page.css">
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-SZR5CB5Q3X"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag('js',new Date());gtag('config','G-SZR5CB5Q3X');</script>
+<script type="application/ld+json">[{"@context":"https://schema.org/","@type":"Quiz","about":{"@type":"Thing","name":"Microsoft Azure Data Fundamentals"},"hasPart":[{"@type":"Question","eduQuestionType":"Multiple choice","learningResourceType":"Practice problem","text":"ある保険会社が、保険金請求データ（Azure SQL Database）・顧客マスタ（オンプレミス Oracle）・外部の気象データ（REST API）の3つのソースを統合して、Azure Synapse Analytics にデータウェアハウスを構築したい。最小限の開発工数でこの統合を実現できるサービスはどれか。","suggestedAnswer":[{"@type":"Answer","position":0,"text":"Azure Databricks：カスタム Spark ジョブで各ソースからデータを取得・変換する"},{"@type":"Answer","position":2,"text":"Azure Stream Analytics：リアルタイムストリーミングで3ソースのデータを結合する"},{"@type":"Answer","position":3,"text":"Azure Logic Apps：ワークフロー自動化でデータをコピーする"}],"acceptedAnswer":{"@type":"Answer","position":1,"text":"Azure Data Factory：ビジュアルなパイプラインで複数ソースのデータ統合と変換を管理する","comment":{"@type":"Comment","text":"Azure Data Factory は90種類以上のデータコネクタを標準搭載しており、Azure SQL Database・オンプレミス Oracle（セルフホスト型 Integration Runtime を使用）・REST API など多様なソースに接続できる。ビジュアルなキャンバス上でパイプラインを設計できるためコード記述が最小限で済み、スケジュール実行も簡単に設定できる。選択肢 A の Azure Databricks はカスタムコードで柔軟な処理を書けるが、各コネクタの実装・認証処理・エラーハンドリングを自分で書く必要があり開発工数が増大する。選択肢 C の Azure Stream Analytics はリアルタイムストリーミング分析向けであり、バッチ統合パイプラインの設計には適していない。選択肢 D の Azure Logic Apps はビジネスプロセス自動化向けであり、大規模なデータ統合パイプラインの設計には機能が限定的である。"}}}]},{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"HOME","item":"https://cloudcert.app/"},{"@type":"ListItem","position":2,"name":"DP-900 試験ガイド","item":"https://cloudcert.app/exams/azure-dp900/"},{"@type":"ListItem","position":3,"name":"q129"}]}]</script>
+</head>
+<body class="page-body">
+<header class="page-header"><a class="page-logo" href="../../index.html">&gt; CLOUDCERT_</a></header>
+<main class="page-main">
+
+<nav class="breadcrumb"><a href="../../index.html">HOME</a> › <a href="../../exams/azure-dp900/">DP-900 試験ガイド</a> › q129</nav>
+<div class="q-meta"><span>DP-900</span><span>Azure の分析ワークロード</span><span>MEDIUM</span><span>単一選択</span></div>
+<h1>ある保険会社が、保険金請求データ（Azure SQL Database）・顧客マスタ（オンプレミス Oracle）・外部の気象データ（REST API）の3つのソースを統合して、Azure Synapse Analytics にデータウェアハウスを構築したい。最小限の開発工数でこの統合を実現できるサービスはどれか。</h1>
+<ol class="q-choices">
+<li><b>A.</b> Azure Databricks：カスタム Spark ジョブで各ソースからデータを取得・変換する</li>
+<li><b>B.</b> Azure Data Factory：ビジュアルなパイプラインで複数ソースのデータ統合と変換を管理する</li>
+<li><b>C.</b> Azure Stream Analytics：リアルタイムストリーミングで3ソースのデータを結合する</li>
+<li><b>D.</b> Azure Logic Apps：ワークフロー自動化でデータをコピーする</li>
+</ol>
+<details class="q-answer">
+<summary>解答と解説を見る</summary>
+<div class="inner">
+<p><b>正解: B</b></p>
+<p>Azure Data Factory は90種類以上のデータコネクタを標準搭載しており、Azure SQL Database・オンプレミス Oracle（セルフホスト型 Integration Runtime を使用）・REST API など多様なソースに接続できる。ビジュアルなキャンバス上でパイプラインを設計できるためコード記述が最小限で済み、スケジュール実行も簡単に設定できる。選択肢 A の Azure Databricks はカスタムコードで柔軟な処理を書けるが、各コネクタの実装・認証処理・エラーハンドリングを自分で書く必要があり開発工数が増大する。選択肢 C の Azure Stream Analytics はリアルタイムストリーミング分析向けであり、バッチ統合パイプラインの設計には適していない。選択肢 D の Azure Logic Apps はビジネスプロセス自動化向けであり、大規模なデータ統合パイプラインの設計には機能が限定的である。</p>
+<div class="svc-links">📚 関連サービスの解説: <a href="../../learn/azure-data-factory.html">Azure Data Factory</a></div>
+</div>
+</details>
+<div class="cta-box"><a class="btn btn-primary" href="../../exam.html?exam=azure-dp900">▸ この試験を本気で演習する（全150問・無料）</a></div>
+<nav class="q-nav">
+<span><a href="q128.html">← 前の問題</a></span>
+<span><a href="q130.html">次の問題 →</a></span>
+</nav>
+<section class="related"><h2>同じ分野の関連問題</h2><ul class="q-list">
+<li><a href="q128.html">ある企業が、Azure Synapse Analytics でデータウェアハウスを構築している。SQL プールを使用せず…</a></li>
+<li><a href="q130.html">ある企業が Azure Synapse Analytics の専用 SQL プールでクエリのパフォーマンスチューニングを…</a></li>
+<li><a href="q127.html">データウェアハウスのスタースキーマにおいて、「日付」ディメンションテーブルが保持する典型的な属性として適切なものはどれか…</a></li>
+<li><a href="q131.html">ある小売企業が、オンラインショップのクリックストリームデータを Azure Event Hubs で受信し、直近5分間の…</a></li>
+</ul></section>
+</main>
+<footer class="page-footer">
+<nav class="hub-nav"><a href="../../exams/aws-clf-c02/">CLF-C02 試験ガイド</a><a href="../../exams/aws-aif-c01/">AIF-C01 試験ガイド</a><a href="../../exams/aws-saa-c03/">SAA-C03 試験ガイド</a><a href="../../exams/aws-dva-c02/">DVA-C02 試験ガイド</a><a href="../../exams/aws-sap-c02/">SAP-C02 試験ガイド</a><a href="../../exams/gcp-cdl/">CDL 試験ガイド</a><a href="../../exams/gcp-ace/">ACE 試験ガイド</a><a href="../../exams/azure-az900/">AZ-900 試験ガイド</a><a href="../../exams/azure-ai900/">AI-900 試験ガイド</a><a href="../../exams/azure-dp900/">DP-900 試験ガイド</a><a href="../../exams/azure-sc900/">SC-900 試験ガイド</a><a href="../../exams/azure-az104/">AZ-104 試験ガイド</a></nav>
+<nav class="site-nav"><a href="../../guide/">資格ガイド</a><a href="../../learn/">サービス解説</a><a href="../../career/">キャリア</a><a href="../../about.html">運営者情報</a><a href="../../privacy.html">プライバシーポリシー</a><a href="../../contact.html">お問い合わせ</a></nav>
+<p class="copy">© CLOUDCERT_ — 本サイトは各認定試験の公式試験ではなく、収録問題はすべてオリジナルの演習問題です。</p>
+</footer>
+</body>
+</html>

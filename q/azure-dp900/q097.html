@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>【DP-900 演習問題 #97】ある航空会社が、世界 12 か国の空港カウンターで座席予約を管理している。座席の二重予約を…</title>
+<meta name="description" content="DP-900の本試験レベル演習問題。ある航空会社が、世界 12 か国の空港カウンターで座席予約を管理している。座席の二重予約を防ぐために、任意のリージョンで書き込みが発生しても他のリージョンで即座に最新の空席状況が見える… 全選択肢の解説つき。">
+<link rel="canonical" href="https://cloudcert.app/q/azure-dp900/q097.html">
+<meta property="og:title" content="【DP-900 演習問題 #97】ある航空会社が、世界 12 か国の空港カウンターで座席予約を管理している。座席の二重予約を…">
+<meta property="og:description" content="DP-900の本試験レベル演習問題。ある航空会社が、世界 12 か国の空港カウンターで座席予約を管理している。座席の二重予約を防ぐために、任意のリージョンで書き込みが発生しても他のリージョンで即座に最新の空席状況が見える… 全選択肢の解説つき。">
+<meta property="og:url" content="https://cloudcert.app/q/azure-dp900/q097.html">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="CLOUDCERT_">
+<meta property="og:image" content="https://cloudcert.app/assets/og.png">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='80' font-size='80' fill='%233fe0a4' font-family='monospace'>▸</text></svg>">
+
+<meta name="google-adsense-account" content="ca-pub-5647574947191958">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+JP:wght@400;500;700&family=JetBrains+Mono:wght@400;600;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../../css/style.css">
+<link rel="stylesheet" href="../../css/page.css">
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-SZR5CB5Q3X"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag('js',new Date());gtag('config','G-SZR5CB5Q3X');</script>
+<script type="application/ld+json">[{"@context":"https://schema.org/","@type":"Quiz","about":{"@type":"Thing","name":"Microsoft Azure Data Fundamentals"},"hasPart":[{"@type":"Question","eduQuestionType":"Multiple choice","learningResourceType":"Practice problem","text":"ある航空会社が、世界 12 か国の空港カウンターで座席予約を管理している。座席の二重予約を防ぐために、任意のリージョンで書き込みが発生しても他のリージョンで即座に最新の空席状況が見えることが必須である。一方で、レイテンシの増加は最小限に抑えたい。Azure Cosmos DB の整合性レベルとしてどれを選択すべきか。","suggestedAnswer":[{"@type":"Answer","position":1,"text":"有界整合性制約（Bounded Staleness）— 書き込み後 K 操作以内の遅延を許容するが、即座の反映は保証されない"},{"@type":"Answer","position":2,"text":"最終的（Eventual）整合性 — 最もレイテンシが低いが、二重予約防止には不十分である"},{"@type":"Answer","position":3,"text":"セッション（Session）整合性 — 同一セッション内での一貫性は保証されるが、他セッションでは古いデータが見える可能性がある"}],"acceptedAnswer":{"@type":"Answer","position":0,"text":"厳密（Strong）整合性 — 全リージョンで常に最新値を保証するが、マルチリージョン書き込みでは書き込みレイテンシが大幅に増加する","comment":{"@type":"Comment","text":"座席の二重予約防止は「どのリージョンからの読み取りでも常に最新のコミット済み状態を見る」ことが必要で、これは厳密（Strong）整合性のみが保証できる。厳密整合性では書き込みが全レプリカにコミットされてから応答が返るため、どのリージョンでも常に最新値を読み取れる。マルチリージョン書き込みでのレイテンシ増加は避けられないが、二重予約という重大なビジネス損失を防ぐためにはトレードオフとして許容すべきである。選択肢 C の最終的整合性では書き込み直後に別リージョンで古い空席情報を読み取る可能性があり、二重予約が発生する。選択肢 D のセッション整合性は自分のセッションの書き込みは読み取れるが、別の担当者（別セッション）の予約が即座に反映されないため二重予約を防げない。選択肢 B の有界整合性制約は K 操作以内の遅延を許容するため、その遅延中に別リージョンで二重予約が発生する可能性がある。"}}}]},{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"HOME","item":"https://cloudcert.app/"},{"@type":"ListItem","position":2,"name":"DP-900 試験ガイド","item":"https://cloudcert.app/exams/azure-dp900/"},{"@type":"ListItem","position":3,"name":"q097"}]}]</script>
+</head>
+<body class="page-body">
+<header class="page-header"><a class="page-logo" href="../../index.html">&gt; CLOUDCERT_</a></header>
+<main class="page-main">
+
+<nav class="breadcrumb"><a href="../../index.html">HOME</a> › <a href="../../exams/azure-dp900/">DP-900 試験ガイド</a> › q097</nav>
+<div class="q-meta"><span>DP-900</span><span>Azure の非リレーショナル データ</span><span>HARD</span><span>単一選択</span></div>
+<h1>ある航空会社が、世界 12 か国の空港カウンターで座席予約を管理している。座席の二重予約を防ぐために、任意のリージョンで書き込みが発生しても他のリージョンで即座に最新の空席状況が見えることが必須である。一方で、レイテンシの増加は最小限に抑えたい。Azure Cosmos DB の整合性レベルとしてどれを選択すべきか。</h1>
+<ol class="q-choices">
+<li><b>A.</b> 厳密（Strong）整合性 — 全リージョンで常に最新値を保証するが、マルチリージョン書き込みでは書き込みレイテンシが大幅に増加する</li>
+<li><b>B.</b> 有界整合性制約（Bounded Staleness）— 書き込み後 K 操作以内の遅延を許容するが、即座の反映は保証されない</li>
+<li><b>C.</b> 最終的（Eventual）整合性 — 最もレイテンシが低いが、二重予約防止には不十分である</li>
+<li><b>D.</b> セッション（Session）整合性 — 同一セッション内での一貫性は保証されるが、他セッションでは古いデータが見える可能性がある</li>
+</ol>
+<details class="q-answer">
+<summary>解答と解説を見る</summary>
+<div class="inner">
+<p><b>正解: A</b></p>
+<p>座席の二重予約防止は「どのリージョンからの読み取りでも常に最新のコミット済み状態を見る」ことが必要で、これは厳密（Strong）整合性のみが保証できる。厳密整合性では書き込みが全レプリカにコミットされてから応答が返るため、どのリージョンでも常に最新値を読み取れる。マルチリージョン書き込みでのレイテンシ増加は避けられないが、二重予約という重大なビジネス損失を防ぐためにはトレードオフとして許容すべきである。選択肢 C の最終的整合性では書き込み直後に別リージョンで古い空席情報を読み取る可能性があり、二重予約が発生する。選択肢 D のセッション整合性は自分のセッションの書き込みは読み取れるが、別の担当者（別セッション）の予約が即座に反映されないため二重予約を防げない。選択肢 B の有界整合性制約は K 操作以内の遅延を許容するため、その遅延中に別リージョンで二重予約が発生する可能性がある。</p>
+
+</div>
+</details>
+<div class="cta-box"><a class="btn btn-primary" href="../../exam.html?exam=azure-dp900">▸ この試験を本気で演習する（全150問・無料）</a></div>
+<nav class="q-nav">
+<span><a href="q096.html">← 前の問題</a></span>
+<span><a href="q098.html">次の問題 →</a></span>
+</nav>
+<section class="related"><h2>同じ分野の関連問題</h2><ul class="q-list">
+<li><a href="q096.html">ある製造企業が、工場の 5,000 台の機器から 1 秒ごとにセンサーデータ（機器 ID、センサー値、タイムスタンプ）を…</a></li>
+<li><a href="q098.html">ある不動産テック企業が、物件情報（テキスト・写真・価格履歴・オーナー変遷）を Azure Cosmos DB for N…</a></li>
+<li><a href="q095.html">ある EC サイトが、商品カタログデータ（製品名、説明、価格、スペック）を Azure Cosmos DB for Ta…</a></li>
+<li><a href="q099.html">ある HR テック企業が、従業員の職歴・資格・スキル・プロジェクト経験を Azure Cosmos DB for NoS…</a></li>
+</ul></section>
+</main>
+<footer class="page-footer">
+<nav class="hub-nav"><a href="../../exams/aws-clf-c02/">CLF-C02 試験ガイド</a><a href="../../exams/aws-aif-c01/">AIF-C01 試験ガイド</a><a href="../../exams/aws-saa-c03/">SAA-C03 試験ガイド</a><a href="../../exams/aws-dva-c02/">DVA-C02 試験ガイド</a><a href="../../exams/aws-sap-c02/">SAP-C02 試験ガイド</a><a href="../../exams/gcp-cdl/">CDL 試験ガイド</a><a href="../../exams/gcp-ace/">ACE 試験ガイド</a><a href="../../exams/azure-az900/">AZ-900 試験ガイド</a><a href="../../exams/azure-ai900/">AI-900 試験ガイド</a><a href="../../exams/azure-dp900/">DP-900 試験ガイド</a><a href="../../exams/azure-sc900/">SC-900 試験ガイド</a><a href="../../exams/azure-az104/">AZ-104 試験ガイド</a></nav>
+<nav class="site-nav"><a href="../../guide/">資格ガイド</a><a href="../../learn/">サービス解説</a><a href="../../career/">キャリア</a><a href="../../about.html">運営者情報</a><a href="../../privacy.html">プライバシーポリシー</a><a href="../../contact.html">お問い合わせ</a></nav>
+<p class="copy">© CLOUDCERT_ — 本サイトは各認定試験の公式試験ではなく、収録問題はすべてオリジナルの演習問題です。</p>
+</footer>
+</body>
+</html>

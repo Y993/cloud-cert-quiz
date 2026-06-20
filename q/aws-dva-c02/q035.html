@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>【DVA-C02 演習問題 #35】あるEC企業が、EventBridgeルールを使ってS3バケットへのオブジェクトアップロー…</title>
+<meta name="description" content="DVA-C02の本試験レベル演習問題。あるEC企業が、EventBridgeルールを使ってS3バケットへのオブジェクトアップロードイベントを検知し、画像リサイズLambdaを起動している。しかし一部のイベントでLambd… 全選択肢の解説つき。">
+<link rel="canonical" href="https://cloudcert.app/q/aws-dva-c02/q035.html">
+<meta property="og:title" content="【DVA-C02 演習問題 #35】あるEC企業が、EventBridgeルールを使ってS3バケットへのオブジェクトアップロー…">
+<meta property="og:description" content="DVA-C02の本試験レベル演習問題。あるEC企業が、EventBridgeルールを使ってS3バケットへのオブジェクトアップロードイベントを検知し、画像リサイズLambdaを起動している。しかし一部のイベントでLambd… 全選択肢の解説つき。">
+<meta property="og:url" content="https://cloudcert.app/q/aws-dva-c02/q035.html">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="CLOUDCERT_">
+<meta property="og:image" content="https://cloudcert.app/assets/og.png">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='80' font-size='80' fill='%233fe0a4' font-family='monospace'>▸</text></svg>">
+
+<meta name="google-adsense-account" content="ca-pub-5647574947191958">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+JP:wght@400;500;700&family=JetBrains+Mono:wght@400;600;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../../css/style.css">
+<link rel="stylesheet" href="../../css/page.css">
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-SZR5CB5Q3X"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag('js',new Date());gtag('config','G-SZR5CB5Q3X');</script>
+<script type="application/ld+json">[{"@context":"https://schema.org/","@type":"Quiz","about":{"@type":"Thing","name":"AWS Certified Developer - Associate"},"hasPart":[{"@type":"Question","eduQuestionType":"Multiple choice","learningResourceType":"Practice problem","text":"あるEC企業が、EventBridgeルールを使ってS3バケットへのオブジェクトアップロードイベントを検知し、画像リサイズLambdaを起動している。しかし一部のイベントでLambdaが起動されないことがある。原因を調査したところ、イベントパターンのフィルタリング設定に問題があることがわかった。EventBridgeでイベントが確実にLambdaに配信されるよう監視する最も適切な方法はどれか。","suggestedAnswer":[{"@type":"Answer","position":0,"text":"S3イベント通知を直接Lambda関数に設定し、EventBridgeをバイパスする"},{"@type":"Answer","position":2,"text":"EventBridgeルールを削除して、S3バケット通知でSNSトピックを経由してLambdaを起動する"},{"@type":"Answer","position":3,"text":"EventBridgeルールのターゲットにSQSキューとLambdaを両方設定し、SQSをバックアップとして使う"}],"acceptedAnswer":{"@type":"Answer","position":1,"text":"EventBridgeのデッドレターキュー（DLQ）をルールのターゲット設定に追加し、配信失敗したイベントをSQSでキャプチャする。CloudWatch MetricsのFailedInvocationsをアラーム監視する","comment":{"@type":"Comment","text":"EventBridgeルールのターゲットへの配信失敗（Lambdaのスロットリング、タイムアウト等）に対してDLQ（SQSキュー）を設定することで、失敗イベントを失わずに後で再処理できる。さらにCloudWatch MetricsのFailedInvocationsメトリクスをアラームで監視することで配信失敗を検知できる。これがEventBridgeの公式推奨の信頼性パターンである。DのSQSとLambdaの並列設定では、SQSへのイベント配信とLambdaへの配信は独立して行われ、Lambdaの配信失敗をSQSが補完する設計にはならない。AのS3直接通知はEventBridgeのルールベースフィルタリング機能（detail-typeや属性フィルタ）が使えず、複雑なフィルタ要件がある場合に不適切。CのSNS経由は追加コンポーネントを増やすだけでEventBridgeの問題（パターン設定の改善）を解決しない。"}}}]},{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"HOME","item":"https://cloudcert.app/"},{"@type":"ListItem","position":2,"name":"DVA-C02 試験ガイド","item":"https://cloudcert.app/exams/aws-dva-c02/"},{"@type":"ListItem","position":3,"name":"q035"}]}]</script>
+</head>
+<body class="page-body">
+<header class="page-header"><a class="page-logo" href="../../index.html">&gt; CLOUDCERT_</a></header>
+<main class="page-main">
+
+<nav class="breadcrumb"><a href="../../index.html">HOME</a> › <a href="../../exams/aws-dva-c02/">DVA-C02 試験ガイド</a> › q035</nav>
+<div class="q-meta"><span>DVA-C02</span><span>開発</span><span>MEDIUM</span><span>単一選択</span></div>
+<h1>あるEC企業が、EventBridgeルールを使ってS3バケットへのオブジェクトアップロードイベントを検知し、画像リサイズLambdaを起動している。しかし一部のイベントでLambdaが起動されないことがある。原因を調査したところ、イベントパターンのフィルタリング設定に問題があることがわかった。EventBridgeでイベントが確実にLambdaに配信されるよう監視する最も適切な方法はどれか。</h1>
+<ol class="q-choices">
+<li><b>A.</b> S3イベント通知を直接Lambda関数に設定し、EventBridgeをバイパスする</li>
+<li><b>B.</b> EventBridgeのデッドレターキュー（DLQ）をルールのターゲット設定に追加し、配信失敗したイベントをSQSでキャプチャする。CloudWatch MetricsのFailedInvocationsをアラーム監視する</li>
+<li><b>C.</b> EventBridgeルールを削除して、S3バケット通知でSNSトピックを経由してLambdaを起動する</li>
+<li><b>D.</b> EventBridgeルールのターゲットにSQSキューとLambdaを両方設定し、SQSをバックアップとして使う</li>
+</ol>
+<details class="q-answer">
+<summary>解答と解説を見る</summary>
+<div class="inner">
+<p><b>正解: B</b></p>
+<p>EventBridgeルールのターゲットへの配信失敗（Lambdaのスロットリング、タイムアウト等）に対してDLQ（SQSキュー）を設定することで、失敗イベントを失わずに後で再処理できる。さらにCloudWatch MetricsのFailedInvocationsメトリクスをアラームで監視することで配信失敗を検知できる。これがEventBridgeの公式推奨の信頼性パターンである。DのSQSとLambdaの並列設定では、SQSへのイベント配信とLambdaへの配信は独立して行われ、Lambdaの配信失敗をSQSが補完する設計にはならない。AのS3直接通知はEventBridgeのルールベースフィルタリング機能（detail-typeや属性フィルタ）が使えず、複雑なフィルタ要件がある場合に不適切。CのSNS経由は追加コンポーネントを増やすだけでEventBridgeの問題（パターン設定の改善）を解決しない。</p>
+<div class="svc-links">📚 関連サービスの解説: <a href="../../learn/amazon-eventbridge.html">Amazon EventBridge</a> ・ <a href="../../learn/amazon-sqs.html">Amazon SQS</a></div>
+</div>
+</details>
+<div class="cta-box"><a class="btn btn-primary" href="../../exam.html?exam=aws-dva-c02">▸ この試験を本気で演習する（全150問・無料）</a></div>
+<nav class="q-nav">
+<span><a href="q034.html">← 前の問題</a></span>
+<span><a href="q036.html">次の問題 →</a></span>
+</nav>
+<section class="related"><h2>同じ分野の関連問題</h2><ul class="q-list">
+<li><a href="q034.html">ある金融サービス企業が、Step Functionsを使って与信審査ワークフローを実装している。各ステップは外部APIを…</a></li>
+<li><a href="q036.html">あるスタートアップが、ElastiCache for Redisをデータベースキャッシュとして導入しようとしている。デー…</a></li>
+<li><a href="q033.html">あるIoTプラットフォームが、多数のデバイスからセンサーデータをSNSトピックで受信し、複数の下流サービスに配信している…</a></li>
+<li><a href="q037.html">あるマーケットプレイス企業が、DynamoDBを使って注文管理システムを構築している。注文処理では「在庫テーブルから在庫…</a></li>
+</ul></section>
+</main>
+<footer class="page-footer">
+<nav class="hub-nav"><a href="../../exams/aws-clf-c02/">CLF-C02 試験ガイド</a><a href="../../exams/aws-aif-c01/">AIF-C01 試験ガイド</a><a href="../../exams/aws-saa-c03/">SAA-C03 試験ガイド</a><a href="../../exams/aws-dva-c02/">DVA-C02 試験ガイド</a><a href="../../exams/aws-sap-c02/">SAP-C02 試験ガイド</a><a href="../../exams/gcp-cdl/">CDL 試験ガイド</a><a href="../../exams/gcp-ace/">ACE 試験ガイド</a><a href="../../exams/azure-az900/">AZ-900 試験ガイド</a><a href="../../exams/azure-ai900/">AI-900 試験ガイド</a><a href="../../exams/azure-dp900/">DP-900 試験ガイド</a><a href="../../exams/azure-sc900/">SC-900 試験ガイド</a><a href="../../exams/azure-az104/">AZ-104 試験ガイド</a></nav>
+<nav class="site-nav"><a href="../../guide/">資格ガイド</a><a href="../../learn/">サービス解説</a><a href="../../career/">キャリア</a><a href="../../about.html">運営者情報</a><a href="../../privacy.html">プライバシーポリシー</a><a href="../../contact.html">お問い合わせ</a></nav>
+<p class="copy">© CLOUDCERT_ — 本サイトは各認定試験の公式試験ではなく、収録問題はすべてオリジナルの演習問題です。</p>
+</footer>
+</body>
+</html>

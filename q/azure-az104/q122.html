@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>【AZ-104 演習問題 #122】ある企業がAzure DNSパブリックゾーンで「example.com」を管理しており、A…</title>
+<meta name="description" content="AZ-104の本試験レベル演習問題。ある企業がAzure DNSパブリックゾーンで「example.com」を管理しており、AzureのName Server（NS）レコードを親ゾーンに委任済みである。サブドメイン「ap… 全選択肢の解説つき。">
+<link rel="canonical" href="https://cloudcert.app/q/azure-az104/q122.html">
+<meta property="og:title" content="【AZ-104 演習問題 #122】ある企業がAzure DNSパブリックゾーンで「example.com」を管理しており、A…">
+<meta property="og:description" content="AZ-104の本試験レベル演習問題。ある企業がAzure DNSパブリックゾーンで「example.com」を管理しており、AzureのName Server（NS）レコードを親ゾーンに委任済みである。サブドメイン「ap… 全選択肢の解説つき。">
+<meta property="og:url" content="https://cloudcert.app/q/azure-az104/q122.html">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="CLOUDCERT_">
+<meta property="og:image" content="https://cloudcert.app/assets/og.png">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='80' font-size='80' fill='%233fe0a4' font-family='monospace'>▸</text></svg>">
+
+<meta name="google-adsense-account" content="ca-pub-5647574947191958">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+JP:wght@400;500;700&family=JetBrains+Mono:wght@400;600;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../../css/style.css">
+<link rel="stylesheet" href="../../css/page.css">
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-SZR5CB5Q3X"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag('js',new Date());gtag('config','G-SZR5CB5Q3X');</script>
+<script type="application/ld+json">[{"@context":"https://schema.org/","@type":"Quiz","about":{"@type":"Thing","name":"Microsoft Azure Administrator"},"hasPart":[{"@type":"Question","eduQuestionType":"Multiple choice","learningResourceType":"Practice problem","text":"ある企業がAzure DNSパブリックゾーンで「example.com」を管理しており、AzureのName Server（NS）レコードを親ゾーンに委任済みである。サブドメイン「api.example.com」をAzure API Managementに向けるAレコードを追加したが、世界中のクライアントでDNS解決に最大2時間の遅延が生じている。原因として最も可能性が高いものはどれか。","suggestedAnswer":[{"@type":"Answer","position":0,"text":"Azure DNSのグローバルレプリケーションに最大2時間かかるため、これは仕様である"},{"@type":"Answer","position":2,"text":"Azure API ManagementのカスタムドメインのSSL証明書プロビジョニングに時間がかかっている"},{"@type":"Answer","position":3,"text":"親ゾーンのNS委任レコードのTTLが長く設定されているため、クエリが古いネームサーバーに送られている"}],"acceptedAnswer":{"@type":"Answer","position":1,"text":"既存の古いDNSレコードのTTL（Time-to-Live）が長く設定されており、各キャッシュDNSサーバーがキャッシュを保持している","comment":{"@type":"Comment","text":"DNSレコードの変更がすぐに反映されない原因の多くは、変更前に設定されていたTTL（Time-to-Live）値が長いことである。世界中のキャッシュDNSサーバーは以前のレコード（または存在しなかったことを示すNXDOMAINキャッシュ）を各自のTTLが切れるまで保持する。例えばTTLが7200秒（2時間）に設定されていた場合、変更後2時間はキャッシュされた古い情報が返される。計画的なDNS変更前にはTTLを短く（例：60秒）に下げてから変更するのがベストプラクティスである。選択肢AはAzure DNSが公的にアナウンスされた後の伝播速度についての誤解であり、Azure DNS自体の変更反映は数秒〜数分程度で完了する。選択肢CのSSL証明書プロビジョニングはDNS解決とは別の問題であり、証明書が取得できていなくても名前解決はIPアドレスを返す。選択肢DのNS委任TTLの問題は委任自体の変更時に起きるものであり、同一ゾーン内のサブドメインレコード追加では委任に変更はないため該当しない。"}}}]},{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"HOME","item":"https://cloudcert.app/"},{"@type":"ListItem","position":2,"name":"AZ-104 試験ガイド","item":"https://cloudcert.app/exams/azure-az104/"},{"@type":"ListItem","position":3,"name":"q122"}]}]</script>
+</head>
+<body class="page-body">
+<header class="page-header"><a class="page-logo" href="../../index.html">&gt; CLOUDCERT_</a></header>
+<main class="page-main">
+
+<nav class="breadcrumb"><a href="../../index.html">HOME</a> › <a href="../../exams/azure-az104/">AZ-104 試験ガイド</a> › q122</nav>
+<div class="q-meta"><span>AZ-104</span><span>Azure 仮想ネットワークの実装と管理</span><span>HARD</span><span>単一選択</span></div>
+<h1>ある企業がAzure DNSパブリックゾーンで「example.com」を管理しており、AzureのName Server（NS）レコードを親ゾーンに委任済みである。サブドメイン「api.example.com」をAzure API Managementに向けるAレコードを追加したが、世界中のクライアントでDNS解決に最大2時間の遅延が生じている。原因として最も可能性が高いものはどれか。</h1>
+<ol class="q-choices">
+<li><b>A.</b> Azure DNSのグローバルレプリケーションに最大2時間かかるため、これは仕様である</li>
+<li><b>B.</b> 既存の古いDNSレコードのTTL（Time-to-Live）が長く設定されており、各キャッシュDNSサーバーがキャッシュを保持している</li>
+<li><b>C.</b> Azure API ManagementのカスタムドメインのSSL証明書プロビジョニングに時間がかかっている</li>
+<li><b>D.</b> 親ゾーンのNS委任レコードのTTLが長く設定されているため、クエリが古いネームサーバーに送られている</li>
+</ol>
+<details class="q-answer">
+<summary>解答と解説を見る</summary>
+<div class="inner">
+<p><b>正解: B</b></p>
+<p>DNSレコードの変更がすぐに反映されない原因の多くは、変更前に設定されていたTTL（Time-to-Live）値が長いことである。世界中のキャッシュDNSサーバーは以前のレコード（または存在しなかったことを示すNXDOMAINキャッシュ）を各自のTTLが切れるまで保持する。例えばTTLが7200秒（2時間）に設定されていた場合、変更後2時間はキャッシュされた古い情報が返される。計画的なDNS変更前にはTTLを短く（例：60秒）に下げてから変更するのがベストプラクティスである。選択肢AはAzure DNSが公的にアナウンスされた後の伝播速度についての誤解であり、Azure DNS自体の変更反映は数秒〜数分程度で完了する。選択肢CのSSL証明書プロビジョニングはDNS解決とは別の問題であり、証明書が取得できていなくても名前解決はIPアドレスを返す。選択肢DのNS委任TTLの問題は委任自体の変更時に起きるものであり、同一ゾーン内のサブドメインレコード追加では委任に変更はないため該当しない。</p>
+
+</div>
+</details>
+<div class="cta-box"><a class="btn btn-primary" href="../../exam.html?exam=azure-az104">▸ この試験を本気で演習する（全150問・無料）</a></div>
+<nav class="q-nav">
+<span><a href="q121.html">← 前の問題</a></span>
+<span><a href="q123.html">次の問題 →</a></span>
+</nav>
+<section class="related"><h2>同じ分野の関連問題</h2><ul class="q-list">
+<li><a href="q121.html">ある企業がAzure Application Gateway v2とWAF（Web Application Firewa…</a></li>
+<li><a href="q123.html">ある企業がAzure VNet内のSubnet-AにあるVM-1からSubnet-BにあるVM-2へのTCP/443通信…</a></li>
+<li><a href="q120.html">ある企業がAzureのVNetピアリングを使用して3つのVNet（VNet-A: 10.1.0.0/16、VNet-B:…</a></li>
+<li><a href="q124.html">ある企業がAzure Load Balancer（Standard SKU）を展開する際に考慮すべきSKUの特性として正…</a></li>
+</ul></section>
+</main>
+<footer class="page-footer">
+<nav class="hub-nav"><a href="../../exams/aws-clf-c02/">CLF-C02 試験ガイド</a><a href="../../exams/aws-aif-c01/">AIF-C01 試験ガイド</a><a href="../../exams/aws-saa-c03/">SAA-C03 試験ガイド</a><a href="../../exams/aws-dva-c02/">DVA-C02 試験ガイド</a><a href="../../exams/aws-sap-c02/">SAP-C02 試験ガイド</a><a href="../../exams/gcp-cdl/">CDL 試験ガイド</a><a href="../../exams/gcp-ace/">ACE 試験ガイド</a><a href="../../exams/azure-az900/">AZ-900 試験ガイド</a><a href="../../exams/azure-ai900/">AI-900 試験ガイド</a><a href="../../exams/azure-dp900/">DP-900 試験ガイド</a><a href="../../exams/azure-sc900/">SC-900 試験ガイド</a><a href="../../exams/azure-az104/">AZ-104 試験ガイド</a></nav>
+<nav class="site-nav"><a href="../../guide/">資格ガイド</a><a href="../../learn/">サービス解説</a><a href="../../career/">キャリア</a><a href="../../about.html">運営者情報</a><a href="../../privacy.html">プライバシーポリシー</a><a href="../../contact.html">お問い合わせ</a></nav>
+<p class="copy">© CLOUDCERT_ — 本サイトは各認定試験の公式試験ではなく、収録問題はすべてオリジナルの演習問題です。</p>
+</footer>
+</body>
+</html>

@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ネットワーク セキュリティ グループ（NSG）とは？試験に出るポイントと演習問題</title>
+<meta name="description" content="ネットワーク セキュリティ グループ（NSG）（Microsoft Azure）の要点と資格試験での問われ方を解説。登場する演習問題11問と公式ドキュメントへのリンクつき。">
+<link rel="canonical" href="https://cloudcert.app/learn/azure-nsg.html">
+<meta property="og:title" content="ネットワーク セキュリティ グループ（NSG）とは？試験に出るポイントと演習問題">
+<meta property="og:description" content="ネットワーク セキュリティ グループ（NSG）（Microsoft Azure）の要点と資格試験での問われ方を解説。登場する演習問題11問と公式ドキュメントへのリンクつき。">
+<meta property="og:url" content="https://cloudcert.app/learn/azure-nsg.html">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="CLOUDCERT_">
+<meta property="og:image" content="https://cloudcert.app/assets/og.png">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='80' font-size='80' fill='%233fe0a4' font-family='monospace'>▸</text></svg>">
+
+<meta name="google-adsense-account" content="ca-pub-5647574947191958">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+JP:wght@400;500;700&family=JetBrains+Mono:wght@400;600;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../css/style.css">
+<link rel="stylesheet" href="../css/page.css">
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-SZR5CB5Q3X"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag('js',new Date());gtag('config','G-SZR5CB5Q3X');</script>
+<script type="application/ld+json">[{"@context":"https://schema.org","@type":"TechArticle","headline":"ネットワーク セキュリティ グループ（NSG）とは？試験に出るポイントと演習問題","description":"ネットワーク セキュリティ グループ（NSG）（Microsoft Azure）の要点と資格試験での問われ方を解説。登場する演習問題11問と公式ドキュメントへのリンクつき。","inLanguage":"ja","about":{"@type":"Thing","name":"ネットワーク セキュリティ グループ（NSG）"},"author":{"@type":"Organization","name":"CLOUDCERT_"},"publisher":{"@type":"Organization","name":"CLOUDCERT_"},"mainEntityOfPage":"https://cloudcert.app/learn/azure-nsg.html"},{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"HOME","item":"https://cloudcert.app/"},{"@type":"ListItem","position":2,"name":"サービス解説","item":"https://cloudcert.app/learn/"},{"@type":"ListItem","position":3,"name":"ネットワーク セキュリティ グループ（NSG）"}]}]</script>
+</head>
+<body class="page-body">
+<header class="page-header"><a class="page-logo" href="../index.html">&gt; CLOUDCERT_</a></header>
+<main class="page-main">
+
+<nav class="breadcrumb"><a href="../index.html">HOME</a> › <a href="./">サービス解説</a> › ネットワーク セキュリティ グループ（NSG）</nav>
+<div class="learn-head">
+<div class="badges"><span class="badge" data-provider="azure">Microsoft Azure</span><span class="badge">ネットワーキング</span><span class="badge badge-q">演習11問</span></div>
+<h1>ネットワーク セキュリティ グループ（NSG）とは</h1>
+</div>
+<p class="lead">ネットワークセキュリティグループ（NSG）は、Azureリソースへのインバウンドおよびアウトバウンドのネットワークトラフィックをフィルタリングするアクセス制御リストだ。送信元IP・宛先IP・プロトコル・ポート番号の組み合わせでルールを定義し、許可または拒否する。</p>
+<p>NSGはサブネットまたはネットワークインターフェイス（NIC）に関連付けられる。サブネットに関連付けると、そのサブネット内の全リソースに適用される。NICに関連付けると特定のVMにのみ適用される。デフォルトでは、Azure内部からの通信・インターネットへのアウトバウンドは許可、インターネットからのインバウンドは拒否というルールが組み込まれている。</p>
+<p><a class="official-btn" href="https://learn.microsoft.com/ja-jp/azure/virtual-network/network-security-groups-overview" target="_blank" rel="noopener">公式ドキュメント →</a></p>
+<h2>試験での問われ方</h2>
+<p>NSGとAzure Firewallの違いが問われる。NSGはL4（IPアドレス・ポート）レベルのフィルタリングで、VNet内の通信制御に使う。Azure FirewallはステートフルなマネージドファイアウォールでFQDN（ドメイン名）ベースのフィルタリングやアプリケーションルールに対応し、ハブVNetでの集中管理に向く。SC-900やAZ-104では『ポート80を許可するにはNSGかFirewallどちらか』という問いで使い分けを問われる。</p>
+<h2>このサービスが登場する演習問題（11問）</h2>
+<ul class="q-list">
+<li><a href="../q/azure-az900/q046.html">【AZ-900】ある企業がAzureにVMをデプロイする際に、インターネットからのRDP（リモートデスクトップ）アクセスを特定のIPアド…</a></li>
+<li><a href="../q/azure-az900/q103.html">【AZ-900】ある企業がAzureのセキュリティ機能を評価している。「多層防御（Defense in Depth）」の観点から、Azu…</a></li>
+<li><a href="../q/azure-sc900/q016.html">【SC-900】ある企業のセキュリティチームが、多層防御（Defense in Depth）の考え方に基づいて複数のセキュリティ層を設計…</a></li>
+<li><a href="../q/azure-sc900/q062.html">【SC-900】ある開発チームが、Azure 仮想ネットワーク内の複数の仮想マシンに対し、同じポートフィルタリングルールをグループ単位で…</a></li>
+<li><a href="../q/azure-sc900/q069.html">【SC-900】ある企業がAzure上でWebフロントエンドとバックエンドAPIの2層構成のアプリを運営している。セキュリティチームは、…</a></li>
+<li><a href="../q/azure-sc900/q082.html">【SC-900】ある企業が Azure 上にWebアプリとデータベースを展開する際、ネットワークセキュリティを強化するために使用できるA…</a></li>
+<li><a href="../q/azure-az104/q104.html">【AZ-104】ある企業がAzureで多層Webアプリケーションを運用している。Webサーバー（10個）とアプリサーバー（5個）が存在し…</a></li>
+<li><a href="../q/azure-az104/q112.html">【AZ-104】ある企業のネットワーク管理者が、Azure VMがインターネット上の特定のIPアドレスへ通信できるかどうかを確認したい。…</a></li>
+<li><a href="../q/azure-az104/q119.html">【AZ-104】ある企業のセキュリティ監査で、Azure VMがインターネットから予期しないポートで通信を受けていることが判明した。Ne…</a></li>
+<li><a href="../q/azure-az104/q123.html">【AZ-104】ある企業がAzure VNet内のSubnet-AにあるVM-1からSubnet-BにあるVM-2へのTCP/443通信…</a></li>
+<li><a href="../q/azure-az104/q124.html">【AZ-104】ある企業がAzure Load Balancer（Standard SKU）を展開する際に考慮すべきSKUの特性として正…</a></li>
+</ul>
+<h2>関連サービス</h2><ul class="q-list">
+<li><a href="azure-vnet.html">Azure Virtual Network（VNet）</a></li>
+<li><a href="azure-load-balancer.html">Azure Load Balancer</a></li>
+<li><a href="azure-application-gateway.html">Azure Application Gateway</a></li>
+<li><a href="azure-firewall.html">Azure Firewall</a></li>
+<li><a href="azure-bastion.html">Azure Bastion</a></li></ul>
+</main>
+<footer class="page-footer">
+<nav class="hub-nav"><a href="../exams/aws-clf-c02/">CLF-C02 試験ガイド</a><a href="../exams/aws-aif-c01/">AIF-C01 試験ガイド</a><a href="../exams/aws-saa-c03/">SAA-C03 試験ガイド</a><a href="../exams/aws-dva-c02/">DVA-C02 試験ガイド</a><a href="../exams/aws-sap-c02/">SAP-C02 試験ガイド</a><a href="../exams/gcp-cdl/">CDL 試験ガイド</a><a href="../exams/gcp-ace/">ACE 試験ガイド</a><a href="../exams/azure-az900/">AZ-900 試験ガイド</a><a href="../exams/azure-ai900/">AI-900 試験ガイド</a><a href="../exams/azure-dp900/">DP-900 試験ガイド</a><a href="../exams/azure-sc900/">SC-900 試験ガイド</a><a href="../exams/azure-az104/">AZ-104 試験ガイド</a></nav>
+<nav class="site-nav"><a href="../guide/">資格ガイド</a><a href="../learn/">サービス解説</a><a href="../career/">キャリア</a><a href="../about.html">運営者情報</a><a href="../privacy.html">プライバシーポリシー</a><a href="../contact.html">お問い合わせ</a></nav>
+<p class="copy">© CLOUDCERT_ — 本サイトは各認定試験の公式試験ではなく、収録問題はすべてオリジナルの演習問題です。</p>
+</footer>
+</body>
+</html>

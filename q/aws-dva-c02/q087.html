@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>【DVA-C02 演習問題 #87】ある企業は S3 バケットへの PUT リクエスト時に、アップロードされるオブジェクトに対…</title>
+<meta name="description" content="DVA-C02の本試験レベル演習問題。ある企業は S3 バケットへの PUT リクエスト時に、アップロードされるオブジェクトに対して SSE-KMS 暗号化を強制したいと考えています。暗号化されていないオブジェクトのアッ… 全選択肢の解説つき。">
+<link rel="canonical" href="https://cloudcert.app/q/aws-dva-c02/q087.html">
+<meta property="og:title" content="【DVA-C02 演習問題 #87】ある企業は S3 バケットへの PUT リクエスト時に、アップロードされるオブジェクトに対…">
+<meta property="og:description" content="DVA-C02の本試験レベル演習問題。ある企業は S3 バケットへの PUT リクエスト時に、アップロードされるオブジェクトに対して SSE-KMS 暗号化を強制したいと考えています。暗号化されていないオブジェクトのアッ… 全選択肢の解説つき。">
+<meta property="og:url" content="https://cloudcert.app/q/aws-dva-c02/q087.html">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="CLOUDCERT_">
+<meta property="og:image" content="https://cloudcert.app/assets/og.png">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='80' font-size='80' fill='%233fe0a4' font-family='monospace'>▸</text></svg>">
+
+<meta name="google-adsense-account" content="ca-pub-5647574947191958">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+JP:wght@400;500;700&family=JetBrains+Mono:wght@400;600;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../../css/style.css">
+<link rel="stylesheet" href="../../css/page.css">
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-SZR5CB5Q3X"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag('js',new Date());gtag('config','G-SZR5CB5Q3X');</script>
+<script type="application/ld+json">[{"@context":"https://schema.org/","@type":"Quiz","about":{"@type":"Thing","name":"AWS Certified Developer - Associate"},"hasPart":[{"@type":"Question","eduQuestionType":"Multiple choice","learningResourceType":"Practice problem","text":"ある企業は S3 バケットへの PUT リクエスト時に、アップロードされるオブジェクトに対して SSE-KMS 暗号化を強制したいと考えています。暗号化されていないオブジェクトのアップロードを拒否するにはどの設定が最も適切ですか？","suggestedAnswer":[{"@type":"Answer","position":0,"text":"IAM ポリシーで s3:PutObject を全ユーザーに対して Deny し、暗号化済みオブジェクトのみ特定ロールに Allow する"},{"@type":"Answer","position":1,"text":"S3 オブジェクトロック（Object Lock）を有効にして暗号化を強制する"},{"@type":"Answer","position":3,"text":"S3 バケットのデフォルト暗号化を SSE-KMS に設定することで、暗号化なしの PUT は自動的に拒否される"}],"acceptedAnswer":{"@type":"Answer","position":2,"text":"S3 バケットポリシーに「x-amz-server-side-encryption ヘッダーが aws:kms でない PUT リクエストを Deny する」Condition を追加する","comment":{"@type":"Comment","text":"S3 バケットポリシーの Condition で s3:x-amz-server-side-encryption 条件キーを使い、値が aws:kms でない PUT リクエストを Deny することで、SSE-KMS 以外の暗号化でのアップロードを強制的に拒否できます。具体的には「StringNotEquals: {s3:x-amz-server-side-encryption: aws:kms}」という Condition を Deny ステートメントに設定します。D のデフォルト暗号化は SSE-KMS を設定すると暗号化なしの PUT に対して自動的に SSE-KMS を適用しますが、拒否はしません。つまり要求を拒否するのではなく自動暗号化する動作であり、コンプライアンス上「拒否を強制する」要件には不十分です。A の IAM ポリシーによる全ユーザー Deny は実装が複雑で管理しにくく、バケットポリシーで一元管理する方が適切です。B のオブジェクトロックはデータ保護（WORM）のための機能で暗号化強制には無関係です。"}}}]},{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"HOME","item":"https://cloudcert.app/"},{"@type":"ListItem","position":2,"name":"DVA-C02 試験ガイド","item":"https://cloudcert.app/exams/aws-dva-c02/"},{"@type":"ListItem","position":3,"name":"q087"}]}]</script>
+</head>
+<body class="page-body">
+<header class="page-header"><a class="page-logo" href="../../index.html">&gt; CLOUDCERT_</a></header>
+<main class="page-main">
+
+<nav class="breadcrumb"><a href="../../index.html">HOME</a> › <a href="../../exams/aws-dva-c02/">DVA-C02 試験ガイド</a> › q087</nav>
+<div class="q-meta"><span>DVA-C02</span><span>セキュリティ</span><span>MEDIUM</span><span>単一選択</span></div>
+<h1>ある企業は S3 バケットへの PUT リクエスト時に、アップロードされるオブジェクトに対して SSE-KMS 暗号化を強制したいと考えています。暗号化されていないオブジェクトのアップロードを拒否するにはどの設定が最も適切ですか？</h1>
+<ol class="q-choices">
+<li><b>A.</b> IAM ポリシーで s3:PutObject を全ユーザーに対して Deny し、暗号化済みオブジェクトのみ特定ロールに Allow する</li>
+<li><b>B.</b> S3 オブジェクトロック（Object Lock）を有効にして暗号化を強制する</li>
+<li><b>C.</b> S3 バケットポリシーに「x-amz-server-side-encryption ヘッダーが aws:kms でない PUT リクエストを Deny する」Condition を追加する</li>
+<li><b>D.</b> S3 バケットのデフォルト暗号化を SSE-KMS に設定することで、暗号化なしの PUT は自動的に拒否される</li>
+</ol>
+<details class="q-answer">
+<summary>解答と解説を見る</summary>
+<div class="inner">
+<p><b>正解: C</b></p>
+<p>S3 バケットポリシーの Condition で s3:x-amz-server-side-encryption 条件キーを使い、値が aws:kms でない PUT リクエストを Deny することで、SSE-KMS 以外の暗号化でのアップロードを強制的に拒否できます。具体的には「StringNotEquals: {s3:x-amz-server-side-encryption: aws:kms}」という Condition を Deny ステートメントに設定します。D のデフォルト暗号化は SSE-KMS を設定すると暗号化なしの PUT に対して自動的に SSE-KMS を適用しますが、拒否はしません。つまり要求を拒否するのではなく自動暗号化する動作であり、コンプライアンス上「拒否を強制する」要件には不十分です。A の IAM ポリシーによる全ユーザー Deny は実装が複雑で管理しにくく、バケットポリシーで一元管理する方が適切です。B のオブジェクトロックはデータ保護（WORM）のための機能で暗号化強制には無関係です。</p>
+<div class="svc-links">📚 関連サービスの解説: <a href="../../learn/amazon-s3.html">Amazon S3</a></div>
+</div>
+</details>
+<div class="cta-box"><a class="btn btn-primary" href="../../exam.html?exam=aws-dva-c02">▸ この試験を本気で演習する（全150問・無料）</a></div>
+<nav class="q-nav">
+<span><a href="q086.html">← 前の問題</a></span>
+<span><a href="q088.html">次の問題 →</a></span>
+</nav>
+<section class="related"><h2>同じ分野の関連問題</h2><ul class="q-list">
+<li><a href="q086.html">ある開発チームは Lambda 関数から Secrets Manager のシークレットを取得するコードを実装しています…</a></li>
+<li><a href="q085.html">ある企業はグローバルに展開するアプリケーションで、複数のリージョンから KMS で暗号化されたデータを読み書きしています…</a></li>
+<li><a href="q084.html">ある企業のセキュリティ担当者は IAM ポリシーの Condition 要素を活用して精緻なアクセス制御を実装したいと考…</a></li>
+<li><a href="q083.html">ある企業は Cognito ユーザープールの Lambda トリガーを活用して、サインアップおよびサインイン時のカスタム…</a></li>
+</ul></section>
+</main>
+<footer class="page-footer">
+<nav class="hub-nav"><a href="../../exams/aws-clf-c02/">CLF-C02 試験ガイド</a><a href="../../exams/aws-aif-c01/">AIF-C01 試験ガイド</a><a href="../../exams/aws-saa-c03/">SAA-C03 試験ガイド</a><a href="../../exams/aws-dva-c02/">DVA-C02 試験ガイド</a><a href="../../exams/aws-sap-c02/">SAP-C02 試験ガイド</a><a href="../../exams/gcp-cdl/">CDL 試験ガイド</a><a href="../../exams/gcp-ace/">ACE 試験ガイド</a><a href="../../exams/azure-az900/">AZ-900 試験ガイド</a><a href="../../exams/azure-ai900/">AI-900 試験ガイド</a><a href="../../exams/azure-dp900/">DP-900 試験ガイド</a><a href="../../exams/azure-sc900/">SC-900 試験ガイド</a><a href="../../exams/azure-az104/">AZ-104 試験ガイド</a></nav>
+<nav class="site-nav"><a href="../../guide/">資格ガイド</a><a href="../../learn/">サービス解説</a><a href="../../career/">キャリア</a><a href="../../about.html">運営者情報</a><a href="../../privacy.html">プライバシーポリシー</a><a href="../../contact.html">お問い合わせ</a></nav>
+<p class="copy">© CLOUDCERT_ — 本サイトは各認定試験の公式試験ではなく、収録問題はすべてオリジナルの演習問題です。</p>
+</footer>
+</body>
+</html>

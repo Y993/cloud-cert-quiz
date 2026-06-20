@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>【SAP-C02 演習問題 #99】ある企業が AWS への移行を進めており、移行後にアプリケーションのパフォーマンスを最適化…</title>
+<meta name="description" content="SAP-C02の本試験レベル演習問題。ある企業が AWS への移行を進めており、移行後にアプリケーションのパフォーマンスを最適化したいと考えています。現在、オンプレミスのアプリケーションは Oracle 19c データベ… 全選択肢の解説つき。">
+<link rel="canonical" href="https://cloudcert.app/q/aws-sap-c02/q099.html">
+<meta property="og:title" content="【SAP-C02 演習問題 #99】ある企業が AWS への移行を進めており、移行後にアプリケーションのパフォーマンスを最適化…">
+<meta property="og:description" content="SAP-C02の本試験レベル演習問題。ある企業が AWS への移行を進めており、移行後にアプリケーションのパフォーマンスを最適化したいと考えています。現在、オンプレミスのアプリケーションは Oracle 19c データベ… 全選択肢の解説つき。">
+<meta property="og:url" content="https://cloudcert.app/q/aws-sap-c02/q099.html">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="CLOUDCERT_">
+<meta property="og:image" content="https://cloudcert.app/assets/og.png">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='80' font-size='80' fill='%233fe0a4' font-family='monospace'>▸</text></svg>">
+
+<meta name="google-adsense-account" content="ca-pub-5647574947191958">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+JP:wght@400;500;700&family=JetBrains+Mono:wght@400;600;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../../css/style.css">
+<link rel="stylesheet" href="../../css/page.css">
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-SZR5CB5Q3X"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag('js',new Date());gtag('config','G-SZR5CB5Q3X');</script>
+<script type="application/ld+json">[{"@context":"https://schema.org/","@type":"Quiz","about":{"@type":"Thing","name":"AWS Certified Solutions Architect - Professional"},"hasPart":[{"@type":"Question","eduQuestionType":"Multiple choice","learningResourceType":"Practice problem","text":"ある企業が AWS への移行を進めており、移行後にアプリケーションのパフォーマンスを最適化したいと考えています。現在、オンプレミスのアプリケーションは Oracle 19c データベース（100TB）で稼働しており、移行先として Amazon Aurora PostgreSQL を検討しています。Oracle 固有の機能（パッケージ、シノニム、CONNECT BY 句）を多用しており、自動変換できないコードがどの程度あるかを事前に把握したいと考えています。最も適切なアプローチはどれですか？","suggestedAnswer":[{"@type":"Answer","position":0,"text":"PostgreSQL の互換性リストを確認し、使用している Oracle 機能が対応しているかを手動でチェックする"},{"@type":"Answer","position":1,"text":"Aurora PostgreSQL の評価版を作成し、実際に Oracle からデータを移行してエラーを確認する"},{"@type":"Answer","position":3,"text":"開発チームが Oracle のコードを手動で PostgreSQL に変換し、変換工数を見積もる"}],"acceptedAnswer":{"@type":"Answer","position":2,"text":"AWS Schema Conversion Tool（SCT）を Oracle 19c データベースに接続し、スキーマとコードの変換評価レポートを生成する。SCT は自動変換可能なオブジェクトと手動変換が必要なオブジェクト（ストアドプロシージャ、パッケージ、トリガー等）を識別し、難易度スコアと変換工数の推定を提供する","comment":{"@type":"Comment","text":"AWS SCT は移行前の評価フェーズに設計されており、ソースデータベースのスキーマとコードをスキャンして、ターゲットエンジン（Aurora PostgreSQL）への変換可能性を詳細にレポートします。自動変換率、手動変換が必要なオブジェクトのリスト、変換複雑度のスコアを生成し、プロジェクト計画の精度を大幅に向上させます。Oracle 固有の構文（CONNECT BY、パッケージ等）の評価も含まれます。\n\nD: 手動評価は時間がかかり、網羅性と精度がツールに劣ります。100TB の大規模データベースでの手動評価は非現実的です。\n\nB: 実際に移行を試みてエラーを確認する方法は、移行プロジェクトのリスクを高め、コストも発生します。評価フェーズでは SCT のような非破壊的なアセスメントが適切です。\n\nA: PostgreSQL の互換性リストの手動確認は概要の把握には有用ですが、実際のコードの変換可能性の詳細評価には不十分です。"}}}]},{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"HOME","item":"https://cloudcert.app/"},{"@type":"ListItem","position":2,"name":"SAP-C02 試験ガイド","item":"https://cloudcert.app/exams/aws-sap-c02/"},{"@type":"ListItem","position":3,"name":"q099"}]}]</script>
+</head>
+<body class="page-body">
+<header class="page-header"><a class="page-logo" href="../../index.html">&gt; CLOUDCERT_</a></header>
+<main class="page-main">
+
+<nav class="breadcrumb"><a href="../../index.html">HOME</a> › <a href="../../exams/aws-sap-c02/">SAP-C02 試験ガイド</a> › q099</nav>
+<div class="q-meta"><span>SAP-C02</span><span>ワークロードの移行とモダナイゼーションの加速</span><span>HARD</span><span>単一選択</span></div>
+<h1>ある企業が AWS への移行を進めており、移行後にアプリケーションのパフォーマンスを最適化したいと考えています。現在、オンプレミスのアプリケーションは Oracle 19c データベース（100TB）で稼働しており、移行先として Amazon Aurora PostgreSQL を検討しています。Oracle 固有の機能（パッケージ、シノニム、CONNECT BY 句）を多用しており、自動変換できないコードがどの程度あるかを事前に把握したいと考えています。最も適切なアプローチはどれですか？</h1>
+<ol class="q-choices">
+<li><b>A.</b> PostgreSQL の互換性リストを確認し、使用している Oracle 機能が対応しているかを手動でチェックする</li>
+<li><b>B.</b> Aurora PostgreSQL の評価版を作成し、実際に Oracle からデータを移行してエラーを確認する</li>
+<li><b>C.</b> AWS Schema Conversion Tool（SCT）を Oracle 19c データベースに接続し、スキーマとコードの変換評価レポートを生成する。SCT は自動変換可能なオブジェクトと手動変換が必要なオブジェクト（ストアドプロシージャ、パッケージ、トリガー等）を識別し、難易度スコアと変換工数の推定を提供する</li>
+<li><b>D.</b> 開発チームが Oracle のコードを手動で PostgreSQL に変換し、変換工数を見積もる</li>
+</ol>
+<details class="q-answer">
+<summary>解答と解説を見る</summary>
+<div class="inner">
+<p><b>正解: C</b></p>
+<p>AWS SCT は移行前の評価フェーズに設計されており、ソースデータベースのスキーマとコードをスキャンして、ターゲットエンジン（Aurora PostgreSQL）への変換可能性を詳細にレポートします。自動変換率、手動変換が必要なオブジェクトのリスト、変換複雑度のスコアを生成し、プロジェクト計画の精度を大幅に向上させます。Oracle 固有の構文（CONNECT BY、パッケージ等）の評価も含まれます。
+
+D: 手動評価は時間がかかり、網羅性と精度がツールに劣ります。100TB の大規模データベースでの手動評価は非現実的です。
+
+B: 実際に移行を試みてエラーを確認する方法は、移行プロジェクトのリスクを高め、コストも発生します。評価フェーズでは SCT のような非破壊的なアセスメントが適切です。
+
+A: PostgreSQL の互換性リストの手動確認は概要の把握には有用ですが、実際のコードの変換可能性の詳細評価には不十分です。</p>
+
+</div>
+</details>
+<div class="cta-box"><a class="btn btn-primary" href="../../exam.html?exam=aws-sap-c02">▸ この試験を本気で演習する（全150問・無料）</a></div>
+<nav class="q-nav">
+<span><a href="q098.html">← 前の問題</a></span>
+<span><a href="q100.html">次の問題 →</a></span>
+</nav>
+<section class="related"><h2>同じ分野の関連問題</h2><ul class="q-list">
+<li><a href="q102.html">ある企業が既存のオンプレミスの Hadoop/Spark クラスター（100 ノード）を AWS に移行しています。現在…</a></li>
+<li><a href="q093.html">ある小売チェーンが 500 店舗に分散した POS システム（Windows Server 2016 + SQL Ser…</a></li>
+<li><a href="q106.html">ある企業がオンプレミスのデータウェアハウス（Teradata）から Amazon Redshift に移行する計画を立て…</a></li>
+<li><a href="q090.html">ある企業がオンプレミスの NetApp ONTAP ストレージシステムを AWS に移行したいと考えています。既存のアプ…</a></li>
+</ul></section>
+</main>
+<footer class="page-footer">
+<nav class="hub-nav"><a href="../../exams/aws-clf-c02/">CLF-C02 試験ガイド</a><a href="../../exams/aws-aif-c01/">AIF-C01 試験ガイド</a><a href="../../exams/aws-saa-c03/">SAA-C03 試験ガイド</a><a href="../../exams/aws-dva-c02/">DVA-C02 試験ガイド</a><a href="../../exams/aws-sap-c02/">SAP-C02 試験ガイド</a><a href="../../exams/gcp-cdl/">CDL 試験ガイド</a><a href="../../exams/gcp-ace/">ACE 試験ガイド</a><a href="../../exams/azure-az900/">AZ-900 試験ガイド</a><a href="../../exams/azure-ai900/">AI-900 試験ガイド</a><a href="../../exams/azure-dp900/">DP-900 試験ガイド</a><a href="../../exams/azure-sc900/">SC-900 試験ガイド</a><a href="../../exams/azure-az104/">AZ-104 試験ガイド</a></nav>
+<nav class="site-nav"><a href="../../guide/">資格ガイド</a><a href="../../learn/">サービス解説</a><a href="../../career/">キャリア</a><a href="../../about.html">運営者情報</a><a href="../../privacy.html">プライバシーポリシー</a><a href="../../contact.html">お問い合わせ</a></nav>
+<p class="copy">© CLOUDCERT_ — 本サイトは各認定試験の公式試験ではなく、収録問題はすべてオリジナルの演習問題です。</p>
+</footer>
+</body>
+</html>

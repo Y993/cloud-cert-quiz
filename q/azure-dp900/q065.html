@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>【DP-900 演習問題 #65】ある企業が受注データベースを設計している。受注テーブルの「顧客 ID」カラムは顧客テーブル…</title>
+<meta name="description" content="DP-900の本試験レベル演習問題。ある企業が受注データベースを設計している。受注テーブルの「顧客 ID」カラムは顧客テーブルの主キーを参照する外部キーとして設定されている。顧客テーブルから特定の顧客レコードを削除しよう… 全選択肢の解説つき。">
+<link rel="canonical" href="https://cloudcert.app/q/azure-dp900/q065.html">
+<meta property="og:title" content="【DP-900 演習問題 #65】ある企業が受注データベースを設計している。受注テーブルの「顧客 ID」カラムは顧客テーブル…">
+<meta property="og:description" content="DP-900の本試験レベル演習問題。ある企業が受注データベースを設計している。受注テーブルの「顧客 ID」カラムは顧客テーブルの主キーを参照する外部キーとして設定されている。顧客テーブルから特定の顧客レコードを削除しよう… 全選択肢の解説つき。">
+<meta property="og:url" content="https://cloudcert.app/q/azure-dp900/q065.html">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="CLOUDCERT_">
+<meta property="og:image" content="https://cloudcert.app/assets/og.png">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='80' font-size='80' fill='%233fe0a4' font-family='monospace'>▸</text></svg>">
+
+<meta name="google-adsense-account" content="ca-pub-5647574947191958">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+JP:wght@400;500;700&family=JetBrains+Mono:wght@400;600;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../../css/style.css">
+<link rel="stylesheet" href="../../css/page.css">
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-SZR5CB5Q3X"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag('js',new Date());gtag('config','G-SZR5CB5Q3X');</script>
+<script type="application/ld+json">[{"@context":"https://schema.org/","@type":"Quiz","about":{"@type":"Thing","name":"Microsoft Azure Data Fundamentals"},"hasPart":[{"@type":"Question","eduQuestionType":"Multiple choice","learningResourceType":"Practice problem","text":"ある企業が受注データベースを設計している。受注テーブルの「顧客 ID」カラムは顧客テーブルの主キーを参照する外部キーとして設定されている。顧客テーブルから特定の顧客レコードを削除しようとしたとき、その顧客に紐づく受注レコードが存在する場合、既定の動作はどれか。","suggestedAnswer":[{"@type":"Answer","position":0,"text":"顧客レコードは削除されるが、受注テーブルの外部キーカラムは NULL に更新される"},{"@type":"Answer","position":1,"text":"受注レコードは残ったまま、顧客 ID が無効な値に更新されて顧客レコードが削除される"},{"@type":"Answer","position":3,"text":"顧客レコードと紐づく全受注レコードが自動的にカスケード削除される"}],"acceptedAnswer":{"@type":"Answer","position":2,"text":"参照整合性制約違反エラーが発生し、顧客レコードの削除が拒否される","comment":{"@type":"Comment","text":"外部キー制約が設定されている場合、参照先（顧客テーブル）のレコードを削除しようとすると、参照元（受注テーブル）に関連レコードが存在する限り、参照整合性制約違反エラーが発生してデータベースエンジンが削除を拒否するのがデフォルト動作である。これにより孤立した参照（orphan records）の発生を防ぐ。カスケード削除（ON DELETE CASCADE）は明示的に設定した場合にのみ有効であり、デフォルトではない。NULL への更新（ON DELETE SET NULL）も明示的設定が必要。無効な値への更新は参照整合性に反するためデータベースが許可しない。"}}}]},{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"HOME","item":"https://cloudcert.app/"},{"@type":"ListItem","position":2,"name":"DP-900 試験ガイド","item":"https://cloudcert.app/exams/azure-dp900/"},{"@type":"ListItem","position":3,"name":"q065"}]}]</script>
+</head>
+<body class="page-body">
+<header class="page-header"><a class="page-logo" href="../../index.html">&gt; CLOUDCERT_</a></header>
+<main class="page-main">
+
+<nav class="breadcrumb"><a href="../../index.html">HOME</a> › <a href="../../exams/azure-dp900/">DP-900 試験ガイド</a> › q065</nav>
+<div class="q-meta"><span>DP-900</span><span>Azure のリレーショナル データ</span><span>MEDIUM</span><span>単一選択</span></div>
+<h1>ある企業が受注データベースを設計している。受注テーブルの「顧客 ID」カラムは顧客テーブルの主キーを参照する外部キーとして設定されている。顧客テーブルから特定の顧客レコードを削除しようとしたとき、その顧客に紐づく受注レコードが存在する場合、既定の動作はどれか。</h1>
+<ol class="q-choices">
+<li><b>A.</b> 顧客レコードは削除されるが、受注テーブルの外部キーカラムは NULL に更新される</li>
+<li><b>B.</b> 受注レコードは残ったまま、顧客 ID が無効な値に更新されて顧客レコードが削除される</li>
+<li><b>C.</b> 参照整合性制約違反エラーが発生し、顧客レコードの削除が拒否される</li>
+<li><b>D.</b> 顧客レコードと紐づく全受注レコードが自動的にカスケード削除される</li>
+</ol>
+<details class="q-answer">
+<summary>解答と解説を見る</summary>
+<div class="inner">
+<p><b>正解: C</b></p>
+<p>外部キー制約が設定されている場合、参照先（顧客テーブル）のレコードを削除しようとすると、参照元（受注テーブル）に関連レコードが存在する限り、参照整合性制約違反エラーが発生してデータベースエンジンが削除を拒否するのがデフォルト動作である。これにより孤立した参照（orphan records）の発生を防ぐ。カスケード削除（ON DELETE CASCADE）は明示的に設定した場合にのみ有効であり、デフォルトではない。NULL への更新（ON DELETE SET NULL）も明示的設定が必要。無効な値への更新は参照整合性に反するためデータベースが許可しない。</p>
+
+</div>
+</details>
+<div class="cta-box"><a class="btn btn-primary" href="../../exam.html?exam=azure-dp900">▸ この試験を本気で演習する（全150問・無料）</a></div>
+<nav class="q-nav">
+<span><a href="q064.html">← 前の問題</a></span>
+<span><a href="q066.html">次の問題 →</a></span>
+</nav>
+<section class="related"><h2>同じ分野の関連問題</h2><ul class="q-list">
+<li><a href="q064.html">ある企業が、Azure SQL Database の特定テーブルへの SELECT 権限を特定のデータベースユーザーに付…</a></li>
+<li><a href="q066.html">ある企業が Azure でリレーショナルデータベースサービスを選定しようとしている。Azure SQL Database…</a></li>
+<li><a href="q063.html">ある製造業企業が、社内の生産管理システムで使用している SQL Server 2016 のデータベース（Service …</a></li>
+<li><a href="q067.html">ある開発チームがリレーショナルデータベースの正規化について学習している。正規化を実施した場合に得られる効果として正しいも…</a></li>
+</ul></section>
+</main>
+<footer class="page-footer">
+<nav class="hub-nav"><a href="../../exams/aws-clf-c02/">CLF-C02 試験ガイド</a><a href="../../exams/aws-aif-c01/">AIF-C01 試験ガイド</a><a href="../../exams/aws-saa-c03/">SAA-C03 試験ガイド</a><a href="../../exams/aws-dva-c02/">DVA-C02 試験ガイド</a><a href="../../exams/aws-sap-c02/">SAP-C02 試験ガイド</a><a href="../../exams/gcp-cdl/">CDL 試験ガイド</a><a href="../../exams/gcp-ace/">ACE 試験ガイド</a><a href="../../exams/azure-az900/">AZ-900 試験ガイド</a><a href="../../exams/azure-ai900/">AI-900 試験ガイド</a><a href="../../exams/azure-dp900/">DP-900 試験ガイド</a><a href="../../exams/azure-sc900/">SC-900 試験ガイド</a><a href="../../exams/azure-az104/">AZ-104 試験ガイド</a></nav>
+<nav class="site-nav"><a href="../../guide/">資格ガイド</a><a href="../../learn/">サービス解説</a><a href="../../career/">キャリア</a><a href="../../about.html">運営者情報</a><a href="../../privacy.html">プライバシーポリシー</a><a href="../../contact.html">お問い合わせ</a></nav>
+<p class="copy">© CLOUDCERT_ — 本サイトは各認定試験の公式試験ではなく、収録問題はすべてオリジナルの演習問題です。</p>
+</footer>
+</body>
+</html>

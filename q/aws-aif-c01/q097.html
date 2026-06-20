@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>【AIF-C01 演習問題 #97】ある企業が Amazon Bedrock を使って生成した広告コピーを大規模に評価したい。…</title>
+<meta name="description" content="AIF-C01の本試験レベル演習問題。ある企業が Amazon Bedrock を使って生成した広告コピーを大規模に評価したい。人手評価は品質が高いが 1 万件のサンプルを評価するには時間とコストがかかりすぎる。自動評価… 全選択肢の解説つき。">
+<link rel="canonical" href="https://cloudcert.app/q/aws-aif-c01/q097.html">
+<meta property="og:title" content="【AIF-C01 演習問題 #97】ある企業が Amazon Bedrock を使って生成した広告コピーを大規模に評価したい。…">
+<meta property="og:description" content="AIF-C01の本試験レベル演習問題。ある企業が Amazon Bedrock を使って生成した広告コピーを大規模に評価したい。人手評価は品質が高いが 1 万件のサンプルを評価するには時間とコストがかかりすぎる。自動評価… 全選択肢の解説つき。">
+<meta property="og:url" content="https://cloudcert.app/q/aws-aif-c01/q097.html">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="CLOUDCERT_">
+<meta property="og:image" content="https://cloudcert.app/assets/og.png">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='80' font-size='80' fill='%233fe0a4' font-family='monospace'>▸</text></svg>">
+
+<meta name="google-adsense-account" content="ca-pub-5647574947191958">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+JP:wght@400;500;700&family=JetBrains+Mono:wght@400;600;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../../css/style.css">
+<link rel="stylesheet" href="../../css/page.css">
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-SZR5CB5Q3X"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag('js',new Date());gtag('config','G-SZR5CB5Q3X');</script>
+<script type="application/ld+json">[{"@context":"https://schema.org/","@type":"Quiz","about":{"@type":"Thing","name":"AWS Certified AI Practitioner"},"hasPart":[{"@type":"Question","eduQuestionType":"Multiple choice","learningResourceType":"Practice problem","text":"ある企業が Amazon Bedrock を使って生成した広告コピーを大規模に評価したい。人手評価は品質が高いが 1 万件のサンプルを評価するには時間とコストがかかりすぎる。自動評価と人手評価を組み合わせた最も現実的な評価戦略はどれか。","suggestedAnswer":[{"@type":"Answer","position":0,"text":"BLEU スコアのみで 1 万件を評価し、業界標準値（0.4 以上）を品質基準とする"},{"@type":"Answer","position":1,"text":"1 万件すべてを ROUGE スコアで自動評価し、スコアが低い下位 10% だけを人手評価する"},{"@type":"Answer","position":2,"text":"人手評価を外注して 1 万件全件をクラウドソーシングで評価する"}],"acceptedAnswer":{"@type":"Answer","position":3,"text":"1 万件から統計的にサンプリングした代表的なサブセット（例: 200〜500 件）を人手評価でゴールドラベル化し、そのサブセットで LLM-as-a-Judge（評価モデル）を校正する。残りは LLM-as-a-Judge で自動評価する","comment":{"@type":"Comment","text":"大規模評価の現代的なベストプラクティスは「LLM-as-a-Judge（評価モデルとしての LLM 活用）」と「人手評価のハイブリッド」。少数（数百件）の人手評価でゴールドラベルを作成し、それを使って LLM-as-a-Judge の評価指示（ルーブリック）を校正することで、大規模な自動評価の品質を担保する。人手評価のコスト効率と自動評価のスケーラビリティを両立できる。Bの ROUGE による下位フィルタリングは、ROUGE が広告コピーの「魅力・説得力・ブランド整合性」を正確に測れないため、誤ったフィルタリングが発生する。低 ROUGE が必ずしも低品質を意味しない。Aの BLEU は機械翻訳向け指標で広告コピーの「创造性・説得力」の評価に適さない。業界標準値 0.4 というのも広告コピー評価文脈では意味をなさない。Cのクラウドソーシング全件評価は予算・時間の制約に反しており、評価一貫性の管理も困難。"}}}]},{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"HOME","item":"https://cloudcert.app/"},{"@type":"ListItem","position":2,"name":"AIF-C01 試験ガイド","item":"https://cloudcert.app/exams/aws-aif-c01/"},{"@type":"ListItem","position":3,"name":"q097"}]}]</script>
+</head>
+<body class="page-body">
+<header class="page-header"><a class="page-logo" href="../../index.html">&gt; CLOUDCERT_</a></header>
+<main class="page-main">
+
+<nav class="breadcrumb"><a href="../../index.html">HOME</a> › <a href="../../exams/aws-aif-c01/">AIF-C01 試験ガイド</a> › q097</nav>
+<div class="q-meta"><span>AIF-C01</span><span>基盤モデルの応用</span><span>MEDIUM</span><span>単一選択</span></div>
+<h1>ある企業が Amazon Bedrock を使って生成した広告コピーを大規模に評価したい。人手評価は品質が高いが 1 万件のサンプルを評価するには時間とコストがかかりすぎる。自動評価と人手評価を組み合わせた最も現実的な評価戦略はどれか。</h1>
+<ol class="q-choices">
+<li><b>A.</b> BLEU スコアのみで 1 万件を評価し、業界標準値（0.4 以上）を品質基準とする</li>
+<li><b>B.</b> 1 万件すべてを ROUGE スコアで自動評価し、スコアが低い下位 10% だけを人手評価する</li>
+<li><b>C.</b> 人手評価を外注して 1 万件全件をクラウドソーシングで評価する</li>
+<li><b>D.</b> 1 万件から統計的にサンプリングした代表的なサブセット（例: 200〜500 件）を人手評価でゴールドラベル化し、そのサブセットで LLM-as-a-Judge（評価モデル）を校正する。残りは LLM-as-a-Judge で自動評価する</li>
+</ol>
+<details class="q-answer">
+<summary>解答と解説を見る</summary>
+<div class="inner">
+<p><b>正解: D</b></p>
+<p>大規模評価の現代的なベストプラクティスは「LLM-as-a-Judge（評価モデルとしての LLM 活用）」と「人手評価のハイブリッド」。少数（数百件）の人手評価でゴールドラベルを作成し、それを使って LLM-as-a-Judge の評価指示（ルーブリック）を校正することで、大規模な自動評価の品質を担保する。人手評価のコスト効率と自動評価のスケーラビリティを両立できる。Bの ROUGE による下位フィルタリングは、ROUGE が広告コピーの「魅力・説得力・ブランド整合性」を正確に測れないため、誤ったフィルタリングが発生する。低 ROUGE が必ずしも低品質を意味しない。Aの BLEU は機械翻訳向け指標で広告コピーの「创造性・説得力」の評価に適さない。業界標準値 0.4 というのも広告コピー評価文脈では意味をなさない。Cのクラウドソーシング全件評価は予算・時間の制約に反しており、評価一貫性の管理も困難。</p>
+
+</div>
+</details>
+<div class="cta-box"><a class="btn btn-primary" href="../../exam.html?exam=aws-aif-c01">▸ この試験を本気で演習する（全150問・無料）</a></div>
+<nav class="q-nav">
+<span><a href="q096.html">← 前の問題</a></span>
+<span><a href="q098.html">次の問題 →</a></span>
+</nav>
+<section class="related"><h2>同じ分野の関連問題</h2><ul class="q-list">
+<li><a href="q096.html">ある企業がカスタマーサポートシステムに Amazon Bedrock を使っている。ユーザーが英語と日本語を混ぜて質問し…</a></li>
+<li><a href="q098.html">ある企業が自社の製造プロセスに関する膨大な技術マニュアル（合計 5,000 ページ）を Amazon Bedrock K…</a></li>
+<li><a href="q095.html">ある企業が Amazon Bedrock のエージェントを使ってユーザーの自然言語の指示から複数の AWS サービス（S…</a></li>
+<li><a href="q099.html">ある企業がコードレビューアシスタントに Amazon Bedrock の基盤モデルを採用している。モデルに「セキュリティ…</a></li>
+</ul></section>
+</main>
+<footer class="page-footer">
+<nav class="hub-nav"><a href="../../exams/aws-clf-c02/">CLF-C02 試験ガイド</a><a href="../../exams/aws-aif-c01/">AIF-C01 試験ガイド</a><a href="../../exams/aws-saa-c03/">SAA-C03 試験ガイド</a><a href="../../exams/aws-dva-c02/">DVA-C02 試験ガイド</a><a href="../../exams/aws-sap-c02/">SAP-C02 試験ガイド</a><a href="../../exams/gcp-cdl/">CDL 試験ガイド</a><a href="../../exams/gcp-ace/">ACE 試験ガイド</a><a href="../../exams/azure-az900/">AZ-900 試験ガイド</a><a href="../../exams/azure-ai900/">AI-900 試験ガイド</a><a href="../../exams/azure-dp900/">DP-900 試験ガイド</a><a href="../../exams/azure-sc900/">SC-900 試験ガイド</a><a href="../../exams/azure-az104/">AZ-104 試験ガイド</a></nav>
+<nav class="site-nav"><a href="../../guide/">資格ガイド</a><a href="../../learn/">サービス解説</a><a href="../../career/">キャリア</a><a href="../../about.html">運営者情報</a><a href="../../privacy.html">プライバシーポリシー</a><a href="../../contact.html">お問い合わせ</a></nav>
+<p class="copy">© CLOUDCERT_ — 本サイトは各認定試験の公式試験ではなく、収録問題はすべてオリジナルの演習問題です。</p>
+</footer>
+</body>
+</html>

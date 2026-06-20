@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>【SAP-C02 演習問題 #78】ある企業が AWS 上でアプリケーションのコンテナ化を進めており、Docker イメージを…</title>
+<meta name="description" content="SAP-C02の本試験レベル演習問題。ある企業が AWS 上でアプリケーションのコンテナ化を進めており、Docker イメージを Amazon ECR に格納して ECS でデプロイしています。セキュリティチームから「E… 全選択肢の解説つき。">
+<link rel="canonical" href="https://cloudcert.app/q/aws-sap-c02/q078.html">
+<meta property="og:title" content="【SAP-C02 演習問題 #78】ある企業が AWS 上でアプリケーションのコンテナ化を進めており、Docker イメージを…">
+<meta property="og:description" content="SAP-C02の本試験レベル演習問題。ある企業が AWS 上でアプリケーションのコンテナ化を進めており、Docker イメージを Amazon ECR に格納して ECS でデプロイしています。セキュリティチームから「E… 全選択肢の解説つき。">
+<meta property="og:url" content="https://cloudcert.app/q/aws-sap-c02/q078.html">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="CLOUDCERT_">
+<meta property="og:image" content="https://cloudcert.app/assets/og.png">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='80' font-size='80' fill='%233fe0a4' font-family='monospace'>▸</text></svg>">
+
+<meta name="google-adsense-account" content="ca-pub-5647574947191958">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+JP:wght@400;500;700&family=JetBrains+Mono:wght@400;600;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../../css/style.css">
+<link rel="stylesheet" href="../../css/page.css">
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-SZR5CB5Q3X"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag('js',new Date());gtag('config','G-SZR5CB5Q3X');</script>
+<script type="application/ld+json">[{"@context":"https://schema.org/","@type":"Quiz","about":{"@type":"Thing","name":"AWS Certified Solutions Architect - Professional"},"hasPart":[{"@type":"Question","eduQuestionType":"Multiple choice","learningResourceType":"Practice problem","text":"ある企業が AWS 上でアプリケーションのコンテナ化を進めており、Docker イメージを Amazon ECR に格納して ECS でデプロイしています。セキュリティチームから「ECR に格納されている Docker イメージに既知の脆弱性（CVE）が含まれていないか自動的にスキャンし、高深刻度の脆弱性が検出された場合はデプロイをブロックしたい」という要件が出ています。最も適切な実装はどれですか？","suggestedAnswer":[{"@type":"Answer","position":0,"text":"DockerHub に ECR を連携させ、DockerHub の自動スキャン機能を使用する"},{"@type":"Answer","position":1,"text":"ECS タスクの起動時にカスタムスクリプトでイメージをスキャンし、問題があればタスクを終了する"},{"@type":"Answer","position":2,"text":"定期的に Trivy などのオープンソースのスキャナーを EC2 インスタンスで実行し、結果をメールで送信する"}],"acceptedAnswer":{"@type":"Answer","position":3,"text":"ECR の拡張スキャン（Amazon Inspector 統合）を有効化し、イメージプッシュ時に自動的にスキャンを実行する。Inspector の検出結果を EventBridge で受信し、高深刻度（HIGH/CRITICAL）の CVE が含まれる場合は Lambda 関数で CodePipeline の承認ステージをリジェクトしてデプロイをブロックする","comment":{"@type":"Comment","text":"ECR の拡張スキャン（Amazon Inspector 統合）はイメージプッシュ時に自動で CVE スキャンを実行し、OS パッケージとプログラミング言語のパッケージ両方の脆弱性を検出します。検出結果は EventBridge に自動配信されるため、Lambda で高深刻度の CVE を検出した場合に CodePipeline の承認ステージを「リジェクト」するアクションを実装することで、デプロイの自動ブロックが実現できます。\n\nC: サードパーティのスキャナーによる定期実行はリアルタイム性がなく、イメージプッシュ直後のスキャンやデプロイブロックへの自動統合が困難です。\n\nA: DockerHub の機能を使うことは、ECR からの移行が必要で、AWS ネイティブのセキュリティポスチャ管理が分断されます。\n\nB: ECS タスク起動時のスキャンはタスクが一度起動されてから検出するため、デプロイのブロックには適していません。起動前にスキャンする必要があります。"}}}]},{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"HOME","item":"https://cloudcert.app/"},{"@type":"ListItem","position":2,"name":"SAP-C02 試験ガイド","item":"https://cloudcert.app/exams/aws-sap-c02/"},{"@type":"ListItem","position":3,"name":"q078"}]}]</script>
+</head>
+<body class="page-body">
+<header class="page-header"><a class="page-logo" href="../../index.html">&gt; CLOUDCERT_</a></header>
+<main class="page-main">
+
+<nav class="breadcrumb"><a href="../../index.html">HOME</a> › <a href="../../exams/aws-sap-c02/">SAP-C02 試験ガイド</a> › q078</nav>
+<div class="q-meta"><span>SAP-C02</span><span>ワークロードの移行とモダナイゼーションの加速</span><span>HARD</span><span>単一選択</span></div>
+<h1>ある企業が AWS 上でアプリケーションのコンテナ化を進めており、Docker イメージを Amazon ECR に格納して ECS でデプロイしています。セキュリティチームから「ECR に格納されている Docker イメージに既知の脆弱性（CVE）が含まれていないか自動的にスキャンし、高深刻度の脆弱性が検出された場合はデプロイをブロックしたい」という要件が出ています。最も適切な実装はどれですか？</h1>
+<ol class="q-choices">
+<li><b>A.</b> DockerHub に ECR を連携させ、DockerHub の自動スキャン機能を使用する</li>
+<li><b>B.</b> ECS タスクの起動時にカスタムスクリプトでイメージをスキャンし、問題があればタスクを終了する</li>
+<li><b>C.</b> 定期的に Trivy などのオープンソースのスキャナーを EC2 インスタンスで実行し、結果をメールで送信する</li>
+<li><b>D.</b> ECR の拡張スキャン（Amazon Inspector 統合）を有効化し、イメージプッシュ時に自動的にスキャンを実行する。Inspector の検出結果を EventBridge で受信し、高深刻度（HIGH/CRITICAL）の CVE が含まれる場合は Lambda 関数で CodePipeline の承認ステージをリジェクトしてデプロイをブロックする</li>
+</ol>
+<details class="q-answer">
+<summary>解答と解説を見る</summary>
+<div class="inner">
+<p><b>正解: D</b></p>
+<p>ECR の拡張スキャン（Amazon Inspector 統合）はイメージプッシュ時に自動で CVE スキャンを実行し、OS パッケージとプログラミング言語のパッケージ両方の脆弱性を検出します。検出結果は EventBridge に自動配信されるため、Lambda で高深刻度の CVE を検出した場合に CodePipeline の承認ステージを「リジェクト」するアクションを実装することで、デプロイの自動ブロックが実現できます。
+
+C: サードパーティのスキャナーによる定期実行はリアルタイム性がなく、イメージプッシュ直後のスキャンやデプロイブロックへの自動統合が困難です。
+
+A: DockerHub の機能を使うことは、ECR からの移行が必要で、AWS ネイティブのセキュリティポスチャ管理が分断されます。
+
+B: ECS タスク起動時のスキャンはタスクが一度起動されてから検出するため、デプロイのブロックには適していません。起動前にスキャンする必要があります。</p>
+<div class="svc-links">📚 関連サービスの解説: <a href="../../learn/amazon-ecr.html">Amazon ECR</a> ・ <a href="../../learn/amazon-eventbridge.html">Amazon EventBridge</a></div>
+</div>
+</details>
+<div class="cta-box"><a class="btn btn-primary" href="../../exam.html?exam=aws-sap-c02">▸ この試験を本気で演習する（全150問・無料）</a></div>
+<nav class="q-nav">
+<span><a href="q077.html">← 前の問題</a></span>
+<span><a href="q079.html">次の問題 →</a></span>
+</nav>
+<section class="related"><h2>同じ分野の関連問題</h2><ul class="q-list">
+<li><a href="q077.html">ある企業が VMware vSphere 環境をクラウドに移行する際、「クラウドへの移行」ではなく「クラウドへの拡張」と…</a></li>
+<li><a href="q079.html">ある企業が AWS への移行を進めており、移行後のコストを事前に見積もりたいと考えています。オンプレミスでは物理サーバー…</a></li>
+<li><a href="q076.html">ある企業がオンプレミスのファイルサーバー（Windows File Server、50TB）を AWS に移行しようとし…</a></li>
+<li><a href="q080.html">ある金融機関が AWS への移行を計画しており、コンプライアンス要件として移行対象のすべてのシステムについて「詳細なビジ…</a></li>
+</ul></section>
+</main>
+<footer class="page-footer">
+<nav class="hub-nav"><a href="../../exams/aws-clf-c02/">CLF-C02 試験ガイド</a><a href="../../exams/aws-aif-c01/">AIF-C01 試験ガイド</a><a href="../../exams/aws-saa-c03/">SAA-C03 試験ガイド</a><a href="../../exams/aws-dva-c02/">DVA-C02 試験ガイド</a><a href="../../exams/aws-sap-c02/">SAP-C02 試験ガイド</a><a href="../../exams/gcp-cdl/">CDL 試験ガイド</a><a href="../../exams/gcp-ace/">ACE 試験ガイド</a><a href="../../exams/azure-az900/">AZ-900 試験ガイド</a><a href="../../exams/azure-ai900/">AI-900 試験ガイド</a><a href="../../exams/azure-dp900/">DP-900 試験ガイド</a><a href="../../exams/azure-sc900/">SC-900 試験ガイド</a><a href="../../exams/azure-az104/">AZ-104 試験ガイド</a></nav>
+<nav class="site-nav"><a href="../../guide/">資格ガイド</a><a href="../../learn/">サービス解説</a><a href="../../career/">キャリア</a><a href="../../about.html">運営者情報</a><a href="../../privacy.html">プライバシーポリシー</a><a href="../../contact.html">お問い合わせ</a></nav>
+<p class="copy">© CLOUDCERT_ — 本サイトは各認定試験の公式試験ではなく、収録問題はすべてオリジナルの演習問題です。</p>
+</footer>
+</body>
+</html>

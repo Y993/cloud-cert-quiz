@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>【SAA-C03 演習問題 #42】ある企業が、Amazon SQS FIFO キューを使って注文処理システムを構築している。…</title>
+<meta name="description" content="SAA-C03の本試験レベル演習問題。ある企業が、Amazon SQS FIFO キューを使って注文処理システムを構築している。1 注文につき複数のメッセージが送信され、各注文のメッセージは順序通りに処理される必要がある… 全選択肢の解説つき。">
+<link rel="canonical" href="https://cloudcert.app/q/aws-saa-c03/q042.html">
+<meta property="og:title" content="【SAA-C03 演習問題 #42】ある企業が、Amazon SQS FIFO キューを使って注文処理システムを構築している。…">
+<meta property="og:description" content="SAA-C03の本試験レベル演習問題。ある企業が、Amazon SQS FIFO キューを使って注文処理システムを構築している。1 注文につき複数のメッセージが送信され、各注文のメッセージは順序通りに処理される必要がある… 全選択肢の解説つき。">
+<meta property="og:url" content="https://cloudcert.app/q/aws-saa-c03/q042.html">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="CLOUDCERT_">
+<meta property="og:image" content="https://cloudcert.app/assets/og.png">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='80' font-size='80' fill='%233fe0a4' font-family='monospace'>▸</text></svg>">
+
+<meta name="google-adsense-account" content="ca-pub-5647574947191958">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+JP:wght@400;500;700&family=JetBrains+Mono:wght@400;600;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../../css/style.css">
+<link rel="stylesheet" href="../../css/page.css">
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-SZR5CB5Q3X"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag('js',new Date());gtag('config','G-SZR5CB5Q3X');</script>
+<script type="application/ld+json">[{"@context":"https://schema.org/","@type":"Quiz","about":{"@type":"Thing","name":"AWS Certified Solutions Architect – Associate"},"hasPart":[{"@type":"Question","eduQuestionType":"Multiple choice","learningResourceType":"Practice problem","text":"ある企業が、Amazon SQS FIFO キューを使って注文処理システムを構築している。1 注文につき複数のメッセージが送信され、各注文のメッセージは順序通りに処理される必要がある。現在、Consumer の Lambda 関数が処理中にエラーが発生すると、同じメッセージが何度もリトライされ、後続の同一注文のメッセージ処理がブロックされる問題が発生している。最も適切な対処方法はどれか。","suggestedAnswer":[{"@type":"Answer","position":0,"text":"Lambda 関数のエラーハンドリングを強化し、すべての例外を catch して常に SQS から正常に削除する。"},{"@type":"Answer","position":1,"text":"SQS FIFO キューの代わりに標準キュー（Standard Queue）に変更し、順序保証を諦めてスループットを優先する。"},{"@type":"Answer","position":2,"text":"可視性タイムアウトを 0 に設定して失敗したメッセージをすぐに再キューし、高速リトライを実現する。"}],"acceptedAnswer":{"@type":"Answer","position":3,"text":"FIFO キューの Message Group ID を注文 ID に設定しつつ、Lambda のイベントソースマッピングのレポートバッチアイテム失敗（reportBatchItemFailures）機能を有効化し、処理失敗したメッセージのみ SQS に返す。DLQ も設定する。","comment":{"@type":"Comment","text":"SQS FIFO キューで Message Group ID（注文 ID）を使うことで、同一注文のメッセージは順序通りに処理される。Lambda の reportBatchItemFailures 機能を有効にすると、バッチ処理内で失敗したメッセージのみを SQS に返して再試行でき、成功したメッセージは削除される。これにより失敗メッセージのブロッキング時間を最小化できる。DLQ を設定することで最大試行回数を超えたメッセージを保全できる。選択肢Bは順序保証を完全に失うため、注文処理の業務要件を満たさない。選択肢Cは可視性タイムアウト 0 で高速リトライすると、エラーが継続する場合に無限ループに陥り、後続メッセージを際限なくブロックする。選択肢Aはすべてのエラーをキャッチして正常削除するとエラーを握りつぶすことになり、処理失敗の検知・リトライ・DLQ への退避ができなくなりデータ損失リスクが高まる。"}}}]},{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"HOME","item":"https://cloudcert.app/"},{"@type":"ListItem","position":2,"name":"SAA-C03 試験ガイド","item":"https://cloudcert.app/exams/aws-saa-c03/"},{"@type":"ListItem","position":3,"name":"q042"}]}]</script>
+</head>
+<body class="page-body">
+<header class="page-header"><a class="page-logo" href="../../index.html">&gt; CLOUDCERT_</a></header>
+<main class="page-main">
+
+<nav class="breadcrumb"><a href="../../index.html">HOME</a> › <a href="../../exams/aws-saa-c03/">SAA-C03 試験ガイド</a> › q042</nav>
+<div class="q-meta"><span>SAA-C03</span><span>弾力性に優れたアーキテクチャの設計</span><span>HARD</span><span>単一選択</span></div>
+<h1>ある企業が、Amazon SQS FIFO キューを使って注文処理システムを構築している。1 注文につき複数のメッセージが送信され、各注文のメッセージは順序通りに処理される必要がある。現在、Consumer の Lambda 関数が処理中にエラーが発生すると、同じメッセージが何度もリトライされ、後続の同一注文のメッセージ処理がブロックされる問題が発生している。最も適切な対処方法はどれか。</h1>
+<ol class="q-choices">
+<li><b>A.</b> Lambda 関数のエラーハンドリングを強化し、すべての例外を catch して常に SQS から正常に削除する。</li>
+<li><b>B.</b> SQS FIFO キューの代わりに標準キュー（Standard Queue）に変更し、順序保証を諦めてスループットを優先する。</li>
+<li><b>C.</b> 可視性タイムアウトを 0 に設定して失敗したメッセージをすぐに再キューし、高速リトライを実現する。</li>
+<li><b>D.</b> FIFO キューの Message Group ID を注文 ID に設定しつつ、Lambda のイベントソースマッピングのレポートバッチアイテム失敗（reportBatchItemFailures）機能を有効化し、処理失敗したメッセージのみ SQS に返す。DLQ も設定する。</li>
+</ol>
+<details class="q-answer">
+<summary>解答と解説を見る</summary>
+<div class="inner">
+<p><b>正解: D</b></p>
+<p>SQS FIFO キューで Message Group ID（注文 ID）を使うことで、同一注文のメッセージは順序通りに処理される。Lambda の reportBatchItemFailures 機能を有効にすると、バッチ処理内で失敗したメッセージのみを SQS に返して再試行でき、成功したメッセージは削除される。これにより失敗メッセージのブロッキング時間を最小化できる。DLQ を設定することで最大試行回数を超えたメッセージを保全できる。選択肢Bは順序保証を完全に失うため、注文処理の業務要件を満たさない。選択肢Cは可視性タイムアウト 0 で高速リトライすると、エラーが継続する場合に無限ループに陥り、後続メッセージを際限なくブロックする。選択肢Aはすべてのエラーをキャッチして正常削除するとエラーを握りつぶすことになり、処理失敗の検知・リトライ・DLQ への退避ができなくなりデータ損失リスクが高まる。</p>
+<div class="svc-links">📚 関連サービスの解説: <a href="../../learn/aws-lambda.html">AWS Lambda</a> ・ <a href="../../learn/amazon-sqs.html">Amazon SQS</a></div>
+</div>
+</details>
+<div class="cta-box"><a class="btn btn-primary" href="../../exam.html?exam=aws-saa-c03">▸ この試験を本気で演習する（全150問・無料）</a></div>
+<nav class="q-nav">
+<span><a href="q041.html">← 前の問題</a></span>
+<span><a href="q043.html">次の問題 →</a></span>
+</nav>
+<section class="related"><h2>同じ分野の関連問題</h2><ul class="q-list">
+<li><a href="q041.html">ある企業が、本番環境の AWS アーキテクチャを見直し、単一障害点（SPOF）を排除したい。現在の構成は以下の通りである…</a></li>
+<li><a href="q043.html">ある企業が、EC2 インスタンス上で動作するステートフルな Web アプリケーションを Auto Scaling 対応に…</a></li>
+<li><a href="q040.html">ある企業が、Lambda 関数を使って RDS データベースに定期的にアクセスするバッチ処理を実装している。Lambda…</a></li>
+<li><a href="q044.html">ある企業が、AWS Lambda を使ってイベント駆動のデータ処理パイプラインを構築している。Amazon SNS から…</a></li>
+</ul></section>
+</main>
+<footer class="page-footer">
+<nav class="hub-nav"><a href="../../exams/aws-clf-c02/">CLF-C02 試験ガイド</a><a href="../../exams/aws-aif-c01/">AIF-C01 試験ガイド</a><a href="../../exams/aws-saa-c03/">SAA-C03 試験ガイド</a><a href="../../exams/aws-dva-c02/">DVA-C02 試験ガイド</a><a href="../../exams/aws-sap-c02/">SAP-C02 試験ガイド</a><a href="../../exams/gcp-cdl/">CDL 試験ガイド</a><a href="../../exams/gcp-ace/">ACE 試験ガイド</a><a href="../../exams/azure-az900/">AZ-900 試験ガイド</a><a href="../../exams/azure-ai900/">AI-900 試験ガイド</a><a href="../../exams/azure-dp900/">DP-900 試験ガイド</a><a href="../../exams/azure-sc900/">SC-900 試験ガイド</a><a href="../../exams/azure-az104/">AZ-104 試験ガイド</a></nav>
+<nav class="site-nav"><a href="../../guide/">資格ガイド</a><a href="../../learn/">サービス解説</a><a href="../../career/">キャリア</a><a href="../../about.html">運営者情報</a><a href="../../privacy.html">プライバシーポリシー</a><a href="../../contact.html">お問い合わせ</a></nav>
+<p class="copy">© CLOUDCERT_ — 本サイトは各認定試験の公式試験ではなく、収録問題はすべてオリジナルの演習問題です。</p>
+</footer>
+</body>
+</html>

@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>【SAA-C03 演習問題 #99】ある企業が、大量の非構造化データ（ログファイル）を Amazon S3 に保存している。デ…</title>
+<meta name="description" content="SAA-C03の本試験レベル演習問題。ある企業が、大量の非構造化データ（ログファイル）を Amazon S3 に保存している。データは日次で追加され、最初の 7 日間は分析が頻繁に行われ、7〜30 日間は週 1 回程度の… 全選択肢の解説つき。">
+<link rel="canonical" href="https://cloudcert.app/q/aws-saa-c03/q099.html">
+<meta property="og:title" content="【SAA-C03 演習問題 #99】ある企業が、大量の非構造化データ（ログファイル）を Amazon S3 に保存している。デ…">
+<meta property="og:description" content="SAA-C03の本試験レベル演習問題。ある企業が、大量の非構造化データ（ログファイル）を Amazon S3 に保存している。データは日次で追加され、最初の 7 日間は分析が頻繁に行われ、7〜30 日間は週 1 回程度の… 全選択肢の解説つき。">
+<meta property="og:url" content="https://cloudcert.app/q/aws-saa-c03/q099.html">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="CLOUDCERT_">
+<meta property="og:image" content="https://cloudcert.app/assets/og.png">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='80' font-size='80' fill='%233fe0a4' font-family='monospace'>▸</text></svg>">
+
+<meta name="google-adsense-account" content="ca-pub-5647574947191958">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+JP:wght@400;500;700&family=JetBrains+Mono:wght@400;600;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../../css/style.css">
+<link rel="stylesheet" href="../../css/page.css">
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-SZR5CB5Q3X"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag('js',new Date());gtag('config','G-SZR5CB5Q3X');</script>
+<script type="application/ld+json">[{"@context":"https://schema.org/","@type":"Quiz","about":{"@type":"Thing","name":"AWS Certified Solutions Architect – Associate"},"hasPart":[{"@type":"Question","eduQuestionType":"Multiple choice","learningResourceType":"Practice problem","text":"ある企業が、大量の非構造化データ（ログファイル）を Amazon S3 に保存している。データは日次で追加され、最初の 7 日間は分析が頻繁に行われ、7〜30 日間は週 1 回程度のアクセスがあり、30 日〜1 年間はコンプライアンス要件で保存が必要だが実際のアクセスはほぼない。1 年以降は削除可能である。アクセスパターンに合わせて最適なストレージコストを実現する S3 ライフサイクルポリシーの設定はどれか。","suggestedAnswer":[{"@type":"Answer","position":0,"text":"S3 Intelligent-Tiering を使用してすべての段階を AWS に自動管理させる。"},{"@type":"Answer","position":1,"text":"S3 Standard（0〜7 日）→ S3 Glacier Deep Archive（7 日以降）→ 1 年後に削除するライフサイクルポリシーを設定する。"},{"@type":"Answer","position":3,"text":"すべてのデータを S3 Standard に保存し、1 年後に削除する。"}],"acceptedAnswer":{"@type":"Answer","position":2,"text":"S3 Standard（0〜7 日）→ S3 Standard-IA（7〜30 日）→ S3 Glacier Instant Retrieval（30 日〜1 年）→ 1 年後に削除するライフサイクルポリシーを設定する。","comment":{"@type":"Comment","text":"各アクセスパターンに最適なストレージクラスを割り当てるライフサイクルポリシーが、各フェーズのコストを最小化する。0〜7 日は頻繁なアクセスで S3 Standard が適切。7〜30 日は週 1 回程度のアクセスで Standard-IA（Standard の 60% 安、取得はミリ秒）が適切。30 日〜1 年はほぼアクセスなしで Glacier Instant Retrieval（Standard の 80% 安、ミリ秒取得）が適切（ほぼアクセスがないが万一のアクセスに対してミリ秒応答が可能）。1 年後は削除する。選択肢DはすべてStandard で 1 年間保持する最もコストが高い設定。選択肢BはGlacier Deep Archive（7 日以降すべて）は 12〜48 時間の取得遅延があり、7〜30 日の週 1 回アクセス要件（迅速な取得が必要な場合）を満たさない可能性がある。選択肢AのIntelligent-Tiering も有効だが、オブジェクト単位のモニタリング費用が発生し、明確なアクセスパターンがわかっている場合はライフサイクルポリシーの方がコスト効率が高い。"}}}]},{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"HOME","item":"https://cloudcert.app/"},{"@type":"ListItem","position":2,"name":"SAA-C03 試験ガイド","item":"https://cloudcert.app/exams/aws-saa-c03/"},{"@type":"ListItem","position":3,"name":"q099"}]}]</script>
+</head>
+<body class="page-body">
+<header class="page-header"><a class="page-logo" href="../../index.html">&gt; CLOUDCERT_</a></header>
+<main class="page-main">
+
+<nav class="breadcrumb"><a href="../../index.html">HOME</a> › <a href="../../exams/aws-saa-c03/">SAA-C03 試験ガイド</a> › q099</nav>
+<div class="q-meta"><span>SAA-C03</span><span>コストを最適化したアーキテクチャの設計</span><span>HARD</span><span>単一選択</span></div>
+<h1>ある企業が、大量の非構造化データ（ログファイル）を Amazon S3 に保存している。データは日次で追加され、最初の 7 日間は分析が頻繁に行われ、7〜30 日間は週 1 回程度のアクセスがあり、30 日〜1 年間はコンプライアンス要件で保存が必要だが実際のアクセスはほぼない。1 年以降は削除可能である。アクセスパターンに合わせて最適なストレージコストを実現する S3 ライフサイクルポリシーの設定はどれか。</h1>
+<ol class="q-choices">
+<li><b>A.</b> S3 Intelligent-Tiering を使用してすべての段階を AWS に自動管理させる。</li>
+<li><b>B.</b> S3 Standard（0〜7 日）→ S3 Glacier Deep Archive（7 日以降）→ 1 年後に削除するライフサイクルポリシーを設定する。</li>
+<li><b>C.</b> S3 Standard（0〜7 日）→ S3 Standard-IA（7〜30 日）→ S3 Glacier Instant Retrieval（30 日〜1 年）→ 1 年後に削除するライフサイクルポリシーを設定する。</li>
+<li><b>D.</b> すべてのデータを S3 Standard に保存し、1 年後に削除する。</li>
+</ol>
+<details class="q-answer">
+<summary>解答と解説を見る</summary>
+<div class="inner">
+<p><b>正解: C</b></p>
+<p>各アクセスパターンに最適なストレージクラスを割り当てるライフサイクルポリシーが、各フェーズのコストを最小化する。0〜7 日は頻繁なアクセスで S3 Standard が適切。7〜30 日は週 1 回程度のアクセスで Standard-IA（Standard の 60% 安、取得はミリ秒）が適切。30 日〜1 年はほぼアクセスなしで Glacier Instant Retrieval（Standard の 80% 安、ミリ秒取得）が適切（ほぼアクセスがないが万一のアクセスに対してミリ秒応答が可能）。1 年後は削除する。選択肢DはすべてStandard で 1 年間保持する最もコストが高い設定。選択肢BはGlacier Deep Archive（7 日以降すべて）は 12〜48 時間の取得遅延があり、7〜30 日の週 1 回アクセス要件（迅速な取得が必要な場合）を満たさない可能性がある。選択肢AのIntelligent-Tiering も有効だが、オブジェクト単位のモニタリング費用が発生し、明確なアクセスパターンがわかっている場合はライフサイクルポリシーの方がコスト効率が高い。</p>
+<div class="svc-links">📚 関連サービスの解説: <a href="../../learn/amazon-s3.html">Amazon S3</a></div>
+</div>
+</details>
+<div class="cta-box"><a class="btn btn-primary" href="../../exam.html?exam=aws-saa-c03">▸ この試験を本気で演習する（全150問・無料）</a></div>
+<nav class="q-nav">
+<span><a href="q098.html">← 前の問題</a></span>
+<span><a href="q100.html">次の問題 →</a></span>
+</nav>
+<section class="related"><h2>同じ分野の関連問題</h2><ul class="q-list">
+<li><a href="q102.html">ある企業が、Amazon EC2 インスタンスの適正化（Rightsizing）を実施しようとしている。現在のインスタン…</a></li>
+<li><a href="q093.html">ある企業が、AWS の NAT ゲートウェイの月次コストが高いことに気づいた。調査の結果、プライベートサブネットの EC…</a></li>
+<li><a href="q106.html">ある企業が、AWS の予算管理を強化したい。特定のサービスコストが月次予算の 80% に達した時点でアラートを受け取り、…</a></li>
+<li><a href="q109.html">ある企業が、AWS Lambda と Amazon API Gateway でサーバーレス API を運用している。AP…</a></li>
+</ul></section>
+</main>
+<footer class="page-footer">
+<nav class="hub-nav"><a href="../../exams/aws-clf-c02/">CLF-C02 試験ガイド</a><a href="../../exams/aws-aif-c01/">AIF-C01 試験ガイド</a><a href="../../exams/aws-saa-c03/">SAA-C03 試験ガイド</a><a href="../../exams/aws-dva-c02/">DVA-C02 試験ガイド</a><a href="../../exams/aws-sap-c02/">SAP-C02 試験ガイド</a><a href="../../exams/gcp-cdl/">CDL 試験ガイド</a><a href="../../exams/gcp-ace/">ACE 試験ガイド</a><a href="../../exams/azure-az900/">AZ-900 試験ガイド</a><a href="../../exams/azure-ai900/">AI-900 試験ガイド</a><a href="../../exams/azure-dp900/">DP-900 試験ガイド</a><a href="../../exams/azure-sc900/">SC-900 試験ガイド</a><a href="../../exams/azure-az104/">AZ-104 試験ガイド</a></nav>
+<nav class="site-nav"><a href="../../guide/">資格ガイド</a><a href="../../learn/">サービス解説</a><a href="../../career/">キャリア</a><a href="../../about.html">運営者情報</a><a href="../../privacy.html">プライバシーポリシー</a><a href="../../contact.html">お問い合わせ</a></nav>
+<p class="copy">© CLOUDCERT_ — 本サイトは各認定試験の公式試験ではなく、収録問題はすべてオリジナルの演習問題です。</p>
+</footer>
+</body>
+</html>

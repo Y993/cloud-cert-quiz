@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>【SAP-C02 演習問題 #92】ある企業が複数の事業部門のためにセキュリティと自律性のバランスを取ったマルチアカウント設計…</title>
+<meta name="description" content="SAP-C02の本試験レベル演習問題。ある企業が複数の事業部門のためにセキュリティと自律性のバランスを取ったマルチアカウント設計を策定しています。各事業部門はそれぞれ独自の AWS アカウントを持ち、独立して操作できます… 全選択肢の解説つき。">
+<link rel="canonical" href="https://cloudcert.app/q/aws-sap-c02/q092.html">
+<meta property="og:title" content="【SAP-C02 演習問題 #92】ある企業が複数の事業部門のためにセキュリティと自律性のバランスを取ったマルチアカウント設計…">
+<meta property="og:description" content="SAP-C02の本試験レベル演習問題。ある企業が複数の事業部門のためにセキュリティと自律性のバランスを取ったマルチアカウント設計を策定しています。各事業部門はそれぞれ独自の AWS アカウントを持ち、独立して操作できます… 全選択肢の解説つき。">
+<meta property="og:url" content="https://cloudcert.app/q/aws-sap-c02/q092.html">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="CLOUDCERT_">
+<meta property="og:image" content="https://cloudcert.app/assets/og.png">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='80' font-size='80' fill='%233fe0a4' font-family='monospace'>▸</text></svg>">
+
+<meta name="google-adsense-account" content="ca-pub-5647574947191958">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+JP:wght@400;500;700&family=JetBrains+Mono:wght@400;600;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../../css/style.css">
+<link rel="stylesheet" href="../../css/page.css">
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-SZR5CB5Q3X"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag('js',new Date());gtag('config','G-SZR5CB5Q3X');</script>
+<script type="application/ld+json">[{"@context":"https://schema.org/","@type":"Quiz","about":{"@type":"Thing","name":"AWS Certified Solutions Architect - Professional"},"hasPart":[{"@type":"Question","eduQuestionType":"Multiple choice","learningResourceType":"Practice problem","text":"ある企業が複数の事業部門のためにセキュリティと自律性のバランスを取ったマルチアカウント設計を策定しています。各事業部門はそれぞれ独自の AWS アカウントを持ち、独立して操作できますが、中央の IT チームはセキュリティ基準への準拠を強制し、一部の共有サービス（DNS、ネットワーク、セキュリティ監視）を提供する必要があります。最も適切な AWS Landing Zone 設計はどれですか？","suggestedAnswer":[{"@type":"Answer","position":0,"text":"すべての事業部門を同一の OU に入れ、すべて同一の SCP を適用する"},{"@type":"Answer","position":2,"text":"各事業部門が独自の Organizations を持ち、中央の IT が各 Organizations を個別に管理する"},{"@type":"Answer","position":3,"text":"すべての事業部門が単一の AWS アカウントを共有し、IAM ポリシーで部門ごとのアクセスを制御する"}],"acceptedAnswer":{"@type":"Answer","position":1,"text":"Organizations に Management、Security、Shared Services、Log Archive、各事業部門の OU 構造を設計する。Management アカウントは Organizations の管理のみ使用し、Security アカウントに GuardDuty/Security Hub の委任管理者を設定し、Shared Services アカウントで DNS/VPC/Transit Gateway などの共有インフラを提供する。各事業部門アカウントには SCP で最低限のセキュリティ基準を強制しながら、日々のリソース管理は自律して実施できるようにする","comment":{"@type":"Comment","text":"AWS のベストプラクティスである Landing Zone 設計では、Management（管理）、Security（セキュリティ）、Shared Services（共有サービス）、Log Archive（ログ集約）の各機能用アカウントを分離します。Management アカウントは組織管理に専念し、Security アカウントで中央セキュリティ監視を行い、Shared Services アカウントで DNS/ネットワークを一元提供します。各事業部門 OU に SCP を適用しながら自律性を確保するバランスが実現できます。\n\nD: 単一アカウント共有はセキュリティの分離がなく、事業部門間のリソース誤削除や権限エスカレーションのリスクが高く、スケールしません。\n\nA: すべての OU への同一 SCP 適用は、事業部門ごとの異なる要件（本番/開発の差異など）に対応できません。\n\nC: 複数の Organizations は AWS の設計に反し、Organizations の一括請求、セキュリティ委任、CloudTrail 組織トレイルなどの機能が使えなくなります。"}}}]},{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"HOME","item":"https://cloudcert.app/"},{"@type":"ListItem","position":2,"name":"SAP-C02 試験ガイド","item":"https://cloudcert.app/exams/aws-sap-c02/"},{"@type":"ListItem","position":3,"name":"q092"}]}]</script>
+</head>
+<body class="page-body">
+<header class="page-header"><a class="page-logo" href="../../index.html">&gt; CLOUDCERT_</a></header>
+<main class="page-main">
+
+<nav class="breadcrumb"><a href="../../index.html">HOME</a> › <a href="../../exams/aws-sap-c02/">SAP-C02 試験ガイド</a> › q092</nav>
+<div class="q-meta"><span>SAP-C02</span><span>複雑な組織に対応するソリューションの設計</span><span>HARD</span><span>単一選択</span></div>
+<h1>ある企業が複数の事業部門のためにセキュリティと自律性のバランスを取ったマルチアカウント設計を策定しています。各事業部門はそれぞれ独自の AWS アカウントを持ち、独立して操作できますが、中央の IT チームはセキュリティ基準への準拠を強制し、一部の共有サービス（DNS、ネットワーク、セキュリティ監視）を提供する必要があります。最も適切な AWS Landing Zone 設計はどれですか？</h1>
+<ol class="q-choices">
+<li><b>A.</b> すべての事業部門を同一の OU に入れ、すべて同一の SCP を適用する</li>
+<li><b>B.</b> Organizations に Management、Security、Shared Services、Log Archive、各事業部門の OU 構造を設計する。Management アカウントは Organizations の管理のみ使用し、Security アカウントに GuardDuty/Security Hub の委任管理者を設定し、Shared Services アカウントで DNS/VPC/Transit Gateway などの共有インフラを提供する。各事業部門アカウントには SCP で最低限のセキュリティ基準を強制しながら、日々のリソース管理は自律して実施できるようにする</li>
+<li><b>C.</b> 各事業部門が独自の Organizations を持ち、中央の IT が各 Organizations を個別に管理する</li>
+<li><b>D.</b> すべての事業部門が単一の AWS アカウントを共有し、IAM ポリシーで部門ごとのアクセスを制御する</li>
+</ol>
+<details class="q-answer">
+<summary>解答と解説を見る</summary>
+<div class="inner">
+<p><b>正解: B</b></p>
+<p>AWS のベストプラクティスである Landing Zone 設計では、Management（管理）、Security（セキュリティ）、Shared Services（共有サービス）、Log Archive（ログ集約）の各機能用アカウントを分離します。Management アカウントは組織管理に専念し、Security アカウントで中央セキュリティ監視を行い、Shared Services アカウントで DNS/ネットワークを一元提供します。各事業部門 OU に SCP を適用しながら自律性を確保するバランスが実現できます。
+
+D: 単一アカウント共有はセキュリティの分離がなく、事業部門間のリソース誤削除や権限エスカレーションのリスクが高く、スケールしません。
+
+A: すべての OU への同一 SCP 適用は、事業部門ごとの異なる要件（本番/開発の差異など）に対応できません。
+
+C: 複数の Organizations は AWS の設計に反し、Organizations の一括請求、セキュリティ委任、CloudTrail 組織トレイルなどの機能が使えなくなります。</p>
+<div class="svc-links">📚 関連サービスの解説: <a href="../../learn/aws-organizations.html">AWS Organizations</a> ・ <a href="../../learn/amazon-guardduty.html">Amazon GuardDuty</a></div>
+</div>
+</details>
+<div class="cta-box"><a class="btn btn-primary" href="../../exam.html?exam=aws-sap-c02">▸ この試験を本気で演習する（全150問・無料）</a></div>
+<nav class="q-nav">
+<span><a href="q091.html">← 前の問題</a></span>
+<span><a href="q093.html">次の問題 →</a></span>
+</nav>
+<section class="related"><h2>同じ分野の関連問題</h2><ul class="q-list">
+<li><a href="q096.html">ある企業が AWS Organizations で 150 以上のアカウントを管理しており、定期的に AWS のサービス…</a></li>
+<li><a href="q087.html">ある企業が AWS Organizations を使って管理しているマルチアカウント環境で、各開発チームが自律的に AW…</a></li>
+<li><a href="q086.html">ある企業が AWS Organizations で管理するマルチアカウント環境において、特定の機密データを含む S3 バ…</a></li>
+<li><a href="q100.html">ある企業が AWS Organizations で管理するマルチアカウント環境で、ネットワークセキュリティを強化したいと…</a></li>
+</ul></section>
+</main>
+<footer class="page-footer">
+<nav class="hub-nav"><a href="../../exams/aws-clf-c02/">CLF-C02 試験ガイド</a><a href="../../exams/aws-aif-c01/">AIF-C01 試験ガイド</a><a href="../../exams/aws-saa-c03/">SAA-C03 試験ガイド</a><a href="../../exams/aws-dva-c02/">DVA-C02 試験ガイド</a><a href="../../exams/aws-sap-c02/">SAP-C02 試験ガイド</a><a href="../../exams/gcp-cdl/">CDL 試験ガイド</a><a href="../../exams/gcp-ace/">ACE 試験ガイド</a><a href="../../exams/azure-az900/">AZ-900 試験ガイド</a><a href="../../exams/azure-ai900/">AI-900 試験ガイド</a><a href="../../exams/azure-dp900/">DP-900 試験ガイド</a><a href="../../exams/azure-sc900/">SC-900 試験ガイド</a><a href="../../exams/azure-az104/">AZ-104 試験ガイド</a></nav>
+<nav class="site-nav"><a href="../../guide/">資格ガイド</a><a href="../../learn/">サービス解説</a><a href="../../career/">キャリア</a><a href="../../about.html">運営者情報</a><a href="../../privacy.html">プライバシーポリシー</a><a href="../../contact.html">お問い合わせ</a></nav>
+<p class="copy">© CLOUDCERT_ — 本サイトは各認定試験の公式試験ではなく、収録問題はすべてオリジナルの演習問題です。</p>
+</footer>
+</body>
+</html>

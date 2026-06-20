@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>【DVA-C02 演習問題 #150】あるチームが本番環境でX-Rayを使ったトレーシングを最適化したい。現在の設定では1秒間に…</title>
+<meta name="description" content="DVA-C02の本試験レベル演習問題。あるチームが本番環境でX-Rayを使ったトレーシングを最適化したい。現在の設定では1秒間に1リクエスト+残り5%をサンプリングするデフォルト設定を使っており、一部の低頻度な重要エンド… 全選択肢の解説つき。">
+<link rel="canonical" href="https://cloudcert.app/q/aws-dva-c02/q150.html">
+<meta property="og:title" content="【DVA-C02 演習問題 #150】あるチームが本番環境でX-Rayを使ったトレーシングを最適化したい。現在の設定では1秒間に…">
+<meta property="og:description" content="DVA-C02の本試験レベル演習問題。あるチームが本番環境でX-Rayを使ったトレーシングを最適化したい。現在の設定では1秒間に1リクエスト+残り5%をサンプリングするデフォルト設定を使っており、一部の低頻度な重要エンド… 全選択肢の解説つき。">
+<meta property="og:url" content="https://cloudcert.app/q/aws-dva-c02/q150.html">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="CLOUDCERT_">
+<meta property="og:image" content="https://cloudcert.app/assets/og.png">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='80' font-size='80' fill='%233fe0a4' font-family='monospace'>▸</text></svg>">
+
+<meta name="google-adsense-account" content="ca-pub-5647574947191958">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+JP:wght@400;500;700&family=JetBrains+Mono:wght@400;600;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../../css/style.css">
+<link rel="stylesheet" href="../../css/page.css">
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-SZR5CB5Q3X"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag('js',new Date());gtag('config','G-SZR5CB5Q3X');</script>
+<script type="application/ld+json">[{"@context":"https://schema.org/","@type":"Quiz","about":{"@type":"Thing","name":"AWS Certified Developer - Associate"},"hasPart":[{"@type":"Question","eduQuestionType":"Checkbox","learningResourceType":"Practice problem","text":"あるチームが本番環境でX-Rayを使ったトレーシングを最適化したい。現在の設定では1秒間に1リクエスト+残り5%をサンプリングするデフォルト設定を使っており、一部の低頻度な重要エンドポイント（管理者操作API）はトレースが全く取れていない。設定の改善策として正しいものを2つ選択してください。","suggestedAnswer":[{"@type":"Answer","position":0,"text":"CloudTrailで管理者操作APIへのアクセスをすべてログに残すことでX-Rayのトレース不足を補う"},{"@type":"Answer","position":3,"text":"管理者操作APIのLambda関数内でX-Ray SDKのForceTraceメソッドを呼び出してそのセグメントを強制的にサンプリング対象にする"},{"@type":"Answer","position":4,"text":"デフォルトのサンプリングレートを100%に変更してすべてのリクエストをトレースする"}],"acceptedAnswer":[{"@type":"Answer","position":1,"text":"X-Rayのサンプリングルールに優先度（Priority）を設定して、管理者操作APIのルールをデフォルトルールより高い優先度にする","comment":{"@type":"Comment","text":"低頻度の重要エンドポイントへのサンプリング対応には2つのX-Ray機能が重要。カスタムサンプリングルール（選択肢C）はURLパス・HTTPメソッド・サービス名・ホスト名などに基づいてルールを定義し、例えば「URLが/admin/*に一致するリクエストは100%サンプリング」という設定が可能。これにより低頻度でも重要な管理者操作は必ずトレースできる。サンプリングルールの優先度（Priority）設定（選択肢B）は複数のサンプリングルールが存在する場合の適用順序を決定する重要な概念で、数値が小さいほど優先度が高い。デフォルトルール（Priority=10000）より低い数値を管理者APIルールに設定することで、管理者APIには確実にカスタムルールが適用される。選択肢Eの全トレースは小規模システムでは可能だが、高トラフィック環境ではコストとオーバーヘッドが膨大になり推奨されない。選択肢DのForceTraceはX-Ray SDKの標準APIには存在しない（SamplingDecisionはルールで制御）。選択肢AのCloudTrailはAPIコールの監査であり、X-Rayのパフォーマンストレース情報（実行時間・サブセグメント・エラー詳細）の代替にはならない。"}},{"@type":"Answer","position":2,"text":"X-Rayのカスタムサンプリングルールを作成してURLパターン別にサンプリングレートを設定し、管理者操作APIのパスには100%サンプリングを適用する","comment":{"@type":"Comment","text":"低頻度の重要エンドポイントへのサンプリング対応には2つのX-Ray機能が重要。カスタムサンプリングルール（選択肢C）はURLパス・HTTPメソッド・サービス名・ホスト名などに基づいてルールを定義し、例えば「URLが/admin/*に一致するリクエストは100%サンプリング」という設定が可能。これにより低頻度でも重要な管理者操作は必ずトレースできる。サンプリングルールの優先度（Priority）設定（選択肢B）は複数のサンプリングルールが存在する場合の適用順序を決定する重要な概念で、数値が小さいほど優先度が高い。デフォルトルール（Priority=10000）より低い数値を管理者APIルールに設定することで、管理者APIには確実にカスタムルールが適用される。選択肢Eの全トレースは小規模システムでは可能だが、高トラフィック環境ではコストとオーバーヘッドが膨大になり推奨されない。選択肢DのForceTraceはX-Ray SDKの標準APIには存在しない（SamplingDecisionはルールで制御）。選択肢AのCloudTrailはAPIコールの監査であり、X-Rayのパフォーマンストレース情報（実行時間・サブセグメント・エラー詳細）の代替にはならない。"}}]}]},{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"HOME","item":"https://cloudcert.app/"},{"@type":"ListItem","position":2,"name":"DVA-C02 試験ガイド","item":"https://cloudcert.app/exams/aws-dva-c02/"},{"@type":"ListItem","position":3,"name":"q150"}]}]</script>
+</head>
+<body class="page-body">
+<header class="page-header"><a class="page-logo" href="../../index.html">&gt; CLOUDCERT_</a></header>
+<main class="page-main">
+
+<nav class="breadcrumb"><a href="../../index.html">HOME</a> › <a href="../../exams/aws-dva-c02/">DVA-C02 試験ガイド</a> › q150</nav>
+<div class="q-meta"><span>DVA-C02</span><span>トラブルシューティングと最適化</span><span>HARD</span><span>複数選択</span></div>
+<h1>あるチームが本番環境でX-Rayを使ったトレーシングを最適化したい。現在の設定では1秒間に1リクエスト+残り5%をサンプリングするデフォルト設定を使っており、一部の低頻度な重要エンドポイント（管理者操作API）はトレースが全く取れていない。設定の改善策として正しいものを2つ選択してください。</h1>
+<ol class="q-choices">
+<li><b>A.</b> CloudTrailで管理者操作APIへのアクセスをすべてログに残すことでX-Rayのトレース不足を補う</li>
+<li><b>B.</b> X-Rayのサンプリングルールに優先度（Priority）を設定して、管理者操作APIのルールをデフォルトルールより高い優先度にする</li>
+<li><b>C.</b> X-Rayのカスタムサンプリングルールを作成してURLパターン別にサンプリングレートを設定し、管理者操作APIのパスには100%サンプリングを適用する</li>
+<li><b>D.</b> 管理者操作APIのLambda関数内でX-Ray SDKのForceTraceメソッドを呼び出してそのセグメントを強制的にサンプリング対象にする</li>
+<li><b>E.</b> デフォルトのサンプリングレートを100%に変更してすべてのリクエストをトレースする</li>
+</ol>
+<details class="q-answer">
+<summary>解答と解説を見る</summary>
+<div class="inner">
+<p><b>正解: B, C</b></p>
+<p>低頻度の重要エンドポイントへのサンプリング対応には2つのX-Ray機能が重要。カスタムサンプリングルール（選択肢C）はURLパス・HTTPメソッド・サービス名・ホスト名などに基づいてルールを定義し、例えば「URLが/admin/*に一致するリクエストは100%サンプリング」という設定が可能。これにより低頻度でも重要な管理者操作は必ずトレースできる。サンプリングルールの優先度（Priority）設定（選択肢B）は複数のサンプリングルールが存在する場合の適用順序を決定する重要な概念で、数値が小さいほど優先度が高い。デフォルトルール（Priority=10000）より低い数値を管理者APIルールに設定することで、管理者APIには確実にカスタムルールが適用される。選択肢Eの全トレースは小規模システムでは可能だが、高トラフィック環境ではコストとオーバーヘッドが膨大になり推奨されない。選択肢DのForceTraceはX-Ray SDKの標準APIには存在しない（SamplingDecisionはルールで制御）。選択肢AのCloudTrailはAPIコールの監査であり、X-Rayのパフォーマンストレース情報（実行時間・サブセグメント・エラー詳細）の代替にはならない。</p>
+<div class="svc-links">📚 関連サービスの解説: <a href="../../learn/aws-x-ray.html">AWS X-Ray</a></div>
+</div>
+</details>
+<div class="cta-box"><a class="btn btn-primary" href="../../exam.html?exam=aws-dva-c02">▸ この試験を本気で演習する（全150問・無料）</a></div>
+<nav class="q-nav">
+<span><a href="q149.html">← 前の問題</a></span>
+<span></span>
+</nav>
+<section class="related"><h2>同じ分野の関連問題</h2><ul class="q-list">
+<li><a href="q149.html">あるチームがElastiCache for Redisを使って頻繁にアクセスされるDynamoDBデータをキャッシュして…</a></li>
+<li><a href="q148.html">あるチームがLambda関数のコールドスタート時間を最小化したい。関数はJavaで実装されており、Spring Fram…</a></li>
+<li><a href="q147.html">あるチームがDynamoDBのスロットリング問題を解決しようとしている。CloudWatchのReadThrottleE…</a></li>
+<li><a href="q146.html">あるチームがAPI GatewayとLambdaで構成されたAPIで、一部のユーザーから「リクエストが成功するときと失敗…</a></li>
+</ul></section>
+</main>
+<footer class="page-footer">
+<nav class="hub-nav"><a href="../../exams/aws-clf-c02/">CLF-C02 試験ガイド</a><a href="../../exams/aws-aif-c01/">AIF-C01 試験ガイド</a><a href="../../exams/aws-saa-c03/">SAA-C03 試験ガイド</a><a href="../../exams/aws-dva-c02/">DVA-C02 試験ガイド</a><a href="../../exams/aws-sap-c02/">SAP-C02 試験ガイド</a><a href="../../exams/gcp-cdl/">CDL 試験ガイド</a><a href="../../exams/gcp-ace/">ACE 試験ガイド</a><a href="../../exams/azure-az900/">AZ-900 試験ガイド</a><a href="../../exams/azure-ai900/">AI-900 試験ガイド</a><a href="../../exams/azure-dp900/">DP-900 試験ガイド</a><a href="../../exams/azure-sc900/">SC-900 試験ガイド</a><a href="../../exams/azure-az104/">AZ-104 試験ガイド</a></nav>
+<nav class="site-nav"><a href="../../guide/">資格ガイド</a><a href="../../learn/">サービス解説</a><a href="../../career/">キャリア</a><a href="../../about.html">運営者情報</a><a href="../../privacy.html">プライバシーポリシー</a><a href="../../contact.html">お問い合わせ</a></nav>
+<p class="copy">© CLOUDCERT_ — 本サイトは各認定試験の公式試験ではなく、収録問題はすべてオリジナルの演習問題です。</p>
+</footer>
+</body>
+</html>

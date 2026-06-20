@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>【DVA-C02 演習問題 #99】ある企業がAWS CloudFormationスタックを使って複数のAWSアカウントにわた…</title>
+<meta name="description" content="DVA-C02の本試験レベル演習問題。ある企業がAWS CloudFormationスタックを使って複数のAWSアカウントにわたって標準化されたVPCとセキュリティグループを展開している。あるスタックで作成したVPC I… 全選択肢の解説つき。">
+<link rel="canonical" href="https://cloudcert.app/q/aws-dva-c02/q099.html">
+<meta property="og:title" content="【DVA-C02 演習問題 #99】ある企業がAWS CloudFormationスタックを使って複数のAWSアカウントにわた…">
+<meta property="og:description" content="DVA-C02の本試験レベル演習問題。ある企業がAWS CloudFormationスタックを使って複数のAWSアカウントにわたって標準化されたVPCとセキュリティグループを展開している。あるスタックで作成したVPC I… 全選択肢の解説つき。">
+<meta property="og:url" content="https://cloudcert.app/q/aws-dva-c02/q099.html">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="CLOUDCERT_">
+<meta property="og:image" content="https://cloudcert.app/assets/og.png">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='80' font-size='80' fill='%233fe0a4' font-family='monospace'>▸</text></svg>">
+
+<meta name="google-adsense-account" content="ca-pub-5647574947191958">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+JP:wght@400;500;700&family=JetBrains+Mono:wght@400;600;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../../css/style.css">
+<link rel="stylesheet" href="../../css/page.css">
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-SZR5CB5Q3X"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag('js',new Date());gtag('config','G-SZR5CB5Q3X');</script>
+<script type="application/ld+json">[{"@context":"https://schema.org/","@type":"Quiz","about":{"@type":"Thing","name":"AWS Certified Developer - Associate"},"hasPart":[{"@type":"Question","eduQuestionType":"Multiple choice","learningResourceType":"Practice problem","text":"ある企業がAWS CloudFormationスタックを使って複数のAWSアカウントにわたって標準化されたVPCとセキュリティグループを展開している。あるスタックで作成したVPC IDを別のスタックから参照して使用するための最も適切なCloudFormationの機能はどれか。","suggestedAnswer":[{"@type":"Answer","position":1,"text":"スタックセット（StackSets）：複数アカウントに同一スタックを展開する機能を使う"},{"@type":"Answer","position":2,"text":"ネストされたスタック（Nested Stacks）：親スタックから子スタックにパラメータを渡す"},{"@type":"Answer","position":3,"text":"CloudFormationドリフト検出：既存リソースのIDを検出して他スタックに提供する"}],"acceptedAnswer":{"@type":"Answer","position":0,"text":"クロススタック参照（Cross-Stack Reference）：出力側スタックでOutputsとExportを定義し、参照側でFn::ImportValueを使う","comment":{"@type":"Comment","text":"CloudFormationのクロススタック参照は、あるスタックのOutputsセクションでExport名を定義し（例: Export: Name: !Sub '${AWS::StackName}-VPCID'）、別のスタックからFn::ImportValueで参照する機能である。これにより、リソースのID等を重複してハードコードせず、スタック間で安全に値を共有できる。重要な制約として、あるスタックのエクスポートを他スタックが参照している間は、エクスポート元スタックを削除できない。Bのスタックセットは複数アカウント・リージョンへの一括デプロイ機能であり、スタック間の値共有ではない。Cのネストされたスタックは階層的な構成であり、兄弟スタック間の参照にはFn::ImportValueの方が適切である。Dのドリフト検出はリソース状態の監視機能であり、値の共有には使えない。"}}}]},{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"HOME","item":"https://cloudcert.app/"},{"@type":"ListItem","position":2,"name":"DVA-C02 試験ガイド","item":"https://cloudcert.app/exams/aws-dva-c02/"},{"@type":"ListItem","position":3,"name":"q099"}]}]</script>
+</head>
+<body class="page-body">
+<header class="page-header"><a class="page-logo" href="../../index.html">&gt; CLOUDCERT_</a></header>
+<main class="page-main">
+
+<nav class="breadcrumb"><a href="../../index.html">HOME</a> › <a href="../../exams/aws-dva-c02/">DVA-C02 試験ガイド</a> › q099</nav>
+<div class="q-meta"><span>DVA-C02</span><span>デプロイ</span><span>MEDIUM</span><span>単一選択</span></div>
+<h1>ある企業がAWS CloudFormationスタックを使って複数のAWSアカウントにわたって標準化されたVPCとセキュリティグループを展開している。あるスタックで作成したVPC IDを別のスタックから参照して使用するための最も適切なCloudFormationの機能はどれか。</h1>
+<ol class="q-choices">
+<li><b>A.</b> クロススタック参照（Cross-Stack Reference）：出力側スタックでOutputsとExportを定義し、参照側でFn::ImportValueを使う</li>
+<li><b>B.</b> スタックセット（StackSets）：複数アカウントに同一スタックを展開する機能を使う</li>
+<li><b>C.</b> ネストされたスタック（Nested Stacks）：親スタックから子スタックにパラメータを渡す</li>
+<li><b>D.</b> CloudFormationドリフト検出：既存リソースのIDを検出して他スタックに提供する</li>
+</ol>
+<details class="q-answer">
+<summary>解答と解説を見る</summary>
+<div class="inner">
+<p><b>正解: A</b></p>
+<p>CloudFormationのクロススタック参照は、あるスタックのOutputsセクションでExport名を定義し（例: Export: Name: !Sub &#39;${AWS::StackName}-VPCID&#39;）、別のスタックからFn::ImportValueで参照する機能である。これにより、リソースのID等を重複してハードコードせず、スタック間で安全に値を共有できる。重要な制約として、あるスタックのエクスポートを他スタックが参照している間は、エクスポート元スタックを削除できない。Bのスタックセットは複数アカウント・リージョンへの一括デプロイ機能であり、スタック間の値共有ではない。Cのネストされたスタックは階層的な構成であり、兄弟スタック間の参照にはFn::ImportValueの方が適切である。Dのドリフト検出はリソース状態の監視機能であり、値の共有には使えない。</p>
+
+</div>
+</details>
+<div class="cta-box"><a class="btn btn-primary" href="../../exam.html?exam=aws-dva-c02">▸ この試験を本気で演習する（全150問・無料）</a></div>
+<nav class="q-nav">
+<span><a href="q098.html">← 前の問題</a></span>
+<span><a href="q100.html">次の問題 →</a></span>
+</nav>
+<section class="related"><h2>同じ分野の関連問題</h2><ul class="q-list">
+<li><a href="q098.html">あるチームがAWS CodeBuildのbuildspec.ymlを作成している。ビルドステージで環境変数として使うデー…</a></li>
+<li><a href="q100.html">あるチームがAWS CodePipelineで構築したCI/CDパイプラインを改善しようとしている。ビルドフェーズでDo…</a></li>
+<li><a href="q097.html">ある企業がAWS SAMを使ってLambda関数のデプロイを管理している。新しいバージョンのデプロイ時に、1分ごとに10…</a></li>
+<li><a href="q101.html">ある企業がElastic Beanstalkで運用するWebアプリケーションの新バージョンをデプロイしようとしている。本…</a></li>
+</ul></section>
+</main>
+<footer class="page-footer">
+<nav class="hub-nav"><a href="../../exams/aws-clf-c02/">CLF-C02 試験ガイド</a><a href="../../exams/aws-aif-c01/">AIF-C01 試験ガイド</a><a href="../../exams/aws-saa-c03/">SAA-C03 試験ガイド</a><a href="../../exams/aws-dva-c02/">DVA-C02 試験ガイド</a><a href="../../exams/aws-sap-c02/">SAP-C02 試験ガイド</a><a href="../../exams/gcp-cdl/">CDL 試験ガイド</a><a href="../../exams/gcp-ace/">ACE 試験ガイド</a><a href="../../exams/azure-az900/">AZ-900 試験ガイド</a><a href="../../exams/azure-ai900/">AI-900 試験ガイド</a><a href="../../exams/azure-dp900/">DP-900 試験ガイド</a><a href="../../exams/azure-sc900/">SC-900 試験ガイド</a><a href="../../exams/azure-az104/">AZ-104 試験ガイド</a></nav>
+<nav class="site-nav"><a href="../../guide/">資格ガイド</a><a href="../../learn/">サービス解説</a><a href="../../career/">キャリア</a><a href="../../about.html">運営者情報</a><a href="../../privacy.html">プライバシーポリシー</a><a href="../../contact.html">お問い合わせ</a></nav>
+<p class="copy">© CLOUDCERT_ — 本サイトは各認定試験の公式試験ではなく、収録問題はすべてオリジナルの演習問題です。</p>
+</footer>
+</body>
+</html>

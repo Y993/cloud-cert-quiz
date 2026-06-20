@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>【DVA-C02 演習問題 #7】ある企業が、外部決済APIを呼び出すLambda関数をSQSイベントソースマッピングで起動…</title>
+<meta name="description" content="DVA-C02の本試験レベル演習問題。ある企業が、外部決済APIを呼び出すLambda関数をSQSイベントソースマッピングで起動している。決済APIの仕様として「同一の注文IDで同じリクエストが複数回送られても、決済処理… 全選択肢の解説つき。">
+<link rel="canonical" href="https://cloudcert.app/q/aws-dva-c02/q007.html">
+<meta property="og:title" content="【DVA-C02 演習問題 #7】ある企業が、外部決済APIを呼び出すLambda関数をSQSイベントソースマッピングで起動…">
+<meta property="og:description" content="DVA-C02の本試験レベル演習問題。ある企業が、外部決済APIを呼び出すLambda関数をSQSイベントソースマッピングで起動している。決済APIの仕様として「同一の注文IDで同じリクエストが複数回送られても、決済処理… 全選択肢の解説つき。">
+<meta property="og:url" content="https://cloudcert.app/q/aws-dva-c02/q007.html">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="CLOUDCERT_">
+<meta property="og:image" content="https://cloudcert.app/assets/og.png">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='80' font-size='80' fill='%233fe0a4' font-family='monospace'>▸</text></svg>">
+
+<meta name="google-adsense-account" content="ca-pub-5647574947191958">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+JP:wght@400;500;700&family=JetBrains+Mono:wght@400;600;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../../css/style.css">
+<link rel="stylesheet" href="../../css/page.css">
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-SZR5CB5Q3X"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag('js',new Date());gtag('config','G-SZR5CB5Q3X');</script>
+<script type="application/ld+json">[{"@context":"https://schema.org/","@type":"Quiz","about":{"@type":"Thing","name":"AWS Certified Developer - Associate"},"hasPart":[{"@type":"Question","eduQuestionType":"Multiple choice","learningResourceType":"Practice problem","text":"ある企業が、外部決済APIを呼び出すLambda関数をSQSイベントソースマッピングで起動している。決済APIの仕様として「同一の注文IDで同じリクエストが複数回送られても、決済処理は1度しか実行されない」ことが保証されている。しかし、Lambda関数自体のコードで「SQSから同一メッセージが複数回配信された場合でも、決済処理のトリガーは1度だけ」というべき等性を確保したい。追加インフラを最小化してべき等性を実現するアプローチとして最も適切なものはどれか。","suggestedAnswer":[{"@type":"Answer","position":0,"text":"Lambdaのreserved concurrencyを1に設定して、同時に1つの関数インスタンスしか動かないようにする"},{"@type":"Answer","position":1,"text":"SQSのvisibility timeoutをLambdaのタイムアウトよりも長く設定し、重複配信が起こらないようにする"},{"@type":"Answer","position":2,"text":"Lambda関数内でSQSメッセージのMessageIdをDynamoDBに記録し、既に処理済みの場合はスキップする"}],"acceptedAnswer":{"@type":"Answer","position":3,"text":"SQSのFIFOキューに切り替え、メッセージグループIDとメッセージ重複排除IDを設定する","comment":{"@type":"Comment","text":"SQS FIFOキューのメッセージ重複排除ID（MessageDeduplicationId）を使うと、5分のデデュプリケーションウィンドウ内に同じIDのメッセージが複数回送られた場合、SQS側で重複を除去してLambdaへの配信を1回に限定できる。これはキューレベルの仕組みであり、Lambda関数のコードを変更せずに実現できる。選択肢AのReserved Concurrency=1は並列実行を制限するが、順次実行の重複には対処できない（同一メッセージが時間をおいて再配信された場合に重複処理が起きる）。選択肢CのDynamoDB記録によるスキップは確実なべき等性を実現できるが「追加インフラを最小化」という要件に反し、DynamoDBのプロビジョニングとコード変更が必要になる。選択肢BのVisibility Timeoutの調整は処理中の重複配信を防ぐことに役立つが、処理完了後のメッセージ再配信（例: 削除前にタイムアウトした場合）への根本的な対策にはならない。"}}}]},{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"HOME","item":"https://cloudcert.app/"},{"@type":"ListItem","position":2,"name":"DVA-C02 試験ガイド","item":"https://cloudcert.app/exams/aws-dva-c02/"},{"@type":"ListItem","position":3,"name":"q007"}]}]</script>
+</head>
+<body class="page-body">
+<header class="page-header"><a class="page-logo" href="../../index.html">&gt; CLOUDCERT_</a></header>
+<main class="page-main">
+
+<nav class="breadcrumb"><a href="../../index.html">HOME</a> › <a href="../../exams/aws-dva-c02/">DVA-C02 試験ガイド</a> › q007</nav>
+<div class="q-meta"><span>DVA-C02</span><span>開発</span><span>MEDIUM</span><span>単一選択</span></div>
+<h1>ある企業が、外部決済APIを呼び出すLambda関数をSQSイベントソースマッピングで起動している。決済APIの仕様として「同一の注文IDで同じリクエストが複数回送られても、決済処理は1度しか実行されない」ことが保証されている。しかし、Lambda関数自体のコードで「SQSから同一メッセージが複数回配信された場合でも、決済処理のトリガーは1度だけ」というべき等性を確保したい。追加インフラを最小化してべき等性を実現するアプローチとして最も適切なものはどれか。</h1>
+<ol class="q-choices">
+<li><b>A.</b> Lambdaのreserved concurrencyを1に設定して、同時に1つの関数インスタンスしか動かないようにする</li>
+<li><b>B.</b> SQSのvisibility timeoutをLambdaのタイムアウトよりも長く設定し、重複配信が起こらないようにする</li>
+<li><b>C.</b> Lambda関数内でSQSメッセージのMessageIdをDynamoDBに記録し、既に処理済みの場合はスキップする</li>
+<li><b>D.</b> SQSのFIFOキューに切り替え、メッセージグループIDとメッセージ重複排除IDを設定する</li>
+</ol>
+<details class="q-answer">
+<summary>解答と解説を見る</summary>
+<div class="inner">
+<p><b>正解: D</b></p>
+<p>SQS FIFOキューのメッセージ重複排除ID（MessageDeduplicationId）を使うと、5分のデデュプリケーションウィンドウ内に同じIDのメッセージが複数回送られた場合、SQS側で重複を除去してLambdaへの配信を1回に限定できる。これはキューレベルの仕組みであり、Lambda関数のコードを変更せずに実現できる。選択肢AのReserved Concurrency=1は並列実行を制限するが、順次実行の重複には対処できない（同一メッセージが時間をおいて再配信された場合に重複処理が起きる）。選択肢CのDynamoDB記録によるスキップは確実なべき等性を実現できるが「追加インフラを最小化」という要件に反し、DynamoDBのプロビジョニングとコード変更が必要になる。選択肢BのVisibility Timeoutの調整は処理中の重複配信を防ぐことに役立つが、処理完了後のメッセージ再配信（例: 削除前にタイムアウトした場合）への根本的な対策にはならない。</p>
+<div class="svc-links">📚 関連サービスの解説: <a href="../../learn/amazon-sqs.html">Amazon SQS</a></div>
+</div>
+</details>
+<div class="cta-box"><a class="btn btn-primary" href="../../exam.html?exam=aws-dva-c02">▸ この試験を本気で演習する（全150問・無料）</a></div>
+<nav class="q-nav">
+<span><a href="q006.html">← 前の問題</a></span>
+<span><a href="q008.html">次の問題 →</a></span>
+</nav>
+<section class="related"><h2>同じ分野の関連問題</h2><ul class="q-list">
+<li><a href="q006.html">あるEコマース企業が、注文確定時にSQSキューからLambdaを呼び出して在庫を更新するシステムを運用している。ネットワ…</a></li>
+<li><a href="q008.html">あるメディア企業がAPI GatewayのREST APIを使って動画メタデータのCRUD APIを公開している。フロン…</a></li>
+<li><a href="q005.html">ある金融サービス企業が、Lambdaを使ってオンプレミスのデータベース（プライベートサブネット内のRDS Postgre…</a></li>
+<li><a href="q009.html">ある企業が、API GatewayのREST APIにカスタムオーソライザー（Lambda Authorizer）を実装…</a></li>
+</ul></section>
+</main>
+<footer class="page-footer">
+<nav class="hub-nav"><a href="../../exams/aws-clf-c02/">CLF-C02 試験ガイド</a><a href="../../exams/aws-aif-c01/">AIF-C01 試験ガイド</a><a href="../../exams/aws-saa-c03/">SAA-C03 試験ガイド</a><a href="../../exams/aws-dva-c02/">DVA-C02 試験ガイド</a><a href="../../exams/aws-sap-c02/">SAP-C02 試験ガイド</a><a href="../../exams/gcp-cdl/">CDL 試験ガイド</a><a href="../../exams/gcp-ace/">ACE 試験ガイド</a><a href="../../exams/azure-az900/">AZ-900 試験ガイド</a><a href="../../exams/azure-ai900/">AI-900 試験ガイド</a><a href="../../exams/azure-dp900/">DP-900 試験ガイド</a><a href="../../exams/azure-sc900/">SC-900 試験ガイド</a><a href="../../exams/azure-az104/">AZ-104 試験ガイド</a></nav>
+<nav class="site-nav"><a href="../../guide/">資格ガイド</a><a href="../../learn/">サービス解説</a><a href="../../career/">キャリア</a><a href="../../about.html">運営者情報</a><a href="../../privacy.html">プライバシーポリシー</a><a href="../../contact.html">お問い合わせ</a></nav>
+<p class="copy">© CLOUDCERT_ — 本サイトは各認定試験の公式試験ではなく、収録問題はすべてオリジナルの演習問題です。</p>
+</footer>
+</body>
+</html>

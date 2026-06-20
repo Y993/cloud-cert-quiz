@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>【SAA-C03 演習問題 #14】ある企業が、マルチアカウント環境で AWS リソースのセキュリティ体制を強化したい。セキュ…</title>
+<meta name="description" content="SAA-C03の本試験レベル演習問題。ある企業が、マルチアカウント環境で AWS リソースのセキュリティ体制を強化したい。セキュリティチームから以下の要件が出ている：(1) 全アカウントで脅威インテリジェンスに基づく異常… 全選択肢の解説つき。">
+<link rel="canonical" href="https://cloudcert.app/q/aws-saa-c03/q014.html">
+<meta property="og:title" content="【SAA-C03 演習問題 #14】ある企業が、マルチアカウント環境で AWS リソースのセキュリティ体制を強化したい。セキュ…">
+<meta property="og:description" content="SAA-C03の本試験レベル演習問題。ある企業が、マルチアカウント環境で AWS リソースのセキュリティ体制を強化したい。セキュリティチームから以下の要件が出ている：(1) 全アカウントで脅威インテリジェンスに基づく異常… 全選択肢の解説つき。">
+<meta property="og:url" content="https://cloudcert.app/q/aws-saa-c03/q014.html">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="CLOUDCERT_">
+<meta property="og:image" content="https://cloudcert.app/assets/og.png">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='80' font-size='80' fill='%233fe0a4' font-family='monospace'>▸</text></svg>">
+
+<meta name="google-adsense-account" content="ca-pub-5647574947191958">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+JP:wght@400;500;700&family=JetBrains+Mono:wght@400;600;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../../css/style.css">
+<link rel="stylesheet" href="../../css/page.css">
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-SZR5CB5Q3X"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag('js',new Date());gtag('config','G-SZR5CB5Q3X');</script>
+<script type="application/ld+json">[{"@context":"https://schema.org/","@type":"Quiz","about":{"@type":"Thing","name":"AWS Certified Solutions Architect – Associate"},"hasPart":[{"@type":"Question","eduQuestionType":"Checkbox","learningResourceType":"Practice problem","text":"ある企業が、マルチアカウント環境で AWS リソースのセキュリティ体制を強化したい。セキュリティチームから以下の要件が出ている：(1) 全アカウントで脅威インテリジェンスに基づく異常アクティビティを自動検知したい、(2) EC2 インスタンスの OS やアプリケーションの脆弱性を継続的にスキャンしたい。最小限の設定で両要件を満たすサービスを 2 つ選択してください。","suggestedAnswer":[{"@type":"Answer","position":1,"text":"Amazon Macie を有効化して S3 バケット内の機密データを自動的に分類・検出する。"},{"@type":"Answer","position":2,"text":"AWS Config を有効化して設定変更の履歴を記録し、マネージドルールでコンプライアンスをチェックする。"},{"@type":"Answer","position":4,"text":"AWS Security Hub を有効化して全アカウントのセキュリティ所見を集約・可視化する。"}],"acceptedAnswer":[{"@type":"Answer","position":0,"text":"Amazon GuardDuty を Organizations の管理アカウントから有効化し、メンバーアカウントに自動展開する。","comment":{"@type":"Comment","text":"要件(1) の脅威インテリジェンスに基づく異常アクティビティ検知には Amazon GuardDuty が適切である。GuardDuty は CloudTrail・VPC フローログ・DNS ログを機械学習で分析し、認証情報の不正使用やネットワーク侵害の兆候を自動検知する。Organizations と統合することで管理アカウントから全メンバーアカウントに一括展開できる。要件(2) の EC2 脆弱性スキャンには Amazon Inspector が適切である。Inspector は SSM エージェントを通じて EC2 の OS パッケージや実行中のソフトウェアの既知脆弱性（CVE）を継続的にスキャンする。Organizations 統合で多アカウントへの一括展開も可能。選択肢CのAWS Config は設定変更の監視・コンプライアンスチェックであり、脅威検知や脆弱性スキャンではない。選択肢EのSecurity Hub はセキュリティ所見の集約・可視化ダッシュボードであり、それ自体が検知や脆弱性スキャンを実施するわけではない（GuardDuty や Inspector の結果を集約する）。選択肢BのMacie はS3データの機密性分類サービスであり、今回の要件に合致しない。"}},{"@type":"Answer","position":3,"text":"Amazon Inspector を Organizations と統合して有効化し、EC2 インスタンスの脆弱性スキャンを継続的に実行する。","comment":{"@type":"Comment","text":"要件(1) の脅威インテリジェンスに基づく異常アクティビティ検知には Amazon GuardDuty が適切である。GuardDuty は CloudTrail・VPC フローログ・DNS ログを機械学習で分析し、認証情報の不正使用やネットワーク侵害の兆候を自動検知する。Organizations と統合することで管理アカウントから全メンバーアカウントに一括展開できる。要件(2) の EC2 脆弱性スキャンには Amazon Inspector が適切である。Inspector は SSM エージェントを通じて EC2 の OS パッケージや実行中のソフトウェアの既知脆弱性（CVE）を継続的にスキャンする。Organizations 統合で多アカウントへの一括展開も可能。選択肢CのAWS Config は設定変更の監視・コンプライアンスチェックであり、脅威検知や脆弱性スキャンではない。選択肢EのSecurity Hub はセキュリティ所見の集約・可視化ダッシュボードであり、それ自体が検知や脆弱性スキャンを実施するわけではない（GuardDuty や Inspector の結果を集約する）。選択肢BのMacie はS3データの機密性分類サービスであり、今回の要件に合致しない。"}}]}]},{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"HOME","item":"https://cloudcert.app/"},{"@type":"ListItem","position":2,"name":"SAA-C03 試験ガイド","item":"https://cloudcert.app/exams/aws-saa-c03/"},{"@type":"ListItem","position":3,"name":"q014"}]}]</script>
+</head>
+<body class="page-body">
+<header class="page-header"><a class="page-logo" href="../../index.html">&gt; CLOUDCERT_</a></header>
+<main class="page-main">
+
+<nav class="breadcrumb"><a href="../../index.html">HOME</a> › <a href="../../exams/aws-saa-c03/">SAA-C03 試験ガイド</a> › q014</nav>
+<div class="q-meta"><span>SAA-C03</span><span>セキュアなアーキテクチャの設計</span><span>HARD</span><span>複数選択</span></div>
+<h1>ある企業が、マルチアカウント環境で AWS リソースのセキュリティ体制を強化したい。セキュリティチームから以下の要件が出ている：(1) 全アカウントで脅威インテリジェンスに基づく異常アクティビティを自動検知したい、(2) EC2 インスタンスの OS やアプリケーションの脆弱性を継続的にスキャンしたい。最小限の設定で両要件を満たすサービスを 2 つ選択してください。</h1>
+<ol class="q-choices">
+<li><b>A.</b> Amazon GuardDuty を Organizations の管理アカウントから有効化し、メンバーアカウントに自動展開する。</li>
+<li><b>B.</b> Amazon Macie を有効化して S3 バケット内の機密データを自動的に分類・検出する。</li>
+<li><b>C.</b> AWS Config を有効化して設定変更の履歴を記録し、マネージドルールでコンプライアンスをチェックする。</li>
+<li><b>D.</b> Amazon Inspector を Organizations と統合して有効化し、EC2 インスタンスの脆弱性スキャンを継続的に実行する。</li>
+<li><b>E.</b> AWS Security Hub を有効化して全アカウントのセキュリティ所見を集約・可視化する。</li>
+</ol>
+<details class="q-answer">
+<summary>解答と解説を見る</summary>
+<div class="inner">
+<p><b>正解: A, D</b></p>
+<p>要件(1) の脅威インテリジェンスに基づく異常アクティビティ検知には Amazon GuardDuty が適切である。GuardDuty は CloudTrail・VPC フローログ・DNS ログを機械学習で分析し、認証情報の不正使用やネットワーク侵害の兆候を自動検知する。Organizations と統合することで管理アカウントから全メンバーアカウントに一括展開できる。要件(2) の EC2 脆弱性スキャンには Amazon Inspector が適切である。Inspector は SSM エージェントを通じて EC2 の OS パッケージや実行中のソフトウェアの既知脆弱性（CVE）を継続的にスキャンする。Organizations 統合で多アカウントへの一括展開も可能。選択肢CのAWS Config は設定変更の監視・コンプライアンスチェックであり、脅威検知や脆弱性スキャンではない。選択肢EのSecurity Hub はセキュリティ所見の集約・可視化ダッシュボードであり、それ自体が検知や脆弱性スキャンを実施するわけではない（GuardDuty や Inspector の結果を集約する）。選択肢BのMacie はS3データの機密性分類サービスであり、今回の要件に合致しない。</p>
+<div class="svc-links">📚 関連サービスの解説: <a href="../../learn/amazon-guardduty.html">Amazon GuardDuty</a> ・ <a href="../../learn/aws-organizations.html">AWS Organizations</a></div>
+</div>
+</details>
+<div class="cta-box"><a class="btn btn-primary" href="../../exam.html?exam=aws-saa-c03">▸ この試験を本気で演習する（全150問・無料）</a></div>
+<nav class="q-nav">
+<span><a href="q013.html">← 前の問題</a></span>
+<span><a href="q015.html">次の問題 →</a></span>
+</nav>
+<section class="related"><h2>同じ分野の関連問題</h2><ul class="q-list">
+<li><a href="q013.html">ある企業が、AWS で Web アプリケーションを運用している。セキュリティ監査で、EC2 インスタンスへのポート 22…</a></li>
+<li><a href="q015.html">ある企業が、EC2 インスタンスで動作するアプリケーションに対して、AWS KMS を使って特定のデータを暗号化/復号す…</a></li>
+<li><a href="q012.html">ある企業が、Amazon S3 に保存された機密データへのアクセスを特定の VPC からのみ許可したい。社内のユーザーは…</a></li>
+<li><a href="q016.html">ある企業が、本番環境の AWS アカウントで重要なリソース（EC2 インスタンス、RDS データベース、S3 バケット）…</a></li>
+</ul></section>
+</main>
+<footer class="page-footer">
+<nav class="hub-nav"><a href="../../exams/aws-clf-c02/">CLF-C02 試験ガイド</a><a href="../../exams/aws-aif-c01/">AIF-C01 試験ガイド</a><a href="../../exams/aws-saa-c03/">SAA-C03 試験ガイド</a><a href="../../exams/aws-dva-c02/">DVA-C02 試験ガイド</a><a href="../../exams/aws-sap-c02/">SAP-C02 試験ガイド</a><a href="../../exams/gcp-cdl/">CDL 試験ガイド</a><a href="../../exams/gcp-ace/">ACE 試験ガイド</a><a href="../../exams/azure-az900/">AZ-900 試験ガイド</a><a href="../../exams/azure-ai900/">AI-900 試験ガイド</a><a href="../../exams/azure-dp900/">DP-900 試験ガイド</a><a href="../../exams/azure-sc900/">SC-900 試験ガイド</a><a href="../../exams/azure-az104/">AZ-104 試験ガイド</a></nav>
+<nav class="site-nav"><a href="../../guide/">資格ガイド</a><a href="../../learn/">サービス解説</a><a href="../../career/">キャリア</a><a href="../../about.html">運営者情報</a><a href="../../privacy.html">プライバシーポリシー</a><a href="../../contact.html">お問い合わせ</a></nav>
+<p class="copy">© CLOUDCERT_ — 本サイトは各認定試験の公式試験ではなく、収録問題はすべてオリジナルの演習問題です。</p>
+</footer>
+</body>
+</html>

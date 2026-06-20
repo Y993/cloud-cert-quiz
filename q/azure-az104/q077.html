@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>【AZ-104 演習問題 #77】ある企業のインフラチームが、本番環境のVMに使用しているPremium SSD マネージド…</title>
+<meta name="description" content="AZ-104の本試験レベル演習問題。ある企業のインフラチームが、本番環境のVMに使用しているPremium SSD マネージドディスクについて、将来的なI/O需要の増加に備えてパフォーマンスティアを変更することを検討して… 全選択肢の解説つき。">
+<link rel="canonical" href="https://cloudcert.app/q/azure-az104/q077.html">
+<meta property="og:title" content="【AZ-104 演習問題 #77】ある企業のインフラチームが、本番環境のVMに使用しているPremium SSD マネージド…">
+<meta property="og:description" content="AZ-104の本試験レベル演習問題。ある企業のインフラチームが、本番環境のVMに使用しているPremium SSD マネージドディスクについて、将来的なI/O需要の増加に備えてパフォーマンスティアを変更することを検討して… 全選択肢の解説つき。">
+<meta property="og:url" content="https://cloudcert.app/q/azure-az104/q077.html">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="CLOUDCERT_">
+<meta property="og:image" content="https://cloudcert.app/assets/og.png">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='80' font-size='80' fill='%233fe0a4' font-family='monospace'>▸</text></svg>">
+
+<meta name="google-adsense-account" content="ca-pub-5647574947191958">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+JP:wght@400;500;700&family=JetBrains+Mono:wght@400;600;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../../css/style.css">
+<link rel="stylesheet" href="../../css/page.css">
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-SZR5CB5Q3X"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag('js',new Date());gtag('config','G-SZR5CB5Q3X');</script>
+<script type="application/ld+json">[{"@context":"https://schema.org/","@type":"Quiz","about":{"@type":"Thing","name":"Microsoft Azure Administrator"},"hasPart":[{"@type":"Question","eduQuestionType":"Multiple choice","learningResourceType":"Practice problem","text":"ある企業のインフラチームが、本番環境のVMに使用しているPremium SSD マネージドディスクについて、将来的なI/O需要の増加に備えてパフォーマンスティアを変更することを検討している。現在P30（5,000 IOPS / 200 MB/s）を使用中で、一時的なキャンペーン期間だけP50レベル（7,500 IOPS / 250 MB/s）に引き上げ、その後P30に戻したい。この操作の説明として正しいものはどれか。","suggestedAnswer":[{"@type":"Answer","position":1,"text":"パフォーマンスティアの変更は一度だけ可能で、元のティアに戻すことはできない"},{"@type":"Answer","position":2,"text":"パフォーマンスティアの変更には必ずVMを停止（割り当て解除）する必要がある"},{"@type":"Answer","position":3,"text":"Premium SSDのパフォーマンスティアはディスクのサイズに固定されており、サイズを変更せずにティアだけを上げることはできない"}],"acceptedAnswer":{"@type":"Answer","position":0,"text":"Premium SSDはパフォーマンスティアを独立して変更できる。ティアの引き上げはVMの再起動なしに実行でき、サイズを変えずにIOPS/スループットを向上させられる","comment":{"@type":"Comment","text":"Azure Premium SSD マネージドディスクのパフォーマンスティアは、ディスクサイズとは独立して変更できる機能が提供されており、VMを停止・再起動することなくティアを引き上げることが可能。例えばP30ディスクをP50ティアに設定するとP50相当のIOPS/スループットで動作させられる。ティアの引き下げは12時間以上の間隔を空ける制限があるが、元のティアへの変更も可能。これにより一時的な高負荷イベントに対して低コストで対応でき、キャンペーン終了後はティアを戻してコストを削減できる。選択肢Dはパフォーマンスティア変更機能を否定する誤り。選択肢Bはティア変更が一度しかできないという誤情報であり、繰り返し変更可能。選択肢CはVM停止が必須という誤りで、ティア変更はオンラインで実行できる（ただし有効化まで数分かかる）。"}}}]},{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"HOME","item":"https://cloudcert.app/"},{"@type":"ListItem","position":2,"name":"AZ-104 試験ガイド","item":"https://cloudcert.app/exams/azure-az104/"},{"@type":"ListItem","position":3,"name":"q077"}]}]</script>
+</head>
+<body class="page-body">
+<header class="page-header"><a class="page-logo" href="../../index.html">&gt; CLOUDCERT_</a></header>
+<main class="page-main">
+
+<nav class="breadcrumb"><a href="../../index.html">HOME</a> › <a href="../../exams/azure-az104/">AZ-104 試験ガイド</a> › q077</nav>
+<div class="q-meta"><span>AZ-104</span><span>Azure コンピューティング リソースのデプロイと管理</span><span>MEDIUM</span><span>単一選択</span></div>
+<h1>ある企業のインフラチームが、本番環境のVMに使用しているPremium SSD マネージドディスクについて、将来的なI/O需要の増加に備えてパフォーマンスティアを変更することを検討している。現在P30（5,000 IOPS / 200 MB/s）を使用中で、一時的なキャンペーン期間だけP50レベル（7,500 IOPS / 250 MB/s）に引き上げ、その後P30に戻したい。この操作の説明として正しいものはどれか。</h1>
+<ol class="q-choices">
+<li><b>A.</b> Premium SSDはパフォーマンスティアを独立して変更できる。ティアの引き上げはVMの再起動なしに実行でき、サイズを変えずにIOPS/スループットを向上させられる</li>
+<li><b>B.</b> パフォーマンスティアの変更は一度だけ可能で、元のティアに戻すことはできない</li>
+<li><b>C.</b> パフォーマンスティアの変更には必ずVMを停止（割り当て解除）する必要がある</li>
+<li><b>D.</b> Premium SSDのパフォーマンスティアはディスクのサイズに固定されており、サイズを変更せずにティアだけを上げることはできない</li>
+</ol>
+<details class="q-answer">
+<summary>解答と解説を見る</summary>
+<div class="inner">
+<p><b>正解: A</b></p>
+<p>Azure Premium SSD マネージドディスクのパフォーマンスティアは、ディスクサイズとは独立して変更できる機能が提供されており、VMを停止・再起動することなくティアを引き上げることが可能。例えばP30ディスクをP50ティアに設定するとP50相当のIOPS/スループットで動作させられる。ティアの引き下げは12時間以上の間隔を空ける制限があるが、元のティアへの変更も可能。これにより一時的な高負荷イベントに対して低コストで対応でき、キャンペーン終了後はティアを戻してコストを削減できる。選択肢Dはパフォーマンスティア変更機能を否定する誤り。選択肢Bはティア変更が一度しかできないという誤情報であり、繰り返し変更可能。選択肢CはVM停止が必須という誤りで、ティア変更はオンラインで実行できる（ただし有効化まで数分かかる）。</p>
+
+</div>
+</details>
+<div class="cta-box"><a class="btn btn-primary" href="../../exam.html?exam=azure-az104">▸ この試験を本気で演習する（全150問・無料）</a></div>
+<nav class="q-nav">
+<span><a href="q076.html">← 前の問題</a></span>
+<span><a href="q078.html">次の問題 →</a></span>
+</nav>
+<section class="related"><h2>同じ分野の関連問題</h2><ul class="q-list">
+<li><a href="q076.html">ある企業がAzure上でデータベースサーバー用のVMを新規作成する予定で、ディスクI/O性能が重要な要件となっている。O…</a></li>
+<li><a href="q078.html">あるチームがAzure VMSSをデプロイし、スケールインイベント（VMの削除）のポリシーを設定しようとしている。スケー…</a></li>
+<li><a href="q075.html">開発チームがAzure Container Instances（ACI）を使って短時間の処理ジョブ（バッチ処理、CI/C…</a></li>
+<li><a href="q079.html">ある企業がARMテンプレートを使って複数のAzureリソースをデプロイしている。テンプレート内でリソース間の依存関係を正…</a></li>
+</ul></section>
+</main>
+<footer class="page-footer">
+<nav class="hub-nav"><a href="../../exams/aws-clf-c02/">CLF-C02 試験ガイド</a><a href="../../exams/aws-aif-c01/">AIF-C01 試験ガイド</a><a href="../../exams/aws-saa-c03/">SAA-C03 試験ガイド</a><a href="../../exams/aws-dva-c02/">DVA-C02 試験ガイド</a><a href="../../exams/aws-sap-c02/">SAP-C02 試験ガイド</a><a href="../../exams/gcp-cdl/">CDL 試験ガイド</a><a href="../../exams/gcp-ace/">ACE 試験ガイド</a><a href="../../exams/azure-az900/">AZ-900 試験ガイド</a><a href="../../exams/azure-ai900/">AI-900 試験ガイド</a><a href="../../exams/azure-dp900/">DP-900 試験ガイド</a><a href="../../exams/azure-sc900/">SC-900 試験ガイド</a><a href="../../exams/azure-az104/">AZ-104 試験ガイド</a></nav>
+<nav class="site-nav"><a href="../../guide/">資格ガイド</a><a href="../../learn/">サービス解説</a><a href="../../career/">キャリア</a><a href="../../about.html">運営者情報</a><a href="../../privacy.html">プライバシーポリシー</a><a href="../../contact.html">お問い合わせ</a></nav>
+<p class="copy">© CLOUDCERT_ — 本サイトは各認定試験の公式試験ではなく、収録問題はすべてオリジナルの演習問題です。</p>
+</footer>
+</body>
+</html>

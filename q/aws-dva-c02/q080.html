@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>【DVA-C02 演習問題 #80】ある企業は AWS KMS の CMK を使用しています。外部の監査会社に対して、特定の期…</title>
+<meta name="description" content="DVA-C02の本試験レベル演習問題。ある企業は AWS KMS の CMK を使用しています。外部の監査会社に対して、特定の期間（30 日間）だけ対象 CMK で暗号化されたデータを復号できる権限を委任したいと考えてい… 全選択肢の解説つき。">
+<link rel="canonical" href="https://cloudcert.app/q/aws-dva-c02/q080.html">
+<meta property="og:title" content="【DVA-C02 演習問題 #80】ある企業は AWS KMS の CMK を使用しています。外部の監査会社に対して、特定の期…">
+<meta property="og:description" content="DVA-C02の本試験レベル演習問題。ある企業は AWS KMS の CMK を使用しています。外部の監査会社に対して、特定の期間（30 日間）だけ対象 CMK で暗号化されたデータを復号できる権限を委任したいと考えてい… 全選択肢の解説つき。">
+<meta property="og:url" content="https://cloudcert.app/q/aws-dva-c02/q080.html">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="CLOUDCERT_">
+<meta property="og:image" content="https://cloudcert.app/assets/og.png">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='80' font-size='80' fill='%233fe0a4' font-family='monospace'>▸</text></svg>">
+
+<meta name="google-adsense-account" content="ca-pub-5647574947191958">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+JP:wght@400;500;700&family=JetBrains+Mono:wght@400;600;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../../css/style.css">
+<link rel="stylesheet" href="../../css/page.css">
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-SZR5CB5Q3X"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag('js',new Date());gtag('config','G-SZR5CB5Q3X');</script>
+<script type="application/ld+json">[{"@context":"https://schema.org/","@type":"Quiz","about":{"@type":"Thing","name":"AWS Certified Developer - Associate"},"hasPart":[{"@type":"Question","eduQuestionType":"Multiple choice","learningResourceType":"Practice problem","text":"ある企業は AWS KMS の CMK を使用しています。外部の監査会社に対して、特定の期間（30 日間）だけ対象 CMK で暗号化されたデータを復号できる権限を委任したいと考えています。監査終了後は自動的に権限が失効するようにしたい。キーポリシーを変更せずに実現できる最適な方法はどれですか？","suggestedAnswer":[{"@type":"Answer","position":0,"text":"監査会社の IAM ロールに kms:Decrypt を許可する IAM ポリシーを一時的にアタッチし、30 日後に手動で削除する"},{"@type":"Answer","position":2,"text":"キーポリシーに監査会社の IAM ロール ARN を追加し、30 日後に手動でキーポリシーから削除する"},{"@type":"Answer","position":3,"text":"AWS Secrets Manager でデータキーを管理し、監査会社に Secrets Manager のシークレットへの一時アクセスを付与する"}],"acceptedAnswer":{"@type":"Answer","position":1,"text":"KMS グラント（Grant）を使用して監査会社のロールに kms:Decrypt 権限を付与し、有効期間の制御はグラントの退職条件（Retiring Principal）で管理する","comment":{"@type":"Comment","text":"KMS グラント（Grant）はキーポリシーを変更せずに特定のプリンシパルに特定の KMS オペレーション権限を委任できる仕組みです。グラントにはリタイアプリンシパル（Retiring Principal）を設定でき、期間が終わったらそのプリンシパルがグラントを退職（Retire）させることで権限を失効させます。グラントは CreateGrant API で作成でき、キーポリシーへの変更が不要です。C は手動でキーポリシーを削除する方法は操作ミスのリスクがあり自動失効もできません。A の IAM ポリシーの手動削除も同様で、自動失効の仕組みがなく KMS のキーポリシーで対象ロールが許可されていなければ IAM ポリシーだけでは権限が付与されません。D の Secrets Manager はデータキー管理に特化していませんし、問題の要件とは異なります。"}}}]},{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"HOME","item":"https://cloudcert.app/"},{"@type":"ListItem","position":2,"name":"DVA-C02 試験ガイド","item":"https://cloudcert.app/exams/aws-dva-c02/"},{"@type":"ListItem","position":3,"name":"q080"}]}]</script>
+</head>
+<body class="page-body">
+<header class="page-header"><a class="page-logo" href="../../index.html">&gt; CLOUDCERT_</a></header>
+<main class="page-main">
+
+<nav class="breadcrumb"><a href="../../index.html">HOME</a> › <a href="../../exams/aws-dva-c02/">DVA-C02 試験ガイド</a> › q080</nav>
+<div class="q-meta"><span>DVA-C02</span><span>セキュリティ</span><span>HARD</span><span>単一選択</span></div>
+<h1>ある企業は AWS KMS の CMK を使用しています。外部の監査会社に対して、特定の期間（30 日間）だけ対象 CMK で暗号化されたデータを復号できる権限を委任したいと考えています。監査終了後は自動的に権限が失効するようにしたい。キーポリシーを変更せずに実現できる最適な方法はどれですか？</h1>
+<ol class="q-choices">
+<li><b>A.</b> 監査会社の IAM ロールに kms:Decrypt を許可する IAM ポリシーを一時的にアタッチし、30 日後に手動で削除する</li>
+<li><b>B.</b> KMS グラント（Grant）を使用して監査会社のロールに kms:Decrypt 権限を付与し、有効期間の制御はグラントの退職条件（Retiring Principal）で管理する</li>
+<li><b>C.</b> キーポリシーに監査会社の IAM ロール ARN を追加し、30 日後に手動でキーポリシーから削除する</li>
+<li><b>D.</b> AWS Secrets Manager でデータキーを管理し、監査会社に Secrets Manager のシークレットへの一時アクセスを付与する</li>
+</ol>
+<details class="q-answer">
+<summary>解答と解説を見る</summary>
+<div class="inner">
+<p><b>正解: B</b></p>
+<p>KMS グラント（Grant）はキーポリシーを変更せずに特定のプリンシパルに特定の KMS オペレーション権限を委任できる仕組みです。グラントにはリタイアプリンシパル（Retiring Principal）を設定でき、期間が終わったらそのプリンシパルがグラントを退職（Retire）させることで権限を失効させます。グラントは CreateGrant API で作成でき、キーポリシーへの変更が不要です。C は手動でキーポリシーを削除する方法は操作ミスのリスクがあり自動失効もできません。A の IAM ポリシーの手動削除も同様で、自動失効の仕組みがなく KMS のキーポリシーで対象ロールが許可されていなければ IAM ポリシーだけでは権限が付与されません。D の Secrets Manager はデータキー管理に特化していませんし、問題の要件とは異なります。</p>
+<div class="svc-links">📚 関連サービスの解説: <a href="../../learn/aws-kms.html">AWS KMS</a></div>
+</div>
+</details>
+<div class="cta-box"><a class="btn btn-primary" href="../../exam.html?exam=aws-dva-c02">▸ この試験を本気で演習する（全150問・無料）</a></div>
+<nav class="q-nav">
+<span><a href="q079.html">← 前の問題</a></span>
+<span><a href="q081.html">次の問題 →</a></span>
+</nav>
+<section class="related"><h2>同じ分野の関連問題</h2><ul class="q-list">
+<li><a href="q079.html">あるセキュリティエンジニアは IAM リソースベースポリシー（Resource-Based Policy）とアイデンティ…</a></li>
+<li><a href="q081.html">ある企業は Cognito ID プールを使って認証済みユーザーと未認証（ゲスト）ユーザーの両方に AWS リソースへの…</a></li>
+<li><a href="q078.html">ある開発チームは IAM ロールを使って S3 の署名付き URL（Presigned URL）を生成するサービスを構築…</a></li>
+<li><a href="q082.html">ある開発チームは AWS STS を使って一時認証情報を取得する複数のユースケースを検討しています。「IAM ユーザーが…</a></li>
+</ul></section>
+</main>
+<footer class="page-footer">
+<nav class="hub-nav"><a href="../../exams/aws-clf-c02/">CLF-C02 試験ガイド</a><a href="../../exams/aws-aif-c01/">AIF-C01 試験ガイド</a><a href="../../exams/aws-saa-c03/">SAA-C03 試験ガイド</a><a href="../../exams/aws-dva-c02/">DVA-C02 試験ガイド</a><a href="../../exams/aws-sap-c02/">SAP-C02 試験ガイド</a><a href="../../exams/gcp-cdl/">CDL 試験ガイド</a><a href="../../exams/gcp-ace/">ACE 試験ガイド</a><a href="../../exams/azure-az900/">AZ-900 試験ガイド</a><a href="../../exams/azure-ai900/">AI-900 試験ガイド</a><a href="../../exams/azure-dp900/">DP-900 試験ガイド</a><a href="../../exams/azure-sc900/">SC-900 試験ガイド</a><a href="../../exams/azure-az104/">AZ-104 試験ガイド</a></nav>
+<nav class="site-nav"><a href="../../guide/">資格ガイド</a><a href="../../learn/">サービス解説</a><a href="../../career/">キャリア</a><a href="../../about.html">運営者情報</a><a href="../../privacy.html">プライバシーポリシー</a><a href="../../contact.html">お問い合わせ</a></nav>
+<p class="copy">© CLOUDCERT_ — 本サイトは各認定試験の公式試験ではなく、収録問題はすべてオリジナルの演習問題です。</p>
+</footer>
+</body>
+</html>

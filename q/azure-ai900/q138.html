@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>【AI-900 演習問題 #138】ある金融機関が、Azure OpenAI Service で構築した融資審査支援システムに…</title>
+<meta name="description" content="AI-900の本試験レベル演習問題。ある金融機関が、Azure OpenAI Service で構築した融資審査支援システムについて、規制当局から「AI の判断根拠を説明できること」を求められています。GPT-4 モデル… 全選択肢の解説つき。">
+<link rel="canonical" href="https://cloudcert.app/q/azure-ai900/q138.html">
+<meta property="og:title" content="【AI-900 演習問題 #138】ある金融機関が、Azure OpenAI Service で構築した融資審査支援システムに…">
+<meta property="og:description" content="AI-900の本試験レベル演習問題。ある金融機関が、Azure OpenAI Service で構築した融資審査支援システムについて、規制当局から「AI の判断根拠を説明できること」を求められています。GPT-4 モデル… 全選択肢の解説つき。">
+<meta property="og:url" content="https://cloudcert.app/q/azure-ai900/q138.html">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="CLOUDCERT_">
+<meta property="og:image" content="https://cloudcert.app/assets/og.png">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='80' font-size='80' fill='%233fe0a4' font-family='monospace'>▸</text></svg>">
+
+<meta name="google-adsense-account" content="ca-pub-5647574947191958">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+JP:wght@400;500;700&family=JetBrains+Mono:wght@400;600;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../../css/style.css">
+<link rel="stylesheet" href="../../css/page.css">
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-SZR5CB5Q3X"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag('js',new Date());gtag('config','G-SZR5CB5Q3X');</script>
+<script type="application/ld+json">[{"@context":"https://schema.org/","@type":"Quiz","about":{"@type":"Thing","name":"Microsoft Azure AI Fundamentals"},"hasPart":[{"@type":"Question","eduQuestionType":"Multiple choice","learningResourceType":"Practice problem","text":"ある金融機関が、Azure OpenAI Service で構築した融資審査支援システムについて、規制当局から「AI の判断根拠を説明できること」を求められています。GPT-4 モデルを使ったシステムで、透明性（Transparency）と説明責任（Accountability）の原則を満たすために最も適切なアーキテクチャ設計はどれか。","suggestedAnswer":[{"@type":"Answer","position":0,"text":"Azure OpenAI Service の利用を廃止し、説明可能な AI（XAI）が可能な線形回帰モデルに切り替える"},{"@type":"Answer","position":2,"text":"モデルの出力に対して、別の GPT-4 インスタンスに「この回答は適切か」とだけ確認させる自己評価ループを構成する"},{"@type":"Answer","position":3,"text":"モデルの temperature を 0 にして出力を固定し、「同じ入力には同じ出力」という再現性で透明性を確保する"}],"acceptedAnswer":{"@type":"Answer","position":1,"text":"モデルに「判断理由をステップバイステップで説明せよ」と指示し、審査担当者が出力内容を確認・承認する人間によるレビュープロセスを組み込み、判断ログを保存して監査可能にする","comment":{"@type":"Comment","text":"責任ある AI の透明性原則は「AI がどのように動作し、なぜその判断を下したかを理解できること」を、説明責任原則は「AI システムに対して説明し、監査し、修正できる仕組みを持つこと」を求めます。最適な設計は、CoT プロンプティングで判断根拠を出力させ、審査担当者が確認・承認するヒューマンインザループを設け、入力・出力・承認プロセスをログとして保存し規制当局に監査提供できるようにすることです。選択肢 D の temperature=0 による再現性は技術的には有効ですが、判断根拠の説明にはなりません。選択肢 A の線形回帰への切り替えは非常に大きなアーキテクチャ変更であり、また性能面でも大幅な劣化が予想されます。選択肢 C の GPT-4 による自己評価は独立した外部検証とならず、誤りが循環する可能性があります。"}}}]},{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"HOME","item":"https://cloudcert.app/"},{"@type":"ListItem","position":2,"name":"AI-900 試験ガイド","item":"https://cloudcert.app/exams/azure-ai900/"},{"@type":"ListItem","position":3,"name":"q138"}]}]</script>
+</head>
+<body class="page-body">
+<header class="page-header"><a class="page-logo" href="../../index.html">&gt; CLOUDCERT_</a></header>
+<main class="page-main">
+
+<nav class="breadcrumb"><a href="../../index.html">HOME</a> › <a href="../../exams/azure-ai900/">AI-900 試験ガイド</a> › q138</nav>
+<div class="q-meta"><span>AI-900</span><span>生成 AI ワークロード</span><span>MEDIUM</span><span>単一選択</span></div>
+<h1>ある金融機関が、Azure OpenAI Service で構築した融資審査支援システムについて、規制当局から「AI の判断根拠を説明できること」を求められています。GPT-4 モデルを使ったシステムで、透明性（Transparency）と説明責任（Accountability）の原則を満たすために最も適切なアーキテクチャ設計はどれか。</h1>
+<ol class="q-choices">
+<li><b>A.</b> Azure OpenAI Service の利用を廃止し、説明可能な AI（XAI）が可能な線形回帰モデルに切り替える</li>
+<li><b>B.</b> モデルに「判断理由をステップバイステップで説明せよ」と指示し、審査担当者が出力内容を確認・承認する人間によるレビュープロセスを組み込み、判断ログを保存して監査可能にする</li>
+<li><b>C.</b> モデルの出力に対して、別の GPT-4 インスタンスに「この回答は適切か」とだけ確認させる自己評価ループを構成する</li>
+<li><b>D.</b> モデルの temperature を 0 にして出力を固定し、「同じ入力には同じ出力」という再現性で透明性を確保する</li>
+</ol>
+<details class="q-answer">
+<summary>解答と解説を見る</summary>
+<div class="inner">
+<p><b>正解: B</b></p>
+<p>責任ある AI の透明性原則は「AI がどのように動作し、なぜその判断を下したかを理解できること」を、説明責任原則は「AI システムに対して説明し、監査し、修正できる仕組みを持つこと」を求めます。最適な設計は、CoT プロンプティングで判断根拠を出力させ、審査担当者が確認・承認するヒューマンインザループを設け、入力・出力・承認プロセスをログとして保存し規制当局に監査提供できるようにすることです。選択肢 D の temperature=0 による再現性は技術的には有効ですが、判断根拠の説明にはなりません。選択肢 A の線形回帰への切り替えは非常に大きなアーキテクチャ変更であり、また性能面でも大幅な劣化が予想されます。選択肢 C の GPT-4 による自己評価は独立した外部検証とならず、誤りが循環する可能性があります。</p>
+
+</div>
+</details>
+<div class="cta-box"><a class="btn btn-primary" href="../../exam.html?exam=azure-ai900">▸ この試験を本気で演習する（全150問・無料）</a></div>
+<nav class="q-nav">
+<span><a href="q137.html">← 前の問題</a></span>
+<span><a href="q139.html">次の問題 →</a></span>
+</nav>
+<section class="related"><h2>同じ分野の関連問題</h2><ul class="q-list">
+<li><a href="q137.html">ある IT 企業が、GitHub Copilot を開発チームに導入しようとしています。GitHub Copilot の…</a></li>
+<li><a href="q139.html">ある製薬企業が、研究論文から新薬候補の情報を抽出する生成 AI システムを Azure OpenAI Service で…</a></li>
+<li><a href="q136.html">ある企業が Azure OpenAI Service で、ユーザーの質問に対してカスタマーサポートの回答を生成するシステ…</a></li>
+<li><a href="q140.html">あるコンテンツプラットフォーム企業が、ユーザー投稿を自動審査するシステムを Azure OpenAI Service で…</a></li>
+</ul></section>
+</main>
+<footer class="page-footer">
+<nav class="hub-nav"><a href="../../exams/aws-clf-c02/">CLF-C02 試験ガイド</a><a href="../../exams/aws-aif-c01/">AIF-C01 試験ガイド</a><a href="../../exams/aws-saa-c03/">SAA-C03 試験ガイド</a><a href="../../exams/aws-dva-c02/">DVA-C02 試験ガイド</a><a href="../../exams/aws-sap-c02/">SAP-C02 試験ガイド</a><a href="../../exams/gcp-cdl/">CDL 試験ガイド</a><a href="../../exams/gcp-ace/">ACE 試験ガイド</a><a href="../../exams/azure-az900/">AZ-900 試験ガイド</a><a href="../../exams/azure-ai900/">AI-900 試験ガイド</a><a href="../../exams/azure-dp900/">DP-900 試験ガイド</a><a href="../../exams/azure-sc900/">SC-900 試験ガイド</a><a href="../../exams/azure-az104/">AZ-104 試験ガイド</a></nav>
+<nav class="site-nav"><a href="../../guide/">資格ガイド</a><a href="../../learn/">サービス解説</a><a href="../../career/">キャリア</a><a href="../../about.html">運営者情報</a><a href="../../privacy.html">プライバシーポリシー</a><a href="../../contact.html">お問い合わせ</a></nav>
+<p class="copy">© CLOUDCERT_ — 本サイトは各認定試験の公式試験ではなく、収録問題はすべてオリジナルの演習問題です。</p>
+</footer>
+</body>
+</html>

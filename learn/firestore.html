@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Firestoreとは？試験に出るポイントと演習問題</title>
+<meta name="description" content="Firestore（Google Cloud）の要点と資格試験での問われ方を解説。登場する演習問題3問と公式ドキュメントへのリンクつき。">
+<link rel="canonical" href="https://cloudcert.app/learn/firestore.html">
+<meta property="og:title" content="Firestoreとは？試験に出るポイントと演習問題">
+<meta property="og:description" content="Firestore（Google Cloud）の要点と資格試験での問われ方を解説。登場する演習問題3問と公式ドキュメントへのリンクつき。">
+<meta property="og:url" content="https://cloudcert.app/learn/firestore.html">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="CLOUDCERT_">
+<meta property="og:image" content="https://cloudcert.app/assets/og.png">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='80' font-size='80' fill='%233fe0a4' font-family='monospace'>▸</text></svg>">
+
+<meta name="google-adsense-account" content="ca-pub-5647574947191958">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+JP:wght@400;500;700&family=JetBrains+Mono:wght@400;600;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../css/style.css">
+<link rel="stylesheet" href="../css/page.css">
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-SZR5CB5Q3X"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag('js',new Date());gtag('config','G-SZR5CB5Q3X');</script>
+<script type="application/ld+json">[{"@context":"https://schema.org","@type":"TechArticle","headline":"Firestoreとは？試験に出るポイントと演習問題","description":"Firestore（Google Cloud）の要点と資格試験での問われ方を解説。登場する演習問題3問と公式ドキュメントへのリンクつき。","inLanguage":"ja","about":{"@type":"Thing","name":"Firestore"},"author":{"@type":"Organization","name":"CLOUDCERT_"},"publisher":{"@type":"Organization","name":"CLOUDCERT_"},"mainEntityOfPage":"https://cloudcert.app/learn/firestore.html"},{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"HOME","item":"https://cloudcert.app/"},{"@type":"ListItem","position":2,"name":"サービス解説","item":"https://cloudcert.app/learn/"},{"@type":"ListItem","position":3,"name":"Firestore"}]}]</script>
+</head>
+<body class="page-body">
+<header class="page-header"><a class="page-logo" href="../index.html">&gt; CLOUDCERT_</a></header>
+<main class="page-main">
+
+<nav class="breadcrumb"><a href="../index.html">HOME</a> › <a href="./">サービス解説</a> › Firestore</nav>
+<div class="learn-head">
+<div class="badges"><span class="badge" data-provider="gcp">Google Cloud</span><span class="badge">データベース</span><span class="badge badge-q">演習3問</span></div>
+<h1>Firestoreとは</h1>
+</div>
+<p class="lead">ドキュメント指向のフルマネージド NoSQL データベース。ネイティブモード（新世代・リアルタイムリスナー対応）と Datastore モード（旧 Cloud Datastore との互換）の 2 モードが存在する。</p>
+<p>コレクション→ドキュメント→サブコレクションの階層構造でデータを管理。クライアント SDK（iOS・Android・Web）からダイレクト接続でき、オフライン同期機能を持つためモバイルアプリのバックエンドに広く使われる。</p>
+<p>ACID トランザクション・複合クエリ・自動スケールをサポート。ドキュメント数・読み書き回数・転送量による従量課金。</p>
+<p><a class="official-btn" href="https://cloud.google.com/firestore/docs?hl=ja" target="_blank" rel="noopener">公式ドキュメント →</a></p>
+<h2>試験での問われ方</h2>
+<p>CDL では「スキーマレスな柔軟なデータ構造」「モバイル・Webアプリのリアルタイムデータ同期」のシナリオで Firestore が正解になる。Bigtable との違いは、Firestore が ACID トランザクションと豊富なクエリを備えることでスケールは Bigtable より小さい点。</p>
+<p>ACE では ネイティブモード vs Datastore モードの選択（ネイティブのみリアルタイムリスナーと Mobile SDK が使える）と、Firestore のインデックス設計（デフォルト自動インデックスと複合インデックスの違い）が問われやすい。</p>
+<h2>このサービスが登場する演習問題（3問）</h2>
+<ul class="q-list">
+<li><a href="../q/gcp-cdl/q077.html">【CDL】ある企業が、Google Cloudの「Cloud Firestore」を活用したモバイルアプリを開発しています。Fir…</a></li>
+<li><a href="../q/gcp-ace/q031.html">【ACE】Google Cloud のストレージサービスを選択する際の考慮事項に関して正しい記述を 2 つ選択してください。</a></li>
+<li><a href="../q/gcp-ace/q128.html">【ACE】CI/CD パイプラインで Google Cloud リソースを Terraform でプロビジョニングしています。Te…</a></li>
+</ul>
+<h2>関連サービス</h2><ul class="q-list">
+<li><a href="cloud-sql.html">Cloud SQL</a></li>
+<li><a href="cloud-spanner.html">Cloud Spanner</a></li>
+<li><a href="bigtable.html">Bigtable</a></li></ul>
+</main>
+<footer class="page-footer">
+<nav class="hub-nav"><a href="../exams/aws-clf-c02/">CLF-C02 試験ガイド</a><a href="../exams/aws-aif-c01/">AIF-C01 試験ガイド</a><a href="../exams/aws-saa-c03/">SAA-C03 試験ガイド</a><a href="../exams/aws-dva-c02/">DVA-C02 試験ガイド</a><a href="../exams/aws-sap-c02/">SAP-C02 試験ガイド</a><a href="../exams/gcp-cdl/">CDL 試験ガイド</a><a href="../exams/gcp-ace/">ACE 試験ガイド</a><a href="../exams/azure-az900/">AZ-900 試験ガイド</a><a href="../exams/azure-ai900/">AI-900 試験ガイド</a><a href="../exams/azure-dp900/">DP-900 試験ガイド</a><a href="../exams/azure-sc900/">SC-900 試験ガイド</a><a href="../exams/azure-az104/">AZ-104 試験ガイド</a></nav>
+<nav class="site-nav"><a href="../guide/">資格ガイド</a><a href="../learn/">サービス解説</a><a href="../career/">キャリア</a><a href="../about.html">運営者情報</a><a href="../privacy.html">プライバシーポリシー</a><a href="../contact.html">お問い合わせ</a></nav>
+<p class="copy">© CLOUDCERT_ — 本サイトは各認定試験の公式試験ではなく、収録問題はすべてオリジナルの演習問題です。</p>
+</footer>
+</body>
+</html>

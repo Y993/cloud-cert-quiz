@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>【AIF-C01 演習問題 #92】ある企業が Amazon Bedrock で構築した質問応答システムが本番稼働して 3 ヶ…</title>
+<meta name="description" content="AIF-C01の本試験レベル演習問題。ある企業が Amazon Bedrock で構築した質問応答システムが本番稼働して 3 ヶ月が経過した。ユーザーからは「回答が長すぎて読みにくい」「関係ない情報が含まれている」という… 全選択肢の解説つき。">
+<link rel="canonical" href="https://cloudcert.app/q/aws-aif-c01/q092.html">
+<meta property="og:title" content="【AIF-C01 演習問題 #92】ある企業が Amazon Bedrock で構築した質問応答システムが本番稼働して 3 ヶ…">
+<meta property="og:description" content="AIF-C01の本試験レベル演習問題。ある企業が Amazon Bedrock で構築した質問応答システムが本番稼働して 3 ヶ月が経過した。ユーザーからは「回答が長すぎて読みにくい」「関係ない情報が含まれている」という… 全選択肢の解説つき。">
+<meta property="og:url" content="https://cloudcert.app/q/aws-aif-c01/q092.html">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="CLOUDCERT_">
+<meta property="og:image" content="https://cloudcert.app/assets/og.png">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='80' font-size='80' fill='%233fe0a4' font-family='monospace'>▸</text></svg>">
+
+<meta name="google-adsense-account" content="ca-pub-5647574947191958">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+JP:wght@400;500;700&family=JetBrains+Mono:wght@400;600;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../../css/style.css">
+<link rel="stylesheet" href="../../css/page.css">
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-SZR5CB5Q3X"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag('js',new Date());gtag('config','G-SZR5CB5Q3X');</script>
+<script type="application/ld+json">[{"@context":"https://schema.org/","@type":"Quiz","about":{"@type":"Thing","name":"AWS Certified AI Practitioner"},"hasPart":[{"@type":"Question","eduQuestionType":"Multiple choice","learningResourceType":"Practice problem","text":"ある企業が Amazon Bedrock で構築した質問応答システムが本番稼働して 3 ヶ月が経過した。ユーザーからは「回答が長すぎて読みにくい」「関係ない情報が含まれている」という不満が多い。プロンプトエンジニアリングで改善するとき、最も効果的なアプローチはどれか。","suggestedAnswer":[{"@type":"Answer","position":0,"text":"temperature を 0 に設定してモデルの出力長を制限する"},{"@type":"Answer","position":1,"text":"Knowledge Bases のチャンクサイズを小さくして検索精度を高める"},{"@type":"Answer","position":3,"text":"モデルをファインチューニングして短い回答を学習させる"}],"acceptedAnswer":{"@type":"Answer","position":2,"text":"システムプロンプトに「回答は箇条書きで 3 点以内にまとめ、質問に直接関係する情報のみを含めてください」と具体的なフォーマット制約を追加する","comment":{"@type":"Comment","text":"プロンプトエンジニアリングによる出力フォーマット制御では、システムプロンプトに「箇条書き 3 点以内」のような具体的な構造制約と「質問に直接関係する情報のみ」という内容絞り込みの指示を組み合わせることが最も即効性がある。ユーザーの問題（長すぎる・無関係な情報）の両方に直接対応している。Aの temperature=0 は出力のランダム性を排除するが、出力の「長さ」や「関連性」を直接制御するものではない。Dのファインチューニングはより根本的な解決策になり得るが、コストと工数が大きく、まずプロンプト改善を試みるべき段階。Bのチャンクサイズ変更は RAG の検索品質に影響するが、モデルが「関係ない情報も含めて長く書く」という問題の根本原因がプロンプト側にある場合には対処にならない。"}}}]},{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"HOME","item":"https://cloudcert.app/"},{"@type":"ListItem","position":2,"name":"AIF-C01 試験ガイド","item":"https://cloudcert.app/exams/aws-aif-c01/"},{"@type":"ListItem","position":3,"name":"q092"}]}]</script>
+</head>
+<body class="page-body">
+<header class="page-header"><a class="page-logo" href="../../index.html">&gt; CLOUDCERT_</a></header>
+<main class="page-main">
+
+<nav class="breadcrumb"><a href="../../index.html">HOME</a> › <a href="../../exams/aws-aif-c01/">AIF-C01 試験ガイド</a> › q092</nav>
+<div class="q-meta"><span>AIF-C01</span><span>基盤モデルの応用</span><span>MEDIUM</span><span>単一選択</span></div>
+<h1>ある企業が Amazon Bedrock で構築した質問応答システムが本番稼働して 3 ヶ月が経過した。ユーザーからは「回答が長すぎて読みにくい」「関係ない情報が含まれている」という不満が多い。プロンプトエンジニアリングで改善するとき、最も効果的なアプローチはどれか。</h1>
+<ol class="q-choices">
+<li><b>A.</b> temperature を 0 に設定してモデルの出力長を制限する</li>
+<li><b>B.</b> Knowledge Bases のチャンクサイズを小さくして検索精度を高める</li>
+<li><b>C.</b> システムプロンプトに「回答は箇条書きで 3 点以内にまとめ、質問に直接関係する情報のみを含めてください」と具体的なフォーマット制約を追加する</li>
+<li><b>D.</b> モデルをファインチューニングして短い回答を学習させる</li>
+</ol>
+<details class="q-answer">
+<summary>解答と解説を見る</summary>
+<div class="inner">
+<p><b>正解: C</b></p>
+<p>プロンプトエンジニアリングによる出力フォーマット制御では、システムプロンプトに「箇条書き 3 点以内」のような具体的な構造制約と「質問に直接関係する情報のみ」という内容絞り込みの指示を組み合わせることが最も即効性がある。ユーザーの問題（長すぎる・無関係な情報）の両方に直接対応している。Aの temperature=0 は出力のランダム性を排除するが、出力の「長さ」や「関連性」を直接制御するものではない。Dのファインチューニングはより根本的な解決策になり得るが、コストと工数が大きく、まずプロンプト改善を試みるべき段階。Bのチャンクサイズ変更は RAG の検索品質に影響するが、モデルが「関係ない情報も含めて長く書く」という問題の根本原因がプロンプト側にある場合には対処にならない。</p>
+
+</div>
+</details>
+<div class="cta-box"><a class="btn btn-primary" href="../../exam.html?exam=aws-aif-c01">▸ この試験を本気で演習する（全150問・無料）</a></div>
+<nav class="q-nav">
+<span><a href="q091.html">← 前の問題</a></span>
+<span><a href="q093.html">次の問題 →</a></span>
+</nav>
+<section class="related"><h2>同じ分野の関連問題</h2><ul class="q-list">
+<li><a href="q091.html">ある教育テクノロジー企業が Amazon Bedrock を使って生徒の作文を自動採点するシステムを開発している。採点の…</a></li>
+<li><a href="q093.html">Amazon Bedrock Knowledge Bases が RAG パイプラインで実行する主要な処理として正しいも…</a></li>
+<li><a href="q090.html">ある企業が Amazon Bedrock でテキスト生成タスクを処理しており、top-p（nucleus samplin…</a></li>
+<li><a href="q094.html">ある企業が Amazon Bedrock で基盤モデルを選定する際、「レイテンシを最優先し、品質は 80% 以上のユーザ…</a></li>
+</ul></section>
+</main>
+<footer class="page-footer">
+<nav class="hub-nav"><a href="../../exams/aws-clf-c02/">CLF-C02 試験ガイド</a><a href="../../exams/aws-aif-c01/">AIF-C01 試験ガイド</a><a href="../../exams/aws-saa-c03/">SAA-C03 試験ガイド</a><a href="../../exams/aws-dva-c02/">DVA-C02 試験ガイド</a><a href="../../exams/aws-sap-c02/">SAP-C02 試験ガイド</a><a href="../../exams/gcp-cdl/">CDL 試験ガイド</a><a href="../../exams/gcp-ace/">ACE 試験ガイド</a><a href="../../exams/azure-az900/">AZ-900 試験ガイド</a><a href="../../exams/azure-ai900/">AI-900 試験ガイド</a><a href="../../exams/azure-dp900/">DP-900 試験ガイド</a><a href="../../exams/azure-sc900/">SC-900 試験ガイド</a><a href="../../exams/azure-az104/">AZ-104 試験ガイド</a></nav>
+<nav class="site-nav"><a href="../../guide/">資格ガイド</a><a href="../../learn/">サービス解説</a><a href="../../career/">キャリア</a><a href="../../about.html">運営者情報</a><a href="../../privacy.html">プライバシーポリシー</a><a href="../../contact.html">お問い合わせ</a></nav>
+<p class="copy">© CLOUDCERT_ — 本サイトは各認定試験の公式試験ではなく、収録問題はすべてオリジナルの演習問題です。</p>
+</footer>
+</body>
+</html>

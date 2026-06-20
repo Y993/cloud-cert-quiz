@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>【AI-900 演習問題 #94】ある公共放送局が生放送番組のリアルタイム字幕生成システムを構築したい。音声ストリームをリア…</title>
+<meta name="description" content="AI-900の本試験レベル演習問題。ある公共放送局が生放送番組のリアルタイム字幕生成システムを構築したい。音声ストリームをリアルタイムにテキストへ変換し、画面下部に表示する必要がある。Azure AI Speech のど… 全選択肢の解説つき。">
+<link rel="canonical" href="https://cloudcert.app/q/azure-ai900/q094.html">
+<meta property="og:title" content="【AI-900 演習問題 #94】ある公共放送局が生放送番組のリアルタイム字幕生成システムを構築したい。音声ストリームをリア…">
+<meta property="og:description" content="AI-900の本試験レベル演習問題。ある公共放送局が生放送番組のリアルタイム字幕生成システムを構築したい。音声ストリームをリアルタイムにテキストへ変換し、画面下部に表示する必要がある。Azure AI Speech のど… 全選択肢の解説つき。">
+<meta property="og:url" content="https://cloudcert.app/q/azure-ai900/q094.html">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="CLOUDCERT_">
+<meta property="og:image" content="https://cloudcert.app/assets/og.png">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='80' font-size='80' fill='%233fe0a4' font-family='monospace'>▸</text></svg>">
+
+<meta name="google-adsense-account" content="ca-pub-5647574947191958">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+JP:wght@400;500;700&family=JetBrains+Mono:wght@400;600;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../../css/style.css">
+<link rel="stylesheet" href="../../css/page.css">
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-SZR5CB5Q3X"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag('js',new Date());gtag('config','G-SZR5CB5Q3X');</script>
+<script type="application/ld+json">[{"@context":"https://schema.org/","@type":"Quiz","about":{"@type":"Thing","name":"Microsoft Azure AI Fundamentals"},"hasPart":[{"@type":"Question","eduQuestionType":"Multiple choice","learningResourceType":"Practice problem","text":"ある公共放送局が生放送番組のリアルタイム字幕生成システムを構築したい。音声ストリームをリアルタイムにテキストへ変換し、画面下部に表示する必要がある。Azure AI Speech のどの機能を使うべきか。","suggestedAnswer":[{"@type":"Answer","position":0,"text":"話者認識（Speaker Recognition）：音声から話者を識別する"},{"@type":"Answer","position":1,"text":"テキスト読み上げ（Text to Speech）：テキストを自然な音声に変換する"},{"@type":"Answer","position":3,"text":"音声翻訳（Speech Translation）：音声を別の言語のテキストに翻訳する"}],"acceptedAnswer":{"@type":"Answer","position":2,"text":"音声テキスト変換（Speech to Text）：音声をリアルタイムにテキストへ変換する","comment":{"@type":"Comment","text":"音声テキスト変換（Speech to Text）は音声ストリームをリアルタイムにテキストへ書き起こす機能であり、リアルタイム字幕生成の要件に直接対応する。Azure AI Speech はリアルタイムストリーミング認識と一括転写の両方をサポートする。選択肢Bのテキスト読み上げはテキストから音声を生成する逆方向の機能であり、字幕生成には使えない。選択肢Aの話者認識は誰が話しているかを識別する機能であり、テキスト変換は行わない。選択肢Dの音声翻訳は音声を別言語のテキストに変換するが、同一言語の字幕生成には過剰な機能である。"}}}]},{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"HOME","item":"https://cloudcert.app/"},{"@type":"ListItem","position":2,"name":"AI-900 試験ガイド","item":"https://cloudcert.app/exams/azure-ai900/"},{"@type":"ListItem","position":3,"name":"q094"}]}]</script>
+</head>
+<body class="page-body">
+<header class="page-header"><a class="page-logo" href="../../index.html">&gt; CLOUDCERT_</a></header>
+<main class="page-main">
+
+<nav class="breadcrumb"><a href="../../index.html">HOME</a> › <a href="../../exams/azure-ai900/">AI-900 試験ガイド</a> › q094</nav>
+<div class="q-meta"><span>AI-900</span><span>自然言語処理ワークロード</span><span>EASY</span><span>単一選択</span></div>
+<h1>ある公共放送局が生放送番組のリアルタイム字幕生成システムを構築したい。音声ストリームをリアルタイムにテキストへ変換し、画面下部に表示する必要がある。Azure AI Speech のどの機能を使うべきか。</h1>
+<ol class="q-choices">
+<li><b>A.</b> 話者認識（Speaker Recognition）：音声から話者を識別する</li>
+<li><b>B.</b> テキスト読み上げ（Text to Speech）：テキストを自然な音声に変換する</li>
+<li><b>C.</b> 音声テキスト変換（Speech to Text）：音声をリアルタイムにテキストへ変換する</li>
+<li><b>D.</b> 音声翻訳（Speech Translation）：音声を別の言語のテキストに翻訳する</li>
+</ol>
+<details class="q-answer">
+<summary>解答と解説を見る</summary>
+<div class="inner">
+<p><b>正解: C</b></p>
+<p>音声テキスト変換（Speech to Text）は音声ストリームをリアルタイムにテキストへ書き起こす機能であり、リアルタイム字幕生成の要件に直接対応する。Azure AI Speech はリアルタイムストリーミング認識と一括転写の両方をサポートする。選択肢Bのテキスト読み上げはテキストから音声を生成する逆方向の機能であり、字幕生成には使えない。選択肢Aの話者認識は誰が話しているかを識別する機能であり、テキスト変換は行わない。選択肢Dの音声翻訳は音声を別言語のテキストに変換するが、同一言語の字幕生成には過剰な機能である。</p>
+
+</div>
+</details>
+<div class="cta-box"><a class="btn btn-primary" href="../../exam.html?exam=azure-ai900">▸ この試験を本気で演習する（全150問・無料）</a></div>
+<nav class="q-nav">
+<span><a href="q093.html">← 前の問題</a></span>
+<span><a href="q095.html">次の問題 →</a></span>
+</nav>
+<section class="related"><h2>同じ分野の関連問題</h2><ul class="q-list">
+<li><a href="q093.html">ある旅行会社が英語で書かれたホテルの説明文を日本語・韓国語・簡体字中国語に一括して翻訳し、多言語のWebサイトに掲載した…</a></li>
+<li><a href="q095.html">あるコールセンター企業が数千件の通話録音を分析し、顧客が主にどのような問題（製品の不具合・配送遅延・返金要求など）につい…</a></li>
+<li><a href="q092.html">ある医療機関が患者のカルテテキストを解析し、記載されている疾患名・薬品名・医療処置名などを自動的に認識・タグ付けするシス…</a></li>
+<li><a href="q096.html">ある金融機関が取引明細のテキストから「株式会社〇〇」「△△銀行」などの法人名や「東京都港区」などの住所情報を自動抽出し、…</a></li>
+</ul></section>
+</main>
+<footer class="page-footer">
+<nav class="hub-nav"><a href="../../exams/aws-clf-c02/">CLF-C02 試験ガイド</a><a href="../../exams/aws-aif-c01/">AIF-C01 試験ガイド</a><a href="../../exams/aws-saa-c03/">SAA-C03 試験ガイド</a><a href="../../exams/aws-dva-c02/">DVA-C02 試験ガイド</a><a href="../../exams/aws-sap-c02/">SAP-C02 試験ガイド</a><a href="../../exams/gcp-cdl/">CDL 試験ガイド</a><a href="../../exams/gcp-ace/">ACE 試験ガイド</a><a href="../../exams/azure-az900/">AZ-900 試験ガイド</a><a href="../../exams/azure-ai900/">AI-900 試験ガイド</a><a href="../../exams/azure-dp900/">DP-900 試験ガイド</a><a href="../../exams/azure-sc900/">SC-900 試験ガイド</a><a href="../../exams/azure-az104/">AZ-104 試験ガイド</a></nav>
+<nav class="site-nav"><a href="../../guide/">資格ガイド</a><a href="../../learn/">サービス解説</a><a href="../../career/">キャリア</a><a href="../../about.html">運営者情報</a><a href="../../privacy.html">プライバシーポリシー</a><a href="../../contact.html">お問い合わせ</a></nav>
+<p class="copy">© CLOUDCERT_ — 本サイトは各認定試験の公式試験ではなく、収録問題はすべてオリジナルの演習問題です。</p>
+</footer>
+</body>
+</html>

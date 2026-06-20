@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>【SAP-C02 演習問題 #7】多国籍企業が AWS に移行を進めており、欧州のデータ主権規制（GDPR）により欧州顧客の…</title>
+<meta name="description" content="SAP-C02の本試験レベル演習問題。多国籍企業が AWS に移行を進めており、欧州のデータ主権規制（GDPR）により欧州顧客のデータは EU リージョン外に出てはならないという要件があります。組織は AWS Organ… 全選択肢の解説つき。">
+<link rel="canonical" href="https://cloudcert.app/q/aws-sap-c02/q007.html">
+<meta property="og:title" content="【SAP-C02 演習問題 #7】多国籍企業が AWS に移行を進めており、欧州のデータ主権規制（GDPR）により欧州顧客の…">
+<meta property="og:description" content="SAP-C02の本試験レベル演習問題。多国籍企業が AWS に移行を進めており、欧州のデータ主権規制（GDPR）により欧州顧客のデータは EU リージョン外に出てはならないという要件があります。組織は AWS Organ… 全選択肢の解説つき。">
+<meta property="og:url" content="https://cloudcert.app/q/aws-sap-c02/q007.html">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="CLOUDCERT_">
+<meta property="og:image" content="https://cloudcert.app/assets/og.png">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='80' font-size='80' fill='%233fe0a4' font-family='monospace'>▸</text></svg>">
+
+<meta name="google-adsense-account" content="ca-pub-5647574947191958">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+JP:wght@400;500;700&family=JetBrains+Mono:wght@400;600;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../../css/style.css">
+<link rel="stylesheet" href="../../css/page.css">
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-SZR5CB5Q3X"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag('js',new Date());gtag('config','G-SZR5CB5Q3X');</script>
+<script type="application/ld+json">[{"@context":"https://schema.org/","@type":"Quiz","about":{"@type":"Thing","name":"AWS Certified Solutions Architect - Professional"},"hasPart":[{"@type":"Question","eduQuestionType":"Multiple choice","learningResourceType":"Practice problem","text":"多国籍企業が AWS に移行を進めており、欧州のデータ主権規制（GDPR）により欧州顧客のデータは EU リージョン外に出てはならないという要件があります。組織は AWS Organizations で管理されており、EU 向けのアカウントが特定の OU に集約されています。誤って EU 以外のリージョンにリソースがデプロイされることを防ぐ最も適切な方法はどれですか？","suggestedAnswer":[{"@type":"Answer","position":0,"text":"IAM アクセスアナライザーのポリシー検証機能を使って、EU 以外のリージョンを参照するポリシーを定期的にスキャンして削除する"},{"@type":"Answer","position":1,"text":"AWS Config ルールを使って EU 以外のリージョンで作成されたリソースを検出し、自動的に削除する Lambda 関数を設定する"},{"@type":"Answer","position":2,"text":"各アカウントの IAM ユーザーに対して、EU リージョン以外でのリソース作成を拒否する IAM ポリシーを追加する"}],"acceptedAnswer":{"@type":"Answer","position":3,"text":"EU OU に対して SCP を作成し、aws:RequestedRegion 条件でアクセス許可するリージョンを eu-west-1、eu-central-1 などの EU リージョンのみに制限する Deny ルールを設定する","comment":{"@type":"Comment","text":"SCP の aws:RequestedRegion グローバル条件キーを使うと、許可するリージョンをホワイトリスト方式で指定できます。EU OU にこの SCP をアタッチすることで、配下のすべてのアカウントで EU 以外のリージョンへの API 呼び出しが拒否され、誤ったリージョンへのデプロイを予防的に防止できます。\n\nC: IAM ユーザー単位のポリシーは管理が複雑で、IAM ロールや新規ユーザーへの適用漏れが生じるリスクがあります。SCP は全プリンシパルに適用されるため確実性が高いです。\n\nB: Config は事後検出であり、データが EU 外に一時的にでも書き込まれる可能性があります。データ主権規制への対応には事前防止が必要です。\n\nA: IAM アクセスアナライザーはポリシーの論理的な問題を検出するツールであり、リージョン制御やリソースデプロイの防止機能はありません。"}}}]},{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"HOME","item":"https://cloudcert.app/"},{"@type":"ListItem","position":2,"name":"SAP-C02 試験ガイド","item":"https://cloudcert.app/exams/aws-sap-c02/"},{"@type":"ListItem","position":3,"name":"q007"}]}]</script>
+</head>
+<body class="page-body">
+<header class="page-header"><a class="page-logo" href="../../index.html">&gt; CLOUDCERT_</a></header>
+<main class="page-main">
+
+<nav class="breadcrumb"><a href="../../index.html">HOME</a> › <a href="../../exams/aws-sap-c02/">SAP-C02 試験ガイド</a> › q007</nav>
+<div class="q-meta"><span>SAP-C02</span><span>複雑な組織に対応するソリューションの設計</span><span>HARD</span><span>単一選択</span></div>
+<h1>多国籍企業が AWS に移行を進めており、欧州のデータ主権規制（GDPR）により欧州顧客のデータは EU リージョン外に出てはならないという要件があります。組織は AWS Organizations で管理されており、EU 向けのアカウントが特定の OU に集約されています。誤って EU 以外のリージョンにリソースがデプロイされることを防ぐ最も適切な方法はどれですか？</h1>
+<ol class="q-choices">
+<li><b>A.</b> IAM アクセスアナライザーのポリシー検証機能を使って、EU 以外のリージョンを参照するポリシーを定期的にスキャンして削除する</li>
+<li><b>B.</b> AWS Config ルールを使って EU 以外のリージョンで作成されたリソースを検出し、自動的に削除する Lambda 関数を設定する</li>
+<li><b>C.</b> 各アカウントの IAM ユーザーに対して、EU リージョン以外でのリソース作成を拒否する IAM ポリシーを追加する</li>
+<li><b>D.</b> EU OU に対して SCP を作成し、aws:RequestedRegion 条件でアクセス許可するリージョンを eu-west-1、eu-central-1 などの EU リージョンのみに制限する Deny ルールを設定する</li>
+</ol>
+<details class="q-answer">
+<summary>解答と解説を見る</summary>
+<div class="inner">
+<p><b>正解: D</b></p>
+<p>SCP の aws:RequestedRegion グローバル条件キーを使うと、許可するリージョンをホワイトリスト方式で指定できます。EU OU にこの SCP をアタッチすることで、配下のすべてのアカウントで EU 以外のリージョンへの API 呼び出しが拒否され、誤ったリージョンへのデプロイを予防的に防止できます。
+
+C: IAM ユーザー単位のポリシーは管理が複雑で、IAM ロールや新規ユーザーへの適用漏れが生じるリスクがあります。SCP は全プリンシパルに適用されるため確実性が高いです。
+
+B: Config は事後検出であり、データが EU 外に一時的にでも書き込まれる可能性があります。データ主権規制への対応には事前防止が必要です。
+
+A: IAM アクセスアナライザーはポリシーの論理的な問題を検出するツールであり、リージョン制御やリソースデプロイの防止機能はありません。</p>
+<div class="svc-links">📚 関連サービスの解説: <a href="../../learn/aws-organizations.html">AWS Organizations</a></div>
+</div>
+</details>
+<div class="cta-box"><a class="btn btn-primary" href="../../exam.html?exam=aws-sap-c02">▸ この試験を本気で演習する（全150問・無料）</a></div>
+<nav class="q-nav">
+<span><a href="q006.html">← 前の問題</a></span>
+<span><a href="q008.html">次の問題 →</a></span>
+</nav>
+<section class="related"><h2>同じ分野の関連問題</h2><ul class="q-list">
+<li><a href="q006.html">ある企業が AWS Organizations の管理アカウントから複数のメンバーアカウントにコスト配分タグを強制適用し…</a></li>
+<li><a href="q008.html">ある企業が AWS Organizations 内の複数アカウントで Reserved Instances と Savi…</a></li>
+<li><a href="q005.html">ある企業は既存のオンプレミス Active Directory をアイデンティティプロバイダーとして使用しており、AWS…</a></li>
+<li><a href="q009.html">グローバルな製造企業が AWS で事業継続計画（BCP）を策定しています。プライマリリージョンは ap-northeas…</a></li>
+</ul></section>
+</main>
+<footer class="page-footer">
+<nav class="hub-nav"><a href="../../exams/aws-clf-c02/">CLF-C02 試験ガイド</a><a href="../../exams/aws-aif-c01/">AIF-C01 試験ガイド</a><a href="../../exams/aws-saa-c03/">SAA-C03 試験ガイド</a><a href="../../exams/aws-dva-c02/">DVA-C02 試験ガイド</a><a href="../../exams/aws-sap-c02/">SAP-C02 試験ガイド</a><a href="../../exams/gcp-cdl/">CDL 試験ガイド</a><a href="../../exams/gcp-ace/">ACE 試験ガイド</a><a href="../../exams/azure-az900/">AZ-900 試験ガイド</a><a href="../../exams/azure-ai900/">AI-900 試験ガイド</a><a href="../../exams/azure-dp900/">DP-900 試験ガイド</a><a href="../../exams/azure-sc900/">SC-900 試験ガイド</a><a href="../../exams/azure-az104/">AZ-104 試験ガイド</a></nav>
+<nav class="site-nav"><a href="../../guide/">資格ガイド</a><a href="../../learn/">サービス解説</a><a href="../../career/">キャリア</a><a href="../../about.html">運営者情報</a><a href="../../privacy.html">プライバシーポリシー</a><a href="../../contact.html">お問い合わせ</a></nav>
+<p class="copy">© CLOUDCERT_ — 本サイトは各認定試験の公式試験ではなく、収録問題はすべてオリジナルの演習問題です。</p>
+</footer>
+</body>
+</html>

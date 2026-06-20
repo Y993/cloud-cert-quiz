@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Cloud IAMとは？試験に出るポイントと演習問題</title>
+<meta name="description" content="Cloud IAM（Google Cloud）の要点と資格試験での問われ方を解説。登場する演習問題17問と公式ドキュメントへのリンクつき。">
+<link rel="canonical" href="https://cloudcert.app/learn/gcp-iam.html">
+<meta property="og:title" content="Cloud IAMとは？試験に出るポイントと演習問題">
+<meta property="og:description" content="Cloud IAM（Google Cloud）の要点と資格試験での問われ方を解説。登場する演習問題17問と公式ドキュメントへのリンクつき。">
+<meta property="og:url" content="https://cloudcert.app/learn/gcp-iam.html">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="CLOUDCERT_">
+<meta property="og:image" content="https://cloudcert.app/assets/og.png">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='80' font-size='80' fill='%233fe0a4' font-family='monospace'>▸</text></svg>">
+
+<meta name="google-adsense-account" content="ca-pub-5647574947191958">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+JP:wght@400;500;700&family=JetBrains+Mono:wght@400;600;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../css/style.css">
+<link rel="stylesheet" href="../css/page.css">
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-SZR5CB5Q3X"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag('js',new Date());gtag('config','G-SZR5CB5Q3X');</script>
+<script type="application/ld+json">[{"@context":"https://schema.org","@type":"TechArticle","headline":"Cloud IAMとは？試験に出るポイントと演習問題","description":"Cloud IAM（Google Cloud）の要点と資格試験での問われ方を解説。登場する演習問題17問と公式ドキュメントへのリンクつき。","inLanguage":"ja","about":{"@type":"Thing","name":"Cloud IAM"},"author":{"@type":"Organization","name":"CLOUDCERT_"},"publisher":{"@type":"Organization","name":"CLOUDCERT_"},"mainEntityOfPage":"https://cloudcert.app/learn/gcp-iam.html"},{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"HOME","item":"https://cloudcert.app/"},{"@type":"ListItem","position":2,"name":"サービス解説","item":"https://cloudcert.app/learn/"},{"@type":"ListItem","position":3,"name":"Cloud IAM"}]}]</script>
+</head>
+<body class="page-body">
+<header class="page-header"><a class="page-logo" href="../index.html">&gt; CLOUDCERT_</a></header>
+<main class="page-main">
+
+<nav class="breadcrumb"><a href="../index.html">HOME</a> › <a href="./">サービス解説</a> › Cloud IAM</nav>
+<div class="learn-head">
+<div class="badges"><span class="badge" data-provider="gcp">Google Cloud</span><span class="badge">セキュリティ</span><span class="badge badge-q">演習17問</span></div>
+<h1>Cloud IAMとは</h1>
+</div>
+<p class="lead">Google Cloud リソースへのアクセス制御を管理するサービス。「誰が（プリンシパル）」「何を（ロール）」「どのリソースに対して」できるかを定義するポリシーベースの認可システム。</p>
+<p>ロールには基本ロール（Owner・Editor・Viewer）・事前定義ロール・カスタムロールの 3 種類があり、最小権限の原則に従い事前定義ロールかカスタムロールを使うことが推奨される。</p>
+<p>プリンシパルには Google アカウント・グループ・サービスアカウント・ドメインなどがある。サービスアカウントは VM や Cloud Run などのワークロードがリソースにアクセスする際の ID として機能する。</p>
+<p><a class="official-btn" href="https://cloud.google.com/iam/docs?hl=ja" target="_blank" rel="noopener">公式ドキュメント →</a></p>
+<h2>試験での問われ方</h2>
+<p>CDL/ACE 最重要トピックの一つ。最小権限の原則の適用（Owner ロールを業務ユーザーに付与しない）、サービスアカウントキーの代わりに Workload Identity や Application Default Credentials を使う設計が問われる。</p>
+<p>ACE では ポリシーの継承（組織→フォルダ→プロジェクト→リソース）と deny ポリシー（拒否が優先する）の仕組み、サービスアカウントの権限借用（Impersonation）と直接鍵ファイルの使用リスクの違いが引っかけになりやすい。</p>
+<h2>このサービスが登場する演習問題（17問）</h2>
+<ul class="q-list">
+<li><a href="../q/gcp-cdl/q016.html">【CDL】Google Cloudの「プロジェクト」の主な役割として、最も正しいものはどれですか？</a></li>
+<li><a href="../q/gcp-cdl/q097.html">【CDL】ある企業が、Google Cloudで「Secret Manager」を利用することを検討しています。Secret Ma…</a></li>
+<li><a href="../q/gcp-cdl/q102.html">【CDL】ある企業が、Google Cloudの「Identity Platform」の主な用途を検討しています。Identity…</a></li>
+<li><a href="../q/gcp-cdl/q107.html">【CDL】ある企業が、Google CloudのIAMにおける「条件付きロールバインディング（IAM Conditions）」を活…</a></li>
+<li><a href="../q/gcp-cdl/q112.html">【CDL】ある企業が、Google CloudのCompute EngineにSSHアクセスする際のセキュリティ強化を検討していま…</a></li>
+<li><a href="../q/gcp-cdl/q113.html">【CDL】ある企業が、Google Cloudの「Cloud Asset Inventory」を活用したいと考えています。Clou…</a></li>
+<li><a href="../q/gcp-cdl/q115.html">【CDL】ある企業が、Google Cloudの「Policy Intelligence」ツールを使ってIAM設定を分析したいと考…</a></li>
+<li><a href="../q/gcp-cdl/q132.html">【CDL】ある企業が、Google CloudのCompute Engineにおいて、特定のVMが利用できる最大CPU数やストレー…</a></li>
+<li><a href="../q/gcp-cdl/q143.html">【CDL】ある企業が、Google CloudでのIAM設計において「グループ（Google Groupsを使ったIAMグループ）…</a></li>
+<li><a href="../q/gcp-cdl/q149.html">【CDL】ある企業が、Google Cloudのプロジェクトでセキュリティ上の問題を継続的に検出するため「Security Hea…</a></li>
+<li><a href="../q/gcp-ace/q012.html">【ACE】あなたはプロジェクトを新規作成しようとしていますが、「リソースクォータを超えています」というエラーが発生しました。この問…</a></li>
+<li><a href="../q/gcp-ace/q097.html">【ACE】あなたの会社では、Compute Engine インスタンスに SSH でアクセスする際に、デフォルトの SSH キーを…</a></li>
+<li><a href="../q/gcp-ace/q102.html">【ACE】あなたの会社では、Cloud Run サービスを社内ユーザーのみがアクセスできるように制限したいと考えています。Goog…</a></li>
+<li><a href="../q/gcp-ace/q113.html">【ACE】Cloud Storage バケットに保存された顧客データを特定のサービスアカウントのみが読み取れるようにしたいと考えて…</a></li>
+<li><a href="../q/gcp-ace/q130.html">【ACE】あなたの会社では Security Command Center を使用して Google Cloud 環境のセキュリテ…</a></li>
+<li><a href="../q/gcp-ace/q139.html">【ACE】Cloud Functions（第 2 世代）をデプロイした後、アクセスしようとしても「403 Forbidden」エラ…</a></li>
+<li><a href="../q/gcp-ace/q149.html">【ACE】マルチテナントの SaaS アプリケーションで、テナントごとに異なる Cloud KMS キーを使ってデータを暗号化して…</a></li>
+</ul>
+<h2>関連サービス</h2><ul class="q-list">
+<li><a href="cloud-kms.html">Cloud KMS</a></li>
+<li><a href="secret-manager.html">Secret Manager</a></li></ul>
+</main>
+<footer class="page-footer">
+<nav class="hub-nav"><a href="../exams/aws-clf-c02/">CLF-C02 試験ガイド</a><a href="../exams/aws-aif-c01/">AIF-C01 試験ガイド</a><a href="../exams/aws-saa-c03/">SAA-C03 試験ガイド</a><a href="../exams/aws-dva-c02/">DVA-C02 試験ガイド</a><a href="../exams/aws-sap-c02/">SAP-C02 試験ガイド</a><a href="../exams/gcp-cdl/">CDL 試験ガイド</a><a href="../exams/gcp-ace/">ACE 試験ガイド</a><a href="../exams/azure-az900/">AZ-900 試験ガイド</a><a href="../exams/azure-ai900/">AI-900 試験ガイド</a><a href="../exams/azure-dp900/">DP-900 試験ガイド</a><a href="../exams/azure-sc900/">SC-900 試験ガイド</a><a href="../exams/azure-az104/">AZ-104 試験ガイド</a></nav>
+<nav class="site-nav"><a href="../guide/">資格ガイド</a><a href="../learn/">サービス解説</a><a href="../career/">キャリア</a><a href="../about.html">運営者情報</a><a href="../privacy.html">プライバシーポリシー</a><a href="../contact.html">お問い合わせ</a></nav>
+<p class="copy">© CLOUDCERT_ — 本サイトは各認定試験の公式試験ではなく、収録問題はすべてオリジナルの演習問題です。</p>
+</footer>
+</body>
+</html>

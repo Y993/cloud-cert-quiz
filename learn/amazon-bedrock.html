@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Amazon Bedrockとは？試験に出るポイントと演習問題</title>
+<meta name="description" content="Amazon Bedrock（AWS）の要点と資格試験での問われ方を解説。登場する演習問題15問と公式ドキュメントへのリンクつき。">
+<link rel="canonical" href="https://cloudcert.app/learn/amazon-bedrock.html">
+<meta property="og:title" content="Amazon Bedrockとは？試験に出るポイントと演習問題">
+<meta property="og:description" content="Amazon Bedrock（AWS）の要点と資格試験での問われ方を解説。登場する演習問題15問と公式ドキュメントへのリンクつき。">
+<meta property="og:url" content="https://cloudcert.app/learn/amazon-bedrock.html">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="CLOUDCERT_">
+<meta property="og:image" content="https://cloudcert.app/assets/og.png">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='80' font-size='80' fill='%233fe0a4' font-family='monospace'>▸</text></svg>">
+
+<meta name="google-adsense-account" content="ca-pub-5647574947191958">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+JP:wght@400;500;700&family=JetBrains+Mono:wght@400;600;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../css/style.css">
+<link rel="stylesheet" href="../css/page.css">
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-SZR5CB5Q3X"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag('js',new Date());gtag('config','G-SZR5CB5Q3X');</script>
+<script type="application/ld+json">[{"@context":"https://schema.org","@type":"TechArticle","headline":"Amazon Bedrockとは？試験に出るポイントと演習問題","description":"Amazon Bedrock（AWS）の要点と資格試験での問われ方を解説。登場する演習問題15問と公式ドキュメントへのリンクつき。","inLanguage":"ja","about":{"@type":"Thing","name":"Amazon Bedrock"},"author":{"@type":"Organization","name":"CLOUDCERT_"},"publisher":{"@type":"Organization","name":"CLOUDCERT_"},"mainEntityOfPage":"https://cloudcert.app/learn/amazon-bedrock.html"},{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"HOME","item":"https://cloudcert.app/"},{"@type":"ListItem","position":2,"name":"サービス解説","item":"https://cloudcert.app/learn/"},{"@type":"ListItem","position":3,"name":"Amazon Bedrock"}]}]</script>
+</head>
+<body class="page-body">
+<header class="page-header"><a class="page-logo" href="../index.html">&gt; CLOUDCERT_</a></header>
+<main class="page-main">
+
+<nav class="breadcrumb"><a href="../index.html">HOME</a> › <a href="./">サービス解説</a> › Amazon Bedrock</nav>
+<div class="learn-head">
+<div class="badges"><span class="badge" data-provider="aws">AWS</span><span class="badge">AI・機械学習</span><span class="badge badge-q">演習15問</span></div>
+<h1>Amazon Bedrockとは</h1>
+</div>
+<p class="lead">Anthropic（Claude）・Meta（Llama）・Mistral・Stability AI等のサードパーティ基盤モデルとAmazon Titan・Amazon Novaをサーバーレスで利用できるフルマネージドの生成AIプラットフォーム。</p>
+<p>Agents for Bedrock（外部APIを呼び出すAIエージェント）・Knowledge Bases（RAG構成）・Model Evaluation・Guardrails（プロンプトフィルタリング）などエンタープライズ向け機能を提供する。</p>
+<p><a class="official-btn" href="https://docs.aws.amazon.com/ja_jp/bedrock/latest/userguide/what-is-bedrock.html" target="_blank" rel="noopener">公式ドキュメント →</a></p>
+<h2>試験での問われ方</h2>
+<p>AIFではBedrockの主要コンポーネント（Agents・Knowledge Bases・Guardrails・Model Evaluation）とユースケースが問われる。SageMakerとの使い分けは「既製モデルのAPI利用」か「カスタムモデルの学習・デプロイ」かで判断する。</p>
+<p>SAPではRAG（Retrieval Augmented Generation）にKnowledge Bases for Bedrockを使う構成・マルチモーダルモデルの選択・プロンプトキャッシングによるコスト最適化が出題される。</p>
+<p>Bedrockのモデルアクセスは事前に各モデルのアクセス申請が必要であり、リージョンによって利用可能モデルが異なる点も引っかけになる。</p>
+<h2>このサービスが登場する演習問題（15問）</h2>
+<ul class="q-list">
+<li><a href="../q/aws-aif-c01/q038.html">【AIF-C01】ある金融サービス企業が、顧客向けチャットボットに生成 AI を導入することを検討している。規制上の理由から、モデルが出力…</a></li>
+<li><a href="../q/aws-aif-c01/q046.html">【AIF-C01】ある企業の AI リードエンジニアが、カスタマーサポートに導入した生成 AI チャットボットの「安全性ガードレール」を設…</a></li>
+<li><a href="../q/aws-aif-c01/q056.html">【AIF-C01】ある企業が、Amazon Bedrock 上のモデルを使った生成 AI 機能のコストを最適化したいと考えている。同一のシ…</a></li>
+<li><a href="../q/aws-aif-c01/q061.html">【AIF-C01】ある企業が Amazon Bedrock を用いた生成 AI アプリケーションを本番環境に展開する際、出力品質とリスク管…</a></li>
+<li><a href="../q/aws-aif-c01/q063.html">【AIF-C01】ある企業が、外部に公開するカスタマーサポートチャットボットを Amazon Bedrock で構築している。「生成 AI…</a></li>
+<li><a href="../q/aws-aif-c01/q064.html">【AIF-C01】ある企業が、機密性の高い医療データを扱う生成 AI アプリケーションを Amazon Bedrock で構築している。デ…</a></li>
+<li><a href="../q/aws-aif-c01/q067.html">【AIF-C01】ある企業のカスタマーサポートチームは、Amazon Bedrock の基盤モデルを使って FAQ への自動回答システムを…</a></li>
+<li><a href="../q/aws-aif-c01/q070.html">【AIF-C01】ある医療系スタートアップが Amazon Bedrock を使って患者の症状説明から疾患候補を提案するシステムを開発して…</a></li>
+<li><a href="../q/aws-aif-c01/q073.html">【AIF-C01】ある金融機関が Amazon Bedrock を使ったチャットボットに対して社内専門用語で問い合わせると、一般的な回答し…</a></li>
+<li><a href="../q/aws-aif-c01/q088.html">【AIF-C01】ある企業が Amazon Bedrock を使ってチャットボットを開発している。モデルの回答に不適切な内容（有害な情報、…</a></li>
+<li><a href="../q/aws-aif-c01/q101.html">【AIF-C01】ある金融機関が Amazon Bedrock を使って規制対応レポートを自動生成するシステムを構築している。生成されたレ…</a></li>
+<li><a href="../q/aws-aif-c01/q115.html">【AIF-C01】ある企業が Amazon Bedrock 上で大規模言語モデル（LLM）を使ったカスタマーサポートチャットボットを運用し…</a></li>
+<li><a href="../q/aws-aif-c01/q135.html">【AIF-C01】ある企業が Amazon Bedrock を使って顧客向けのチャットボットを構築している。悪意あるユーザーが「これまでの…</a></li>
+<li><a href="../q/aws-aif-c01/q146.html">【AIF-C01】ある企業が Amazon Bedrock を使った顧客向けの生成 AI チャットボットを本番運用している。システムプロン…</a></li>
+<li><a href="../q/aws-aif-c01/q148.html">【AIF-C01】ある企業がマルチモーダルな生成 AI アプリケーションを Amazon Bedrock で構築している。セキュリティ要件…</a></li>
+</ul>
+<h2>関連サービス</h2><ul class="q-list">
+<li><a href="amazon-sagemaker.html">Amazon SageMaker</a></li>
+<li><a href="amazon-comprehend.html">Amazon Comprehend</a></li></ul>
+</main>
+<footer class="page-footer">
+<nav class="hub-nav"><a href="../exams/aws-clf-c02/">CLF-C02 試験ガイド</a><a href="../exams/aws-aif-c01/">AIF-C01 試験ガイド</a><a href="../exams/aws-saa-c03/">SAA-C03 試験ガイド</a><a href="../exams/aws-dva-c02/">DVA-C02 試験ガイド</a><a href="../exams/aws-sap-c02/">SAP-C02 試験ガイド</a><a href="../exams/gcp-cdl/">CDL 試験ガイド</a><a href="../exams/gcp-ace/">ACE 試験ガイド</a><a href="../exams/azure-az900/">AZ-900 試験ガイド</a><a href="../exams/azure-ai900/">AI-900 試験ガイド</a><a href="../exams/azure-dp900/">DP-900 試験ガイド</a><a href="../exams/azure-sc900/">SC-900 試験ガイド</a><a href="../exams/azure-az104/">AZ-104 試験ガイド</a></nav>
+<nav class="site-nav"><a href="../guide/">資格ガイド</a><a href="../learn/">サービス解説</a><a href="../career/">キャリア</a><a href="../about.html">運営者情報</a><a href="../privacy.html">プライバシーポリシー</a><a href="../contact.html">お問い合わせ</a></nav>
+<p class="copy">© CLOUDCERT_ — 本サイトは各認定試験の公式試験ではなく、収録問題はすべてオリジナルの演習問題です。</p>
+</footer>
+</body>
+</html>

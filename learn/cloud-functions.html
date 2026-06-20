@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Cloud Functionsとは？試験に出るポイントと演習問題</title>
+<meta name="description" content="Cloud Functions（Google Cloud）の要点と資格試験での問われ方を解説。登場する演習問題7問と公式ドキュメントへのリンクつき。">
+<link rel="canonical" href="https://cloudcert.app/learn/cloud-functions.html">
+<meta property="og:title" content="Cloud Functionsとは？試験に出るポイントと演習問題">
+<meta property="og:description" content="Cloud Functions（Google Cloud）の要点と資格試験での問われ方を解説。登場する演習問題7問と公式ドキュメントへのリンクつき。">
+<meta property="og:url" content="https://cloudcert.app/learn/cloud-functions.html">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="CLOUDCERT_">
+<meta property="og:image" content="https://cloudcert.app/assets/og.png">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='80' font-size='80' fill='%233fe0a4' font-family='monospace'>▸</text></svg>">
+
+<meta name="google-adsense-account" content="ca-pub-5647574947191958">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+JP:wght@400;500;700&family=JetBrains+Mono:wght@400;600;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../css/style.css">
+<link rel="stylesheet" href="../css/page.css">
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-SZR5CB5Q3X"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag('js',new Date());gtag('config','G-SZR5CB5Q3X');</script>
+<script type="application/ld+json">[{"@context":"https://schema.org","@type":"TechArticle","headline":"Cloud Functionsとは？試験に出るポイントと演習問題","description":"Cloud Functions（Google Cloud）の要点と資格試験での問われ方を解説。登場する演習問題7問と公式ドキュメントへのリンクつき。","inLanguage":"ja","about":{"@type":"Thing","name":"Cloud Functions"},"author":{"@type":"Organization","name":"CLOUDCERT_"},"publisher":{"@type":"Organization","name":"CLOUDCERT_"},"mainEntityOfPage":"https://cloudcert.app/learn/cloud-functions.html"},{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"HOME","item":"https://cloudcert.app/"},{"@type":"ListItem","position":2,"name":"サービス解説","item":"https://cloudcert.app/learn/"},{"@type":"ListItem","position":3,"name":"Cloud Functions"}]}]</script>
+</head>
+<body class="page-body">
+<header class="page-header"><a class="page-logo" href="../index.html">&gt; CLOUDCERT_</a></header>
+<main class="page-main">
+
+<nav class="breadcrumb"><a href="../index.html">HOME</a> › <a href="./">サービス解説</a> › Cloud Functions</nav>
+<div class="learn-head">
+<div class="badges"><span class="badge" data-provider="gcp">Google Cloud</span><span class="badge">コンピューティング</span><span class="badge badge-q">演習7問</span></div>
+<h1>Cloud Functionsとは</h1>
+</div>
+<p class="lead">関数単位でコードをデプロイするサーバーレス実行環境。Pub/Sub・Cloud Storage・HTTP トリガーなど多様なイベントソースに対応し、Node.js・Python・Go など主要ランタイムをサポートする。</p>
+<p>第 2 世代（Gen 2）は内部的に Cloud Run を基盤とし、長い実行時間（最大 60 分）・大きな同時実行数・複数のトリガーを 1 関数に設定できる。コンソールでは「Cloud Run functions」と表示される名称に変更されている。</p>
+<p>コードと依存パッケージのみ管理すればよく、サーバーのプロビジョニングやスケーリングは完全に自動。実行時間とリクエスト数に基づく従量課金。</p>
+<p><a class="official-btn" href="https://cloud.google.com/functions/docs?hl=ja" target="_blank" rel="noopener">公式ドキュメント →</a></p>
+<h2>試験での問われ方</h2>
+<p>Cloud Functions は軽量イベント処理向け。コンテナ化が不要でコード量が少ない場合に選ぶ。Cloud Run はカスタムランタイム・長時間処理・複雑な依存関係がある場合に選ぶ。この使い分けは CDL・ACE 両方で頻出。</p>
+<p>Gen 1 と Gen 2 の違い（タイムアウト上限・同時実行・Pub/Sub push 設定）は ACE 向け。引っかけとして、Gen 2 は Cloud Run として動作するが Cloud Functions の API・デプロイ方法を使い続けられる点に注意。</p>
+<h2>このサービスが登場する演習問題（7問）</h2>
+<ul class="q-list">
+<li><a href="../q/gcp-cdl/q059.html">【CDL】ある企業が、短時間で完了するデータ変換処理（画像リサイズ、JSONパース等）を実装したいと考えています。サーバーのプロビ…</a></li>
+<li><a href="../q/gcp-cdl/q120.html">【CDL】ある企業が、Google Cloudでのアプリケーション近代化（モダナイゼーション）戦略として「サーバーレス」アーキテク…</a></li>
+<li><a href="../q/gcp-cdl/q141.html">【CDL】ある企業が、Google Cloud上のアプリケーションで定期的にバックグラウンドタスク（メール送信、レポート生成等）を…</a></li>
+<li><a href="../q/gcp-ace/q045.html">【ACE】あなたのチームは Google Cloud Functions（第 2 世代）を使ってイベントドリブンな処理を実装する予…</a></li>
+<li><a href="../q/gcp-ace/q068.html">【ACE】Cloud Functions でサードパーティ API のキーを安全に使用したいと考えています。最も安全な方法はどれで…</a></li>
+<li><a href="../q/gcp-ace/q118.html">【ACE】Cloud Functions を使ってファイルアップロード後に自動的に画像をリサイズして別のバケットに保存する処理を実…</a></li>
+<li><a href="../q/gcp-ace/q139.html">【ACE】Cloud Functions（第 2 世代）をデプロイした後、アクセスしようとしても「403 Forbidden」エラ…</a></li>
+</ul>
+<h2>関連サービス</h2><ul class="q-list">
+<li><a href="compute-engine.html">Compute Engine</a></li>
+<li><a href="cloud-run.html">Cloud Run</a></li>
+<li><a href="app-engine.html">App Engine</a></li></ul>
+</main>
+<footer class="page-footer">
+<nav class="hub-nav"><a href="../exams/aws-clf-c02/">CLF-C02 試験ガイド</a><a href="../exams/aws-aif-c01/">AIF-C01 試験ガイド</a><a href="../exams/aws-saa-c03/">SAA-C03 試験ガイド</a><a href="../exams/aws-dva-c02/">DVA-C02 試験ガイド</a><a href="../exams/aws-sap-c02/">SAP-C02 試験ガイド</a><a href="../exams/gcp-cdl/">CDL 試験ガイド</a><a href="../exams/gcp-ace/">ACE 試験ガイド</a><a href="../exams/azure-az900/">AZ-900 試験ガイド</a><a href="../exams/azure-ai900/">AI-900 試験ガイド</a><a href="../exams/azure-dp900/">DP-900 試験ガイド</a><a href="../exams/azure-sc900/">SC-900 試験ガイド</a><a href="../exams/azure-az104/">AZ-104 試験ガイド</a></nav>
+<nav class="site-nav"><a href="../guide/">資格ガイド</a><a href="../learn/">サービス解説</a><a href="../career/">キャリア</a><a href="../about.html">運営者情報</a><a href="../privacy.html">プライバシーポリシー</a><a href="../contact.html">お問い合わせ</a></nav>
+<p class="copy">© CLOUDCERT_ — 本サイトは各認定試験の公式試験ではなく、収録問題はすべてオリジナルの演習問題です。</p>
+</footer>
+</body>
+</html>

@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>【SAP-C02 演習問題 #109】ある企業が AWS 上で大規模な B2B SaaS アプリケーションを構築しており、顧客企…</title>
+<meta name="description" content="SAP-C02の本試験レベル演習問題。ある企業が AWS 上で大規模な B2B SaaS アプリケーションを構築しており、顧客企業（テナント）ごとにカスタムドメイン（例: tenant-a.example.com、ten… 全選択肢の解説つき。">
+<link rel="canonical" href="https://cloudcert.app/q/aws-sap-c02/q109.html">
+<meta property="og:title" content="【SAP-C02 演習問題 #109】ある企業が AWS 上で大規模な B2B SaaS アプリケーションを構築しており、顧客企…">
+<meta property="og:description" content="SAP-C02の本試験レベル演習問題。ある企業が AWS 上で大規模な B2B SaaS アプリケーションを構築しており、顧客企業（テナント）ごとにカスタムドメイン（例: tenant-a.example.com、ten… 全選択肢の解説つき。">
+<meta property="og:url" content="https://cloudcert.app/q/aws-sap-c02/q109.html">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="CLOUDCERT_">
+<meta property="og:image" content="https://cloudcert.app/assets/og.png">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='80' font-size='80' fill='%233fe0a4' font-family='monospace'>▸</text></svg>">
+
+<meta name="google-adsense-account" content="ca-pub-5647574947191958">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+JP:wght@400;500;700&family=JetBrains+Mono:wght@400;600;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../../css/style.css">
+<link rel="stylesheet" href="../../css/page.css">
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-SZR5CB5Q3X"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag('js',new Date());gtag('config','G-SZR5CB5Q3X');</script>
+<script type="application/ld+json">[{"@context":"https://schema.org/","@type":"Quiz","about":{"@type":"Thing","name":"AWS Certified Solutions Architect - Professional"},"hasPart":[{"@type":"Question","eduQuestionType":"Multiple choice","learningResourceType":"Practice problem","text":"ある企業が AWS 上で大規模な B2B SaaS アプリケーションを構築しており、顧客企業（テナント）ごとにカスタムドメイン（例: tenant-a.example.com、tenant-b.example.com）でアクセスできるようにしたいと考えています。各テナントのドメインは顧客が管理する独自ドメインで、HTTPS 接続が必須です。SSL 証明書の管理と更新を自動化し、テナント数が増えても手動作業なしに対応できるアーキテクチャを設計したいと考えています。最も適切な設計はどれですか？","suggestedAnswer":[{"@type":"Answer","position":0,"text":"テナントのカスタムドメインを受け付けるリバースプロキシ（nginx）を EC2 クラスターに構築し、AWS Certificate Manager Private CA でプライベート証明書を発行する"},{"@type":"Answer","position":1,"text":"各テナントごとに独立した EC2 インスタンスを起動し、Let's Encrypt で証明書を取得して nginx で SSL 終端を行う"},{"@type":"Answer","position":2,"text":"各テナントのドメインに対してワイルドカード証明書（*.example.com）を購入し、ALB に登録する"}],"acceptedAnswer":{"@type":"Answer","position":3,"text":"Amazon CloudFront の Alternate Domain Names（CNAME）機能と AWS Certificate Manager（ACM）のカスタムドメイン証明書を使用する。各テナントのドメインを CloudFront ディストリビューションの CNAME に追加し、ACM で各テナントドメインの証明書を DNS 検証で自動発行・自動更新する。API Gateway または ALB をオリジンとして設定する","comment":{"@type":"Comment","text":"ACM は DNS 検証を使った証明書の自動発行と自動更新を提供します。CloudFront の Alternate Domain Names に各テナントのドメインを追加し、ACM の証明書を関連付けることで、テナントごとのカスタム HTTPS ドメインが実現できます。テナントが増えても API 経由で自動的にドメインと証明書を追加できます。ACM の証明書は無料で 90 日ごとに自動更新されます。\n\nC: ワイルドカード証明書はサブドメイン（*.example.com）には有効ですが、顧客の独自ドメイン（tenant-a.customdomain.com）には使用できません。\n\nB: テナントごとの EC2 インスタンスは管理が煩雑でコストが高く、テナント数に比例してインフラが増大します。スケーラビリティに欠けます。\n\nA: AWS Certificate Manager Private CA のプライベート証明書は内部通信用であり、パブリックの HTTPS 接続（インターネットからのアクセス）には使用できません。ブラウザは信頼できないプライベート CA の証明書に警告を表示します。"}}}]},{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"HOME","item":"https://cloudcert.app/"},{"@type":"ListItem","position":2,"name":"SAP-C02 試験ガイド","item":"https://cloudcert.app/exams/aws-sap-c02/"},{"@type":"ListItem","position":3,"name":"q109"}]}]</script>
+</head>
+<body class="page-body">
+<header class="page-header"><a class="page-logo" href="../../index.html">&gt; CLOUDCERT_</a></header>
+<main class="page-main">
+
+<nav class="breadcrumb"><a href="../../index.html">HOME</a> › <a href="../../exams/aws-sap-c02/">SAP-C02 試験ガイド</a> › q109</nav>
+<div class="q-meta"><span>SAP-C02</span><span>新しいソリューションのための設計</span><span>HARD</span><span>単一選択</span></div>
+<h1>ある企業が AWS 上で大規模な B2B SaaS アプリケーションを構築しており、顧客企業（テナント）ごとにカスタムドメイン（例: tenant-a.example.com、tenant-b.example.com）でアクセスできるようにしたいと考えています。各テナントのドメインは顧客が管理する独自ドメインで、HTTPS 接続が必須です。SSL 証明書の管理と更新を自動化し、テナント数が増えても手動作業なしに対応できるアーキテクチャを設計したいと考えています。最も適切な設計はどれですか？</h1>
+<ol class="q-choices">
+<li><b>A.</b> テナントのカスタムドメインを受け付けるリバースプロキシ（nginx）を EC2 クラスターに構築し、AWS Certificate Manager Private CA でプライベート証明書を発行する</li>
+<li><b>B.</b> 各テナントごとに独立した EC2 インスタンスを起動し、Let&#39;s Encrypt で証明書を取得して nginx で SSL 終端を行う</li>
+<li><b>C.</b> 各テナントのドメインに対してワイルドカード証明書（*.example.com）を購入し、ALB に登録する</li>
+<li><b>D.</b> Amazon CloudFront の Alternate Domain Names（CNAME）機能と AWS Certificate Manager（ACM）のカスタムドメイン証明書を使用する。各テナントのドメインを CloudFront ディストリビューションの CNAME に追加し、ACM で各テナントドメインの証明書を DNS 検証で自動発行・自動更新する。API Gateway または ALB をオリジンとして設定する</li>
+</ol>
+<details class="q-answer">
+<summary>解答と解説を見る</summary>
+<div class="inner">
+<p><b>正解: D</b></p>
+<p>ACM は DNS 検証を使った証明書の自動発行と自動更新を提供します。CloudFront の Alternate Domain Names に各テナントのドメインを追加し、ACM の証明書を関連付けることで、テナントごとのカスタム HTTPS ドメインが実現できます。テナントが増えても API 経由で自動的にドメインと証明書を追加できます。ACM の証明書は無料で 90 日ごとに自動更新されます。
+
+C: ワイルドカード証明書はサブドメイン（*.example.com）には有効ですが、顧客の独自ドメイン（tenant-a.customdomain.com）には使用できません。
+
+B: テナントごとの EC2 インスタンスは管理が煩雑でコストが高く、テナント数に比例してインフラが増大します。スケーラビリティに欠けます。
+
+A: AWS Certificate Manager Private CA のプライベート証明書は内部通信用であり、パブリックの HTTPS 接続（インターネットからのアクセス）には使用できません。ブラウザは信頼できないプライベート CA の証明書に警告を表示します。</p>
+<div class="svc-links">📚 関連サービスの解説: <a href="../../learn/amazon-cloudfront.html">Amazon CloudFront</a> ・ <a href="../../learn/amazon-api-gateway.html">Amazon API Gateway</a></div>
+</div>
+</details>
+<div class="cta-box"><a class="btn btn-primary" href="../../exam.html?exam=aws-sap-c02">▸ この試験を本気で演習する（全150問・無料）</a></div>
+<nav class="q-nav">
+<span><a href="q108.html">← 前の問題</a></span>
+<span><a href="q110.html">次の問題 →</a></span>
+</nav>
+<section class="related"><h2>同じ分野の関連問題</h2><ul class="q-list">
+<li><a href="q111.html">ある企業が AWS 上で分散システムを構築しており、複数のマイクロサービスが並行して同じリソース（在庫数、残席数）を更新…</a></li>
+<li><a href="q112.html">ある企業が AWS 上でマルチリージョンのアプリケーションを運用しており、各リージョンのアプリケーションが独自の設定（フ…</a></li>
+<li><a href="q105.html">ある企業が AWS 上でリアルタイムの広告入札システム（Real-Time Bidding: RTB）を構築しています。…</a></li>
+<li><a href="q103.html">ある企業が AWS 上でグローバルな API サービスを提供しており、北米・欧州・アジアのユーザーに低レイテンシーな A…</a></li>
+</ul></section>
+</main>
+<footer class="page-footer">
+<nav class="hub-nav"><a href="../../exams/aws-clf-c02/">CLF-C02 試験ガイド</a><a href="../../exams/aws-aif-c01/">AIF-C01 試験ガイド</a><a href="../../exams/aws-saa-c03/">SAA-C03 試験ガイド</a><a href="../../exams/aws-dva-c02/">DVA-C02 試験ガイド</a><a href="../../exams/aws-sap-c02/">SAP-C02 試験ガイド</a><a href="../../exams/gcp-cdl/">CDL 試験ガイド</a><a href="../../exams/gcp-ace/">ACE 試験ガイド</a><a href="../../exams/azure-az900/">AZ-900 試験ガイド</a><a href="../../exams/azure-ai900/">AI-900 試験ガイド</a><a href="../../exams/azure-dp900/">DP-900 試験ガイド</a><a href="../../exams/azure-sc900/">SC-900 試験ガイド</a><a href="../../exams/azure-az104/">AZ-104 試験ガイド</a></nav>
+<nav class="site-nav"><a href="../../guide/">資格ガイド</a><a href="../../learn/">サービス解説</a><a href="../../career/">キャリア</a><a href="../../about.html">運営者情報</a><a href="../../privacy.html">プライバシーポリシー</a><a href="../../contact.html">お問い合わせ</a></nav>
+<p class="copy">© CLOUDCERT_ — 本サイトは各認定試験の公式試験ではなく、収録問題はすべてオリジナルの演習問題です。</p>
+</footer>
+</body>
+</html>

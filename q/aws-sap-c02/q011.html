@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>【SAP-C02 演習問題 #11】ある企業が AWS Organizations の一括請求を使って 30 以上のアカウント…</title>
+<meta name="description" content="SAP-C02の本試験レベル演習問題。ある企業が AWS Organizations の一括請求を使って 30 以上のアカウントのコストを管理しています。財務チームは各アカウントのコストと、プロジェクト・部門別のコスト配… 全選択肢の解説つき。">
+<link rel="canonical" href="https://cloudcert.app/q/aws-sap-c02/q011.html">
+<meta property="og:title" content="【SAP-C02 演習問題 #11】ある企業が AWS Organizations の一括請求を使って 30 以上のアカウント…">
+<meta property="og:description" content="SAP-C02の本試験レベル演習問題。ある企業が AWS Organizations の一括請求を使って 30 以上のアカウントのコストを管理しています。財務チームは各アカウントのコストと、プロジェクト・部門別のコスト配… 全選択肢の解説つき。">
+<meta property="og:url" content="https://cloudcert.app/q/aws-sap-c02/q011.html">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="CLOUDCERT_">
+<meta property="og:image" content="https://cloudcert.app/assets/og.png">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='80' font-size='80' fill='%233fe0a4' font-family='monospace'>▸</text></svg>">
+
+<meta name="google-adsense-account" content="ca-pub-5647574947191958">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+JP:wght@400;500;700&family=JetBrains+Mono:wght@400;600;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../../css/style.css">
+<link rel="stylesheet" href="../../css/page.css">
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-SZR5CB5Q3X"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag('js',new Date());gtag('config','G-SZR5CB5Q3X');</script>
+<script type="application/ld+json">[{"@context":"https://schema.org/","@type":"Quiz","about":{"@type":"Thing","name":"AWS Certified Solutions Architect - Professional"},"hasPart":[{"@type":"Question","eduQuestionType":"Multiple choice","learningResourceType":"Practice problem","text":"ある企業が AWS Organizations の一括請求を使って 30 以上のアカウントのコストを管理しています。財務チームは各アカウントのコストと、プロジェクト・部門別のコスト配分をリアルタイムに近い粒度で把握したいと考えています。また、月次の予算を超過しそうな場合は自動でアラートを送信したいと考えています。最小限の開発負荷で実現するアーキテクチャはどれですか？","suggestedAnswer":[{"@type":"Answer","position":0,"text":"全アカウントの CloudWatch メトリクスを集約し、カスタムメトリクスでコストを追跡するダッシュボードを構築する"},{"@type":"Answer","position":1,"text":"Lambda 関数を毎日実行して各アカウントの Cost Explorer API を呼び出し、DynamoDB にデータを蓄積して社内ポータルサイトに表示する"},{"@type":"Answer","position":3,"text":"各アカウントに Cost Explorer を有効化し、月次レポートを財務チームのメールアドレスに自動送信するスケジュール設定を行う"}],"acceptedAnswer":{"@type":"Answer","position":2,"text":"AWS Cost and Usage Report を管理アカウントの S3 バケットに出力し、Athena と QuickSight でクロスアカウントのコスト分析ダッシュボードを構築する。AWS Budgets でアカウントおよびタグ別の予算アラートを設定する","comment":{"@type":"Comment","text":"CUR（Cost and Usage Report）は組織全体の最も詳細なコストデータを提供し、管理アカウントの S3 に集約されます。Athena でクエリし QuickSight でビジュアライズすることで、部門・プロジェクトタグ別の詳細分析が可能です。AWS Budgets はアカウント別・タグ別の予算設定と SNS/メール アラートを低コードで実現できます。\n\nA: CloudWatch はインフラメトリクス向けであり、AWS コストデータを直接追跡する機能はありません。カスタムメトリクスの構築は開発負荷が高くなります。\n\nD: Cost Explorer の月次レポートは粒度が低く、部門・プロジェクト別の細かい分析や予算超過の自動アラートには対応していません。\n\nB: Lambda を使ったカスタム集計は可能ですが、開発・運用負荷が高く、CUR + Athena + QuickSight の組み合わせより手間がかかります。"}}}]},{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"HOME","item":"https://cloudcert.app/"},{"@type":"ListItem","position":2,"name":"SAP-C02 試験ガイド","item":"https://cloudcert.app/exams/aws-sap-c02/"},{"@type":"ListItem","position":3,"name":"q011"}]}]</script>
+</head>
+<body class="page-body">
+<header class="page-header"><a class="page-logo" href="../../index.html">&gt; CLOUDCERT_</a></header>
+<main class="page-main">
+
+<nav class="breadcrumb"><a href="../../index.html">HOME</a> › <a href="../../exams/aws-sap-c02/">SAP-C02 試験ガイド</a> › q011</nav>
+<div class="q-meta"><span>SAP-C02</span><span>複雑な組織に対応するソリューションの設計</span><span>MEDIUM</span><span>単一選択</span></div>
+<h1>ある企業が AWS Organizations の一括請求を使って 30 以上のアカウントのコストを管理しています。財務チームは各アカウントのコストと、プロジェクト・部門別のコスト配分をリアルタイムに近い粒度で把握したいと考えています。また、月次の予算を超過しそうな場合は自動でアラートを送信したいと考えています。最小限の開発負荷で実現するアーキテクチャはどれですか？</h1>
+<ol class="q-choices">
+<li><b>A.</b> 全アカウントの CloudWatch メトリクスを集約し、カスタムメトリクスでコストを追跡するダッシュボードを構築する</li>
+<li><b>B.</b> Lambda 関数を毎日実行して各アカウントの Cost Explorer API を呼び出し、DynamoDB にデータを蓄積して社内ポータルサイトに表示する</li>
+<li><b>C.</b> AWS Cost and Usage Report を管理アカウントの S3 バケットに出力し、Athena と QuickSight でクロスアカウントのコスト分析ダッシュボードを構築する。AWS Budgets でアカウントおよびタグ別の予算アラートを設定する</li>
+<li><b>D.</b> 各アカウントに Cost Explorer を有効化し、月次レポートを財務チームのメールアドレスに自動送信するスケジュール設定を行う</li>
+</ol>
+<details class="q-answer">
+<summary>解答と解説を見る</summary>
+<div class="inner">
+<p><b>正解: C</b></p>
+<p>CUR（Cost and Usage Report）は組織全体の最も詳細なコストデータを提供し、管理アカウントの S3 に集約されます。Athena でクエリし QuickSight でビジュアライズすることで、部門・プロジェクトタグ別の詳細分析が可能です。AWS Budgets はアカウント別・タグ別の予算設定と SNS/メール アラートを低コードで実現できます。
+
+A: CloudWatch はインフラメトリクス向けであり、AWS コストデータを直接追跡する機能はありません。カスタムメトリクスの構築は開発負荷が高くなります。
+
+D: Cost Explorer の月次レポートは粒度が低く、部門・プロジェクト別の細かい分析や予算超過の自動アラートには対応していません。
+
+B: Lambda を使ったカスタム集計は可能ですが、開発・運用負荷が高く、CUR + Athena + QuickSight の組み合わせより手間がかかります。</p>
+<div class="svc-links">📚 関連サービスの解説: <a href="../../learn/amazon-s3.html">Amazon S3</a> ・ <a href="../../learn/amazon-athena.html">Amazon Athena</a></div>
+</div>
+</details>
+<div class="cta-box"><a class="btn btn-primary" href="../../exam.html?exam=aws-sap-c02">▸ この試験を本気で演習する（全150問・無料）</a></div>
+<nav class="q-nav">
+<span><a href="q010.html">← 前の問題</a></span>
+<span><a href="q012.html">次の問題 →</a></span>
+</nav>
+<section class="related"><h2>同じ分野の関連問題</h2><ul class="q-list">
+<li><a href="q010.html">ある大手保険会社が AWS Organizations で管理するマルチアカウント環境に、新たにパートナー企業のアカウン…</a></li>
+<li><a href="q012.html">ある企業が AWS に移行しており、セキュリティチームはすべての VPC で VPC Flow Logs を有効化し、ロ…</a></li>
+<li><a href="q009.html">グローバルな製造企業が AWS で事業継続計画（BCP）を策定しています。プライマリリージョンは ap-northeas…</a></li>
+<li><a href="q013.html">ある製造業企業が AWS Organizations で 100 以上の AWS アカウントを管理しています。IT セキ…</a></li>
+</ul></section>
+</main>
+<footer class="page-footer">
+<nav class="hub-nav"><a href="../../exams/aws-clf-c02/">CLF-C02 試験ガイド</a><a href="../../exams/aws-aif-c01/">AIF-C01 試験ガイド</a><a href="../../exams/aws-saa-c03/">SAA-C03 試験ガイド</a><a href="../../exams/aws-dva-c02/">DVA-C02 試験ガイド</a><a href="../../exams/aws-sap-c02/">SAP-C02 試験ガイド</a><a href="../../exams/gcp-cdl/">CDL 試験ガイド</a><a href="../../exams/gcp-ace/">ACE 試験ガイド</a><a href="../../exams/azure-az900/">AZ-900 試験ガイド</a><a href="../../exams/azure-ai900/">AI-900 試験ガイド</a><a href="../../exams/azure-dp900/">DP-900 試験ガイド</a><a href="../../exams/azure-sc900/">SC-900 試験ガイド</a><a href="../../exams/azure-az104/">AZ-104 試験ガイド</a></nav>
+<nav class="site-nav"><a href="../../guide/">資格ガイド</a><a href="../../learn/">サービス解説</a><a href="../../career/">キャリア</a><a href="../../about.html">運営者情報</a><a href="../../privacy.html">プライバシーポリシー</a><a href="../../contact.html">お問い合わせ</a></nav>
+<p class="copy">© CLOUDCERT_ — 本サイトは各認定試験の公式試験ではなく、収録問題はすべてオリジナルの演習問題です。</p>
+</footer>
+</body>
+</html>

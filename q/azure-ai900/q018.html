@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>【AI-900 演習問題 #18】ある企業がAI採用スクリーニングシステムを導入した。システムは履歴書のテキストを解析して候…</title>
+<meta name="description" content="AI-900の本試験レベル演習問題。ある企業がAI採用スクリーニングシステムを導入した。システムは履歴書のテキストを解析して候補者をランク付けするが、訓練データに過去10年間の採用実績（男性優位の職場）が含まれていたため… 全選択肢の解説つき。">
+<link rel="canonical" href="https://cloudcert.app/q/azure-ai900/q018.html">
+<meta property="og:title" content="【AI-900 演習問題 #18】ある企業がAI採用スクリーニングシステムを導入した。システムは履歴書のテキストを解析して候…">
+<meta property="og:description" content="AI-900の本試験レベル演習問題。ある企業がAI採用スクリーニングシステムを導入した。システムは履歴書のテキストを解析して候補者をランク付けするが、訓練データに過去10年間の採用実績（男性優位の職場）が含まれていたため… 全選択肢の解説つき。">
+<meta property="og:url" content="https://cloudcert.app/q/azure-ai900/q018.html">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="CLOUDCERT_">
+<meta property="og:image" content="https://cloudcert.app/assets/og.png">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='80' font-size='80' fill='%233fe0a4' font-family='monospace'>▸</text></svg>">
+
+<meta name="google-adsense-account" content="ca-pub-5647574947191958">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+JP:wght@400;500;700&family=JetBrains+Mono:wght@400;600;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../../css/style.css">
+<link rel="stylesheet" href="../../css/page.css">
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-SZR5CB5Q3X"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag('js',new Date());gtag('config','G-SZR5CB5Q3X');</script>
+<script type="application/ld+json">[{"@context":"https://schema.org/","@type":"Quiz","about":{"@type":"Thing","name":"Microsoft Azure AI Fundamentals"},"hasPart":[{"@type":"Question","eduQuestionType":"Multiple choice","learningResourceType":"Practice problem","text":"ある企業がAI採用スクリーニングシステムを導入した。システムは履歴書のテキストを解析して候補者をランク付けするが、訓練データに過去10年間の採用実績（男性優位の職場）が含まれていたため、女性候補者が低くランク付けされる傾向が検出された。この問題に対処するために、Microsoftの責任あるAI原則の「公平性」に基づいて最も適切な対策はどれか。","suggestedAnswer":[{"@type":"Answer","position":1,"text":"候補者にシステムがどのような基準でランク付けを行うかを開示して説明する"},{"@type":"Answer","position":2,"text":"システムの判断ログをすべて記録し、問題発生時に誰が責任を持つかを明確にする"},{"@type":"Answer","position":3,"text":"AIの最終決定を人間の採用担当者が必ず確認するレビュープロセスを導入する"}],"acceptedAnswer":{"@type":"Answer","position":0,"text":"訓練データから性別に関連するバイアスを除去し、公平性メトリクスを用いてモデルを評価・改善する","comment":{"@type":"Comment","text":"採用データの性別バイアスが原因でAIが不公平な判断を下す問題は「公平性（Fairness）」の核心課題であり、対処法はバイアスの源泉となる訓練データの修正とモデルの公平性評価・改善である。具体的には、性別に相関する特徴量の除去（公平性制約）、均衡データセットの構築、統計的公平性メトリクス（男女間の合格率差など）によるモデル評価が求められる。選択肢Cはアカウンタビリティ（責任の明確化）の実践であり、バイアスそのものを除去しない。選択肢Bは透明性（説明可能性）の実践であり、バイアス問題の開示にはなるが公平性の改善措置ではない。選択肢Dはアカウンタビリティ（人間による監視）の実践として有効だが、AIのバイアス自体を修正する公平性原則への直接的な対応ではない。"}}}]},{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"HOME","item":"https://cloudcert.app/"},{"@type":"ListItem","position":2,"name":"AI-900 試験ガイド","item":"https://cloudcert.app/exams/azure-ai900/"},{"@type":"ListItem","position":3,"name":"q018"}]}]</script>
+</head>
+<body class="page-body">
+<header class="page-header"><a class="page-logo" href="../../index.html">&gt; CLOUDCERT_</a></header>
+<main class="page-main">
+
+<nav class="breadcrumb"><a href="../../index.html">HOME</a> › <a href="../../exams/azure-ai900/">AI-900 試験ガイド</a> › q018</nav>
+<div class="q-meta"><span>AI-900</span><span>AI ワークロードと考慮事項</span><span>HARD</span><span>単一選択</span></div>
+<h1>ある企業がAI採用スクリーニングシステムを導入した。システムは履歴書のテキストを解析して候補者をランク付けするが、訓練データに過去10年間の採用実績（男性優位の職場）が含まれていたため、女性候補者が低くランク付けされる傾向が検出された。この問題に対処するために、Microsoftの責任あるAI原則の「公平性」に基づいて最も適切な対策はどれか。</h1>
+<ol class="q-choices">
+<li><b>A.</b> 訓練データから性別に関連するバイアスを除去し、公平性メトリクスを用いてモデルを評価・改善する</li>
+<li><b>B.</b> 候補者にシステムがどのような基準でランク付けを行うかを開示して説明する</li>
+<li><b>C.</b> システムの判断ログをすべて記録し、問題発生時に誰が責任を持つかを明確にする</li>
+<li><b>D.</b> AIの最終決定を人間の採用担当者が必ず確認するレビュープロセスを導入する</li>
+</ol>
+<details class="q-answer">
+<summary>解答と解説を見る</summary>
+<div class="inner">
+<p><b>正解: A</b></p>
+<p>採用データの性別バイアスが原因でAIが不公平な判断を下す問題は「公平性（Fairness）」の核心課題であり、対処法はバイアスの源泉となる訓練データの修正とモデルの公平性評価・改善である。具体的には、性別に相関する特徴量の除去（公平性制約）、均衡データセットの構築、統計的公平性メトリクス（男女間の合格率差など）によるモデル評価が求められる。選択肢Cはアカウンタビリティ（責任の明確化）の実践であり、バイアスそのものを除去しない。選択肢Bは透明性（説明可能性）の実践であり、バイアス問題の開示にはなるが公平性の改善措置ではない。選択肢Dはアカウンタビリティ（人間による監視）の実践として有効だが、AIのバイアス自体を修正する公平性原則への直接的な対応ではない。</p>
+
+</div>
+</details>
+<div class="cta-box"><a class="btn btn-primary" href="../../exam.html?exam=azure-ai900">▸ この試験を本気で演習する（全150問・無料）</a></div>
+<nav class="q-nav">
+<span><a href="q017.html">← 前の問題</a></span>
+<span><a href="q019.html">次の問題 →</a></span>
+</nav>
+<section class="related"><h2>同じ分野の関連問題</h2><ul class="q-list">
+<li><a href="q017.html">ある交通機関がAIを導入し、カメラ映像から混雑エリアに集まる人数をリアルタイムでカウントして、警備員の配置を最適化したい…</a></li>
+<li><a href="q019.html">ある病院が患者の入院中の生体データ（心拍数・血圧・体温の時系列）を監視するAIシステムを導入した。このAIは患者が6時間…</a></li>
+<li><a href="q016.html">ある企業が社内ナレッジベースに対して質問に答えるAIアシスタントを構築している。社員が「先月のプロジェクトXの予算は？」…</a></li>
+<li><a href="q020.html">ある金融機関が、大量の過去取引データを学習した生成AIモデルを使って新しい金融商品の説明文・リスク開示文書を自動作成する…</a></li>
+</ul></section>
+</main>
+<footer class="page-footer">
+<nav class="hub-nav"><a href="../../exams/aws-clf-c02/">CLF-C02 試験ガイド</a><a href="../../exams/aws-aif-c01/">AIF-C01 試験ガイド</a><a href="../../exams/aws-saa-c03/">SAA-C03 試験ガイド</a><a href="../../exams/aws-dva-c02/">DVA-C02 試験ガイド</a><a href="../../exams/aws-sap-c02/">SAP-C02 試験ガイド</a><a href="../../exams/gcp-cdl/">CDL 試験ガイド</a><a href="../../exams/gcp-ace/">ACE 試験ガイド</a><a href="../../exams/azure-az900/">AZ-900 試験ガイド</a><a href="../../exams/azure-ai900/">AI-900 試験ガイド</a><a href="../../exams/azure-dp900/">DP-900 試験ガイド</a><a href="../../exams/azure-sc900/">SC-900 試験ガイド</a><a href="../../exams/azure-az104/">AZ-104 試験ガイド</a></nav>
+<nav class="site-nav"><a href="../../guide/">資格ガイド</a><a href="../../learn/">サービス解説</a><a href="../../career/">キャリア</a><a href="../../about.html">運営者情報</a><a href="../../privacy.html">プライバシーポリシー</a><a href="../../contact.html">お問い合わせ</a></nav>
+<p class="copy">© CLOUDCERT_ — 本サイトは各認定試験の公式試験ではなく、収録問題はすべてオリジナルの演習問題です。</p>
+</footer>
+</body>
+</html>

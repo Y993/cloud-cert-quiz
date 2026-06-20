@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>【SAP-C02 演習問題 #96】ある企業が AWS Organizations で 150 以上のアカウントを管理しており…</title>
+<meta name="description" content="SAP-C02の本試験レベル演習問題。ある企業が AWS Organizations で 150 以上のアカウントを管理しており、定期的に AWS のサービスクォータ（Service Quotas）の引き上げが必要です。… 全選択肢の解説つき。">
+<link rel="canonical" href="https://cloudcert.app/q/aws-sap-c02/q096.html">
+<meta property="og:title" content="【SAP-C02 演習問題 #96】ある企業が AWS Organizations で 150 以上のアカウントを管理しており…">
+<meta property="og:description" content="SAP-C02の本試験レベル演習問題。ある企業が AWS Organizations で 150 以上のアカウントを管理しており、定期的に AWS のサービスクォータ（Service Quotas）の引き上げが必要です。… 全選択肢の解説つき。">
+<meta property="og:url" content="https://cloudcert.app/q/aws-sap-c02/q096.html">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="CLOUDCERT_">
+<meta property="og:image" content="https://cloudcert.app/assets/og.png">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='80' font-size='80' fill='%233fe0a4' font-family='monospace'>▸</text></svg>">
+
+<meta name="google-adsense-account" content="ca-pub-5647574947191958">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+JP:wght@400;500;700&family=JetBrains+Mono:wght@400;600;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../../css/style.css">
+<link rel="stylesheet" href="../../css/page.css">
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-SZR5CB5Q3X"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag('js',new Date());gtag('config','G-SZR5CB5Q3X');</script>
+<script type="application/ld+json">[{"@context":"https://schema.org/","@type":"Quiz","about":{"@type":"Thing","name":"AWS Certified Solutions Architect - Professional"},"hasPart":[{"@type":"Question","eduQuestionType":"Multiple choice","learningResourceType":"Practice problem","text":"ある企業が AWS Organizations で 150 以上のアカウントを管理しており、定期的に AWS のサービスクォータ（Service Quotas）の引き上げが必要です。現在は各チームが個別にクォータ引き上げリクエストを送っており、管理が煩雑です。また、特定のサービスのクォータが使用率の 80% を超えた場合に自動でアラートを送信し、必要に応じて自動でクォータ引き上げをリクエストできる仕組みを構築したいと考えています。最も適切なアーキテクチャはどれですか？","suggestedAnswer":[{"@type":"Answer","position":0,"text":"各アカウントに IAM ポリシーを追加して、チームメンバーが個別にクォータを変更できるようにする"},{"@type":"Answer","position":2,"text":"Quotas の引き上げは必要ないよう、すべてのサービスを低クォータ環境でも動作するように再設計する"},{"@type":"Answer","position":3,"text":"各アカウントのチームが手動で AWS コンソールからクォータ引き上げリクエストを送信し、週次で一覧をまとめる"}],"acceptedAnswer":{"@type":"Answer","position":1,"text":"AWS Service Quotas の CloudWatch 統合を使って使用量アラームを設定し、クォータ使用率が 80% を超えたら EventBridge ルールを発火させる。Lambda 関数で AWS Service Quotas API（RequestServiceQuotaIncrease）を自動呼び出してクォータ引き上げをリクエストする。AWS Trusted Advisor のサービスクォータチェックと組み合わせて、Organizations の全アカウントのクォータ状態を一元的に可視化する","comment":{"@type":"Comment","text":"AWS Service Quotas はクォータの使用量を CloudWatch メトリクスとして提供し、アラームを設定できます。80% 超過時に EventBridge で Lambda を起動し、RequestServiceQuotaIncrease API で自動リクエストが可能です。Trusted Advisor のサービスクォータチェックは複数アカウントにわたるクォータの可視化に役立ちます。AWS Organizations の全アカウントに対して CloudFormation StackSets でアラームを一括展開できます。\n\nD: 手動リクエストは管理負荷が高く、クォータ超過を事前に防止できません。150 以上のアカウントでは現実的ではありません。\n\nA: IAM ポリシーでクォータを変更できるようにするだけでは、自動化や一元的なアラート・可視化の要件を満たしません。\n\nC: サービスの再設計はビジネス要件を無視しており、クォータ管理の問題への現実的な解決策ではありません。"}}}]},{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"HOME","item":"https://cloudcert.app/"},{"@type":"ListItem","position":2,"name":"SAP-C02 試験ガイド","item":"https://cloudcert.app/exams/aws-sap-c02/"},{"@type":"ListItem","position":3,"name":"q096"}]}]</script>
+</head>
+<body class="page-body">
+<header class="page-header"><a class="page-logo" href="../../index.html">&gt; CLOUDCERT_</a></header>
+<main class="page-main">
+
+<nav class="breadcrumb"><a href="../../index.html">HOME</a> › <a href="../../exams/aws-sap-c02/">SAP-C02 試験ガイド</a> › q096</nav>
+<div class="q-meta"><span>SAP-C02</span><span>複雑な組織に対応するソリューションの設計</span><span>HARD</span><span>単一選択</span></div>
+<h1>ある企業が AWS Organizations で 150 以上のアカウントを管理しており、定期的に AWS のサービスクォータ（Service Quotas）の引き上げが必要です。現在は各チームが個別にクォータ引き上げリクエストを送っており、管理が煩雑です。また、特定のサービスのクォータが使用率の 80% を超えた場合に自動でアラートを送信し、必要に応じて自動でクォータ引き上げをリクエストできる仕組みを構築したいと考えています。最も適切なアーキテクチャはどれですか？</h1>
+<ol class="q-choices">
+<li><b>A.</b> 各アカウントに IAM ポリシーを追加して、チームメンバーが個別にクォータを変更できるようにする</li>
+<li><b>B.</b> AWS Service Quotas の CloudWatch 統合を使って使用量アラームを設定し、クォータ使用率が 80% を超えたら EventBridge ルールを発火させる。Lambda 関数で AWS Service Quotas API（RequestServiceQuotaIncrease）を自動呼び出してクォータ引き上げをリクエストする。AWS Trusted Advisor のサービスクォータチェックと組み合わせて、Organizations の全アカウントのクォータ状態を一元的に可視化する</li>
+<li><b>C.</b> Quotas の引き上げは必要ないよう、すべてのサービスを低クォータ環境でも動作するように再設計する</li>
+<li><b>D.</b> 各アカウントのチームが手動で AWS コンソールからクォータ引き上げリクエストを送信し、週次で一覧をまとめる</li>
+</ol>
+<details class="q-answer">
+<summary>解答と解説を見る</summary>
+<div class="inner">
+<p><b>正解: B</b></p>
+<p>AWS Service Quotas はクォータの使用量を CloudWatch メトリクスとして提供し、アラームを設定できます。80% 超過時に EventBridge で Lambda を起動し、RequestServiceQuotaIncrease API で自動リクエストが可能です。Trusted Advisor のサービスクォータチェックは複数アカウントにわたるクォータの可視化に役立ちます。AWS Organizations の全アカウントに対して CloudFormation StackSets でアラームを一括展開できます。
+
+D: 手動リクエストは管理負荷が高く、クォータ超過を事前に防止できません。150 以上のアカウントでは現実的ではありません。
+
+A: IAM ポリシーでクォータを変更できるようにするだけでは、自動化や一元的なアラート・可視化の要件を満たしません。
+
+C: サービスの再設計はビジネス要件を無視しており、クォータ管理の問題への現実的な解決策ではありません。</p>
+<div class="svc-links">📚 関連サービスの解説: <a href="../../learn/amazon-cloudwatch.html">Amazon CloudWatch</a> ・ <a href="../../learn/amazon-eventbridge.html">Amazon EventBridge</a></div>
+</div>
+</details>
+<div class="cta-box"><a class="btn btn-primary" href="../../exam.html?exam=aws-sap-c02">▸ この試験を本気で演習する（全150問・無料）</a></div>
+<nav class="q-nav">
+<span><a href="q095.html">← 前の問題</a></span>
+<span><a href="q097.html">次の問題 →</a></span>
+</nav>
+<section class="related"><h2>同じ分野の関連問題</h2><ul class="q-list">
+<li><a href="q092.html">ある企業が複数の事業部門のためにセキュリティと自律性のバランスを取ったマルチアカウント設計を策定しています。各事業部門は…</a></li>
+<li><a href="q100.html">ある企業が AWS Organizations で管理するマルチアカウント環境で、ネットワークセキュリティを強化したいと…</a></li>
+<li><a href="q104.html">ある大手メディア企業が複数のサービス（動画配信、音楽配信、ゲーム）を個別の AWS アカウントで運用しており、これらの間…</a></li>
+<li><a href="q087.html">ある企業が AWS Organizations を使って管理しているマルチアカウント環境で、各開発チームが自律的に AW…</a></li>
+</ul></section>
+</main>
+<footer class="page-footer">
+<nav class="hub-nav"><a href="../../exams/aws-clf-c02/">CLF-C02 試験ガイド</a><a href="../../exams/aws-aif-c01/">AIF-C01 試験ガイド</a><a href="../../exams/aws-saa-c03/">SAA-C03 試験ガイド</a><a href="../../exams/aws-dva-c02/">DVA-C02 試験ガイド</a><a href="../../exams/aws-sap-c02/">SAP-C02 試験ガイド</a><a href="../../exams/gcp-cdl/">CDL 試験ガイド</a><a href="../../exams/gcp-ace/">ACE 試験ガイド</a><a href="../../exams/azure-az900/">AZ-900 試験ガイド</a><a href="../../exams/azure-ai900/">AI-900 試験ガイド</a><a href="../../exams/azure-dp900/">DP-900 試験ガイド</a><a href="../../exams/azure-sc900/">SC-900 試験ガイド</a><a href="../../exams/azure-az104/">AZ-104 試験ガイド</a></nav>
+<nav class="site-nav"><a href="../../guide/">資格ガイド</a><a href="../../learn/">サービス解説</a><a href="../../career/">キャリア</a><a href="../../about.html">運営者情報</a><a href="../../privacy.html">プライバシーポリシー</a><a href="../../contact.html">お問い合わせ</a></nav>
+<p class="copy">© CLOUDCERT_ — 本サイトは各認定試験の公式試験ではなく、収録問題はすべてオリジナルの演習問題です。</p>
+</footer>
+</body>
+</html>

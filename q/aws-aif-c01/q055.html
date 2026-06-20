@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>【AIF-C01 演習問題 #55】ある企業が、プロプライエタリな LLM API（外部サービス）を使って顧客の個人情報（PI…</title>
+<meta name="description" content="AIF-C01の本試験レベル演習問題。ある企業が、プロプライエタリな LLM API（外部サービス）を使って顧客の個人情報（PII）を含む問い合わせを処理するシステムを設計している。コンプライアンス要件として「PII を… 全選択肢の解説つき。">
+<link rel="canonical" href="https://cloudcert.app/q/aws-aif-c01/q055.html">
+<meta property="og:title" content="【AIF-C01 演習問題 #55】ある企業が、プロプライエタリな LLM API（外部サービス）を使って顧客の個人情報（PI…">
+<meta property="og:description" content="AIF-C01の本試験レベル演習問題。ある企業が、プロプライエタリな LLM API（外部サービス）を使って顧客の個人情報（PII）を含む問い合わせを処理するシステムを設計している。コンプライアンス要件として「PII を… 全選択肢の解説つき。">
+<meta property="og:url" content="https://cloudcert.app/q/aws-aif-c01/q055.html">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="CLOUDCERT_">
+<meta property="og:image" content="https://cloudcert.app/assets/og.png">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='80' font-size='80' fill='%233fe0a4' font-family='monospace'>▸</text></svg>">
+
+<meta name="google-adsense-account" content="ca-pub-5647574947191958">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+JP:wght@400;500;700&family=JetBrains+Mono:wght@400;600;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../../css/style.css">
+<link rel="stylesheet" href="../../css/page.css">
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-SZR5CB5Q3X"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag('js',new Date());gtag('config','G-SZR5CB5Q3X');</script>
+<script type="application/ld+json">[{"@context":"https://schema.org/","@type":"Quiz","about":{"@type":"Thing","name":"AWS Certified AI Practitioner"},"hasPart":[{"@type":"Question","eduQuestionType":"Multiple choice","learningResourceType":"Practice problem","text":"ある企業が、プロプライエタリな LLM API（外部サービス）を使って顧客の個人情報（PII）を含む問い合わせを処理するシステムを設計している。コンプライアンス要件として「PII を外部 API に送信してはならない」という制約がある。最小コストで要件を満たすアーキテクチャはどれか。","suggestedAnswer":[{"@type":"Answer","position":1,"text":"VPN で自社ネットワークと外部 API を接続することで、PII の転送が「外部送信」に該当しないと見なす"},{"@type":"Answer","position":2,"text":"外部 API を完全に廃止し、すべての推論をオンプレミスの自社 GPU クラスターで実行する"},{"@type":"Answer","position":3,"text":"顧客に対して PII を含む問い合わせは禁止するというシステムプロンプトを追加し、API への送信を抑止する"}],"acceptedAnswer":{"@type":"Answer","position":0,"text":"LLM API 呼び出し前に PII 検出・マスキングレイヤー（Amazon Comprehend 等）を挟み、匿名化したテキストをAPIに送信。応答後にマスク値を元の情報で復元する","comment":{"@type":"Comment","text":"PII マスキング＋復元パターンは、外部 API に個人情報を一切送信しないまま LLM を活用できるアーキテクチャであり、コンプライアンス要件を満たしつつ既存の API 活用を継続できる最小コストの解。Dは誤り：システムプロンプトによる禁止指示はユーザーへのルール提示に過ぎず、PII を含む入力を技術的に遮断できない。Bは誤り：VPN は通信経路の暗号化であり、コンプライアンス上の「外部送信禁止」要件はデータの送信先がどこかの問題であってネットワーク暗号化では解決しない。Cは誤り：オンプレミス GPU クラスターの構築・維持コストは非常に高く、「最小コスト」要件に反する。"}}}]},{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"HOME","item":"https://cloudcert.app/"},{"@type":"ListItem","position":2,"name":"AIF-C01 試験ガイド","item":"https://cloudcert.app/exams/aws-aif-c01/"},{"@type":"ListItem","position":3,"name":"q055"}]}]</script>
+</head>
+<body class="page-body">
+<header class="page-header"><a class="page-logo" href="../../index.html">&gt; CLOUDCERT_</a></header>
+<main class="page-main">
+
+<nav class="breadcrumb"><a href="../../index.html">HOME</a> › <a href="../../exams/aws-aif-c01/">AIF-C01 試験ガイド</a> › q055</nav>
+<div class="q-meta"><span>AIF-C01</span><span>生成 AI の基礎</span><span>MEDIUM</span><span>単一選択</span></div>
+<h1>ある企業が、プロプライエタリな LLM API（外部サービス）を使って顧客の個人情報（PII）を含む問い合わせを処理するシステムを設計している。コンプライアンス要件として「PII を外部 API に送信してはならない」という制約がある。最小コストで要件を満たすアーキテクチャはどれか。</h1>
+<ol class="q-choices">
+<li><b>A.</b> LLM API 呼び出し前に PII 検出・マスキングレイヤー（Amazon Comprehend 等）を挟み、匿名化したテキストをAPIに送信。応答後にマスク値を元の情報で復元する</li>
+<li><b>B.</b> VPN で自社ネットワークと外部 API を接続することで、PII の転送が「外部送信」に該当しないと見なす</li>
+<li><b>C.</b> 外部 API を完全に廃止し、すべての推論をオンプレミスの自社 GPU クラスターで実行する</li>
+<li><b>D.</b> 顧客に対して PII を含む問い合わせは禁止するというシステムプロンプトを追加し、API への送信を抑止する</li>
+</ol>
+<details class="q-answer">
+<summary>解答と解説を見る</summary>
+<div class="inner">
+<p><b>正解: A</b></p>
+<p>PII マスキング＋復元パターンは、外部 API に個人情報を一切送信しないまま LLM を活用できるアーキテクチャであり、コンプライアンス要件を満たしつつ既存の API 活用を継続できる最小コストの解。Dは誤り：システムプロンプトによる禁止指示はユーザーへのルール提示に過ぎず、PII を含む入力を技術的に遮断できない。Bは誤り：VPN は通信経路の暗号化であり、コンプライアンス上の「外部送信禁止」要件はデータの送信先がどこかの問題であってネットワーク暗号化では解決しない。Cは誤り：オンプレミス GPU クラスターの構築・維持コストは非常に高く、「最小コスト」要件に反する。</p>
+<div class="svc-links">📚 関連サービスの解説: <a href="../../learn/amazon-comprehend.html">Amazon Comprehend</a></div>
+</div>
+</details>
+<div class="cta-box"><a class="btn btn-primary" href="../../exam.html?exam=aws-aif-c01">▸ この試験を本気で演習する（全150問・無料）</a></div>
+<nav class="q-nav">
+<span><a href="q054.html">← 前の問題</a></span>
+<span><a href="q056.html">次の問題 →</a></span>
+</nav>
+<section class="related"><h2>同じ分野の関連問題</h2><ul class="q-list">
+<li><a href="q054.html">ある企業が、ユーザーのチャット入力をリアルタイムでストリーミング表示する生成 AI チャットボットを設計している。レスポ…</a></li>
+<li><a href="q056.html">ある企業が、Amazon Bedrock 上のモデルを使った生成 AI 機能のコストを最適化したいと考えている。同一のシ…</a></li>
+<li><a href="q053.html">ある企業が、自社の AWS 環境に関する質問（「コスト削減のベストプラクティスは？」「セキュリティグループの設定を確認し…</a></li>
+<li><a href="q057.html">ある企業が、Amazon Bedrock Agents を使って自然言語から社内データベースへの SQL クエリを自動生…</a></li>
+</ul></section>
+</main>
+<footer class="page-footer">
+<nav class="hub-nav"><a href="../../exams/aws-clf-c02/">CLF-C02 試験ガイド</a><a href="../../exams/aws-aif-c01/">AIF-C01 試験ガイド</a><a href="../../exams/aws-saa-c03/">SAA-C03 試験ガイド</a><a href="../../exams/aws-dva-c02/">DVA-C02 試験ガイド</a><a href="../../exams/aws-sap-c02/">SAP-C02 試験ガイド</a><a href="../../exams/gcp-cdl/">CDL 試験ガイド</a><a href="../../exams/gcp-ace/">ACE 試験ガイド</a><a href="../../exams/azure-az900/">AZ-900 試験ガイド</a><a href="../../exams/azure-ai900/">AI-900 試験ガイド</a><a href="../../exams/azure-dp900/">DP-900 試験ガイド</a><a href="../../exams/azure-sc900/">SC-900 試験ガイド</a><a href="../../exams/azure-az104/">AZ-104 試験ガイド</a></nav>
+<nav class="site-nav"><a href="../../guide/">資格ガイド</a><a href="../../learn/">サービス解説</a><a href="../../career/">キャリア</a><a href="../../about.html">運営者情報</a><a href="../../privacy.html">プライバシーポリシー</a><a href="../../contact.html">お問い合わせ</a></nav>
+<p class="copy">© CLOUDCERT_ — 本サイトは各認定試験の公式試験ではなく、収録問題はすべてオリジナルの演習問題です。</p>
+</footer>
+</body>
+</html>

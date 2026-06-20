@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>【DP-900 演習問題 #34】ある企業が、データウェアハウスのスタースキーマ設計を採用してOLAP分析を行おうとしている…</title>
+<meta name="description" content="DP-900の本試験レベル演習問題。ある企業が、データウェアハウスのスタースキーマ設計を採用してOLAP分析を行おうとしている。「売上ファクトテーブル」と「日付ディメンションテーブル・商品ディメンションテーブル・店舗ディ… 全選択肢の解説つき。">
+<link rel="canonical" href="https://cloudcert.app/q/azure-dp900/q034.html">
+<meta property="og:title" content="【DP-900 演習問題 #34】ある企業が、データウェアハウスのスタースキーマ設計を採用してOLAP分析を行おうとしている…">
+<meta property="og:description" content="DP-900の本試験レベル演習問題。ある企業が、データウェアハウスのスタースキーマ設計を採用してOLAP分析を行おうとしている。「売上ファクトテーブル」と「日付ディメンションテーブル・商品ディメンションテーブル・店舗ディ… 全選択肢の解説つき。">
+<meta property="og:url" content="https://cloudcert.app/q/azure-dp900/q034.html">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="CLOUDCERT_">
+<meta property="og:image" content="https://cloudcert.app/assets/og.png">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='80' font-size='80' fill='%233fe0a4' font-family='monospace'>▸</text></svg>">
+
+<meta name="google-adsense-account" content="ca-pub-5647574947191958">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+JP:wght@400;500;700&family=JetBrains+Mono:wght@400;600;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../../css/style.css">
+<link rel="stylesheet" href="../../css/page.css">
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-SZR5CB5Q3X"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag('js',new Date());gtag('config','G-SZR5CB5Q3X');</script>
+<script type="application/ld+json">[{"@context":"https://schema.org/","@type":"Quiz","about":{"@type":"Thing","name":"Microsoft Azure Data Fundamentals"},"hasPart":[{"@type":"Question","eduQuestionType":"Multiple choice","learningResourceType":"Practice problem","text":"ある企業が、データウェアハウスのスタースキーマ設計を採用してOLAP分析を行おうとしている。「売上ファクトテーブル」と「日付ディメンションテーブル・商品ディメンションテーブル・店舗ディメンションテーブル」の関係について、スタースキーマの特徴として最も正確に述べているものはどれか。","suggestedAnswer":[{"@type":"Answer","position":0,"text":"ファクトテーブルには集計済みサマリーのみを格納し、個々のトランザクションレコードは保持しない"},{"@type":"Answer","position":1,"text":"ディメンションテーブルは数値の測定値のみを格納し、説明的な属性情報はファクトテーブルに集約される"},{"@type":"Answer","position":3,"text":"スタースキーマでは全テーブルが1つのテーブルに非正規化統合されており、JOINが不要な設計になっている"}],"acceptedAnswer":{"@type":"Answer","position":2,"text":"ファクトテーブルは各ディメンションテーブルの外部キーと測定値（売上金額・数量など）を持ち、ディメンションテーブルはファクトを説明する属性情報を持つ設計になっている","comment":{"@type":"Comment","text":"スタースキーマの設計では、中央にファクトテーブルを配置し、そこに各ディメンションの外部キー（日付ID、商品ID、店舗ID）と測定値（売上金額、販売数量など）を格納する。周囲のディメンションテーブルには、ファクトを説明する属性情報（日付テーブルなら年・月・曜日・祝日フラグなど）を格納する。クエリはファクトとディメンションをJOINして多次元集計を行う。選択肢Aはファクトテーブルには個々のトランザクションレコード（詳細レベルのファクト）も格納されるため誤りである。集計済みサマリーしか持たないのはアグリゲートテーブルであり、ファクトテーブルとは異なる。選択肢Dはスタースキーマの説明として誤りである。スタースキーマは非正規化設計を採用しているが、複数のテーブルを1つに統合するわけではなく、ファクトテーブルとディメンションテーブルは別テーブルとして管理しJOINして使用する。選択肢Bはファクトとディメンションのテーブルの役割が逆転した説明で誤りである。測定値はファクトテーブルが持ち、説明属性はディメンションテーブルが持つのが正しい設計である。"}}}]},{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"HOME","item":"https://cloudcert.app/"},{"@type":"ListItem","position":2,"name":"DP-900 試験ガイド","item":"https://cloudcert.app/exams/azure-dp900/"},{"@type":"ListItem","position":3,"name":"q034"}]}]</script>
+</head>
+<body class="page-body">
+<header class="page-header"><a class="page-logo" href="../../index.html">&gt; CLOUDCERT_</a></header>
+<main class="page-main">
+
+<nav class="breadcrumb"><a href="../../index.html">HOME</a> › <a href="../../exams/azure-dp900/">DP-900 試験ガイド</a> › q034</nav>
+<div class="q-meta"><span>DP-900</span><span>コア データ概念</span><span>HARD</span><span>単一選択</span></div>
+<h1>ある企業が、データウェアハウスのスタースキーマ設計を採用してOLAP分析を行おうとしている。「売上ファクトテーブル」と「日付ディメンションテーブル・商品ディメンションテーブル・店舗ディメンションテーブル」の関係について、スタースキーマの特徴として最も正確に述べているものはどれか。</h1>
+<ol class="q-choices">
+<li><b>A.</b> ファクトテーブルには集計済みサマリーのみを格納し、個々のトランザクションレコードは保持しない</li>
+<li><b>B.</b> ディメンションテーブルは数値の測定値のみを格納し、説明的な属性情報はファクトテーブルに集約される</li>
+<li><b>C.</b> ファクトテーブルは各ディメンションテーブルの外部キーと測定値（売上金額・数量など）を持ち、ディメンションテーブルはファクトを説明する属性情報を持つ設計になっている</li>
+<li><b>D.</b> スタースキーマでは全テーブルが1つのテーブルに非正規化統合されており、JOINが不要な設計になっている</li>
+</ol>
+<details class="q-answer">
+<summary>解答と解説を見る</summary>
+<div class="inner">
+<p><b>正解: C</b></p>
+<p>スタースキーマの設計では、中央にファクトテーブルを配置し、そこに各ディメンションの外部キー（日付ID、商品ID、店舗ID）と測定値（売上金額、販売数量など）を格納する。周囲のディメンションテーブルには、ファクトを説明する属性情報（日付テーブルなら年・月・曜日・祝日フラグなど）を格納する。クエリはファクトとディメンションをJOINして多次元集計を行う。選択肢Aはファクトテーブルには個々のトランザクションレコード（詳細レベルのファクト）も格納されるため誤りである。集計済みサマリーしか持たないのはアグリゲートテーブルであり、ファクトテーブルとは異なる。選択肢Dはスタースキーマの説明として誤りである。スタースキーマは非正規化設計を採用しているが、複数のテーブルを1つに統合するわけではなく、ファクトテーブルとディメンションテーブルは別テーブルとして管理しJOINして使用する。選択肢Bはファクトとディメンションのテーブルの役割が逆転した説明で誤りである。測定値はファクトテーブルが持ち、説明属性はディメンションテーブルが持つのが正しい設計である。</p>
+
+</div>
+</details>
+<div class="cta-box"><a class="btn btn-primary" href="../../exam.html?exam=azure-dp900">▸ この試験を本気で演習する（全150問・無料）</a></div>
+<nav class="q-nav">
+<span><a href="q033.html">← 前の問題</a></span>
+<span><a href="q035.html">次の問題 →</a></span>
+</nav>
+<section class="related"><h2>同じ分野の関連問題</h2><ul class="q-list">
+<li><a href="q033.html">ある大学が、学生の成績記録システムを構築しようとしている。各科目の成績は「学生ID、科目コード、成績、取得単位数、担当教…</a></li>
+<li><a href="q035.html">ある企業が、IoT センサーからのリアルタイムストリームデータと、データウェアハウスに格納された過去5年間の履歴データを…</a></li>
+<li><a href="q032.html">ある企業の分析チームが、過去2年間の販売データに基づいて「月別・商品カテゴリ別・地域別の売上サマリー」を生成している。こ…</a></li>
+<li><a href="q036.html">ある企業が、データ品質管理の重要性を社内で啓蒙しようとしている。データの「完全性（Completeness）」「正確性（…</a></li>
+</ul></section>
+</main>
+<footer class="page-footer">
+<nav class="hub-nav"><a href="../../exams/aws-clf-c02/">CLF-C02 試験ガイド</a><a href="../../exams/aws-aif-c01/">AIF-C01 試験ガイド</a><a href="../../exams/aws-saa-c03/">SAA-C03 試験ガイド</a><a href="../../exams/aws-dva-c02/">DVA-C02 試験ガイド</a><a href="../../exams/aws-sap-c02/">SAP-C02 試験ガイド</a><a href="../../exams/gcp-cdl/">CDL 試験ガイド</a><a href="../../exams/gcp-ace/">ACE 試験ガイド</a><a href="../../exams/azure-az900/">AZ-900 試験ガイド</a><a href="../../exams/azure-ai900/">AI-900 試験ガイド</a><a href="../../exams/azure-dp900/">DP-900 試験ガイド</a><a href="../../exams/azure-sc900/">SC-900 試験ガイド</a><a href="../../exams/azure-az104/">AZ-104 試験ガイド</a></nav>
+<nav class="site-nav"><a href="../../guide/">資格ガイド</a><a href="../../learn/">サービス解説</a><a href="../../career/">キャリア</a><a href="../../about.html">運営者情報</a><a href="../../privacy.html">プライバシーポリシー</a><a href="../../contact.html">お問い合わせ</a></nav>
+<p class="copy">© CLOUDCERT_ — 本サイトは各認定試験の公式試験ではなく、収録問題はすべてオリジナルの演習問題です。</p>
+</footer>
+</body>
+</html>

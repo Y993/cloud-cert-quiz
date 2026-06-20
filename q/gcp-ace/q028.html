@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>【ACE 演習問題 #28】e コマースサービスで、セッションデータを高速に読み書きしたいと考えています。データは数分…</title>
+<meta name="description" content="ACEの本試験レベル演習問題。e コマースサービスで、セッションデータを高速に読み書きしたいと考えています。データは数分から数時間で有効期限が切れ、ミリ秒以下のレイテンシが求められます。最も適切なデータストアはどれですか… 全選択肢の解説つき。">
+<link rel="canonical" href="https://cloudcert.app/q/gcp-ace/q028.html">
+<meta property="og:title" content="【ACE 演習問題 #28】e コマースサービスで、セッションデータを高速に読み書きしたいと考えています。データは数分…">
+<meta property="og:description" content="ACEの本試験レベル演習問題。e コマースサービスで、セッションデータを高速に読み書きしたいと考えています。データは数分から数時間で有効期限が切れ、ミリ秒以下のレイテンシが求められます。最も適切なデータストアはどれですか… 全選択肢の解説つき。">
+<meta property="og:url" content="https://cloudcert.app/q/gcp-ace/q028.html">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="CLOUDCERT_">
+<meta property="og:image" content="https://cloudcert.app/assets/og.png">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='80' font-size='80' fill='%233fe0a4' font-family='monospace'>▸</text></svg>">
+
+<meta name="google-adsense-account" content="ca-pub-5647574947191958">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+JP:wght@400;500;700&family=JetBrains+Mono:wght@400;600;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../../css/style.css">
+<link rel="stylesheet" href="../../css/page.css">
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-SZR5CB5Q3X"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag('js',new Date());gtag('config','G-SZR5CB5Q3X');</script>
+<script type="application/ld+json">[{"@context":"https://schema.org/","@type":"Quiz","about":{"@type":"Thing","name":"Associate Cloud Engineer"},"hasPart":[{"@type":"Question","eduQuestionType":"Multiple choice","learningResourceType":"Practice problem","text":"e コマースサービスで、セッションデータを高速に読み書きしたいと考えています。データは数分から数時間で有効期限が切れ、ミリ秒以下のレイテンシが求められます。最も適切なデータストアはどれですか？","suggestedAnswer":[{"@type":"Answer","position":1,"text":"Cloud Firestore"},{"@type":"Answer","position":2,"text":"Cloud Spanner"},{"@type":"Answer","position":3,"text":"Cloud Bigtable"}],"acceptedAnswer":{"@type":"Answer","position":0,"text":"Memorystore（Redis）","comment":{"@type":"Comment","text":"Memorystore の Redis は完全マネージドのインメモリデータストアで、マイクロ秒〜ミリ秒以下のレイテンシを実現し、TTL（有効期限）設定も標準機能として備えています。セッションデータのような短命で高速アクセスが必要なデータに最適です。Cloud Spanner はグローバルに分散したリレーショナルデータベースで、強整合性と高スループットが強みですが、インメモリキャッシュのレイテンシは実現できません。Cloud Bigtable は大量の構造化データのスケーラブルな処理に適していますが、セッションデータのような小さなデータの TTL 管理は Memorystore の方が簡単です。Cloud Firestore はドキュメントデータベースで、レイテンシも数十ミリ秒程度のため、ミリ秒以下の要件には適しません。"}}}]},{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"HOME","item":"https://cloudcert.app/"},{"@type":"ListItem","position":2,"name":"ACE 試験ガイド","item":"https://cloudcert.app/exams/gcp-ace/"},{"@type":"ListItem","position":3,"name":"q028"}]}]</script>
+</head>
+<body class="page-body">
+<header class="page-header"><a class="page-logo" href="../../index.html">&gt; CLOUDCERT_</a></header>
+<main class="page-main">
+
+<nav class="breadcrumb"><a href="../../index.html">HOME</a> › <a href="../../exams/gcp-ace/">ACE 試験ガイド</a> › q028</nav>
+<div class="q-meta"><span>ACE</span><span>クラウドソリューションの計画と構成</span><span>HARD</span><span>単一選択</span></div>
+<h1>e コマースサービスで、セッションデータを高速に読み書きしたいと考えています。データは数分から数時間で有効期限が切れ、ミリ秒以下のレイテンシが求められます。最も適切なデータストアはどれですか？</h1>
+<ol class="q-choices">
+<li><b>A.</b> Memorystore（Redis）</li>
+<li><b>B.</b> Cloud Firestore</li>
+<li><b>C.</b> Cloud Spanner</li>
+<li><b>D.</b> Cloud Bigtable</li>
+</ol>
+<details class="q-answer">
+<summary>解答と解説を見る</summary>
+<div class="inner">
+<p><b>正解: A</b></p>
+<p>Memorystore の Redis は完全マネージドのインメモリデータストアで、マイクロ秒〜ミリ秒以下のレイテンシを実現し、TTL（有効期限）設定も標準機能として備えています。セッションデータのような短命で高速アクセスが必要なデータに最適です。Cloud Spanner はグローバルに分散したリレーショナルデータベースで、強整合性と高スループットが強みですが、インメモリキャッシュのレイテンシは実現できません。Cloud Bigtable は大量の構造化データのスケーラブルな処理に適していますが、セッションデータのような小さなデータの TTL 管理は Memorystore の方が簡単です。Cloud Firestore はドキュメントデータベースで、レイテンシも数十ミリ秒程度のため、ミリ秒以下の要件には適しません。</p>
+
+</div>
+</details>
+<div class="cta-box"><a class="btn btn-primary" href="../../exam.html?exam=gcp-ace">▸ この試験を本気で演習する（全150問・無料）</a></div>
+<nav class="q-nav">
+<span><a href="q027.html">← 前の問題</a></span>
+<span><a href="q029.html">次の問題 →</a></span>
+</nav>
+<section class="related"><h2>同じ分野の関連問題</h2><ul class="q-list">
+<li><a href="q027.html">機械学習の推論処理を行う CPU 集約型のバッチジョブがあります。実行は 1 日 1 回、深夜に 2〜3 時間かかります…</a></li>
+<li><a href="q029.html">あなたの会社はオンプレミスから Google Cloud への移行を計画しています。既存のワークロードを変更せずに移行し…</a></li>
+<li><a href="q026.html">あなたのチームはウェブアプリケーションのバックエンド API を Google Cloud にデプロイする予定です。コン…</a></li>
+<li><a href="q030.html">Google Cloud で小規模な Web アプリケーションをデプロイしたいと考えています。アプリケーションは Pyt…</a></li>
+</ul></section>
+</main>
+<footer class="page-footer">
+<nav class="hub-nav"><a href="../../exams/aws-clf-c02/">CLF-C02 試験ガイド</a><a href="../../exams/aws-aif-c01/">AIF-C01 試験ガイド</a><a href="../../exams/aws-saa-c03/">SAA-C03 試験ガイド</a><a href="../../exams/aws-dva-c02/">DVA-C02 試験ガイド</a><a href="../../exams/aws-sap-c02/">SAP-C02 試験ガイド</a><a href="../../exams/gcp-cdl/">CDL 試験ガイド</a><a href="../../exams/gcp-ace/">ACE 試験ガイド</a><a href="../../exams/azure-az900/">AZ-900 試験ガイド</a><a href="../../exams/azure-ai900/">AI-900 試験ガイド</a><a href="../../exams/azure-dp900/">DP-900 試験ガイド</a><a href="../../exams/azure-sc900/">SC-900 試験ガイド</a><a href="../../exams/azure-az104/">AZ-104 試験ガイド</a></nav>
+<nav class="site-nav"><a href="../../guide/">資格ガイド</a><a href="../../learn/">サービス解説</a><a href="../../career/">キャリア</a><a href="../../about.html">運営者情報</a><a href="../../privacy.html">プライバシーポリシー</a><a href="../../contact.html">お問い合わせ</a></nav>
+<p class="copy">© CLOUDCERT_ — 本サイトは各認定試験の公式試験ではなく、収録問題はすべてオリジナルの演習問題です。</p>
+</footer>
+</body>
+</html>

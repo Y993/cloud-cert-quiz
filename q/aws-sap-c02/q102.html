@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>【SAP-C02 演習問題 #102】ある企業が既存のオンプレミスの Hadoop/Spark クラスター（100 ノード）を …</title>
+<meta name="description" content="SAP-C02の本試験レベル演習問題。ある企業が既存のオンプレミスの Hadoop/Spark クラスター（100 ノード）を AWS に移行しています。現在のクラスターは毎日 12 時間稼働し、夜間のデータ処理バッチを… 全選択肢の解説つき。">
+<link rel="canonical" href="https://cloudcert.app/q/aws-sap-c02/q102.html">
+<meta property="og:title" content="【SAP-C02 演習問題 #102】ある企業が既存のオンプレミスの Hadoop/Spark クラスター（100 ノード）を …">
+<meta property="og:description" content="SAP-C02の本試験レベル演習問題。ある企業が既存のオンプレミスの Hadoop/Spark クラスター（100 ノード）を AWS に移行しています。現在のクラスターは毎日 12 時間稼働し、夜間のデータ処理バッチを… 全選択肢の解説つき。">
+<meta property="og:url" content="https://cloudcert.app/q/aws-sap-c02/q102.html">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="CLOUDCERT_">
+<meta property="og:image" content="https://cloudcert.app/assets/og.png">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='80' font-size='80' fill='%233fe0a4' font-family='monospace'>▸</text></svg>">
+
+<meta name="google-adsense-account" content="ca-pub-5647574947191958">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+JP:wght@400;500;700&family=JetBrains+Mono:wght@400;600;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../../css/style.css">
+<link rel="stylesheet" href="../../css/page.css">
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-SZR5CB5Q3X"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag('js',new Date());gtag('config','G-SZR5CB5Q3X');</script>
+<script type="application/ld+json">[{"@context":"https://schema.org/","@type":"Quiz","about":{"@type":"Thing","name":"AWS Certified Solutions Architect - Professional"},"hasPart":[{"@type":"Question","eduQuestionType":"Multiple choice","learningResourceType":"Practice problem","text":"ある企業が既存のオンプレミスの Hadoop/Spark クラスター（100 ノード）を AWS に移行しています。現在のクラスターは毎日 12 時間稼働し、夜間のデータ処理バッチを実行しています。チームは Spark の知識があり、コードの変更を最小限に抑えたいと考えています。また、移行後はクラスターを使わない時間はゼロコストにしたいと考えています。最も適切な移行先はどれですか？","suggestedAnswer":[{"@type":"Answer","position":1,"text":"Amazon EC2 クラスターに Hadoop と Spark を手動インストールし、24 時間稼働させる"},{"@type":"Answer","position":2,"text":"Amazon EMR の常時稼働クラスターに移行し、コスト削減のために Reserved Instance を購入する"},{"@type":"Answer","position":3,"text":"Amazon SageMaker Processing ジョブとして Spark コードを実行する"}],"acceptedAnswer":{"@type":"Answer","position":0,"text":"AWS Glue for Spark（AWS Glue のスパークエンジン）を使用し、既存の PySpark/Scala Spark コードをほぼそのままで実行する。Glue ジョブはオンデマンドで起動し、処理完了後はリソースが解放されるため、使わない時間のコストはゼロになる。Glue ETL の DPU（Data Processing Unit）で従量課金","comment":{"@type":"Comment","text":"AWS Glue for Spark はサーバーレスの Spark 実行環境で、PySpark と Scala Spark コードを最小限の変更（一部 Glue コンテキストの追加が必要な場合あり）で実行できます。ジョブ実行時のみ課金され、待機時間のコストは完全にゼロです。毎日 12 時間のバッチ処理に最適で、スケジュールトリガー（EventBridge）での自動起動も可能です。\n\nB: EC2 に手動インストールすると 24 時間のインフラ管理が必要で、使わない時間もコストがかかります。クラスター管理の運用負荷も高くなります。\n\nC: EMR の常時稼働は 12 時間しか使わないのに 24 時間のコストが発生します。Reserved Instance を購入してもゼロコストにはなりません。EMR はクラスター起動と管理の負荷も生じます。\n\nD: SageMaker Processing は ML の前処理に主に使われ、汎用的な Spark バッチ処理には Glue の方が適切でシンプルです。"}}}]},{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"HOME","item":"https://cloudcert.app/"},{"@type":"ListItem","position":2,"name":"SAP-C02 試験ガイド","item":"https://cloudcert.app/exams/aws-sap-c02/"},{"@type":"ListItem","position":3,"name":"q102"}]}]</script>
+</head>
+<body class="page-body">
+<header class="page-header"><a class="page-logo" href="../../index.html">&gt; CLOUDCERT_</a></header>
+<main class="page-main">
+
+<nav class="breadcrumb"><a href="../../index.html">HOME</a> › <a href="../../exams/aws-sap-c02/">SAP-C02 試験ガイド</a> › q102</nav>
+<div class="q-meta"><span>SAP-C02</span><span>ワークロードの移行とモダナイゼーションの加速</span><span>HARD</span><span>単一選択</span></div>
+<h1>ある企業が既存のオンプレミスの Hadoop/Spark クラスター（100 ノード）を AWS に移行しています。現在のクラスターは毎日 12 時間稼働し、夜間のデータ処理バッチを実行しています。チームは Spark の知識があり、コードの変更を最小限に抑えたいと考えています。また、移行後はクラスターを使わない時間はゼロコストにしたいと考えています。最も適切な移行先はどれですか？</h1>
+<ol class="q-choices">
+<li><b>A.</b> AWS Glue for Spark（AWS Glue のスパークエンジン）を使用し、既存の PySpark/Scala Spark コードをほぼそのままで実行する。Glue ジョブはオンデマンドで起動し、処理完了後はリソースが解放されるため、使わない時間のコストはゼロになる。Glue ETL の DPU（Data Processing Unit）で従量課金</li>
+<li><b>B.</b> Amazon EC2 クラスターに Hadoop と Spark を手動インストールし、24 時間稼働させる</li>
+<li><b>C.</b> Amazon EMR の常時稼働クラスターに移行し、コスト削減のために Reserved Instance を購入する</li>
+<li><b>D.</b> Amazon SageMaker Processing ジョブとして Spark コードを実行する</li>
+</ol>
+<details class="q-answer">
+<summary>解答と解説を見る</summary>
+<div class="inner">
+<p><b>正解: A</b></p>
+<p>AWS Glue for Spark はサーバーレスの Spark 実行環境で、PySpark と Scala Spark コードを最小限の変更（一部 Glue コンテキストの追加が必要な場合あり）で実行できます。ジョブ実行時のみ課金され、待機時間のコストは完全にゼロです。毎日 12 時間のバッチ処理に最適で、スケジュールトリガー（EventBridge）での自動起動も可能です。
+
+B: EC2 に手動インストールすると 24 時間のインフラ管理が必要で、使わない時間もコストがかかります。クラスター管理の運用負荷も高くなります。
+
+C: EMR の常時稼働は 12 時間しか使わないのに 24 時間のコストが発生します。Reserved Instance を購入してもゼロコストにはなりません。EMR はクラスター起動と管理の負荷も生じます。
+
+D: SageMaker Processing は ML の前処理に主に使われ、汎用的な Spark バッチ処理には Glue の方が適切でシンプルです。</p>
+<div class="svc-links">📚 関連サービスの解説: <a href="../../learn/aws-glue.html">AWS Glue</a></div>
+</div>
+</details>
+<div class="cta-box"><a class="btn btn-primary" href="../../exam.html?exam=aws-sap-c02">▸ この試験を本気で演習する（全150問・無料）</a></div>
+<nav class="q-nav">
+<span><a href="q101.html">← 前の問題</a></span>
+<span><a href="q103.html">次の問題 →</a></span>
+</nav>
+<section class="related"><h2>同じ分野の関連問題</h2><ul class="q-list">
+<li><a href="q099.html">ある企業が AWS への移行を進めており、移行後にアプリケーションのパフォーマンスを最適化したいと考えています。現在、オ…</a></li>
+<li><a href="q106.html">ある企業がオンプレミスのデータウェアハウス（Teradata）から Amazon Redshift に移行する計画を立て…</a></li>
+<li><a href="q108.html">ある企業が AWS 上でマイクロサービスアーキテクチャへの移行を進めており、既存のモノリシックアプリケーションの一部機能…</a></li>
+<li><a href="q093.html">ある小売チェーンが 500 店舗に分散した POS システム（Windows Server 2016 + SQL Ser…</a></li>
+</ul></section>
+</main>
+<footer class="page-footer">
+<nav class="hub-nav"><a href="../../exams/aws-clf-c02/">CLF-C02 試験ガイド</a><a href="../../exams/aws-aif-c01/">AIF-C01 試験ガイド</a><a href="../../exams/aws-saa-c03/">SAA-C03 試験ガイド</a><a href="../../exams/aws-dva-c02/">DVA-C02 試験ガイド</a><a href="../../exams/aws-sap-c02/">SAP-C02 試験ガイド</a><a href="../../exams/gcp-cdl/">CDL 試験ガイド</a><a href="../../exams/gcp-ace/">ACE 試験ガイド</a><a href="../../exams/azure-az900/">AZ-900 試験ガイド</a><a href="../../exams/azure-ai900/">AI-900 試験ガイド</a><a href="../../exams/azure-dp900/">DP-900 試験ガイド</a><a href="../../exams/azure-sc900/">SC-900 試験ガイド</a><a href="../../exams/azure-az104/">AZ-104 試験ガイド</a></nav>
+<nav class="site-nav"><a href="../../guide/">資格ガイド</a><a href="../../learn/">サービス解説</a><a href="../../career/">キャリア</a><a href="../../about.html">運営者情報</a><a href="../../privacy.html">プライバシーポリシー</a><a href="../../contact.html">お問い合わせ</a></nav>
+<p class="copy">© CLOUDCERT_ — 本サイトは各認定試験の公式試験ではなく、収録問題はすべてオリジナルの演習問題です。</p>
+</footer>
+</body>
+</html>

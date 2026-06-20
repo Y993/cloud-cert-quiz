@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>【SC-900 演習問題 #107】ある企業の SOC チームが、Microsoft Sentinel のスケジュール分析ルー…</title>
+<meta name="description" content="SC-900の本試験レベル演習問題。ある企業の SOC チームが、Microsoft Sentinel のスケジュール分析ルールで KQL クエリを設定しています。クエリ頻度（Query Frequency）を 5 分、… 全選択肢の解説つき。">
+<link rel="canonical" href="https://cloudcert.app/q/azure-sc900/q107.html">
+<meta property="og:title" content="【SC-900 演習問題 #107】ある企業の SOC チームが、Microsoft Sentinel のスケジュール分析ルー…">
+<meta property="og:description" content="SC-900の本試験レベル演習問題。ある企業の SOC チームが、Microsoft Sentinel のスケジュール分析ルールで KQL クエリを設定しています。クエリ頻度（Query Frequency）を 5 分、… 全選択肢の解説つき。">
+<meta property="og:url" content="https://cloudcert.app/q/azure-sc900/q107.html">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="CLOUDCERT_">
+<meta property="og:image" content="https://cloudcert.app/assets/og.png">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='80' font-size='80' fill='%233fe0a4' font-family='monospace'>▸</text></svg>">
+
+<meta name="google-adsense-account" content="ca-pub-5647574947191958">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+JP:wght@400;500;700&family=JetBrains+Mono:wght@400;600;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../../css/style.css">
+<link rel="stylesheet" href="../../css/page.css">
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-SZR5CB5Q3X"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag('js',new Date());gtag('config','G-SZR5CB5Q3X');</script>
+<script type="application/ld+json">[{"@context":"https://schema.org/","@type":"Quiz","about":{"@type":"Thing","name":"Microsoft Security, Compliance, and Identity Fundamentals"},"hasPart":[{"@type":"Question","eduQuestionType":"Multiple choice","learningResourceType":"Practice problem","text":"ある企業の SOC チームが、Microsoft Sentinel のスケジュール分析ルールで KQL クエリを設定しています。クエリ頻度（Query Frequency）を 5 分、ルックバック期間（Lookback Period）を 60 分に設定した場合、このルールの動作として正しい説明はどれか。","suggestedAnswer":[{"@type":"Answer","position":0,"text":"60 分ごとに直近 5 分間のデータを分析するため、データのギャップが生じる"},{"@type":"Answer","position":2,"text":"5 分ごとに直近 5 分間のデータのみを分析するため、データの重複処理は発生しない"},{"@type":"Answer","position":3,"text":"60 分ごとに直近 60 分間のデータを分析するため、完全に重複なしで処理される"}],"acceptedAnswer":{"@type":"Answer","position":1,"text":"5 分ごとに直近 60 分間のデータを分析するため、同じイベントが複数回のルール実行で検出される可能性がある","comment":{"@type":"Comment","text":"Microsoft Sentinel のスケジュール分析ルールでは、クエリ頻度（Query Frequency）はルールを実行する間隔、ルックバック期間（Lookback Period）はクエリが対象とするデータの時間範囲です。頻度 5 分・ルックバック 60 分の場合、5 分ごとに直近 60 分間のデータを分析します。重複防止のためにアラート重複排除（Suppress Alerts）やエンティティ重複排除の設定が別途必要になります。Cは頻度とルックバックを同一とする誤解です。Aは頻度とルックバックを逆にした誤解です。Dも頻度 60 分という誤解であり、正しくありません。"}}}]},{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"HOME","item":"https://cloudcert.app/"},{"@type":"ListItem","position":2,"name":"SC-900 試験ガイド","item":"https://cloudcert.app/exams/azure-sc900/"},{"@type":"ListItem","position":3,"name":"q107"}]}]</script>
+</head>
+<body class="page-body">
+<header class="page-header"><a class="page-logo" href="../../index.html">&gt; CLOUDCERT_</a></header>
+<main class="page-main">
+
+<nav class="breadcrumb"><a href="../../index.html">HOME</a> › <a href="../../exams/azure-sc900/">SC-900 試験ガイド</a> › q107</nav>
+<div class="q-meta"><span>SC-900</span><span>Microsoft セキュリティ ソリューションの機能</span><span>HARD</span><span>単一選択</span></div>
+<h1>ある企業の SOC チームが、Microsoft Sentinel のスケジュール分析ルールで KQL クエリを設定しています。クエリ頻度（Query Frequency）を 5 分、ルックバック期間（Lookback Period）を 60 分に設定した場合、このルールの動作として正しい説明はどれか。</h1>
+<ol class="q-choices">
+<li><b>A.</b> 60 分ごとに直近 5 分間のデータを分析するため、データのギャップが生じる</li>
+<li><b>B.</b> 5 分ごとに直近 60 分間のデータを分析するため、同じイベントが複数回のルール実行で検出される可能性がある</li>
+<li><b>C.</b> 5 分ごとに直近 5 分間のデータのみを分析するため、データの重複処理は発生しない</li>
+<li><b>D.</b> 60 分ごとに直近 60 分間のデータを分析するため、完全に重複なしで処理される</li>
+</ol>
+<details class="q-answer">
+<summary>解答と解説を見る</summary>
+<div class="inner">
+<p><b>正解: B</b></p>
+<p>Microsoft Sentinel のスケジュール分析ルールでは、クエリ頻度（Query Frequency）はルールを実行する間隔、ルックバック期間（Lookback Period）はクエリが対象とするデータの時間範囲です。頻度 5 分・ルックバック 60 分の場合、5 分ごとに直近 60 分間のデータを分析します。重複防止のためにアラート重複排除（Suppress Alerts）やエンティティ重複排除の設定が別途必要になります。Cは頻度とルックバックを同一とする誤解です。Aは頻度とルックバックを逆にした誤解です。Dも頻度 60 分という誤解であり、正しくありません。</p>
+
+</div>
+</details>
+<div class="cta-box"><a class="btn btn-primary" href="../../exam.html?exam=azure-sc900">▸ この試験を本気で演習する（全150問・無料）</a></div>
+<nav class="q-nav">
+<span><a href="q106.html">← 前の問題</a></span>
+<span><a href="q108.html">次の問題 →</a></span>
+</nav>
+<section class="related"><h2>同じ分野の関連問題</h2><ul class="q-list">
+<li><a href="q106.html">ある企業が Microsoft Sentinel を使用しており、インシデント調査において同じ攻撃者から発生した複数のア…</a></li>
+<li><a href="q108.html">ある大企業の SOC が、サプライチェーン攻撃のリスク評価のために、外部の脅威フィードから取得した悪意のある IOC（I…</a></li>
+<li><a href="q105.html">あるセキュリティアナリストが Microsoft Defender ポータルで、エンドポイントに展開された悪意のあるスク…</a></li>
+<li><a href="q109.html">ある企業が Microsoft Defender XDR と Microsoft Sentinel を併用しています。セ…</a></li>
+</ul></section>
+</main>
+<footer class="page-footer">
+<nav class="hub-nav"><a href="../../exams/aws-clf-c02/">CLF-C02 試験ガイド</a><a href="../../exams/aws-aif-c01/">AIF-C01 試験ガイド</a><a href="../../exams/aws-saa-c03/">SAA-C03 試験ガイド</a><a href="../../exams/aws-dva-c02/">DVA-C02 試験ガイド</a><a href="../../exams/aws-sap-c02/">SAP-C02 試験ガイド</a><a href="../../exams/gcp-cdl/">CDL 試験ガイド</a><a href="../../exams/gcp-ace/">ACE 試験ガイド</a><a href="../../exams/azure-az900/">AZ-900 試験ガイド</a><a href="../../exams/azure-ai900/">AI-900 試験ガイド</a><a href="../../exams/azure-dp900/">DP-900 試験ガイド</a><a href="../../exams/azure-sc900/">SC-900 試験ガイド</a><a href="../../exams/azure-az104/">AZ-104 試験ガイド</a></nav>
+<nav class="site-nav"><a href="../../guide/">資格ガイド</a><a href="../../learn/">サービス解説</a><a href="../../career/">キャリア</a><a href="../../about.html">運営者情報</a><a href="../../privacy.html">プライバシーポリシー</a><a href="../../contact.html">お問い合わせ</a></nav>
+<p class="copy">© CLOUDCERT_ — 本サイトは各認定試験の公式試験ではなく、収録問題はすべてオリジナルの演習問題です。</p>
+</footer>
+</body>
+</html>

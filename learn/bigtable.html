@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Bigtableとは？試験に出るポイントと演習問題</title>
+<meta name="description" content="Bigtable（Google Cloud）の要点と資格試験での問われ方を解説。公式ドキュメントへのリンクつき。">
+<link rel="canonical" href="https://cloudcert.app/learn/bigtable.html">
+<meta property="og:title" content="Bigtableとは？試験に出るポイントと演習問題">
+<meta property="og:description" content="Bigtable（Google Cloud）の要点と資格試験での問われ方を解説。公式ドキュメントへのリンクつき。">
+<meta property="og:url" content="https://cloudcert.app/learn/bigtable.html">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="CLOUDCERT_">
+<meta property="og:image" content="https://cloudcert.app/assets/og.png">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='80' font-size='80' fill='%233fe0a4' font-family='monospace'>▸</text></svg>">
+
+<meta name="google-adsense-account" content="ca-pub-5647574947191958">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+JP:wght@400;500;700&family=JetBrains+Mono:wght@400;600;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../css/style.css">
+<link rel="stylesheet" href="../css/page.css">
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-SZR5CB5Q3X"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag('js',new Date());gtag('config','G-SZR5CB5Q3X');</script>
+<script type="application/ld+json">[{"@context":"https://schema.org","@type":"TechArticle","headline":"Bigtableとは？試験に出るポイントと演習問題","description":"Bigtable（Google Cloud）の要点と資格試験での問われ方を解説。公式ドキュメントへのリンクつき。","inLanguage":"ja","about":{"@type":"Thing","name":"Bigtable"},"author":{"@type":"Organization","name":"CLOUDCERT_"},"publisher":{"@type":"Organization","name":"CLOUDCERT_"},"mainEntityOfPage":"https://cloudcert.app/learn/bigtable.html"},{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"HOME","item":"https://cloudcert.app/"},{"@type":"ListItem","position":2,"name":"サービス解説","item":"https://cloudcert.app/learn/"},{"@type":"ListItem","position":3,"name":"Bigtable"}]}]</script>
+</head>
+<body class="page-body">
+<header class="page-header"><a class="page-logo" href="../index.html">&gt; CLOUDCERT_</a></header>
+<main class="page-main">
+
+<nav class="breadcrumb"><a href="../index.html">HOME</a> › <a href="./">サービス解説</a> › Bigtable</nav>
+<div class="learn-head">
+<div class="badges"><span class="badge" data-provider="gcp">Google Cloud</span><span class="badge">データベース</span></div>
+<h1>Bigtableとは</h1>
+</div>
+<p class="lead">Google 内部で検索インデックスや Gmail などに使われてきた大規模ワイドカラム NoSQL データベース。ペタバイト級・超低レイテンシ（読み取り数 ms）・毎秒数百万 QPS のワークロード向け。</p>
+<p>行キーによる単一次元のソートアクセスが基本で、複合クエリはサポートしない。時系列データ・IoT ストリーム・広告ターゲティングなど、時間順・行キー順で大量に書き込むパターンに最適。</p>
+<p>HBase API と互換性があり、既存 HBase ワークロードを比較的容易に移行できる。クラスタノード数の変更はオンラインで実施でき、ダウンタイムなしにスケールアップ・ダウンが可能。</p>
+<p><a class="official-btn" href="https://cloud.google.com/bigtable/docs?hl=ja" target="_blank" rel="noopener">公式ドキュメント →</a></p>
+<h2>試験での問われ方</h2>
+<p>Firestore・BigQuery・Cloud SQL との使い分けが頻出。Bigtable は「大量書き込み・超低レイテンシ・時系列 or IoT」のキーワードで選ぶ。ACID トランザクションや SQL クエリが不要な点が前提。</p>
+<p>引っかけとして、Bigtable の行キー設計がホットスポットを生む（例: タイムスタンプをそのまま行キー先頭に使うと直近の書き込みが 1 ノードに集中）。行キーにハッシュプレフィックスを付けることでデータを均一分散させるパターンが ACE で問われやすい。</p>
+
+<h2>関連サービス</h2><ul class="q-list">
+<li><a href="cloud-sql.html">Cloud SQL</a></li>
+<li><a href="cloud-spanner.html">Cloud Spanner</a></li>
+<li><a href="firestore.html">Firestore</a></li></ul>
+</main>
+<footer class="page-footer">
+<nav class="hub-nav"><a href="../exams/aws-clf-c02/">CLF-C02 試験ガイド</a><a href="../exams/aws-aif-c01/">AIF-C01 試験ガイド</a><a href="../exams/aws-saa-c03/">SAA-C03 試験ガイド</a><a href="../exams/aws-dva-c02/">DVA-C02 試験ガイド</a><a href="../exams/aws-sap-c02/">SAP-C02 試験ガイド</a><a href="../exams/gcp-cdl/">CDL 試験ガイド</a><a href="../exams/gcp-ace/">ACE 試験ガイド</a><a href="../exams/azure-az900/">AZ-900 試験ガイド</a><a href="../exams/azure-ai900/">AI-900 試験ガイド</a><a href="../exams/azure-dp900/">DP-900 試験ガイド</a><a href="../exams/azure-sc900/">SC-900 試験ガイド</a><a href="../exams/azure-az104/">AZ-104 試験ガイド</a></nav>
+<nav class="site-nav"><a href="../guide/">資格ガイド</a><a href="../learn/">サービス解説</a><a href="../career/">キャリア</a><a href="../about.html">運営者情報</a><a href="../privacy.html">プライバシーポリシー</a><a href="../contact.html">お問い合わせ</a></nav>
+<p class="copy">© CLOUDCERT_ — 本サイトは各認定試験の公式試験ではなく、収録問題はすべてオリジナルの演習問題です。</p>
+</footer>
+</body>
+</html>

@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>【DP-900 演習問題 #121】ある大手製造業が、全世界の工場センサーデータ（1秒あたり500万イベント）をリアルタイムで…</title>
+<meta name="description" content="DP-900の本試験レベル演習問題。ある大手製造業が、全世界の工場センサーデータ（1秒あたり500万イベント）をリアルタイムで分析し、異常を検知した場合は5秒以内に保全チームへアラートを送信するシステムを設計している。同… 全選択肢の解説つき。">
+<link rel="canonical" href="https://cloudcert.app/q/azure-dp900/q121.html">
+<meta property="og:title" content="【DP-900 演習問題 #121】ある大手製造業が、全世界の工場センサーデータ（1秒あたり500万イベント）をリアルタイムで…">
+<meta property="og:description" content="DP-900の本試験レベル演習問題。ある大手製造業が、全世界の工場センサーデータ（1秒あたり500万イベント）をリアルタイムで分析し、異常を検知した場合は5秒以内に保全チームへアラートを送信するシステムを設計している。同… 全選択肢の解説つき。">
+<meta property="og:url" content="https://cloudcert.app/q/azure-dp900/q121.html">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="CLOUDCERT_">
+<meta property="og:image" content="https://cloudcert.app/assets/og.png">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='80' font-size='80' fill='%233fe0a4' font-family='monospace'>▸</text></svg>">
+
+<meta name="google-adsense-account" content="ca-pub-5647574947191958">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+JP:wght@400;500;700&family=JetBrains+Mono:wght@400;600;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../../css/style.css">
+<link rel="stylesheet" href="../../css/page.css">
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-SZR5CB5Q3X"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag('js',new Date());gtag('config','G-SZR5CB5Q3X');</script>
+<script type="application/ld+json">[{"@context":"https://schema.org/","@type":"Quiz","about":{"@type":"Thing","name":"Microsoft Azure Data Fundamentals"},"hasPart":[{"@type":"Question","eduQuestionType":"Multiple choice","learningResourceType":"Practice problem","text":"ある大手製造業が、全世界の工場センサーデータ（1秒あたり500万イベント）をリアルタイムで分析し、異常を検知した場合は5秒以内に保全チームへアラートを送信するシステムを設計している。同時に、過去データは長期保管してトレンド分析に使いたい。最小限の運用負荷で両要件を満たす最も適切なアーキテクチャはどれか。","suggestedAnswer":[{"@type":"Answer","position":0,"text":"Azure Cosmos DB にイベントをリアルタイム書き込み → Change Feed で Azure Functions を起動 → 集計ロジックを Functions 内に実装してアラート送信"},{"@type":"Answer","position":1,"text":"Azure IoT Hub でイベントを受信 → Azure Blob Storage にバッファリング → 5分ごとに Azure Databricks ジョブで異常検知バッチ処理"},{"@type":"Answer","position":3,"text":"Azure Service Bus でイベントを受信 → Azure Functions で1秒ごとに集計処理 → 結果を Azure SQL Database に書き込み、保全チームはクエリで確認"}],"acceptedAnswer":{"@type":"Answer","position":2,"text":"Azure Event Hubs でイベントを受信 → Azure Stream Analytics でウィンドウ集計・異常検知 → アラートは Logic Apps で送信、同時に Azure Data Lake Storage Gen2 にアーカイブ","comment":{"@type":"Comment","text":"毎秒500万イベントのリアルタイム処理と5秒以内の異常検知アラートには、高スループットイベント取り込みの Event Hubs、ウィンドウ集計・閾値ベース異常検知を SQL ライクなクエリで宣言的に定義できる Stream Analytics、ワークフロー自動化の Logic Apps、そして長期保管の ADLS Gen2 を組み合わせるアーキテクチャが最も適切で運用負荷も低い。選択肢 D の Azure Service Bus は高スループットのイベントストリームより低レイテンシメッセージキュー向けであり、500万/秒のスループットには Event Hubs が推奨される。また Functions でのカスタム集計実装は開発・運用コストが高くなる。選択肢 B は5分ごとのバッチ処理であり、5秒以内のリアルタイムアラート要件を満たせない。選択肢 A の Cosmos DB + Change Feed は書き込み中心のユースケースに有効だが、500万/秒の大量イベント取り込みと時系列ウィンドウ集計に適した設計ではなく、コストと複雑性が増大する。"}}}]},{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"HOME","item":"https://cloudcert.app/"},{"@type":"ListItem","position":2,"name":"DP-900 試験ガイド","item":"https://cloudcert.app/exams/azure-dp900/"},{"@type":"ListItem","position":3,"name":"q121"}]}]</script>
+</head>
+<body class="page-body">
+<header class="page-header"><a class="page-logo" href="../../index.html">&gt; CLOUDCERT_</a></header>
+<main class="page-main">
+
+<nav class="breadcrumb"><a href="../../index.html">HOME</a> › <a href="../../exams/azure-dp900/">DP-900 試験ガイド</a> › q121</nav>
+<div class="q-meta"><span>DP-900</span><span>Azure の分析ワークロード</span><span>HARD</span><span>単一選択</span></div>
+<h1>ある大手製造業が、全世界の工場センサーデータ（1秒あたり500万イベント）をリアルタイムで分析し、異常を検知した場合は5秒以内に保全チームへアラートを送信するシステムを設計している。同時に、過去データは長期保管してトレンド分析に使いたい。最小限の運用負荷で両要件を満たす最も適切なアーキテクチャはどれか。</h1>
+<ol class="q-choices">
+<li><b>A.</b> Azure Cosmos DB にイベントをリアルタイム書き込み → Change Feed で Azure Functions を起動 → 集計ロジックを Functions 内に実装してアラート送信</li>
+<li><b>B.</b> Azure IoT Hub でイベントを受信 → Azure Blob Storage にバッファリング → 5分ごとに Azure Databricks ジョブで異常検知バッチ処理</li>
+<li><b>C.</b> Azure Event Hubs でイベントを受信 → Azure Stream Analytics でウィンドウ集計・異常検知 → アラートは Logic Apps で送信、同時に Azure Data Lake Storage Gen2 にアーカイブ</li>
+<li><b>D.</b> Azure Service Bus でイベントを受信 → Azure Functions で1秒ごとに集計処理 → 結果を Azure SQL Database に書き込み、保全チームはクエリで確認</li>
+</ol>
+<details class="q-answer">
+<summary>解答と解説を見る</summary>
+<div class="inner">
+<p><b>正解: C</b></p>
+<p>毎秒500万イベントのリアルタイム処理と5秒以内の異常検知アラートには、高スループットイベント取り込みの Event Hubs、ウィンドウ集計・閾値ベース異常検知を SQL ライクなクエリで宣言的に定義できる Stream Analytics、ワークフロー自動化の Logic Apps、そして長期保管の ADLS Gen2 を組み合わせるアーキテクチャが最も適切で運用負荷も低い。選択肢 D の Azure Service Bus は高スループットのイベントストリームより低レイテンシメッセージキュー向けであり、500万/秒のスループットには Event Hubs が推奨される。また Functions でのカスタム集計実装は開発・運用コストが高くなる。選択肢 B は5分ごとのバッチ処理であり、5秒以内のリアルタイムアラート要件を満たせない。選択肢 A の Cosmos DB + Change Feed は書き込み中心のユースケースに有効だが、500万/秒の大量イベント取り込みと時系列ウィンドウ集計に適した設計ではなく、コストと複雑性が増大する。</p>
+<div class="svc-links">📚 関連サービスの解説: <a href="../../learn/azure-stream-analytics.html">Azure Stream Analytics</a></div>
+</div>
+</details>
+<div class="cta-box"><a class="btn btn-primary" href="../../exam.html?exam=azure-dp900">▸ この試験を本気で演習する（全150問・無料）</a></div>
+<nav class="q-nav">
+<span><a href="q120.html">← 前の問題</a></span>
+<span><a href="q122.html">次の問題 →</a></span>
+</nav>
+<section class="related"><h2>同じ分野の関連問題</h2><ul class="q-list">
+<li><a href="q120.html">ある企業が Microsoft Fabric を採用してデータ分析基盤を刷新しようとしている。Microsoft Fab…</a></li>
+<li><a href="q122.html">ある小売企業が Azure Synapse Analytics で販売分析基盤を構築している。専用 SQL プールのディ…</a></li>
+<li><a href="q119.html">あるデータチームが、Azure Synapse Analytics で売上分析レポートを構築している。Synapse の…</a></li>
+<li><a href="q123.html">ある企業のアナリストが、Power BI Desktop でレポートを作成してから、同僚がどこからでも閲覧・共有できるよ…</a></li>
+</ul></section>
+</main>
+<footer class="page-footer">
+<nav class="hub-nav"><a href="../../exams/aws-clf-c02/">CLF-C02 試験ガイド</a><a href="../../exams/aws-aif-c01/">AIF-C01 試験ガイド</a><a href="../../exams/aws-saa-c03/">SAA-C03 試験ガイド</a><a href="../../exams/aws-dva-c02/">DVA-C02 試験ガイド</a><a href="../../exams/aws-sap-c02/">SAP-C02 試験ガイド</a><a href="../../exams/gcp-cdl/">CDL 試験ガイド</a><a href="../../exams/gcp-ace/">ACE 試験ガイド</a><a href="../../exams/azure-az900/">AZ-900 試験ガイド</a><a href="../../exams/azure-ai900/">AI-900 試験ガイド</a><a href="../../exams/azure-dp900/">DP-900 試験ガイド</a><a href="../../exams/azure-sc900/">SC-900 試験ガイド</a><a href="../../exams/azure-az104/">AZ-104 試験ガイド</a></nav>
+<nav class="site-nav"><a href="../../guide/">資格ガイド</a><a href="../../learn/">サービス解説</a><a href="../../career/">キャリア</a><a href="../../about.html">運営者情報</a><a href="../../privacy.html">プライバシーポリシー</a><a href="../../contact.html">お問い合わせ</a></nav>
+<p class="copy">© CLOUDCERT_ — 本サイトは各認定試験の公式試験ではなく、収録問題はすべてオリジナルの演習問題です。</p>
+</footer>
+</body>
+</html>

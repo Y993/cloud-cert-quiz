@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>【SAP-C02 演習問題 #36】ある企業が AWS で新しいアプリケーションのデータベース層を設計しています。要件は以下の…</title>
+<meta name="description" content="SAP-C02の本試験レベル演習問題。ある企業が AWS で新しいアプリケーションのデータベース層を設計しています。要件は以下の通りです。④トランザクション整合性（ACID）が必要、③地理的に離れた 2 リージョンにまた… 全選択肢の解説つき。">
+<link rel="canonical" href="https://cloudcert.app/q/aws-sap-c02/q036.html">
+<meta property="og:title" content="【SAP-C02 演習問題 #36】ある企業が AWS で新しいアプリケーションのデータベース層を設計しています。要件は以下の…">
+<meta property="og:description" content="SAP-C02の本試験レベル演習問題。ある企業が AWS で新しいアプリケーションのデータベース層を設計しています。要件は以下の通りです。④トランザクション整合性（ACID）が必要、③地理的に離れた 2 リージョンにまた… 全選択肢の解説つき。">
+<meta property="og:url" content="https://cloudcert.app/q/aws-sap-c02/q036.html">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="CLOUDCERT_">
+<meta property="og:image" content="https://cloudcert.app/assets/og.png">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='80' font-size='80' fill='%233fe0a4' font-family='monospace'>▸</text></svg>">
+
+<meta name="google-adsense-account" content="ca-pub-5647574947191958">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+JP:wght@400;500;700&family=JetBrains+Mono:wght@400;600;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../../css/style.css">
+<link rel="stylesheet" href="../../css/page.css">
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-SZR5CB5Q3X"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag('js',new Date());gtag('config','G-SZR5CB5Q3X');</script>
+<script type="application/ld+json">[{"@context":"https://schema.org/","@type":"Quiz","about":{"@type":"Thing","name":"AWS Certified Solutions Architect - Professional"},"hasPart":[{"@type":"Question","eduQuestionType":"Multiple choice","learningResourceType":"Practice problem","text":"ある企業が AWS で新しいアプリケーションのデータベース層を設計しています。要件は以下の通りです。④トランザクション整合性（ACID）が必要、③地理的に離れた 2 リージョンにまたがる書き込みが必要（マルチリージョン書き込み）、②自動フェイルオーバーによる高可用性、①1 秒未満のレプリケーション遅延。これらすべてを満たすマネージドサービスの組み合わせはどれですか？","suggestedAnswer":[{"@type":"Answer","position":0,"text":"Amazon DocumentDB をプライマリリージョンに展開し、AWS Database Migration Service で継続的レプリケーションを設定する"},{"@type":"Answer","position":2,"text":"Amazon Aurora Global Database（グローバルデータベース）で 2 リージョンに展開し、Managed Planned Failover でのリージョン切り替えを設定する。ただし Aurora Global は通常ライト-ワン構成のため、マルチリージョン書き込みには Amazon DynamoDB Global Tables に移行する"},{"@type":"Answer","position":3,"text":"Amazon RDS for MySQL Multi-AZ 構成（プライマリリージョン） + RDS リードレプリカ（セカンダリリージョン）"}],"acceptedAnswer":{"@type":"Answer","position":1,"text":"Amazon DynamoDB Global Tables を使用し、2 リージョンでのマルチアクティブ書き込みを有効化する。DynamoDB は ACID トランザクション（TransactWriteItems）をサポートし、グローバルテーブルでの自動フェイルオーバーも提供される","comment":{"@type":"Comment","text":"DynamoDB Global Tables はマルチリージョンのアクティブ-アクティブ書き込みをサポートし（要件③）、TransactWriteItems API で ACID トランザクション（要件④）を提供します。また、グローバルテーブルは自動的にリージョン間でデータを同期し（通常1秒未満のレプリケーション遅延）、リージョン障害時の自動フェイルオーバーも提供されます（要件②①）。\n\nD: RDS Multi-AZ + クロスリージョンリードレプリカは読み取りのみリードレプリカへの転送ができますが、マルチリージョンへの書き込みは単一の書き込みエンドポイントからのみで、要件③を満たしません。\n\nC: Aurora Global Database は通常、1 リージョンのプライマリにのみ書き込み可能で、マルチリージョン書き込み（アクティブ-アクティブ書き込み）には対応していません（ライト-ワン構成）。選択肢も最終的に DynamoDB への移行を提案しており、Aurora Global Database 単独では要件を満たせません。\n\nA: DocumentDB は MongoDB API 互換のドキュメントデータベースで、グローバルテーブルのようなマルチリージョンのアクティブ-アクティブ書き込みはサポートしていません。"}}}]},{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"HOME","item":"https://cloudcert.app/"},{"@type":"ListItem","position":2,"name":"SAP-C02 試験ガイド","item":"https://cloudcert.app/exams/aws-sap-c02/"},{"@type":"ListItem","position":3,"name":"q036"}]}]</script>
+</head>
+<body class="page-body">
+<header class="page-header"><a class="page-logo" href="../../index.html">&gt; CLOUDCERT_</a></header>
+<main class="page-main">
+
+<nav class="breadcrumb"><a href="../../index.html">HOME</a> › <a href="../../exams/aws-sap-c02/">SAP-C02 試験ガイド</a> › q036</nav>
+<div class="q-meta"><span>SAP-C02</span><span>新しいソリューションのための設計</span><span>HARD</span><span>単一選択</span></div>
+<h1>ある企業が AWS で新しいアプリケーションのデータベース層を設計しています。要件は以下の通りです。④トランザクション整合性（ACID）が必要、③地理的に離れた 2 リージョンにまたがる書き込みが必要（マルチリージョン書き込み）、②自動フェイルオーバーによる高可用性、①1 秒未満のレプリケーション遅延。これらすべてを満たすマネージドサービスの組み合わせはどれですか？</h1>
+<ol class="q-choices">
+<li><b>A.</b> Amazon DocumentDB をプライマリリージョンに展開し、AWS Database Migration Service で継続的レプリケーションを設定する</li>
+<li><b>B.</b> Amazon DynamoDB Global Tables を使用し、2 リージョンでのマルチアクティブ書き込みを有効化する。DynamoDB は ACID トランザクション（TransactWriteItems）をサポートし、グローバルテーブルでの自動フェイルオーバーも提供される</li>
+<li><b>C.</b> Amazon Aurora Global Database（グローバルデータベース）で 2 リージョンに展開し、Managed Planned Failover でのリージョン切り替えを設定する。ただし Aurora Global は通常ライト-ワン構成のため、マルチリージョン書き込みには Amazon DynamoDB Global Tables に移行する</li>
+<li><b>D.</b> Amazon RDS for MySQL Multi-AZ 構成（プライマリリージョン） + RDS リードレプリカ（セカンダリリージョン）</li>
+</ol>
+<details class="q-answer">
+<summary>解答と解説を見る</summary>
+<div class="inner">
+<p><b>正解: B</b></p>
+<p>DynamoDB Global Tables はマルチリージョンのアクティブ-アクティブ書き込みをサポートし（要件③）、TransactWriteItems API で ACID トランザクション（要件④）を提供します。また、グローバルテーブルは自動的にリージョン間でデータを同期し（通常1秒未満のレプリケーション遅延）、リージョン障害時の自動フェイルオーバーも提供されます（要件②①）。
+
+D: RDS Multi-AZ + クロスリージョンリードレプリカは読み取りのみリードレプリカへの転送ができますが、マルチリージョンへの書き込みは単一の書き込みエンドポイントからのみで、要件③を満たしません。
+
+C: Aurora Global Database は通常、1 リージョンのプライマリにのみ書き込み可能で、マルチリージョン書き込み（アクティブ-アクティブ書き込み）には対応していません（ライト-ワン構成）。選択肢も最終的に DynamoDB への移行を提案しており、Aurora Global Database 単独では要件を満たせません。
+
+A: DocumentDB は MongoDB API 互換のドキュメントデータベースで、グローバルテーブルのようなマルチリージョンのアクティブ-アクティブ書き込みはサポートしていません。</p>
+<div class="svc-links">📚 関連サービスの解説: <a href="../../learn/amazon-dynamodb.html">Amazon DynamoDB</a></div>
+</div>
+</details>
+<div class="cta-box"><a class="btn btn-primary" href="../../exam.html?exam=aws-sap-c02">▸ この試験を本気で演習する（全150問・無料）</a></div>
+<nav class="q-nav">
+<span><a href="q035.html">← 前の問題</a></span>
+<span><a href="q037.html">次の問題 →</a></span>
+</nav>
+<section class="related"><h2>同じ分野の関連問題</h2><ul class="q-list">
+<li><a href="q035.html">ある製薬企業が医薬品の研究データ（ゲノム解析データ）を AWS で処理するシステムを設計しています。データセットは数百テ…</a></li>
+<li><a href="q037.html">ある企業が AWS 上で大規模な検索システムを構築しています。製品カタログ（3 億件のドキュメント）に対して、全文検索、…</a></li>
+<li><a href="q034.html">ある企業が Amazon EKS で Kubernetes クラスターを運用しており、数百のマイクロサービスをデプロイし…</a></li>
+<li><a href="q038.html">ある企業が AWS 上で機械学習パイプラインを構築しており、毎日新しいトレーニングデータが S3 に追加されます。データ…</a></li>
+</ul></section>
+</main>
+<footer class="page-footer">
+<nav class="hub-nav"><a href="../../exams/aws-clf-c02/">CLF-C02 試験ガイド</a><a href="../../exams/aws-aif-c01/">AIF-C01 試験ガイド</a><a href="../../exams/aws-saa-c03/">SAA-C03 試験ガイド</a><a href="../../exams/aws-dva-c02/">DVA-C02 試験ガイド</a><a href="../../exams/aws-sap-c02/">SAP-C02 試験ガイド</a><a href="../../exams/gcp-cdl/">CDL 試験ガイド</a><a href="../../exams/gcp-ace/">ACE 試験ガイド</a><a href="../../exams/azure-az900/">AZ-900 試験ガイド</a><a href="../../exams/azure-ai900/">AI-900 試験ガイド</a><a href="../../exams/azure-dp900/">DP-900 試験ガイド</a><a href="../../exams/azure-sc900/">SC-900 試験ガイド</a><a href="../../exams/azure-az104/">AZ-104 試験ガイド</a></nav>
+<nav class="site-nav"><a href="../../guide/">資格ガイド</a><a href="../../learn/">サービス解説</a><a href="../../career/">キャリア</a><a href="../../about.html">運営者情報</a><a href="../../privacy.html">プライバシーポリシー</a><a href="../../contact.html">お問い合わせ</a></nav>
+<p class="copy">© CLOUDCERT_ — 本サイトは各認定試験の公式試験ではなく、収録問題はすべてオリジナルの演習問題です。</p>
+</footer>
+</body>
+</html>

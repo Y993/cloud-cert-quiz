@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>【DVA-C02 演習問題 #19】あるチームが、Lambdaのコールドスタートのレイテンシを改善しようとしている。現在のLa…</title>
+<meta name="description" content="DVA-C02の本試験レベル演習問題。あるチームが、Lambdaのコールドスタートのレイテンシを改善しようとしている。現在のLambda関数はPython 3.12で実装されており、VPCに接続されていない。コールドスタ… 全選択肢の解説つき。">
+<link rel="canonical" href="https://cloudcert.app/q/aws-dva-c02/q019.html">
+<meta property="og:title" content="【DVA-C02 演習問題 #19】あるチームが、Lambdaのコールドスタートのレイテンシを改善しようとしている。現在のLa…">
+<meta property="og:description" content="DVA-C02の本試験レベル演習問題。あるチームが、Lambdaのコールドスタートのレイテンシを改善しようとしている。現在のLambda関数はPython 3.12で実装されており、VPCに接続されていない。コールドスタ… 全選択肢の解説つき。">
+<meta property="og:url" content="https://cloudcert.app/q/aws-dva-c02/q019.html">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="CLOUDCERT_">
+<meta property="og:image" content="https://cloudcert.app/assets/og.png">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='80' font-size='80' fill='%233fe0a4' font-family='monospace'>▸</text></svg>">
+
+<meta name="google-adsense-account" content="ca-pub-5647574947191958">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+JP:wght@400;500;700&family=JetBrains+Mono:wght@400;600;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../../css/style.css">
+<link rel="stylesheet" href="../../css/page.css">
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-SZR5CB5Q3X"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag('js',new Date());gtag('config','G-SZR5CB5Q3X');</script>
+<script type="application/ld+json">[{"@context":"https://schema.org/","@type":"Quiz","about":{"@type":"Thing","name":"AWS Certified Developer - Associate"},"hasPart":[{"@type":"Question","eduQuestionType":"Checkbox","learningResourceType":"Practice problem","text":"あるチームが、Lambdaのコールドスタートのレイテンシを改善しようとしている。現在のLambda関数はPython 3.12で実装されており、VPCに接続されていない。コールドスタートの影響を軽減または短縮するための対策として有効なものを2つ選択してください。","suggestedAnswer":[{"@type":"Answer","position":1,"text":"Lambda関数のタイムアウト値を15分に設定してコールドスタートのタイムアウトを防ぐ"},{"@type":"Answer","position":2,"text":"グローバルスコープで行っているSDKクライアントの初期化処理を各ハンドラ呼び出し内（ローカルスコープ）に移動する"},{"@type":"Answer","position":3,"text":"Lambda関数のランタイムをPython 3.12からJava 17に変更する"}],"acceptedAnswer":[{"@type":"Answer","position":0,"text":"プロビジョニング済み同時実行数（Provisioned Concurrency）を設定して、関数インスタンスを初期化済み状態で待機させる","comment":{"@type":"Comment","text":"コールドスタートは新しいLambdaコンテナの起動と初期化処理の時間から構成される。選択肢A（プロビジョニング済み同時実行）は初期化済みのインスタンスを常時待機させる最も直接的な対策であり、コールドスタートそのものを排除できる。選択肢E（メモリ増量）はLambdaがメモリに比例してCPUリソースを割り当てる仕組みを利用しており、初期化処理（モジュールロード・SDKクライアント生成等）が高速化されることでコールドスタート時間を短縮できる。選択肢DのJava 17への変更は逆効果であり、JavaはPythonよりもJVMの起動とクラスロードに時間がかかりコールドスタートが悪化する傾向がある。選択肢Bのタイムアウト延長はコールドスタートのレイテンシを短縮しない（タイムアウト上限を緩和するだけ）。選択肢Cはグローバルスコープへの初期化処理配置がLambdaのベストプラクティスであり（コンテナ再利用時に初期化をスキップできる）、ローカルスコープへ移動することはその逆で、毎回の呼び出し時に初期化が実行されパフォーマンスが悪化する。"}},{"@type":"Answer","position":4,"text":"Lambda関数のメモリサイズを増やして初期化時のCPUリソースを増加させ、初期化処理の実行時間を短縮する","comment":{"@type":"Comment","text":"コールドスタートは新しいLambdaコンテナの起動と初期化処理の時間から構成される。選択肢A（プロビジョニング済み同時実行）は初期化済みのインスタンスを常時待機させる最も直接的な対策であり、コールドスタートそのものを排除できる。選択肢E（メモリ増量）はLambdaがメモリに比例してCPUリソースを割り当てる仕組みを利用しており、初期化処理（モジュールロード・SDKクライアント生成等）が高速化されることでコールドスタート時間を短縮できる。選択肢DのJava 17への変更は逆効果であり、JavaはPythonよりもJVMの起動とクラスロードに時間がかかりコールドスタートが悪化する傾向がある。選択肢Bのタイムアウト延長はコールドスタートのレイテンシを短縮しない（タイムアウト上限を緩和するだけ）。選択肢Cはグローバルスコープへの初期化処理配置がLambdaのベストプラクティスであり（コンテナ再利用時に初期化をスキップできる）、ローカルスコープへ移動することはその逆で、毎回の呼び出し時に初期化が実行されパフォーマンスが悪化する。"}}]}]},{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"HOME","item":"https://cloudcert.app/"},{"@type":"ListItem","position":2,"name":"DVA-C02 試験ガイド","item":"https://cloudcert.app/exams/aws-dva-c02/"},{"@type":"ListItem","position":3,"name":"q019"}]}]</script>
+</head>
+<body class="page-body">
+<header class="page-header"><a class="page-logo" href="../../index.html">&gt; CLOUDCERT_</a></header>
+<main class="page-main">
+
+<nav class="breadcrumb"><a href="../../index.html">HOME</a> › <a href="../../exams/aws-dva-c02/">DVA-C02 試験ガイド</a> › q019</nav>
+<div class="q-meta"><span>DVA-C02</span><span>開発</span><span>MEDIUM</span><span>複数選択</span></div>
+<h1>あるチームが、Lambdaのコールドスタートのレイテンシを改善しようとしている。現在のLambda関数はPython 3.12で実装されており、VPCに接続されていない。コールドスタートの影響を軽減または短縮するための対策として有効なものを2つ選択してください。</h1>
+<ol class="q-choices">
+<li><b>A.</b> プロビジョニング済み同時実行数（Provisioned Concurrency）を設定して、関数インスタンスを初期化済み状態で待機させる</li>
+<li><b>B.</b> Lambda関数のタイムアウト値を15分に設定してコールドスタートのタイムアウトを防ぐ</li>
+<li><b>C.</b> グローバルスコープで行っているSDKクライアントの初期化処理を各ハンドラ呼び出し内（ローカルスコープ）に移動する</li>
+<li><b>D.</b> Lambda関数のランタイムをPython 3.12からJava 17に変更する</li>
+<li><b>E.</b> Lambda関数のメモリサイズを増やして初期化時のCPUリソースを増加させ、初期化処理の実行時間を短縮する</li>
+</ol>
+<details class="q-answer">
+<summary>解答と解説を見る</summary>
+<div class="inner">
+<p><b>正解: A, E</b></p>
+<p>コールドスタートは新しいLambdaコンテナの起動と初期化処理の時間から構成される。選択肢A（プロビジョニング済み同時実行）は初期化済みのインスタンスを常時待機させる最も直接的な対策であり、コールドスタートそのものを排除できる。選択肢E（メモリ増量）はLambdaがメモリに比例してCPUリソースを割り当てる仕組みを利用しており、初期化処理（モジュールロード・SDKクライアント生成等）が高速化されることでコールドスタート時間を短縮できる。選択肢DのJava 17への変更は逆効果であり、JavaはPythonよりもJVMの起動とクラスロードに時間がかかりコールドスタートが悪化する傾向がある。選択肢Bのタイムアウト延長はコールドスタートのレイテンシを短縮しない（タイムアウト上限を緩和するだけ）。選択肢Cはグローバルスコープへの初期化処理配置がLambdaのベストプラクティスであり（コンテナ再利用時に初期化をスキップできる）、ローカルスコープへ移動することはその逆で、毎回の呼び出し時に初期化が実行されパフォーマンスが悪化する。</p>
+<div class="svc-links">📚 関連サービスの解説: <a href="../../learn/aws-lambda.html">AWS Lambda</a></div>
+</div>
+</details>
+<div class="cta-box"><a class="btn btn-primary" href="../../exam.html?exam=aws-dva-c02">▸ この試験を本気で演習する（全150問・無料）</a></div>
+<nav class="q-nav">
+<span><a href="q018.html">← 前の問題</a></span>
+<span><a href="q020.html">次の問題 →</a></span>
+</nav>
+<section class="related"><h2>同じ分野の関連問題</h2><ul class="q-list">
+<li><a href="q018.html">ある企業が、API GatewayのHTTP APIとLambda統合でREST APIを構築している。フロントエンドの…</a></li>
+<li><a href="q020.html">ある企業が、API GatewayのREST APIを使って外部パートナーにAPIを提供している。以下の2つの要件を同時…</a></li>
+<li><a href="q017.html">ある企業がAPI GatewayとLambdaで構成されたAPIを運用しており、Lambdaのコードの中でAPIレスポン…</a></li>
+<li><a href="q021.html">あるチームが、Lambda関数でVPC内のRDS Aurora（PostgreSQL）に接続するアプリケーションを構築し…</a></li>
+</ul></section>
+</main>
+<footer class="page-footer">
+<nav class="hub-nav"><a href="../../exams/aws-clf-c02/">CLF-C02 試験ガイド</a><a href="../../exams/aws-aif-c01/">AIF-C01 試験ガイド</a><a href="../../exams/aws-saa-c03/">SAA-C03 試験ガイド</a><a href="../../exams/aws-dva-c02/">DVA-C02 試験ガイド</a><a href="../../exams/aws-sap-c02/">SAP-C02 試験ガイド</a><a href="../../exams/gcp-cdl/">CDL 試験ガイド</a><a href="../../exams/gcp-ace/">ACE 試験ガイド</a><a href="../../exams/azure-az900/">AZ-900 試験ガイド</a><a href="../../exams/azure-ai900/">AI-900 試験ガイド</a><a href="../../exams/azure-dp900/">DP-900 試験ガイド</a><a href="../../exams/azure-sc900/">SC-900 試験ガイド</a><a href="../../exams/azure-az104/">AZ-104 試験ガイド</a></nav>
+<nav class="site-nav"><a href="../../guide/">資格ガイド</a><a href="../../learn/">サービス解説</a><a href="../../career/">キャリア</a><a href="../../about.html">運営者情報</a><a href="../../privacy.html">プライバシーポリシー</a><a href="../../contact.html">お問い合わせ</a></nav>
+<p class="copy">© CLOUDCERT_ — 本サイトは各認定試験の公式試験ではなく、収録問題はすべてオリジナルの演習問題です。</p>
+</footer>
+</body>
+</html>

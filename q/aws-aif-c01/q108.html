@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>【AIF-C01 演習問題 #108】ある企業が Amazon Bedrock を使ってコールセンターの問い合わせに対する自動回…</title>
+<meta name="description" content="AIF-C01の本試験レベル演習問題。ある企業が Amazon Bedrock を使ってコールセンターの問い合わせに対する自動回答システムを構築した。本番運用開始後に継続的にモデルの品質を監視・改善するサイクルを確立した… 全選択肢の解説つき。">
+<link rel="canonical" href="https://cloudcert.app/q/aws-aif-c01/q108.html">
+<meta property="og:title" content="【AIF-C01 演習問題 #108】ある企業が Amazon Bedrock を使ってコールセンターの問い合わせに対する自動回…">
+<meta property="og:description" content="AIF-C01の本試験レベル演習問題。ある企業が Amazon Bedrock を使ってコールセンターの問い合わせに対する自動回答システムを構築した。本番運用開始後に継続的にモデルの品質を監視・改善するサイクルを確立した… 全選択肢の解説つき。">
+<meta property="og:url" content="https://cloudcert.app/q/aws-aif-c01/q108.html">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="CLOUDCERT_">
+<meta property="og:image" content="https://cloudcert.app/assets/og.png">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='80' font-size='80' fill='%233fe0a4' font-family='monospace'>▸</text></svg>">
+
+<meta name="google-adsense-account" content="ca-pub-5647574947191958">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+JP:wght@400;500;700&family=JetBrains+Mono:wght@400;600;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../../css/style.css">
+<link rel="stylesheet" href="../../css/page.css">
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-SZR5CB5Q3X"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag('js',new Date());gtag('config','G-SZR5CB5Q3X');</script>
+<script type="application/ld+json">[{"@context":"https://schema.org/","@type":"Quiz","about":{"@type":"Thing","name":"AWS Certified AI Practitioner"},"hasPart":[{"@type":"Question","eduQuestionType":"Multiple choice","learningResourceType":"Practice problem","text":"ある企業が Amazon Bedrock を使ってコールセンターの問い合わせに対する自動回答システムを構築した。本番運用開始後に継続的にモデルの品質を監視・改善するサイクルを確立したい。最も適切な継続的評価・改善のアプローチはどれか。","suggestedAnswer":[{"@type":"Answer","position":0,"text":"ROUGE スコアを週次で自動計算し、スコアが下がった週だけプロンプトを変更する"},{"@type":"Answer","position":1,"text":"本番稼働後は品質が固定されるため、定期的な評価は不要で問題報告があったときのみ対応する"},{"@type":"Answer","position":2,"text":"Amazon CloudWatch のエラーレートのみを監視し、エラーゼロであれば品質は問題ないと判断する"}],"acceptedAnswer":{"@type":"Answer","position":3,"text":"ユーザーからのフィードバック（サムズアップ/ダウン等）を収集して低評価の会話サンプルを蓄積し、定期的に人手でレビューして問題パターンを特定。改善データをファインチューニングやプロンプト更新に反映するサイクルを確立する","comment":{"@type":"Comment","text":"継続的なモデル品質管理（MLOps における Model Monitoring）のベストプラクティスは「ユーザーフィードバック収集→分析→改善→デプロイ」のフィードバックループを構築すること。特に LLM では技術的なエラーがなくても「内容の誤り」「有用でない回答」が発生するため、ユーザーの主観的評価（サムズアップ/ダウン、評価コメント）を収集することが重要。低評価の実例を人手でレビューして根本原因を特定し、プロンプト改善・追加ファインチューニング等に反映するループが品質維持の核心。Bは問題発生後の対応では手遅れになるケースが多く、品質劣化を早期に発見するための継続的監視が必要。Aの ROUGE は参照テキストが必要な指標であり、本番の顧客問い合わせへの回答評価には直接使えない。また ROUGE だけで品質を評価するのは不十分。Cのエラーレート（技術的な API エラー）はシステムの可用性を測るものであり、回答の「品質（内容の正確さ・有用性）」とは別次元の指標。"}}}]},{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"HOME","item":"https://cloudcert.app/"},{"@type":"ListItem","position":2,"name":"AIF-C01 試験ガイド","item":"https://cloudcert.app/exams/aws-aif-c01/"},{"@type":"ListItem","position":3,"name":"q108"}]}]</script>
+</head>
+<body class="page-body">
+<header class="page-header"><a class="page-logo" href="../../index.html">&gt; CLOUDCERT_</a></header>
+<main class="page-main">
+
+<nav class="breadcrumb"><a href="../../index.html">HOME</a> › <a href="../../exams/aws-aif-c01/">AIF-C01 試験ガイド</a> › q108</nav>
+<div class="q-meta"><span>AIF-C01</span><span>基盤モデルの応用</span><span>HARD</span><span>単一選択</span></div>
+<h1>ある企業が Amazon Bedrock を使ってコールセンターの問い合わせに対する自動回答システムを構築した。本番運用開始後に継続的にモデルの品質を監視・改善するサイクルを確立したい。最も適切な継続的評価・改善のアプローチはどれか。</h1>
+<ol class="q-choices">
+<li><b>A.</b> ROUGE スコアを週次で自動計算し、スコアが下がった週だけプロンプトを変更する</li>
+<li><b>B.</b> 本番稼働後は品質が固定されるため、定期的な評価は不要で問題報告があったときのみ対応する</li>
+<li><b>C.</b> Amazon CloudWatch のエラーレートのみを監視し、エラーゼロであれば品質は問題ないと判断する</li>
+<li><b>D.</b> ユーザーからのフィードバック（サムズアップ/ダウン等）を収集して低評価の会話サンプルを蓄積し、定期的に人手でレビューして問題パターンを特定。改善データをファインチューニングやプロンプト更新に反映するサイクルを確立する</li>
+</ol>
+<details class="q-answer">
+<summary>解答と解説を見る</summary>
+<div class="inner">
+<p><b>正解: D</b></p>
+<p>継続的なモデル品質管理（MLOps における Model Monitoring）のベストプラクティスは「ユーザーフィードバック収集→分析→改善→デプロイ」のフィードバックループを構築すること。特に LLM では技術的なエラーがなくても「内容の誤り」「有用でない回答」が発生するため、ユーザーの主観的評価（サムズアップ/ダウン、評価コメント）を収集することが重要。低評価の実例を人手でレビューして根本原因を特定し、プロンプト改善・追加ファインチューニング等に反映するループが品質維持の核心。Bは問題発生後の対応では手遅れになるケースが多く、品質劣化を早期に発見するための継続的監視が必要。Aの ROUGE は参照テキストが必要な指標であり、本番の顧客問い合わせへの回答評価には直接使えない。また ROUGE だけで品質を評価するのは不十分。Cのエラーレート（技術的な API エラー）はシステムの可用性を測るものであり、回答の「品質（内容の正確さ・有用性）」とは別次元の指標。</p>
+
+</div>
+</details>
+<div class="cta-box"><a class="btn btn-primary" href="../../exam.html?exam=aws-aif-c01">▸ この試験を本気で演習する（全150問・無料）</a></div>
+<nav class="q-nav">
+<span><a href="q107.html">← 前の問題</a></span>
+<span><a href="q109.html">次の問題 →</a></span>
+</nav>
+<section class="related"><h2>同じ分野の関連問題</h2><ul class="q-list">
+<li><a href="q107.html">ある IT 企業が Amazon Bedrock の基盤モデルを使ってカスタマーサポート担当者の対応を補助するシステムを…</a></li>
+<li><a href="q106.html">ある企業が Amazon Bedrock を使って長い技術文書を要約するシステムを構築している。文書の長さがモデルのコン…</a></li>
+<li><a href="q105.html">ある企業が Amazon Bedrock の基盤モデルを使ってプロンプトエンジニアリングを最適化しようとしている。プロン…</a></li>
+<li><a href="q104.html">ある企業が Amazon Bedrock を使って社内向け Q&amp;A システムを構築し、Knowledge Bases に…</a></li>
+</ul></section>
+</main>
+<footer class="page-footer">
+<nav class="hub-nav"><a href="../../exams/aws-clf-c02/">CLF-C02 試験ガイド</a><a href="../../exams/aws-aif-c01/">AIF-C01 試験ガイド</a><a href="../../exams/aws-saa-c03/">SAA-C03 試験ガイド</a><a href="../../exams/aws-dva-c02/">DVA-C02 試験ガイド</a><a href="../../exams/aws-sap-c02/">SAP-C02 試験ガイド</a><a href="../../exams/gcp-cdl/">CDL 試験ガイド</a><a href="../../exams/gcp-ace/">ACE 試験ガイド</a><a href="../../exams/azure-az900/">AZ-900 試験ガイド</a><a href="../../exams/azure-ai900/">AI-900 試験ガイド</a><a href="../../exams/azure-dp900/">DP-900 試験ガイド</a><a href="../../exams/azure-sc900/">SC-900 試験ガイド</a><a href="../../exams/azure-az104/">AZ-104 試験ガイド</a></nav>
+<nav class="site-nav"><a href="../../guide/">資格ガイド</a><a href="../../learn/">サービス解説</a><a href="../../career/">キャリア</a><a href="../../about.html">運営者情報</a><a href="../../privacy.html">プライバシーポリシー</a><a href="../../contact.html">お問い合わせ</a></nav>
+<p class="copy">© CLOUDCERT_ — 本サイトは各認定試験の公式試験ではなく、収録問題はすべてオリジナルの演習問題です。</p>
+</footer>
+</body>
+</html>

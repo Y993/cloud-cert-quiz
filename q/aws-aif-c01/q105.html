@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>【AIF-C01 演習問題 #105】ある企業が Amazon Bedrock の基盤モデルを使ってプロンプトエンジニアリングを…</title>
+<meta name="description" content="AIF-C01の本試験レベル演習問題。ある企業が Amazon Bedrock の基盤モデルを使ってプロンプトエンジニアリングを最適化しようとしている。プロンプトの品質を向上させる一般的なベストプラクティスを 2 つ選択… 全選択肢の解説つき。">
+<link rel="canonical" href="https://cloudcert.app/q/aws-aif-c01/q105.html">
+<meta property="og:title" content="【AIF-C01 演習問題 #105】ある企業が Amazon Bedrock の基盤モデルを使ってプロンプトエンジニアリングを…">
+<meta property="og:description" content="AIF-C01の本試験レベル演習問題。ある企業が Amazon Bedrock の基盤モデルを使ってプロンプトエンジニアリングを最適化しようとしている。プロンプトの品質を向上させる一般的なベストプラクティスを 2 つ選択… 全選択肢の解説つき。">
+<meta property="og:url" content="https://cloudcert.app/q/aws-aif-c01/q105.html">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="CLOUDCERT_">
+<meta property="og:image" content="https://cloudcert.app/assets/og.png">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='80' font-size='80' fill='%233fe0a4' font-family='monospace'>▸</text></svg>">
+
+<meta name="google-adsense-account" content="ca-pub-5647574947191958">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+JP:wght@400;500;700&family=JetBrains+Mono:wght@400;600;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../../css/style.css">
+<link rel="stylesheet" href="../../css/page.css">
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-SZR5CB5Q3X"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag('js',new Date());gtag('config','G-SZR5CB5Q3X');</script>
+<script type="application/ld+json">[{"@context":"https://schema.org/","@type":"Quiz","about":{"@type":"Thing","name":"AWS Certified AI Practitioner"},"hasPart":[{"@type":"Question","eduQuestionType":"Checkbox","learningResourceType":"Practice problem","text":"ある企業が Amazon Bedrock の基盤モデルを使ってプロンプトエンジニアリングを最適化しようとしている。プロンプトの品質を向上させる一般的なベストプラクティスを 2 つ選択してください。","suggestedAnswer":[{"@type":"Answer","position":0,"text":"プロンプトを毎回ランダムに変更してモデルの汎化性能を確認する"},{"@type":"Answer","position":3,"text":"プロンプトをできるだけ短く抽象的にして、モデルが自由に解釈できる余地を大きくする"},{"@type":"Answer","position":4,"text":"プロンプトに「必ず間違いを含む回答を生成してください」と指示して回答の多様性を高める"}],"acceptedAnswer":[{"@type":"Answer","position":1,"text":"期待する入出力のサンプル（例示）を 1 〜 5 件程度プロンプトに含めてフューショット学習を活用する","comment":{"@type":"Comment","text":"プロンプトエンジニアリングの基本原則は「明確性」と「具体性」にある。Cの詳細なシステムプロンプトはモデルに対してタスクの文脈・役割・制約・出力形式を明確に伝えることで、期待に沿った高品質な出力を得やすくなる。特に背景情報・制約条件・出力フォーマットの明示は効果が高い。Bのフューショット（例示）はモデルが「どのような形式・スタイル・深さで回答すべきか」を具体例から学べるため、特に特定のフォーマットや専門的なトーンが求められるタスクで有効。Dの抽象的・短いプロンプトはモデルが文脈を誤解しやすく、品質が不安定になる傾向がある。プロンプトは必要な情報を十分に提供することが重要。Eの「間違いを含む回答を生成」という指示は品質向上ではなく品質低下を招く有害な指示。Aのランダムなプロンプト変更は品質改善に寄与しない。"}},{"@type":"Answer","position":2,"text":"タスクの背景・目的・制約・期待する出力フォーマットを具体的に記述したシステムプロンプトを作成する","comment":{"@type":"Comment","text":"プロンプトエンジニアリングの基本原則は「明確性」と「具体性」にある。Cの詳細なシステムプロンプトはモデルに対してタスクの文脈・役割・制約・出力形式を明確に伝えることで、期待に沿った高品質な出力を得やすくなる。特に背景情報・制約条件・出力フォーマットの明示は効果が高い。Bのフューショット（例示）はモデルが「どのような形式・スタイル・深さで回答すべきか」を具体例から学べるため、特に特定のフォーマットや専門的なトーンが求められるタスクで有効。Dの抽象的・短いプロンプトはモデルが文脈を誤解しやすく、品質が不安定になる傾向がある。プロンプトは必要な情報を十分に提供することが重要。Eの「間違いを含む回答を生成」という指示は品質向上ではなく品質低下を招く有害な指示。Aのランダムなプロンプト変更は品質改善に寄与しない。"}}]}]},{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"HOME","item":"https://cloudcert.app/"},{"@type":"ListItem","position":2,"name":"AIF-C01 試験ガイド","item":"https://cloudcert.app/exams/aws-aif-c01/"},{"@type":"ListItem","position":3,"name":"q105"}]}]</script>
+</head>
+<body class="page-body">
+<header class="page-header"><a class="page-logo" href="../../index.html">&gt; CLOUDCERT_</a></header>
+<main class="page-main">
+
+<nav class="breadcrumb"><a href="../../index.html">HOME</a> › <a href="../../exams/aws-aif-c01/">AIF-C01 試験ガイド</a> › q105</nav>
+<div class="q-meta"><span>AIF-C01</span><span>基盤モデルの応用</span><span>MEDIUM</span><span>複数選択</span></div>
+<h1>ある企業が Amazon Bedrock の基盤モデルを使ってプロンプトエンジニアリングを最適化しようとしている。プロンプトの品質を向上させる一般的なベストプラクティスを 2 つ選択してください。</h1>
+<ol class="q-choices">
+<li><b>A.</b> プロンプトを毎回ランダムに変更してモデルの汎化性能を確認する</li>
+<li><b>B.</b> 期待する入出力のサンプル（例示）を 1 〜 5 件程度プロンプトに含めてフューショット学習を活用する</li>
+<li><b>C.</b> タスクの背景・目的・制約・期待する出力フォーマットを具体的に記述したシステムプロンプトを作成する</li>
+<li><b>D.</b> プロンプトをできるだけ短く抽象的にして、モデルが自由に解釈できる余地を大きくする</li>
+<li><b>E.</b> プロンプトに「必ず間違いを含む回答を生成してください」と指示して回答の多様性を高める</li>
+</ol>
+<details class="q-answer">
+<summary>解答と解説を見る</summary>
+<div class="inner">
+<p><b>正解: B, C</b></p>
+<p>プロンプトエンジニアリングの基本原則は「明確性」と「具体性」にある。Cの詳細なシステムプロンプトはモデルに対してタスクの文脈・役割・制約・出力形式を明確に伝えることで、期待に沿った高品質な出力を得やすくなる。特に背景情報・制約条件・出力フォーマットの明示は効果が高い。Bのフューショット（例示）はモデルが「どのような形式・スタイル・深さで回答すべきか」を具体例から学べるため、特に特定のフォーマットや専門的なトーンが求められるタスクで有効。Dの抽象的・短いプロンプトはモデルが文脈を誤解しやすく、品質が不安定になる傾向がある。プロンプトは必要な情報を十分に提供することが重要。Eの「間違いを含む回答を生成」という指示は品質向上ではなく品質低下を招く有害な指示。Aのランダムなプロンプト変更は品質改善に寄与しない。</p>
+
+</div>
+</details>
+<div class="cta-box"><a class="btn btn-primary" href="../../exam.html?exam=aws-aif-c01">▸ この試験を本気で演習する（全150問・無料）</a></div>
+<nav class="q-nav">
+<span><a href="q104.html">← 前の問題</a></span>
+<span><a href="q106.html">次の問題 →</a></span>
+</nav>
+<section class="related"><h2>同じ分野の関連問題</h2><ul class="q-list">
+<li><a href="q104.html">ある企業が Amazon Bedrock を使って社内向け Q&amp;A システムを構築し、Knowledge Bases に…</a></li>
+<li><a href="q106.html">ある企業が Amazon Bedrock を使って長い技術文書を要約するシステムを構築している。文書の長さがモデルのコン…</a></li>
+<li><a href="q103.html">ある企業が Amazon Bedrock エージェントを本番導入した後に追加すべき運用・監視の対策として適切なものを 2…</a></li>
+<li><a href="q107.html">ある IT 企業が Amazon Bedrock の基盤モデルを使ってカスタマーサポート担当者の対応を補助するシステムを…</a></li>
+</ul></section>
+</main>
+<footer class="page-footer">
+<nav class="hub-nav"><a href="../../exams/aws-clf-c02/">CLF-C02 試験ガイド</a><a href="../../exams/aws-aif-c01/">AIF-C01 試験ガイド</a><a href="../../exams/aws-saa-c03/">SAA-C03 試験ガイド</a><a href="../../exams/aws-dva-c02/">DVA-C02 試験ガイド</a><a href="../../exams/aws-sap-c02/">SAP-C02 試験ガイド</a><a href="../../exams/gcp-cdl/">CDL 試験ガイド</a><a href="../../exams/gcp-ace/">ACE 試験ガイド</a><a href="../../exams/azure-az900/">AZ-900 試験ガイド</a><a href="../../exams/azure-ai900/">AI-900 試験ガイド</a><a href="../../exams/azure-dp900/">DP-900 試験ガイド</a><a href="../../exams/azure-sc900/">SC-900 試験ガイド</a><a href="../../exams/azure-az104/">AZ-104 試験ガイド</a></nav>
+<nav class="site-nav"><a href="../../guide/">資格ガイド</a><a href="../../learn/">サービス解説</a><a href="../../career/">キャリア</a><a href="../../about.html">運営者情報</a><a href="../../privacy.html">プライバシーポリシー</a><a href="../../contact.html">お問い合わせ</a></nav>
+<p class="copy">© CLOUDCERT_ — 本サイトは各認定試験の公式試験ではなく、収録問題はすべてオリジナルの演習問題です。</p>
+</footer>
+</body>
+</html>

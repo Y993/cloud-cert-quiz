@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>【DP-900 演習問題 #35】ある企業が、IoT センサーからのリアルタイムストリームデータと、データウェアハウスに格納…</title>
+<meta name="description" content="DP-900の本試験レベル演習問題。ある企業が、IoT センサーからのリアルタイムストリームデータと、データウェアハウスに格納された過去5年間の履歴データを組み合わせた分析基盤を設計している。このアーキテクチャの要件とし… 全選択肢の解説つき。">
+<link rel="canonical" href="https://cloudcert.app/q/azure-dp900/q035.html">
+<meta property="og:title" content="【DP-900 演習問題 #35】ある企業が、IoT センサーからのリアルタイムストリームデータと、データウェアハウスに格納…">
+<meta property="og:description" content="DP-900の本試験レベル演習問題。ある企業が、IoT センサーからのリアルタイムストリームデータと、データウェアハウスに格納された過去5年間の履歴データを組み合わせた分析基盤を設計している。このアーキテクチャの要件とし… 全選択肢の解説つき。">
+<meta property="og:url" content="https://cloudcert.app/q/azure-dp900/q035.html">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="CLOUDCERT_">
+<meta property="og:image" content="https://cloudcert.app/assets/og.png">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='80' font-size='80' fill='%233fe0a4' font-family='monospace'>▸</text></svg>">
+
+<meta name="google-adsense-account" content="ca-pub-5647574947191958">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+JP:wght@400;500;700&family=JetBrains+Mono:wght@400;600;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../../css/style.css">
+<link rel="stylesheet" href="../../css/page.css">
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-SZR5CB5Q3X"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag('js',new Date());gtag('config','G-SZR5CB5Q3X');</script>
+<script type="application/ld+json">[{"@context":"https://schema.org/","@type":"Quiz","about":{"@type":"Thing","name":"Microsoft Azure Data Fundamentals"},"hasPart":[{"@type":"Question","eduQuestionType":"Checkbox","learningResourceType":"Practice problem","text":"ある企業が、IoT センサーからのリアルタイムストリームデータと、データウェアハウスに格納された過去5年間の履歴データを組み合わせた分析基盤を設計している。このアーキテクチャの要件として正しい説明を2つ選択してください。","suggestedAnswer":[{"@type":"Answer","position":0,"text":"ストリーミングデータはデータウェアハウスに直接書き込むことで、リアルタイムと履歴データを同一エンジンで最もシンプルに処理できる"},{"@type":"Answer","position":1,"text":"履歴データはリアルタイム処理が不要なため、ファイルシステムに一切インデックスなしで格納するのが最適である"},{"@type":"Answer","position":4,"text":"バッチ処理はリアルタイム性が必要なIoTアラートに最も適した処理方式である"}],"acceptedAnswer":[{"@type":"Answer","position":2,"text":"リアルタイムデータと履歴データを組み合わせる分析では、両方の処理を担う統合レイヤー（ラムダアーキテクチャやカッパアーキテクチャ）を検討する必要がある","comment":{"@type":"Comment","text":"IoTリアルタイムデータと履歴データを組み合わせる場合、（1）リアルタイムストリームはAzure Event Hubs・Apache Kafkaなどのストリーミングプラットフォームで処理し、（2）履歴データの大規模バッチ集計はデータウェアハウス（Azure Synapse Analyticsなど）で処理するという役割分担が基本原則となる。さらにリアルタイムと履歴の両方を組み合わせる場合、ラムダアーキテクチャ（バッチレイヤー＋スピードレイヤー）やカッパアーキテクチャ（ストリーミング統一）などのアーキテクチャパターンの検討が必要になる。選択肢Aは「ストリーミングデータをデータウェアハウスに直接書き込む」方式で、データウェアハウスは大量の高頻度ストリーミング書き込みには最適化されていない。高速書き込み・低レイテンシのストリーミングにはイベントハブなど専用基盤が適する。選択肢EはIoTアラートのリアルタイム要件にバッチ処理を当てているが、バッチはスケジュール処理で遅延が生じるためリアルタイムIoTアラートには不適切である。選択肢Bはインデックスなしでの格納は検索性能を著しく低下させるため、大規模な履歴データ分析には不適切な設計である。"}},{"@type":"Answer","position":3,"text":"リアルタイムストリームにはイベントハブやメッセージキューなどのストリーミングプラットフォームが適しており、履歴データの大規模バッチ集計にはデータウェアハウスが適している","comment":{"@type":"Comment","text":"IoTリアルタイムデータと履歴データを組み合わせる場合、（1）リアルタイムストリームはAzure Event Hubs・Apache Kafkaなどのストリーミングプラットフォームで処理し、（2）履歴データの大規模バッチ集計はデータウェアハウス（Azure Synapse Analyticsなど）で処理するという役割分担が基本原則となる。さらにリアルタイムと履歴の両方を組み合わせる場合、ラムダアーキテクチャ（バッチレイヤー＋スピードレイヤー）やカッパアーキテクチャ（ストリーミング統一）などのアーキテクチャパターンの検討が必要になる。選択肢Aは「ストリーミングデータをデータウェアハウスに直接書き込む」方式で、データウェアハウスは大量の高頻度ストリーミング書き込みには最適化されていない。高速書き込み・低レイテンシのストリーミングにはイベントハブなど専用基盤が適する。選択肢EはIoTアラートのリアルタイム要件にバッチ処理を当てているが、バッチはスケジュール処理で遅延が生じるためリアルタイムIoTアラートには不適切である。選択肢Bはインデックスなしでの格納は検索性能を著しく低下させるため、大規模な履歴データ分析には不適切な設計である。"}}]}]},{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"HOME","item":"https://cloudcert.app/"},{"@type":"ListItem","position":2,"name":"DP-900 試験ガイド","item":"https://cloudcert.app/exams/azure-dp900/"},{"@type":"ListItem","position":3,"name":"q035"}]}]</script>
+</head>
+<body class="page-body">
+<header class="page-header"><a class="page-logo" href="../../index.html">&gt; CLOUDCERT_</a></header>
+<main class="page-main">
+
+<nav class="breadcrumb"><a href="../../index.html">HOME</a> › <a href="../../exams/azure-dp900/">DP-900 試験ガイド</a> › q035</nav>
+<div class="q-meta"><span>DP-900</span><span>コア データ概念</span><span>HARD</span><span>複数選択</span></div>
+<h1>ある企業が、IoT センサーからのリアルタイムストリームデータと、データウェアハウスに格納された過去5年間の履歴データを組み合わせた分析基盤を設計している。このアーキテクチャの要件として正しい説明を2つ選択してください。</h1>
+<ol class="q-choices">
+<li><b>A.</b> ストリーミングデータはデータウェアハウスに直接書き込むことで、リアルタイムと履歴データを同一エンジンで最もシンプルに処理できる</li>
+<li><b>B.</b> 履歴データはリアルタイム処理が不要なため、ファイルシステムに一切インデックスなしで格納するのが最適である</li>
+<li><b>C.</b> リアルタイムデータと履歴データを組み合わせる分析では、両方の処理を担う統合レイヤー（ラムダアーキテクチャやカッパアーキテクチャ）を検討する必要がある</li>
+<li><b>D.</b> リアルタイムストリームにはイベントハブやメッセージキューなどのストリーミングプラットフォームが適しており、履歴データの大規模バッチ集計にはデータウェアハウスが適している</li>
+<li><b>E.</b> バッチ処理はリアルタイム性が必要なIoTアラートに最も適した処理方式である</li>
+</ol>
+<details class="q-answer">
+<summary>解答と解説を見る</summary>
+<div class="inner">
+<p><b>正解: C, D</b></p>
+<p>IoTリアルタイムデータと履歴データを組み合わせる場合、（1）リアルタイムストリームはAzure Event Hubs・Apache Kafkaなどのストリーミングプラットフォームで処理し、（2）履歴データの大規模バッチ集計はデータウェアハウス（Azure Synapse Analyticsなど）で処理するという役割分担が基本原則となる。さらにリアルタイムと履歴の両方を組み合わせる場合、ラムダアーキテクチャ（バッチレイヤー＋スピードレイヤー）やカッパアーキテクチャ（ストリーミング統一）などのアーキテクチャパターンの検討が必要になる。選択肢Aは「ストリーミングデータをデータウェアハウスに直接書き込む」方式で、データウェアハウスは大量の高頻度ストリーミング書き込みには最適化されていない。高速書き込み・低レイテンシのストリーミングにはイベントハブなど専用基盤が適する。選択肢EはIoTアラートのリアルタイム要件にバッチ処理を当てているが、バッチはスケジュール処理で遅延が生じるためリアルタイムIoTアラートには不適切である。選択肢Bはインデックスなしでの格納は検索性能を著しく低下させるため、大規模な履歴データ分析には不適切な設計である。</p>
+
+</div>
+</details>
+<div class="cta-box"><a class="btn btn-primary" href="../../exam.html?exam=azure-dp900">▸ この試験を本気で演習する（全150問・無料）</a></div>
+<nav class="q-nav">
+<span><a href="q034.html">← 前の問題</a></span>
+<span><a href="q036.html">次の問題 →</a></span>
+</nav>
+<section class="related"><h2>同じ分野の関連問題</h2><ul class="q-list">
+<li><a href="q034.html">ある企業が、データウェアハウスのスタースキーマ設計を採用してOLAP分析を行おうとしている。「売上ファクトテーブル」と「…</a></li>
+<li><a href="q036.html">ある企業が、データ品質管理の重要性を社内で啓蒙しようとしている。データの「完全性（Completeness）」「正確性（…</a></li>
+<li><a href="q033.html">ある大学が、学生の成績記録システムを構築しようとしている。各科目の成績は「学生ID、科目コード、成績、取得単位数、担当教…</a></li>
+<li><a href="q037.html">ある企業が「半構造化データ」を扱うシステムを設計している。半構造化データをリレーショナルデータベースに格納する場合と、ド…</a></li>
+</ul></section>
+</main>
+<footer class="page-footer">
+<nav class="hub-nav"><a href="../../exams/aws-clf-c02/">CLF-C02 試験ガイド</a><a href="../../exams/aws-aif-c01/">AIF-C01 試験ガイド</a><a href="../../exams/aws-saa-c03/">SAA-C03 試験ガイド</a><a href="../../exams/aws-dva-c02/">DVA-C02 試験ガイド</a><a href="../../exams/aws-sap-c02/">SAP-C02 試験ガイド</a><a href="../../exams/gcp-cdl/">CDL 試験ガイド</a><a href="../../exams/gcp-ace/">ACE 試験ガイド</a><a href="../../exams/azure-az900/">AZ-900 試験ガイド</a><a href="../../exams/azure-ai900/">AI-900 試験ガイド</a><a href="../../exams/azure-dp900/">DP-900 試験ガイド</a><a href="../../exams/azure-sc900/">SC-900 試験ガイド</a><a href="../../exams/azure-az104/">AZ-104 試験ガイド</a></nav>
+<nav class="site-nav"><a href="../../guide/">資格ガイド</a><a href="../../learn/">サービス解説</a><a href="../../career/">キャリア</a><a href="../../about.html">運営者情報</a><a href="../../privacy.html">プライバシーポリシー</a><a href="../../contact.html">お問い合わせ</a></nav>
+<p class="copy">© CLOUDCERT_ — 本サイトは各認定試験の公式試験ではなく、収録問題はすべてオリジナルの演習問題です。</p>
+</footer>
+</body>
+</html>

@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Amazon EC2とは？試験に出るポイントと演習問題</title>
+<meta name="description" content="Amazon EC2（AWS）の要点と資格試験での問われ方を解説。登場する演習問題44問と公式ドキュメントへのリンクつき。">
+<link rel="canonical" href="https://cloudcert.app/learn/amazon-ec2.html">
+<meta property="og:title" content="Amazon EC2とは？試験に出るポイントと演習問題">
+<meta property="og:description" content="Amazon EC2（AWS）の要点と資格試験での問われ方を解説。登場する演習問題44問と公式ドキュメントへのリンクつき。">
+<meta property="og:url" content="https://cloudcert.app/learn/amazon-ec2.html">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="CLOUDCERT_">
+<meta property="og:image" content="https://cloudcert.app/assets/og.png">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='80' font-size='80' fill='%233fe0a4' font-family='monospace'>▸</text></svg>">
+
+<meta name="google-adsense-account" content="ca-pub-5647574947191958">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+JP:wght@400;500;700&family=JetBrains+Mono:wght@400;600;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../css/style.css">
+<link rel="stylesheet" href="../css/page.css">
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-SZR5CB5Q3X"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag('js',new Date());gtag('config','G-SZR5CB5Q3X');</script>
+<script type="application/ld+json">[{"@context":"https://schema.org","@type":"TechArticle","headline":"Amazon EC2とは？試験に出るポイントと演習問題","description":"Amazon EC2（AWS）の要点と資格試験での問われ方を解説。登場する演習問題44問と公式ドキュメントへのリンクつき。","inLanguage":"ja","about":{"@type":"Thing","name":"Amazon EC2"},"author":{"@type":"Organization","name":"CLOUDCERT_"},"publisher":{"@type":"Organization","name":"CLOUDCERT_"},"mainEntityOfPage":"https://cloudcert.app/learn/amazon-ec2.html"},{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"HOME","item":"https://cloudcert.app/"},{"@type":"ListItem","position":2,"name":"サービス解説","item":"https://cloudcert.app/learn/"},{"@type":"ListItem","position":3,"name":"Amazon EC2"}]}]</script>
+</head>
+<body class="page-body">
+<header class="page-header"><a class="page-logo" href="../index.html">&gt; CLOUDCERT_</a></header>
+<main class="page-main">
+
+<nav class="breadcrumb"><a href="../index.html">HOME</a> › <a href="./">サービス解説</a> › Amazon EC2</nav>
+<div class="learn-head">
+<div class="badges"><span class="badge" data-provider="aws">AWS</span><span class="badge">コンピューティング</span><span class="badge badge-q">演習44問</span></div>
+<h1>Amazon EC2とは</h1>
+</div>
+<p class="lead">クラウド上で仮想サーバー（インスタンス）をオンデマンドで起動・停止できるIaaSサービス。インスタンスタイプ（汎用・コンピューティング最適化・メモリ最適化など）を用途に応じて選択する。</p>
+<p>購入オプションはオンデマンド・リザーブドインスタンス・スポットインスタンス・Savings Plansの4種。Auto ScalingとELBを組み合わせて可用性とコスト効率を両立させる構成が基本。</p>
+<p><a class="official-btn" href="https://docs.aws.amazon.com/ja_jp/AWSEC2/latest/UserGuide/concepts.html" target="_blank" rel="noopener">公式ドキュメント →</a></p>
+<h2>試験での問われ方</h2>
+<p>SAAではオンデマンド／リザーブド／スポットの使い分けが必ず出題される。定常負荷はリザーブド（またはSavings Plans）、中断可能なバッチ処理はスポット、突発増加にはAuto Scalingという組み合わせを覚える。スポットを大量・多様なインスタンスタイプで束ねて目標キャパシティを維持するSpot Fleet（およびEC2 Fleet）も、中断耐性のあるワークロードのコスト最適化として問われる。</p>
+<p>Dedicated HostsとDedicated Instancesの違いも頻出。どちらも物理ハードウェアを占有する（マルチテナントを避ける）が、Dedicated Hostsは物理ソケット・コア単位まで可視化・指定でき、ソケット/コア課金のソフトウェア（WindowsやSQL Serverなど）を持ち込むBYOLライセンス対応に使う。Dedicated Instancesは占有はするが物理サーバーの可視性まではない、という差で選ぶ。</p>
+<p>EC2 vs Lambda の使い分けでは「15分超の処理」「ステートフルな常駐処理」「OS操作が必要」ならEC2、という判断軸が引っかけの核心。</p>
+<p>インスタンスメタデータのIMDSv2必須化、セキュリティグループ（ステートフル）とNACL（ステートレス）の違いも頻出。</p>
+<h2>このサービスが登場する演習問題（44問）</h2>
+<ul class="q-list">
+<li><a href="../q/aws-clf-c02/q003.html">【CLF-C02】ある企業が、自社の基幹システムをAWSに移行する際、AWSと自社の責任範囲を明確にしたいと考えています。「責任共有モデル…</a></li>
+<li><a href="../q/aws-clf-c02/q008.html">【CLF-C02】AWS Well-Architectedフレームワークの「信頼性」の柱において、あるシステムが障害から自動的に回復できる…</a></li>
+<li><a href="../q/aws-clf-c02/q010.html">【CLF-C02】あるSaaS企業が、マイクロサービスアーキテクチャへの移行を検討しています。AWS Well-Architectedフレ…</a></li>
+<li><a href="../q/aws-clf-c02/q033.html">【CLF-C02】ある製造業の企業が、AWSを利用してPCI DSS（クレジットカード情報セキュリティ基準）に準拠する必要があります。AW…</a></li>
+<li><a href="../q/aws-clf-c02/q035.html">【CLF-C02】ある企業が、EC2インスタンスからS3バケットにアクセスする安全な方法を設計しています。アクセスキーをコード内に埋め込ま…</a></li>
+<li><a href="../q/aws-clf-c02/q045.html">【CLF-C02】ある企業が、IAMポリシーとIAMロールの違いを理解しようとしています。「IAMロール」の主な特徴として最も適切なものは…</a></li>
+<li><a href="../q/aws-clf-c02/q049.html">【CLF-C02】ある企業が、AWS上でワークロードを実行しており、定期的なペネトレーションテストを実施したいと考えています。AWSのペネ…</a></li>
+<li><a href="../q/aws-clf-c02/q052.html">【CLF-C02】ある企業が、Webアプリケーションのバックエンドで仮想サーバーを必要としています。OSの選択、ミドルウェアのインストール…</a></li>
+<li><a href="../q/aws-clf-c02/q060.html">【CLF-C02】ある企業が、AWS上のEC2インスタンスへのSSHアクセスを管理者のIPアドレスからのみに制限したいと考えています。最も…</a></li>
+<li><a href="../q/aws-clf-c02/q087.html">【CLF-C02】ある企業がAWS上でWebサービスを運用しており、CPU使用率が高くなった際に自動でEC2インスタンスを増やし、使用率が…</a></li>
+<li><a href="../q/aws-clf-c02/q121.html">【CLF-C02】ある企業がAWSを利用してWebアプリケーションを運用しています。アプリケーションの可用性を高めるための設計として正しい…</a></li>
+<li><a href="../q/aws-clf-c02/q126.html">【CLF-C02】ある企業が、AWSのコスト最適化施策を検討しています。コスト削減に直接貢献する取り組みとして正しいものを2つ選択してくだ…</a></li>
+<li><a href="../q/aws-saa-c03/q001.html">【SAA-C03】ある企業が、EC2 インスタンス上で動作するアプリケーションから Amazon S3 バケットにアクセスする必要がある。…</a></li>
+<li><a href="../q/aws-saa-c03/q013.html">【SAA-C03】ある企業が、AWS で Web アプリケーションを運用している。セキュリティ監査で、EC2 インスタンスへのポート 22…</a></li>
+<li><a href="../q/aws-saa-c03/q015.html">【SAA-C03】ある企業が、EC2 インスタンスで動作するアプリケーションに対して、AWS KMS を使って特定のデータを暗号化/復号す…</a></li>
+<li><a href="../q/aws-saa-c03/q018.html">【SAA-C03】ある企業が、EC2 インスタンス上でデータ処理アプリケーションを運用している。アプリケーションが使用する S3 バケット…</a></li>
+<li><a href="../q/aws-saa-c03/q033.html">【SAA-C03】ある企業が、EC2 Auto Scaling グループで運用している Web アプリケーションのスケーリングを改善したい…</a></li>
+<li><a href="../q/aws-saa-c03/q041.html">【SAA-C03】ある企業が、本番環境の AWS アーキテクチャを見直し、単一障害点（SPOF）を排除したい。現在の構成は以下の通りである…</a></li>
+<li><a href="../q/aws-saa-c03/q051.html">【SAA-C03】ある企業が、機械学習モデルの学習に大量のデータセット（合計 500TB）をストレージから読み込む処理を AWS で実行し…</a></li>
+<li><a href="../q/aws-saa-c03/q057.html">【SAA-C03】ある企業が、Amazon EC2 インスタンスで HPC（高性能コンピューティング）ワークロードを実行しており、インスタ…</a></li>
+</ul>
+<h2>関連サービス</h2><ul class="q-list">
+<li><a href="aws-lambda.html">AWS Lambda</a></li>
+<li><a href="aws-elastic-beanstalk.html">AWS Elastic Beanstalk</a></li></ul>
+</main>
+<footer class="page-footer">
+<nav class="hub-nav"><a href="../exams/aws-clf-c02/">CLF-C02 試験ガイド</a><a href="../exams/aws-aif-c01/">AIF-C01 試験ガイド</a><a href="../exams/aws-saa-c03/">SAA-C03 試験ガイド</a><a href="../exams/aws-dva-c02/">DVA-C02 試験ガイド</a><a href="../exams/aws-sap-c02/">SAP-C02 試験ガイド</a><a href="../exams/gcp-cdl/">CDL 試験ガイド</a><a href="../exams/gcp-ace/">ACE 試験ガイド</a><a href="../exams/azure-az900/">AZ-900 試験ガイド</a><a href="../exams/azure-ai900/">AI-900 試験ガイド</a><a href="../exams/azure-dp900/">DP-900 試験ガイド</a><a href="../exams/azure-sc900/">SC-900 試験ガイド</a><a href="../exams/azure-az104/">AZ-104 試験ガイド</a></nav>
+<nav class="site-nav"><a href="../guide/">資格ガイド</a><a href="../learn/">サービス解説</a><a href="../career/">キャリア</a><a href="../about.html">運営者情報</a><a href="../privacy.html">プライバシーポリシー</a><a href="../contact.html">お問い合わせ</a></nav>
+<p class="copy">© CLOUDCERT_ — 本サイトは各認定試験の公式試験ではなく、収録問題はすべてオリジナルの演習問題です。</p>
+</footer>
+</body>
+</html>

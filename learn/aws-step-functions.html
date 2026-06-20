@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AWS Step Functionsとは？試験に出るポイントと演習問題</title>
+<meta name="description" content="AWS Step Functions（AWS）の要点と資格試験での問われ方を解説。登場する演習問題9問と公式ドキュメントへのリンクつき。">
+<link rel="canonical" href="https://cloudcert.app/learn/aws-step-functions.html">
+<meta property="og:title" content="AWS Step Functionsとは？試験に出るポイントと演習問題">
+<meta property="og:description" content="AWS Step Functions（AWS）の要点と資格試験での問われ方を解説。登場する演習問題9問と公式ドキュメントへのリンクつき。">
+<meta property="og:url" content="https://cloudcert.app/learn/aws-step-functions.html">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="CLOUDCERT_">
+<meta property="og:image" content="https://cloudcert.app/assets/og.png">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='80' font-size='80' fill='%233fe0a4' font-family='monospace'>▸</text></svg>">
+
+<meta name="google-adsense-account" content="ca-pub-5647574947191958">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+JP:wght@400;500;700&family=JetBrains+Mono:wght@400;600;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../css/style.css">
+<link rel="stylesheet" href="../css/page.css">
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-SZR5CB5Q3X"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag('js',new Date());gtag('config','G-SZR5CB5Q3X');</script>
+<script type="application/ld+json">[{"@context":"https://schema.org","@type":"TechArticle","headline":"AWS Step Functionsとは？試験に出るポイントと演習問題","description":"AWS Step Functions（AWS）の要点と資格試験での問われ方を解説。登場する演習問題9問と公式ドキュメントへのリンクつき。","inLanguage":"ja","about":{"@type":"Thing","name":"AWS Step Functions"},"author":{"@type":"Organization","name":"CLOUDCERT_"},"publisher":{"@type":"Organization","name":"CLOUDCERT_"},"mainEntityOfPage":"https://cloudcert.app/learn/aws-step-functions.html"},{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"HOME","item":"https://cloudcert.app/"},{"@type":"ListItem","position":2,"name":"サービス解説","item":"https://cloudcert.app/learn/"},{"@type":"ListItem","position":3,"name":"AWS Step Functions"}]}]</script>
+</head>
+<body class="page-body">
+<header class="page-header"><a class="page-logo" href="../index.html">&gt; CLOUDCERT_</a></header>
+<main class="page-main">
+
+<nav class="breadcrumb"><a href="../index.html">HOME</a> › <a href="./">サービス解説</a> › AWS Step Functions</nav>
+<div class="learn-head">
+<div class="badges"><span class="badge" data-provider="aws">AWS</span><span class="badge">アプリケーション統合</span><span class="badge badge-q">演習9問</span></div>
+<h1>AWS Step Functionsとは</h1>
+</div>
+<p class="lead">複数のLambda関数やAWSサービスのステップを視覚的なワークフロー（ステートマシン）として定義・実行するオーケストレーションサービス。エラーハンドリング・リトライ・タイムアウトを宣言的に設定できる。</p>
+<p>ExpressワークフローとStandardワークフローの2種類があり、前者は高スループット・短時間処理向け、後者は長期実行・厳密な1回実行保証・履歴保存向け。</p>
+<p><a class="official-btn" href="https://docs.aws.amazon.com/ja_jp/step-functions/latest/dg/welcome.html" target="_blank" rel="noopener">公式ドキュメント →</a></p>
+<h2>試験での問われ方</h2>
+<p>「複数のLambdaを順次または並列に実行して複雑なビジネスプロセスを管理したい」シナリオではStep Functionsを選ぶ。Lambdaのオーケストレーションをコード（Lambdaチェーン）で書くのは依存関係管理が煩雑になるため、Step Functionsが推奨される。</p>
+<p>ステートの使い分けがDVAで問われる。条件分岐はChoice、配列の各要素に同じ処理を繰り返すのはMap、複数ブランチを同時実行するのはParallel。エラー処理は、各ステートにRetry（指定回数・バックオフで再試行）とCatch（特定エラー時に別ステートへ遷移）を宣言的に書ける点が、Lambda内に自前で書くより堅牢という文脈で出る。</p>
+<p>SAP・DVAでは実行履歴の保持（Standard）・Expressの非同期実行・SDKインテグレーションによるLambda以外のサービス直接呼び出しが問われる。Standard（長時間・厳密に1回・履歴保存・低スループット）とExpress（短時間・大量・低コスト・至少1回）の使い分けは頻出で、注文処理のような長いワークフローはStandard、IoTやストリーム取り込みのような大量・短命なイベントはExpressが目安。</p>
+<h2>このサービスが登場する演習問題（9問）</h2>
+<ul class="q-list">
+<li><a href="../q/aws-clf-c02/q113.html">【CLF-C02】ある企業が、AWS上でマイクロサービスのワークフローを管理したいと考えています。複数のLambda関数やサービスを特定の…</a></li>
+<li><a href="../q/aws-saa-c03/q036.html">【SAA-C03】ある企業が、Lambda 関数でサードパーティの外部 API を呼び出すワークフローを実装している。外部 API は時々…</a></li>
+<li><a href="../q/aws-saa-c03/q072.html">【SAA-C03】ある企業が、AWS Lambda を使ったサーバーレスアプリケーションのコストを最適化したい。Lambda 関数のメモリ…</a></li>
+<li><a href="../q/aws-saa-c03/q090.html">【SAA-C03】ある企業が、AWS Lambda 関数で大量の S3 オブジェクト（1 ファイル 500KB 程度、1 バッチで 10,…</a></li>
+<li><a href="../q/aws-dva-c02/q034.html">【DVA-C02】ある金融サービス企業が、Step Functionsを使って与信審査ワークフローを実装している。各ステップは外部APIを…</a></li>
+<li><a href="../q/aws-dva-c02/q039.html">【DVA-C02】ある医療記録管理企業が、Step FunctionsのStandard Workflowを使って患者データの変換・検証・…</a></li>
+<li><a href="../q/aws-sap-c02/q033.html">【SAP-C02】ある企業が完全サーバーレスのデータ処理パイプラインを設計しています。オンプレミスのシステムから毎日 100GB のデータ…</a></li>
+<li><a href="../q/aws-sap-c02/q050.html">【SAP-C02】ある企業が AWS 上で複数の Lambda 関数を運用しており、月次のコスト分析で Lambda のコストが予想を大幅…</a></li>
+<li><a href="../q/aws-sap-c02/q097.html">【SAP-C02】ある企業が AWS 上でサーバーレスアプリケーションを構築しており、Lambda 関数が複数のダウンストリームサービス（…</a></li>
+</ul>
+<h2>関連サービス</h2><ul class="q-list">
+<li><a href="amazon-api-gateway.html">Amazon API Gateway</a></li>
+<li><a href="amazon-sqs.html">Amazon SQS</a></li>
+<li><a href="amazon-sns.html">Amazon SNS</a></li>
+<li><a href="amazon-eventbridge.html">Amazon EventBridge</a></li></ul>
+</main>
+<footer class="page-footer">
+<nav class="hub-nav"><a href="../exams/aws-clf-c02/">CLF-C02 試験ガイド</a><a href="../exams/aws-aif-c01/">AIF-C01 試験ガイド</a><a href="../exams/aws-saa-c03/">SAA-C03 試験ガイド</a><a href="../exams/aws-dva-c02/">DVA-C02 試験ガイド</a><a href="../exams/aws-sap-c02/">SAP-C02 試験ガイド</a><a href="../exams/gcp-cdl/">CDL 試験ガイド</a><a href="../exams/gcp-ace/">ACE 試験ガイド</a><a href="../exams/azure-az900/">AZ-900 試験ガイド</a><a href="../exams/azure-ai900/">AI-900 試験ガイド</a><a href="../exams/azure-dp900/">DP-900 試験ガイド</a><a href="../exams/azure-sc900/">SC-900 試験ガイド</a><a href="../exams/azure-az104/">AZ-104 試験ガイド</a></nav>
+<nav class="site-nav"><a href="../guide/">資格ガイド</a><a href="../learn/">サービス解説</a><a href="../career/">キャリア</a><a href="../about.html">運営者情報</a><a href="../privacy.html">プライバシーポリシー</a><a href="../contact.html">お問い合わせ</a></nav>
+<p class="copy">© CLOUDCERT_ — 本サイトは各認定試験の公式試験ではなく、収録問題はすべてオリジナルの演習問題です。</p>
+</footer>
+</body>
+</html>

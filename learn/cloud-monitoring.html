@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Cloud Monitoringとは？試験に出るポイントと演習問題</title>
+<meta name="description" content="Cloud Monitoring（Google Cloud）の要点と資格試験での問われ方を解説。登場する演習問題7問と公式ドキュメントへのリンクつき。">
+<link rel="canonical" href="https://cloudcert.app/learn/cloud-monitoring.html">
+<meta property="og:title" content="Cloud Monitoringとは？試験に出るポイントと演習問題">
+<meta property="og:description" content="Cloud Monitoring（Google Cloud）の要点と資格試験での問われ方を解説。登場する演習問題7問と公式ドキュメントへのリンクつき。">
+<meta property="og:url" content="https://cloudcert.app/learn/cloud-monitoring.html">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="CLOUDCERT_">
+<meta property="og:image" content="https://cloudcert.app/assets/og.png">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='80' font-size='80' fill='%233fe0a4' font-family='monospace'>▸</text></svg>">
+
+<meta name="google-adsense-account" content="ca-pub-5647574947191958">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+JP:wght@400;500;700&family=JetBrains+Mono:wght@400;600;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../css/style.css">
+<link rel="stylesheet" href="../css/page.css">
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-SZR5CB5Q3X"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag('js',new Date());gtag('config','G-SZR5CB5Q3X');</script>
+<script type="application/ld+json">[{"@context":"https://schema.org","@type":"TechArticle","headline":"Cloud Monitoringとは？試験に出るポイントと演習問題","description":"Cloud Monitoring（Google Cloud）の要点と資格試験での問われ方を解説。登場する演習問題7問と公式ドキュメントへのリンクつき。","inLanguage":"ja","about":{"@type":"Thing","name":"Cloud Monitoring"},"author":{"@type":"Organization","name":"CLOUDCERT_"},"publisher":{"@type":"Organization","name":"CLOUDCERT_"},"mainEntityOfPage":"https://cloudcert.app/learn/cloud-monitoring.html"},{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"HOME","item":"https://cloudcert.app/"},{"@type":"ListItem","position":2,"name":"サービス解説","item":"https://cloudcert.app/learn/"},{"@type":"ListItem","position":3,"name":"Cloud Monitoring"}]}]</script>
+</head>
+<body class="page-body">
+<header class="page-header"><a class="page-logo" href="../index.html">&gt; CLOUDCERT_</a></header>
+<main class="page-main">
+
+<nav class="breadcrumb"><a href="../index.html">HOME</a> › <a href="./">サービス解説</a> › Cloud Monitoring</nav>
+<div class="learn-head">
+<div class="badges"><span class="badge" data-provider="gcp">Google Cloud</span><span class="badge">運用</span><span class="badge badge-q">演習7問</span></div>
+<h1>Cloud Monitoringとは</h1>
+</div>
+<p class="lead">Google Cloud リソースとアプリケーションのメトリクスを収集・可視化・アラート通知するフルマネージドの監視サービス。VM・GKE・Cloud Run・Cloud SQL など主要サービスのメトリクスをエージェントなしで自動収集する。</p>
+<p>カスタムメトリクスを OpenTelemetry または Monitoring API で送信でき、ダッシュボードで時系列グラフとして可視化できる。アラートポリシーで閾値超過時に PagerDuty・Slack・メールへ通知を送れる。</p>
+<p>Cloud Monitoring は Cloud Logging・Cloud Trace・Cloud Profiler とセットで Google Cloud Observability スイートを構成し、統合されたオブザーバビリティ基盤として機能する。</p>
+<p><a class="official-btn" href="https://cloud.google.com/monitoring/docs?hl=ja" target="_blank" rel="noopener">公式ドキュメント →</a></p>
+<h2>試験での問われ方</h2>
+<p>ACE では アラートポリシーの設定（条件・通知チャネル・インシデント自動クローズ）と、稼働時間チェック（Uptime Check）によるエンドポイント死活監視の構成が問われやすい。</p>
+<p>引っかけとして、VM のメモリ・ディスク使用率は デフォルトでは収集されず Ops Agent（旧 Monitoring Agent）のインストールが必要。GKE は Managed Service for Prometheus が標準統合されておりエージェント設定不要でクラスタメトリクスを取得できる。</p>
+<h2>このサービスが登場する演習問題（7問）</h2>
+<ul class="q-list">
+<li><a href="../q/gcp-cdl/q093.html">【CDL】ある企業が、Google CloudのCompute EngineとCloud Storageのパフォーマンスメトリクス…</a></li>
+<li><a href="../q/gcp-ace/q074.html">【ACE】Cloud Monitoring で GCE インスタンスの CPU 使用率が 80% を超えた場合に通知を受け取りたい…</a></li>
+<li><a href="../q/gcp-ace/q083.html">【ACE】Cloud Logging で特定のエラーパターンが検出されたときに自動的にインシデントチケットを作成したいと考えていま…</a></li>
+<li><a href="../q/gcp-ace/q085.html">【ACE】Compute Engine インスタンスのカスタムメトリクスを Cloud Monitoring に送信したいと考えて…</a></li>
+<li><a href="../q/gcp-ace/q090.html">【ACE】Cloud Monitoring で特定のプロジェクトの全リソースのメトリクスを単一のダッシュボードで確認したいと考えて…</a></li>
+<li><a href="../q/gcp-ace/q141.html">【ACE】Cloud Monitoring で GKE クラスターの Pod 数とノード CPU 使用率を単一のダッシュボードで監…</a></li>
+<li><a href="../q/gcp-ace/q142.html">【ACE】本番の Cloud Run サービスで週に 1〜2 回、ランダムに高レイテンシが発生しています。問題を再現する前に発生時…</a></li>
+</ul>
+<h2>関連サービス</h2><ul class="q-list">
+<li><a href="cloud-logging.html">Cloud Logging</a></li></ul>
+</main>
+<footer class="page-footer">
+<nav class="hub-nav"><a href="../exams/aws-clf-c02/">CLF-C02 試験ガイド</a><a href="../exams/aws-aif-c01/">AIF-C01 試験ガイド</a><a href="../exams/aws-saa-c03/">SAA-C03 試験ガイド</a><a href="../exams/aws-dva-c02/">DVA-C02 試験ガイド</a><a href="../exams/aws-sap-c02/">SAP-C02 試験ガイド</a><a href="../exams/gcp-cdl/">CDL 試験ガイド</a><a href="../exams/gcp-ace/">ACE 試験ガイド</a><a href="../exams/azure-az900/">AZ-900 試験ガイド</a><a href="../exams/azure-ai900/">AI-900 試験ガイド</a><a href="../exams/azure-dp900/">DP-900 試験ガイド</a><a href="../exams/azure-sc900/">SC-900 試験ガイド</a><a href="../exams/azure-az104/">AZ-104 試験ガイド</a></nav>
+<nav class="site-nav"><a href="../guide/">資格ガイド</a><a href="../learn/">サービス解説</a><a href="../career/">キャリア</a><a href="../about.html">運営者情報</a><a href="../privacy.html">プライバシーポリシー</a><a href="../contact.html">お問い合わせ</a></nav>
+<p class="copy">© CLOUDCERT_ — 本サイトは各認定試験の公式試験ではなく、収録問題はすべてオリジナルの演習問題です。</p>
+</footer>
+</body>
+</html>

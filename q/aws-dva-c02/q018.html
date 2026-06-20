@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>【DVA-C02 演習問題 #18】ある企業が、API GatewayのHTTP APIとLambda統合でREST APIを…</title>
+<meta name="description" content="DVA-C02の本試験レベル演習問題。ある企業が、API GatewayのHTTP APIとLambda統合でREST APIを構築している。フロントエンドのSPA（React）は認証にAmazon Cognitoを使用… 全選択肢の解説つき。">
+<link rel="canonical" href="https://cloudcert.app/q/aws-dva-c02/q018.html">
+<meta property="og:title" content="【DVA-C02 演習問題 #18】ある企業が、API GatewayのHTTP APIとLambda統合でREST APIを…">
+<meta property="og:description" content="DVA-C02の本試験レベル演習問題。ある企業が、API GatewayのHTTP APIとLambda統合でREST APIを構築している。フロントエンドのSPA（React）は認証にAmazon Cognitoを使用… 全選択肢の解説つき。">
+<meta property="og:url" content="https://cloudcert.app/q/aws-dva-c02/q018.html">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="CLOUDCERT_">
+<meta property="og:image" content="https://cloudcert.app/assets/og.png">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='80' font-size='80' fill='%233fe0a4' font-family='monospace'>▸</text></svg>">
+
+<meta name="google-adsense-account" content="ca-pub-5647574947191958">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+JP:wght@400;500;700&family=JetBrains+Mono:wght@400;600;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../../css/style.css">
+<link rel="stylesheet" href="../../css/page.css">
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-SZR5CB5Q3X"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag('js',new Date());gtag('config','G-SZR5CB5Q3X');</script>
+<script type="application/ld+json">[{"@context":"https://schema.org/","@type":"Quiz","about":{"@type":"Thing","name":"AWS Certified Developer - Associate"},"hasPart":[{"@type":"Question","eduQuestionType":"Multiple choice","learningResourceType":"Practice problem","text":"ある企業が、API GatewayのHTTP APIとLambda統合でREST APIを構築している。フロントエンドのSPA（React）は認証にAmazon Cognitoを使用しており、CognitoのIDトークンをAuthorizationヘッダーに付与してAPIを呼び出している。APIは段階的に他社向けに開放する予定もあるため、将来的にCognito以外のIDプロバイダー（例: Auth0）にも対応できる設計にしたい。現時点での実装として最も将来的な拡張性が高い認証アーキテクチャはどれか。","suggestedAnswer":[{"@type":"Answer","position":0,"text":"API GatewayのHTTP APIにCognito User Pool Authorizerを直接設定し、Lambda関数内でトークンのclaimsを検証する"},{"@type":"Answer","position":1,"text":"Cognito Identity Poolを使ってCognitoユーザーをIAMロールに変換し、API GatewayのAWS IAM認証（Sigv4署名）を使う"},{"@type":"Answer","position":2,"text":"API Gatewayの前段にAmazon API Gateway v1（REST API）に切り替えて、カスタムLambda Authorizerで全IDPのJWT検証ロジックを一元管理する"}],"acceptedAnswer":{"@type":"Answer","position":3,"text":"API GatewayのHTTP APIにJWTオーソライザーを設定し、CognitoをIssuerとして設定する。将来他のIDPに対応する際はJWTオーソライザーのIssuerを追加するか、Lambda Authorizerに切り替える","comment":{"@type":"Comment","text":"HTTP APIのJWTオーソライザーはOIDC標準に基づいてIssuer URLとAudienceを設定するだけでJWT検証を行う。Cognitoは標準的なOIDCプロバイダーであるため、現時点ではCognitoのIssuer URLを設定すれば動作し、将来Auth0などの他のOIDC互換IDPに対応する際は、新しいIDPのIssuer URLを追加するか、より複雑な要件であればLambda Authorizerに移行するという段階的な拡張が可能である。JWT標準（RFC 7519）に依存することで特定ベンダーへのロックインを最小化できる。選択肢AのHTTP APIの「Cognito User Pool Authorizer」という設定は存在せず（HTTP APIはJWTオーソライザーのみでCognitoを使う）、Cognito専用の設定ではAuth0への移行時に設定の全面的な見直しが必要になる。選択肢CのREST API v1への切り替えは後退であり、HTTP APIが提供する低レイテンシ・低コストの利点を失う上、Lambda Authorizerへの全面移行という大規模変更を要する。選択肢BのCognito Identity Pool + IAM Sigv4は高いセキュリティを提供するが、クライアント側でSigv4署名を実装する必要があり、他社向け開放時にクライアントの実装負荷が非常に高くなる。"}}}]},{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"HOME","item":"https://cloudcert.app/"},{"@type":"ListItem","position":2,"name":"DVA-C02 試験ガイド","item":"https://cloudcert.app/exams/aws-dva-c02/"},{"@type":"ListItem","position":3,"name":"q018"}]}]</script>
+</head>
+<body class="page-body">
+<header class="page-header"><a class="page-logo" href="../../index.html">&gt; CLOUDCERT_</a></header>
+<main class="page-main">
+
+<nav class="breadcrumb"><a href="../../index.html">HOME</a> › <a href="../../exams/aws-dva-c02/">DVA-C02 試験ガイド</a> › q018</nav>
+<div class="q-meta"><span>DVA-C02</span><span>開発</span><span>HARD</span><span>単一選択</span></div>
+<h1>ある企業が、API GatewayのHTTP APIとLambda統合でREST APIを構築している。フロントエンドのSPA（React）は認証にAmazon Cognitoを使用しており、CognitoのIDトークンをAuthorizationヘッダーに付与してAPIを呼び出している。APIは段階的に他社向けに開放する予定もあるため、将来的にCognito以外のIDプロバイダー（例: Auth0）にも対応できる設計にしたい。現時点での実装として最も将来的な拡張性が高い認証アーキテクチャはどれか。</h1>
+<ol class="q-choices">
+<li><b>A.</b> API GatewayのHTTP APIにCognito User Pool Authorizerを直接設定し、Lambda関数内でトークンのclaimsを検証する</li>
+<li><b>B.</b> Cognito Identity Poolを使ってCognitoユーザーをIAMロールに変換し、API GatewayのAWS IAM認証（Sigv4署名）を使う</li>
+<li><b>C.</b> API Gatewayの前段にAmazon API Gateway v1（REST API）に切り替えて、カスタムLambda Authorizerで全IDPのJWT検証ロジックを一元管理する</li>
+<li><b>D.</b> API GatewayのHTTP APIにJWTオーソライザーを設定し、CognitoをIssuerとして設定する。将来他のIDPに対応する際はJWTオーソライザーのIssuerを追加するか、Lambda Authorizerに切り替える</li>
+</ol>
+<details class="q-answer">
+<summary>解答と解説を見る</summary>
+<div class="inner">
+<p><b>正解: D</b></p>
+<p>HTTP APIのJWTオーソライザーはOIDC標準に基づいてIssuer URLとAudienceを設定するだけでJWT検証を行う。Cognitoは標準的なOIDCプロバイダーであるため、現時点ではCognitoのIssuer URLを設定すれば動作し、将来Auth0などの他のOIDC互換IDPに対応する際は、新しいIDPのIssuer URLを追加するか、より複雑な要件であればLambda Authorizerに移行するという段階的な拡張が可能である。JWT標準（RFC 7519）に依存することで特定ベンダーへのロックインを最小化できる。選択肢AのHTTP APIの「Cognito User Pool Authorizer」という設定は存在せず（HTTP APIはJWTオーソライザーのみでCognitoを使う）、Cognito専用の設定ではAuth0への移行時に設定の全面的な見直しが必要になる。選択肢CのREST API v1への切り替えは後退であり、HTTP APIが提供する低レイテンシ・低コストの利点を失う上、Lambda Authorizerへの全面移行という大規模変更を要する。選択肢BのCognito Identity Pool + IAM Sigv4は高いセキュリティを提供するが、クライアント側でSigv4署名を実装する必要があり、他社向け開放時にクライアントの実装負荷が非常に高くなる。</p>
+<div class="svc-links">📚 関連サービスの解説: <a href="../../learn/amazon-api-gateway.html">Amazon API Gateway</a> ・ <a href="../../learn/amazon-cognito.html">Amazon Cognito</a></div>
+</div>
+</details>
+<div class="cta-box"><a class="btn btn-primary" href="../../exam.html?exam=aws-dva-c02">▸ この試験を本気で演習する（全150問・無料）</a></div>
+<nav class="q-nav">
+<span><a href="q017.html">← 前の問題</a></span>
+<span><a href="q019.html">次の問題 →</a></span>
+</nav>
+<section class="related"><h2>同じ分野の関連問題</h2><ul class="q-list">
+<li><a href="q017.html">ある企業がAPI GatewayとLambdaで構成されたAPIを運用しており、Lambdaのコードの中でAPIレスポン…</a></li>
+<li><a href="q019.html">あるチームが、Lambdaのコールドスタートのレイテンシを改善しようとしている。現在のLambda関数はPython 3…</a></li>
+<li><a href="q016.html">ある企業が、Lambdaを使ったサーバーレスアーキテクチャでVPC内のElastiCache（Redis）クラスターにア…</a></li>
+<li><a href="q020.html">ある企業が、API GatewayのREST APIを使って外部パートナーにAPIを提供している。以下の2つの要件を同時…</a></li>
+</ul></section>
+</main>
+<footer class="page-footer">
+<nav class="hub-nav"><a href="../../exams/aws-clf-c02/">CLF-C02 試験ガイド</a><a href="../../exams/aws-aif-c01/">AIF-C01 試験ガイド</a><a href="../../exams/aws-saa-c03/">SAA-C03 試験ガイド</a><a href="../../exams/aws-dva-c02/">DVA-C02 試験ガイド</a><a href="../../exams/aws-sap-c02/">SAP-C02 試験ガイド</a><a href="../../exams/gcp-cdl/">CDL 試験ガイド</a><a href="../../exams/gcp-ace/">ACE 試験ガイド</a><a href="../../exams/azure-az900/">AZ-900 試験ガイド</a><a href="../../exams/azure-ai900/">AI-900 試験ガイド</a><a href="../../exams/azure-dp900/">DP-900 試験ガイド</a><a href="../../exams/azure-sc900/">SC-900 試験ガイド</a><a href="../../exams/azure-az104/">AZ-104 試験ガイド</a></nav>
+<nav class="site-nav"><a href="../../guide/">資格ガイド</a><a href="../../learn/">サービス解説</a><a href="../../career/">キャリア</a><a href="../../about.html">運営者情報</a><a href="../../privacy.html">プライバシーポリシー</a><a href="../../contact.html">お問い合わせ</a></nav>
+<p class="copy">© CLOUDCERT_ — 本サイトは各認定試験の公式試験ではなく、収録問題はすべてオリジナルの演習問題です。</p>
+</footer>
+</body>
+</html>

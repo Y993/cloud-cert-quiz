@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>仮想マシン スケール セット（VMSS）とは？試験に出るポイントと演習問題</title>
+<meta name="description" content="仮想マシン スケール セット（VMSS）（Microsoft Azure）の要点と資格試験での問われ方を解説。登場する演習問題2問と公式ドキュメントへのリンクつき。">
+<link rel="canonical" href="https://cloudcert.app/learn/azure-vmss.html">
+<meta property="og:title" content="仮想マシン スケール セット（VMSS）とは？試験に出るポイントと演習問題">
+<meta property="og:description" content="仮想マシン スケール セット（VMSS）（Microsoft Azure）の要点と資格試験での問われ方を解説。登場する演習問題2問と公式ドキュメントへのリンクつき。">
+<meta property="og:url" content="https://cloudcert.app/learn/azure-vmss.html">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="CLOUDCERT_">
+<meta property="og:image" content="https://cloudcert.app/assets/og.png">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='80' font-size='80' fill='%233fe0a4' font-family='monospace'>▸</text></svg>">
+
+<meta name="google-adsense-account" content="ca-pub-5647574947191958">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+JP:wght@400;500;700&family=JetBrains+Mono:wght@400;600;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../css/style.css">
+<link rel="stylesheet" href="../css/page.css">
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-SZR5CB5Q3X"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag('js',new Date());gtag('config','G-SZR5CB5Q3X');</script>
+<script type="application/ld+json">[{"@context":"https://schema.org","@type":"TechArticle","headline":"仮想マシン スケール セット（VMSS）とは？試験に出るポイントと演習問題","description":"仮想マシン スケール セット（VMSS）（Microsoft Azure）の要点と資格試験での問われ方を解説。登場する演習問題2問と公式ドキュメントへのリンクつき。","inLanguage":"ja","about":{"@type":"Thing","name":"仮想マシン スケール セット（VMSS）"},"author":{"@type":"Organization","name":"CLOUDCERT_"},"publisher":{"@type":"Organization","name":"CLOUDCERT_"},"mainEntityOfPage":"https://cloudcert.app/learn/azure-vmss.html"},{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"HOME","item":"https://cloudcert.app/"},{"@type":"ListItem","position":2,"name":"サービス解説","item":"https://cloudcert.app/learn/"},{"@type":"ListItem","position":3,"name":"仮想マシン スケール セット（VMSS）"}]}]</script>
+</head>
+<body class="page-body">
+<header class="page-header"><a class="page-logo" href="../index.html">&gt; CLOUDCERT_</a></header>
+<main class="page-main">
+
+<nav class="breadcrumb"><a href="../index.html">HOME</a> › <a href="./">サービス解説</a> › 仮想マシン スケール セット（VMSS）</nav>
+<div class="learn-head">
+<div class="badges"><span class="badge" data-provider="azure">Microsoft Azure</span><span class="badge">コンピューティング</span><span class="badge badge-q">演習2問</span></div>
+<h1>仮想マシン スケール セット（VMSS）とは</h1>
+</div>
+<p class="lead">仮想マシン スケール セット（VMSS）は、同一構成のVMを大量に作成・管理し、負荷に応じて自動でスケールアウト／スケールインできるサービスだ。最大1000インスタンスまでサポートされ、ロードバランサーや自動スケーリングルールと組み合わせることで、トラフィックの増減に応じた柔軟なインフラを構築できる。</p>
+<p>VMSSには「フレキシブルオーケストレーション」と「ユニフォームオーケストレーション」の2つのモードがある。フレキシブルは可用性ゾーンや障害ドメインをまたいでVMを分散させる高可用性構成に適しており、新規ワークロードでは推奨される方式だ。VMSSそのものは追加コストなく、使用するVMやネットワーク・ストレージのコストのみ発生する。</p>
+<p><a class="official-btn" href="https://learn.microsoft.com/ja-jp/azure/virtual-machine-scale-sets/overview" target="_blank" rel="noopener">公式ドキュメント →</a></p>
+<h2>試験での問われ方</h2>
+<p>VMSSと通常のVMの使い分けがポイントだ。VMSSは「同じ構成のVMを複数管理したい」「自動スケーリングが必要」「高可用性が求められる」ケースに適する。単体VMで足りる開発・テスト環境やユニーク構成が必要なケースは通常VMが向いている。AZ-104では自動スケーリングのルール設定（CPU使用率のしきい値など）も出題範囲に含まれる。</p>
+<h2>このサービスが登場する演習問題（2問）</h2>
+<ul class="q-list">
+<li><a href="../q/azure-az900/q129.html">【AZ-900】ある企業がAzureでWebアプリケーションを構築しており、ユーザーからの同時リクエストが多い時間帯に自動的にVMインス…</a></li>
+<li><a href="../q/azure-az104/q091.html">【AZ-104】ある企業がAzure VMSSで実行されている本番アプリケーションの設定変更を展開したい。VMSSインスタンスに追加のソ…</a></li>
+</ul>
+<h2>関連サービス</h2><ul class="q-list">
+<li><a href="azure-virtual-machines.html">Azure Virtual Machines</a></li>
+<li><a href="azure-app-service.html">Azure App Service</a></li>
+<li><a href="azure-functions.html">Azure Functions</a></li></ul>
+</main>
+<footer class="page-footer">
+<nav class="hub-nav"><a href="../exams/aws-clf-c02/">CLF-C02 試験ガイド</a><a href="../exams/aws-aif-c01/">AIF-C01 試験ガイド</a><a href="../exams/aws-saa-c03/">SAA-C03 試験ガイド</a><a href="../exams/aws-dva-c02/">DVA-C02 試験ガイド</a><a href="../exams/aws-sap-c02/">SAP-C02 試験ガイド</a><a href="../exams/gcp-cdl/">CDL 試験ガイド</a><a href="../exams/gcp-ace/">ACE 試験ガイド</a><a href="../exams/azure-az900/">AZ-900 試験ガイド</a><a href="../exams/azure-ai900/">AI-900 試験ガイド</a><a href="../exams/azure-dp900/">DP-900 試験ガイド</a><a href="../exams/azure-sc900/">SC-900 試験ガイド</a><a href="../exams/azure-az104/">AZ-104 試験ガイド</a></nav>
+<nav class="site-nav"><a href="../guide/">資格ガイド</a><a href="../learn/">サービス解説</a><a href="../career/">キャリア</a><a href="../about.html">運営者情報</a><a href="../privacy.html">プライバシーポリシー</a><a href="../contact.html">お問い合わせ</a></nav>
+<p class="copy">© CLOUDCERT_ — 本サイトは各認定試験の公式試験ではなく、収録問題はすべてオリジナルの演習問題です。</p>
+</footer>
+</body>
+</html>

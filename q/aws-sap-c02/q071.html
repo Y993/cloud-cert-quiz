@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>【SAP-C02 演習問題 #71】ある企業が複数のオンプレミスアプリケーションを AWS に移行する計画を立てており、AWS…</title>
+<meta name="description" content="SAP-C02の本試験レベル演習問題。ある企業が複数のオンプレミスアプリケーションを AWS に移行する計画を立てており、AWS Migration Hub を使って移行プロジェクト全体の進捗を一元管理したいと考えていま… 全選択肢の解説つき。">
+<link rel="canonical" href="https://cloudcert.app/q/aws-sap-c02/q071.html">
+<meta property="og:title" content="【SAP-C02 演習問題 #71】ある企業が複数のオンプレミスアプリケーションを AWS に移行する計画を立てており、AWS…">
+<meta property="og:description" content="SAP-C02の本試験レベル演習問題。ある企業が複数のオンプレミスアプリケーションを AWS に移行する計画を立てており、AWS Migration Hub を使って移行プロジェクト全体の進捗を一元管理したいと考えていま… 全選択肢の解説つき。">
+<meta property="og:url" content="https://cloudcert.app/q/aws-sap-c02/q071.html">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="CLOUDCERT_">
+<meta property="og:image" content="https://cloudcert.app/assets/og.png">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='80' font-size='80' fill='%233fe0a4' font-family='monospace'>▸</text></svg>">
+
+<meta name="google-adsense-account" content="ca-pub-5647574947191958">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+JP:wght@400;500;700&family=JetBrains+Mono:wght@400;600;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../../css/style.css">
+<link rel="stylesheet" href="../../css/page.css">
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-SZR5CB5Q3X"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag('js',new Date());gtag('config','G-SZR5CB5Q3X');</script>
+<script type="application/ld+json">[{"@context":"https://schema.org/","@type":"Quiz","about":{"@type":"Thing","name":"AWS Certified Solutions Architect - Professional"},"hasPart":[{"@type":"Question","eduQuestionType":"Multiple choice","learningResourceType":"Practice problem","text":"ある企業が複数のオンプレミスアプリケーションを AWS に移行する計画を立てており、AWS Migration Hub を使って移行プロジェクト全体の進捗を一元管理したいと考えています。各アプリケーションの移行状況（Not Started、In Progress、Completed）を追跡し、どのアプリケーションが AWS SMS、AWS MGN、AWS DMS のどのツールで移行されているかを可視化したいと考えています。最も適切な設定はどれですか？","suggestedAnswer":[{"@type":"Answer","position":1,"text":"AWS Systems Manager OpsCenter を使って移行タスクをオペレーションアイテムとして管理し、チームメンバーに割り当てる"},{"@type":"Answer","position":2,"text":"AWS CloudTrail で各移行ツールの API コールを記録し、Lambda 関数で進捗レポートを自動生成する"},{"@type":"Answer","position":3,"text":"各移行ツール（SMS、MGN、DMS）を個別に管理し、それぞれのコンソールで進捗を確認する"}],"acceptedAnswer":{"@type":"Answer","position":0,"text":"AWS Migration Hub でホームリージョンを設定し、SMS、MGN、DMS などの移行ツールを Migration Hub に統合する。各ツールは移行の進捗状況を自動的に Migration Hub に報告し、単一ダッシュボードで全アプリケーションの移行状況を追跡できる","comment":{"@type":"Comment","text":"AWS Migration Hub は複数の移行ツールの進捗を単一のダッシュボードで追跡します。ホームリージョンを設定することで、SMS、MGN、DMS などの AWS 移行ツールが自動的に Migration Hub に進捗状況を報告します。アプリケーション単位で移行状況を集約し、どのツールで何を移行しているかが一元的に把握できます。\n\nD: 各ツールのコンソールを個別に確認することは、複数アプリケーションの大規模移行では管理の分散につながり、全体の進捗把握が困難です。\n\nC: CloudTrail は監査ログとして有用ですが、移行進捗のリアルタイムな可視化やアプリケーション単位での状態管理には設計されていません。カスタム実装の開発負荷が高くなります。\n\nB: OpsCenter はインシデント管理や運用タスク管理に適していますが、Migration Hub のような移行ツール統合と進捗の自動追跡機能はありません。"}}}]},{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"HOME","item":"https://cloudcert.app/"},{"@type":"ListItem","position":2,"name":"SAP-C02 試験ガイド","item":"https://cloudcert.app/exams/aws-sap-c02/"},{"@type":"ListItem","position":3,"name":"q071"}]}]</script>
+</head>
+<body class="page-body">
+<header class="page-header"><a class="page-logo" href="../../index.html">&gt; CLOUDCERT_</a></header>
+<main class="page-main">
+
+<nav class="breadcrumb"><a href="../../index.html">HOME</a> › <a href="../../exams/aws-sap-c02/">SAP-C02 試験ガイド</a> › q071</nav>
+<div class="q-meta"><span>SAP-C02</span><span>ワークロードの移行とモダナイゼーションの加速</span><span>HARD</span><span>単一選択</span></div>
+<h1>ある企業が複数のオンプレミスアプリケーションを AWS に移行する計画を立てており、AWS Migration Hub を使って移行プロジェクト全体の進捗を一元管理したいと考えています。各アプリケーションの移行状況（Not Started、In Progress、Completed）を追跡し、どのアプリケーションが AWS SMS、AWS MGN、AWS DMS のどのツールで移行されているかを可視化したいと考えています。最も適切な設定はどれですか？</h1>
+<ol class="q-choices">
+<li><b>A.</b> AWS Migration Hub でホームリージョンを設定し、SMS、MGN、DMS などの移行ツールを Migration Hub に統合する。各ツールは移行の進捗状況を自動的に Migration Hub に報告し、単一ダッシュボードで全アプリケーションの移行状況を追跡できる</li>
+<li><b>B.</b> AWS Systems Manager OpsCenter を使って移行タスクをオペレーションアイテムとして管理し、チームメンバーに割り当てる</li>
+<li><b>C.</b> AWS CloudTrail で各移行ツールの API コールを記録し、Lambda 関数で進捗レポートを自動生成する</li>
+<li><b>D.</b> 各移行ツール（SMS、MGN、DMS）を個別に管理し、それぞれのコンソールで進捗を確認する</li>
+</ol>
+<details class="q-answer">
+<summary>解答と解説を見る</summary>
+<div class="inner">
+<p><b>正解: A</b></p>
+<p>AWS Migration Hub は複数の移行ツールの進捗を単一のダッシュボードで追跡します。ホームリージョンを設定することで、SMS、MGN、DMS などの AWS 移行ツールが自動的に Migration Hub に進捗状況を報告します。アプリケーション単位で移行状況を集約し、どのツールで何を移行しているかが一元的に把握できます。
+
+D: 各ツールのコンソールを個別に確認することは、複数アプリケーションの大規模移行では管理の分散につながり、全体の進捗把握が困難です。
+
+C: CloudTrail は監査ログとして有用ですが、移行進捗のリアルタイムな可視化やアプリケーション単位での状態管理には設計されていません。カスタム実装の開発負荷が高くなります。
+
+B: OpsCenter はインシデント管理や運用タスク管理に適していますが、Migration Hub のような移行ツール統合と進捗の自動追跡機能はありません。</p>
+<div class="svc-links">📚 関連サービスの解説: <a href="../../learn/aws-dms.html">AWS DMS</a></div>
+</div>
+</details>
+<div class="cta-box"><a class="btn btn-primary" href="../../exam.html?exam=aws-sap-c02">▸ この試験を本気で演習する（全150問・無料）</a></div>
+<nav class="q-nav">
+<span><a href="q070.html">← 前の問題</a></span>
+<span><a href="q072.html">次の問題 →</a></span>
+</nav>
+<section class="related"><h2>同じ分野の関連問題</h2><ul class="q-list">
+<li><a href="q070.html">ある企業が長年の歴史を持つ COBOL ベースのレガシーシステムをモダナイズしようとしています。システムは月次の請求処理…</a></li>
+<li><a href="q072.html">ある小売企業がオンプレミスの EC システム（Spring Boot + MySQL）を AWS にモダナイズする計画を…</a></li>
+<li><a href="q069.html">ある企業がオンプレミスで稼働する MySQL データベース（30TB）をダウンタイムなしで Amazon Aurora …</a></li>
+<li><a href="q073.html">ある企業が複数のオンプレミスデータベース（Oracle、SQL Server、MySQL、PostgreSQL）を AW…</a></li>
+</ul></section>
+</main>
+<footer class="page-footer">
+<nav class="hub-nav"><a href="../../exams/aws-clf-c02/">CLF-C02 試験ガイド</a><a href="../../exams/aws-aif-c01/">AIF-C01 試験ガイド</a><a href="../../exams/aws-saa-c03/">SAA-C03 試験ガイド</a><a href="../../exams/aws-dva-c02/">DVA-C02 試験ガイド</a><a href="../../exams/aws-sap-c02/">SAP-C02 試験ガイド</a><a href="../../exams/gcp-cdl/">CDL 試験ガイド</a><a href="../../exams/gcp-ace/">ACE 試験ガイド</a><a href="../../exams/azure-az900/">AZ-900 試験ガイド</a><a href="../../exams/azure-ai900/">AI-900 試験ガイド</a><a href="../../exams/azure-dp900/">DP-900 試験ガイド</a><a href="../../exams/azure-sc900/">SC-900 試験ガイド</a><a href="../../exams/azure-az104/">AZ-104 試験ガイド</a></nav>
+<nav class="site-nav"><a href="../../guide/">資格ガイド</a><a href="../../learn/">サービス解説</a><a href="../../career/">キャリア</a><a href="../../about.html">運営者情報</a><a href="../../privacy.html">プライバシーポリシー</a><a href="../../contact.html">お問い合わせ</a></nav>
+<p class="copy">© CLOUDCERT_ — 本サイトは各認定試験の公式試験ではなく、収録問題はすべてオリジナルの演習問題です。</p>
+</footer>
+</body>
+</html>

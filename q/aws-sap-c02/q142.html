@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>【SAP-C02 演習問題 #142】ある企業が AWS 上でハイブリッドアーキテクチャを設計しており、オンプレミスのデータウェ…</title>
+<meta name="description" content="SAP-C02の本試験レベル演習問題。ある企業が AWS 上でハイブリッドアーキテクチャを設計しており、オンプレミスのデータウェアハウスのデータを AWS の機械学習パイプラインで活用したいと考えています。データは毎日更… 全選択肢の解説つき。">
+<link rel="canonical" href="https://cloudcert.app/q/aws-sap-c02/q142.html">
+<meta property="og:title" content="【SAP-C02 演習問題 #142】ある企業が AWS 上でハイブリッドアーキテクチャを設計しており、オンプレミスのデータウェ…">
+<meta property="og:description" content="SAP-C02の本試験レベル演習問題。ある企業が AWS 上でハイブリッドアーキテクチャを設計しており、オンプレミスのデータウェアハウスのデータを AWS の機械学習パイプラインで活用したいと考えています。データは毎日更… 全選択肢の解説つき。">
+<meta property="og:url" content="https://cloudcert.app/q/aws-sap-c02/q142.html">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="CLOUDCERT_">
+<meta property="og:image" content="https://cloudcert.app/assets/og.png">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='80' font-size='80' fill='%233fe0a4' font-family='monospace'>▸</text></svg>">
+
+<meta name="google-adsense-account" content="ca-pub-5647574947191958">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+JP:wght@400;500;700&family=JetBrains+Mono:wght@400;600;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../../css/style.css">
+<link rel="stylesheet" href="../../css/page.css">
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-SZR5CB5Q3X"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag('js',new Date());gtag('config','G-SZR5CB5Q3X');</script>
+<script type="application/ld+json">[{"@context":"https://schema.org/","@type":"Quiz","about":{"@type":"Thing","name":"AWS Certified Solutions Architect - Professional"},"hasPart":[{"@type":"Question","eduQuestionType":"Multiple choice","learningResourceType":"Practice problem","text":"ある企業が AWS 上でハイブリッドアーキテクチャを設計しており、オンプレミスのデータウェアハウスのデータを AWS の機械学習パイプラインで活用したいと考えています。データは毎日更新され、ML トレーニングのために S3 に取り込む必要があります。オンプレミスのデータウェアハウスは Teradata で、Direct Connect 経由で接続されています。最小限の開発コストで自動化されたデータパイプラインを構築するには、どのアーキテクチャが最適ですか？","suggestedAnswer":[{"@type":"Answer","position":0,"text":"AWS Database Migration Service（DMS）を継続的レプリケーションモードで設定し、Teradata の全変更データをリアルタイムで S3 に取り込む"},{"@type":"Answer","position":1,"text":"Amazon Kinesis Data Firehose を Direct Connect 経由でオンプレミスから直接呼び出して S3 にストリーミング取り込みする"},{"@type":"Answer","position":3,"text":"オンプレミスの Teradata から毎日手動でデータをエクスポートし、SFTP で AWS S3 にアップロードする"}],"acceptedAnswer":{"@type":"Answer","position":2,"text":"AWS Glue の JDBC コネクターを使用して Teradata に接続し、毎日スケジュール実行される Glue ETL ジョブでデータを S3 に抽出・変換・ロードする。Glue のジョブブックマーク機能で差分データのみを抽出し、増分ロードを実現する","comment":{"@type":"Comment","text":"AWS Glue は JDBC コネクターで Teradata など多くのデータウェアハウスに接続できます。Glue ETL ジョブをスケジュール実行（EventBridge またはトリガー）で毎日自動化し、ジョブブックマーク機能で前回の実行以降に更新されたデータのみを抽出する増分ロードが可能です。Direct Connect 経由でのオンプレミス接続にも対応しています。\n\nD: 手動エクスポートと SFTP アップロードは自動化されておらず、運用負荷が高くなります。\n\nB: Kinesis Data Firehose は AWS エンドポイントへのデータ取り込みに使いますが、オンプレミスから Direct Connect 経由で Firehose をトリガーするには別途エージェントや Lambda が必要で、バッチデータには Glue の方が適しています。\n\nA: DMS の継続的レプリケーションは MySQL/Oracle/PostgreSQL 等の主要 RDBMS でサポートが充実していますが、Teradata からの CDC（変更データキャプチャ）は制限が多く、毎日のバッチ取り込みには Glue の方が信頼性が高いです。"}}}]},{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"HOME","item":"https://cloudcert.app/"},{"@type":"ListItem","position":2,"name":"SAP-C02 試験ガイド","item":"https://cloudcert.app/exams/aws-sap-c02/"},{"@type":"ListItem","position":3,"name":"q142"}]}]</script>
+</head>
+<body class="page-body">
+<header class="page-header"><a class="page-logo" href="../../index.html">&gt; CLOUDCERT_</a></header>
+<main class="page-main">
+
+<nav class="breadcrumb"><a href="../../index.html">HOME</a> › <a href="../../exams/aws-sap-c02/">SAP-C02 試験ガイド</a> › q142</nav>
+<div class="q-meta"><span>SAP-C02</span><span>新しいソリューションのための設計</span><span>HARD</span><span>単一選択</span></div>
+<h1>ある企業が AWS 上でハイブリッドアーキテクチャを設計しており、オンプレミスのデータウェアハウスのデータを AWS の機械学習パイプラインで活用したいと考えています。データは毎日更新され、ML トレーニングのために S3 に取り込む必要があります。オンプレミスのデータウェアハウスは Teradata で、Direct Connect 経由で接続されています。最小限の開発コストで自動化されたデータパイプラインを構築するには、どのアーキテクチャが最適ですか？</h1>
+<ol class="q-choices">
+<li><b>A.</b> AWS Database Migration Service（DMS）を継続的レプリケーションモードで設定し、Teradata の全変更データをリアルタイムで S3 に取り込む</li>
+<li><b>B.</b> Amazon Kinesis Data Firehose を Direct Connect 経由でオンプレミスから直接呼び出して S3 にストリーミング取り込みする</li>
+<li><b>C.</b> AWS Glue の JDBC コネクターを使用して Teradata に接続し、毎日スケジュール実行される Glue ETL ジョブでデータを S3 に抽出・変換・ロードする。Glue のジョブブックマーク機能で差分データのみを抽出し、増分ロードを実現する</li>
+<li><b>D.</b> オンプレミスの Teradata から毎日手動でデータをエクスポートし、SFTP で AWS S3 にアップロードする</li>
+</ol>
+<details class="q-answer">
+<summary>解答と解説を見る</summary>
+<div class="inner">
+<p><b>正解: C</b></p>
+<p>AWS Glue は JDBC コネクターで Teradata など多くのデータウェアハウスに接続できます。Glue ETL ジョブをスケジュール実行（EventBridge またはトリガー）で毎日自動化し、ジョブブックマーク機能で前回の実行以降に更新されたデータのみを抽出する増分ロードが可能です。Direct Connect 経由でのオンプレミス接続にも対応しています。
+
+D: 手動エクスポートと SFTP アップロードは自動化されておらず、運用負荷が高くなります。
+
+B: Kinesis Data Firehose は AWS エンドポイントへのデータ取り込みに使いますが、オンプレミスから Direct Connect 経由で Firehose をトリガーするには別途エージェントや Lambda が必要で、バッチデータには Glue の方が適しています。
+
+A: DMS の継続的レプリケーションは MySQL/Oracle/PostgreSQL 等の主要 RDBMS でサポートが充実していますが、Teradata からの CDC（変更データキャプチャ）は制限が多く、毎日のバッチ取り込みには Glue の方が信頼性が高いです。</p>
+<div class="svc-links">📚 関連サービスの解説: <a href="../../learn/aws-glue.html">AWS Glue</a> ・ <a href="../../learn/amazon-s3.html">Amazon S3</a></div>
+</div>
+</details>
+<div class="cta-box"><a class="btn btn-primary" href="../../exam.html?exam=aws-sap-c02">▸ この試験を本気で演習する（全150問・無料）</a></div>
+<nav class="q-nav">
+<span><a href="q141.html">← 前の問題</a></span>
+<span><a href="q143.html">次の問題 →</a></span>
+</nav>
+<section class="related"><h2>同じ分野の関連問題</h2><ul class="q-list">
+<li><a href="q139.html">ある企業が AWS 上で大規模なデータ処理パイプラインを設計しており、1 日に 10 億件のイベントを処理する必要があり…</a></li>
+<li><a href="q145.html">ある企業が AWS 上で毎秒 1 万件のトランザクションを処理するオンラインバンキングシステムを設計しています。すべての…</a></li>
+<li><a href="q136.html">ある企業が AWS 上でマルチリージョンのアクティブ-アクティブ Webアプリケーションを構築しており、どちらのリージョ…</a></li>
+<li><a href="q149.html">ある企業が AWS 上で構築した API サービスに対して、特定のクライアント（モバイルアプリ、パートナー API、内部…</a></li>
+</ul></section>
+</main>
+<footer class="page-footer">
+<nav class="hub-nav"><a href="../../exams/aws-clf-c02/">CLF-C02 試験ガイド</a><a href="../../exams/aws-aif-c01/">AIF-C01 試験ガイド</a><a href="../../exams/aws-saa-c03/">SAA-C03 試験ガイド</a><a href="../../exams/aws-dva-c02/">DVA-C02 試験ガイド</a><a href="../../exams/aws-sap-c02/">SAP-C02 試験ガイド</a><a href="../../exams/gcp-cdl/">CDL 試験ガイド</a><a href="../../exams/gcp-ace/">ACE 試験ガイド</a><a href="../../exams/azure-az900/">AZ-900 試験ガイド</a><a href="../../exams/azure-ai900/">AI-900 試験ガイド</a><a href="../../exams/azure-dp900/">DP-900 試験ガイド</a><a href="../../exams/azure-sc900/">SC-900 試験ガイド</a><a href="../../exams/azure-az104/">AZ-104 試験ガイド</a></nav>
+<nav class="site-nav"><a href="../../guide/">資格ガイド</a><a href="../../learn/">サービス解説</a><a href="../../career/">キャリア</a><a href="../../about.html">運営者情報</a><a href="../../privacy.html">プライバシーポリシー</a><a href="../../contact.html">お問い合わせ</a></nav>
+<p class="copy">© CLOUDCERT_ — 本サイトは各認定試験の公式試験ではなく、収録問題はすべてオリジナルの演習問題です。</p>
+</footer>
+</body>
+</html>

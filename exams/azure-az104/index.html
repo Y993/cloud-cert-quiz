@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AZ-104（Azure 管理者 アソシエイト）の難易度・勉強法と演習問題150問【無料】</title>
+<meta name="description" content="Microsoft Azure Administrator（AZ-104）の難易度・出題ドメイン・勉強法を解説。本試験レベルのオリジナル演習問題150問を無料公開、全問に詳細解説つき。">
+<link rel="canonical" href="https://cloudcert.app/exams/azure-az104/">
+<meta property="og:title" content="AZ-104（Azure 管理者 アソシエイト）の難易度・勉強法と演習問題150問【無料】">
+<meta property="og:description" content="Microsoft Azure Administrator（AZ-104）の難易度・出題ドメイン・勉強法を解説。本試験レベルのオリジナル演習問題150問を無料公開、全問に詳細解説つき。">
+<meta property="og:url" content="https://cloudcert.app/exams/azure-az104/">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="CLOUDCERT_">
+<meta property="og:image" content="https://cloudcert.app/assets/og.png">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='80' font-size='80' fill='%233fe0a4' font-family='monospace'>▸</text></svg>">
+
+<meta name="google-adsense-account" content="ca-pub-5647574947191958">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+JP:wght@400;500;700&family=JetBrains+Mono:wght@400;600;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../../css/style.css">
+<link rel="stylesheet" href="../../css/page.css">
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-SZR5CB5Q3X"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag('js',new Date());gtag('config','G-SZR5CB5Q3X');</script>
+<script type="application/ld+json">[{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"試験は何問で何分ですか？","acceptedAnswer":{"@type":"Answer","text":"出題数は40〜60問の幅がある（試験によって異なる）。試験時間の全体枠は120分だが、実際の解答時間は100分程度。合格スコアは1000点満点中700点。"}},{"@type":"Question","name":"受験料はいくらですか？","acceptedAnswer":{"@type":"Answer","text":"日本では約20,000円（税込）が目安だが、為替レートや時期によって変動する。正確な金額はPearson VUEの申込画面で確認すること。"}},{"@type":"Question","name":"AZ-900を先に取得してからAZ-104を受けるべきですか？","acceptedAnswer":{"@type":"Answer","text":"必須ではないが、Azureの基礎概念（リージョン・リソースグループ・サブスクリプション）に不安がある場合はAZ-900を先に受けると準備がスムーズになる。すでにAWS等の他クラウドの経験があれば、AZ-900を飛ばしてAZ-104から始めても問題ない。"}},{"@type":"Question","name":"不合格になったら、いつから再受験できますか？","acceptedAnswer":{"@type":"Answer","text":"1回目の不合格から24時間後に再受験できる。2回目以降の不合格はそれぞれ14日間の待機が必要。再受験料は全額必要。12か月以内に同じ試験を受験できるのは5回まで、5回すべて不合格の場合は最初の受験日から12か月後まで受験不可となる。"}},{"@type":"Question","name":"認定の有効期限と更新方法を教えてください。","acceptedAnswer":{"@type":"Answer","text":"AZ-104は取得から1年間有効。有効期限の6か月前からMicrosoft Learnで無料の更新アセスメントが受けられるようになる。アセスメントは短く（25〜35問程度）、オープンブック形式で何度でも再挑戦できる。有効期限が切れてしまうと再受験が必要になるため、通知が届いたら早めに対応するほうがいい。"}},{"@type":"Question","name":"AZ-104合格後はどの試験に進む人が多いですか？","acceptedAnswer":{"@type":"Answer","text":"Azureのアソシエイト試験の中では、インフラ寄りならAZ-305（Azure Solutions Architect Expert）、セキュリティ寄りならAZ-500（Security Engineer Associate）に進む人が多い。AZ-305はAZ-104の内容を土台にしているため、取得直後に学習を始めるのは自然な流れだ。"}}]},{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"HOME","item":"https://cloudcert.app/"},{"@type":"ListItem","position":2,"name":"AZ-104 試験ガイド"}]}]</script>
+</head>
+<body class="page-body">
+<header class="page-header"><a class="page-logo" href="../../index.html">&gt; CLOUDCERT_</a></header>
+<main class="page-main">
+
+<nav class="breadcrumb"><a href="../../index.html">HOME</a> › AZ-104</nav>
+<h1>AZ-104（Azure 管理者 アソシエイト）の難易度・勉強法と演習問題150問【無料】</h1>
+<p>合格ライン 70% ／ 制限時間 100分 ／ 収録 150問（すべて無料・登録不要）</p>
+<div class="cta-box"><a class="btn btn-primary" href="../../exam.html?exam=azure-az104">▸ いますぐ演習をはじめる</a></div>
+
+<h2>試験概要</h2><p>Microsoft Azure Administrator（AZ-104）は、Azureの仮想マシン・ネットワーク・ストレージ・ID管理といったインフラの日常運用を担う管理者向けの認定試験だ。出題数は40〜60問の幅があり、試験時間は実質100分（全体の時間枠は120分）。合格スコアは1000点満点中700点で、受験料は日本では約20,000円（税込）だが、為替や時期によって変動するためPearson VUEの申込画面で最新額を確認すること。</p>
+<p>試験は5つのドメインで構成される。「Azureのアイデンティティとガバナンス管理」が20〜25%、「ストレージの実装・管理」が15〜20%、「コンピューティングリソースのデプロイ・管理」が20〜25%、「仮想ネットワークの実装・管理」が15〜20%、「リソースの監視とメンテナンス」が10〜15%という配分だ（2026年4月17日改訂版）。問題形式は選択式・ドラッグアンドドロップ・ケーススタディなど複数形式が混在する。ラボ問題（実際にAzureポータルを操作するパフォーマンスベース問題）が出題されることもあるが、常に含まれるわけではなく、試験バージョンによって異なる。</p>
+<p>想定する受験者像は、Azureの管理タスクを実務で担当して6か月以上の経験がある人材だ。クラウドの概念理解だけでなく、PowerShellやAzure CLI、Azure Resource Manager（ARM）テンプレートやBicepを使った実際の操作経験が問われる場面もある。ID管理についてはMicrosoft Entra IDの知識が必要で、旧称のAzure ADで覚えていた内容もEntra IDの文脈で再確認しておくといい。入門レベルのAZ-900を先に取得している場合、基礎概念は省略できるが、AZ-104の出題は管理の実務に踏み込むため難易度の差は大きい。</p>
+<h2>難易度</h2><p>アソシエイトレベルの中では難しい部類に入る。覚えることの量が多く、特にネットワーク（VNet・NSG・VPN Gateway・Azure Firewall・Load Balancerの違い）と、ID管理（Microsoft Entra ID・ロールベースアクセス制御・管理グループのスコープ）の2領域は、頭の中で整理できていないと選択肢を絞れない。</p>
+<p>AZ-900と比べると必要な準備量はまったく別物だ。AZ-900が「Azureとはどういうものか」を問うのに対して、AZ-104は「実際にどう動かし、どうトラブルシューティングするか」まで問う。PowerShellやAzure CLIのコマンド例が問題文に含まれることもあり、コマンドライン操作に不慣れだと面食らう。</p>
+<p>つまずく人の多くは仮想ネットワーク周辺だ。ピアリング・ルートテーブル・サービスエンドポイント・プライベートエンドポイントの使い分けは、ドキュメントを読むだけでは混乱しやすい。実際にAzureの無料枠かMicrosoft Learnのサンドボックスで構成を組んでみると、概念が整理されやすい。</p>
+<h2>勉強法</h2><p>目安の学習期間はAzure未経験なら2〜3か月、AZ-900取得済みか実務でAzureに触れている場合は1〜2か月。Microsoft Learnの公式ラーニングパス（無料）がAZ-104に対応しており、各モジュールにサンドボックス演習が付いているため、ここを一通り進めるだけで土台はできる。ただし読むだけでなく、手を動かすことを前提にした構成になっているため、コピーして実行する習慣が大切だ。</p>
+<p>模擬問題はMicrosoftの公式「Practice Assessment」（Microsoft Learn上で無料公開）から始めるのが確実だ。本番と同形式の問題を無料で使えるため、試験前に必ず触っておく。追加演習にはUdemyのAZ-104模擬問題集（Scott Duffy・Alan Rodriguesのものが評価が高い）を組み合わせると網羅性が上がる。</p>
+<p>ラボ問題が出題される場合に備えて、Azure Portalの主要操作（VMのデプロイ・NSGルールの追加・ストレージアカウントの設定・RBACのロール付与）は手順を迷わず実行できるレベルに慣らしておく。時間内に操作を完了できなければ部分点しか得られないため、スピードも重要になる。</p>
+<p>試験の全体時間枠は120分だが、ケーススタディや選択問題の量によって体感の忙しさは変わる。難しい問題で止まりすぎると後半の時間が足りなくなることがあるため、1問あたり2〜3分を目安にして、迷ったらフラグを立てて先に進む練習を模擬試験のうちにやっておくといい。</p>
+<h2>よくある質問</h2><h3>試験は何問で何分ですか？</h3><p>出題数は40〜60問の幅がある（試験によって異なる）。試験時間の全体枠は120分だが、実際の解答時間は100分程度。合格スコアは1000点満点中700点。</p>
+<h3>受験料はいくらですか？</h3><p>日本では約20,000円（税込）が目安だが、為替レートや時期によって変動する。正確な金額はPearson VUEの申込画面で確認すること。</p>
+<h3>AZ-900を先に取得してからAZ-104を受けるべきですか？</h3><p>必須ではないが、Azureの基礎概念（リージョン・リソースグループ・サブスクリプション）に不安がある場合はAZ-900を先に受けると準備がスムーズになる。すでにAWS等の他クラウドの経験があれば、AZ-900を飛ばしてAZ-104から始めても問題ない。</p>
+<h3>不合格になったら、いつから再受験できますか？</h3><p>1回目の不合格から24時間後に再受験できる。2回目以降の不合格はそれぞれ14日間の待機が必要。再受験料は全額必要。12か月以内に同じ試験を受験できるのは5回まで、5回すべて不合格の場合は最初の受験日から12か月後まで受験不可となる。</p>
+<h3>認定の有効期限と更新方法を教えてください。</h3><p>AZ-104は取得から1年間有効。有効期限の6か月前からMicrosoft Learnで無料の更新アセスメントが受けられるようになる。アセスメントは短く（25〜35問程度）、オープンブック形式で何度でも再挑戦できる。有効期限が切れてしまうと再受験が必要になるため、通知が届いたら早めに対応するほうがいい。</p>
+<h3>AZ-104合格後はどの試験に進む人が多いですか？</h3><p>Azureのアソシエイト試験の中では、インフラ寄りならAZ-305（Azure Solutions Architect Expert）、セキュリティ寄りならAZ-500（Security Engineer Associate）に進む人が多い。AZ-305はAZ-104の内容を土台にしているため、取得直後に学習を始めるのは自然な流れだ。</p>
+<h2>出題ドメイン構成（収録問題の内訳）</h2>
+<table class="domain-table"><tr><th>ドメイン</th><th>収録数</th></tr><tr><td>Azure の ID とガバナンスの管理</td><td>34問（23%）</td></tr>
+<tr><td>Azure ストレージの実装と管理</td><td>29問（19%）</td></tr>
+<tr><td>Azure コンピューティング リソースのデプロイと管理</td><td>35問（23%）</td></tr>
+<tr><td>Azure 仮想ネットワークの実装と管理</td><td>30問（20%）</td></tr>
+<tr><td>Azure リソースの監視と保守</td><td>22問（15%）</td></tr></table>
+<h2>収録問題一覧（全150問・解説つき）</h2>
+<ol class="q-list">
+<li><a href="../../q/azure-az104/q001.html">ある企業が Microsoft Entra ID（旧 Azure Active Directory）で社員アカウントを管…</a></li>
+<li><a href="../../q/azure-az104/q002.html">ある企業が Entra ID で部署ごとにセキュリティグループを管理している。「部署属性が Sales に設定されている…</a></li>
+<li><a href="../../q/azure-az104/q003.html">ある企業の IT 管理者が、取引先のパートナー企業の社員に対して社内の SharePoint サイトへの読み取りアクセス…</a></li>
+<li><a href="../../q/azure-az104/q004.html">ある組織が Entra ID でセルフサービスパスワードリセット（SSPR）を全社員に展開した。セキュリティチームは認証…</a></li>
+<li><a href="../../q/azure-az104/q005.html">ある企業が Entra ID で SSPR（セルフサービスパスワードリセット）を有効化し、認証方法を 2 つ要求する設定…</a></li>
+<li><a href="../../q/azure-az104/q006.html">ある企業が Windows 10 デバイスを Entra ID（Azure AD）に参加させ、社員が Entra ID …</a></li>
+<li><a href="../../q/azure-az104/q007.html">ある企業が Azure サブスクリプションで仮想マシンを管理している。開発チームのメンバーに仮想マシンの起動・停止・再起…</a></li>
+<li><a href="../../q/azure-az104/q008.html">ある企業が複数のサブスクリプションを管理グループ階層で管理している。管理グループ「Corp」の配下に「Productio…</a></li>
+<li><a href="../../q/azure-az104/q009.html">ある企業が Azure Policy を使い、すべてのリソースに対して「Environment」タグが必須という規則をサ…</a></li>
+<li><a href="../../q/azure-az104/q010.html">ある企業が Azure Policy イニシアチブ（Initiative）を使ってセキュリティ基準を管理している。イニシ…</a></li>
+<li><a href="../../q/azure-az104/q011.html">ある企業が本番環境のリソースグループに ReadOnly リソースロックを適用している。運用チームが、このリソースグルー…</a></li>
+<li><a href="../../q/azure-az104/q012.html">ある企業が Azure サブスクリプションを別の Entra ID テナントに移動させる必要が生じた。移動後の影響として…</a></li>
+<li><a href="../../q/azure-az104/q013.html">ある企業が複数のリソースグループと Azure Policy を使ってリソースにタグを管理している。親のリソースグループ…</a></li>
+<li><a href="../../q/azure-az104/q014.html">ある開発者が Azure CLI で az role assignment create コマンドを使ってサービスプリン…</a></li>
+<li><a href="../../q/azure-az104/q015.html">ある企業が Azure カスタムロールを作成している。次の要件を満たすカスタムロール定義の要素として正しいものを 2 つ…</a></li>
+<li><a href="../../q/azure-az104/q016.html">ある企業が Azure Policy で「許可されているリソースの種類（Allowed resource types）」…</a></li>
+<li><a href="../../q/azure-az104/q017.html">ある会社の Azure 環境で、管理グループ「MG-Root」にイニシアチブ A を割り当て、その中に 5 つのポリシー…</a></li>
+<li><a href="../../q/azure-az104/q018.html">ある企業が Entra ID の動的グループを活用している。次の動的メンバーシップルールを設定した場合、どのユーザーがグ…</a></li>
+<li><a href="../../q/azure-az104/q019.html">ある会社がゲストユーザー（Entra ID B2B）向けにアクセスレビューを実施している。アクセスレビューが完了した後、…</a></li>
+<li><a href="../../q/azure-az104/q020.html">ある企業が本番環境のリソースグループに対してリソースロックを適用しようとしている。重要なデータベースサーバーを誰も誤って…</a></li>
+<li><a href="../../q/azure-az104/q021.html">ある企業が Entra ID で社内全体の SSPR（セルフサービスパスワードリセット）を段階的に展開したい。まず IT…</a></li>
+<li><a href="../../q/azure-az104/q022.html">ある企業が Azure で 3 つの事業部門をそれぞれ独立したサブスクリプションで管理している。全サブスクリプションに統…</a></li>
+<li><a href="../../q/azure-az104/q023.html">ある企業の IT 管理者が Entra ID に外部パートナーをゲストユーザー（B2B）として招待した。ゲストユーザーが…</a></li>
+<li><a href="../../q/azure-az104/q024.html">ある会社が Azure Policy のコンプライアンスダッシュボードを確認したところ、特定のポリシーについて「準拠して…</a></li>
+<li><a href="../../q/azure-az104/q025.html">ある企業がコスト管理のために、すべての Azure リソースに「Project」と「Owner」の 2 つのタグを必須と…</a></li>
+<li><a href="../../q/azure-az104/q026.html">ある企業が複数のサブスクリプションにまたがるリソースを管理するために管理グループ階層を設計している。管理グループに関する…</a></li>
+<li><a href="../../q/azure-az104/q027.html">ある企業が Entra ID でグループベースのライセンス割り当てを活用している。Entra ID P1 ライセンスをセ…</a></li>
+<li><a href="../../q/azure-az104/q028.html">ある企業がセキュリティを強化するため、Entra ID の条件付きアクセス（Conditional Access）ポリシ…</a></li>
+<li><a href="../../q/azure-az104/q029.html">ある会社が Azure RBAC の拒否割り当て（Deny assignments）について検討している。拒否割り当てに…</a></li>
+<li><a href="../../q/azure-az104/q030.html">ある企業が Azure の管理グループ階層を設計している。現在の構成は「テナントルート」→「Corp」→「Product…</a></li>
+<li><a href="../../q/azure-az104/q031.html">ある企業が Entra ID で Privileged Identity Management（PIM）を導入した。グロ…</a></li>
+<li><a href="../../q/azure-az104/q032.html">ある企業が Azure でリソースの移動（Move）操作を検討している。既存のリソースグループ「RG-Old」から別のリ…</a></li>
+<li><a href="../../q/azure-az104/q033.html">ある企業が Entra ID で「セキュリティグループ」と「Microsoft 365 グループ」の 2 種類のグループ…</a></li>
+<li><a href="../../q/azure-az104/q034.html">ある企業が Azure Policy のイニシアチブ（Policy Initiative / Policy Set）を利…</a></li>
+<li><a href="../../q/azure-az104/q035.html">ある企業が大量の非構造化データ（画像・動画・ログファイル）をコスト効率よく保存するために Azure ストレージアカウン…</a></li>
+<li><a href="../../q/azure-az104/q036.html">ある製造業の企業がオンプレミスの NAS を Azure に移行したい。SMB プロトコルを使って Windows クラ…</a></li>
+<li><a href="../../q/azure-az104/q037.html">あるスタートアップが Azure ストレージアカウントのデータ冗長性を設定しようとしている。コストを最小限に抑えることを…</a></li>
+<li><a href="../../q/azure-az104/q038.html">ある企業が Azure BLOB ストレージにアーカイブ済みのログデータを保存している。コンプライアンス監査のためにこの…</a></li>
+<li><a href="../../q/azure-az104/q039.html">ある金融機関が Azure ストレージアカウントを複数リージョンで運用しており、プライマリリージョンで大規模障害が発生し…</a></li>
+<li><a href="../../q/azure-az104/q040.html">ある EC サイトが Azure BLOB ストレージに製品画像を保存している。頻繁にアクセスされる最新画像と、6 ヶ月…</a></li>
+<li><a href="../../q/azure-az104/q041.html">ある開発チームが外部パートナーに対して Azure BLOB ストレージの特定コンテナへの読み取りアクセスを一時的に付与…</a></li>
+<li><a href="../../q/azure-az104/q042.html">ある企業のセキュリティチームが、ストレージアカウントへのアクセスに SAS トークンを使用しているが、SAS が漏洩した…</a></li>
+<li><a href="../../q/azure-az104/q043.html">ある企業が Azure ストレージアカウントへのアクセスをセキュアにしたい。アプリケーションは Azure VM 上で動…</a></li>
+<li><a href="../../q/azure-az104/q044.html">ある企業が Azure ストレージアカウントへのネットワークアクセスを強化したい。特定の Azure 仮想ネットワーク（…</a></li>
+<li><a href="../../q/azure-az104/q045.html">ある企業が Azure Files を使って部門間のファイル共有を実現している。ある特定の共有に対して誤って大量のファイ…</a></li>
+<li><a href="../../q/azure-az104/q046.html">ある企業が Azure File Sync を導入してオンプレミスのファイルサーバーと Azure Files を同期さ…</a></li>
+<li><a href="../../q/azure-az104/q047.html">ある企業が規制要件として、特定の Azure BLOB ストレージコンテナに保存したデータを保存後 3 年間は変更も削除…</a></li>
+<li><a href="../../q/azure-az104/q048.html">ある開発者が AzCopy を使って Azure BLOB ストレージとオンプレミス環境の間でデータを同期させたい。毎晩…</a></li>
+<li><a href="../../q/azure-az104/q049.html">ある企業がリージョン C の Azure BLOB ストレージコンテナのデータをリージョン A の別のストレージアカウン…</a></li>
+<li><a href="../../q/azure-az104/q050.html">ある金融機関が Azure ストレージアカウントに GRS（geo 冗長ストレージ）を設定して運用している。プライマリリ…</a></li>
+<li><a href="../../q/azure-az104/q051.html">ある企業が Azure BLOB ストレージのライフサイクル管理ポリシーで、最終アクセス日から 90 日後に BLOB …</a></li>
+<li><a href="../../q/azure-az104/q052.html">ある企業が Azure ストレージアカウントのネットワーク構成を検討している。プライベートエンドポイントを作成した後も、…</a></li>
+<li><a href="../../q/azure-az104/q053.html">ある企業が Azure Files の NFS 共有を Linux VM にマウントして利用しようとしている。NFS 4…</a></li>
+<li><a href="../../q/azure-az104/q054.html">ある企業が Azure ストレージアカウントでユーザー委任 SAS（User Delegation SAS）を作成したい…</a></li>
+<li><a href="../../q/azure-az104/q055.html">ある企業が Azure BLOB ストレージのライフサイクル管理ポリシーで以下のルールを設定している：「最終変更日から …</a></li>
+<li><a href="../../q/azure-az104/q056.html">ある企業が Azure File Sync の同期グループを設定しているが、複数のサーバーエンドポイントのうち 1 台だ…</a></li>
+<li><a href="../../q/azure-az104/q057.html">ある企業のセキュリティ要件として、Azure ストレージアカウントへのすべてのアクセスはストレージアカウントのアクセスキ…</a></li>
+<li><a href="../../q/azure-az104/q058.html">ある企業が Azure BLOB ストレージのアクセス層について検討している。ホット層とクール層の違いについて正しい説明…</a></li>
+<li><a href="../../q/azure-az104/q059.html">ある企業が Azure Files を評価している。Azure Files で SMB プロトコルを使用する際の要件とし…</a></li>
+<li><a href="../../q/azure-az104/q060.html">ある企業がストレージアカウントに SAS（Shared Access Signature）を設計している。セキュリティの…</a></li>
+<li><a href="../../q/azure-az104/q061.html">ある企業が Azure ストレージアカウントの冗長性とフェールオーバーについて計画を立てている。ストレージアカウントのフ…</a></li>
+<li><a href="../../q/azure-az104/q062.html">ある企業が Azure ストレージアカウントの RBAC データプレーンロールを設計している。Azure のストレージに…</a></li>
+<li><a href="../../q/azure-az104/q063.html">ある企業が Azure ストレージアカウントのライフサイクル管理ポリシーを設計している。ライフサイクル管理ポリシーの機能…</a></li>
+<li><a href="../../q/azure-az104/q064.html">ある企業が Azure 上に新しい仮想マシン（VM）を作成しようとしている。運用チームは、VM のハードウェア障害に備え…</a></li>
+<li><a href="../../q/azure-az104/q065.html">ある小売企業がAzure VMでECサイトのバックエンドを運用している。毎年のセール期間（数日間）にトラフィックが通常の…</a></li>
+<li><a href="../../q/azure-az104/q066.html">開発チームが複数のVMを使って分散処理クラスターを構築している。VMはネットワーク通信が頻繁で、VM間のレイテンシを極力…</a></li>
+<li><a href="../../q/azure-az104/q067.html">ある企業が本番環境のWebアプリケーションをAzure VMスケール セット（VMSS）で運用している。CPU使用率が7…</a></li>
+<li><a href="../../q/azure-az104/q068.html">ある企業がAzure VMのOSディスクをManaged Diskで管理している。セキュリティ要件として「OSディスクの…</a></li>
+<li><a href="../../q/azure-az104/q069.html">ある企業のインフラチームがAzure VMのデータディスク（Managed Disk）のバックアップ方法を検討している。…</a></li>
+<li><a href="../../q/azure-az104/q070.html">インフラチームがARMテンプレートを使ってAzureリソースを管理している。テンプレートをリソースグループにデプロイする…</a></li>
+<li><a href="../../q/azure-az104/q071.html">ある開発チームがBicepを使ってAzureリソースをデプロイしている。Bicepファイルとして宣言的にリソースを管理す…</a></li>
+<li><a href="../../q/azure-az104/q072.html">ある企業がAzure App Service（Standard S2プラン）でWebアプリケーションを本番運用している。…</a></li>
+<li><a href="../../q/azure-az104/q073.html">あるスタートアップがAzure App ServiceでAPIバックエンドを運用している。独自ドメイン（api.exam…</a></li>
+<li><a href="../../q/azure-az104/q074.html">ある企業がAzure App Serviceで複数のWebアプリを運用しており、トラフィックの急増に対してApp Ser…</a></li>
+<li><a href="../../q/azure-az104/q075.html">開発チームがAzure Container Instances（ACI）を使って短時間の処理ジョブ（バッチ処理、CI/C…</a></li>
+<li><a href="../../q/azure-az104/q076.html">ある企業がAzure上でデータベースサーバー用のVMを新規作成する予定で、ディスクI/O性能が重要な要件となっている。O…</a></li>
+<li><a href="../../q/azure-az104/q077.html">ある企業のインフラチームが、本番環境のVMに使用しているPremium SSD マネージドディスクについて、将来的なI/…</a></li>
+<li><a href="../../q/azure-az104/q078.html">あるチームがAzure VMSSをデプロイし、スケールインイベント（VMの削除）のポリシーを設定しようとしている。スケー…</a></li>
+<li><a href="../../q/azure-az104/q079.html">ある企業がARMテンプレートを使って複数のAzureリソースをデプロイしている。テンプレート内でリソース間の依存関係を正…</a></li>
+<li><a href="../../q/azure-az104/q080.html">ある企業のDevOpsチームがBicepを使ってAzureリソースをデプロイしている。デプロイ先のリソースグループの名前…</a></li>
+<li><a href="../../q/azure-az104/q081.html">あるチームがBicepを使って既存のAzure Key Vaultのシークレットを参照し、VMのパスワードとして使用する…</a></li>
+<li><a href="../../q/azure-az104/q082.html">ある企業のWebアプリケーションがAzure App Service（Premium P2v3プラン）で稼働している。本…</a></li>
+<li><a href="../../q/azure-az104/q083.html">ある企業がAzure App Service（Standard プラン）で新機能を段階的にリリースしたいと考えている。本…</a></li>
+<li><a href="../../q/azure-az104/q084.html">ある企業がAzure Kubernetes Service（AKS）クラスターを新規作成しようとしている。ワークロードの…</a></li>
+<li><a href="../../q/azure-az104/q085.html">ある企業がAKSクラスターのノードプールをアップグレード（Kubernetesバージョン更新）する必要がある。本番ワーク…</a></li>
+<li><a href="../../q/azure-az104/q086.html">ある企業がAzure Container Apps（ACA）でマイクロサービスアプリケーションをデプロイしている。新しい…</a></li>
+<li><a href="../../q/azure-az104/q087.html">ある企業がAzure Container Apps（ACA）でHTTPトラフィックを受け付けるアプリケーションを運用して…</a></li>
+<li><a href="../../q/azure-az104/q088.html">ある企業の運用チームが、Azure VM上に展開されたIISウェブサーバーの設定変更を自動化したい。VMにRDPやSSH…</a></li>
+<li><a href="../../q/azure-az104/q089.html">ある企業がAzure VMのワークロードを可用性ゾーン対応に移行しようとしている。現在、可用性セット内で実行されているV…</a></li>
+<li><a href="../../q/azure-az104/q090.html">ある企業がAzure Container Instances（ACI）を使って複数のコンテナを1つの論理ユニットとして実…</a></li>
+<li><a href="../../q/azure-az104/q091.html">ある企業がAzure VMSSで実行されている本番アプリケーションの設定変更を展開したい。VMSSインスタンスに追加のソ…</a></li>
+<li><a href="../../q/azure-az104/q092.html">ある企業がVM拡張機能を使ってAzure VM群の運用自動化を進めている。VM拡張機能（VM Extensions）につ…</a></li>
+<li><a href="../../q/azure-az104/q093.html">ある企業がAzure App Serviceを使ってWebアプリケーションをデプロイしている。App Serviceの「…</a></li>
+<li><a href="../../q/azure-az104/q094.html">ある企業のインフラチームが複数のAzure VMにAzure Monitor Agentをインストールし、パフォーマンス…</a></li>
+<li><a href="../../q/azure-az104/q095.html">ある企業がAKSクラスターにデプロイされたアプリケーションの稼働状況を把握するため、Kubernetesのノードとポッド…</a></li>
+<li><a href="../../q/azure-az104/q096.html">ある企業がAzure VMSSを使って本番Webアプリケーションを運用しており、新しいカスタムVMイメージ（更新済みOS…</a></li>
+<li><a href="../../q/azure-az104/q097.html">ある企業がAzure App ServiceでAPIアプリをホストしており、App Serviceのアプリケーション設定…</a></li>
+<li><a href="../../q/azure-az104/q098.html">ある企業がAzure Container Instances（ACI）を使ったコンテナデプロイを検討している。ACIにお…</a></li>
+<li><a href="../../q/azure-az104/q099.html">ある企業がAzure上に新しい仮想ネットワーク（VNet）を作成しようとしている。アドレス空間として 10.1.0.0/…</a></li>
+<li><a href="../../q/azure-az104/q100.html">あるチームがAzure仮想ネットワーク内でサブネットを設計しようとしている。アプリケーション層、データベース層、管理層の…</a></li>
+<li><a href="../../q/azure-az104/q101.html">ある企業のセキュリティポリシーでは、インターネットからVMへの直接RDP接続（ポート3389）を禁止している。管理者が最…</a></li>
+<li><a href="../../q/azure-az104/q102.html">ある企業がAzure VMからインターネットへの送信トラフィックに対して、固定のパブリックIPアドレスを使わずにスケーラ…</a></li>
+<li><a href="../../q/azure-az104/q103.html">ある企業のセキュリティチームが、Azure Virtual NetworkのサブネットにNSG（ネットワークセキュリティ…</a></li>
+<li><a href="../../q/azure-az104/q104.html">ある企業がAzureで多層Webアプリケーションを運用している。Webサーバー（10個）とアプリサーバー（5個）が存在し…</a></li>
+<li><a href="../../q/azure-az104/q105.html">ある企業がグローバルに展開するアプリケーションのために、東日本（Japan East）に本番VNet、米国東部（East…</a></li>
+<li><a href="../../q/azure-az104/q106.html">ある企業がAzure上でハブアンドスポーク構成を採用している。ハブVNetには共有サービス（ファイアウォール等）が配置さ…</a></li>
+<li><a href="../../q/azure-az104/q107.html">ある企業がAzure VMからAzure Storageへのアクセスをパブリックインターネットを経由せずにMicroso…</a></li>
+<li><a href="../../q/azure-az104/q108.html">ある企業がAzureのAzure DNSプライベートゾーンを使用してVNet内の名前解決を行いたい。「app.inter…</a></li>
+<li><a href="../../q/azure-az104/q109.html">ある企業がハイブリッドクラウド環境を構築しており、オンプレミスのDNSサーバー（192.168.1.10）がAzure上…</a></li>
+<li><a href="../../q/azure-az104/q110.html">ある企業がAzure Standard Load Balancerを使用して3台のVMにHTTPトラフィックを分散してい…</a></li>
+<li><a href="../../q/azure-az104/q111.html">ある企業がAzure Application Gatewayを使用してWebアプリケーションを運用している。「/api/…</a></li>
+<li><a href="../../q/azure-az104/q112.html">ある企業のネットワーク管理者が、Azure VMがインターネット上の特定のIPアドレスへ通信できるかどうかを確認したい。…</a></li>
+<li><a href="../../q/azure-az104/q113.html">ある企業がAzure VMからオンプレミスのデータベースサーバーへの接続に問題が発生している。Network Watch…</a></li>
+<li><a href="../../q/azure-az104/q114.html">ある企業がAzure上でマイクロサービスアーキテクチャを構築している。各マイクロサービスはAzure Kubernete…</a></li>
+<li><a href="../../q/azure-az104/q115.html">ある企業がAzure Load Balancer（Standard SKU）を使用して複数リージョンへの展開を計画してい…</a></li>
+<li><a href="../../q/azure-az104/q116.html">ある企業がAzure Application Gateway（WAF SKU）の前段にAzure Front Doorを…</a></li>
+<li><a href="../../q/azure-az104/q117.html">ある企業がハブアンドスポーク構成でAzureを運用している。ハブVNetにはAzure VPN GatewayとAzur…</a></li>
+<li><a href="../../q/azure-az104/q118.html">ある金融機関がAzureへの移行を計画している。規制要件から「すべての本番データはAzureのネットワークバックボーンを…</a></li>
+<li><a href="../../q/azure-az104/q119.html">ある企業のセキュリティ監査で、Azure VMがインターネットから予期しないポートで通信を受けていることが判明した。Ne…</a></li>
+<li><a href="../../q/azure-az104/q120.html">ある企業がAzureのVNetピアリングを使用して3つのVNet（VNet-A: 10.1.0.0/16、VNet-B:…</a></li>
+<li><a href="../../q/azure-az104/q121.html">ある企業がAzure Application Gateway v2とWAF（Web Application Firewa…</a></li>
+<li><a href="../../q/azure-az104/q122.html">ある企業がAzure DNSパブリックゾーンで「example.com」を管理しており、AzureのName Serve…</a></li>
+<li><a href="../../q/azure-az104/q123.html">ある企業がAzure VNet内のSubnet-AにあるVM-1からSubnet-BにあるVM-2へのTCP/443通信…</a></li>
+<li><a href="../../q/azure-az104/q124.html">ある企業がAzure Load Balancer（Standard SKU）を展開する際に考慮すべきSKUの特性として正…</a></li>
+<li><a href="../../q/azure-az104/q125.html">ある企業がAzure Private Endpointを使用してAzure Storage Accountへのアクセスを…</a></li>
+<li><a href="../../q/azure-az104/q126.html">ある企業がAzure Network Watcherを使用してネットワーク問題を診断しようとしている。各ツールと適切なユ…</a></li>
+<li><a href="../../q/azure-az104/q127.html">ある企業がAzure Application Gatewayを使用してWebアプリケーションをホストしており、WAF（W…</a></li>
+<li><a href="../../q/azure-az104/q128.html">ある企業がオンプレミスとAzureをAzure VPN Gateway（Route-based VPN）で接続している。…</a></li>
+<li><a href="../../q/azure-az104/q129.html">ある企業の運用チームが、Azure 上で動作する仮想マシンの CPU 使用率が 80% を超えた場合に担当者へメール通知…</a></li>
+<li><a href="../../q/azure-az104/q130.html">ある企業が Azure 上のリソースグループで発生したリソース削除操作の履歴を調査したいと考えている。誰がいつどのリソー…</a></li>
+<li><a href="../../q/azure-az104/q131.html">ある開発チームが Azure 上の Web アプリケーションの可用性を定期的に確認したいと考えている。外部からの HTT…</a></li>
+<li><a href="../../q/azure-az104/q132.html">ある企業のクラウド管理チームが、Azure 仮想マシンの診断ログ（ゲスト OS のイベントログ・パフォーマンスカウンター…</a></li>
+<li><a href="../../q/azure-az104/q133.html">ある企業のセキュリティチームが、Azure サブスクリプション内で「所有者（Owner）ロールの付与」操作が発生した際に…</a></li>
+<li><a href="../../q/azure-az104/q134.html">ある企業が複数の Azure リージョンにサービスを展開しており、それぞれの仮想マシンからのログをひとつの場所で集中管理…</a></li>
+<li><a href="../../q/azure-az104/q135.html">ある企業のクラウドオペレーターが、Log Analytics ワークスペースに収集された Heartbeat ログを使用…</a></li>
+<li><a href="../../q/azure-az104/q136.html">ある企業がアラートの通知疲れ（アラートファティーグ）を解消するため、業務時間外（土日・夜間）に発生するメンテナンス関連の…</a></li>
+<li><a href="../../q/azure-az104/q137.html">ある企業が Azure の Recovery Services コンテナーを使用して、Azure VM のバックアップポ…</a></li>
+<li><a href="../../q/azure-az104/q138.html">ある企業の管理者が、誤操作で Azure VM のバックアップデータを削除してしまった。削除後 5 日が経過しているが、…</a></li>
+<li><a href="../../q/azure-az104/q139.html">ある企業が Azure VM をバックアップから復元しようとしている。VM 全体を新しいディスクとして復元するのではなく…</a></li>
+<li><a href="../../q/azure-az104/q140.html">ある企業がオンプレミスの Windows Server に Azure Backup を使ったファイルバックアップを導入…</a></li>
+<li><a href="../../q/azure-az104/q141.html">ある企業が Azure Site Recovery を使ってオンプレミスの VMware 仮想マシンを Azure にレ…</a></li>
+<li><a href="../../q/azure-az104/q142.html">ある金融機関が Azure 上の基幹システムに Azure Site Recovery を導入し、東日本リージョンから西…</a></li>
+<li><a href="../../q/azure-az104/q143.html">ある企業の Log Analytics ワークスペースには、過去 2 年間のセキュリティ監査ログが蓄積されており、月次コ…</a></li>
+<li><a href="../../q/azure-az104/q144.html">ある企業が Azure Monitor のアラートを大量に受信しており、担当者が重要なアラートを見逃している。調査の結果…</a></li>
+<li><a href="../../q/azure-az104/q145.html">ある大企業が 5 つの事業部門を持ち、各部門が独自の Azure サブスクリプションで操業している。セキュリティチームは…</a></li>
+<li><a href="../../q/azure-az104/q146.html">ある企業が Azure VM のバックアップを Recovery Services コンテナーで管理しており、コンプライ…</a></li>
+<li><a href="../../q/azure-az104/q147.html">ある企業が Azure Monitor で複数のアラートを管理しており、アクショングループの設定を最適化しようとしている…</a></li>
+<li><a href="../../q/azure-az104/q148.html">ある企業が Azure アクティビティログを長期間保持するために診断設定を構成しようとしている。アクティビティログの診断…</a></li>
+<li><a href="../../q/azure-az104/q149.html">ある企業が Azure Backup を使って VM を保護している。セキュリティ担当者が「バックアップインフラのセキュ…</a></li>
+<li><a href="../../q/azure-az104/q150.html">ある企業が Azure Site Recovery でオンプレミス VMware VM を Azure にレプリケーショ…</a></li>
+</ol>
+</main>
+<footer class="page-footer">
+<nav class="hub-nav"><a href="../../exams/aws-clf-c02/">CLF-C02 試験ガイド</a><a href="../../exams/aws-aif-c01/">AIF-C01 試験ガイド</a><a href="../../exams/aws-saa-c03/">SAA-C03 試験ガイド</a><a href="../../exams/aws-dva-c02/">DVA-C02 試験ガイド</a><a href="../../exams/aws-sap-c02/">SAP-C02 試験ガイド</a><a href="../../exams/gcp-cdl/">CDL 試験ガイド</a><a href="../../exams/gcp-ace/">ACE 試験ガイド</a><a href="../../exams/azure-az900/">AZ-900 試験ガイド</a><a href="../../exams/azure-ai900/">AI-900 試験ガイド</a><a href="../../exams/azure-dp900/">DP-900 試験ガイド</a><a href="../../exams/azure-sc900/">SC-900 試験ガイド</a><a href="../../exams/azure-az104/">AZ-104 試験ガイド</a></nav>
+<nav class="site-nav"><a href="../../guide/">資格ガイド</a><a href="../../learn/">サービス解説</a><a href="../../career/">キャリア</a><a href="../../about.html">運営者情報</a><a href="../../privacy.html">プライバシーポリシー</a><a href="../../contact.html">お問い合わせ</a></nav>
+<p class="copy">© CLOUDCERT_ — 本サイトは各認定試験の公式試験ではなく、収録問題はすべてオリジナルの演習問題です。</p>
+</footer>
+</body>
+</html>

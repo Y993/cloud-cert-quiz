@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Azure Virtual Network（VNet）とは？試験に出るポイントと演習問題</title>
+<meta name="description" content="Azure Virtual Network（VNet）（Microsoft Azure）の要点と資格試験での問われ方を解説。登場する演習問題19問と公式ドキュメントへのリンクつき。">
+<link rel="canonical" href="https://cloudcert.app/learn/azure-vnet.html">
+<meta property="og:title" content="Azure Virtual Network（VNet）とは？試験に出るポイントと演習問題">
+<meta property="og:description" content="Azure Virtual Network（VNet）（Microsoft Azure）の要点と資格試験での問われ方を解説。登場する演習問題19問と公式ドキュメントへのリンクつき。">
+<meta property="og:url" content="https://cloudcert.app/learn/azure-vnet.html">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="CLOUDCERT_">
+<meta property="og:image" content="https://cloudcert.app/assets/og.png">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='80' font-size='80' fill='%233fe0a4' font-family='monospace'>▸</text></svg>">
+
+<meta name="google-adsense-account" content="ca-pub-5647574947191958">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+JP:wght@400;500;700&family=JetBrains+Mono:wght@400;600;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../css/style.css">
+<link rel="stylesheet" href="../css/page.css">
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-SZR5CB5Q3X"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag('js',new Date());gtag('config','G-SZR5CB5Q3X');</script>
+<script type="application/ld+json">[{"@context":"https://schema.org","@type":"TechArticle","headline":"Azure Virtual Network（VNet）とは？試験に出るポイントと演習問題","description":"Azure Virtual Network（VNet）（Microsoft Azure）の要点と資格試験での問われ方を解説。登場する演習問題19問と公式ドキュメントへのリンクつき。","inLanguage":"ja","about":{"@type":"Thing","name":"Azure Virtual Network（VNet）"},"author":{"@type":"Organization","name":"CLOUDCERT_"},"publisher":{"@type":"Organization","name":"CLOUDCERT_"},"mainEntityOfPage":"https://cloudcert.app/learn/azure-vnet.html"},{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"HOME","item":"https://cloudcert.app/"},{"@type":"ListItem","position":2,"name":"サービス解説","item":"https://cloudcert.app/learn/"},{"@type":"ListItem","position":3,"name":"Azure Virtual Network（VNet）"}]}]</script>
+</head>
+<body class="page-body">
+<header class="page-header"><a class="page-logo" href="../index.html">&gt; CLOUDCERT_</a></header>
+<main class="page-main">
+
+<nav class="breadcrumb"><a href="../index.html">HOME</a> › <a href="./">サービス解説</a> › Azure Virtual Network（VNet）</nav>
+<div class="learn-head">
+<div class="badges"><span class="badge" data-provider="azure">Microsoft Azure</span><span class="badge">ネットワーキング</span><span class="badge badge-q">演習19問</span></div>
+<h1>Azure Virtual Network（VNet）とは</h1>
+</div>
+<p class="lead">Azure Virtual Network（VNet）は、Azureにおけるプライベートネットワークの基本単位だ。VMや他のAzureサービスをVNet内に配置することで、インターネットから隔離した閉域ネットワーク環境を構築できる。CIDRブロックで定義したアドレス空間をサブネットに分割して使う。</p>
+<p>VNetピアリングを使うと、異なるVNet間（同一リージョン内またはリージョン間）をAzureバックボーン経由でプライベート接続できる。ピアリングされたVNet同士はシームレスに通信できるが、トランジティブルーティング（A→B→CのBを経由してAとCが通信）はデフォルトで無効なため、必要な場合は追加設定が必要だ。</p>
+<p><a class="official-btn" href="https://learn.microsoft.com/ja-jp/azure/virtual-network/virtual-networks-overview" target="_blank" rel="noopener">公式ドキュメント →</a></p>
+<h2>試験での問われ方</h2>
+<p>AZ-104ではVNetのサブネット設計・NSGの適用・VNetピアリングの構成が出題される。AZ-900では『VNetはAzureのプライベートネットワーク基盤』という概念理解を問われる程度だ。ピアリングはグローバルに対応しているがトランジティブルーティングは非対応という引っかけが頻出。VPNゲートウェイやExpressRouteとVNetの関係（VNetはそれらの接続終端）も理解しておく。</p>
+<h2>このサービスが登場する演習問題（19問）</h2>
+<ul class="q-list">
+<li><a href="../q/azure-az900/q040.html">【AZ-900】ある企業がAzureの仮想ネットワーク（VNet）に配置したリソースを、インターネット経由でなくMicrosoftのバッ…</a></li>
+<li><a href="../q/azure-az900/q041.html">【AZ-900】ある企業がAzureに複数のVNetを展開しており、異なるVNet間でリソースが通信できるようにしたい。VNetは同一リ…</a></li>
+<li><a href="../q/azure-az900/q059.html">【AZ-900】ある企業がAzureのリソースに対してRBACを設定しようとしている。特定の開発者がAzure Virtual Mach…</a></li>
+<li><a href="../q/azure-az900/q102.html">【AZ-900】ある企業がAzure上で異なるリージョンに2つのVNetを展開している。両VNet間で低レイテンシーかつ高帯域幅のリソー…</a></li>
+<li><a href="../q/azure-az900/q116.html">【AZ-900】ある企業がAzure Virtual Networkの「サービスエンドポイント（Service Endpoint）」と「…</a></li>
+<li><a href="../q/azure-az900/q118.html">【AZ-900】ある企業がAzureでハブ＆スポーク（Hub and Spoke）ネットワークトポロジーを設計している。このトポロジーの…</a></li>
+<li><a href="../q/azure-sc900/q077.html">【SC-900】ある企業のセキュリティアーキテクトが、Azure 仮想ネットワーク内の複数のサブネット間および仮想ネットワーク外へのアウ…</a></li>
+<li><a href="../q/azure-sc900/q086.html">【SC-900】ある企業が Azure 環境で DDoS 攻撃への対策を検討している。Azure DDoS Protection Sta…</a></li>
+<li><a href="../q/azure-sc900/q088.html">【SC-900】ある企業が Azure 上にハイブリッド環境を構成しており、オンプレミスのサーバーとAzure VMの両方を管理者が安全…</a></li>
+<li><a href="../q/azure-az104/q044.html">【AZ-104】ある企業が Azure ストレージアカウントへのネットワークアクセスを強化したい。特定の Azure 仮想ネットワーク（…</a></li>
+<li><a href="../q/azure-az104/q052.html">【AZ-104】ある企業が Azure ストレージアカウントのネットワーク構成を検討している。プライベートエンドポイントを作成した後も、…</a></li>
+<li><a href="../q/azure-az104/q105.html">【AZ-104】ある企業がグローバルに展開するアプリケーションのために、東日本（Japan East）に本番VNet、米国東部（East…</a></li>
+<li><a href="../q/azure-az104/q107.html">【AZ-104】ある企業がAzure VMからAzure Storageへのアクセスをパブリックインターネットを経由せずにMicroso…</a></li>
+<li><a href="../q/azure-az104/q108.html">【AZ-104】ある企業がAzureのAzure DNSプライベートゾーンを使用してVNet内の名前解決を行いたい。「app.inter…</a></li>
+<li><a href="../q/azure-az104/q109.html">【AZ-104】ある企業がハイブリッドクラウド環境を構築しており、オンプレミスのDNSサーバー（192.168.1.10）がAzure上…</a></li>
+<li><a href="../q/azure-az104/q117.html">【AZ-104】ある企業がハブアンドスポーク構成でAzureを運用している。ハブVNetにはAzure VPN GatewayとAzur…</a></li>
+<li><a href="../q/azure-az104/q120.html">【AZ-104】ある企業がAzureのVNetピアリングを使用して3つのVNet（VNet-A: 10.1.0.0/16、VNet-B:…</a></li>
+<li><a href="../q/azure-az104/q125.html">【AZ-104】ある企業がAzure Private Endpointを使用してAzure Storage Accountへのアクセスを…</a></li>
+<li><a href="../q/azure-az104/q150.html">【AZ-104】ある企業が Azure Site Recovery でオンプレミス VMware VM を Azure にレプリケーショ…</a></li>
+</ul>
+<h2>関連サービス</h2><ul class="q-list">
+<li><a href="azure-nsg.html">ネットワーク セキュリティ グループ（NSG）</a></li>
+<li><a href="azure-load-balancer.html">Azure Load Balancer</a></li>
+<li><a href="azure-application-gateway.html">Azure Application Gateway</a></li>
+<li><a href="azure-firewall.html">Azure Firewall</a></li>
+<li><a href="azure-bastion.html">Azure Bastion</a></li></ul>
+</main>
+<footer class="page-footer">
+<nav class="hub-nav"><a href="../exams/aws-clf-c02/">CLF-C02 試験ガイド</a><a href="../exams/aws-aif-c01/">AIF-C01 試験ガイド</a><a href="../exams/aws-saa-c03/">SAA-C03 試験ガイド</a><a href="../exams/aws-dva-c02/">DVA-C02 試験ガイド</a><a href="../exams/aws-sap-c02/">SAP-C02 試験ガイド</a><a href="../exams/gcp-cdl/">CDL 試験ガイド</a><a href="../exams/gcp-ace/">ACE 試験ガイド</a><a href="../exams/azure-az900/">AZ-900 試験ガイド</a><a href="../exams/azure-ai900/">AI-900 試験ガイド</a><a href="../exams/azure-dp900/">DP-900 試験ガイド</a><a href="../exams/azure-sc900/">SC-900 試験ガイド</a><a href="../exams/azure-az104/">AZ-104 試験ガイド</a></nav>
+<nav class="site-nav"><a href="../guide/">資格ガイド</a><a href="../learn/">サービス解説</a><a href="../career/">キャリア</a><a href="../about.html">運営者情報</a><a href="../privacy.html">プライバシーポリシー</a><a href="../contact.html">お問い合わせ</a></nav>
+<p class="copy">© CLOUDCERT_ — 本サイトは各認定試験の公式試験ではなく、収録問題はすべてオリジナルの演習問題です。</p>
+</footer>
+</body>
+</html>

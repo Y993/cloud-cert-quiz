@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>【SAP-C02 演習問題 #3】ある大企業が AWS Control Tower を使って Landing Zone を構…</title>
+<meta name="description" content="SAP-C02の本試験レベル演習問題。ある大企業が AWS Control Tower を使って Landing Zone を構築しています。新しいアカウントが自動的にプロビジョニングされる際に、必ず CloudTrai… 全選択肢の解説つき。">
+<link rel="canonical" href="https://cloudcert.app/q/aws-sap-c02/q003.html">
+<meta property="og:title" content="【SAP-C02 演習問題 #3】ある大企業が AWS Control Tower を使って Landing Zone を構…">
+<meta property="og:description" content="SAP-C02の本試験レベル演習問題。ある大企業が AWS Control Tower を使って Landing Zone を構築しています。新しいアカウントが自動的にプロビジョニングされる際に、必ず CloudTrai… 全選択肢の解説つき。">
+<meta property="og:url" content="https://cloudcert.app/q/aws-sap-c02/q003.html">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="CLOUDCERT_">
+<meta property="og:image" content="https://cloudcert.app/assets/og.png">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='80' font-size='80' fill='%233fe0a4' font-family='monospace'>▸</text></svg>">
+
+<meta name="google-adsense-account" content="ca-pub-5647574947191958">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+JP:wght@400;500;700&family=JetBrains+Mono:wght@400;600;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../../css/style.css">
+<link rel="stylesheet" href="../../css/page.css">
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-SZR5CB5Q3X"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag('js',new Date());gtag('config','G-SZR5CB5Q3X');</script>
+<script type="application/ld+json">[{"@context":"https://schema.org/","@type":"Quiz","about":{"@type":"Thing","name":"AWS Certified Solutions Architect - Professional"},"hasPart":[{"@type":"Question","eduQuestionType":"Multiple choice","learningResourceType":"Practice problem","text":"ある大企業が AWS Control Tower を使って Landing Zone を構築しています。新しいアカウントが自動的にプロビジョニングされる際に、必ず CloudTrail の組織レベルのトレイルが有効になり、ログが中央のセキュリティアカウントの S3 バケットに集約される必要があります。さらに、CloudTrail の無効化は管理者でも禁止したいと考えています。最も適切な実装方法はどれですか？","suggestedAnswer":[{"@type":"Answer","position":1,"text":"AWS Config の管理者アカウントから CloudTrail 有効化ルールをデプロイし、非準拠アカウントを自動修復する Systems Manager Automation を設定する"},{"@type":"Answer","position":2,"text":"各アカウントのプロビジョニング後に Lambda 関数を呼び出して CloudTrail を有効化し、S3 バケットポリシーで外部からの無効化を拒否する"},{"@type":"Answer","position":3,"text":"Control Tower の必須ガードレール（Mandatory guardrail）として CloudTrail 強制を有効化するだけで、SCP は不要"}],"acceptedAnswer":{"@type":"Answer","position":0,"text":"Organizations の管理アカウントで組織レベルのトレイルを作成し、全メンバーアカウントのイベントを中央 S3 バケットに集約する。SCP で cloudtrail:DeleteTrail および cloudtrail:StopLogging を Deny する","comment":{"@type":"Comment","text":"Organizations の組織レベルトレイルは管理アカウントから作成することで全メンバーアカウントのイベントを自動集約できます。SCP で cloudtrail:DeleteTrail と cloudtrail:StopLogging を Deny することで、メンバーアカウントの管理者が CloudTrail を無効化できなくなります。これが最も確実な予防的制御です。\n\nC: Lambda による事後有効化は自動化できますが、有効化と無効化の間にギャップが生まれる可能性があり、完全な予防にはなりません。S3 バケットポリシーで CloudTrail の無効化を防ぐことはできません。\n\nB: Config は検出・修復が主目的で、無効化の防止（予防的制御）ではありません。修復の間に監査ギャップが発生します。\n\nD: Control Tower の必須ガードレールは CloudTrail の基本設定を行いますが、外部からの明示的な無効化防止に SCP が必要なケースもあります。「SCP は不要」という断言は不正確です。"}}}]},{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"HOME","item":"https://cloudcert.app/"},{"@type":"ListItem","position":2,"name":"SAP-C02 試験ガイド","item":"https://cloudcert.app/exams/aws-sap-c02/"},{"@type":"ListItem","position":3,"name":"q003"}]}]</script>
+</head>
+<body class="page-body">
+<header class="page-header"><a class="page-logo" href="../../index.html">&gt; CLOUDCERT_</a></header>
+<main class="page-main">
+
+<nav class="breadcrumb"><a href="../../index.html">HOME</a> › <a href="../../exams/aws-sap-c02/">SAP-C02 試験ガイド</a> › q003</nav>
+<div class="q-meta"><span>SAP-C02</span><span>複雑な組織に対応するソリューションの設計</span><span>HARD</span><span>単一選択</span></div>
+<h1>ある大企業が AWS Control Tower を使って Landing Zone を構築しています。新しいアカウントが自動的にプロビジョニングされる際に、必ず CloudTrail の組織レベルのトレイルが有効になり、ログが中央のセキュリティアカウントの S3 バケットに集約される必要があります。さらに、CloudTrail の無効化は管理者でも禁止したいと考えています。最も適切な実装方法はどれですか？</h1>
+<ol class="q-choices">
+<li><b>A.</b> Organizations の管理アカウントで組織レベルのトレイルを作成し、全メンバーアカウントのイベントを中央 S3 バケットに集約する。SCP で cloudtrail:DeleteTrail および cloudtrail:StopLogging を Deny する</li>
+<li><b>B.</b> AWS Config の管理者アカウントから CloudTrail 有効化ルールをデプロイし、非準拠アカウントを自動修復する Systems Manager Automation を設定する</li>
+<li><b>C.</b> 各アカウントのプロビジョニング後に Lambda 関数を呼び出して CloudTrail を有効化し、S3 バケットポリシーで外部からの無効化を拒否する</li>
+<li><b>D.</b> Control Tower の必須ガードレール（Mandatory guardrail）として CloudTrail 強制を有効化するだけで、SCP は不要</li>
+</ol>
+<details class="q-answer">
+<summary>解答と解説を見る</summary>
+<div class="inner">
+<p><b>正解: A</b></p>
+<p>Organizations の組織レベルトレイルは管理アカウントから作成することで全メンバーアカウントのイベントを自動集約できます。SCP で cloudtrail:DeleteTrail と cloudtrail:StopLogging を Deny することで、メンバーアカウントの管理者が CloudTrail を無効化できなくなります。これが最も確実な予防的制御です。
+
+C: Lambda による事後有効化は自動化できますが、有効化と無効化の間にギャップが生まれる可能性があり、完全な予防にはなりません。S3 バケットポリシーで CloudTrail の無効化を防ぐことはできません。
+
+B: Config は検出・修復が主目的で、無効化の防止（予防的制御）ではありません。修復の間に監査ギャップが発生します。
+
+D: Control Tower の必須ガードレールは CloudTrail の基本設定を行いますが、外部からの明示的な無効化防止に SCP が必要なケースもあります。「SCP は不要」という断言は不正確です。</p>
+<div class="svc-links">📚 関連サービスの解説: <a href="../../learn/aws-organizations.html">AWS Organizations</a> ・ <a href="../../learn/amazon-s3.html">Amazon S3</a></div>
+</div>
+</details>
+<div class="cta-box"><a class="btn btn-primary" href="../../exam.html?exam=aws-sap-c02">▸ この試験を本気で演習する（全150問・無料）</a></div>
+<nav class="q-nav">
+<span><a href="q002.html">← 前の問題</a></span>
+<span><a href="q004.html">次の問題 →</a></span>
+</nav>
+<section class="related"><h2>同じ分野の関連問題</h2><ul class="q-list">
+<li><a href="q002.html">ある企業は AWS Organizations で複数のアカウントを管理しており、中央のネットワークアカウントから全アカ…</a></li>
+<li><a href="q004.html">グローバル企業が AWS Organizations でマルチアカウント環境を管理しています。セキュリティ要件として、⑤…</a></li>
+<li><a href="q001.html">グローバルに展開する金融機関が AWS Organizations を使用して 80 以上の AWS アカウントを管理し…</a></li>
+<li><a href="q005.html">ある企業は既存のオンプレミス Active Directory をアイデンティティプロバイダーとして使用しており、AWS…</a></li>
+</ul></section>
+</main>
+<footer class="page-footer">
+<nav class="hub-nav"><a href="../../exams/aws-clf-c02/">CLF-C02 試験ガイド</a><a href="../../exams/aws-aif-c01/">AIF-C01 試験ガイド</a><a href="../../exams/aws-saa-c03/">SAA-C03 試験ガイド</a><a href="../../exams/aws-dva-c02/">DVA-C02 試験ガイド</a><a href="../../exams/aws-sap-c02/">SAP-C02 試験ガイド</a><a href="../../exams/gcp-cdl/">CDL 試験ガイド</a><a href="../../exams/gcp-ace/">ACE 試験ガイド</a><a href="../../exams/azure-az900/">AZ-900 試験ガイド</a><a href="../../exams/azure-ai900/">AI-900 試験ガイド</a><a href="../../exams/azure-dp900/">DP-900 試験ガイド</a><a href="../../exams/azure-sc900/">SC-900 試験ガイド</a><a href="../../exams/azure-az104/">AZ-104 試験ガイド</a></nav>
+<nav class="site-nav"><a href="../../guide/">資格ガイド</a><a href="../../learn/">サービス解説</a><a href="../../career/">キャリア</a><a href="../../about.html">運営者情報</a><a href="../../privacy.html">プライバシーポリシー</a><a href="../../contact.html">お問い合わせ</a></nav>
+<p class="copy">© CLOUDCERT_ — 本サイトは各認定試験の公式試験ではなく、収録問題はすべてオリジナルの演習問題です。</p>
+</footer>
+</body>
+</html>

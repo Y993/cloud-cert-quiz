@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>【DVA-C02 演習問題 #140】あるチームが本番Lambda関数のコールドスタートを削減するためにプロビジョニング済み同時…</title>
+<meta name="description" content="DVA-C02の本試験レベル演習問題。あるチームが本番Lambda関数のコールドスタートを削減するためにプロビジョニング済み同時実行を設定した。Application Auto Scalingと組み合わせてビジネス時間帯… 全選択肢の解説つき。">
+<link rel="canonical" href="https://cloudcert.app/q/aws-dva-c02/q140.html">
+<meta property="og:title" content="【DVA-C02 演習問題 #140】あるチームが本番Lambda関数のコールドスタートを削減するためにプロビジョニング済み同時…">
+<meta property="og:description" content="DVA-C02の本試験レベル演習問題。あるチームが本番Lambda関数のコールドスタートを削減するためにプロビジョニング済み同時実行を設定した。Application Auto Scalingと組み合わせてビジネス時間帯… 全選択肢の解説つき。">
+<meta property="og:url" content="https://cloudcert.app/q/aws-dva-c02/q140.html">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="CLOUDCERT_">
+<meta property="og:image" content="https://cloudcert.app/assets/og.png">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='80' font-size='80' fill='%233fe0a4' font-family='monospace'>▸</text></svg>">
+
+<meta name="google-adsense-account" content="ca-pub-5647574947191958">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+JP:wght@400;500;700&family=JetBrains+Mono:wght@400;600;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../../css/style.css">
+<link rel="stylesheet" href="../../css/page.css">
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-SZR5CB5Q3X"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag('js',new Date());gtag('config','G-SZR5CB5Q3X');</script>
+<script type="application/ld+json">[{"@context":"https://schema.org/","@type":"Quiz","about":{"@type":"Thing","name":"AWS Certified Developer - Associate"},"hasPart":[{"@type":"Question","eduQuestionType":"Multiple choice","learningResourceType":"Practice problem","text":"あるチームが本番Lambda関数のコールドスタートを削減するためにプロビジョニング済み同時実行を設定した。Application Auto Scalingと組み合わせてビジネス時間帯（9時〜18時）に同時実行数を20に増やし、夜間は5に減らすスケジュールを設定した。しかし夜間の深夜2時に突然大量のリクエストが来たとき、プロビジョニング済み同時実行の20インスタンスでは処理しきれなかった。余剰リクエストはどのように処理されるか。","suggestedAnswer":[{"@type":"Answer","position":0,"text":"余剰リクエストはSQSキューに自動的にバッファリングされる"},{"@type":"Answer","position":1,"text":"余剰リクエストはすべて「TooManyRequestsException」でエラーになる"},{"@type":"Answer","position":3,"text":"余剰リクエストはプロビジョニング済みインスタンスが空くまでAPI GatewayでキューイングされHTTP 202が返される"}],"acceptedAnswer":{"@type":"Answer","position":2,"text":"余剰リクエストはコールドスタートが発生するオンデマンドLambdaインスタンスで処理される","comment":{"@type":"Comment","text":"プロビジョニング済み同時実行はコールドスタートなしで処理できるインスタンス数を保証するが、プロビジョニング数を超えたリクエストはエラーになるわけではなく、通常のLambdaのオンデマンド起動（コールドスタートが発生）で処理される（選択肢C）。これがプロビジョニング済み同時実行の重要な動作仕様。コールドスタートは発生するが、処理自体は成功する。プロビジョニング済み同時実行はコールドスタートの削減が目的であり、キャパシティの上限ではない。アカウント全体の同時実行上限を超えた場合はスロットリングになるが、その場合はReserved ConcurrencyやProvisionedの合計がアカウント上限を超えたときの話。選択肢Bのエラーはプロビジョニング済み数を超えた場合ではなくアカウント全体の同時実行上限を超えた場合。選択肢AのSQSへの自動バッファリングはLambda単体では起こらず、SQSトリガーを使った非同期呼び出しの場合の話。選択肢DのAPI GatewayキューイングはAPI Gatewayにそのような機能はない。"}}}]},{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"HOME","item":"https://cloudcert.app/"},{"@type":"ListItem","position":2,"name":"DVA-C02 試験ガイド","item":"https://cloudcert.app/exams/aws-dva-c02/"},{"@type":"ListItem","position":3,"name":"q140"}]}]</script>
+</head>
+<body class="page-body">
+<header class="page-header"><a class="page-logo" href="../../index.html">&gt; CLOUDCERT_</a></header>
+<main class="page-main">
+
+<nav class="breadcrumb"><a href="../../index.html">HOME</a> › <a href="../../exams/aws-dva-c02/">DVA-C02 試験ガイド</a> › q140</nav>
+<div class="q-meta"><span>DVA-C02</span><span>トラブルシューティングと最適化</span><span>HARD</span><span>単一選択</span></div>
+<h1>あるチームが本番Lambda関数のコールドスタートを削減するためにプロビジョニング済み同時実行を設定した。Application Auto Scalingと組み合わせてビジネス時間帯（9時〜18時）に同時実行数を20に増やし、夜間は5に減らすスケジュールを設定した。しかし夜間の深夜2時に突然大量のリクエストが来たとき、プロビジョニング済み同時実行の20インスタンスでは処理しきれなかった。余剰リクエストはどのように処理されるか。</h1>
+<ol class="q-choices">
+<li><b>A.</b> 余剰リクエストはSQSキューに自動的にバッファリングされる</li>
+<li><b>B.</b> 余剰リクエストはすべて「TooManyRequestsException」でエラーになる</li>
+<li><b>C.</b> 余剰リクエストはコールドスタートが発生するオンデマンドLambdaインスタンスで処理される</li>
+<li><b>D.</b> 余剰リクエストはプロビジョニング済みインスタンスが空くまでAPI GatewayでキューイングされHTTP 202が返される</li>
+</ol>
+<details class="q-answer">
+<summary>解答と解説を見る</summary>
+<div class="inner">
+<p><b>正解: C</b></p>
+<p>プロビジョニング済み同時実行はコールドスタートなしで処理できるインスタンス数を保証するが、プロビジョニング数を超えたリクエストはエラーになるわけではなく、通常のLambdaのオンデマンド起動（コールドスタートが発生）で処理される（選択肢C）。これがプロビジョニング済み同時実行の重要な動作仕様。コールドスタートは発生するが、処理自体は成功する。プロビジョニング済み同時実行はコールドスタートの削減が目的であり、キャパシティの上限ではない。アカウント全体の同時実行上限を超えた場合はスロットリングになるが、その場合はReserved ConcurrencyやProvisionedの合計がアカウント上限を超えたときの話。選択肢Bのエラーはプロビジョニング済み数を超えた場合ではなくアカウント全体の同時実行上限を超えた場合。選択肢AのSQSへの自動バッファリングはLambda単体では起こらず、SQSトリガーを使った非同期呼び出しの場合の話。選択肢DのAPI GatewayキューイングはAPI Gatewayにそのような機能はない。</p>
+<div class="svc-links">📚 関連サービスの解説: <a href="../../learn/aws-lambda.html">AWS Lambda</a></div>
+</div>
+</details>
+<div class="cta-box"><a class="btn btn-primary" href="../../exam.html?exam=aws-dva-c02">▸ この試験を本気で演習する（全150問・無料）</a></div>
+<nav class="q-nav">
+<span><a href="q139.html">← 前の問題</a></span>
+<span><a href="q141.html">次の問題 →</a></span>
+</nav>
+<section class="related"><h2>同じ分野の関連問題</h2><ul class="q-list">
+<li><a href="q139.html">あるチームがDynamoDBのグローバルセカンダリインデックス（GSI）を活用した検索機能を開発した。テーブルへの書き込…</a></li>
+<li><a href="q141.html">あるチームがX-Rayを使ってマルチサービスアーキテクチャをトレースしている。あるリクエストのX-Rayトレースを確認す…</a></li>
+<li><a href="q138.html">あるチームがLambda関数でサードパーティAPIを呼び出すコードを運用している。本番環境で「Task timed ou…</a></li>
+<li><a href="q142.html">あるチームがDynamoDBのスロットリングを解決するため、指数バックオフを実装したリトライロジックをアプリケーションコ…</a></li>
+</ul></section>
+</main>
+<footer class="page-footer">
+<nav class="hub-nav"><a href="../../exams/aws-clf-c02/">CLF-C02 試験ガイド</a><a href="../../exams/aws-aif-c01/">AIF-C01 試験ガイド</a><a href="../../exams/aws-saa-c03/">SAA-C03 試験ガイド</a><a href="../../exams/aws-dva-c02/">DVA-C02 試験ガイド</a><a href="../../exams/aws-sap-c02/">SAP-C02 試験ガイド</a><a href="../../exams/gcp-cdl/">CDL 試験ガイド</a><a href="../../exams/gcp-ace/">ACE 試験ガイド</a><a href="../../exams/azure-az900/">AZ-900 試験ガイド</a><a href="../../exams/azure-ai900/">AI-900 試験ガイド</a><a href="../../exams/azure-dp900/">DP-900 試験ガイド</a><a href="../../exams/azure-sc900/">SC-900 試験ガイド</a><a href="../../exams/azure-az104/">AZ-104 試験ガイド</a></nav>
+<nav class="site-nav"><a href="../../guide/">資格ガイド</a><a href="../../learn/">サービス解説</a><a href="../../career/">キャリア</a><a href="../../about.html">運営者情報</a><a href="../../privacy.html">プライバシーポリシー</a><a href="../../contact.html">お問い合わせ</a></nav>
+<p class="copy">© CLOUDCERT_ — 本サイトは各認定試験の公式試験ではなく、収録問題はすべてオリジナルの演習問題です。</p>
+</footer>
+</body>
+</html>

@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>【DP-900 演習問題 #1】ある小売企業が、顧客の注文データを管理するシステムを設計している。注文には「注文ID、顧客…</title>
+<meta name="description" content="DP-900の本試験レベル演習問題。ある小売企業が、顧客の注文データを管理するシステムを設計している。注文には「注文ID、顧客名、商品コード、数量、注文日時」の固定フィールドが常に存在し、すべての注文が同じ構造を持つ必要… 全選択肢の解説つき。">
+<link rel="canonical" href="https://cloudcert.app/q/azure-dp900/q001.html">
+<meta property="og:title" content="【DP-900 演習問題 #1】ある小売企業が、顧客の注文データを管理するシステムを設計している。注文には「注文ID、顧客…">
+<meta property="og:description" content="DP-900の本試験レベル演習問題。ある小売企業が、顧客の注文データを管理するシステムを設計している。注文には「注文ID、顧客名、商品コード、数量、注文日時」の固定フィールドが常に存在し、すべての注文が同じ構造を持つ必要… 全選択肢の解説つき。">
+<meta property="og:url" content="https://cloudcert.app/q/azure-dp900/q001.html">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="CLOUDCERT_">
+<meta property="og:image" content="https://cloudcert.app/assets/og.png">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='80' font-size='80' fill='%233fe0a4' font-family='monospace'>▸</text></svg>">
+
+<meta name="google-adsense-account" content="ca-pub-5647574947191958">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+JP:wght@400;500;700&family=JetBrains+Mono:wght@400;600;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../../css/style.css">
+<link rel="stylesheet" href="../../css/page.css">
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-SZR5CB5Q3X"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag('js',new Date());gtag('config','G-SZR5CB5Q3X');</script>
+<script type="application/ld+json">[{"@context":"https://schema.org/","@type":"Quiz","about":{"@type":"Thing","name":"Microsoft Azure Data Fundamentals"},"hasPart":[{"@type":"Question","eduQuestionType":"Multiple choice","learningResourceType":"Practice problem","text":"ある小売企業が、顧客の注文データを管理するシステムを設計している。注文には「注文ID、顧客名、商品コード、数量、注文日時」の固定フィールドが常に存在し、すべての注文が同じ構造を持つ必要がある。このデータに最も適したデータ分類はどれか。","suggestedAnswer":[{"@type":"Answer","position":0,"text":"半構造化データ：タグやキーと値のペアで柔軟にスキーマを表現する"},{"@type":"Answer","position":1,"text":"非構造化データ：テキストや画像など形式が定まっていないデータとして扱う"},{"@type":"Answer","position":2,"text":"ストリーミングデータ：リアルタイムで流れるイベントデータとして処理する"}],"acceptedAnswer":{"@type":"Answer","position":3,"text":"構造化データ：事前に定義されたスキーマを持つ表形式のデータとして管理する","comment":{"@type":"Comment","text":"注文ID・顧客名・商品コード・数量・注文日時という固定フィールドを持ち、すべての注文が同じ構造を持つデータは「構造化データ」に分類される。構造化データは事前にスキーマが定義されており、リレーショナルデータベースのテーブルのように行と列で整然と管理できる。選択肢Bの非構造化データは画像・動画・メールのように固定スキーマを持たないデータを指すため不適切。選択肢Aの半構造化データはJSONやXMLのようにスキーマが柔軟で、フィールドの有無が行によって異なる場合に用いるため、固定フィールドが保証された本シナリオには過剰な柔軟性となる。選択肢Cのストリーミングデータはデータの処理方式（リアルタイム）を表す概念であり、データの構造分類とは異なる軸の話である。"}}}]},{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"HOME","item":"https://cloudcert.app/"},{"@type":"ListItem","position":2,"name":"DP-900 試験ガイド","item":"https://cloudcert.app/exams/azure-dp900/"},{"@type":"ListItem","position":3,"name":"q001"}]}]</script>
+</head>
+<body class="page-body">
+<header class="page-header"><a class="page-logo" href="../../index.html">&gt; CLOUDCERT_</a></header>
+<main class="page-main">
+
+<nav class="breadcrumb"><a href="../../index.html">HOME</a> › <a href="../../exams/azure-dp900/">DP-900 試験ガイド</a> › q001</nav>
+<div class="q-meta"><span>DP-900</span><span>コア データ概念</span><span>EASY</span><span>単一選択</span></div>
+<h1>ある小売企業が、顧客の注文データを管理するシステムを設計している。注文には「注文ID、顧客名、商品コード、数量、注文日時」の固定フィールドが常に存在し、すべての注文が同じ構造を持つ必要がある。このデータに最も適したデータ分類はどれか。</h1>
+<ol class="q-choices">
+<li><b>A.</b> 半構造化データ：タグやキーと値のペアで柔軟にスキーマを表現する</li>
+<li><b>B.</b> 非構造化データ：テキストや画像など形式が定まっていないデータとして扱う</li>
+<li><b>C.</b> ストリーミングデータ：リアルタイムで流れるイベントデータとして処理する</li>
+<li><b>D.</b> 構造化データ：事前に定義されたスキーマを持つ表形式のデータとして管理する</li>
+</ol>
+<details class="q-answer">
+<summary>解答と解説を見る</summary>
+<div class="inner">
+<p><b>正解: D</b></p>
+<p>注文ID・顧客名・商品コード・数量・注文日時という固定フィールドを持ち、すべての注文が同じ構造を持つデータは「構造化データ」に分類される。構造化データは事前にスキーマが定義されており、リレーショナルデータベースのテーブルのように行と列で整然と管理できる。選択肢Bの非構造化データは画像・動画・メールのように固定スキーマを持たないデータを指すため不適切。選択肢Aの半構造化データはJSONやXMLのようにスキーマが柔軟で、フィールドの有無が行によって異なる場合に用いるため、固定フィールドが保証された本シナリオには過剰な柔軟性となる。選択肢Cのストリーミングデータはデータの処理方式（リアルタイム）を表す概念であり、データの構造分類とは異なる軸の話である。</p>
+
+</div>
+</details>
+<div class="cta-box"><a class="btn btn-primary" href="../../exam.html?exam=azure-dp900">▸ この試験を本気で演習する（全150問・無料）</a></div>
+<nav class="q-nav">
+<span></span>
+<span><a href="q002.html">次の問題 →</a></span>
+</nav>
+<section class="related"><h2>同じ分野の関連問題</h2><ul class="q-list">
+<li><a href="q002.html">ある医療機関が、患者ごとに異なる検査項目を記録するシステムを検討している。ある患者には血圧・血糖値のみが記録され、別の患…</a></li>
+<li><a href="q003.html">ある動画配信サービスが、ユーザーがアップロードした動画ファイル（MP4形式）と、その動画に対するコメントテキスト、サムネ…</a></li>
+<li><a href="q004.html">ある EC サイトが、毎日深夜に前日の全受注データをデータウェアハウスに転送してレポートを生成している。この処理方式と、…</a></li>
+<li><a href="q005.html">ある金融機関が、ATMや POS 端末からリアルタイムで送られてくる取引データを解析して、不正な取引パターンを即座に検知…</a></li>
+</ul></section>
+</main>
+<footer class="page-footer">
+<nav class="hub-nav"><a href="../../exams/aws-clf-c02/">CLF-C02 試験ガイド</a><a href="../../exams/aws-aif-c01/">AIF-C01 試験ガイド</a><a href="../../exams/aws-saa-c03/">SAA-C03 試験ガイド</a><a href="../../exams/aws-dva-c02/">DVA-C02 試験ガイド</a><a href="../../exams/aws-sap-c02/">SAP-C02 試験ガイド</a><a href="../../exams/gcp-cdl/">CDL 試験ガイド</a><a href="../../exams/gcp-ace/">ACE 試験ガイド</a><a href="../../exams/azure-az900/">AZ-900 試験ガイド</a><a href="../../exams/azure-ai900/">AI-900 試験ガイド</a><a href="../../exams/azure-dp900/">DP-900 試験ガイド</a><a href="../../exams/azure-sc900/">SC-900 試験ガイド</a><a href="../../exams/azure-az104/">AZ-104 試験ガイド</a></nav>
+<nav class="site-nav"><a href="../../guide/">資格ガイド</a><a href="../../learn/">サービス解説</a><a href="../../career/">キャリア</a><a href="../../about.html">運営者情報</a><a href="../../privacy.html">プライバシーポリシー</a><a href="../../contact.html">お問い合わせ</a></nav>
+<p class="copy">© CLOUDCERT_ — 本サイトは各認定試験の公式試験ではなく、収録問題はすべてオリジナルの演習問題です。</p>
+</footer>
+</body>
+</html>

@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>【AI-900 演習問題 #126】ある企業が Azure OpenAI Service の GPT-4 を使ったコード生成ツ…</title>
+<meta name="description" content="AI-900の本試験レベル演習問題。ある企業が Azure OpenAI Service の GPT-4 を使ったコード生成ツールを社内展開しています。開発チームから「生成されるコードが毎回大きく異なり、一貫した品質が保… 全選択肢の解説つき。">
+<link rel="canonical" href="https://cloudcert.app/q/azure-ai900/q126.html">
+<meta property="og:title" content="【AI-900 演習問題 #126】ある企業が Azure OpenAI Service の GPT-4 を使ったコード生成ツ…">
+<meta property="og:description" content="AI-900の本試験レベル演習問題。ある企業が Azure OpenAI Service の GPT-4 を使ったコード生成ツールを社内展開しています。開発チームから「生成されるコードが毎回大きく異なり、一貫した品質が保… 全選択肢の解説つき。">
+<meta property="og:url" content="https://cloudcert.app/q/azure-ai900/q126.html">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="CLOUDCERT_">
+<meta property="og:image" content="https://cloudcert.app/assets/og.png">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='80' font-size='80' fill='%233fe0a4' font-family='monospace'>▸</text></svg>">
+
+<meta name="google-adsense-account" content="ca-pub-5647574947191958">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+JP:wght@400;500;700&family=JetBrains+Mono:wght@400;600;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../../css/style.css">
+<link rel="stylesheet" href="../../css/page.css">
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-SZR5CB5Q3X"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag('js',new Date());gtag('config','G-SZR5CB5Q3X');</script>
+<script type="application/ld+json">[{"@context":"https://schema.org/","@type":"Quiz","about":{"@type":"Thing","name":"Microsoft Azure AI Fundamentals"},"hasPart":[{"@type":"Question","eduQuestionType":"Multiple choice","learningResourceType":"Practice problem","text":"ある企業が Azure OpenAI Service の GPT-4 を使ったコード生成ツールを社内展開しています。開発チームから「生成されるコードが毎回大きく異なり、一貫した品質が保てない」という問題が報告されました。出力の多様性を減らして一貫性を高めるために変更すべきパラメータはどれか。","suggestedAnswer":[{"@type":"Answer","position":0,"text":"frequency_penalty の値を高くする"},{"@type":"Answer","position":1,"text":"max_tokens の値を大きくする"},{"@type":"Answer","position":3,"text":"presence_penalty の値を低くする"}],"acceptedAnswer":{"@type":"Answer","position":2,"text":"temperature の値を低く（0 に近づける）設定する","comment":{"@type":"Comment","text":"temperature パラメータは生成テキストのランダム性・多様性を制御します。値が 0 に近いほど確率が最も高いトークンを選ぶ傾向が強まり、出力が決定論的・一貫的になります。コード生成のように正確性・一貫性が求められる用途では temperature=0〜0.2 程度に設定するのがベストプラクティスです。選択肢 B の max_tokens は生成するトークンの最大数を制限するパラメータで、多様性とは無関係です。選択肢 A の frequency_penalty は同じトークンの繰り返しにペナルティを与えるパラメータで、一貫性向上とは逆効果になる場合があります。選択肢 D の presence_penalty は新しいトピックへの移行を促すパラメータで、コードの一貫性向上には寄与しません。"}}}]},{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"HOME","item":"https://cloudcert.app/"},{"@type":"ListItem","position":2,"name":"AI-900 試験ガイド","item":"https://cloudcert.app/exams/azure-ai900/"},{"@type":"ListItem","position":3,"name":"q126"}]}]</script>
+</head>
+<body class="page-body">
+<header class="page-header"><a class="page-logo" href="../../index.html">&gt; CLOUDCERT_</a></header>
+<main class="page-main">
+
+<nav class="breadcrumb"><a href="../../index.html">HOME</a> › <a href="../../exams/azure-ai900/">AI-900 試験ガイド</a> › q126</nav>
+<div class="q-meta"><span>AI-900</span><span>生成 AI ワークロード</span><span>MEDIUM</span><span>単一選択</span></div>
+<h1>ある企業が Azure OpenAI Service の GPT-4 を使ったコード生成ツールを社内展開しています。開発チームから「生成されるコードが毎回大きく異なり、一貫した品質が保てない」という問題が報告されました。出力の多様性を減らして一貫性を高めるために変更すべきパラメータはどれか。</h1>
+<ol class="q-choices">
+<li><b>A.</b> frequency_penalty の値を高くする</li>
+<li><b>B.</b> max_tokens の値を大きくする</li>
+<li><b>C.</b> temperature の値を低く（0 に近づける）設定する</li>
+<li><b>D.</b> presence_penalty の値を低くする</li>
+</ol>
+<details class="q-answer">
+<summary>解答と解説を見る</summary>
+<div class="inner">
+<p><b>正解: C</b></p>
+<p>temperature パラメータは生成テキストのランダム性・多様性を制御します。値が 0 に近いほど確率が最も高いトークンを選ぶ傾向が強まり、出力が決定論的・一貫的になります。コード生成のように正確性・一貫性が求められる用途では temperature=0〜0.2 程度に設定するのがベストプラクティスです。選択肢 B の max_tokens は生成するトークンの最大数を制限するパラメータで、多様性とは無関係です。選択肢 A の frequency_penalty は同じトークンの繰り返しにペナルティを与えるパラメータで、一貫性向上とは逆効果になる場合があります。選択肢 D の presence_penalty は新しいトピックへの移行を促すパラメータで、コードの一貫性向上には寄与しません。</p>
+
+</div>
+</details>
+<div class="cta-box"><a class="btn btn-primary" href="../../exam.html?exam=azure-ai900">▸ この試験を本気で演習する（全150問・無料）</a></div>
+<nav class="q-nav">
+<span><a href="q125.html">← 前の問題</a></span>
+<span><a href="q127.html">次の問題 →</a></span>
+</nav>
+<section class="related"><h2>同じ分野の関連問題</h2><ul class="q-list">
+<li><a href="q125.html">ある教育スタートアップが Azure OpenAI Service を使って数学の問題を解説する AI チューターを構築…</a></li>
+<li><a href="q127.html">ある法律事務所が、過去の判例ドキュメントを PDF 形式で大量に保有しており、弁護士が自然言語で「〇〇事件に類似した過去…</a></li>
+<li><a href="q124.html">ある開発者が Azure OpenAI Service で GPT-4o モデルを使ったアプリケーションを構築しています…</a></li>
+<li><a href="q128.html">ある企業が、Azure OpenAI Service の GPT-4o モデルを使って顧客からのメールを自動分類するシス…</a></li>
+</ul></section>
+</main>
+<footer class="page-footer">
+<nav class="hub-nav"><a href="../../exams/aws-clf-c02/">CLF-C02 試験ガイド</a><a href="../../exams/aws-aif-c01/">AIF-C01 試験ガイド</a><a href="../../exams/aws-saa-c03/">SAA-C03 試験ガイド</a><a href="../../exams/aws-dva-c02/">DVA-C02 試験ガイド</a><a href="../../exams/aws-sap-c02/">SAP-C02 試験ガイド</a><a href="../../exams/gcp-cdl/">CDL 試験ガイド</a><a href="../../exams/gcp-ace/">ACE 試験ガイド</a><a href="../../exams/azure-az900/">AZ-900 試験ガイド</a><a href="../../exams/azure-ai900/">AI-900 試験ガイド</a><a href="../../exams/azure-dp900/">DP-900 試験ガイド</a><a href="../../exams/azure-sc900/">SC-900 試験ガイド</a><a href="../../exams/azure-az104/">AZ-104 試験ガイド</a></nav>
+<nav class="site-nav"><a href="../../guide/">資格ガイド</a><a href="../../learn/">サービス解説</a><a href="../../career/">キャリア</a><a href="../../about.html">運営者情報</a><a href="../../privacy.html">プライバシーポリシー</a><a href="../../contact.html">お問い合わせ</a></nav>
+<p class="copy">© CLOUDCERT_ — 本サイトは各認定試験の公式試験ではなく、収録問題はすべてオリジナルの演習問題です。</p>
+</footer>
+</body>
+</html>

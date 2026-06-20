@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>【AIF-C01 演習問題 #128】ある企業が、過去10年の採用データを使って人材推薦モデルを学習しました。社内の過去の採用傾…</title>
+<meta name="description" content="AIF-C01の本試験レベル演習問題。ある企業が、過去10年の採用データを使って人材推薦モデルを学習しました。社内の過去の採用傾向がデータに反映されており、特定の大学出身者への偏りが疑われます。この「履歴的バイアス（Hi… 全選択肢の解説つき。">
+<link rel="canonical" href="https://cloudcert.app/q/aws-aif-c01/q128.html">
+<meta property="og:title" content="【AIF-C01 演習問題 #128】ある企業が、過去10年の採用データを使って人材推薦モデルを学習しました。社内の過去の採用傾…">
+<meta property="og:description" content="AIF-C01の本試験レベル演習問題。ある企業が、過去10年の採用データを使って人材推薦モデルを学習しました。社内の過去の採用傾向がデータに反映されており、特定の大学出身者への偏りが疑われます。この「履歴的バイアス（Hi… 全選択肢の解説つき。">
+<meta property="og:url" content="https://cloudcert.app/q/aws-aif-c01/q128.html">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="CLOUDCERT_">
+<meta property="og:image" content="https://cloudcert.app/assets/og.png">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='80' font-size='80' fill='%233fe0a4' font-family='monospace'>▸</text></svg>">
+
+<meta name="google-adsense-account" content="ca-pub-5647574947191958">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+JP:wght@400;500;700&family=JetBrains+Mono:wght@400;600;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../../css/style.css">
+<link rel="stylesheet" href="../../css/page.css">
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-SZR5CB5Q3X"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag('js',new Date());gtag('config','G-SZR5CB5Q3X');</script>
+<script type="application/ld+json">[{"@context":"https://schema.org/","@type":"Quiz","about":{"@type":"Thing","name":"AWS Certified AI Practitioner"},"hasPart":[{"@type":"Question","eduQuestionType":"Multiple choice","learningResourceType":"Practice problem","text":"ある企業が、過去10年の採用データを使って人材推薦モデルを学習しました。社内の過去の採用傾向がデータに反映されており、特定の大学出身者への偏りが疑われます。この「履歴的バイアス（Historical Bias）」に対処するために、学習前の前処理段階で最も適切なアプローチはどれですか？","suggestedAnswer":[{"@type":"Answer","position":1,"text":"バイアスの原因となった過去データを完全に削除し、直近2年分のみで再学習する"},{"@type":"Answer","position":2,"text":"学習データの量を2倍に増やして統計的な安定性を高める"},{"@type":"Answer","position":3,"text":"保護属性（出身大学の系列など）を学習特徴量から除外することで（Fairness through unawareness）、モデルが属性を直接参照できないようにする"}],"acceptedAnswer":{"@type":"Answer","position":0,"text":"再重み付け（Reweighting）または再サンプリングによって、過小代表グループのサンプルの学習への影響を増やし、データセットの偏りを補正する","comment":{"@type":"Comment","text":"履歴的バイアスへの前処理アプローチとして、再重み付け（Reweighting）はサンプルの損失に高い重みを付けることで、過小代表グループが学習に与える影響を増やしてデータの偏りを補正します。再サンプリング（オーバーサンプリング/アンダーサンプリング）も同様の効果を持ちます。SageMaker Clarify のバイアス軽減機能でも使用されるアプローチです。Bの直近データのみへの限定はデータ量不足・時系列バイアスなど別の問題を引き起こす可能性があります。Dの「属性の除外（Fairness through unawareness）」は相関特徴量経由でバイアスが間接的に再現される（プロキシ変数問題）ため、一般に不十分とされています。Cのデータ量増加はバイアスの方向性を変えず、既存の偏りを統計的に強化する可能性すらあります。"}}}]},{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"HOME","item":"https://cloudcert.app/"},{"@type":"ListItem","position":2,"name":"AIF-C01 試験ガイド","item":"https://cloudcert.app/exams/aws-aif-c01/"},{"@type":"ListItem","position":3,"name":"q128"}]}]</script>
+</head>
+<body class="page-body">
+<header class="page-header"><a class="page-logo" href="../../index.html">&gt; CLOUDCERT_</a></header>
+<main class="page-main">
+
+<nav class="breadcrumb"><a href="../../index.html">HOME</a> › <a href="../../exams/aws-aif-c01/">AIF-C01 試験ガイド</a> › q128</nav>
+<div class="q-meta"><span>AIF-C01</span><span>責任ある AI に関するガイドライン</span><span>MEDIUM</span><span>単一選択</span></div>
+<h1>ある企業が、過去10年の採用データを使って人材推薦モデルを学習しました。社内の過去の採用傾向がデータに反映されており、特定の大学出身者への偏りが疑われます。この「履歴的バイアス（Historical Bias）」に対処するために、学習前の前処理段階で最も適切なアプローチはどれですか？</h1>
+<ol class="q-choices">
+<li><b>A.</b> 再重み付け（Reweighting）または再サンプリングによって、過小代表グループのサンプルの学習への影響を増やし、データセットの偏りを補正する</li>
+<li><b>B.</b> バイアスの原因となった過去データを完全に削除し、直近2年分のみで再学習する</li>
+<li><b>C.</b> 学習データの量を2倍に増やして統計的な安定性を高める</li>
+<li><b>D.</b> 保護属性（出身大学の系列など）を学習特徴量から除外することで（Fairness through unawareness）、モデルが属性を直接参照できないようにする</li>
+</ol>
+<details class="q-answer">
+<summary>解答と解説を見る</summary>
+<div class="inner">
+<p><b>正解: A</b></p>
+<p>履歴的バイアスへの前処理アプローチとして、再重み付け（Reweighting）はサンプルの損失に高い重みを付けることで、過小代表グループが学習に与える影響を増やしてデータの偏りを補正します。再サンプリング（オーバーサンプリング/アンダーサンプリング）も同様の効果を持ちます。SageMaker Clarify のバイアス軽減機能でも使用されるアプローチです。Bの直近データのみへの限定はデータ量不足・時系列バイアスなど別の問題を引き起こす可能性があります。Dの「属性の除外（Fairness through unawareness）」は相関特徴量経由でバイアスが間接的に再現される（プロキシ変数問題）ため、一般に不十分とされています。Cのデータ量増加はバイアスの方向性を変えず、既存の偏りを統計的に強化する可能性すらあります。</p>
+
+</div>
+</details>
+<div class="cta-box"><a class="btn btn-primary" href="../../exam.html?exam=aws-aif-c01">▸ この試験を本気で演習する（全150問・無料）</a></div>
+<nav class="q-nav">
+<span><a href="q127.html">← 前の問題</a></span>
+<span><a href="q129.html">次の問題 →</a></span>
+</nav>
+<section class="related"><h2>同じ分野の関連問題</h2><ul class="q-list">
+<li><a href="q127.html">ある製造会社が、品質検査 AI の運用において責任ある AI の実践を評価しています。以下のうち、AWS が公開している…</a></li>
+<li><a href="q129.html">ある企業が生成 AI を使った社内ナレッジベース検索システムを構築しています。法務チームから「AI が生成した要約に社内…</a></li>
+<li><a href="q126.html">ある企業が、Amazon A2I（Augmented AI）を使った与信審査のヒューマンレビューワークフローを設計してい…</a></li>
+<li><a href="q125.html">ある大企業の AI ガバナンス担当者が、Amazon Bedrock で運用中の生成 AI アプリケーションに対してセキ…</a></li>
+</ul></section>
+</main>
+<footer class="page-footer">
+<nav class="hub-nav"><a href="../../exams/aws-clf-c02/">CLF-C02 試験ガイド</a><a href="../../exams/aws-aif-c01/">AIF-C01 試験ガイド</a><a href="../../exams/aws-saa-c03/">SAA-C03 試験ガイド</a><a href="../../exams/aws-dva-c02/">DVA-C02 試験ガイド</a><a href="../../exams/aws-sap-c02/">SAP-C02 試験ガイド</a><a href="../../exams/gcp-cdl/">CDL 試験ガイド</a><a href="../../exams/gcp-ace/">ACE 試験ガイド</a><a href="../../exams/azure-az900/">AZ-900 試験ガイド</a><a href="../../exams/azure-ai900/">AI-900 試験ガイド</a><a href="../../exams/azure-dp900/">DP-900 試験ガイド</a><a href="../../exams/azure-sc900/">SC-900 試験ガイド</a><a href="../../exams/azure-az104/">AZ-104 試験ガイド</a></nav>
+<nav class="site-nav"><a href="../../guide/">資格ガイド</a><a href="../../learn/">サービス解説</a><a href="../../career/">キャリア</a><a href="../../about.html">運営者情報</a><a href="../../privacy.html">プライバシーポリシー</a><a href="../../contact.html">お問い合わせ</a></nav>
+<p class="copy">© CLOUDCERT_ — 本サイトは各認定試験の公式試験ではなく、収録問題はすべてオリジナルの演習問題です。</p>
+</footer>
+</body>
+</html>

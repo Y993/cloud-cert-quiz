@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>【DVA-C02 演習問題 #17】ある企業がAPI GatewayとLambdaで構成されたAPIを運用しており、Lambd…</title>
+<meta name="description" content="DVA-C02の本試験レベル演習問題。ある企業がAPI GatewayとLambdaで構成されたAPIを運用しており、Lambdaのコードの中でAPIレスポンスに以下のPythonコードを含めている。 ```python… 全選択肢の解説つき。">
+<link rel="canonical" href="https://cloudcert.app/q/aws-dva-c02/q017.html">
+<meta property="og:title" content="【DVA-C02 演習問題 #17】ある企業がAPI GatewayとLambdaで構成されたAPIを運用しており、Lambd…">
+<meta property="og:description" content="DVA-C02の本試験レベル演習問題。ある企業がAPI GatewayとLambdaで構成されたAPIを運用しており、Lambdaのコードの中でAPIレスポンスに以下のPythonコードを含めている。 ```python… 全選択肢の解説つき。">
+<meta property="og:url" content="https://cloudcert.app/q/aws-dva-c02/q017.html">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="CLOUDCERT_">
+<meta property="og:image" content="https://cloudcert.app/assets/og.png">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='80' font-size='80' fill='%233fe0a4' font-family='monospace'>▸</text></svg>">
+
+<meta name="google-adsense-account" content="ca-pub-5647574947191958">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+JP:wght@400;500;700&family=JetBrains+Mono:wght@400;600;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../../css/style.css">
+<link rel="stylesheet" href="../../css/page.css">
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-SZR5CB5Q3X"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag('js',new Date());gtag('config','G-SZR5CB5Q3X');</script>
+<script type="application/ld+json">[{"@context":"https://schema.org/","@type":"Quiz","about":{"@type":"Thing","name":"AWS Certified Developer - Associate"},"hasPart":[{"@type":"Question","eduQuestionType":"Multiple choice","learningResourceType":"Practice problem","text":"ある企業がAPI GatewayとLambdaで構成されたAPIを運用しており、Lambdaのコードの中でAPIレスポンスに以下のPythonコードを含めている。\n\n```python\nimport os\nreturn {\n    \"statusCode\": 200,\n    \"body\": json.dumps({\n        \"db_password\": os.environ[\"DB_PASSWORD\"],\n        \"result\": process_data(event)\n    })\n}\n```\n\nセキュリティ審査で「DB_PASSWORDがAPIレスポンスに含まれている」という重大な指摘を受けた。最も速く確実にこの漏洩を修正しつつ、今後の同種の問題を予防する対策として最も適切な組み合わせはどれか。","suggestedAnswer":[{"@type":"Answer","position":0,"text":"API GatewayのマッピングテンプレートでLambdaレスポンスのdb_passwordフィールドをフィルタリングして隠蔽する"},{"@type":"Answer","position":2,"text":"Lambda関数のIAMロールのポリシーを修正してDB_PASSWORD環境変数への読み取り権限を制限する"},{"@type":"Answer","position":3,"text":"CloudTrailでLambdaの呼び出しログを有効化し、db_passwordが含まれるレスポンスをアラートで検知する"}],"acceptedAnswer":{"@type":"Answer","position":1,"text":"Lambdaコードからdb_passwordフィールドを削除し、DB_PASSWORD環境変数をAWS Secrets Managerに移行してローテーションを有効化する","comment":{"@type":"Comment","text":"根本的な修正はコードからdb_passwordフィールドを削除することであり、これは必須の対応である。加えて、環境変数に平文で保存していたDB_PASSWORDをAWS Secrets Managerに移行することで、パスワードへのアクセスをIAMポリシーで制御・監査でき、自動ローテーション機能によって将来的なパスワード漏洩リスクも低減できる。選択肢AのAPI GatewayマッピングテンプレートによるフィルタリングはAPIレスポンスからdb_passwordを隠蔽できるが、Lambdaのログ（CloudWatch Logs）にはまだパスワードが記録される可能性があり、根本的な修正ではない。また、Lambda内部でシークレットを不必要に読み込んでいる問題は解消されない。選択肢DのCloudTrailによる検知は事後の発見であり、既に発生している漏洩を止めるものではない。予防策としても「漏洩を検知して通知する」だけであり、コードの問題を修正しない限り漏洩は継続する。選択肢CのIAMポリシー修正はLambdaの「環境変数への読み取り権限」という概念はIAMで制御できるものではない（Lambda実行環境はアタッチされたIAMロールとは別に環境変数に直接アクセスできる）ため、この選択肢は技術的に誤りである。"}}}]},{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"HOME","item":"https://cloudcert.app/"},{"@type":"ListItem","position":2,"name":"DVA-C02 試験ガイド","item":"https://cloudcert.app/exams/aws-dva-c02/"},{"@type":"ListItem","position":3,"name":"q017"}]}]</script>
+</head>
+<body class="page-body">
+<header class="page-header"><a class="page-logo" href="../../index.html">&gt; CLOUDCERT_</a></header>
+<main class="page-main">
+
+<nav class="breadcrumb"><a href="../../index.html">HOME</a> › <a href="../../exams/aws-dva-c02/">DVA-C02 試験ガイド</a> › q017</nav>
+<div class="q-meta"><span>DVA-C02</span><span>開発</span><span>HARD</span><span>単一選択</span></div>
+<h1>ある企業がAPI GatewayとLambdaで構成されたAPIを運用しており、Lambdaのコードの中でAPIレスポンスに以下のPythonコードを含めている。
+
+```python
+import os
+return {
+    &quot;statusCode&quot;: 200,
+    &quot;body&quot;: json.dumps({
+        &quot;db_password&quot;: os.environ[&quot;DB_PASSWORD&quot;],
+        &quot;result&quot;: process_data(event)
+    })
+}
+```
+
+セキュリティ審査で「DB_PASSWORDがAPIレスポンスに含まれている」という重大な指摘を受けた。最も速く確実にこの漏洩を修正しつつ、今後の同種の問題を予防する対策として最も適切な組み合わせはどれか。</h1>
+<ol class="q-choices">
+<li><b>A.</b> API GatewayのマッピングテンプレートでLambdaレスポンスのdb_passwordフィールドをフィルタリングして隠蔽する</li>
+<li><b>B.</b> Lambdaコードからdb_passwordフィールドを削除し、DB_PASSWORD環境変数をAWS Secrets Managerに移行してローテーションを有効化する</li>
+<li><b>C.</b> Lambda関数のIAMロールのポリシーを修正してDB_PASSWORD環境変数への読み取り権限を制限する</li>
+<li><b>D.</b> CloudTrailでLambdaの呼び出しログを有効化し、db_passwordが含まれるレスポンスをアラートで検知する</li>
+</ol>
+<details class="q-answer">
+<summary>解答と解説を見る</summary>
+<div class="inner">
+<p><b>正解: B</b></p>
+<p>根本的な修正はコードからdb_passwordフィールドを削除することであり、これは必須の対応である。加えて、環境変数に平文で保存していたDB_PASSWORDをAWS Secrets Managerに移行することで、パスワードへのアクセスをIAMポリシーで制御・監査でき、自動ローテーション機能によって将来的なパスワード漏洩リスクも低減できる。選択肢AのAPI GatewayマッピングテンプレートによるフィルタリングはAPIレスポンスからdb_passwordを隠蔽できるが、Lambdaのログ（CloudWatch Logs）にはまだパスワードが記録される可能性があり、根本的な修正ではない。また、Lambda内部でシークレットを不必要に読み込んでいる問題は解消されない。選択肢DのCloudTrailによる検知は事後の発見であり、既に発生している漏洩を止めるものではない。予防策としても「漏洩を検知して通知する」だけであり、コードの問題を修正しない限り漏洩は継続する。選択肢CのIAMポリシー修正はLambdaの「環境変数への読み取り権限」という概念はIAMで制御できるものではない（Lambda実行環境はアタッチされたIAMロールとは別に環境変数に直接アクセスできる）ため、この選択肢は技術的に誤りである。</p>
+<div class="svc-links">📚 関連サービスの解説: <a href="../../learn/aws-lambda.html">AWS Lambda</a> ・ <a href="../../learn/aws-secrets-manager.html">AWS Secrets Manager</a></div>
+</div>
+</details>
+<div class="cta-box"><a class="btn btn-primary" href="../../exam.html?exam=aws-dva-c02">▸ この試験を本気で演習する（全150問・無料）</a></div>
+<nav class="q-nav">
+<span><a href="q016.html">← 前の問題</a></span>
+<span><a href="q018.html">次の問題 →</a></span>
+</nav>
+<section class="related"><h2>同じ分野の関連問題</h2><ul class="q-list">
+<li><a href="q016.html">ある企業が、Lambdaを使ったサーバーレスアーキテクチャでVPC内のElastiCache（Redis）クラスターにア…</a></li>
+<li><a href="q018.html">ある企業が、API GatewayのHTTP APIとLambda統合でREST APIを構築している。フロントエンドの…</a></li>
+<li><a href="q015.html">ある企業がAPI GatewayのREST APIとLambdaで構成されたAPIを本番環境に運用している。新機能のデプ…</a></li>
+<li><a href="q019.html">あるチームが、Lambdaのコールドスタートのレイテンシを改善しようとしている。現在のLambda関数はPython 3…</a></li>
+</ul></section>
+</main>
+<footer class="page-footer">
+<nav class="hub-nav"><a href="../../exams/aws-clf-c02/">CLF-C02 試験ガイド</a><a href="../../exams/aws-aif-c01/">AIF-C01 試験ガイド</a><a href="../../exams/aws-saa-c03/">SAA-C03 試験ガイド</a><a href="../../exams/aws-dva-c02/">DVA-C02 試験ガイド</a><a href="../../exams/aws-sap-c02/">SAP-C02 試験ガイド</a><a href="../../exams/gcp-cdl/">CDL 試験ガイド</a><a href="../../exams/gcp-ace/">ACE 試験ガイド</a><a href="../../exams/azure-az900/">AZ-900 試験ガイド</a><a href="../../exams/azure-ai900/">AI-900 試験ガイド</a><a href="../../exams/azure-dp900/">DP-900 試験ガイド</a><a href="../../exams/azure-sc900/">SC-900 試験ガイド</a><a href="../../exams/azure-az104/">AZ-104 試験ガイド</a></nav>
+<nav class="site-nav"><a href="../../guide/">資格ガイド</a><a href="../../learn/">サービス解説</a><a href="../../career/">キャリア</a><a href="../../about.html">運営者情報</a><a href="../../privacy.html">プライバシーポリシー</a><a href="../../contact.html">お問い合わせ</a></nav>
+<p class="copy">© CLOUDCERT_ — 本サイトは各認定試験の公式試験ではなく、収録問題はすべてオリジナルの演習問題です。</p>
+</footer>
+</body>
+</html>

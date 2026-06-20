@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>【SAA-C03 演習問題 #87】ある企業が、Amazon EC2 インスタンスのディスク I/O パフォーマンスが不足して…</title>
+<meta name="description" content="SAA-C03の本試験レベル演習問題。ある企業が、Amazon EC2 インスタンスのディスク I/O パフォーマンスが不足しており、データベースのトランザクション処理が遅延している。インスタンスには現在 gp2 EBS… 全選択肢の解説つき。">
+<link rel="canonical" href="https://cloudcert.app/q/aws-saa-c03/q087.html">
+<meta property="og:title" content="【SAA-C03 演習問題 #87】ある企業が、Amazon EC2 インスタンスのディスク I/O パフォーマンスが不足して…">
+<meta property="og:description" content="SAA-C03の本試験レベル演習問題。ある企業が、Amazon EC2 インスタンスのディスク I/O パフォーマンスが不足しており、データベースのトランザクション処理が遅延している。インスタンスには現在 gp2 EBS… 全選択肢の解説つき。">
+<meta property="og:url" content="https://cloudcert.app/q/aws-saa-c03/q087.html">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="CLOUDCERT_">
+<meta property="og:image" content="https://cloudcert.app/assets/og.png">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='80' font-size='80' fill='%233fe0a4' font-family='monospace'>▸</text></svg>">
+
+<meta name="google-adsense-account" content="ca-pub-5647574947191958">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+JP:wght@400;500;700&family=JetBrains+Mono:wght@400;600;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../../css/style.css">
+<link rel="stylesheet" href="../../css/page.css">
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-SZR5CB5Q3X"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag('js',new Date());gtag('config','G-SZR5CB5Q3X');</script>
+<script type="application/ld+json">[{"@context":"https://schema.org/","@type":"Quiz","about":{"@type":"Thing","name":"AWS Certified Solutions Architect – Associate"},"hasPart":[{"@type":"Question","eduQuestionType":"Multiple choice","learningResourceType":"Practice problem","text":"ある企業が、Amazon EC2 インスタンスのディスク I/O パフォーマンスが不足しており、データベースのトランザクション処理が遅延している。インスタンスには現在 gp2 EBS ボリューム（1,000GB）がアタッチされている。追加インスタンスを起動せずに I/O パフォーマンスを向上させる最も適切な方法はどれか。","suggestedAnswer":[{"@type":"Answer","position":0,"text":"EBS ボリュームを EFS に移行して複数のインスタンスからの共有アクセスを可能にする。"},{"@type":"Answer","position":2,"text":"EBS ボリュームを st1（スループット最適化 HDD）に変更する。"},{"@type":"Answer","position":3,"text":"gp2 ボリュームのサイズを 2,000GB に拡大する（gp2 は 3 IOPS/GB のため、サイズ拡大で IOPS も増加する）。"}],"acceptedAnswer":{"@type":"Answer","position":1,"text":"gp2 ボリュームを io2 Block Express（高性能プロビジョニング IOPS SSD）に変更し、必要な IOPS を明示的にプロビジョニングする。","comment":{"@type":"Comment","text":"io2 Block Express は IOPS を明示的にプロビジョニングできる高性能 SSD で、最大 256,000 IOPS・4,000 MB/s スループットを提供する。データベースのランダム I/O 集中ワークロードに最適で、必要な IOPS を直接指定できる。gp2 から io2 Block Express への変更はコンソールまたは CLI でのボリュームタイプ変更のみで、インスタンスの停止も不要（動的に変更可能）。選択肢Dのgp2 サイズ拡大（1,000GB → 3,000 IOPS）はある程度の IOPS 増加が期待できるが、gp2 の最大は 16,000 IOPS（5,334GB 以上）であり、io2 Block Express の最大 256,000 IOPS には及ばない。データベースが高 IOPS を必要とする場合は io2 の方が適切。選択肢CのHDD（st1）はシーケンシャルスループットに優れるが IOPS は低く、データベースのランダム I/O には不適切。選択肢AのEFS への移行は NFS プロトコルを使う共有ファイルシステムで、データベースのブロックデバイスとしては EBS の方が適切。レイテンシーも EFS より EBS の方が低い。"}}}]},{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"HOME","item":"https://cloudcert.app/"},{"@type":"ListItem","position":2,"name":"SAA-C03 試験ガイド","item":"https://cloudcert.app/exams/aws-saa-c03/"},{"@type":"ListItem","position":3,"name":"q087"}]}]</script>
+</head>
+<body class="page-body">
+<header class="page-header"><a class="page-logo" href="../../index.html">&gt; CLOUDCERT_</a></header>
+<main class="page-main">
+
+<nav class="breadcrumb"><a href="../../index.html">HOME</a> › <a href="../../exams/aws-saa-c03/">SAA-C03 試験ガイド</a> › q087</nav>
+<div class="q-meta"><span>SAA-C03</span><span>高パフォーマンスなアーキテクチャの設計</span><span>MEDIUM</span><span>単一選択</span></div>
+<h1>ある企業が、Amazon EC2 インスタンスのディスク I/O パフォーマンスが不足しており、データベースのトランザクション処理が遅延している。インスタンスには現在 gp2 EBS ボリューム（1,000GB）がアタッチされている。追加インスタンスを起動せずに I/O パフォーマンスを向上させる最も適切な方法はどれか。</h1>
+<ol class="q-choices">
+<li><b>A.</b> EBS ボリュームを EFS に移行して複数のインスタンスからの共有アクセスを可能にする。</li>
+<li><b>B.</b> gp2 ボリュームを io2 Block Express（高性能プロビジョニング IOPS SSD）に変更し、必要な IOPS を明示的にプロビジョニングする。</li>
+<li><b>C.</b> EBS ボリュームを st1（スループット最適化 HDD）に変更する。</li>
+<li><b>D.</b> gp2 ボリュームのサイズを 2,000GB に拡大する（gp2 は 3 IOPS/GB のため、サイズ拡大で IOPS も増加する）。</li>
+</ol>
+<details class="q-answer">
+<summary>解答と解説を見る</summary>
+<div class="inner">
+<p><b>正解: B</b></p>
+<p>io2 Block Express は IOPS を明示的にプロビジョニングできる高性能 SSD で、最大 256,000 IOPS・4,000 MB/s スループットを提供する。データベースのランダム I/O 集中ワークロードに最適で、必要な IOPS を直接指定できる。gp2 から io2 Block Express への変更はコンソールまたは CLI でのボリュームタイプ変更のみで、インスタンスの停止も不要（動的に変更可能）。選択肢Dのgp2 サイズ拡大（1,000GB → 3,000 IOPS）はある程度の IOPS 増加が期待できるが、gp2 の最大は 16,000 IOPS（5,334GB 以上）であり、io2 Block Express の最大 256,000 IOPS には及ばない。データベースが高 IOPS を必要とする場合は io2 の方が適切。選択肢CのHDD（st1）はシーケンシャルスループットに優れるが IOPS は低く、データベースのランダム I/O には不適切。選択肢AのEFS への移行は NFS プロトコルを使う共有ファイルシステムで、データベースのブロックデバイスとしては EBS の方が適切。レイテンシーも EFS より EBS の方が低い。</p>
+
+</div>
+</details>
+<div class="cta-box"><a class="btn btn-primary" href="../../exam.html?exam=aws-saa-c03">▸ この試験を本気で演習する（全150問・無料）</a></div>
+<nav class="q-nav">
+<span><a href="q086.html">← 前の問題</a></span>
+<span><a href="q088.html">次の問題 →</a></span>
+</nav>
+<section class="related"><h2>同じ分野の関連問題</h2><ul class="q-list">
+<li><a href="q090.html">ある企業が、AWS Lambda 関数で大量の S3 オブジェクト（1 ファイル 500KB 程度、1 バッチで 10,…</a></li>
+<li><a href="q094.html">ある企業が、Amazon Aurora PostgreSQL を使ったシステムで、大量のデータをバッチ処理でロードするE…</a></li>
+<li><a href="q100.html">ある企業が、AWS で機械学習モデルの学習ジョブを定期的に実行している。学習には GPU インスタンスが必要で、週に 2…</a></li>
+<li><a href="q104.html">ある企業が、Amazon Aurora PostgreSQL に対して複雑な結合クエリを含む分析ワークロードを定期的に実…</a></li>
+</ul></section>
+</main>
+<footer class="page-footer">
+<nav class="hub-nav"><a href="../../exams/aws-clf-c02/">CLF-C02 試験ガイド</a><a href="../../exams/aws-aif-c01/">AIF-C01 試験ガイド</a><a href="../../exams/aws-saa-c03/">SAA-C03 試験ガイド</a><a href="../../exams/aws-dva-c02/">DVA-C02 試験ガイド</a><a href="../../exams/aws-sap-c02/">SAP-C02 試験ガイド</a><a href="../../exams/gcp-cdl/">CDL 試験ガイド</a><a href="../../exams/gcp-ace/">ACE 試験ガイド</a><a href="../../exams/azure-az900/">AZ-900 試験ガイド</a><a href="../../exams/azure-ai900/">AI-900 試験ガイド</a><a href="../../exams/azure-dp900/">DP-900 試験ガイド</a><a href="../../exams/azure-sc900/">SC-900 試験ガイド</a><a href="../../exams/azure-az104/">AZ-104 試験ガイド</a></nav>
+<nav class="site-nav"><a href="../../guide/">資格ガイド</a><a href="../../learn/">サービス解説</a><a href="../../career/">キャリア</a><a href="../../about.html">運営者情報</a><a href="../../privacy.html">プライバシーポリシー</a><a href="../../contact.html">お問い合わせ</a></nav>
+<p class="copy">© CLOUDCERT_ — 本サイトは各認定試験の公式試験ではなく、収録問題はすべてオリジナルの演習問題です。</p>
+</footer>
+</body>
+</html>

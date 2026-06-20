@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>【AI-900 演習問題 #52】あるMLエンジニアが、k分割交差検証（k-fold Cross Validation）を実…</title>
+<meta name="description" content="AI-900の本試験レベル演習問題。あるMLエンジニアが、k分割交差検証（k-fold Cross Validation）を実施した。この手法を単純な訓練・テスト分割（Holdout法）の代わりに使う主な理由はどれか。 全選択肢の解説つき。">
+<link rel="canonical" href="https://cloudcert.app/q/azure-ai900/q052.html">
+<meta property="og:title" content="【AI-900 演習問題 #52】あるMLエンジニアが、k分割交差検証（k-fold Cross Validation）を実…">
+<meta property="og:description" content="AI-900の本試験レベル演習問題。あるMLエンジニアが、k分割交差検証（k-fold Cross Validation）を実施した。この手法を単純な訓練・テスト分割（Holdout法）の代わりに使う主な理由はどれか。 全選択肢の解説つき。">
+<meta property="og:url" content="https://cloudcert.app/q/azure-ai900/q052.html">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="CLOUDCERT_">
+<meta property="og:image" content="https://cloudcert.app/assets/og.png">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='80' font-size='80' fill='%233fe0a4' font-family='monospace'>▸</text></svg>">
+
+<meta name="google-adsense-account" content="ca-pub-5647574947191958">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+JP:wght@400;500;700&family=JetBrains+Mono:wght@400;600;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../../css/style.css">
+<link rel="stylesheet" href="../../css/page.css">
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-SZR5CB5Q3X"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag('js',new Date());gtag('config','G-SZR5CB5Q3X');</script>
+<script type="application/ld+json">[{"@context":"https://schema.org/","@type":"Quiz","about":{"@type":"Thing","name":"Microsoft Azure AI Fundamentals"},"hasPart":[{"@type":"Question","eduQuestionType":"Multiple choice","learningResourceType":"Practice problem","text":"あるMLエンジニアが、k分割交差検証（k-fold Cross Validation）を実施した。この手法を単純な訓練・テスト分割（Holdout法）の代わりに使う主な理由はどれか。","suggestedAnswer":[{"@type":"Answer","position":0,"text":"k分割交差検証はテストデータを使わないため、データリークを完全に防止できる"},{"@type":"Answer","position":1,"text":"k分割交差検証は訓練時間がHoldout法より常に短く、計算コストを削減できる"},{"@type":"Answer","position":2,"text":"k分割交差検証はハイパーパラメータをkの数だけ自動的に最適化する機能を持つ"}],"acceptedAnswer":{"@type":"Answer","position":3,"text":"データを複数の分割パターンで学習・評価することで汎化性能の推定を安定化させ、Holdout法に比べてデータの使用効率も高まる","comment":{"@type":"Comment","text":"k分割交差検証はデータをk個のフォールドに分割し、順番に1フォールドをテスト・残りを訓練として使うk回の実験を行い、平均性能を求める。Holdout法に比べてデータが少ない場合も全サンプルを訓練と評価に使い回せる（データ効率が高い）。また評価の分散が小さく安定した汎化性能推定が得られる。Bは誤りで、k回訓練するため訓練時間はHoldout法のk倍かかる。Aは誤りで、交差検証でも最終評価用のテストデータは別途保持するのが正しい実践である。Cは誤りで、交差検証はモデルの評価手法であり、ハイパーパラメータを自動最適化する機能は持たない（Grid Searchなど別手法と組み合わせて使う）。"}}}]},{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"HOME","item":"https://cloudcert.app/"},{"@type":"ListItem","position":2,"name":"AI-900 試験ガイド","item":"https://cloudcert.app/exams/azure-ai900/"},{"@type":"ListItem","position":3,"name":"q052"}]}]</script>
+</head>
+<body class="page-body">
+<header class="page-header"><a class="page-logo" href="../../index.html">&gt; CLOUDCERT_</a></header>
+<main class="page-main">
+
+<nav class="breadcrumb"><a href="../../index.html">HOME</a> › <a href="../../exams/azure-ai900/">AI-900 試験ガイド</a> › q052</nav>
+<div class="q-meta"><span>AI-900</span><span>機械学習の基本原則</span><span>HARD</span><span>単一選択</span></div>
+<h1>あるMLエンジニアが、k分割交差検証（k-fold Cross Validation）を実施した。この手法を単純な訓練・テスト分割（Holdout法）の代わりに使う主な理由はどれか。</h1>
+<ol class="q-choices">
+<li><b>A.</b> k分割交差検証はテストデータを使わないため、データリークを完全に防止できる</li>
+<li><b>B.</b> k分割交差検証は訓練時間がHoldout法より常に短く、計算コストを削減できる</li>
+<li><b>C.</b> k分割交差検証はハイパーパラメータをkの数だけ自動的に最適化する機能を持つ</li>
+<li><b>D.</b> データを複数の分割パターンで学習・評価することで汎化性能の推定を安定化させ、Holdout法に比べてデータの使用効率も高まる</li>
+</ol>
+<details class="q-answer">
+<summary>解答と解説を見る</summary>
+<div class="inner">
+<p><b>正解: D</b></p>
+<p>k分割交差検証はデータをk個のフォールドに分割し、順番に1フォールドをテスト・残りを訓練として使うk回の実験を行い、平均性能を求める。Holdout法に比べてデータが少ない場合も全サンプルを訓練と評価に使い回せる（データ効率が高い）。また評価の分散が小さく安定した汎化性能推定が得られる。Bは誤りで、k回訓練するため訓練時間はHoldout法のk倍かかる。Aは誤りで、交差検証でも最終評価用のテストデータは別途保持するのが正しい実践である。Cは誤りで、交差検証はモデルの評価手法であり、ハイパーパラメータを自動最適化する機能は持たない（Grid Searchなど別手法と組み合わせて使う）。</p>
+
+</div>
+</details>
+<div class="cta-box"><a class="btn btn-primary" href="../../exam.html?exam=azure-ai900">▸ この試験を本気で演習する（全150問・無料）</a></div>
+<nav class="q-nav">
+<span><a href="q051.html">← 前の問題</a></span>
+<span><a href="q053.html">次の問題 →</a></span>
+</nav>
+<section class="related"><h2>同じ分野の関連問題</h2><ul class="q-list">
+<li><a href="q051.html">ある医療診断AIの開発チームが、モデルの公平性（Fairness）を評価したところ、特定の人口統計グループ（高齢者）に対…</a></li>
+<li><a href="q053.html">あるデータサイエンティストが大規模テキストデータを扱うTransformerベースのモデルを事前学習させようとしている。…</a></li>
+<li><a href="q050.html">あるMLチームが不正取引検出モデルを本番環境にデプロイした後、モデルの精度が3か月後に大幅に低下した。訓練データとテスト…</a></li>
+<li><a href="q054.html">ある企業がAzure Machine Learning パイプラインを本番運用している。毎週新しい顧客データが追加される…</a></li>
+</ul></section>
+</main>
+<footer class="page-footer">
+<nav class="hub-nav"><a href="../../exams/aws-clf-c02/">CLF-C02 試験ガイド</a><a href="../../exams/aws-aif-c01/">AIF-C01 試験ガイド</a><a href="../../exams/aws-saa-c03/">SAA-C03 試験ガイド</a><a href="../../exams/aws-dva-c02/">DVA-C02 試験ガイド</a><a href="../../exams/aws-sap-c02/">SAP-C02 試験ガイド</a><a href="../../exams/gcp-cdl/">CDL 試験ガイド</a><a href="../../exams/gcp-ace/">ACE 試験ガイド</a><a href="../../exams/azure-az900/">AZ-900 試験ガイド</a><a href="../../exams/azure-ai900/">AI-900 試験ガイド</a><a href="../../exams/azure-dp900/">DP-900 試験ガイド</a><a href="../../exams/azure-sc900/">SC-900 試験ガイド</a><a href="../../exams/azure-az104/">AZ-104 試験ガイド</a></nav>
+<nav class="site-nav"><a href="../../guide/">資格ガイド</a><a href="../../learn/">サービス解説</a><a href="../../career/">キャリア</a><a href="../../about.html">運営者情報</a><a href="../../privacy.html">プライバシーポリシー</a><a href="../../contact.html">お問い合わせ</a></nav>
+<p class="copy">© CLOUDCERT_ — 本サイトは各認定試験の公式試験ではなく、収録問題はすべてオリジナルの演習問題です。</p>
+</footer>
+</body>
+</html>

@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>【SAA-C03 演習問題 #76】ある企業が、AWS データ転送コストを削減したい。現在の構成では、ap-northeast…</title>
+<meta name="description" content="SAA-C03の本試験レベル演習問題。ある企業が、AWS データ転送コストを削減したい。現在の構成では、ap-northeast-1 の EC2 インスタンスが同じ VPC 内の S3 バケットに大量のデータを書き込んで… 全選択肢の解説つき。">
+<link rel="canonical" href="https://cloudcert.app/q/aws-saa-c03/q076.html">
+<meta property="og:title" content="【SAA-C03 演習問題 #76】ある企業が、AWS データ転送コストを削減したい。現在の構成では、ap-northeast…">
+<meta property="og:description" content="SAA-C03の本試験レベル演習問題。ある企業が、AWS データ転送コストを削減したい。現在の構成では、ap-northeast-1 の EC2 インスタンスが同じ VPC 内の S3 バケットに大量のデータを書き込んで… 全選択肢の解説つき。">
+<meta property="og:url" content="https://cloudcert.app/q/aws-saa-c03/q076.html">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="CLOUDCERT_">
+<meta property="og:image" content="https://cloudcert.app/assets/og.png">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='80' font-size='80' fill='%233fe0a4' font-family='monospace'>▸</text></svg>">
+
+<meta name="google-adsense-account" content="ca-pub-5647574947191958">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+JP:wght@400;500;700&family=JetBrains+Mono:wght@400;600;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../../css/style.css">
+<link rel="stylesheet" href="../../css/page.css">
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-SZR5CB5Q3X"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag('js',new Date());gtag('config','G-SZR5CB5Q3X');</script>
+<script type="application/ld+json">[{"@context":"https://schema.org/","@type":"Quiz","about":{"@type":"Thing","name":"AWS Certified Solutions Architect – Associate"},"hasPart":[{"@type":"Question","eduQuestionType":"Multiple choice","learningResourceType":"Practice problem","text":"ある企業が、AWS データ転送コストを削減したい。現在の構成では、ap-northeast-1 の EC2 インスタンスが同じ VPC 内の S3 バケットに大量のデータを書き込んでおり、S3 バケットへの接続はインターネット経由になっている。最もコスト効率よく改善する方法はどれか。","suggestedAnswer":[{"@type":"Answer","position":0,"text":"EC2 インスタンスと同一リージョンに S3 バケットがあればデータ転送は無料なので変更不要。"},{"@type":"Answer","position":1,"text":"AWS Direct Connect を使ってオンプレミスからのデータ転送コストを削減する。"},{"@type":"Answer","position":2,"text":"S3 Transfer Acceleration を有効化してデータ転送を最適化する。"}],"acceptedAnswer":{"@type":"Answer","position":3,"text":"S3 用の Gateway 型 VPC エンドポイントを作成し、EC2 から S3 へのトラフィックを VPC 内部で完結させる。Gateway 型エンドポイントには追加料金がかからない。","comment":{"@type":"Comment","text":"S3 の Gateway 型 VPC エンドポイントは無料で使用でき、EC2 から S3 へのトラフィックをインターネットではなく AWS 内部ネットワーク経由にできる。インターネット経由の場合は NAT ゲートウェイ利用料（処理データ量 × 0.045USD/GB 等）やデータ転送料が発生するが、VPC エンドポイント経由にすることでこれらのコストを大幅に削減できる。選択肢CのS3 Transfer Acceleration はアップロード速度の向上を目的としたサービスで、コスト削減ではなく追加料金が発生する。選択肢Aは半分正しいが、同一リージョンでも NAT ゲートウェイ経由の場合は処理データ量に対して料金が発生する。VPC エンドポイントを使うことでこの NAT ゲートウェイコストを回避できる。選択肢BのDirect Connect はオンプレミスとの接続の最適化であり、VPC 内 EC2 から S3 へのコスト削減には関係しない。"}}}]},{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"HOME","item":"https://cloudcert.app/"},{"@type":"ListItem","position":2,"name":"SAA-C03 試験ガイド","item":"https://cloudcert.app/exams/aws-saa-c03/"},{"@type":"ListItem","position":3,"name":"q076"}]}]</script>
+</head>
+<body class="page-body">
+<header class="page-header"><a class="page-logo" href="../../index.html">&gt; CLOUDCERT_</a></header>
+<main class="page-main">
+
+<nav class="breadcrumb"><a href="../../index.html">HOME</a> › <a href="../../exams/aws-saa-c03/">SAA-C03 試験ガイド</a> › q076</nav>
+<div class="q-meta"><span>SAA-C03</span><span>コストを最適化したアーキテクチャの設計</span><span>MEDIUM</span><span>単一選択</span></div>
+<h1>ある企業が、AWS データ転送コストを削減したい。現在の構成では、ap-northeast-1 の EC2 インスタンスが同じ VPC 内の S3 バケットに大量のデータを書き込んでおり、S3 バケットへの接続はインターネット経由になっている。最もコスト効率よく改善する方法はどれか。</h1>
+<ol class="q-choices">
+<li><b>A.</b> EC2 インスタンスと同一リージョンに S3 バケットがあればデータ転送は無料なので変更不要。</li>
+<li><b>B.</b> AWS Direct Connect を使ってオンプレミスからのデータ転送コストを削減する。</li>
+<li><b>C.</b> S3 Transfer Acceleration を有効化してデータ転送を最適化する。</li>
+<li><b>D.</b> S3 用の Gateway 型 VPC エンドポイントを作成し、EC2 から S3 へのトラフィックを VPC 内部で完結させる。Gateway 型エンドポイントには追加料金がかからない。</li>
+</ol>
+<details class="q-answer">
+<summary>解答と解説を見る</summary>
+<div class="inner">
+<p><b>正解: D</b></p>
+<p>S3 の Gateway 型 VPC エンドポイントは無料で使用でき、EC2 から S3 へのトラフィックをインターネットではなく AWS 内部ネットワーク経由にできる。インターネット経由の場合は NAT ゲートウェイ利用料（処理データ量 × 0.045USD/GB 等）やデータ転送料が発生するが、VPC エンドポイント経由にすることでこれらのコストを大幅に削減できる。選択肢CのS3 Transfer Acceleration はアップロード速度の向上を目的としたサービスで、コスト削減ではなく追加料金が発生する。選択肢Aは半分正しいが、同一リージョンでも NAT ゲートウェイ経由の場合は処理データ量に対して料金が発生する。VPC エンドポイントを使うことでこの NAT ゲートウェイコストを回避できる。選択肢BのDirect Connect はオンプレミスとの接続の最適化であり、VPC 内 EC2 から S3 へのコスト削減には関係しない。</p>
+<div class="svc-links">📚 関連サービスの解説: <a href="../../learn/amazon-s3.html">Amazon S3</a> ・ <a href="../../learn/aws-privatelink.html">AWS PrivateLink／VPCエンドポイント</a></div>
+</div>
+</details>
+<div class="cta-box"><a class="btn btn-primary" href="../../exam.html?exam=aws-saa-c03">▸ この試験を本気で演習する（全150問・無料）</a></div>
+<nav class="q-nav">
+<span><a href="q075.html">← 前の問題</a></span>
+<span><a href="q077.html">次の問題 →</a></span>
+</nav>
+<section class="related"><h2>同じ分野の関連問題</h2><ul class="q-list">
+<li><a href="q075.html">ある企業が、毎晩 22:00 に大量データのバッチ ETL 処理を Amazon EMR で実行している。処理は約 2〜…</a></li>
+<li><a href="q077.html">ある企業が、AWS のマルチアカウント環境で各部門のコストを把握し、部門別のコスト配分レポートを経営層に提出したい。各リ…</a></li>
+<li><a href="q074.html">ある企業が、Amazon CloudFront を使ってコンテンツを配信しており、オリジン（S3）へのデータ転送コストと…</a></li>
+<li><a href="q078.html">ある企業が、AWS Lambda 関数を使った API バックエンドを運用しており、1 日の呼び出し回数が安定的に多い（…</a></li>
+</ul></section>
+</main>
+<footer class="page-footer">
+<nav class="hub-nav"><a href="../../exams/aws-clf-c02/">CLF-C02 試験ガイド</a><a href="../../exams/aws-aif-c01/">AIF-C01 試験ガイド</a><a href="../../exams/aws-saa-c03/">SAA-C03 試験ガイド</a><a href="../../exams/aws-dva-c02/">DVA-C02 試験ガイド</a><a href="../../exams/aws-sap-c02/">SAP-C02 試験ガイド</a><a href="../../exams/gcp-cdl/">CDL 試験ガイド</a><a href="../../exams/gcp-ace/">ACE 試験ガイド</a><a href="../../exams/azure-az900/">AZ-900 試験ガイド</a><a href="../../exams/azure-ai900/">AI-900 試験ガイド</a><a href="../../exams/azure-dp900/">DP-900 試験ガイド</a><a href="../../exams/azure-sc900/">SC-900 試験ガイド</a><a href="../../exams/azure-az104/">AZ-104 試験ガイド</a></nav>
+<nav class="site-nav"><a href="../../guide/">資格ガイド</a><a href="../../learn/">サービス解説</a><a href="../../career/">キャリア</a><a href="../../about.html">運営者情報</a><a href="../../privacy.html">プライバシーポリシー</a><a href="../../contact.html">お問い合わせ</a></nav>
+<p class="copy">© CLOUDCERT_ — 本サイトは各認定試験の公式試験ではなく、収録問題はすべてオリジナルの演習問題です。</p>
+</footer>
+</body>
+</html>

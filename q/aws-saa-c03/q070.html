@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>【SAA-C03 演習問題 #70】ある企業が、AWS 上で継続的に稼働する本番環境の EC2 インスタンス（3 年間は同じイ…</title>
+<meta name="description" content="SAA-C03の本試験レベル演習問題。ある企業が、AWS 上で継続的に稼働する本番環境の EC2 インスタンス（3 年間は同じインスタンスファミリー・リージョンを使用予定）のコストを最小化したい。ワークロードは安定してお… 全選択肢の解説つき。">
+<link rel="canonical" href="https://cloudcert.app/q/aws-saa-c03/q070.html">
+<meta property="og:title" content="【SAA-C03 演習問題 #70】ある企業が、AWS 上で継続的に稼働する本番環境の EC2 インスタンス（3 年間は同じイ…">
+<meta property="og:description" content="SAA-C03の本試験レベル演習問題。ある企業が、AWS 上で継続的に稼働する本番環境の EC2 インスタンス（3 年間は同じインスタンスファミリー・リージョンを使用予定）のコストを最小化したい。ワークロードは安定してお… 全選択肢の解説つき。">
+<meta property="og:url" content="https://cloudcert.app/q/aws-saa-c03/q070.html">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="CLOUDCERT_">
+<meta property="og:image" content="https://cloudcert.app/assets/og.png">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='80' font-size='80' fill='%233fe0a4' font-family='monospace'>▸</text></svg>">
+
+<meta name="google-adsense-account" content="ca-pub-5647574947191958">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+JP:wght@400;500;700&family=JetBrains+Mono:wght@400;600;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../../css/style.css">
+<link rel="stylesheet" href="../../css/page.css">
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-SZR5CB5Q3X"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag('js',new Date());gtag('config','G-SZR5CB5Q3X');</script>
+<script type="application/ld+json">[{"@context":"https://schema.org/","@type":"Quiz","about":{"@type":"Thing","name":"AWS Certified Solutions Architect – Associate"},"hasPart":[{"@type":"Question","eduQuestionType":"Multiple choice","learningResourceType":"Practice problem","text":"ある企業が、AWS 上で継続的に稼働する本番環境の EC2 インスタンス（3 年間は同じインスタンスファミリー・リージョンを使用予定）のコストを最小化したい。ワークロードは安定しており、インスタンスを停止する予定はない。最もコスト効率が高い購入オプションはどれか。","suggestedAnswer":[{"@type":"Answer","position":1,"text":"Spot インスタンスを使用して最大 90% のコスト削減を実現する。"},{"@type":"Answer","position":2,"text":"Compute Savings Plans（1 年・全額前払い）を購入する。"},{"@type":"Answer","position":3,"text":"オンデマンドインスタンスを使用する。"}],"acceptedAnswer":{"@type":"Answer","position":0,"text":"EC2 Instance Savings Plans（3 年・全額前払い）または Reserved Instances（3 年・全額前払い）を購入する。","comment":{"@type":"Comment","text":"3 年間継続して同じインスタンスファミリー・リージョンを使用する予定であれば、EC2 Instance Savings Plans（3 年・全額前払い）または Reserved Instances（3 年・全額前払い）が最大のコスト削減（オンデマンド比最大 72% 削減）を実現できる。3 年コミットメントは 1 年より割引率が高く、全額前払いは月払いより割引率が大きい。選択肢DのOnDemand はコミットメントなしで柔軟だが割引なし。選択肢CのCompute Savings Plans（1 年）は柔軟性（インスタンスファミリー・OS・リージョン変更可能）があるが、3 年コミットの EC2 Instance Savings Plans より割引率が低い。選択肢BのSpot インスタンスはコスト削減率は最大だが、インスタンスが中断される可能性があり「継続的に稼働する本番環境」には不適切。"}}}]},{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"HOME","item":"https://cloudcert.app/"},{"@type":"ListItem","position":2,"name":"SAA-C03 試験ガイド","item":"https://cloudcert.app/exams/aws-saa-c03/"},{"@type":"ListItem","position":3,"name":"q070"}]}]</script>
+</head>
+<body class="page-body">
+<header class="page-header"><a class="page-logo" href="../../index.html">&gt; CLOUDCERT_</a></header>
+<main class="page-main">
+
+<nav class="breadcrumb"><a href="../../index.html">HOME</a> › <a href="../../exams/aws-saa-c03/">SAA-C03 試験ガイド</a> › q070</nav>
+<div class="q-meta"><span>SAA-C03</span><span>コストを最適化したアーキテクチャの設計</span><span>EASY</span><span>単一選択</span></div>
+<h1>ある企業が、AWS 上で継続的に稼働する本番環境の EC2 インスタンス（3 年間は同じインスタンスファミリー・リージョンを使用予定）のコストを最小化したい。ワークロードは安定しており、インスタンスを停止する予定はない。最もコスト効率が高い購入オプションはどれか。</h1>
+<ol class="q-choices">
+<li><b>A.</b> EC2 Instance Savings Plans（3 年・全額前払い）または Reserved Instances（3 年・全額前払い）を購入する。</li>
+<li><b>B.</b> Spot インスタンスを使用して最大 90% のコスト削減を実現する。</li>
+<li><b>C.</b> Compute Savings Plans（1 年・全額前払い）を購入する。</li>
+<li><b>D.</b> オンデマンドインスタンスを使用する。</li>
+</ol>
+<details class="q-answer">
+<summary>解答と解説を見る</summary>
+<div class="inner">
+<p><b>正解: A</b></p>
+<p>3 年間継続して同じインスタンスファミリー・リージョンを使用する予定であれば、EC2 Instance Savings Plans（3 年・全額前払い）または Reserved Instances（3 年・全額前払い）が最大のコスト削減（オンデマンド比最大 72% 削減）を実現できる。3 年コミットメントは 1 年より割引率が高く、全額前払いは月払いより割引率が大きい。選択肢DのOnDemand はコミットメントなしで柔軟だが割引なし。選択肢CのCompute Savings Plans（1 年）は柔軟性（インスタンスファミリー・OS・リージョン変更可能）があるが、3 年コミットの EC2 Instance Savings Plans より割引率が低い。選択肢BのSpot インスタンスはコスト削減率は最大だが、インスタンスが中断される可能性があり「継続的に稼働する本番環境」には不適切。</p>
+<div class="svc-links">📚 関連サービスの解説: <a href="../../learn/amazon-ec2.html">Amazon EC2</a></div>
+</div>
+</details>
+<div class="cta-box"><a class="btn btn-primary" href="../../exam.html?exam=aws-saa-c03">▸ この試験を本気で演習する（全150問・無料）</a></div>
+<nav class="q-nav">
+<span><a href="q069.html">← 前の問題</a></span>
+<span><a href="q071.html">次の問題 →</a></span>
+</nav>
+<section class="related"><h2>同じ分野の関連問題</h2><ul class="q-list">
+<li><a href="q069.html">ある企業が、Amazon Athena を使って S3 上のログデータ（CSV 形式、毎日約 100GB 追加）に対して…</a></li>
+<li><a href="q071.html">ある企業が、Amazon S3 バケットのストレージコストが急増しているため、コスト最適化を行いたい。S3 バケットには…</a></li>
+<li><a href="q068.html">ある企業が、Amazon S3 に大量の画像ファイルを保存している。最初の 30 日間は頻繁にアクセスされるが、それ以降…</a></li>
+<li><a href="q072.html">ある企業が、AWS Lambda を使ったサーバーレスアプリケーションのコストを最適化したい。Lambda 関数のメモリ…</a></li>
+</ul></section>
+</main>
+<footer class="page-footer">
+<nav class="hub-nav"><a href="../../exams/aws-clf-c02/">CLF-C02 試験ガイド</a><a href="../../exams/aws-aif-c01/">AIF-C01 試験ガイド</a><a href="../../exams/aws-saa-c03/">SAA-C03 試験ガイド</a><a href="../../exams/aws-dva-c02/">DVA-C02 試験ガイド</a><a href="../../exams/aws-sap-c02/">SAP-C02 試験ガイド</a><a href="../../exams/gcp-cdl/">CDL 試験ガイド</a><a href="../../exams/gcp-ace/">ACE 試験ガイド</a><a href="../../exams/azure-az900/">AZ-900 試験ガイド</a><a href="../../exams/azure-ai900/">AI-900 試験ガイド</a><a href="../../exams/azure-dp900/">DP-900 試験ガイド</a><a href="../../exams/azure-sc900/">SC-900 試験ガイド</a><a href="../../exams/azure-az104/">AZ-104 試験ガイド</a></nav>
+<nav class="site-nav"><a href="../../guide/">資格ガイド</a><a href="../../learn/">サービス解説</a><a href="../../career/">キャリア</a><a href="../../about.html">運営者情報</a><a href="../../privacy.html">プライバシーポリシー</a><a href="../../contact.html">お問い合わせ</a></nav>
+<p class="copy">© CLOUDCERT_ — 本サイトは各認定試験の公式試験ではなく、収録問題はすべてオリジナルの演習問題です。</p>
+</footer>
+</body>
+</html>

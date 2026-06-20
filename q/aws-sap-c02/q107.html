@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>【SAP-C02 演習問題 #107】ある企業が AWS 上で稼働する本番アプリケーションに対して、SRE（サイトリライアビリテ…</title>
+<meta name="description" content="SAP-C02の本試験レベル演習問題。ある企業が AWS 上で稼働する本番アプリケーションに対して、SRE（サイトリライアビリティエンジニアリング）の観点から信頼性を向上させたいと考えています。現在のアーキテクチャは A… 全選択肢の解説つき。">
+<link rel="canonical" href="https://cloudcert.app/q/aws-sap-c02/q107.html">
+<meta property="og:title" content="【SAP-C02 演習問題 #107】ある企業が AWS 上で稼働する本番アプリケーションに対して、SRE（サイトリライアビリテ…">
+<meta property="og:description" content="SAP-C02の本試験レベル演習問題。ある企業が AWS 上で稼働する本番アプリケーションに対して、SRE（サイトリライアビリティエンジニアリング）の観点から信頼性を向上させたいと考えています。現在のアーキテクチャは A… 全選択肢の解説つき。">
+<meta property="og:url" content="https://cloudcert.app/q/aws-sap-c02/q107.html">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="CLOUDCERT_">
+<meta property="og:image" content="https://cloudcert.app/assets/og.png">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='80' font-size='80' fill='%233fe0a4' font-family='monospace'>▸</text></svg>">
+
+<meta name="google-adsense-account" content="ca-pub-5647574947191958">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+JP:wght@400;500;700&family=JetBrains+Mono:wght@400;600;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../../css/style.css">
+<link rel="stylesheet" href="../../css/page.css">
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-SZR5CB5Q3X"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag('js',new Date());gtag('config','G-SZR5CB5Q3X');</script>
+<script type="application/ld+json">[{"@context":"https://schema.org/","@type":"Quiz","about":{"@type":"Thing","name":"AWS Certified Solutions Architect - Professional"},"hasPart":[{"@type":"Question","eduQuestionType":"Checkbox","learningResourceType":"Practice problem","text":"ある企業が AWS 上で稼働する本番アプリケーションに対して、SRE（サイトリライアビリティエンジニアリング）の観点から信頼性を向上させたいと考えています。現在のアーキテクチャは ALB + EC2 Auto Scaling + RDS Aurora Multi-AZ です。以下の改善を行いたいと考えています。④定期的なリカバリテストを自動化する、①アプリケーションの実際のユーザー体験（エンドツーエンド）を継続的に監視する。これらを実現するために使用するべきサービスを2つ選択してください。","suggestedAnswer":[{"@type":"Answer","position":1,"text":"Amazon CloudWatch アラームでシステムメトリクス（CPU、メモリ）を監視し、閾値超過時に SNS で通知する"},{"@type":"Answer","position":2,"text":"AWS Backup で毎日スナップショットを取得し、四半期に一度のリカバリテストを手動で実施する"},{"@type":"Answer","position":4,"text":"AWS Config でアーキテクチャの設定変更を監視し、非準拠リソースを検出する"}],"acceptedAnswer":[{"@type":"Answer","position":0,"text":"Amazon CloudWatch Synthetics でカナリアスクリプトを作成し、定期的にアプリケーションのエンドツーエンドフロー（ログイン→商品検索→カート→決済）をシミュレートしてユーザー体験を継続的に監視する","comment":{"@type":"Comment","text":"AWS FIS（D）はカオスエンジニアリング実験を設定ファイルで定義し、EventBridge でスケジュール実行できます。EC2 のシャットダウン、Aurora のフェイルオーバー強制などのインジェクションを自動化し、システムの回復力（Resilience）を定期的に検証します。CloudWatch Synthetics（A）はエンドユーザーのアクション（Headless Chrome ベースの実際のブラウザ操作）をシミュレートし、エンドツーエンドのユーザー体験を継続的に監視します。SRE の観点での④と①の要件に完全に対応しています。\n\nC: AWS Backup による手動リカバリテストは自動化されていなく、四半期に一度では頻度も不十分です。FIS の自動化されたリカバリテストの方がSRE の要件に合います。\n\nB: CloudWatch アラームはインフラメトリクスの監視に有用ですが、エンドツーエンドのユーザー体験の監視はできません。\n\nE: Config は設定管理と監査に適していますが、信頼性テストや実際のユーザー体験監視には対応していません。"}},{"@type":"Answer","position":3,"text":"AWS Fault Injection Simulator（FIS）でカオスエンジニアリング実験（EC2 インスタンスのシャットダウン、Aurora フェイルオーバー等）を定期スケジュールで自動実行し、システムの回復力を検証する","comment":{"@type":"Comment","text":"AWS FIS（D）はカオスエンジニアリング実験を設定ファイルで定義し、EventBridge でスケジュール実行できます。EC2 のシャットダウン、Aurora のフェイルオーバー強制などのインジェクションを自動化し、システムの回復力（Resilience）を定期的に検証します。CloudWatch Synthetics（A）はエンドユーザーのアクション（Headless Chrome ベースの実際のブラウザ操作）をシミュレートし、エンドツーエンドのユーザー体験を継続的に監視します。SRE の観点での④と①の要件に完全に対応しています。\n\nC: AWS Backup による手動リカバリテストは自動化されていなく、四半期に一度では頻度も不十分です。FIS の自動化されたリカバリテストの方がSRE の要件に合います。\n\nB: CloudWatch アラームはインフラメトリクスの監視に有用ですが、エンドツーエンドのユーザー体験の監視はできません。\n\nE: Config は設定管理と監査に適していますが、信頼性テストや実際のユーザー体験監視には対応していません。"}}]}]},{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"HOME","item":"https://cloudcert.app/"},{"@type":"ListItem","position":2,"name":"SAP-C02 試験ガイド","item":"https://cloudcert.app/exams/aws-sap-c02/"},{"@type":"ListItem","position":3,"name":"q107"}]}]</script>
+</head>
+<body class="page-body">
+<header class="page-header"><a class="page-logo" href="../../index.html">&gt; CLOUDCERT_</a></header>
+<main class="page-main">
+
+<nav class="breadcrumb"><a href="../../index.html">HOME</a> › <a href="../../exams/aws-sap-c02/">SAP-C02 試験ガイド</a> › q107</nav>
+<div class="q-meta"><span>SAP-C02</span><span>既存のソリューションの継続的な改善</span><span>HARD</span><span>複数選択</span></div>
+<h1>ある企業が AWS 上で稼働する本番アプリケーションに対して、SRE（サイトリライアビリティエンジニアリング）の観点から信頼性を向上させたいと考えています。現在のアーキテクチャは ALB + EC2 Auto Scaling + RDS Aurora Multi-AZ です。以下の改善を行いたいと考えています。④定期的なリカバリテストを自動化する、①アプリケーションの実際のユーザー体験（エンドツーエンド）を継続的に監視する。これらを実現するために使用するべきサービスを2つ選択してください。</h1>
+<ol class="q-choices">
+<li><b>A.</b> Amazon CloudWatch Synthetics でカナリアスクリプトを作成し、定期的にアプリケーションのエンドツーエンドフロー（ログイン→商品検索→カート→決済）をシミュレートしてユーザー体験を継続的に監視する</li>
+<li><b>B.</b> Amazon CloudWatch アラームでシステムメトリクス（CPU、メモリ）を監視し、閾値超過時に SNS で通知する</li>
+<li><b>C.</b> AWS Backup で毎日スナップショットを取得し、四半期に一度のリカバリテストを手動で実施する</li>
+<li><b>D.</b> AWS Fault Injection Simulator（FIS）でカオスエンジニアリング実験（EC2 インスタンスのシャットダウン、Aurora フェイルオーバー等）を定期スケジュールで自動実行し、システムの回復力を検証する</li>
+<li><b>E.</b> AWS Config でアーキテクチャの設定変更を監視し、非準拠リソースを検出する</li>
+</ol>
+<details class="q-answer">
+<summary>解答と解説を見る</summary>
+<div class="inner">
+<p><b>正解: A, D</b></p>
+<p>AWS FIS（D）はカオスエンジニアリング実験を設定ファイルで定義し、EventBridge でスケジュール実行できます。EC2 のシャットダウン、Aurora のフェイルオーバー強制などのインジェクションを自動化し、システムの回復力（Resilience）を定期的に検証します。CloudWatch Synthetics（A）はエンドユーザーのアクション（Headless Chrome ベースの実際のブラウザ操作）をシミュレートし、エンドツーエンドのユーザー体験を継続的に監視します。SRE の観点での④と①の要件に完全に対応しています。
+
+C: AWS Backup による手動リカバリテストは自動化されていなく、四半期に一度では頻度も不十分です。FIS の自動化されたリカバリテストの方がSRE の要件に合います。
+
+B: CloudWatch アラームはインフラメトリクスの監視に有用ですが、エンドツーエンドのユーザー体験の監視はできません。
+
+E: Config は設定管理と監査に適していますが、信頼性テストや実際のユーザー体験監視には対応していません。</p>
+<div class="svc-links">📚 関連サービスの解説: <a href="../../learn/amazon-cloudwatch.html">Amazon CloudWatch</a> ・ <a href="../../learn/amazon-ec2.html">Amazon EC2</a></div>
+</div>
+</details>
+<div class="cta-box"><a class="btn btn-primary" href="../../exam.html?exam=aws-sap-c02">▸ この試験を本気で演習する（全150問・無料）</a></div>
+<nav class="q-nav">
+<span><a href="q106.html">← 前の問題</a></span>
+<span><a href="q108.html">次の問題 →</a></span>
+</nav>
+<section class="related"><h2>同じ分野の関連問題</h2><ul class="q-list">
+<li><a href="q101.html">ある企業が AWS 上で Amazon DynamoDB を使ったアプリケーションを運用しており、読み取りパフォーマンス…</a></li>
+<li><a href="q113.html">ある企業が AWS 上で稼働する Lambda 関数が Amazon S3 の特定バケットにアクセスするための IAM …</a></li>
+<li><a href="q098.html">ある企業が AWS 上の本番環境でコスト削減を行うため、Amazon EC2 の使用状況を分析しました。分析の結果、本番…</a></li>
+<li><a href="q116.html">ある企業が AWS 上で稼働するアプリケーションについて、AWS Well-Architected Framework …</a></li>
+</ul></section>
+</main>
+<footer class="page-footer">
+<nav class="hub-nav"><a href="../../exams/aws-clf-c02/">CLF-C02 試験ガイド</a><a href="../../exams/aws-aif-c01/">AIF-C01 試験ガイド</a><a href="../../exams/aws-saa-c03/">SAA-C03 試験ガイド</a><a href="../../exams/aws-dva-c02/">DVA-C02 試験ガイド</a><a href="../../exams/aws-sap-c02/">SAP-C02 試験ガイド</a><a href="../../exams/gcp-cdl/">CDL 試験ガイド</a><a href="../../exams/gcp-ace/">ACE 試験ガイド</a><a href="../../exams/azure-az900/">AZ-900 試験ガイド</a><a href="../../exams/azure-ai900/">AI-900 試験ガイド</a><a href="../../exams/azure-dp900/">DP-900 試験ガイド</a><a href="../../exams/azure-sc900/">SC-900 試験ガイド</a><a href="../../exams/azure-az104/">AZ-104 試験ガイド</a></nav>
+<nav class="site-nav"><a href="../../guide/">資格ガイド</a><a href="../../learn/">サービス解説</a><a href="../../career/">キャリア</a><a href="../../about.html">運営者情報</a><a href="../../privacy.html">プライバシーポリシー</a><a href="../../contact.html">お問い合わせ</a></nav>
+<p class="copy">© CLOUDCERT_ — 本サイトは各認定試験の公式試験ではなく、収録問題はすべてオリジナルの演習問題です。</p>
+</footer>
+</body>
+</html>

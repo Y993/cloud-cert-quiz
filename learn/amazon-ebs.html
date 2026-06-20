@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Amazon EBSとは？試験に出るポイントと演習問題</title>
+<meta name="description" content="Amazon EBS（AWS）の要点と資格試験での問われ方を解説。登場する演習問題2問と公式ドキュメントへのリンクつき。">
+<link rel="canonical" href="https://cloudcert.app/learn/amazon-ebs.html">
+<meta property="og:title" content="Amazon EBSとは？試験に出るポイントと演習問題">
+<meta property="og:description" content="Amazon EBS（AWS）の要点と資格試験での問われ方を解説。登場する演習問題2問と公式ドキュメントへのリンクつき。">
+<meta property="og:url" content="https://cloudcert.app/learn/amazon-ebs.html">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="CLOUDCERT_">
+<meta property="og:image" content="https://cloudcert.app/assets/og.png">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='80' font-size='80' fill='%233fe0a4' font-family='monospace'>▸</text></svg>">
+
+<meta name="google-adsense-account" content="ca-pub-5647574947191958">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+JP:wght@400;500;700&family=JetBrains+Mono:wght@400;600;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../css/style.css">
+<link rel="stylesheet" href="../css/page.css">
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-SZR5CB5Q3X"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag('js',new Date());gtag('config','G-SZR5CB5Q3X');</script>
+<script type="application/ld+json">[{"@context":"https://schema.org","@type":"TechArticle","headline":"Amazon EBSとは？試験に出るポイントと演習問題","description":"Amazon EBS（AWS）の要点と資格試験での問われ方を解説。登場する演習問題2問と公式ドキュメントへのリンクつき。","inLanguage":"ja","about":{"@type":"Thing","name":"Amazon EBS"},"author":{"@type":"Organization","name":"CLOUDCERT_"},"publisher":{"@type":"Organization","name":"CLOUDCERT_"},"mainEntityOfPage":"https://cloudcert.app/learn/amazon-ebs.html"},{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"HOME","item":"https://cloudcert.app/"},{"@type":"ListItem","position":2,"name":"サービス解説","item":"https://cloudcert.app/learn/"},{"@type":"ListItem","position":3,"name":"Amazon EBS"}]}]</script>
+</head>
+<body class="page-body">
+<header class="page-header"><a class="page-logo" href="../index.html">&gt; CLOUDCERT_</a></header>
+<main class="page-main">
+
+<nav class="breadcrumb"><a href="../index.html">HOME</a> › <a href="./">サービス解説</a> › Amazon EBS</nav>
+<div class="learn-head">
+<div class="badges"><span class="badge" data-provider="aws">AWS</span><span class="badge">ストレージ</span><span class="badge badge-q">演習2問</span></div>
+<h1>Amazon EBSとは</h1>
+</div>
+<p class="lead">EC2インスタンスにアタッチするブロックストレージサービス。同一AZ内のインスタンスに排他的にマウントし、OSのルートボリュームやデータベースのデータ領域として使用する。</p>
+<p>ボリュームタイプはgp3（汎用SSD）・io2 Block Express（高IOPS SSD）・st1（スループット最適化HDD）・sc1（コールドHDD）などがある。スナップショットでS3にバックアップし、クロスリージョンコピーも可能。</p>
+<p><a class="official-btn" href="https://docs.aws.amazon.com/ja_jp/ebs/latest/userguide/what-is-ebs.html" target="_blank" rel="noopener">公式ドキュメント →</a></p>
+<h2>試験での問われ方</h2>
+<p>EBS vs EFS vs S3 の使い分けが最頻出。「EC2から単独マウント・ブロックI/O・高IOPS」ならEBS、「複数EC2から同時マウント・NFS」ならEFS、「オブジェクト保存・HTTPアクセス」ならS3。</p>
+<p>汎用SSDのgp2とgp3の比較も頻出。gp3はgp2より約2割安いうえ、IOPSとスループットをボリュームサイズと切り離して独立に設定できる（gp2は容量に比例してIOPSが増える仕組み）ため、容量は不要だが高IOPSが欲しいケースでコスト効率が良い。</p>
+<p>EBSは同一AZ内でしか使えないという制約が引っかけになる。複数のEC2から同時にアタッチするMulti-Attachはio1/io2に限られ、しかも同一AZ内に限定される。スナップショットはAZ非依存でS3に保管され、誤って削除したスナップショットはRecycle Bin（保持ルールを設定しておけば一定期間内は復元可能）で救済できる。</p>
+<h2>このサービスが登場する演習問題（2問）</h2>
+<ul class="q-list">
+<li><a href="../q/aws-clf-c02/q084.html">【CLF-C02】ある企業が、社内のSAP ERPシステムをAWSに移行する計画を立てています。高いI/Oパフォーマンスを必要とするデータ…</a></li>
+<li><a href="../q/aws-clf-c02/q126.html">【CLF-C02】ある企業が、AWSのコスト最適化施策を検討しています。コスト削減に直接貢献する取り組みとして正しいものを2つ選択してくだ…</a></li>
+</ul>
+<h2>関連サービス</h2><ul class="q-list">
+<li><a href="amazon-s3.html">Amazon S3</a></li>
+<li><a href="amazon-efs.html">Amazon EFS</a></li></ul>
+</main>
+<footer class="page-footer">
+<nav class="hub-nav"><a href="../exams/aws-clf-c02/">CLF-C02 試験ガイド</a><a href="../exams/aws-aif-c01/">AIF-C01 試験ガイド</a><a href="../exams/aws-saa-c03/">SAA-C03 試験ガイド</a><a href="../exams/aws-dva-c02/">DVA-C02 試験ガイド</a><a href="../exams/aws-sap-c02/">SAP-C02 試験ガイド</a><a href="../exams/gcp-cdl/">CDL 試験ガイド</a><a href="../exams/gcp-ace/">ACE 試験ガイド</a><a href="../exams/azure-az900/">AZ-900 試験ガイド</a><a href="../exams/azure-ai900/">AI-900 試験ガイド</a><a href="../exams/azure-dp900/">DP-900 試験ガイド</a><a href="../exams/azure-sc900/">SC-900 試験ガイド</a><a href="../exams/azure-az104/">AZ-104 試験ガイド</a></nav>
+<nav class="site-nav"><a href="../guide/">資格ガイド</a><a href="../learn/">サービス解説</a><a href="../career/">キャリア</a><a href="../about.html">運営者情報</a><a href="../privacy.html">プライバシーポリシー</a><a href="../contact.html">お問い合わせ</a></nav>
+<p class="copy">© CLOUDCERT_ — 本サイトは各認定試験の公式試験ではなく、収録問題はすべてオリジナルの演習問題です。</p>
+</footer>
+</body>
+</html>

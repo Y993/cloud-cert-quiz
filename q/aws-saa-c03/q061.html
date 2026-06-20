@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>【SAA-C03 演習問題 #61】ある企業が、Amazon ECS（Fargate）で動作するコンテナアプリケーションのコー…</title>
+<meta name="description" content="SAA-C03の本試験レベル演習問題。ある企業が、Amazon ECS（Fargate）で動作するコンテナアプリケーションのコールドスタート（タスク起動時間）を短縮したい。現在はトラフィックが増加してから新しいタスクが追… 全選択肢の解説つき。">
+<link rel="canonical" href="https://cloudcert.app/q/aws-saa-c03/q061.html">
+<meta property="og:title" content="【SAA-C03 演習問題 #61】ある企業が、Amazon ECS（Fargate）で動作するコンテナアプリケーションのコー…">
+<meta property="og:description" content="SAA-C03の本試験レベル演習問題。ある企業が、Amazon ECS（Fargate）で動作するコンテナアプリケーションのコールドスタート（タスク起動時間）を短縮したい。現在はトラフィックが増加してから新しいタスクが追… 全選択肢の解説つき。">
+<meta property="og:url" content="https://cloudcert.app/q/aws-saa-c03/q061.html">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="CLOUDCERT_">
+<meta property="og:image" content="https://cloudcert.app/assets/og.png">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='80' font-size='80' fill='%233fe0a4' font-family='monospace'>▸</text></svg>">
+
+<meta name="google-adsense-account" content="ca-pub-5647574947191958">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+JP:wght@400;500;700&family=JetBrains+Mono:wght@400;600;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../../css/style.css">
+<link rel="stylesheet" href="../../css/page.css">
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-SZR5CB5Q3X"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag('js',new Date());gtag('config','G-SZR5CB5Q3X');</script>
+<script type="application/ld+json">[{"@context":"https://schema.org/","@type":"Quiz","about":{"@type":"Thing","name":"AWS Certified Solutions Architect – Associate"},"hasPart":[{"@type":"Question","eduQuestionType":"Multiple choice","learningResourceType":"Practice problem","text":"ある企業が、Amazon ECS（Fargate）で動作するコンテナアプリケーションのコールドスタート（タスク起動時間）を短縮したい。現在はトラフィックが増加してから新しいタスクが追加されるまでに 2〜3 分かかっており、その間のレスポンスタイムが悪化している。最も適切なソリューションはどれか。","suggestedAnswer":[{"@type":"Answer","position":1,"text":"Amazon CloudFront を ECS の前段に配置してリクエストをキャッシュし、ECS へのリクエスト数を削減する。"},{"@type":"Answer","position":2,"text":"EC2 起動タイプに変更してインスタンスの事前プロビジョニングを行い、コンテナ起動時間を短縮する。"},{"@type":"Answer","position":3,"text":"ECS タスク定義のコンテナイメージを軽量化（Alpine Linux ベース等）し、イメージプルの時間を短縮する。"}],"acceptedAnswer":{"@type":"Answer","position":0,"text":"Application Auto Scaling のターゲット追跡ポリシーで ALB のリクエスト数（ALBRequestCountPerTarget）を指標として使用し、より早い段階でスケールアウトトリガーがかかるようしきい値を低く設定する。また、ECS サービスの最小タスク数を増やしてコールドスタートを起こさない構成にする。","comment":{"@type":"Comment","text":"スケールアウトのトリガーを早めることで、トラフィックが増加しきる前に新しいタスクを追加し始められる。さらに最小タスク数を増やして常に一定数のタスクを維持することで、増加時に既存タスクが処理を負担しながら新タスクが起動できる。これら2つの組み合わせがコールドスタート問題への総合的な対策になる。選択肢DのAlpine Linux によるイメージ軽量化はコールドスタート時間の短縮に有効だが、それだけでは 2〜3 分の起動時間を数十秒以内に抑えることは難しく、根本的なスケーリング戦略の改善が必要。選択肢CはEC2 起動タイプへの変更でインスタンスプロビジョニングが必要になり、運用複雑性が上がる。Fargate での問題解決の方が望ましい。選択肢BのCloudFront キャッシュは動的 API レスポンスのスケーリング問題には直接対応できない。"}}}]},{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"HOME","item":"https://cloudcert.app/"},{"@type":"ListItem","position":2,"name":"SAA-C03 試験ガイド","item":"https://cloudcert.app/exams/aws-saa-c03/"},{"@type":"ListItem","position":3,"name":"q061"}]}]</script>
+</head>
+<body class="page-body">
+<header class="page-header"><a class="page-logo" href="../../index.html">&gt; CLOUDCERT_</a></header>
+<main class="page-main">
+
+<nav class="breadcrumb"><a href="../../index.html">HOME</a> › <a href="../../exams/aws-saa-c03/">SAA-C03 試験ガイド</a> › q061</nav>
+<div class="q-meta"><span>SAA-C03</span><span>高パフォーマンスなアーキテクチャの設計</span><span>HARD</span><span>単一選択</span></div>
+<h1>ある企業が、Amazon ECS（Fargate）で動作するコンテナアプリケーションのコールドスタート（タスク起動時間）を短縮したい。現在はトラフィックが増加してから新しいタスクが追加されるまでに 2〜3 分かかっており、その間のレスポンスタイムが悪化している。最も適切なソリューションはどれか。</h1>
+<ol class="q-choices">
+<li><b>A.</b> Application Auto Scaling のターゲット追跡ポリシーで ALB のリクエスト数（ALBRequestCountPerTarget）を指標として使用し、より早い段階でスケールアウトトリガーがかかるようしきい値を低く設定する。また、ECS サービスの最小タスク数を増やしてコールドスタートを起こさない構成にする。</li>
+<li><b>B.</b> Amazon CloudFront を ECS の前段に配置してリクエストをキャッシュし、ECS へのリクエスト数を削減する。</li>
+<li><b>C.</b> EC2 起動タイプに変更してインスタンスの事前プロビジョニングを行い、コンテナ起動時間を短縮する。</li>
+<li><b>D.</b> ECS タスク定義のコンテナイメージを軽量化（Alpine Linux ベース等）し、イメージプルの時間を短縮する。</li>
+</ol>
+<details class="q-answer">
+<summary>解答と解説を見る</summary>
+<div class="inner">
+<p><b>正解: A</b></p>
+<p>スケールアウトのトリガーを早めることで、トラフィックが増加しきる前に新しいタスクを追加し始められる。さらに最小タスク数を増やして常に一定数のタスクを維持することで、増加時に既存タスクが処理を負担しながら新タスクが起動できる。これら2つの組み合わせがコールドスタート問題への総合的な対策になる。選択肢DのAlpine Linux によるイメージ軽量化はコールドスタート時間の短縮に有効だが、それだけでは 2〜3 分の起動時間を数十秒以内に抑えることは難しく、根本的なスケーリング戦略の改善が必要。選択肢CはEC2 起動タイプへの変更でインスタンスプロビジョニングが必要になり、運用複雑性が上がる。Fargate での問題解決の方が望ましい。選択肢BのCloudFront キャッシュは動的 API レスポンスのスケーリング問題には直接対応できない。</p>
+<div class="svc-links">📚 関連サービスの解説: <a href="../../learn/elastic-load-balancing.html">Elastic Load Balancing（ELB）</a> ・ <a href="../../learn/amazon-ecs.html">Amazon ECS</a></div>
+</div>
+</details>
+<div class="cta-box"><a class="btn btn-primary" href="../../exam.html?exam=aws-saa-c03">▸ この試験を本気で演習する（全150問・無料）</a></div>
+<nav class="q-nav">
+<span><a href="q060.html">← 前の問題</a></span>
+<span><a href="q062.html">次の問題 →</a></span>
+</nav>
+<section class="related"><h2>同じ分野の関連問題</h2><ul class="q-list">
+<li><a href="q060.html">ある企業が、Amazon EC2 の Web アプリケーションに対して Application Load Balance…</a></li>
+<li><a href="q062.html">ある企業が、大規模な e コマースサイトのトップページに表示する商品リコメンデーションを、Amazon Personal…</a></li>
+<li><a href="q059.html">ある企業が、Amazon Redshift でビジネスインテリジェンス（BI）ダッシュボードへのクエリを実行している。複…</a></li>
+<li><a href="q063.html">ある企業が、複数の EC2 インスタンスから Amazon EFS（Elastic File System）をマウントし…</a></li>
+</ul></section>
+</main>
+<footer class="page-footer">
+<nav class="hub-nav"><a href="../../exams/aws-clf-c02/">CLF-C02 試験ガイド</a><a href="../../exams/aws-aif-c01/">AIF-C01 試験ガイド</a><a href="../../exams/aws-saa-c03/">SAA-C03 試験ガイド</a><a href="../../exams/aws-dva-c02/">DVA-C02 試験ガイド</a><a href="../../exams/aws-sap-c02/">SAP-C02 試験ガイド</a><a href="../../exams/gcp-cdl/">CDL 試験ガイド</a><a href="../../exams/gcp-ace/">ACE 試験ガイド</a><a href="../../exams/azure-az900/">AZ-900 試験ガイド</a><a href="../../exams/azure-ai900/">AI-900 試験ガイド</a><a href="../../exams/azure-dp900/">DP-900 試験ガイド</a><a href="../../exams/azure-sc900/">SC-900 試験ガイド</a><a href="../../exams/azure-az104/">AZ-104 試験ガイド</a></nav>
+<nav class="site-nav"><a href="../../guide/">資格ガイド</a><a href="../../learn/">サービス解説</a><a href="../../career/">キャリア</a><a href="../../about.html">運営者情報</a><a href="../../privacy.html">プライバシーポリシー</a><a href="../../contact.html">お問い合わせ</a></nav>
+<p class="copy">© CLOUDCERT_ — 本サイトは各認定試験の公式試験ではなく、収録問題はすべてオリジナルの演習問題です。</p>
+</footer>
+</body>
+</html>

@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Amazon SQSとは？試験に出るポイントと演習問題</title>
+<meta name="description" content="Amazon SQS（AWS）の要点と資格試験での問われ方を解説。登場する演習問題20問と公式ドキュメントへのリンクつき。">
+<link rel="canonical" href="https://cloudcert.app/learn/amazon-sqs.html">
+<meta property="og:title" content="Amazon SQSとは？試験に出るポイントと演習問題">
+<meta property="og:description" content="Amazon SQS（AWS）の要点と資格試験での問われ方を解説。登場する演習問題20問と公式ドキュメントへのリンクつき。">
+<meta property="og:url" content="https://cloudcert.app/learn/amazon-sqs.html">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="CLOUDCERT_">
+<meta property="og:image" content="https://cloudcert.app/assets/og.png">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='80' font-size='80' fill='%233fe0a4' font-family='monospace'>▸</text></svg>">
+
+<meta name="google-adsense-account" content="ca-pub-5647574947191958">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+JP:wght@400;500;700&family=JetBrains+Mono:wght@400;600;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../css/style.css">
+<link rel="stylesheet" href="../css/page.css">
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-SZR5CB5Q3X"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag('js',new Date());gtag('config','G-SZR5CB5Q3X');</script>
+<script type="application/ld+json">[{"@context":"https://schema.org","@type":"TechArticle","headline":"Amazon SQSとは？試験に出るポイントと演習問題","description":"Amazon SQS（AWS）の要点と資格試験での問われ方を解説。登場する演習問題20問と公式ドキュメントへのリンクつき。","inLanguage":"ja","about":{"@type":"Thing","name":"Amazon SQS"},"author":{"@type":"Organization","name":"CLOUDCERT_"},"publisher":{"@type":"Organization","name":"CLOUDCERT_"},"mainEntityOfPage":"https://cloudcert.app/learn/amazon-sqs.html"},{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"HOME","item":"https://cloudcert.app/"},{"@type":"ListItem","position":2,"name":"サービス解説","item":"https://cloudcert.app/learn/"},{"@type":"ListItem","position":3,"name":"Amazon SQS"}]}]</script>
+</head>
+<body class="page-body">
+<header class="page-header"><a class="page-logo" href="../index.html">&gt; CLOUDCERT_</a></header>
+<main class="page-main">
+
+<nav class="breadcrumb"><a href="../index.html">HOME</a> › <a href="./">サービス解説</a> › Amazon SQS</nav>
+<div class="learn-head">
+<div class="badges"><span class="badge" data-provider="aws">AWS</span><span class="badge">アプリケーション統合</span><span class="badge badge-q">演習20問</span></div>
+<h1>Amazon SQSとは</h1>
+</div>
+<p class="lead">フルマネージドのメッセージキューサービス。プロデューサーとコンシューマーを疎結合にし、非同期処理とバッファリングを実現する。標準キュー（高スループット・最低1回配信・順序不保証）とFIFOキュー（順序保証・厳密1回配信）の2種がある。</p>
+<p>メッセージの可視性タイムアウト（デフォルト30秒）で処理中のメッセージを他のコンシューマーから隠蔽する。デッドレターキュー（DLQ）で処理失敗メッセージを分離して調査できる。</p>
+<p><a class="official-btn" href="https://docs.aws.amazon.com/ja_jp/AWSSimpleQueueService/latest/SQSDeveloperGuide/welcome.html" target="_blank" rel="noopener">公式ドキュメント →</a></p>
+<h2>試験での問われ方</h2>
+<p>SAAでは「マイクロサービス間の非同期通信」「負荷バッファリング」「ピーク平準化」シナリオでSQSを選ぶ。SNSとの使い分けは「1対1の非同期キュー」か「1対多のファンアウト通知」か。</p>
+<p>FIFOキューは順序保証が必要な場合だが、スループットが標準キューより低い（最大300 TPS・バッチで3,000 TPS）という引っかけに注意。</p>
+<p>ロングポーリング（最大20秒）によるコスト削減とレイテンシ改善はDVA・SAAで問われるベストプラクティス。SQS + Lambda のイベントソースマッピングでポーリングが自動化される。</p>
+<h2>このサービスが登場する演習問題（20問）</h2>
+<ul class="q-list">
+<li><a href="../q/aws-clf-c02/q066.html">【CLF-C02】ある企業が、マイクロサービスアーキテクチャで構築されたアプリケーションの各サービス間でメッセージを非同期に連携させたいと…</a></li>
+<li><a href="../q/aws-saa-c03/q029.html">【SAA-C03】ある企業が、Amazon SQS を使って EC2 で動作するメッセージ処理ワーカーとのキューイングアーキテクチャを構築…</a></li>
+<li><a href="../q/aws-saa-c03/q032.html">【SAA-C03】ある企業が、マイクロサービスアーキテクチャを採用して複数の API を Amazon API Gateway と AWS…</a></li>
+<li><a href="../q/aws-saa-c03/q042.html">【SAA-C03】ある企業が、Amazon SQS FIFO キューを使って注文処理システムを構築している。1 注文につき複数のメッセージ…</a></li>
+<li><a href="../q/aws-saa-c03/q091.html">【SAA-C03】ある企業が、Amazon SNS を使ってメッセージを複数の AWS Lambda 関数と Amazon SQS キュー…</a></li>
+<li><a href="../q/aws-saa-c03/q096.html">【SAA-C03】ある企業が、Amazon EKS でマイクロサービスを運用しており、特定のサービスへのトラフィックが急増したときに、その…</a></li>
+<li><a href="../q/aws-saa-c03/q101.html">【SAA-C03】ある企業が、Amazon S3 バケットへのオブジェクトアップロードをトリガーとして Lambda 関数を起動し、画像の…</a></li>
+<li><a href="../q/aws-saa-c03/q120.html">【SAA-C03】ある企業が、Amazon SQS を使ってメッセージキューイングを実装しており、消費者（Consumer）の EC2 イ…</a></li>
+<li><a href="../q/aws-saa-c03/q125.html">【SAA-C03】ある企業が、AWS Lambda を使ってサードパーティの REST API から毎時間データを取得し、DynamoDB…</a></li>
+<li><a href="../q/aws-saa-c03/q132.html">【SAA-C03】ある企業が、マイクロサービスアーキテクチャで Amazon ECS を使っている。特定のサービスへのリクエストが急増した…</a></li>
+<li><a href="../q/aws-dva-c02/q006.html">【DVA-C02】あるEコマース企業が、注文確定時にSQSキューからLambdaを呼び出して在庫を更新するシステムを運用している。ネットワ…</a></li>
+<li><a href="../q/aws-dva-c02/q007.html">【DVA-C02】ある企業が、外部決済APIを呼び出すLambda関数をSQSイベントソースマッピングで起動している。決済APIの仕様とし…</a></li>
+<li><a href="../q/aws-dva-c02/q022.html">【DVA-C02】ある企業がAPI GatewayのREST APIを本番運用しており、以下の2つの問題が発生している。 問題1: 一部の…</a></li>
+<li><a href="../q/aws-dva-c02/q028.html">【DVA-C02】あるニュースアプリが、SQSを使ってメッセージを処理している。Lambdaコンシューマーがメッセージを取得後、処理中にク…</a></li>
+<li><a href="../q/aws-dva-c02/q032.html">【DVA-C02】ある物流企業が、SQSキューを使って荷物追跡イベントを処理している。消費者LambdaがたびたびSQSメッセージの処理に…</a></li>
+<li><a href="../q/aws-dva-c02/q033.html">【DVA-C02】あるIoTプラットフォームが、多数のデバイスからセンサーデータをSNSトピックで受信し、複数の下流サービスに配信している…</a></li>
+<li><a href="../q/aws-dva-c02/q035.html">【DVA-C02】あるEC企業が、EventBridgeルールを使ってS3バケットへのオブジェクトアップロードイベントを検知し、画像リサイ…</a></li>
+<li><a href="../q/aws-sap-c02/q056.html">【SAP-C02】ある企業が AWS 上で稼働する SQS + Lambda のイベント処理システムを運用しています。最近、一部の SQS…</a></li>
+<li><a href="../q/aws-sap-c02/q120.html">【SAP-C02】ある企業が AWS 上で稼働するアプリケーションのレイテンシーを改善したいと考えています。アプリケーションは Amazo…</a></li>
+<li><a href="../q/aws-sap-c02/q132.html">【SAP-C02】ある企業が AWS 上で高可用性のメッセージキューシステムを構築しています。プロデューサーアプリケーションが大量のジョブ…</a></li>
+</ul>
+<h2>関連サービス</h2><ul class="q-list">
+<li><a href="amazon-api-gateway.html">Amazon API Gateway</a></li>
+<li><a href="amazon-sns.html">Amazon SNS</a></li>
+<li><a href="amazon-eventbridge.html">Amazon EventBridge</a></li>
+<li><a href="aws-step-functions.html">AWS Step Functions</a></li></ul>
+</main>
+<footer class="page-footer">
+<nav class="hub-nav"><a href="../exams/aws-clf-c02/">CLF-C02 試験ガイド</a><a href="../exams/aws-aif-c01/">AIF-C01 試験ガイド</a><a href="../exams/aws-saa-c03/">SAA-C03 試験ガイド</a><a href="../exams/aws-dva-c02/">DVA-C02 試験ガイド</a><a href="../exams/aws-sap-c02/">SAP-C02 試験ガイド</a><a href="../exams/gcp-cdl/">CDL 試験ガイド</a><a href="../exams/gcp-ace/">ACE 試験ガイド</a><a href="../exams/azure-az900/">AZ-900 試験ガイド</a><a href="../exams/azure-ai900/">AI-900 試験ガイド</a><a href="../exams/azure-dp900/">DP-900 試験ガイド</a><a href="../exams/azure-sc900/">SC-900 試験ガイド</a><a href="../exams/azure-az104/">AZ-104 試験ガイド</a></nav>
+<nav class="site-nav"><a href="../guide/">資格ガイド</a><a href="../learn/">サービス解説</a><a href="../career/">キャリア</a><a href="../about.html">運営者情報</a><a href="../privacy.html">プライバシーポリシー</a><a href="../contact.html">お問い合わせ</a></nav>
+<p class="copy">© CLOUDCERT_ — 本サイトは各認定試験の公式試験ではなく、収録問題はすべてオリジナルの演習問題です。</p>
+</footer>
+</body>
+</html>

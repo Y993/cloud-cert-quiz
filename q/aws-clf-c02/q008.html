@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>【CLF-C02 演習問題 #8】AWS Well-Architectedフレームワークの「信頼性」の柱において、あるシステ…</title>
+<meta name="description" content="CLF-C02の本試験レベル演習問題。AWS Well-Architectedフレームワークの「信頼性」の柱において、あるシステムが障害から自動的に回復できるようにするための推奨プラクティスはどれですか？ 全選択肢の解説つき。">
+<link rel="canonical" href="https://cloudcert.app/q/aws-clf-c02/q008.html">
+<meta property="og:title" content="【CLF-C02 演習問題 #8】AWS Well-Architectedフレームワークの「信頼性」の柱において、あるシステ…">
+<meta property="og:description" content="CLF-C02の本試験レベル演習問題。AWS Well-Architectedフレームワークの「信頼性」の柱において、あるシステムが障害から自動的に回復できるようにするための推奨プラクティスはどれですか？ 全選択肢の解説つき。">
+<meta property="og:url" content="https://cloudcert.app/q/aws-clf-c02/q008.html">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="CLOUDCERT_">
+<meta property="og:image" content="https://cloudcert.app/assets/og.png">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='80' font-size='80' fill='%233fe0a4' font-family='monospace'>▸</text></svg>">
+
+<meta name="google-adsense-account" content="ca-pub-5647574947191958">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+JP:wght@400;500;700&family=JetBrains+Mono:wght@400;600;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../../css/style.css">
+<link rel="stylesheet" href="../../css/page.css">
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-SZR5CB5Q3X"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag('js',new Date());gtag('config','G-SZR5CB5Q3X');</script>
+<script type="application/ld+json">[{"@context":"https://schema.org/","@type":"Quiz","about":{"@type":"Thing","name":"AWS Certified Cloud Practitioner"},"hasPart":[{"@type":"Question","eduQuestionType":"Multiple choice","learningResourceType":"Practice problem","text":"AWS Well-Architectedフレームワークの「信頼性」の柱において、あるシステムが障害から自動的に回復できるようにするための推奨プラクティスはどれですか？","suggestedAnswer":[{"@type":"Answer","position":0,"text":"データのバックアップは月次で行い、障害時に手動でリストアする"},{"@type":"Answer","position":2,"text":"すべてのコンポーネントを単一の大きなモノリシックアーキテクチャで構成する"},{"@type":"Answer","position":3,"text":"障害が発生したときだけ手動でサーバーを再起動する運用手順を整備する"}],"acceptedAnswer":{"@type":"Answer","position":1,"text":"ヘルスチェックを使用してEC2インスタンスの障害を検出し、Auto Scalingで自動置換する","comment":{"@type":"Comment","text":"Well-Architectedの「信頼性」の柱では、障害の自動検出と自動回復が推奨されます。ヘルスチェックで異常なインスタンスを検出し、Auto Scalingで自動的に新しいインスタンスに置換することで、人の介入なしに回復できます。③モノリシック構成は障害の影響範囲が広がります。④手動再起動は復旧に時間がかかりSLAを満たせません。①月次バックアップ＋手動リストアではRTO/RPOが悪化します。"}}}]},{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"HOME","item":"https://cloudcert.app/"},{"@type":"ListItem","position":2,"name":"CLF-C02 試験ガイド","item":"https://cloudcert.app/exams/aws-clf-c02/"},{"@type":"ListItem","position":3,"name":"q008"}]}]</script>
+</head>
+<body class="page-body">
+<header class="page-header"><a class="page-logo" href="../../index.html">&gt; CLOUDCERT_</a></header>
+<main class="page-main">
+
+<nav class="breadcrumb"><a href="../../index.html">HOME</a> › <a href="../../exams/aws-clf-c02/">CLF-C02 試験ガイド</a> › q008</nav>
+<div class="q-meta"><span>CLF-C02</span><span>クラウドのコンセプト</span><span>MEDIUM</span><span>単一選択</span></div>
+<h1>AWS Well-Architectedフレームワークの「信頼性」の柱において、あるシステムが障害から自動的に回復できるようにするための推奨プラクティスはどれですか？</h1>
+<ol class="q-choices">
+<li><b>A.</b> データのバックアップは月次で行い、障害時に手動でリストアする</li>
+<li><b>B.</b> ヘルスチェックを使用してEC2インスタンスの障害を検出し、Auto Scalingで自動置換する</li>
+<li><b>C.</b> すべてのコンポーネントを単一の大きなモノリシックアーキテクチャで構成する</li>
+<li><b>D.</b> 障害が発生したときだけ手動でサーバーを再起動する運用手順を整備する</li>
+</ol>
+<details class="q-answer">
+<summary>解答と解説を見る</summary>
+<div class="inner">
+<p><b>正解: B</b></p>
+<p>Well-Architectedの「信頼性」の柱では、障害の自動検出と自動回復が推奨されます。ヘルスチェックで異常なインスタンスを検出し、Auto Scalingで自動的に新しいインスタンスに置換することで、人の介入なしに回復できます。③モノリシック構成は障害の影響範囲が広がります。④手動再起動は復旧に時間がかかりSLAを満たせません。①月次バックアップ＋手動リストアではRTO/RPOが悪化します。</p>
+<div class="svc-links">📚 関連サービスの解説: <a href="../../learn/amazon-ec2.html">Amazon EC2</a></div>
+</div>
+</details>
+<div class="cta-box"><a class="btn btn-primary" href="../../exam.html?exam=aws-clf-c02">▸ この試験を本気で演習する（全150問・無料）</a></div>
+<nav class="q-nav">
+<span><a href="q007.html">← 前の問題</a></span>
+<span><a href="q009.html">次の問題 →</a></span>
+</nav>
+<section class="related"><h2>同じ分野の関連問題</h2><ul class="q-list">
+<li><a href="q007.html">ある小売企業が、繁忙期（年末年始・セール期間）だけアクセスが急増するECサイトをAWSで運用したいと考えています。オンプ…</a></li>
+<li><a href="q009.html">ある企業が、AWSのクラウド移行メリットを経営陣に説明する必要があります。「規模の経済」という観点から、AWSが低コスト…</a></li>
+<li><a href="q006.html">ある企業がAWS上で高可用性システムを設計しており、データセンター全体の障害に耐えられる構成を目指しています。この要件を…</a></li>
+<li><a href="q010.html">あるSaaS企業が、マイクロサービスアーキテクチャへの移行を検討しています。AWS Well-Architectedフレ…</a></li>
+</ul></section>
+</main>
+<footer class="page-footer">
+<nav class="hub-nav"><a href="../../exams/aws-clf-c02/">CLF-C02 試験ガイド</a><a href="../../exams/aws-aif-c01/">AIF-C01 試験ガイド</a><a href="../../exams/aws-saa-c03/">SAA-C03 試験ガイド</a><a href="../../exams/aws-dva-c02/">DVA-C02 試験ガイド</a><a href="../../exams/aws-sap-c02/">SAP-C02 試験ガイド</a><a href="../../exams/gcp-cdl/">CDL 試験ガイド</a><a href="../../exams/gcp-ace/">ACE 試験ガイド</a><a href="../../exams/azure-az900/">AZ-900 試験ガイド</a><a href="../../exams/azure-ai900/">AI-900 試験ガイド</a><a href="../../exams/azure-dp900/">DP-900 試験ガイド</a><a href="../../exams/azure-sc900/">SC-900 試験ガイド</a><a href="../../exams/azure-az104/">AZ-104 試験ガイド</a></nav>
+<nav class="site-nav"><a href="../../guide/">資格ガイド</a><a href="../../learn/">サービス解説</a><a href="../../career/">キャリア</a><a href="../../about.html">運営者情報</a><a href="../../privacy.html">プライバシーポリシー</a><a href="../../contact.html">お問い合わせ</a></nav>
+<p class="copy">© CLOUDCERT_ — 本サイトは各認定試験の公式試験ではなく、収録問題はすべてオリジナルの演習問題です。</p>
+</footer>
+</body>
+</html>

@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Microsoft Entra IDとは？試験に出るポイントと演習問題</title>
+<meta name="description" content="Microsoft Entra ID（Microsoft Azure）の要点と資格試験での問われ方を解説。登場する演習問題19問と公式ドキュメントへのリンクつき。">
+<link rel="canonical" href="https://cloudcert.app/learn/microsoft-entra-id.html">
+<meta property="og:title" content="Microsoft Entra IDとは？試験に出るポイントと演習問題">
+<meta property="og:description" content="Microsoft Entra ID（Microsoft Azure）の要点と資格試験での問われ方を解説。登場する演習問題19問と公式ドキュメントへのリンクつき。">
+<meta property="og:url" content="https://cloudcert.app/learn/microsoft-entra-id.html">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="CLOUDCERT_">
+<meta property="og:image" content="https://cloudcert.app/assets/og.png">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='80' font-size='80' fill='%233fe0a4' font-family='monospace'>▸</text></svg>">
+
+<meta name="google-adsense-account" content="ca-pub-5647574947191958">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+JP:wght@400;500;700&family=JetBrains+Mono:wght@400;600;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../css/style.css">
+<link rel="stylesheet" href="../css/page.css">
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-SZR5CB5Q3X"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag('js',new Date());gtag('config','G-SZR5CB5Q3X');</script>
+<script type="application/ld+json">[{"@context":"https://schema.org","@type":"TechArticle","headline":"Microsoft Entra IDとは？試験に出るポイントと演習問題","description":"Microsoft Entra ID（Microsoft Azure）の要点と資格試験での問われ方を解説。登場する演習問題19問と公式ドキュメントへのリンクつき。","inLanguage":"ja","about":{"@type":"Thing","name":"Microsoft Entra ID"},"author":{"@type":"Organization","name":"CLOUDCERT_"},"publisher":{"@type":"Organization","name":"CLOUDCERT_"},"mainEntityOfPage":"https://cloudcert.app/learn/microsoft-entra-id.html"},{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"HOME","item":"https://cloudcert.app/"},{"@type":"ListItem","position":2,"name":"サービス解説","item":"https://cloudcert.app/learn/"},{"@type":"ListItem","position":3,"name":"Microsoft Entra ID"}]}]</script>
+</head>
+<body class="page-body">
+<header class="page-header"><a class="page-logo" href="../index.html">&gt; CLOUDCERT_</a></header>
+<main class="page-main">
+
+<nav class="breadcrumb"><a href="../index.html">HOME</a> › <a href="./">サービス解説</a> › Microsoft Entra ID</nav>
+<div class="learn-head">
+<div class="badges"><span class="badge" data-provider="azure">Microsoft Azure</span><span class="badge">ID・アクセス管理</span><span class="badge badge-q">演習19問</span></div>
+<h1>Microsoft Entra IDとは</h1>
+</div>
+<p class="lead">Microsoft Entra ID（旧称 Azure Active Directory）は、Azureのクラウドベースのアイデンティティおよびアクセス管理サービスだ。ユーザーやグループの管理、アプリケーションへのシングルサインオン（SSO）、多要素認証（MFA）、条件付きアクセスポリシーの適用など、IDに関わる機能を一元的に提供する。改称はすでに浸透しており、試験問題でも現在は旧称（Azure AD）ではなくEntra IDの名称で出題される点に留意したい。</p>
+<p>Entra IDはマルチテナント構造を持ち、Microsoft 365やAzureをはじめとするクラウドサービスのほか、SaaSアプリとも統合できる。ディレクトリとして機能するだけでなく、Managed Identityによってアプリやサービスが認証情報をコードに埋め込まずにAzureリソースへアクセスできる仕組みも提供する。</p>
+<p>Privileged Identity Management（PIM）はEntra IDの機能の一つで、特権ロール（グローバル管理者など）へのアクセスをジャストインタイムで付与・管理するための機能だ。常時特権を付与せず必要なときだけ昇格させることで、過剰な権限付与によるリスクを低減する。</p>
+<p><a class="official-btn" href="https://learn.microsoft.com/ja-jp/entra/identity/" target="_blank" rel="noopener">公式ドキュメント →</a></p>
+<h2>試験での問われ方</h2>
+<p>試験では「認証（誰であるか）」と「認可（何ができるか）」の違いを問う問題が頻出だ。Entra IDは認証基盤であり、実際のリソースアクセス制御はAzure RBACが担う。両者を混同しないこと。条件付きアクセスは「場所・デバイス・ユーザーリスク」などの条件をもとにアクセスを許可・拒否・MFA要求できる機能であり、PIMとは別物として区別する。</p>
+<p>PIM絡みの設問では「常時割り当て（Permanent Assignment）」と「資格のある割り当て（Eligible Assignment）」の違いを押さえておく。資格のある割り当ては承認や理由入力を経て一定期間だけ有効化される。AZ-104やSC-900では『最小特権の原則を実現するためにどの機能を使うか』という形で出題されることが多い。</p>
+<h2>このサービスが登場する演習問題（19問）</h2>
+<ul class="q-list">
+<li><a href="../q/azure-az900/q047.html">【AZ-900】ある企業がAzureでハイブリッドID管理を構築している。オンプレミスのActive Directory（AD DS）と…</a></li>
+<li><a href="../q/azure-az900/q078.html">【AZ-900】ある企業が多要素認証（MFA）をすべての管理者アカウントに強制したい。Microsoft Entra ID（旧 Azur…</a></li>
+<li><a href="../q/azure-az900/q081.html">【AZ-900】ある企業のセキュリティチームがAzureでゼロトラストセキュリティモデルを実装しようとしている。「ゼロトラスト」の原則に…</a></li>
+<li><a href="../q/azure-az900/q090.html">【AZ-900】ある企業が「マネージドID（Managed Identity）」を使ってAzure VMからAzure Key Vaul…</a></li>
+<li><a href="../q/azure-sc900/q020.html">【SC-900】ある企業がクラウドサービスを利用するためにMicrosoft Entra ID（旧Azure AD）を導入した。Entr…</a></li>
+<li><a href="../q/azure-sc900/q022.html">【SC-900】ある企業がWindows 10デバイスをEntra IDに参加させることを検討している。「Microsoft Entra…</a></li>
+<li><a href="../q/azure-sc900/q032.html">【SC-900】ある企業のセキュリティアーキテクトが、Entra IDのロールとAzureのロールベースアクセス制御（RBAC）の違いに…</a></li>
+<li><a href="../q/azure-sc900/q038.html">【SC-900】ある企業がMicrosoft Entra ID Governanceのエンタイトルメント管理（Entitlement M…</a></li>
+<li><a href="../q/azure-sc900/q047.html">【SC-900】ある大企業のアーキテクトがEntra IDのハイブリッドID構成を検討している。パスワードハッシュSync（PHS）、パ…</a></li>
+<li><a href="../q/azure-sc900/q057.html">【SC-900】ある企業がEntra IDのセキュリティ態勢を強化するために「セキュリティの既定値群（Security Defaults…</a></li>
+<li><a href="../q/azure-sc900/q058.html">【SC-900】ある企業がEntra IDでSSPR（セルフサービスパスワードリセット）と MFA を組み合わせて運用している。ユーザー…</a></li>
+<li><a href="../q/azure-az104/q001.html">【AZ-104】ある企業が Microsoft Entra ID（旧 Azure Active Directory）で社員アカウントを管…</a></li>
+<li><a href="../q/azure-az104/q003.html">【AZ-104】ある企業の IT 管理者が、取引先のパートナー企業の社員に対して社内の SharePoint サイトへの読み取りアクセス…</a></li>
+<li><a href="../q/azure-az104/q006.html">【AZ-104】ある企業が Windows 10 デバイスを Entra ID（Azure AD）に参加させ、社員が Entra ID …</a></li>
+<li><a href="../q/azure-az104/q021.html">【AZ-104】ある企業が Entra ID で社内全体の SSPR（セルフサービスパスワードリセット）を段階的に展開したい。まず IT…</a></li>
+<li><a href="../q/azure-az104/q023.html">【AZ-104】ある企業の IT 管理者が Entra ID に外部パートナーをゲストユーザー（B2B）として招待した。ゲストユーザーが…</a></li>
+<li><a href="../q/azure-az104/q031.html">【AZ-104】ある企業が Entra ID で Privileged Identity Management（PIM）を導入した。グロ…</a></li>
+<li><a href="../q/azure-az104/q054.html">【AZ-104】ある企業が Azure ストレージアカウントでユーザー委任 SAS（User Delegation SAS）を作成したい…</a></li>
+<li><a href="../q/azure-az104/q059.html">【AZ-104】ある企業が Azure Files を評価している。Azure Files で SMB プロトコルを使用する際の要件とし…</a></li>
+</ul>
+<h2>関連サービス</h2><ul class="q-list">
+<li><a href="azure-rbac.html">Azure RBAC</a></li></ul>
+</main>
+<footer class="page-footer">
+<nav class="hub-nav"><a href="../exams/aws-clf-c02/">CLF-C02 試験ガイド</a><a href="../exams/aws-aif-c01/">AIF-C01 試験ガイド</a><a href="../exams/aws-saa-c03/">SAA-C03 試験ガイド</a><a href="../exams/aws-dva-c02/">DVA-C02 試験ガイド</a><a href="../exams/aws-sap-c02/">SAP-C02 試験ガイド</a><a href="../exams/gcp-cdl/">CDL 試験ガイド</a><a href="../exams/gcp-ace/">ACE 試験ガイド</a><a href="../exams/azure-az900/">AZ-900 試験ガイド</a><a href="../exams/azure-ai900/">AI-900 試験ガイド</a><a href="../exams/azure-dp900/">DP-900 試験ガイド</a><a href="../exams/azure-sc900/">SC-900 試験ガイド</a><a href="../exams/azure-az104/">AZ-104 試験ガイド</a></nav>
+<nav class="site-nav"><a href="../guide/">資格ガイド</a><a href="../learn/">サービス解説</a><a href="../career/">キャリア</a><a href="../about.html">運営者情報</a><a href="../privacy.html">プライバシーポリシー</a><a href="../contact.html">お問い合わせ</a></nav>
+<p class="copy">© CLOUDCERT_ — 本サイトは各認定試験の公式試験ではなく、収録問題はすべてオリジナルの演習問題です。</p>
+</footer>
+</body>
+</html>

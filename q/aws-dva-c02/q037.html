@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>【DVA-C02 演習問題 #37】あるマーケットプレイス企業が、DynamoDBを使って注文管理システムを構築している。注文…</title>
+<meta name="description" content="DVA-C02の本試験レベル演習問題。あるマーケットプレイス企業が、DynamoDBを使って注文管理システムを構築している。注文処理では「在庫テーブルから在庫を減算」と「注文テーブルに注文レコードを作成」を原子的に実行し… 全選択肢の解説つき。">
+<link rel="canonical" href="https://cloudcert.app/q/aws-dva-c02/q037.html">
+<meta property="og:title" content="【DVA-C02 演習問題 #37】あるマーケットプレイス企業が、DynamoDBを使って注文管理システムを構築している。注文…">
+<meta property="og:description" content="DVA-C02の本試験レベル演習問題。あるマーケットプレイス企業が、DynamoDBを使って注文管理システムを構築している。注文処理では「在庫テーブルから在庫を減算」と「注文テーブルに注文レコードを作成」を原子的に実行し… 全選択肢の解説つき。">
+<meta property="og:url" content="https://cloudcert.app/q/aws-dva-c02/q037.html">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="CLOUDCERT_">
+<meta property="og:image" content="https://cloudcert.app/assets/og.png">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='80' font-size='80' fill='%233fe0a4' font-family='monospace'>▸</text></svg>">
+
+<meta name="google-adsense-account" content="ca-pub-5647574947191958">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+JP:wght@400;500;700&family=JetBrains+Mono:wght@400;600;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../../css/style.css">
+<link rel="stylesheet" href="../../css/page.css">
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-SZR5CB5Q3X"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag('js',new Date());gtag('config','G-SZR5CB5Q3X');</script>
+<script type="application/ld+json">[{"@context":"https://schema.org/","@type":"Quiz","about":{"@type":"Thing","name":"AWS Certified Developer - Associate"},"hasPart":[{"@type":"Question","eduQuestionType":"Multiple choice","learningResourceType":"Practice problem","text":"あるマーケットプレイス企業が、DynamoDBを使って注文管理システムを構築している。注文処理では「在庫テーブルから在庫を減算」と「注文テーブルに注文レコードを作成」を原子的に実行しなければならない。どちらか一方だけが成功した状態は許容されない。最も適切な実装方法はどれか。","suggestedAnswer":[{"@type":"Answer","position":0,"text":"在庫テーブルのUpdateItemとConditionExpressionを実行し、成功したら注文テーブルにPutItemする。失敗した場合はアプリケーション側でロールバックする"},{"@type":"Answer","position":2,"text":"DynamoDB Streamsで在庫テーブルの変更を検知し、Lambdaが注文テーブルにレコードを作成するイベント駆動アーキテクチャにする"},{"@type":"Answer","position":3,"text":"両テーブルを単一テーブルデザインに統合し、1回のPutItemで在庫と注文を同時更新する"}],"acceptedAnswer":{"@type":"Answer","position":1,"text":"DynamoDB TransactWriteItemsを使い、ConditionCheck（在庫確認）・Update（在庫減算）・Put（注文作成）を1つのトランザクションにまとめる","comment":{"@type":"Comment","text":"DynamoDB TransactWriteItemsは最大100アイテムの複数テーブルにまたがる書き込みをACIDトランザクションとして実行できるAPIである。ConditionCheckで在庫確認、Updateで在庫減算、Putで注文作成を1トランザクションにまとめることで、どれか1つが失敗すると全体がロールバックされる原子性が保証される。Aの逐次実行+手動ロールバックは、在庫減算成功後の注文作成失敗時にロールバックが失敗した場合に在庫と注文の不整合が残る。また並行リクエストがある場合は在庫の二重減算も発生し得る。CのStreams+Lambdaはイベント駆動の結果整合性パターンで、原子性は保証されず、エラー時の補償トランザクション実装が別途必要になる。D単一テーブルデザインへの統合は「在庫が足りない場合の部分的な失敗防止」という要件に直接は対応できず、データモデルの大改修が必要で現実的ではない。"}}}]},{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"HOME","item":"https://cloudcert.app/"},{"@type":"ListItem","position":2,"name":"DVA-C02 試験ガイド","item":"https://cloudcert.app/exams/aws-dva-c02/"},{"@type":"ListItem","position":3,"name":"q037"}]}]</script>
+</head>
+<body class="page-body">
+<header class="page-header"><a class="page-logo" href="../../index.html">&gt; CLOUDCERT_</a></header>
+<main class="page-main">
+
+<nav class="breadcrumb"><a href="../../index.html">HOME</a> › <a href="../../exams/aws-dva-c02/">DVA-C02 試験ガイド</a> › q037</nav>
+<div class="q-meta"><span>DVA-C02</span><span>開発</span><span>MEDIUM</span><span>単一選択</span></div>
+<h1>あるマーケットプレイス企業が、DynamoDBを使って注文管理システムを構築している。注文処理では「在庫テーブルから在庫を減算」と「注文テーブルに注文レコードを作成」を原子的に実行しなければならない。どちらか一方だけが成功した状態は許容されない。最も適切な実装方法はどれか。</h1>
+<ol class="q-choices">
+<li><b>A.</b> 在庫テーブルのUpdateItemとConditionExpressionを実行し、成功したら注文テーブルにPutItemする。失敗した場合はアプリケーション側でロールバックする</li>
+<li><b>B.</b> DynamoDB TransactWriteItemsを使い、ConditionCheck（在庫確認）・Update（在庫減算）・Put（注文作成）を1つのトランザクションにまとめる</li>
+<li><b>C.</b> DynamoDB Streamsで在庫テーブルの変更を検知し、Lambdaが注文テーブルにレコードを作成するイベント駆動アーキテクチャにする</li>
+<li><b>D.</b> 両テーブルを単一テーブルデザインに統合し、1回のPutItemで在庫と注文を同時更新する</li>
+</ol>
+<details class="q-answer">
+<summary>解答と解説を見る</summary>
+<div class="inner">
+<p><b>正解: B</b></p>
+<p>DynamoDB TransactWriteItemsは最大100アイテムの複数テーブルにまたがる書き込みをACIDトランザクションとして実行できるAPIである。ConditionCheckで在庫確認、Updateで在庫減算、Putで注文作成を1トランザクションにまとめることで、どれか1つが失敗すると全体がロールバックされる原子性が保証される。Aの逐次実行+手動ロールバックは、在庫減算成功後の注文作成失敗時にロールバックが失敗した場合に在庫と注文の不整合が残る。また並行リクエストがある場合は在庫の二重減算も発生し得る。CのStreams+Lambdaはイベント駆動の結果整合性パターンで、原子性は保証されず、エラー時の補償トランザクション実装が別途必要になる。D単一テーブルデザインへの統合は「在庫が足りない場合の部分的な失敗防止」という要件に直接は対応できず、データモデルの大改修が必要で現実的ではない。</p>
+<div class="svc-links">📚 関連サービスの解説: <a href="../../learn/amazon-dynamodb.html">Amazon DynamoDB</a></div>
+</div>
+</details>
+<div class="cta-box"><a class="btn btn-primary" href="../../exam.html?exam=aws-dva-c02">▸ この試験を本気で演習する（全150問・無料）</a></div>
+<nav class="q-nav">
+<span><a href="q036.html">← 前の問題</a></span>
+<span><a href="q038.html">次の問題 →</a></span>
+</nav>
+<section class="related"><h2>同じ分野の関連問題</h2><ul class="q-list">
+<li><a href="q036.html">あるスタートアップが、ElastiCache for Redisをデータベースキャッシュとして導入しようとしている。デー…</a></li>
+<li><a href="q038.html">あるグローバルゲーム会社が、DynamoDBとKinesis Data Streamsを組み合わせたリアルタイムランキン…</a></li>
+<li><a href="q035.html">あるEC企業が、EventBridgeルールを使ってS3バケットへのオブジェクトアップロードイベントを検知し、画像リサイ…</a></li>
+<li><a href="q039.html">ある医療記録管理企業が、Step FunctionsのStandard Workflowを使って患者データの変換・検証・…</a></li>
+</ul></section>
+</main>
+<footer class="page-footer">
+<nav class="hub-nav"><a href="../../exams/aws-clf-c02/">CLF-C02 試験ガイド</a><a href="../../exams/aws-aif-c01/">AIF-C01 試験ガイド</a><a href="../../exams/aws-saa-c03/">SAA-C03 試験ガイド</a><a href="../../exams/aws-dva-c02/">DVA-C02 試験ガイド</a><a href="../../exams/aws-sap-c02/">SAP-C02 試験ガイド</a><a href="../../exams/gcp-cdl/">CDL 試験ガイド</a><a href="../../exams/gcp-ace/">ACE 試験ガイド</a><a href="../../exams/azure-az900/">AZ-900 試験ガイド</a><a href="../../exams/azure-ai900/">AI-900 試験ガイド</a><a href="../../exams/azure-dp900/">DP-900 試験ガイド</a><a href="../../exams/azure-sc900/">SC-900 試験ガイド</a><a href="../../exams/azure-az104/">AZ-104 試験ガイド</a></nav>
+<nav class="site-nav"><a href="../../guide/">資格ガイド</a><a href="../../learn/">サービス解説</a><a href="../../career/">キャリア</a><a href="../../about.html">運営者情報</a><a href="../../privacy.html">プライバシーポリシー</a><a href="../../contact.html">お問い合わせ</a></nav>
+<p class="copy">© CLOUDCERT_ — 本サイトは各認定試験の公式試験ではなく、収録問題はすべてオリジナルの演習問題です。</p>
+</footer>
+</body>
+</html>

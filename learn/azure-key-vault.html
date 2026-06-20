@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Azure Key Vaultとは？試験に出るポイントと演習問題</title>
+<meta name="description" content="Azure Key Vault（Microsoft Azure）の要点と資格試験での問われ方を解説。登場する演習問題8問と公式ドキュメントへのリンクつき。">
+<link rel="canonical" href="https://cloudcert.app/learn/azure-key-vault.html">
+<meta property="og:title" content="Azure Key Vaultとは？試験に出るポイントと演習問題">
+<meta property="og:description" content="Azure Key Vault（Microsoft Azure）の要点と資格試験での問われ方を解説。登場する演習問題8問と公式ドキュメントへのリンクつき。">
+<meta property="og:url" content="https://cloudcert.app/learn/azure-key-vault.html">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="CLOUDCERT_">
+<meta property="og:image" content="https://cloudcert.app/assets/og.png">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='80' font-size='80' fill='%233fe0a4' font-family='monospace'>▸</text></svg>">
+
+<meta name="google-adsense-account" content="ca-pub-5647574947191958">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+JP:wght@400;500;700&family=JetBrains+Mono:wght@400;600;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../css/style.css">
+<link rel="stylesheet" href="../css/page.css">
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-SZR5CB5Q3X"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag('js',new Date());gtag('config','G-SZR5CB5Q3X');</script>
+<script type="application/ld+json">[{"@context":"https://schema.org","@type":"TechArticle","headline":"Azure Key Vaultとは？試験に出るポイントと演習問題","description":"Azure Key Vault（Microsoft Azure）の要点と資格試験での問われ方を解説。登場する演習問題8問と公式ドキュメントへのリンクつき。","inLanguage":"ja","about":{"@type":"Thing","name":"Azure Key Vault"},"author":{"@type":"Organization","name":"CLOUDCERT_"},"publisher":{"@type":"Organization","name":"CLOUDCERT_"},"mainEntityOfPage":"https://cloudcert.app/learn/azure-key-vault.html"},{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"HOME","item":"https://cloudcert.app/"},{"@type":"ListItem","position":2,"name":"サービス解説","item":"https://cloudcert.app/learn/"},{"@type":"ListItem","position":3,"name":"Azure Key Vault"}]}]</script>
+</head>
+<body class="page-body">
+<header class="page-header"><a class="page-logo" href="../index.html">&gt; CLOUDCERT_</a></header>
+<main class="page-main">
+
+<nav class="breadcrumb"><a href="../index.html">HOME</a> › <a href="./">サービス解説</a> › Azure Key Vault</nav>
+<div class="learn-head">
+<div class="badges"><span class="badge" data-provider="azure">Microsoft Azure</span><span class="badge">セキュリティ</span><span class="badge badge-q">演習8問</span></div>
+<h1>Azure Key Vaultとは</h1>
+</div>
+<p class="lead">Azure Key Vaultは、暗号化キー・シークレット（APIキー・パスワード・接続文字列）・証明書を安全に保管・管理するサービスだ。アプリケーションのコードや設定ファイルに機密情報をハードコードせず、Key Vaultから取得する設計にすることでセキュリティを向上させる。</p>
+<p>アクセス制御はアクセスポリシーまたはAzure RBACで管理できる。Key VaultはHSM（ハードウェアセキュリティモジュール）を使ったキー保護（Premium SKU）にも対応しており、金融系など高いセキュリティ要件のシステムでも利用できる。Managed IdentityをアプリケーションやVMに割り当てることで、認証情報なしでKey Vaultにアクセスできる。</p>
+<p><a class="official-btn" href="https://learn.microsoft.com/ja-jp/azure/key-vault/general/overview" target="_blank" rel="noopener">公式ドキュメント →</a></p>
+<h2>試験での問われ方</h2>
+<p>AZ-104とSC-900で頻繁に登場する。『接続文字列をコードに埋め込まないためにどのサービスを使うか』という問いでKey Vaultが正解になる。Managed Identityとの組み合わせ（アプリがKey Vaultからシークレットを取得する際にManaged Identityを使って認証する）も出題される。AZ-900では『シークレット管理』の文脈で言及される程度だ。</p>
+<h2>このサービスが登場する演習問題（8問）</h2>
+<ul class="q-list">
+<li><a href="../q/azure-az900/q048.html">【AZ-900】ある企業がAzureで機密性の高いアプリケーションデータを暗号化して保存したい。暗号化キーは顧客が自社で管理し（Cust…</a></li>
+<li><a href="../q/azure-az900/q128.html">【AZ-900】ある企業がAzure上に機密性の高い資格情報（データベース接続文字列・APIキーなど）を安全に保存し、アプリケーションが…</a></li>
+<li><a href="../q/azure-sc900/q064.html">【SC-900】ある企業が Azure Key Vault を使用してアプリケーションの API キーと証明書を管理している。開発者がコ…</a></li>
+<li><a href="../q/azure-sc900/q070.html">【SC-900】ある金融機関が Azure Key Vault を使い、HSM（ハードウェア セキュリティ モジュール）で保護された暗号…</a></li>
+<li><a href="../q/azure-sc900/q076.html">【SC-900】ある企業が Azure Key Vault でデータベースの接続文字列を管理している。監査要件として、誰がいつどのシーク…</a></li>
+<li><a href="../q/azure-sc900/q084.html">【SC-900】ある企業が Azure Key Vault を使用してシークレット、キー、証明書を管理している。Key Vault を安…</a></li>
+<li><a href="../q/azure-az104/q081.html">【AZ-104】あるチームがBicepを使って既存のAzure Key Vaultのシークレットを参照し、VMのパスワードとして使用する…</a></li>
+<li><a href="../q/azure-az104/q097.html">【AZ-104】ある企業がAzure App ServiceでAPIアプリをホストしており、App Serviceのアプリケーション設定…</a></li>
+</ul>
+<h2>関連サービス</h2><ul class="q-list">
+<li><a href="microsoft-defender-for-cloud.html">Microsoft Defender for Cloud</a></li>
+<li><a href="microsoft-defender-xdr.html">Microsoft Defender XDR</a></li>
+<li><a href="microsoft-sentinel.html">Microsoft Sentinel</a></li></ul>
+</main>
+<footer class="page-footer">
+<nav class="hub-nav"><a href="../exams/aws-clf-c02/">CLF-C02 試験ガイド</a><a href="../exams/aws-aif-c01/">AIF-C01 試験ガイド</a><a href="../exams/aws-saa-c03/">SAA-C03 試験ガイド</a><a href="../exams/aws-dva-c02/">DVA-C02 試験ガイド</a><a href="../exams/aws-sap-c02/">SAP-C02 試験ガイド</a><a href="../exams/gcp-cdl/">CDL 試験ガイド</a><a href="../exams/gcp-ace/">ACE 試験ガイド</a><a href="../exams/azure-az900/">AZ-900 試験ガイド</a><a href="../exams/azure-ai900/">AI-900 試験ガイド</a><a href="../exams/azure-dp900/">DP-900 試験ガイド</a><a href="../exams/azure-sc900/">SC-900 試験ガイド</a><a href="../exams/azure-az104/">AZ-104 試験ガイド</a></nav>
+<nav class="site-nav"><a href="../guide/">資格ガイド</a><a href="../learn/">サービス解説</a><a href="../career/">キャリア</a><a href="../about.html">運営者情報</a><a href="../privacy.html">プライバシーポリシー</a><a href="../contact.html">お問い合わせ</a></nav>
+<p class="copy">© CLOUDCERT_ — 本サイトは各認定試験の公式試験ではなく、収録問題はすべてオリジナルの演習問題です。</p>
+</footer>
+</body>
+</html>

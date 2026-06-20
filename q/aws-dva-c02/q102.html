@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>【DVA-C02 演習問題 #102】ある開発チームがAWS Lambda関数のバージョン管理を改善しようとしている。現在は関数…</title>
+<meta name="description" content="DVA-C02の本試験レベル演習問題。ある開発チームがAWS Lambda関数のバージョン管理を改善しようとしている。現在は関数名を直接参照してデプロイしているが、本番・ステージング・開発の各環境で異なるバージョンを管理… 全選択肢の解説つき。">
+<link rel="canonical" href="https://cloudcert.app/q/aws-dva-c02/q102.html">
+<meta property="og:title" content="【DVA-C02 演習問題 #102】ある開発チームがAWS Lambda関数のバージョン管理を改善しようとしている。現在は関数…">
+<meta property="og:description" content="DVA-C02の本試験レベル演習問題。ある開発チームがAWS Lambda関数のバージョン管理を改善しようとしている。現在は関数名を直接参照してデプロイしているが、本番・ステージング・開発の各環境で異なるバージョンを管理… 全選択肢の解説つき。">
+<meta property="og:url" content="https://cloudcert.app/q/aws-dva-c02/q102.html">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="CLOUDCERT_">
+<meta property="og:image" content="https://cloudcert.app/assets/og.png">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='80' font-size='80' fill='%233fe0a4' font-family='monospace'>▸</text></svg>">
+
+<meta name="google-adsense-account" content="ca-pub-5647574947191958">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+JP:wght@400;500;700&family=JetBrains+Mono:wght@400;600;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../../css/style.css">
+<link rel="stylesheet" href="../../css/page.css">
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-SZR5CB5Q3X"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag('js',new Date());gtag('config','G-SZR5CB5Q3X');</script>
+<script type="application/ld+json">[{"@context":"https://schema.org/","@type":"Quiz","about":{"@type":"Thing","name":"AWS Certified Developer - Associate"},"hasPart":[{"@type":"Question","eduQuestionType":"Multiple choice","learningResourceType":"Practice problem","text":"ある開発チームがAWS Lambda関数のバージョン管理を改善しようとしている。現在は関数名を直接参照してデプロイしているが、本番・ステージング・開発の各環境で異なるバージョンを管理し、クライアントがどの環境のエンドポイントを呼ぶかを変えずに新バージョンをデプロイできるようにしたい。最も適切な方法はどれか。","suggestedAnswer":[{"@type":"Answer","position":0,"text":"Lambdaの$LATESTバージョンをすべての環境で使用し、環境変数で動作を切り替える"},{"@type":"Answer","position":1,"text":"環境ごとに異なる名前のLambda関数（例: myFunc-prod、myFunc-staging）を作成する"},{"@type":"Answer","position":2,"text":"AWS Codeシリーズのパイプラインを3本作成し、それぞれの環境に異なるコードをデプロイする"}],"acceptedAnswer":{"@type":"Answer","position":3,"text":"Lambda関数にエイリアス（production、staging、dev）を作成し、各エイリアスを対応するバージョンに向ける。クライアントはエイリアスのARNを呼び出す","comment":{"@type":"Comment","text":"Lambdaエイリアスは特定のバージョンに対する名前付きポインタである。production/staging/devのエイリアスをそれぞれ異なるバージョン番号に向けておくことで、クライアントは常に同じエイリアスARNを呼び出し続けながら、開発チームはエイリアスが指すバージョンを変更するだけで新バージョンに切り替えられる。ロールバックも古いバージョン番号にエイリアスを向け直すだけで即座に完了する。Bは関数が増えるほど管理が複雑になり、コードの重複が発生するアンチパターンである。Aの$LATESTはデプロイのたびに変わるためバージョン管理ができず、環境分離にならない。CはCodePipelineを3本管理する運用負荷がかかり、エイリアスによる解決より複雑になる。"}}}]},{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"HOME","item":"https://cloudcert.app/"},{"@type":"ListItem","position":2,"name":"DVA-C02 試験ガイド","item":"https://cloudcert.app/exams/aws-dva-c02/"},{"@type":"ListItem","position":3,"name":"q102"}]}]</script>
+</head>
+<body class="page-body">
+<header class="page-header"><a class="page-logo" href="../../index.html">&gt; CLOUDCERT_</a></header>
+<main class="page-main">
+
+<nav class="breadcrumb"><a href="../../index.html">HOME</a> › <a href="../../exams/aws-dva-c02/">DVA-C02 試験ガイド</a> › q102</nav>
+<div class="q-meta"><span>DVA-C02</span><span>デプロイ</span><span>MEDIUM</span><span>単一選択</span></div>
+<h1>ある開発チームがAWS Lambda関数のバージョン管理を改善しようとしている。現在は関数名を直接参照してデプロイしているが、本番・ステージング・開発の各環境で異なるバージョンを管理し、クライアントがどの環境のエンドポイントを呼ぶかを変えずに新バージョンをデプロイできるようにしたい。最も適切な方法はどれか。</h1>
+<ol class="q-choices">
+<li><b>A.</b> Lambdaの$LATESTバージョンをすべての環境で使用し、環境変数で動作を切り替える</li>
+<li><b>B.</b> 環境ごとに異なる名前のLambda関数（例: myFunc-prod、myFunc-staging）を作成する</li>
+<li><b>C.</b> AWS Codeシリーズのパイプラインを3本作成し、それぞれの環境に異なるコードをデプロイする</li>
+<li><b>D.</b> Lambda関数にエイリアス（production、staging、dev）を作成し、各エイリアスを対応するバージョンに向ける。クライアントはエイリアスのARNを呼び出す</li>
+</ol>
+<details class="q-answer">
+<summary>解答と解説を見る</summary>
+<div class="inner">
+<p><b>正解: D</b></p>
+<p>Lambdaエイリアスは特定のバージョンに対する名前付きポインタである。production/staging/devのエイリアスをそれぞれ異なるバージョン番号に向けておくことで、クライアントは常に同じエイリアスARNを呼び出し続けながら、開発チームはエイリアスが指すバージョンを変更するだけで新バージョンに切り替えられる。ロールバックも古いバージョン番号にエイリアスを向け直すだけで即座に完了する。Bは関数が増えるほど管理が複雑になり、コードの重複が発生するアンチパターンである。Aの$LATESTはデプロイのたびに変わるためバージョン管理ができず、環境分離にならない。CはCodePipelineを3本管理する運用負荷がかかり、エイリアスによる解決より複雑になる。</p>
+<div class="svc-links">📚 関連サービスの解説: <a href="../../learn/aws-lambda.html">AWS Lambda</a></div>
+</div>
+</details>
+<div class="cta-box"><a class="btn btn-primary" href="../../exam.html?exam=aws-dva-c02">▸ この試験を本気で演習する（全150問・無料）</a></div>
+<nav class="q-nav">
+<span><a href="q101.html">← 前の問題</a></span>
+<span><a href="q103.html">次の問題 →</a></span>
+</nav>
+<section class="related"><h2>同じ分野の関連問題</h2><ul class="q-list">
+<li><a href="q101.html">ある企業がElastic Beanstalkで運用するWebアプリケーションの新バージョンをデプロイしようとしている。本…</a></li>
+<li><a href="q103.html">ある企業がAWS CodeDeployを使ってEC2フリート100台にアプリケーションをデプロイしている。デプロイ中にア…</a></li>
+<li><a href="q100.html">あるチームがAWS CodePipelineで構築したCI/CDパイプラインを改善しようとしている。ビルドフェーズでDo…</a></li>
+<li><a href="q104.html">ある企業がAWS CloudFormationのスタックセット（StackSets）を使って、AWS Organizat…</a></li>
+</ul></section>
+</main>
+<footer class="page-footer">
+<nav class="hub-nav"><a href="../../exams/aws-clf-c02/">CLF-C02 試験ガイド</a><a href="../../exams/aws-aif-c01/">AIF-C01 試験ガイド</a><a href="../../exams/aws-saa-c03/">SAA-C03 試験ガイド</a><a href="../../exams/aws-dva-c02/">DVA-C02 試験ガイド</a><a href="../../exams/aws-sap-c02/">SAP-C02 試験ガイド</a><a href="../../exams/gcp-cdl/">CDL 試験ガイド</a><a href="../../exams/gcp-ace/">ACE 試験ガイド</a><a href="../../exams/azure-az900/">AZ-900 試験ガイド</a><a href="../../exams/azure-ai900/">AI-900 試験ガイド</a><a href="../../exams/azure-dp900/">DP-900 試験ガイド</a><a href="../../exams/azure-sc900/">SC-900 試験ガイド</a><a href="../../exams/azure-az104/">AZ-104 試験ガイド</a></nav>
+<nav class="site-nav"><a href="../../guide/">資格ガイド</a><a href="../../learn/">サービス解説</a><a href="../../career/">キャリア</a><a href="../../about.html">運営者情報</a><a href="../../privacy.html">プライバシーポリシー</a><a href="../../contact.html">お問い合わせ</a></nav>
+<p class="copy">© CLOUDCERT_ — 本サイトは各認定試験の公式試験ではなく、収録問題はすべてオリジナルの演習問題です。</p>
+</footer>
+</body>
+</html>

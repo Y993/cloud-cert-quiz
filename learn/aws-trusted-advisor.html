@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AWS Trusted Advisorとは？試験に出るポイントと演習問題</title>
+<meta name="description" content="AWS Trusted Advisor（AWS）の要点と資格試験での問われ方を解説。登場する演習問題4問と公式ドキュメントへのリンクつき。">
+<link rel="canonical" href="https://cloudcert.app/learn/aws-trusted-advisor.html">
+<meta property="og:title" content="AWS Trusted Advisorとは？試験に出るポイントと演習問題">
+<meta property="og:description" content="AWS Trusted Advisor（AWS）の要点と資格試験での問われ方を解説。登場する演習問題4問と公式ドキュメントへのリンクつき。">
+<meta property="og:url" content="https://cloudcert.app/learn/aws-trusted-advisor.html">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="CLOUDCERT_">
+<meta property="og:image" content="https://cloudcert.app/assets/og.png">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='80' font-size='80' fill='%233fe0a4' font-family='monospace'>▸</text></svg>">
+
+<meta name="google-adsense-account" content="ca-pub-5647574947191958">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+JP:wght@400;500;700&family=JetBrains+Mono:wght@400;600;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../css/style.css">
+<link rel="stylesheet" href="../css/page.css">
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-SZR5CB5Q3X"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag('js',new Date());gtag('config','G-SZR5CB5Q3X');</script>
+<script type="application/ld+json">[{"@context":"https://schema.org","@type":"TechArticle","headline":"AWS Trusted Advisorとは？試験に出るポイントと演習問題","description":"AWS Trusted Advisor（AWS）の要点と資格試験での問われ方を解説。登場する演習問題4問と公式ドキュメントへのリンクつき。","inLanguage":"ja","about":{"@type":"Thing","name":"AWS Trusted Advisor"},"author":{"@type":"Organization","name":"CLOUDCERT_"},"publisher":{"@type":"Organization","name":"CLOUDCERT_"},"mainEntityOfPage":"https://cloudcert.app/learn/aws-trusted-advisor.html"},{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"HOME","item":"https://cloudcert.app/"},{"@type":"ListItem","position":2,"name":"サービス解説","item":"https://cloudcert.app/learn/"},{"@type":"ListItem","position":3,"name":"AWS Trusted Advisor"}]}]</script>
+</head>
+<body class="page-body">
+<header class="page-header"><a class="page-logo" href="../index.html">&gt; CLOUDCERT_</a></header>
+<main class="page-main">
+
+<nav class="breadcrumb"><a href="../index.html">HOME</a> › <a href="./">サービス解説</a> › AWS Trusted Advisor</nav>
+<div class="learn-head">
+<div class="badges"><span class="badge" data-provider="aws">AWS</span><span class="badge">管理・ガバナンス</span><span class="badge badge-q">演習4問</span></div>
+<h1>AWS Trusted Advisorとは</h1>
+</div>
+<p class="lead">コスト最適化・パフォーマンス・セキュリティ・耐障害性・サービス制限の5カテゴリでAWSのベストプラクティスに照らしてアカウントの設定を自動チェックするアドバイザリーサービス。</p>
+<p>無料のBASICチェック（セキュリティ7項目・サービス制限など）と、ビジネス/エンタープライズサポートプランで利用できるフルチェックがある。</p>
+<p><a class="official-btn" href="https://docs.aws.amazon.com/ja_jp/awssupport/latest/user/trusted-advisor.html" target="_blank" rel="noopener">公式ドキュメント →</a></p>
+<h2>試験での問われ方</h2>
+<p>CLFでは「AWSのベストプラクティスへの準拠を確認する」サービスとして登場。具体的なチェック項目としては、アタッチされていない未使用のElastic IP、誰でもアクセスできる公開S3バケット、ルートアカウントにMFAが設定されていない、SSH/RDPを全開放したセキュリティグループ、サービスクォータへの接近などが定番例だ。</p>
+<p>フルチェックにはBusiness/Enterpriseサポートプラン以上が必要で、無料のBasicでは限られた項目しか見えないという制約を押さえる。EC2/EBS/Lambdaなどを実利用メトリクスから分析して最適なサイズ・タイプを推奨するのはCompute Optimizer、横断的なベストプラクティス点検はTrusted Advisor、カスタムなコンプライアンスルールはConfig、という三者の使い分けがSAA・CLFで問われる。</p>
+<h2>このサービスが登場する演習問題（4問）</h2>
+<ul class="q-list">
+<li><a href="../q/aws-clf-c02/q123.html">【CLF-C02】ある企業が、AWSのコスト削減に向けたアドバイスを受けたいと考えています。コスト最適化・セキュリティ・パフォーマンス・耐…</a></li>
+<li><a href="../q/aws-clf-c02/q149.html">【CLF-C02】ある企業が、AWSの「ビジネスサポート」プランを契約しています。このサポートプランに含まれる機能として正しいものはどれで…</a></li>
+<li><a href="../q/aws-saa-c03/q079.html">【SAA-C03】ある企業が、AWS の月次コストレポートを確認したところ、Amazon EC2 と Amazon RDS のコストが急増…</a></li>
+<li><a href="../q/aws-saa-c03/q145.html">【SAA-C03】ある企業が、AWS のコスト削減策として未使用の Elastic IP アドレス（EIP）を特定したい。AWS でコスト…</a></li>
+</ul>
+<h2>関連サービス</h2><ul class="q-list">
+<li><a href="aws-cloudtrail.html">AWS CloudTrail</a></li>
+<li><a href="amazon-cloudwatch.html">Amazon CloudWatch</a></li>
+<li><a href="aws-config.html">AWS Config</a></li>
+<li><a href="aws-organizations.html">AWS Organizations</a></li>
+<li><a href="aws-cloudformation.html">AWS CloudFormation</a></li></ul>
+</main>
+<footer class="page-footer">
+<nav class="hub-nav"><a href="../exams/aws-clf-c02/">CLF-C02 試験ガイド</a><a href="../exams/aws-aif-c01/">AIF-C01 試験ガイド</a><a href="../exams/aws-saa-c03/">SAA-C03 試験ガイド</a><a href="../exams/aws-dva-c02/">DVA-C02 試験ガイド</a><a href="../exams/aws-sap-c02/">SAP-C02 試験ガイド</a><a href="../exams/gcp-cdl/">CDL 試験ガイド</a><a href="../exams/gcp-ace/">ACE 試験ガイド</a><a href="../exams/azure-az900/">AZ-900 試験ガイド</a><a href="../exams/azure-ai900/">AI-900 試験ガイド</a><a href="../exams/azure-dp900/">DP-900 試験ガイド</a><a href="../exams/azure-sc900/">SC-900 試験ガイド</a><a href="../exams/azure-az104/">AZ-104 試験ガイド</a></nav>
+<nav class="site-nav"><a href="../guide/">資格ガイド</a><a href="../learn/">サービス解説</a><a href="../career/">キャリア</a><a href="../about.html">運営者情報</a><a href="../privacy.html">プライバシーポリシー</a><a href="../contact.html">お問い合わせ</a></nav>
+<p class="copy">© CLOUDCERT_ — 本サイトは各認定試験の公式試験ではなく、収録問題はすべてオリジナルの演習問題です。</p>
+</footer>
+</body>
+</html>

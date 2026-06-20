@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>【DVA-C02 演習問題 #48】あるEコマース企業が、商品データの更新があるたびにDynamoDBテーブルへの書き込みが発…</title>
+<meta name="description" content="DVA-C02の本試験レベル演習問題。あるEコマース企業が、商品データの更新があるたびにDynamoDBテーブルへの書き込みが発生する。このデータ変更を複数の下流サービス（検索インデックス更新・レコメンデーションエンジン… 全選択肢の解説つき。">
+<link rel="canonical" href="https://cloudcert.app/q/aws-dva-c02/q048.html">
+<meta property="og:title" content="【DVA-C02 演習問題 #48】あるEコマース企業が、商品データの更新があるたびにDynamoDBテーブルへの書き込みが発…">
+<meta property="og:description" content="DVA-C02の本試験レベル演習問題。あるEコマース企業が、商品データの更新があるたびにDynamoDBテーブルへの書き込みが発生する。このデータ変更を複数の下流サービス（検索インデックス更新・レコメンデーションエンジン… 全選択肢の解説つき。">
+<meta property="og:url" content="https://cloudcert.app/q/aws-dva-c02/q048.html">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="CLOUDCERT_">
+<meta property="og:image" content="https://cloudcert.app/assets/og.png">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='80' font-size='80' fill='%233fe0a4' font-family='monospace'>▸</text></svg>">
+
+<meta name="google-adsense-account" content="ca-pub-5647574947191958">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+JP:wght@400;500;700&family=JetBrains+Mono:wght@400;600;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../../css/style.css">
+<link rel="stylesheet" href="../../css/page.css">
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-SZR5CB5Q3X"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag('js',new Date());gtag('config','G-SZR5CB5Q3X');</script>
+<script type="application/ld+json">[{"@context":"https://schema.org/","@type":"Quiz","about":{"@type":"Thing","name":"AWS Certified Developer - Associate"},"hasPart":[{"@type":"Question","eduQuestionType":"Multiple choice","learningResourceType":"Practice problem","text":"あるEコマース企業が、商品データの更新があるたびにDynamoDBテーブルへの書き込みが発生する。このデータ変更を複数の下流サービス（検索インデックス更新・レコメンデーションエンジン・監査ログ）にリアルタイムに伝播させたい。DynamoDB Streamsを使ったLambdaトリガーで各サービスに通知しているが、Lambda関数が肥大化して単一責任の原則を破っている。コードの変更を最小限に抑えつつ、各処理を独立したサービスに分離しながらDynamoDBの変更を確実に全下流サービスに伝播する構成として最も適切なものはどれか。","suggestedAnswer":[{"@type":"Answer","position":0,"text":"DynamoDB StreamsのLambdaトリガーを3つに分け、それぞれが検索・レコメンド・監査に特化したLambdaを直接呼び出す"},{"@type":"Answer","position":2,"text":"DynamoDB StreamsのLambdaから直接3つの下流LambdaをInvoke APIで並列非同期呼び出しする"},{"@type":"Answer","position":3,"text":"DynamoDB Streamsを無効にし、アプリケーション側の書き込みコードでDynamoDB更新後に各サービスのAPIを直接呼び出す"}],"acceptedAnswer":{"@type":"Answer","position":1,"text":"DynamoDB StreamsをEventBridge Pipesのソースに設定し、ターゲットにSNSトピックを指定する。SNSトピックに各サービスのSQSキューをサブスクライブして下流処理を独立したLambdaに分担させる","comment":{"@type":"Comment","text":"EventBridge Pipesは「ソース（DynamoDB Streamsなど）→フィルタリング→変換→ターゲット」というパイプライン構造を宣言的に構成できるサービスである。DynamoDB Streamsをソースに設定してSNSトピックをターゲットにすることで、DynamoDB変更イベントをフィルタリング・エンリッチメントした上でSNSに転送できる。SNSからSQSファンアウトパターンで各下流サービスの処理キューに独立して配信されるため、1つのサービスが失敗しても他には影響せず、各サービスのLambdaは独立してスケール・デプロイできる。コード実装は最小限で済み、単一責任の原則も保てる。選択肢AのLambdaトリガー3分割は、それぞれが同じDynamoDB Streamに接続することになるが、DynamoDB Streamsの1テーブルに対してLambdaトリガーは1つしか設定できないため、3つの直接トリガーは設定できない。選択肢CのLambdaからの直接並列呼び出しは単一責任問題を解消するが、呼び出し元Lambdaが3つのサービス呼び出しを管理する責務を持ち続けるため、根本的な分離にはならない。また、下流サービスの追加・削除のたびに呼び出し元コードの変更が必要になる。選択肢Dはアプリケーション側に通知責務を持ち込むアンチパターンであり、書き込みに失敗した場合は通知も失われ、サービス間結合度が高くなる。"}}}]},{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"HOME","item":"https://cloudcert.app/"},{"@type":"ListItem","position":2,"name":"DVA-C02 試験ガイド","item":"https://cloudcert.app/exams/aws-dva-c02/"},{"@type":"ListItem","position":3,"name":"q048"}]}]</script>
+</head>
+<body class="page-body">
+<header class="page-header"><a class="page-logo" href="../../index.html">&gt; CLOUDCERT_</a></header>
+<main class="page-main">
+
+<nav class="breadcrumb"><a href="../../index.html">HOME</a> › <a href="../../exams/aws-dva-c02/">DVA-C02 試験ガイド</a> › q048</nav>
+<div class="q-meta"><span>DVA-C02</span><span>開発</span><span>MEDIUM</span><span>単一選択</span></div>
+<h1>あるEコマース企業が、商品データの更新があるたびにDynamoDBテーブルへの書き込みが発生する。このデータ変更を複数の下流サービス（検索インデックス更新・レコメンデーションエンジン・監査ログ）にリアルタイムに伝播させたい。DynamoDB Streamsを使ったLambdaトリガーで各サービスに通知しているが、Lambda関数が肥大化して単一責任の原則を破っている。コードの変更を最小限に抑えつつ、各処理を独立したサービスに分離しながらDynamoDBの変更を確実に全下流サービスに伝播する構成として最も適切なものはどれか。</h1>
+<ol class="q-choices">
+<li><b>A.</b> DynamoDB StreamsのLambdaトリガーを3つに分け、それぞれが検索・レコメンド・監査に特化したLambdaを直接呼び出す</li>
+<li><b>B.</b> DynamoDB StreamsをEventBridge Pipesのソースに設定し、ターゲットにSNSトピックを指定する。SNSトピックに各サービスのSQSキューをサブスクライブして下流処理を独立したLambdaに分担させる</li>
+<li><b>C.</b> DynamoDB StreamsのLambdaから直接3つの下流LambdaをInvoke APIで並列非同期呼び出しする</li>
+<li><b>D.</b> DynamoDB Streamsを無効にし、アプリケーション側の書き込みコードでDynamoDB更新後に各サービスのAPIを直接呼び出す</li>
+</ol>
+<details class="q-answer">
+<summary>解答と解説を見る</summary>
+<div class="inner">
+<p><b>正解: B</b></p>
+<p>EventBridge Pipesは「ソース（DynamoDB Streamsなど）→フィルタリング→変換→ターゲット」というパイプライン構造を宣言的に構成できるサービスである。DynamoDB Streamsをソースに設定してSNSトピックをターゲットにすることで、DynamoDB変更イベントをフィルタリング・エンリッチメントした上でSNSに転送できる。SNSからSQSファンアウトパターンで各下流サービスの処理キューに独立して配信されるため、1つのサービスが失敗しても他には影響せず、各サービスのLambdaは独立してスケール・デプロイできる。コード実装は最小限で済み、単一責任の原則も保てる。選択肢AのLambdaトリガー3分割は、それぞれが同じDynamoDB Streamに接続することになるが、DynamoDB Streamsの1テーブルに対してLambdaトリガーは1つしか設定できないため、3つの直接トリガーは設定できない。選択肢CのLambdaからの直接並列呼び出しは単一責任問題を解消するが、呼び出し元Lambdaが3つのサービス呼び出しを管理する責務を持ち続けるため、根本的な分離にはならない。また、下流サービスの追加・削除のたびに呼び出し元コードの変更が必要になる。選択肢Dはアプリケーション側に通知責務を持ち込むアンチパターンであり、書き込みに失敗した場合は通知も失われ、サービス間結合度が高くなる。</p>
+<div class="svc-links">📚 関連サービスの解説: <a href="../../learn/amazon-dynamodb.html">Amazon DynamoDB</a> ・ <a href="../../learn/amazon-eventbridge.html">Amazon EventBridge</a></div>
+</div>
+</details>
+<div class="cta-box"><a class="btn btn-primary" href="../../exam.html?exam=aws-dva-c02">▸ この試験を本気で演習する（全150問・無料）</a></div>
+<nav class="q-nav">
+<span><a href="q047.html">← 前の問題</a></span>
+<span><a href="q049.html">次の問題 →</a></span>
+</nav>
+<section class="related"><h2>同じ分野の関連問題</h2><ul class="q-list">
+<li><a href="q047.html">あるメディア配信企業が、ElastiCache for Redisを使って動画メタデータのキャッシュを運用している。キャ…</a></li>
+<li><a href="q046.html">あるロジスティクス企業が、SQS FIFOキューを使って配送順序を保証した荷物追跡システムを運用している。スループットが…</a></li>
+<li><a href="q045.html">あるヘルスケア企業が、患者の検査結果ファイルがS3にアップロードされると自動で複数の処理（OCR変換・暗号化・通知メール…</a></li>
+<li><a href="q044.html">ある金融機関が、DynamoDB Streamsを使ったイベント駆動型の監査ログシステムを構築している。ストリームのLa…</a></li>
+</ul></section>
+</main>
+<footer class="page-footer">
+<nav class="hub-nav"><a href="../../exams/aws-clf-c02/">CLF-C02 試験ガイド</a><a href="../../exams/aws-aif-c01/">AIF-C01 試験ガイド</a><a href="../../exams/aws-saa-c03/">SAA-C03 試験ガイド</a><a href="../../exams/aws-dva-c02/">DVA-C02 試験ガイド</a><a href="../../exams/aws-sap-c02/">SAP-C02 試験ガイド</a><a href="../../exams/gcp-cdl/">CDL 試験ガイド</a><a href="../../exams/gcp-ace/">ACE 試験ガイド</a><a href="../../exams/azure-az900/">AZ-900 試験ガイド</a><a href="../../exams/azure-ai900/">AI-900 試験ガイド</a><a href="../../exams/azure-dp900/">DP-900 試験ガイド</a><a href="../../exams/azure-sc900/">SC-900 試験ガイド</a><a href="../../exams/azure-az104/">AZ-104 試験ガイド</a></nav>
+<nav class="site-nav"><a href="../../guide/">資格ガイド</a><a href="../../learn/">サービス解説</a><a href="../../career/">キャリア</a><a href="../../about.html">運営者情報</a><a href="../../privacy.html">プライバシーポリシー</a><a href="../../contact.html">お問い合わせ</a></nav>
+<p class="copy">© CLOUDCERT_ — 本サイトは各認定試験の公式試験ではなく、収録問題はすべてオリジナルの演習問題です。</p>
+</footer>
+</body>
+</html>

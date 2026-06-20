@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>【SAP-C02 演習問題 #50】ある企業が AWS 上で複数の Lambda 関数を運用しており、月次のコスト分析で La…</title>
+<meta name="description" content="SAP-C02の本試験レベル演習問題。ある企業が AWS 上で複数の Lambda 関数を運用しており、月次のコスト分析で Lambda のコストが予想を大幅に上回っていることが判明しました。CloudWatch のメト… 全選択肢の解説つき。">
+<link rel="canonical" href="https://cloudcert.app/q/aws-sap-c02/q050.html">
+<meta property="og:title" content="【SAP-C02 演習問題 #50】ある企業が AWS 上で複数の Lambda 関数を運用しており、月次のコスト分析で La…">
+<meta property="og:description" content="SAP-C02の本試験レベル演習問題。ある企業が AWS 上で複数の Lambda 関数を運用しており、月次のコスト分析で Lambda のコストが予想を大幅に上回っていることが判明しました。CloudWatch のメト… 全選択肢の解説つき。">
+<meta property="og:url" content="https://cloudcert.app/q/aws-sap-c02/q050.html">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="CLOUDCERT_">
+<meta property="og:image" content="https://cloudcert.app/assets/og.png">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='80' font-size='80' fill='%233fe0a4' font-family='monospace'>▸</text></svg>">
+
+<meta name="google-adsense-account" content="ca-pub-5647574947191958">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+JP:wght@400;500;700&family=JetBrains+Mono:wght@400;600;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../../css/style.css">
+<link rel="stylesheet" href="../../css/page.css">
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-SZR5CB5Q3X"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag('js',new Date());gtag('config','G-SZR5CB5Q3X');</script>
+<script type="application/ld+json">[{"@context":"https://schema.org/","@type":"Quiz","about":{"@type":"Thing","name":"AWS Certified Solutions Architect - Professional"},"hasPart":[{"@type":"Question","eduQuestionType":"Multiple choice","learningResourceType":"Practice problem","text":"ある企業が AWS 上で複数の Lambda 関数を運用しており、月次のコスト分析で Lambda のコストが予想を大幅に上回っていることが判明しました。CloudWatch のメトリクスを確認すると、多くの関数でメモリ使用率が設定の 10〜20% 程度しか使われていないにもかかわらず、1,500MB や 3,008MB の高いメモリサイズが設定されていることが分かりました。また、実行時間が非常に長い関数もいくつかあります。最もコスト効率よく Lambda を最適化するにはどの方法が適切ですか？","suggestedAnswer":[{"@type":"Answer","position":0,"text":"Lambda の予約済み同時実行数を削減して関数の並列実行を制限し、トータルコストを削減する"},{"@type":"Answer","position":1,"text":"すべての Lambda 関数のメモリを一律 128MB に設定し、タイムアウトを最大の 15 分に設定する"},{"@type":"Answer","position":2,"text":"Lambda 関数をすべて AWS Fargate に移行し、コンテナで必要なメモリを正確に指定する"}],"acceptedAnswer":{"@type":"Answer","position":3,"text":"AWS Lambda Power Tuning ツール（Step Functions ベースのオープンソースツール）を使って各関数の最適メモリサイズを測定し、コスト-パフォーマンストレードオフの最適点を特定する。AWS Compute Optimizer の Lambda レコメンデーションも活用して、過剰プロビジョニングの関数を特定してメモリを削減する","comment":{"@type":"Comment","text":"Lambda Power Tuning は異なるメモリサイズで関数をテスト実行し、実行時間とコストのトレードオフグラフを生成します。多くの場合、メモリを増やすことで実行時間が短縮されコスト的に最適な点が見つかります。Compute Optimizer は本番の実際の使用状況からメモリの過剰プロビジョニングを検出し、具体的な削減量を推薦します。この2つの組み合わせがデータ駆動型の最適化として最も効果的です。\n\nB: 一律 128MB への設定は多くの関数でパフォーマンス低下や実行時間増加によるコスト増を招く可能性があります。最適メモリは関数によって異なります。\n\nC: Fargate への移行は大きなアーキテクチャ変更と開発コストが発生し、Lambda のコスト問題への解決策としては過剰です。\n\nA: 同時実行数の削減はスロットリングを引き起こし、リクエストの失敗やレイテンシー増加につながります。コスト削減の適切な方法ではありません。"}}}]},{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"HOME","item":"https://cloudcert.app/"},{"@type":"ListItem","position":2,"name":"SAP-C02 試験ガイド","item":"https://cloudcert.app/exams/aws-sap-c02/"},{"@type":"ListItem","position":3,"name":"q050"}]}]</script>
+</head>
+<body class="page-body">
+<header class="page-header"><a class="page-logo" href="../../index.html">&gt; CLOUDCERT_</a></header>
+<main class="page-main">
+
+<nav class="breadcrumb"><a href="../../index.html">HOME</a> › <a href="../../exams/aws-sap-c02/">SAP-C02 試験ガイド</a> › q050</nav>
+<div class="q-meta"><span>SAP-C02</span><span>既存のソリューションの継続的な改善</span><span>HARD</span><span>単一選択</span></div>
+<h1>ある企業が AWS 上で複数の Lambda 関数を運用しており、月次のコスト分析で Lambda のコストが予想を大幅に上回っていることが判明しました。CloudWatch のメトリクスを確認すると、多くの関数でメモリ使用率が設定の 10〜20% 程度しか使われていないにもかかわらず、1,500MB や 3,008MB の高いメモリサイズが設定されていることが分かりました。また、実行時間が非常に長い関数もいくつかあります。最もコスト効率よく Lambda を最適化するにはどの方法が適切ですか？</h1>
+<ol class="q-choices">
+<li><b>A.</b> Lambda の予約済み同時実行数を削減して関数の並列実行を制限し、トータルコストを削減する</li>
+<li><b>B.</b> すべての Lambda 関数のメモリを一律 128MB に設定し、タイムアウトを最大の 15 分に設定する</li>
+<li><b>C.</b> Lambda 関数をすべて AWS Fargate に移行し、コンテナで必要なメモリを正確に指定する</li>
+<li><b>D.</b> AWS Lambda Power Tuning ツール（Step Functions ベースのオープンソースツール）を使って各関数の最適メモリサイズを測定し、コスト-パフォーマンストレードオフの最適点を特定する。AWS Compute Optimizer の Lambda レコメンデーションも活用して、過剰プロビジョニングの関数を特定してメモリを削減する</li>
+</ol>
+<details class="q-answer">
+<summary>解答と解説を見る</summary>
+<div class="inner">
+<p><b>正解: D</b></p>
+<p>Lambda Power Tuning は異なるメモリサイズで関数をテスト実行し、実行時間とコストのトレードオフグラフを生成します。多くの場合、メモリを増やすことで実行時間が短縮されコスト的に最適な点が見つかります。Compute Optimizer は本番の実際の使用状況からメモリの過剰プロビジョニングを検出し、具体的な削減量を推薦します。この2つの組み合わせがデータ駆動型の最適化として最も効果的です。
+
+B: 一律 128MB への設定は多くの関数でパフォーマンス低下や実行時間増加によるコスト増を招く可能性があります。最適メモリは関数によって異なります。
+
+C: Fargate への移行は大きなアーキテクチャ変更と開発コストが発生し、Lambda のコスト問題への解決策としては過剰です。
+
+A: 同時実行数の削減はスロットリングを引き起こし、リクエストの失敗やレイテンシー増加につながります。コスト削減の適切な方法ではありません。</p>
+<div class="svc-links">📚 関連サービスの解説: <a href="../../learn/aws-lambda.html">AWS Lambda</a> ・ <a href="../../learn/aws-step-functions.html">AWS Step Functions</a></div>
+</div>
+</details>
+<div class="cta-box"><a class="btn btn-primary" href="../../exam.html?exam=aws-sap-c02">▸ この試験を本気で演習する（全150問・無料）</a></div>
+<nav class="q-nav">
+<span><a href="q049.html">← 前の問題</a></span>
+<span><a href="q051.html">次の問題 →</a></span>
+</nav>
+<section class="related"><h2>同じ分野の関連問題</h2><ul class="q-list">
+<li><a href="q049.html">ある企業が AWS 上で稼働するアプリケーションのセキュリティポスチャを改善しています。Security Hub の調査…</a></li>
+<li><a href="q051.html">ある企業が AWS WAF を ALB の前段に設置してウェブアプリケーションを保護していますが、セキュリティチームから…</a></li>
+<li><a href="q048.html">ある企業が AWS 上で Amazon EKS クラスターを運用しています。クラスターには数百のマイクロサービスがデプロ…</a></li>
+<li><a href="q052.html">ある企業が Amazon CloudFront を使ってウェブサイトを配信していますが、ユーザーから「ページの読み込みが…</a></li>
+</ul></section>
+</main>
+<footer class="page-footer">
+<nav class="hub-nav"><a href="../../exams/aws-clf-c02/">CLF-C02 試験ガイド</a><a href="../../exams/aws-aif-c01/">AIF-C01 試験ガイド</a><a href="../../exams/aws-saa-c03/">SAA-C03 試験ガイド</a><a href="../../exams/aws-dva-c02/">DVA-C02 試験ガイド</a><a href="../../exams/aws-sap-c02/">SAP-C02 試験ガイド</a><a href="../../exams/gcp-cdl/">CDL 試験ガイド</a><a href="../../exams/gcp-ace/">ACE 試験ガイド</a><a href="../../exams/azure-az900/">AZ-900 試験ガイド</a><a href="../../exams/azure-ai900/">AI-900 試験ガイド</a><a href="../../exams/azure-dp900/">DP-900 試験ガイド</a><a href="../../exams/azure-sc900/">SC-900 試験ガイド</a><a href="../../exams/azure-az104/">AZ-104 試験ガイド</a></nav>
+<nav class="site-nav"><a href="../../guide/">資格ガイド</a><a href="../../learn/">サービス解説</a><a href="../../career/">キャリア</a><a href="../../about.html">運営者情報</a><a href="../../privacy.html">プライバシーポリシー</a><a href="../../contact.html">お問い合わせ</a></nav>
+<p class="copy">© CLOUDCERT_ — 本サイトは各認定試験の公式試験ではなく、収録問題はすべてオリジナルの演習問題です。</p>
+</footer>
+</body>
+</html>

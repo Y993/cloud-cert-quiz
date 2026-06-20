@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Vertex AIとは？試験に出るポイントと演習問題</title>
+<meta name="description" content="Vertex AI（Google Cloud）の要点と資格試験での問われ方を解説。登場する演習問題14問と公式ドキュメントへのリンクつき。">
+<link rel="canonical" href="https://cloudcert.app/learn/vertex-ai.html">
+<meta property="og:title" content="Vertex AIとは？試験に出るポイントと演習問題">
+<meta property="og:description" content="Vertex AI（Google Cloud）の要点と資格試験での問われ方を解説。登場する演習問題14問と公式ドキュメントへのリンクつき。">
+<meta property="og:url" content="https://cloudcert.app/learn/vertex-ai.html">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="CLOUDCERT_">
+<meta property="og:image" content="https://cloudcert.app/assets/og.png">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='80' font-size='80' fill='%233fe0a4' font-family='monospace'>▸</text></svg>">
+
+<meta name="google-adsense-account" content="ca-pub-5647574947191958">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+JP:wght@400;500;700&family=JetBrains+Mono:wght@400;600;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../css/style.css">
+<link rel="stylesheet" href="../css/page.css">
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-SZR5CB5Q3X"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag('js',new Date());gtag('config','G-SZR5CB5Q3X');</script>
+<script type="application/ld+json">[{"@context":"https://schema.org","@type":"TechArticle","headline":"Vertex AIとは？試験に出るポイントと演習問題","description":"Vertex AI（Google Cloud）の要点と資格試験での問われ方を解説。登場する演習問題14問と公式ドキュメントへのリンクつき。","inLanguage":"ja","about":{"@type":"Thing","name":"Vertex AI"},"author":{"@type":"Organization","name":"CLOUDCERT_"},"publisher":{"@type":"Organization","name":"CLOUDCERT_"},"mainEntityOfPage":"https://cloudcert.app/learn/vertex-ai.html"},{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"HOME","item":"https://cloudcert.app/"},{"@type":"ListItem","position":2,"name":"サービス解説","item":"https://cloudcert.app/learn/"},{"@type":"ListItem","position":3,"name":"Vertex AI"}]}]</script>
+</head>
+<body class="page-body">
+<header class="page-header"><a class="page-logo" href="../index.html">&gt; CLOUDCERT_</a></header>
+<main class="page-main">
+
+<nav class="breadcrumb"><a href="../index.html">HOME</a> › <a href="./">サービス解説</a> › Vertex AI</nav>
+<div class="learn-head">
+<div class="badges"><span class="badge" data-provider="gcp">Google Cloud</span><span class="badge">AI・機械学習</span><span class="badge badge-q">演習14問</span></div>
+<h1>Vertex AIとは</h1>
+</div>
+<p class="lead">Google Cloud の統合 ML・生成 AI プラットフォーム。データ準備・モデル学習・評価・デプロイ・モニタリングまでの ML ライフサイクル全体を一つのプラットフォームで管理できる。Vertex AI 上で Gemini などの基盤モデルを利用でき、Agent Builder を使えば検索や会話に応答するエージェントの開発までカバーできる。</p>
+<p>Gemini をはじめとする Google の基盤モデルを API 経由で呼び出せる Model Garden と、AutoML（ノーコードで分類・回帰・物体検出モデルを作成）を統合。カスタムモデルは Vertex AI Training で学習し Vertex AI Prediction でホスティングする。</p>
+<p>Vertex AI Pipelines（Kubeflow ベース）で ML ワークフローをオーケストレーション、Feature Store で特徴量を管理、Vertex Explainability でモデルの予測根拠を説明できる。</p>
+<p><a class="official-btn" href="https://cloud.google.com/vertex-ai?hl=ja" target="_blank" rel="noopener">公式ドキュメント →</a></p>
+<h2>試験での問われ方</h2>
+<p>CDL では生成 AI ユースケース（テキスト生成・画像生成・RAG）に Vertex AI（Gemini API）を使うシナリオが頻出。AutoML vs カスタムモデルの選択基準（データ量・カスタマイズ度・コスト）も問われる。</p>
+<p>ACE では Vertex AI Workbench（マネージド Jupyter 環境）・Vertex AI Training のカスタムコンテナ学習・エンドポイントのデプロイ設定（スプリットトラフィックによる A/B テスト）が出題範囲。引っかけとして、Vertex AI の Prediction エンドポイントは常時稼働課金なので、低頻度推論には Batch Prediction の利用が推奨される。</p>
+<h2>このサービスが登場する演習問題（14問）</h2>
+<ul class="q-list">
+<li><a href="../q/gcp-cdl/q028.html">【CDL】ある企業が、Googleの事前学習済みAIモデルを活用して顧客サポートのチャットボットを素早く構築したいと考えています。…</a></li>
+<li><a href="../q/gcp-cdl/q029.html">【CDL】ある金融サービス会社が、ローン審査の意思決定にMLモデルを活用することを計画しています。モデルが差別的な判断をしていない…</a></li>
+<li><a href="../q/gcp-cdl/q030.html">【CDL】ある企業が、社内に蓄積された大量の非構造化データ（PDFレポート、メール、会議議事録等）から素早く情報を検索・要約できる…</a></li>
+<li><a href="../q/gcp-cdl/q032.html">【CDL】ある製造業の企業が、工場の生産ラインにおける製品の外観検査を自動化したいと考えています。独自の製品形状に特化した高精度の…</a></li>
+<li><a href="../q/gcp-cdl/q033.html">【CDL】ある小売企業が、Webサイトの商品レコメンデーション機能を改善するためにMLを活用したいと考えています。各ユーザーの過去…</a></li>
+<li><a href="../q/gcp-cdl/q034.html">【CDL】Google CloudのGeminiモデルを活用して、社内ドキュメントの要約・Q&amp;A機能をアプリケーションに組み込みた…</a></li>
+<li><a href="../q/gcp-cdl/q037.html">【CDL】ある大手銀行が、不正取引検知システムをMLで構築しようとしています。取引データは1日数百万件発生し、不正取引は全体の0.…</a></li>
+<li><a href="../q/gcp-cdl/q039.html">【CDL】ある物流企業が、倉庫内の商品ピッキング業務にロボットを導入し、カメラ映像からリアルタイムで商品を識別させるシステムを構築…</a></li>
+<li><a href="../q/gcp-cdl/q042.html">【CDL】ある企業が、大規模な言語モデル（LLM）を活用したRAG（検索拡張生成）システムを構築しています。社内ドキュメントからの…</a></li>
+<li><a href="../q/gcp-cdl/q055.html">【CDL】ある企業が、プライバシーを保護しながら複数の組織にまたがる医療データを使ってMLモデルを協調学習（連合学習）させることを…</a></li>
+<li><a href="../q/gcp-cdl/q122.html">【CDL】ある企業が、Google CloudのVertex AI Agent Builderを使って社内向けのAIアシスタントを…</a></li>
+<li><a href="../q/gcp-cdl/q126.html">【CDL】ある企業が、リアルタイムの株価データと過去の取引履歴を組み合わせてMLモデルの推論に使いたいと考えています。モデルが「今…</a></li>
+<li><a href="../q/gcp-cdl/q130.html">【CDL】ある企業が、Google CloudのVertex AI上でMLOps（機械学習運用）パイプラインを構築しようとしていま…</a></li>
+<li><a href="../q/gcp-cdl/q131.html">【CDL】ある小売企業が、実店舗の防犯カメラ映像から来店客数と滞在エリアを分析して、店舗レイアウトの最適化に活用したいと考えていま…</a></li>
+</ul>
+
+</main>
+<footer class="page-footer">
+<nav class="hub-nav"><a href="../exams/aws-clf-c02/">CLF-C02 試験ガイド</a><a href="../exams/aws-aif-c01/">AIF-C01 試験ガイド</a><a href="../exams/aws-saa-c03/">SAA-C03 試験ガイド</a><a href="../exams/aws-dva-c02/">DVA-C02 試験ガイド</a><a href="../exams/aws-sap-c02/">SAP-C02 試験ガイド</a><a href="../exams/gcp-cdl/">CDL 試験ガイド</a><a href="../exams/gcp-ace/">ACE 試験ガイド</a><a href="../exams/azure-az900/">AZ-900 試験ガイド</a><a href="../exams/azure-ai900/">AI-900 試験ガイド</a><a href="../exams/azure-dp900/">DP-900 試験ガイド</a><a href="../exams/azure-sc900/">SC-900 試験ガイド</a><a href="../exams/azure-az104/">AZ-104 試験ガイド</a></nav>
+<nav class="site-nav"><a href="../guide/">資格ガイド</a><a href="../learn/">サービス解説</a><a href="../career/">キャリア</a><a href="../about.html">運営者情報</a><a href="../privacy.html">プライバシーポリシー</a><a href="../contact.html">お問い合わせ</a></nav>
+<p class="copy">© CLOUDCERT_ — 本サイトは各認定試験の公式試験ではなく、収録問題はすべてオリジナルの演習問題です。</p>
+</footer>
+</body>
+</html>

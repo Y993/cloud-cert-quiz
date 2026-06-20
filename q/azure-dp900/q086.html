@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>【DP-900 演習問題 #86】あるフィンテック企業が、トランザクションデータを Azure Cosmos DB に格納し…</title>
+<meta name="description" content="DP-900の本試験レベル演習問題。あるフィンテック企業が、トランザクションデータを Azure Cosmos DB に格納している。金融データとして、コミット済みの書き込みは必ず読めるようにしたいが、グローバル分散のパ… 全選択肢の解説つき。">
+<link rel="canonical" href="https://cloudcert.app/q/azure-dp900/q086.html">
+<meta property="og:title" content="【DP-900 演習問題 #86】あるフィンテック企業が、トランザクションデータを Azure Cosmos DB に格納し…">
+<meta property="og:description" content="DP-900の本試験レベル演習問題。あるフィンテック企業が、トランザクションデータを Azure Cosmos DB に格納している。金融データとして、コミット済みの書き込みは必ず読めるようにしたいが、グローバル分散のパ… 全選択肢の解説つき。">
+<meta property="og:url" content="https://cloudcert.app/q/azure-dp900/q086.html">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="CLOUDCERT_">
+<meta property="og:image" content="https://cloudcert.app/assets/og.png">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='80' font-size='80' fill='%233fe0a4' font-family='monospace'>▸</text></svg>">
+
+<meta name="google-adsense-account" content="ca-pub-5647574947191958">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+JP:wght@400;500;700&family=JetBrains+Mono:wght@400;600;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../../css/style.css">
+<link rel="stylesheet" href="../../css/page.css">
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-SZR5CB5Q3X"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag('js',new Date());gtag('config','G-SZR5CB5Q3X');</script>
+<script type="application/ld+json">[{"@context":"https://schema.org/","@type":"Quiz","about":{"@type":"Thing","name":"Microsoft Azure Data Fundamentals"},"hasPart":[{"@type":"Question","eduQuestionType":"Multiple choice","learningResourceType":"Practice problem","text":"あるフィンテック企業が、トランザクションデータを Azure Cosmos DB に格納している。金融データとして、コミット済みの書き込みは必ず読めるようにしたいが、グローバル分散のパフォーマンスとのバランスも取りたい。「コミットされた書き込みは保証するが、最新でない可能性がある読み取りを許容する」整合性レベルとして最も適切なものはどれか。","suggestedAnswer":[{"@type":"Answer","position":0,"text":"最終的（Eventual）整合性 — 最終的には一致するが直後は古いデータを読み取る可能性がある"},{"@type":"Answer","position":1,"text":"厳密（Strong）整合性 — 常に最新のコミット済み値を読み取れるが、グローバル書き込みレイテンシが高くなる"},{"@type":"Answer","position":2,"text":"セッション（Session）整合性 — 同一クライアントセッション内では単調読み取り一貫性を保証する"}],"acceptedAnswer":{"@type":"Answer","position":3,"text":"有界整合性制約（Bounded Staleness）— 設定した時間または操作数以内の遅れに限定した古さを許容する","comment":{"@type":"Comment","text":"有界整合性制約（Bounded Staleness）は、読み取りが書き込みより K 操作以内または T 時間以内に遅れることを保証する整合性レベルである。コミットされていないデータを読み取ることはなく、かつ厳密整合性ほど書き込みレイテンシが高くならないため、金融データで「コミット済み値のみ読む、かつ多少の遅れは許容」という要件に適合する。選択肢 B の厳密整合性はすべてのリージョンで最新値を保証するが、マルチリージョン書き込みでは大幅なレイテンシ増加を招く。選択肢 C のセッション整合性は自分のセッション内での単調読み取りのみを保証し、別セッション（別ユーザー）が古い値を読む可能性があるため金融データの厳密な要件には不十分な場合がある。選択肢 A の最終的整合性はパフォーマンス最優先でコミット済みかどうかも保証されず、金融トランザクションには不適切である。"}}}]},{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"HOME","item":"https://cloudcert.app/"},{"@type":"ListItem","position":2,"name":"DP-900 試験ガイド","item":"https://cloudcert.app/exams/azure-dp900/"},{"@type":"ListItem","position":3,"name":"q086"}]}]</script>
+</head>
+<body class="page-body">
+<header class="page-header"><a class="page-logo" href="../../index.html">&gt; CLOUDCERT_</a></header>
+<main class="page-main">
+
+<nav class="breadcrumb"><a href="../../index.html">HOME</a> › <a href="../../exams/azure-dp900/">DP-900 試験ガイド</a> › q086</nav>
+<div class="q-meta"><span>DP-900</span><span>Azure の非リレーショナル データ</span><span>MEDIUM</span><span>単一選択</span></div>
+<h1>あるフィンテック企業が、トランザクションデータを Azure Cosmos DB に格納している。金融データとして、コミット済みの書き込みは必ず読めるようにしたいが、グローバル分散のパフォーマンスとのバランスも取りたい。「コミットされた書き込みは保証するが、最新でない可能性がある読み取りを許容する」整合性レベルとして最も適切なものはどれか。</h1>
+<ol class="q-choices">
+<li><b>A.</b> 最終的（Eventual）整合性 — 最終的には一致するが直後は古いデータを読み取る可能性がある</li>
+<li><b>B.</b> 厳密（Strong）整合性 — 常に最新のコミット済み値を読み取れるが、グローバル書き込みレイテンシが高くなる</li>
+<li><b>C.</b> セッション（Session）整合性 — 同一クライアントセッション内では単調読み取り一貫性を保証する</li>
+<li><b>D.</b> 有界整合性制約（Bounded Staleness）— 設定した時間または操作数以内の遅れに限定した古さを許容する</li>
+</ol>
+<details class="q-answer">
+<summary>解答と解説を見る</summary>
+<div class="inner">
+<p><b>正解: D</b></p>
+<p>有界整合性制約（Bounded Staleness）は、読み取りが書き込みより K 操作以内または T 時間以内に遅れることを保証する整合性レベルである。コミットされていないデータを読み取ることはなく、かつ厳密整合性ほど書き込みレイテンシが高くならないため、金融データで「コミット済み値のみ読む、かつ多少の遅れは許容」という要件に適合する。選択肢 B の厳密整合性はすべてのリージョンで最新値を保証するが、マルチリージョン書き込みでは大幅なレイテンシ増加を招く。選択肢 C のセッション整合性は自分のセッション内での単調読み取りのみを保証し、別セッション（別ユーザー）が古い値を読む可能性があるため金融データの厳密な要件には不十分な場合がある。選択肢 A の最終的整合性はパフォーマンス最優先でコミット済みかどうかも保証されず、金融トランザクションには不適切である。</p>
+
+</div>
+</details>
+<div class="cta-box"><a class="btn btn-primary" href="../../exam.html?exam=azure-dp900">▸ この試験を本気で演習する（全150問・無料）</a></div>
+<nav class="q-nav">
+<span><a href="q085.html">← 前の問題</a></span>
+<span><a href="q087.html">次の問題 →</a></span>
+</nav>
+<section class="related"><h2>同じ分野の関連問題</h2><ul class="q-list">
+<li><a href="q085.html">ある SNS プラットフォームが、ユーザー間の「フォロー」「フォロワー」「いいね」などの関係をデータとして管理し、「ある…</a></li>
+<li><a href="q087.html">ある医療系スタートアップが、患者の診療記録（テキスト・画像・検査データを混在する非構造化 JSON）を格納し、患者 ID…</a></li>
+<li><a href="q084.html">あるゲーム会社が、MongoDB のクライアントライブラリを使ってすでに開発済みの実績・スコア管理アプリをクラウドに移行…</a></li>
+<li><a href="q088.html">ある eラーニング企業が、受講者がコースを修了するたびに修了証書 PDF を Azure Blob Storage に保…</a></li>
+</ul></section>
+</main>
+<footer class="page-footer">
+<nav class="hub-nav"><a href="../../exams/aws-clf-c02/">CLF-C02 試験ガイド</a><a href="../../exams/aws-aif-c01/">AIF-C01 試験ガイド</a><a href="../../exams/aws-saa-c03/">SAA-C03 試験ガイド</a><a href="../../exams/aws-dva-c02/">DVA-C02 試験ガイド</a><a href="../../exams/aws-sap-c02/">SAP-C02 試験ガイド</a><a href="../../exams/gcp-cdl/">CDL 試験ガイド</a><a href="../../exams/gcp-ace/">ACE 試験ガイド</a><a href="../../exams/azure-az900/">AZ-900 試験ガイド</a><a href="../../exams/azure-ai900/">AI-900 試験ガイド</a><a href="../../exams/azure-dp900/">DP-900 試験ガイド</a><a href="../../exams/azure-sc900/">SC-900 試験ガイド</a><a href="../../exams/azure-az104/">AZ-104 試験ガイド</a></nav>
+<nav class="site-nav"><a href="../../guide/">資格ガイド</a><a href="../../learn/">サービス解説</a><a href="../../career/">キャリア</a><a href="../../about.html">運営者情報</a><a href="../../privacy.html">プライバシーポリシー</a><a href="../../contact.html">お問い合わせ</a></nav>
+<p class="copy">© CLOUDCERT_ — 本サイトは各認定試験の公式試験ではなく、収録問題はすべてオリジナルの演習問題です。</p>
+</footer>
+</body>
+</html>

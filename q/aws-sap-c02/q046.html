@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>【SAP-C02 演習問題 #46】ある企業が AWS CodePipeline と CodeBuild を使ったデプロイパイ…</title>
+<meta name="description" content="SAP-C02の本試験レベル演習問題。ある企業が AWS CodePipeline と CodeBuild を使ったデプロイパイプラインを運用していますが、本番デプロイ後に障害が発生した場合の復旧時間（MTTR）が長いと… 全選択肢の解説つき。">
+<link rel="canonical" href="https://cloudcert.app/q/aws-sap-c02/q046.html">
+<meta property="og:title" content="【SAP-C02 演習問題 #46】ある企業が AWS CodePipeline と CodeBuild を使ったデプロイパイ…">
+<meta property="og:description" content="SAP-C02の本試験レベル演習問題。ある企業が AWS CodePipeline と CodeBuild を使ったデプロイパイプラインを運用していますが、本番デプロイ後に障害が発生した場合の復旧時間（MTTR）が長いと… 全選択肢の解説つき。">
+<meta property="og:url" content="https://cloudcert.app/q/aws-sap-c02/q046.html">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="CLOUDCERT_">
+<meta property="og:image" content="https://cloudcert.app/assets/og.png">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='80' font-size='80' fill='%233fe0a4' font-family='monospace'>▸</text></svg>">
+
+<meta name="google-adsense-account" content="ca-pub-5647574947191958">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+JP:wght@400;500;700&family=JetBrains+Mono:wght@400;600;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../../css/style.css">
+<link rel="stylesheet" href="../../css/page.css">
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-SZR5CB5Q3X"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag('js',new Date());gtag('config','G-SZR5CB5Q3X');</script>
+<script type="application/ld+json">[{"@context":"https://schema.org/","@type":"Quiz","about":{"@type":"Thing","name":"AWS Certified Solutions Architect - Professional"},"hasPart":[{"@type":"Question","eduQuestionType":"Multiple choice","learningResourceType":"Practice problem","text":"ある企業が AWS CodePipeline と CodeBuild を使ったデプロイパイプラインを運用していますが、本番デプロイ後に障害が発生した場合の復旧時間（MTTR）が長いという問題があります。現在のデプロイはすべてのインスタンスを同時に更新するローリングデプロイで、問題が検出された時点では既に全インスタンスが更新されています。デプロイリスクを軽減し、問題発生時の即時ロールバックを実現するためのアーキテクチャ改善はどれですか？","suggestedAnswer":[{"@type":"Answer","position":1,"text":"デプロイ前に必ずステージング環境でテストを実施し、テスト合格後のみ本番デプロイを許可するゲートを CodePipeline に追加する"},{"@type":"Answer","position":2,"text":"AWS Elastic Beanstalk に移行し、Beanstalk の組み込みデプロイ戦略（Rolling with additional batch）を使用する"},{"@type":"Answer","position":3,"text":"AMI ゴールデンイメージを毎リリースで作成し、Auto Scaling グループの起動テンプレートを更新して新しい AMI に切り替える"}],"acceptedAnswer":{"@type":"Answer","position":0,"text":"AWS CodeDeploy を使って Blue/Green デプロイメントに切り替える。新バージョン（Green 環境）を ALB の別ターゲットグループにデプロイし、CloudWatch Alarm でエラー率や P99 レイテンシーを監視して、アラームが発火した場合は自動的に Blue 環境（旧バージョン）に即時ロールバックする","comment":{"@type":"Comment","text":"Blue/Green デプロイメントはゼロダウンタイムのデプロイと即時ロールバックを実現する最も効果的な方法です。CodeDeploy の Blue/Green では新バージョン（Green）を完全にデプロイした後、ALB のルーティングを切り替えます。CloudWatch Alarm との統合でエラー率や P99 レイテンシーの悪化を自動検出し、ALB のルーティングを瞬時に Blue（旧バージョン）に戻すロールバックが実現できます。\n\nB: ステージング環境のテストゲートはデプロイ前の品質確保に有効ですが、本番特有の問題（本番トラフィックパターン、データ量など）への対応や、本番デプロイ後の即時ロールバック要件を満たしません。\n\nC: Elastic Beanstalk への移行は大きなアーキテクチャ変更を要し、「Rolling with additional batch」も部分的なロールバックには複雑な手順が必要で、即時ロールバックを保証しません。\n\nD: AMI ゴールデンイメージへの切り替えは時間がかかり（新インスタンスの起動・ウォームアップ）、即時ロールバックの要件を満たしません。"}}}]},{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"HOME","item":"https://cloudcert.app/"},{"@type":"ListItem","position":2,"name":"SAP-C02 試験ガイド","item":"https://cloudcert.app/exams/aws-sap-c02/"},{"@type":"ListItem","position":3,"name":"q046"}]}]</script>
+</head>
+<body class="page-body">
+<header class="page-header"><a class="page-logo" href="../../index.html">&gt; CLOUDCERT_</a></header>
+<main class="page-main">
+
+<nav class="breadcrumb"><a href="../../index.html">HOME</a> › <a href="../../exams/aws-sap-c02/">SAP-C02 試験ガイド</a> › q046</nav>
+<div class="q-meta"><span>SAP-C02</span><span>既存のソリューションの継続的な改善</span><span>HARD</span><span>単一選択</span></div>
+<h1>ある企業が AWS CodePipeline と CodeBuild を使ったデプロイパイプラインを運用していますが、本番デプロイ後に障害が発生した場合の復旧時間（MTTR）が長いという問題があります。現在のデプロイはすべてのインスタンスを同時に更新するローリングデプロイで、問題が検出された時点では既に全インスタンスが更新されています。デプロイリスクを軽減し、問題発生時の即時ロールバックを実現するためのアーキテクチャ改善はどれですか？</h1>
+<ol class="q-choices">
+<li><b>A.</b> AWS CodeDeploy を使って Blue/Green デプロイメントに切り替える。新バージョン（Green 環境）を ALB の別ターゲットグループにデプロイし、CloudWatch Alarm でエラー率や P99 レイテンシーを監視して、アラームが発火した場合は自動的に Blue 環境（旧バージョン）に即時ロールバックする</li>
+<li><b>B.</b> デプロイ前に必ずステージング環境でテストを実施し、テスト合格後のみ本番デプロイを許可するゲートを CodePipeline に追加する</li>
+<li><b>C.</b> AWS Elastic Beanstalk に移行し、Beanstalk の組み込みデプロイ戦略（Rolling with additional batch）を使用する</li>
+<li><b>D.</b> AMI ゴールデンイメージを毎リリースで作成し、Auto Scaling グループの起動テンプレートを更新して新しい AMI に切り替える</li>
+</ol>
+<details class="q-answer">
+<summary>解答と解説を見る</summary>
+<div class="inner">
+<p><b>正解: A</b></p>
+<p>Blue/Green デプロイメントはゼロダウンタイムのデプロイと即時ロールバックを実現する最も効果的な方法です。CodeDeploy の Blue/Green では新バージョン（Green）を完全にデプロイした後、ALB のルーティングを切り替えます。CloudWatch Alarm との統合でエラー率や P99 レイテンシーの悪化を自動検出し、ALB のルーティングを瞬時に Blue（旧バージョン）に戻すロールバックが実現できます。
+
+B: ステージング環境のテストゲートはデプロイ前の品質確保に有効ですが、本番特有の問題（本番トラフィックパターン、データ量など）への対応や、本番デプロイ後の即時ロールバック要件を満たしません。
+
+C: Elastic Beanstalk への移行は大きなアーキテクチャ変更を要し、「Rolling with additional batch」も部分的なロールバックには複雑な手順が必要で、即時ロールバックを保証しません。
+
+D: AMI ゴールデンイメージへの切り替えは時間がかかり（新インスタンスの起動・ウォームアップ）、即時ロールバックの要件を満たしません。</p>
+<div class="svc-links">📚 関連サービスの解説: <a href="../../learn/aws-codedeploy.html">AWS CodeDeploy</a> ・ <a href="../../learn/elastic-load-balancing.html">Elastic Load Balancing（ELB）</a></div>
+</div>
+</details>
+<div class="cta-box"><a class="btn btn-primary" href="../../exam.html?exam=aws-sap-c02">▸ この試験を本気で演習する（全150問・無料）</a></div>
+<nav class="q-nav">
+<span><a href="q045.html">← 前の問題</a></span>
+<span><a href="q047.html">次の問題 →</a></span>
+</nav>
+<section class="related"><h2>同じ分野の関連問題</h2><ul class="q-list">
+<li><a href="q045.html">ある企業の AWS 環境において、S3 に保存されたデータの合計が 500TB を超え、S3 ストレージコストが急増して…</a></li>
+<li><a href="q047.html">ある企業の AWS 環境で、開発チームが Lambda 関数を頻繁にデプロイしています。最近、デプロイ後に特定のリージョ…</a></li>
+<li><a href="q044.html">ある企業が AWS 上で稼働する EC2 + ALB + RDS Aurora PostgreSQL のアーキテクチャを…</a></li>
+<li><a href="q048.html">ある企業が AWS 上で Amazon EKS クラスターを運用しています。クラスターには数百のマイクロサービスがデプロ…</a></li>
+</ul></section>
+</main>
+<footer class="page-footer">
+<nav class="hub-nav"><a href="../../exams/aws-clf-c02/">CLF-C02 試験ガイド</a><a href="../../exams/aws-aif-c01/">AIF-C01 試験ガイド</a><a href="../../exams/aws-saa-c03/">SAA-C03 試験ガイド</a><a href="../../exams/aws-dva-c02/">DVA-C02 試験ガイド</a><a href="../../exams/aws-sap-c02/">SAP-C02 試験ガイド</a><a href="../../exams/gcp-cdl/">CDL 試験ガイド</a><a href="../../exams/gcp-ace/">ACE 試験ガイド</a><a href="../../exams/azure-az900/">AZ-900 試験ガイド</a><a href="../../exams/azure-ai900/">AI-900 試験ガイド</a><a href="../../exams/azure-dp900/">DP-900 試験ガイド</a><a href="../../exams/azure-sc900/">SC-900 試験ガイド</a><a href="../../exams/azure-az104/">AZ-104 試験ガイド</a></nav>
+<nav class="site-nav"><a href="../../guide/">資格ガイド</a><a href="../../learn/">サービス解説</a><a href="../../career/">キャリア</a><a href="../../about.html">運営者情報</a><a href="../../privacy.html">プライバシーポリシー</a><a href="../../contact.html">お問い合わせ</a></nav>
+<p class="copy">© CLOUDCERT_ — 本サイトは各認定試験の公式試験ではなく、収録問題はすべてオリジナルの演習問題です。</p>
+</footer>
+</body>
+</html>

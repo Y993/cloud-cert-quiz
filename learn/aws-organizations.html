@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AWS Organizationsとは？試験に出るポイントと演習問題</title>
+<meta name="description" content="AWS Organizations（AWS）の要点と資格試験での問われ方を解説。登場する演習問題33問と公式ドキュメントへのリンクつき。">
+<link rel="canonical" href="https://cloudcert.app/learn/aws-organizations.html">
+<meta property="og:title" content="AWS Organizationsとは？試験に出るポイントと演習問題">
+<meta property="og:description" content="AWS Organizations（AWS）の要点と資格試験での問われ方を解説。登場する演習問題33問と公式ドキュメントへのリンクつき。">
+<meta property="og:url" content="https://cloudcert.app/learn/aws-organizations.html">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="CLOUDCERT_">
+<meta property="og:image" content="https://cloudcert.app/assets/og.png">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='80' font-size='80' fill='%233fe0a4' font-family='monospace'>▸</text></svg>">
+
+<meta name="google-adsense-account" content="ca-pub-5647574947191958">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+JP:wght@400;500;700&family=JetBrains+Mono:wght@400;600;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../css/style.css">
+<link rel="stylesheet" href="../css/page.css">
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-SZR5CB5Q3X"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag('js',new Date());gtag('config','G-SZR5CB5Q3X');</script>
+<script type="application/ld+json">[{"@context":"https://schema.org","@type":"TechArticle","headline":"AWS Organizationsとは？試験に出るポイントと演習問題","description":"AWS Organizations（AWS）の要点と資格試験での問われ方を解説。登場する演習問題33問と公式ドキュメントへのリンクつき。","inLanguage":"ja","about":{"@type":"Thing","name":"AWS Organizations"},"author":{"@type":"Organization","name":"CLOUDCERT_"},"publisher":{"@type":"Organization","name":"CLOUDCERT_"},"mainEntityOfPage":"https://cloudcert.app/learn/aws-organizations.html"},{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"HOME","item":"https://cloudcert.app/"},{"@type":"ListItem","position":2,"name":"サービス解説","item":"https://cloudcert.app/learn/"},{"@type":"ListItem","position":3,"name":"AWS Organizations"}]}]</script>
+</head>
+<body class="page-body">
+<header class="page-header"><a class="page-logo" href="../index.html">&gt; CLOUDCERT_</a></header>
+<main class="page-main">
+
+<nav class="breadcrumb"><a href="../index.html">HOME</a> › <a href="./">サービス解説</a> › AWS Organizations</nav>
+<div class="learn-head">
+<div class="badges"><span class="badge" data-provider="aws">AWS</span><span class="badge">管理・ガバナンス</span><span class="badge badge-q">演習33問</span></div>
+<h1>AWS Organizationsとは</h1>
+</div>
+<p class="lead">複数のAWSアカウントを組織単位（OU）のツリー構造で一元管理するサービス。一括請求（コスト集約・ボリュームディスカウント）・アカウント作成の自動化・ポリシーの集中管理を提供する。</p>
+<p>サービスコントロールポリシー（SCP）でOU/アカウントレベルで許可するサービス・アクションを制限する。IAMポリシーとSCPの両方を満たす権限のみが実際に許可される。</p>
+<p><a class="official-btn" href="https://docs.aws.amazon.com/ja_jp/organizations/latest/userguide/orgs_introduction.html" target="_blank" rel="noopener">公式ドキュメント →</a></p>
+<h2>試験での問われ方</h2>
+<p>SAPでは「マルチアカウント管理・SCPによるガードレール・一括請求」が頻出テーマ。SCPとIAMの評価順序（SCPが上位で最大権限を制限する）は引っかけの核心。</p>
+<p>SCPはルートアカウントを含む全アカウントに適用できるが、マスターアカウント（管理アカウント）自身にはSCPが効かないという重要な制約を覚えておく。ポリシーはSCPだけではなく、リソースのタグ付けを標準化するタグポリシーや、AIサービスのデータ利用をオプトアウトするAIサービスオプトアウトポリシー、バックアップポリシーなど複数の種類がある点も押さえる。</p>
+<p>一括請求（Consolidated Billing）では組織内全アカウントの使用量が合算されるため、S3やデータ転送のように使うほど単価が下がるボリュームディスカウントや、RI/Savings Plansの割引を組織横断で共有できるメリットがある。</p>
+<p>Control Towerは、Organizationsを土台にランディングゾーン（複数アカウントの初期構成）を自動構築し、ガードレール（裏でSCPやConfigルールとして実装される予防的・発見的統制）を一括適用するマネージドな上位サービス、という関係を理解しておく。Control Tower・Config・Security Hubとの統合でマルチアカウントのガバナンス基盤を構築する構成がSAPで問われる。</p>
+<h2>このサービスが登場する演習問題（33問）</h2>
+<ul class="q-list">
+<li><a href="../q/aws-clf-c02/q041.html">【CLF-C02】ある大企業が、AWS Organizations を使って複数のAWSアカウントを一元管理しています。全アカウントに特定…</a></li>
+<li><a href="../q/aws-clf-c02/q055.html">【CLF-C02】ある企業が、複数の部門にわたってAWSアカウントを管理しており、各部門が意図せず高額なリソースをプロビジョニングしないよ…</a></li>
+<li><a href="../q/aws-clf-c02/q110.html">【CLF-C02】ある企業が、複数のAWSアカウントを持つ子会社・部門の請求を一元管理し、月末の支払いをまとめて行いたいと考えています。最…</a></li>
+<li><a href="../q/aws-clf-c02/q138.html">【CLF-C02】ある金融企業が、AWS上に機密性の高いワークロードを展開しています。特定のAWSサービスの使用を組織全体で禁止し、特定リ…</a></li>
+<li><a href="../q/aws-aif-c01/q145.html">【AIF-C01】ある企業が AWS Organizations を使ってマルチアカウント環境で Amazon Bedrock を利用して…</a></li>
+<li><a href="../q/aws-saa-c03/q003.html">【SAA-C03】ある企業が AWS Organizations を使用して複数の AWS アカウントを管理している。開発チームが誤って …</a></li>
+<li><a href="../q/aws-saa-c03/q014.html">【SAA-C03】ある企業が、マルチアカウント環境で AWS リソースのセキュリティ体制を強化したい。セキュリティチームから以下の要件が出…</a></li>
+<li><a href="../q/aws-saa-c03/q045.html">【SAA-C03】ある企業が、マルチアカウント環境で AWS Backup を使って EC2・RDS・EFS のバックアップを一元管理した…</a></li>
+<li><a href="../q/aws-saa-c03/q077.html">【SAA-C03】ある企業が、AWS のマルチアカウント環境で各部門のコストを把握し、部門別のコスト配分レポートを経営層に提出したい。各リ…</a></li>
+<li><a href="../q/aws-saa-c03/q084.html">【SAA-C03】ある企業が、AWS Organizations で管理する複数のアカウントで AWS CloudTrail を有効化し、…</a></li>
+<li><a href="../q/aws-saa-c03/q088.html">【SAA-C03】ある企業が、AWS マネジメントコンソールへのアクセスを、特定の IP アドレス範囲（社内ネットワーク）からのみ許可した…</a></li>
+<li><a href="../q/aws-sap-c02/q001.html">【SAP-C02】グローバルに展開する金融機関が AWS Organizations を使用して 80 以上の AWS アカウントを管理し…</a></li>
+<li><a href="../q/aws-sap-c02/q002.html">【SAP-C02】ある企業は AWS Organizations で複数のアカウントを管理しており、中央のネットワークアカウントから全アカ…</a></li>
+<li><a href="../q/aws-sap-c02/q003.html">【SAP-C02】ある大企業が AWS Control Tower を使って Landing Zone を構築しています。新しいアカウント…</a></li>
+<li><a href="../q/aws-sap-c02/q004.html">【SAP-C02】グローバル企業が AWS Organizations でマルチアカウント環境を管理しています。セキュリティ要件として、⑤…</a></li>
+<li><a href="../q/aws-sap-c02/q005.html">【SAP-C02】ある企業は既存のオンプレミス Active Directory をアイデンティティプロバイダーとして使用しており、AWS…</a></li>
+<li><a href="../q/aws-sap-c02/q006.html">【SAP-C02】ある企業が AWS Organizations の管理アカウントから複数のメンバーアカウントにコスト配分タグを強制適用し…</a></li>
+<li><a href="../q/aws-sap-c02/q007.html">【SAP-C02】多国籍企業が AWS に移行を進めており、欧州のデータ主権規制（GDPR）により欧州顧客のデータは EU リージョン外に…</a></li>
+<li><a href="../q/aws-sap-c02/q008.html">【SAP-C02】ある企業が AWS Organizations 内の複数アカウントで Reserved Instances と Savi…</a></li>
+<li><a href="../q/aws-sap-c02/q010.html">【SAP-C02】ある大手保険会社が AWS Organizations で管理するマルチアカウント環境に、新たにパートナー企業のアカウン…</a></li>
+</ul>
+<h2>関連サービス</h2><ul class="q-list">
+<li><a href="aws-cloudtrail.html">AWS CloudTrail</a></li>
+<li><a href="amazon-cloudwatch.html">Amazon CloudWatch</a></li>
+<li><a href="aws-config.html">AWS Config</a></li>
+<li><a href="aws-cloudformation.html">AWS CloudFormation</a></li>
+<li><a href="aws-systems-manager.html">AWS Systems Manager</a></li></ul>
+</main>
+<footer class="page-footer">
+<nav class="hub-nav"><a href="../exams/aws-clf-c02/">CLF-C02 試験ガイド</a><a href="../exams/aws-aif-c01/">AIF-C01 試験ガイド</a><a href="../exams/aws-saa-c03/">SAA-C03 試験ガイド</a><a href="../exams/aws-dva-c02/">DVA-C02 試験ガイド</a><a href="../exams/aws-sap-c02/">SAP-C02 試験ガイド</a><a href="../exams/gcp-cdl/">CDL 試験ガイド</a><a href="../exams/gcp-ace/">ACE 試験ガイド</a><a href="../exams/azure-az900/">AZ-900 試験ガイド</a><a href="../exams/azure-ai900/">AI-900 試験ガイド</a><a href="../exams/azure-dp900/">DP-900 試験ガイド</a><a href="../exams/azure-sc900/">SC-900 試験ガイド</a><a href="../exams/azure-az104/">AZ-104 試験ガイド</a></nav>
+<nav class="site-nav"><a href="../guide/">資格ガイド</a><a href="../learn/">サービス解説</a><a href="../career/">キャリア</a><a href="../about.html">運営者情報</a><a href="../privacy.html">プライバシーポリシー</a><a href="../contact.html">お問い合わせ</a></nav>
+<p class="copy">© CLOUDCERT_ — 本サイトは各認定試験の公式試験ではなく、収録問題はすべてオリジナルの演習問題です。</p>
+</footer>
+</body>
+</html>

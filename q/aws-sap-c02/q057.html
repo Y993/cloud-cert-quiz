@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>【SAP-C02 演習問題 #57】ある企業が AWS Direct Connect を使ってオンプレミスと AWS を接続し…</title>
+<meta name="description" content="SAP-C02の本試験レベル演習問題。ある企業が AWS Direct Connect を使ってオンプレミスと AWS を接続しており、この接続を介して S3 へのアクセスも行っています。しかし、現在の S3 アクセスは… 全選択肢の解説つき。">
+<link rel="canonical" href="https://cloudcert.app/q/aws-sap-c02/q057.html">
+<meta property="og:title" content="【SAP-C02 演習問題 #57】ある企業が AWS Direct Connect を使ってオンプレミスと AWS を接続し…">
+<meta property="og:description" content="SAP-C02の本試験レベル演習問題。ある企業が AWS Direct Connect を使ってオンプレミスと AWS を接続しており、この接続を介して S3 へのアクセスも行っています。しかし、現在の S3 アクセスは… 全選択肢の解説つき。">
+<meta property="og:url" content="https://cloudcert.app/q/aws-sap-c02/q057.html">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="CLOUDCERT_">
+<meta property="og:image" content="https://cloudcert.app/assets/og.png">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='80' font-size='80' fill='%233fe0a4' font-family='monospace'>▸</text></svg>">
+
+<meta name="google-adsense-account" content="ca-pub-5647574947191958">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+JP:wght@400;500;700&family=JetBrains+Mono:wght@400;600;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../../css/style.css">
+<link rel="stylesheet" href="../../css/page.css">
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-SZR5CB5Q3X"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag('js',new Date());gtag('config','G-SZR5CB5Q3X');</script>
+<script type="application/ld+json">[{"@context":"https://schema.org/","@type":"Quiz","about":{"@type":"Thing","name":"AWS Certified Solutions Architect - Professional"},"hasPart":[{"@type":"Question","eduQuestionType":"Multiple choice","learningResourceType":"Practice problem","text":"ある企業が AWS Direct Connect を使ってオンプレミスと AWS を接続しており、この接続を介して S3 へのアクセスも行っています。しかし、現在の S3 アクセスはパブリックインターネットを経由しており、Direct Connect 回線の帯域幅を有効活用できていません。また、セキュリティチームは S3 トラフィックがインターネットを経由することを懸念しています。最もシンプルな解決策はどれですか？","suggestedAnswer":[{"@type":"Answer","position":1,"text":"オンプレミスに HTTP プロキシサーバーを設置し、S3 へのリクエストを Direct Connect 経由にルーティングする"},{"@type":"Answer","position":2,"text":"S3 バケットポリシーで Direct Connect の IP アドレスからのアクセスのみを許可し、インターネット経由のアクセスを拒否する"},{"@type":"Answer","position":3,"text":"CloudFront を S3 の前段に配置し、Direct Connect 経由のオリジンアクセスを設定する"}],"acceptedAnswer":{"@type":"Answer","position":0,"text":"VPC に S3 のゲートウェイ型 VPC エンドポイントを作成し、VPC のルートテーブルに S3 のプレフィックスリストへのルートを追加する。Direct Connect 経由のオンプレミストラフィックが VPC を通過してエンドポイント経由で S3 にプライベートアクセスするよう設定する","comment":{"@type":"Comment","text":"S3 のゲートウェイ型 VPC エンドポイントを VPC に作成し、ルートテーブルにエンドポイントルートを追加することで、VPC を経由するすべてのトラフィック（Direct Connect 経由のオンプレミスを含む）がプライベートに S3 にアクセスできます。Direct Connect からのトラフィックは仮想プライベートゲートウェイ経由で VPC に入り、VPC エンドポイント経由でインターネットを経由せずに S3 に到達します。\n\nB: HTTP プロキシサーバーの設置は追加インフラと運用負荷が必要で、設定と管理が複雑になります。\n\nC: バケットポリシーで IP を制限することは追加のセキュリティ層として有効ですが、それだけではトラフィック経路はインターネット経由のままで、帯域幅の有効活用とセキュリティ要件を満たしません。\n\nD: CloudFront を経由することはインターネット経由のアクセスであり、Direct Connect 経由のプライベートアクセスの要件を満たしません。"}}}]},{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"HOME","item":"https://cloudcert.app/"},{"@type":"ListItem","position":2,"name":"SAP-C02 試験ガイド","item":"https://cloudcert.app/exams/aws-sap-c02/"},{"@type":"ListItem","position":3,"name":"q057"}]}]</script>
+</head>
+<body class="page-body">
+<header class="page-header"><a class="page-logo" href="../../index.html">&gt; CLOUDCERT_</a></header>
+<main class="page-main">
+
+<nav class="breadcrumb"><a href="../../index.html">HOME</a> › <a href="../../exams/aws-sap-c02/">SAP-C02 試験ガイド</a> › q057</nav>
+<div class="q-meta"><span>SAP-C02</span><span>既存のソリューションの継続的な改善</span><span>MEDIUM</span><span>単一選択</span></div>
+<h1>ある企業が AWS Direct Connect を使ってオンプレミスと AWS を接続しており、この接続を介して S3 へのアクセスも行っています。しかし、現在の S3 アクセスはパブリックインターネットを経由しており、Direct Connect 回線の帯域幅を有効活用できていません。また、セキュリティチームは S3 トラフィックがインターネットを経由することを懸念しています。最もシンプルな解決策はどれですか？</h1>
+<ol class="q-choices">
+<li><b>A.</b> VPC に S3 のゲートウェイ型 VPC エンドポイントを作成し、VPC のルートテーブルに S3 のプレフィックスリストへのルートを追加する。Direct Connect 経由のオンプレミストラフィックが VPC を通過してエンドポイント経由で S3 にプライベートアクセスするよう設定する</li>
+<li><b>B.</b> オンプレミスに HTTP プロキシサーバーを設置し、S3 へのリクエストを Direct Connect 経由にルーティングする</li>
+<li><b>C.</b> S3 バケットポリシーで Direct Connect の IP アドレスからのアクセスのみを許可し、インターネット経由のアクセスを拒否する</li>
+<li><b>D.</b> CloudFront を S3 の前段に配置し、Direct Connect 経由のオリジンアクセスを設定する</li>
+</ol>
+<details class="q-answer">
+<summary>解答と解説を見る</summary>
+<div class="inner">
+<p><b>正解: A</b></p>
+<p>S3 のゲートウェイ型 VPC エンドポイントを VPC に作成し、ルートテーブルにエンドポイントルートを追加することで、VPC を経由するすべてのトラフィック（Direct Connect 経由のオンプレミスを含む）がプライベートに S3 にアクセスできます。Direct Connect からのトラフィックは仮想プライベートゲートウェイ経由で VPC に入り、VPC エンドポイント経由でインターネットを経由せずに S3 に到達します。
+
+B: HTTP プロキシサーバーの設置は追加インフラと運用負荷が必要で、設定と管理が複雑になります。
+
+C: バケットポリシーで IP を制限することは追加のセキュリティ層として有効ですが、それだけではトラフィック経路はインターネット経由のままで、帯域幅の有効活用とセキュリティ要件を満たしません。
+
+D: CloudFront を経由することはインターネット経由のアクセスであり、Direct Connect 経由のプライベートアクセスの要件を満たしません。</p>
+<div class="svc-links">📚 関連サービスの解説: <a href="../../learn/amazon-vpc.html">Amazon VPC</a> ・ <a href="../../learn/amazon-s3.html">Amazon S3</a></div>
+</div>
+</details>
+<div class="cta-box"><a class="btn btn-primary" href="../../exam.html?exam=aws-sap-c02">▸ この試験を本気で演習する（全150問・無料）</a></div>
+<nav class="q-nav">
+<span><a href="q056.html">← 前の問題</a></span>
+<span><a href="q058.html">次の問題 →</a></span>
+</nav>
+<section class="related"><h2>同じ分野の関連問題</h2><ul class="q-list">
+<li><a href="q056.html">ある企業が AWS 上で稼働する SQS + Lambda のイベント処理システムを運用しています。最近、一部の SQS…</a></li>
+<li><a href="q058.html">ある企業が AWS 上で稼働する EC2 フリートに対して、セキュリティとコンプライアンスの要件として以下を継続的に維持…</a></li>
+<li><a href="q055.html">ある企業が AWS 上で Amazon Aurora MySQL を使ったアプリケーションを運用しています。Aurora…</a></li>
+<li><a href="q059.html">ある企業が AWS 上でマイクロサービスアーキテクチャを運用しており、複数の API が Amazon API Gate…</a></li>
+</ul></section>
+</main>
+<footer class="page-footer">
+<nav class="hub-nav"><a href="../../exams/aws-clf-c02/">CLF-C02 試験ガイド</a><a href="../../exams/aws-aif-c01/">AIF-C01 試験ガイド</a><a href="../../exams/aws-saa-c03/">SAA-C03 試験ガイド</a><a href="../../exams/aws-dva-c02/">DVA-C02 試験ガイド</a><a href="../../exams/aws-sap-c02/">SAP-C02 試験ガイド</a><a href="../../exams/gcp-cdl/">CDL 試験ガイド</a><a href="../../exams/gcp-ace/">ACE 試験ガイド</a><a href="../../exams/azure-az900/">AZ-900 試験ガイド</a><a href="../../exams/azure-ai900/">AI-900 試験ガイド</a><a href="../../exams/azure-dp900/">DP-900 試験ガイド</a><a href="../../exams/azure-sc900/">SC-900 試験ガイド</a><a href="../../exams/azure-az104/">AZ-104 試験ガイド</a></nav>
+<nav class="site-nav"><a href="../../guide/">資格ガイド</a><a href="../../learn/">サービス解説</a><a href="../../career/">キャリア</a><a href="../../about.html">運営者情報</a><a href="../../privacy.html">プライバシーポリシー</a><a href="../../contact.html">お問い合わせ</a></nav>
+<p class="copy">© CLOUDCERT_ — 本サイトは各認定試験の公式試験ではなく、収録問題はすべてオリジナルの演習問題です。</p>
+</footer>
+</body>
+</html>

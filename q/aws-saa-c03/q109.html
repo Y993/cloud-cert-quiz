@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>【SAA-C03 演習問題 #109】ある企業が、AWS Lambda と Amazon API Gateway でサーバーレス…</title>
+<meta name="description" content="SAA-C03の本試験レベル演習問題。ある企業が、AWS Lambda と Amazon API Gateway でサーバーレス API を運用している。API は主に画像ファイルをユーザーから受け取り、S3 に保存して… 全選択肢の解説つき。">
+<link rel="canonical" href="https://cloudcert.app/q/aws-saa-c03/q109.html">
+<meta property="og:title" content="【SAA-C03 演習問題 #109】ある企業が、AWS Lambda と Amazon API Gateway でサーバーレス…">
+<meta property="og:description" content="SAA-C03の本試験レベル演習問題。ある企業が、AWS Lambda と Amazon API Gateway でサーバーレス API を運用している。API は主に画像ファイルをユーザーから受け取り、S3 に保存して… 全選択肢の解説つき。">
+<meta property="og:url" content="https://cloudcert.app/q/aws-saa-c03/q109.html">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="CLOUDCERT_">
+<meta property="og:image" content="https://cloudcert.app/assets/og.png">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='80' font-size='80' fill='%233fe0a4' font-family='monospace'>▸</text></svg>">
+
+<meta name="google-adsense-account" content="ca-pub-5647574947191958">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+JP:wght@400;500;700&family=JetBrains+Mono:wght@400;600;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../../css/style.css">
+<link rel="stylesheet" href="../../css/page.css">
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-SZR5CB5Q3X"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag('js',new Date());gtag('config','G-SZR5CB5Q3X');</script>
+<script type="application/ld+json">[{"@context":"https://schema.org/","@type":"Quiz","about":{"@type":"Thing","name":"AWS Certified Solutions Architect – Associate"},"hasPart":[{"@type":"Question","eduQuestionType":"Multiple choice","learningResourceType":"Practice problem","text":"ある企業が、AWS Lambda と Amazon API Gateway でサーバーレス API を運用している。API は主に画像ファイルをユーザーから受け取り、S3 に保存してから処理するワークフローで使われる。現在は Lambda 関数がファイルを受け取って S3 にアップロードしているが、大きなファイル（最大 50MB）のアップロードに Lambda がかかわると実行時間が長くなりコストが増加している。Lambda の実行時間コストを最小にしながら要件を満たす最も適切なソリューションはどれか。","suggestedAnswer":[{"@type":"Answer","position":0,"text":"API Gateway の Lambda 統合の代わりに S3 Transfer Acceleration を使って直接クライアントから S3 にアップロードさせる。"},{"@type":"Answer","position":1,"text":"API Gateway のペイロードサイズ制限を引き上げて大きなファイルを受け付けるようにする。"},{"@type":"Answer","position":2,"text":"Lambda のメモリを最大に設定して実行時間を短縮する。"}],"acceptedAnswer":{"@type":"Answer","position":3,"text":"Lambda 関数から S3 の Presigned URL を発行し、クライアントが Presigned URL を使って直接 S3 にアップロードする。Lambda は URL 発行のみを担当するため実行時間は数十ミリ秒で完了する。","comment":{"@type":"Comment","text":"S3 の Presigned URL を使う設計では、Lambda 関数は Presigned URL を生成して返すだけ（数十ミリ秒）で完了し、実際のファイル転送はクライアントと S3 の間で直接行われる。Lambda がファイルデータを転送しないため、50MB のファイルアップロードによる Lambda 実行時間・コスト増加の問題が解消される。選択肢CのLambda メモリ最大化は実行速度を上げるが、ファイル転送そのものにかかる時間は大きく変わらず、メモリコストが増加する。選択肢AのS3 Transfer Acceleration はアップロード速度を向上させるが、Lambda を経由する構成では Lambda の実行時間コスト問題は解決しない。Presigned URL と組み合わせる場合は有効。選択肢BのAPI Gateway のペイロードサイズ制限引き上げ（最大 10MB）は、50MB のファイルには対応できない（API Gateway の最大ペイロードは 10MB）。"}}}]},{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"HOME","item":"https://cloudcert.app/"},{"@type":"ListItem","position":2,"name":"SAA-C03 試験ガイド","item":"https://cloudcert.app/exams/aws-saa-c03/"},{"@type":"ListItem","position":3,"name":"q109"}]}]</script>
+</head>
+<body class="page-body">
+<header class="page-header"><a class="page-logo" href="../../index.html">&gt; CLOUDCERT_</a></header>
+<main class="page-main">
+
+<nav class="breadcrumb"><a href="../../index.html">HOME</a> › <a href="../../exams/aws-saa-c03/">SAA-C03 試験ガイド</a> › q109</nav>
+<div class="q-meta"><span>SAA-C03</span><span>コストを最適化したアーキテクチャの設計</span><span>MEDIUM</span><span>単一選択</span></div>
+<h1>ある企業が、AWS Lambda と Amazon API Gateway でサーバーレス API を運用している。API は主に画像ファイルをユーザーから受け取り、S3 に保存してから処理するワークフローで使われる。現在は Lambda 関数がファイルを受け取って S3 にアップロードしているが、大きなファイル（最大 50MB）のアップロードに Lambda がかかわると実行時間が長くなりコストが増加している。Lambda の実行時間コストを最小にしながら要件を満たす最も適切なソリューションはどれか。</h1>
+<ol class="q-choices">
+<li><b>A.</b> API Gateway の Lambda 統合の代わりに S3 Transfer Acceleration を使って直接クライアントから S3 にアップロードさせる。</li>
+<li><b>B.</b> API Gateway のペイロードサイズ制限を引き上げて大きなファイルを受け付けるようにする。</li>
+<li><b>C.</b> Lambda のメモリを最大に設定して実行時間を短縮する。</li>
+<li><b>D.</b> Lambda 関数から S3 の Presigned URL を発行し、クライアントが Presigned URL を使って直接 S3 にアップロードする。Lambda は URL 発行のみを担当するため実行時間は数十ミリ秒で完了する。</li>
+</ol>
+<details class="q-answer">
+<summary>解答と解説を見る</summary>
+<div class="inner">
+<p><b>正解: D</b></p>
+<p>S3 の Presigned URL を使う設計では、Lambda 関数は Presigned URL を生成して返すだけ（数十ミリ秒）で完了し、実際のファイル転送はクライアントと S3 の間で直接行われる。Lambda がファイルデータを転送しないため、50MB のファイルアップロードによる Lambda 実行時間・コスト増加の問題が解消される。選択肢CのLambda メモリ最大化は実行速度を上げるが、ファイル転送そのものにかかる時間は大きく変わらず、メモリコストが増加する。選択肢AのS3 Transfer Acceleration はアップロード速度を向上させるが、Lambda を経由する構成では Lambda の実行時間コスト問題は解決しない。Presigned URL と組み合わせる場合は有効。選択肢BのAPI Gateway のペイロードサイズ制限引き上げ（最大 10MB）は、50MB のファイルには対応できない（API Gateway の最大ペイロードは 10MB）。</p>
+<div class="svc-links">📚 関連サービスの解説: <a href="../../learn/aws-lambda.html">AWS Lambda</a> ・ <a href="../../learn/amazon-s3.html">Amazon S3</a></div>
+</div>
+</details>
+<div class="cta-box"><a class="btn btn-primary" href="../../exam.html?exam=aws-saa-c03">▸ この試験を本気で演習する（全150問・無料）</a></div>
+<nav class="q-nav">
+<span><a href="q108.html">← 前の問題</a></span>
+<span><a href="q110.html">次の問題 →</a></span>
+</nav>
+<section class="related"><h2>同じ分野の関連問題</h2><ul class="q-list">
+<li><a href="q106.html">ある企業が、AWS の予算管理を強化したい。特定のサービスコストが月次予算の 80% に達した時点でアラートを受け取り、…</a></li>
+<li><a href="q113.html">ある企業が、Amazon EC2 Spot インスタンスを使って機械学習モデルのハイパーパラメータチューニングを実行して…</a></li>
+<li><a href="q102.html">ある企業が、Amazon EC2 インスタンスの適正化（Rightsizing）を実施しようとしている。現在のインスタン…</a></li>
+<li><a href="q117.html">ある企業が、AWS で運用する複数の Web アプリケーションに対して SSL/TLS 証明書を発行・管理したい。現在は…</a></li>
+</ul></section>
+</main>
+<footer class="page-footer">
+<nav class="hub-nav"><a href="../../exams/aws-clf-c02/">CLF-C02 試験ガイド</a><a href="../../exams/aws-aif-c01/">AIF-C01 試験ガイド</a><a href="../../exams/aws-saa-c03/">SAA-C03 試験ガイド</a><a href="../../exams/aws-dva-c02/">DVA-C02 試験ガイド</a><a href="../../exams/aws-sap-c02/">SAP-C02 試験ガイド</a><a href="../../exams/gcp-cdl/">CDL 試験ガイド</a><a href="../../exams/gcp-ace/">ACE 試験ガイド</a><a href="../../exams/azure-az900/">AZ-900 試験ガイド</a><a href="../../exams/azure-ai900/">AI-900 試験ガイド</a><a href="../../exams/azure-dp900/">DP-900 試験ガイド</a><a href="../../exams/azure-sc900/">SC-900 試験ガイド</a><a href="../../exams/azure-az104/">AZ-104 試験ガイド</a></nav>
+<nav class="site-nav"><a href="../../guide/">資格ガイド</a><a href="../../learn/">サービス解説</a><a href="../../career/">キャリア</a><a href="../../about.html">運営者情報</a><a href="../../privacy.html">プライバシーポリシー</a><a href="../../contact.html">お問い合わせ</a></nav>
+<p class="copy">© CLOUDCERT_ — 本サイトは各認定試験の公式試験ではなく、収録問題はすべてオリジナルの演習問題です。</p>
+</footer>
+</body>
+</html>
